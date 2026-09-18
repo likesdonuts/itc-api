@@ -252,26 +252,54 @@ def _status_pill(status: str | None) -> str:
     return f'<span class="pill {css_class}">{_e(status)}</span>'
 
 
-def _format_ddmmyyyy(value: str | None) -> str:
-    """Render any of the date formats this app stores (ISO "YYYY-MM-DD",
-    ISO datetime with timezone, EDIS's "YYYY/MM/DD HH:MM:SS", or any of
-    those with a trailing "  (approx., ...)" note) as plain "DD/MM/YYYY".
+def _parse_date(value: str | None) -> tuple[int, int, int] | None:
+    """Read any date shape this app stores and return (year, month, day).
+
+    The sources disagree: EDIS uses "YYYY/MM/DD HH:MM:SS", the RSS-derived
+    records use ISO datetimes, and the public IDS feed uses US-style
+    "MM-DD-YYYY". Some values also carry a trailing "  (approx., ...)" note.
     """
     if not value:
-        return "Unknown"
-    main, _, _note = str(value).partition("  (")
-    main = main.strip()
+        return None
+    main = str(value).partition("  (")[0].strip()
     if not main:
-        return "Unknown"
-    date_part = main.replace("/", "-").split("T")[0].split(" ")[0]
-    parts = date_part.split("-")
-    if len(parts) == 3 and len(parts[0]) == 4 and all(p.isdigit() for p in parts):
-        year, month, day = parts
-        try:
-            return f"{int(day):02d}/{int(month):02d}/{int(year):04d}"
-        except ValueError:
-            pass
-    return _e(main)
+        return None
+
+    parts = re.split(r"[-/]", main.split("T")[0].split(" ")[0])
+    if len(parts) != 3 or not all(p.isdigit() for p in parts):
+        return None
+
+    if len(parts[0]) == 4:
+        year, month, day = (int(p) for p in parts)
+    elif len(parts[2]) == 4:
+        month, day, year = (int(p) for p in parts)
+    else:
+        return None
+
+    # A month past 12 means the source was day-first after all.
+    if month > 12 and day <= 12:
+        month, day = day, month
+    if not (1 <= month <= 12 and 1 <= day <= 31):
+        return None
+    return year, month, day
+
+
+def _format_ddmmyyyy(value: str | None) -> str:
+    """Every date on the site is rendered through here, as DD/MM/YYYY."""
+    parsed = _parse_date(value)
+    if parsed is None:
+        main = str(value or "").partition("  (")[0].strip()
+        return _e(main) if main else "Unknown"
+    year, month, day = parsed
+    return f"{day:02d}/{month:02d}/{year:04d}"
+
+
+def _date_sort_key(value: str | None) -> tuple[int, int, int]:
+    """Order by real calendar date, not by the string the source happened to
+    use -- "01-13-2026" from IDS and "2026/08/21" from EDIS otherwise sort
+    against each other character by character.
+    """
+    return _parse_date(value) or (0, 0, 0)
 
 
 _INDEX_SCRIPT = """
@@ -303,8 +331,8 @@ _INDEX_SCRIPT = """
 
 
 def render_index(investigations: list[dict[str, Any]]) -> str:
-    def sort_key(inv: dict[str, Any]) -> str:
-        return inv.get("date_initiated") or inv.get("last_refreshed") or ""
+    def sort_key(inv: dict[str, Any]) -> tuple[int, int, int]:
+        return _date_sort_key(inv.get("date_initiated") or inv.get("last_refreshed"))
 
     rows = sorted(investigations, key=sort_key, reverse=True)
     status_counts: Counter[str] = Counter((inv.get("investigation_status") or "Unknown") for inv in rows)
@@ -568,6 +596,6 @@ def render_detail(investigation: dict[str, Any], documents: list[dict[str, Any]]
   </div>
 </div>
 
-<p class="footer-note">Investigation {_e(number)} &middot; last refreshed {_val(investigation.get('last_refreshed'))}.</p>
+<p class="footer-note">Investigation {_e(number)} &middot; last refreshed {_format_ddmmyyyy(investigation.get('last_refreshed'))}.</p>
 """
     return _page(f"{investigation.get('title') or number} - Docket", body)
