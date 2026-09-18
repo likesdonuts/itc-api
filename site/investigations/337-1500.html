@@ -1,0 +1,756 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Certain Semiconductor Devices, Products Containing Same, and Components Thereof; Inv. No. 337-TA-1500 (Violation) - Docket</title>
+<style>
+:root {
+  color-scheme: light dark;
+  --bg: #f5f6f8;
+  --surface: #ffffff;
+  --surface-2: #fafbfc;
+  --border: #e3e6ea;
+  --ink: #14181f;
+  --muted: #64707d;
+  --accent: #3457d5;
+  --accent-weak: #eef1fd;
+  --shadow: 0 1px 2px rgba(16,24,40,0.04), 0 1px 8px rgba(16,24,40,0.04);
+  --radius: 12px;
+  --green-bg: #e6f6ec; --green-fg: #1b7a3d;
+  --amber-bg: #fef3e0; --amber-fg: #a15c00;
+  --gray-bg: #eef0f3; --gray-fg: #4a5361;
+  --blue-bg: #e8eefd; --blue-fg: #2646b8;
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #0f1216;
+    --surface: #171b21;
+    --surface-2: #1c2129;
+    --border: #2a2f38;
+    --ink: #e7eaee;
+    --muted: #8a94a3;
+    --accent: #7c93f7;
+    --accent-weak: #232a45;
+    --shadow: 0 1px 2px rgba(0,0,0,0.3), 0 1px 8px rgba(0,0,0,0.25);
+    --green-bg: #10301d; --green-fg: #5fd38a;
+    --amber-bg: #35270a; --amber-fg: #f0b545;
+    --gray-bg: #232830; --gray-fg: #aab2bd;
+    --blue-bg: #1c2440; --blue-fg: #9db0f5;
+  }
+}
+* { box-sizing: border-box; }
+body {
+  margin: 0;
+  padding: 2.5rem 1.25rem 4rem;
+  background: var(--bg);
+  color: var(--ink);
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+}
+a { color: var(--accent); text-decoration: none; }
+a:hover { text-decoration: underline; }
+.shell { max-width: 1080px; margin: 0 auto; }
+.hero {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 1rem;
+  flex-wrap: wrap;
+  margin-bottom: 1.75rem;
+}
+.hero .eyebrow {
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  font-size: 0.72rem;
+  font-weight: 600;
+  color: var(--muted);
+  margin: 0 0 0.35rem;
+}
+.hero h1 { margin: 0; font-size: 1.65rem; font-weight: 700; letter-spacing: -0.01em; }
+.hero .subtitle { margin: 0.3rem 0 0; color: var(--muted); font-size: 0.92rem; }
+.stats { display: flex; gap: 0.75rem; flex-wrap: wrap; }
+.stat {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 0.6rem 1rem;
+  min-width: 92px;
+  text-align: center;
+  box-shadow: var(--shadow);
+}
+.stat .n { font-size: 1.35rem; font-weight: 700; line-height: 1.1; }
+.stat .l { font-size: 0.68rem; text-transform: uppercase; letter-spacing: 0.05em; color: var(--muted); margin-top: 0.15rem; }
+.toolbar {
+  display: flex;
+  gap: 0.6rem;
+  flex-wrap: wrap;
+  margin-bottom: 1.1rem;
+}
+.toolbar input[type="search"], .toolbar select {
+  font: inherit;
+  font-size: 0.9rem;
+  padding: 0.55rem 0.8rem;
+  border: 1px solid var(--border);
+  border-radius: 9px;
+  background: var(--surface);
+  color: var(--ink);
+}
+.toolbar input[type="search"] { flex: 1 1 240px; }
+.toolbar select { flex: 0 0 auto; }
+.toolbar input:focus, .toolbar select:focus {
+  outline: none;
+  border-color: var(--accent);
+  box-shadow: 0 0 0 3px var(--accent-weak);
+}
+.card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  overflow: hidden;
+}
+table.list { width: 100%; border-collapse: collapse; }
+table.list th, table.list td {
+  text-align: left;
+  padding: 0.85rem 1.1rem;
+  font-size: 0.88rem;
+  vertical-align: middle;
+}
+table.list thead th {
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--muted);
+  font-weight: 600;
+  background: var(--surface-2);
+  border-bottom: 1px solid var(--border);
+}
+table.list tbody tr { border-bottom: 1px solid var(--border); transition: background 0.1s; }
+table.list tbody tr:last-child { border-bottom: none; }
+table.list tbody tr:hover { background: var(--surface-2); }
+table.list tbody tr[hidden] { display: none; }
+.case-link { display: block; font-weight: 600; color: var(--ink); }
+.case-link:hover { color: var(--accent); text-decoration: none; }
+.case-sub { color: var(--muted); font-size: 0.8rem; margin-top: 0.1rem; }
+.mono { font-variant-numeric: tabular-nums; white-space: nowrap; color: var(--muted); }
+.pill {
+  display: inline-flex;
+  align-items: center;
+  font-size: 0.74rem;
+  font-weight: 600;
+  padding: 0.22rem 0.6rem;
+  border-radius: 999px;
+  white-space: nowrap;
+}
+.pill-green { background: var(--green-bg); color: var(--green-fg); }
+.pill-amber { background: var(--amber-bg); color: var(--amber-fg); }
+.pill-gray { background: var(--gray-bg); color: var(--gray-fg); }
+.pill-blue { background: var(--blue-bg); color: var(--blue-fg); }
+.phase-chip {
+  display: inline-block;
+  font-size: 0.78rem;
+  color: var(--muted);
+}
+.empty-state, .no-results {
+  padding: 3rem 1rem;
+  text-align: center;
+  color: var(--muted);
+  font-size: 0.9rem;
+}
+.footer-note {
+  margin-top: 1.5rem;
+  font-size: 0.78rem;
+  color: var(--muted);
+  text-align: center;
+}
+.back-link {
+  display: inline-block;
+  margin-bottom: 1.1rem;
+  font-size: 0.85rem;
+  color: var(--muted);
+}
+.back-link:hover { color: var(--accent); }
+.detail-hero { margin-bottom: 1.75rem; }
+.detail-hero h1 { margin: 0.3rem 0 0.6rem; font-size: 1.55rem; font-weight: 700; letter-spacing: -0.01em; }
+.detail-hero .badges { display: flex; gap: 0.5rem; flex-wrap: wrap; align-items: center; }
+.section-block { margin-top: 1.75rem; }
+.section-block h2 {
+  font-size: 0.78rem;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--muted);
+  font-weight: 700;
+  margin: 0 0 0.75rem;
+}
+.field-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1.1rem 1.5rem;
+  padding: 1.25rem 1.4rem;
+}
+.field-grid .field-label {
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--muted);
+  margin-bottom: 0.25rem;
+}
+.field-grid .field-value { font-size: 0.95rem; }
+table.list .attachments a { display: block; font-size: 0.85rem; margin-bottom: 0.15rem; }
+table.list .attachments a:last-child { margin-bottom: 0; }
+</style>
+</head>
+<body>
+<div class="shell">
+
+<a class="back-link" href="../index.html">&larr; All investigations</a>
+<div class="detail-hero">
+  <p class="eyebrow">U.S. International Trade Commission &middot; Section 337</p>
+  <h1>Certain Semiconductor Devices, Products Containing Same, and Components Thereof; Inv. No. 337-TA-1500 (Violation)</h1>
+  <div class="badges">
+    <span class="pill pill-green">Active</span>
+    <span class="phase-chip">Violation</span>
+  </div>
+</div>
+
+<div class="section-block">
+  <h2>Investigation Information</h2>
+  <div class="card field-grid">
+    <div><div class="field-label">Investigation Number</div><div class="field-value">337-1500</div></div>
+    <div><div class="field-label">Date Initiated</div><div class="field-value">04-27-2026</div></div>
+    <div><div class="field-label">Investigation Type</div><div class="field-value">Sec 337</div></div>
+    <div><div class="field-label">ITC Docket Number</div><div class="field-value">3896</div></div>
+    <div><div class="field-label">Investigation Phase</div><div class="field-value">Violation</div></div>
+    <div><div class="field-label">Investigation Status</div><div class="field-value">Active</div></div>
+  </div>
+</div>
+
+<div class="section-block">
+  <h2>Parties</h2>
+  <div class="card field-grid">
+    <div><div class="field-label">Administrative Law Judge</div><div class="field-value">Cameron R. Elliot</div></div>
+    <div><div class="field-label">Complainant</div><div class="field-value">Globalfoundries U.S. Inc.</div></div>
+    <div><div class="field-label">Complainant Attorney</div><div class="field-value">Bert C. Reiser</div></div>
+    <div><div class="field-label">Complainant Law Firm</div><div class="field-value">Cleary Gottlieb Steen &amp; Hamilton LLP</div></div>
+    <div><div class="field-label">Respondent</div><div class="field-value">Tower Semiconductor Ltd., Tower Partners Semiconductor Co., Ltd., Tower Semiconductor Italy S.r.l., Tower US Holdings, Inc., Tower Semiconductor San Antonio, Inc., Tower Semiconductor NPB Holdings, Inc., Tower Semiconductor Newport Beach, Inc., and Newport Fab LLC; Chief Administrative Law Judge</div></div>
+    <div><div class="field-label">Respondent Law Firm</div><div class="field-value">Cooley LLP; USITC</div></div>
+  </div>
+</div>
+
+<div class="section-block">
+  <h2>Documents (70)</h2>
+  <div class="card">
+    <table class="list">
+      <thead>
+        <tr>
+          <th>Date</th>
+          <th>Type</th>
+          <th>Title</th>
+          <th>Filed By</th>
+          <th>Attachments</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+  <td class="mono">17/09/2026</td>
+  <td>Response/Submission to ALJ Order</td>
+  <td>Respondents&#x27; Markman Presentation</td>
+  <td>Stephen R. Smith <span class="case-sub">for Tower Semiconductor Ltd., Tower Partners Semiconductor Co., Ltd., Tower Semiconductor Italy S.r.l., Tower US Holdings, Inc., Tower Semiconductor San Antonio, Inc., Tower Semiconductor NPB Holdings, Inc., Tower Semiconductor Newport Beach, Inc., and Newport Fab LLC</span></td>
+  <td class="attachments"><a href="../../data/documents/337-1500/895108_2621396_2621396.pdf" target="_blank" rel="noopener">2621396.pdf</a></td>
+</tr>
+<tr>
+  <td class="mono">17/09/2026</td>
+  <td>Complaint <span class="pill pill-blue">Complaint</span></td>
+  <td>Amended Complaint of GlobalFoundries U.S. Inc., under Section 337 of the Tariff Act of 1930, as Amended</td>
+  <td>Bert C. Reiser <span class="case-sub">for GlobalFoundries U.S. Inc.</span></td>
+  <td class="attachments"><a href="../../data/documents/337-1500/895061_2621221_2621221.pdf" target="_blank" rel="noopener">2621221.pdf</a></td>
+</tr>
+<tr>
+  <td class="mono">14/09/2026</td>
+  <td>PO Subscription</td>
+  <td>Agreement to Be Bound by the Protective Order of April Crites</td>
+  <td>Stephen R. Smith <span class="case-sub">for Tower Semiconductor Ltd., Tower Partners Semiconductor, Ltd., Tower Semiconductor Italy S.r.l., Tower US Holdings, Inc., Tower Semiconductor San Antonio, Inc., Tower Semiconductor NPB Holdings, Inc., Tower Semiconductor Newport Beach, Inc., and Newport Fab LLC</span></td>
+  <td class="attachments"><a href="../../data/documents/337-1500/894685_2620024_2620024.pdf" target="_blank" rel="noopener">2620024.pdf</a></td>
+</tr>
+<tr>
+  <td class="mono">14/09/2026</td>
+  <td>ID/RD - Other Than Final on Violation</td>
+  <td>Initial Determination Granting Complainant’s Motion to Amend the Complaint and Notice of Investigation</td>
+  <td>Clark S. Cheney <span class="case-sub">for Chief Administrative Law Judge</span></td>
+  <td class="attachments"><a href="../../data/documents/337-1500/894642_2619939_2619939.pdf" target="_blank" rel="noopener">2619939.pdf</a><a href="../../data/documents/337-1500/894642_2619956_2619956.pdf" target="_blank" rel="noopener">2619956.pdf</a></td>
+</tr>
+<tr>
+  <td class="mono">11/09/2026</td>
+  <td>Brief Filed With ALJ</td>
+  <td>Respondents&#x27; Responsive Claim Construction Brief</td>
+  <td>Stephen R. Smith <span class="case-sub">for Tower Partners Semiconductor, Ltd., Tower Semiconductor Italy S.r.l., Tower US Holdings, Inc., Tower Semiconductor San Antonio, Inc., Tower Semiconductor NPB Holdings, Inc., Tower Semiconductor Newport Beach, Inc., and Newport Fab LLC</span></td>
+  <td class="attachments"><a href="../../data/documents/337-1500/894573_2619480_2619480.pdf" target="_blank" rel="noopener">2619480.pdf</a><a href="../../data/documents/337-1500/894573_2619481_2619481.pdf" target="_blank" rel="noopener">2619481.pdf</a><a href="../../data/documents/337-1500/894573_2619482_2619482.pdf" target="_blank" rel="noopener">2619482.pdf</a><a href="../../data/documents/337-1500/894573_2619483_2619483.pdf" target="_blank" rel="noopener">2619483.pdf</a><a href="../../data/documents/337-1500/894573_2619484_2619484.pdf" target="_blank" rel="noopener">2619484.pdf</a><a href="../../data/documents/337-1500/894573_2619485_2619485.pdf" target="_blank" rel="noopener">2619485.pdf</a><a href="../../data/documents/337-1500/894573_2619486_2619486.pdf" target="_blank" rel="noopener">2619486.pdf</a><a href="../../data/documents/337-1500/894573_2619487_2619487.pdf" target="_blank" rel="noopener">2619487.pdf</a><a href="../../data/documents/337-1500/894573_2619488_2619488.pdf" target="_blank" rel="noopener">2619488.pdf</a><a href="../../data/documents/337-1500/894573_2619489_2619489.pdf" target="_blank" rel="noopener">2619489.pdf</a><a href="../../data/documents/337-1500/894573_2619490_2619490.pdf" target="_blank" rel="noopener">2619490.pdf</a><a href="../../data/documents/337-1500/894573_2619491_2619491.pdf" target="_blank" rel="noopener">2619491.pdf</a><a href="../../data/documents/337-1500/894573_2619492_2619492.pdf" target="_blank" rel="noopener">2619492.pdf</a></td>
+</tr>
+<tr>
+  <td class="mono">10/09/2026</td>
+  <td>Motion</td>
+  <td>Joint Supplement to Complainant GlobalFoundries U.S. Inc.&#x27;s Motion for Leave to Amend the Complaint and Notice of Investigation</td>
+  <td>Bert C. Reiser <span class="case-sub">for GlobalFoundries U.S. Inc., Tower Semiconductor Ltd., Tower Partners Semiconductor Co., Ltd., Tower Semiconductor Italy S.r.l., Tower US Holdings, Inc., Tower Semiconductor San Antonio, Inc., Tower Semiconductor NPB Holdings, Inc., Tower Semiconductor Newport Beach, Inc., and Newport Fab LLC</span></td>
+  <td class="attachments"><a href="../../data/documents/337-1500/894454_2618863_2618863.pdf" target="_blank" rel="noopener">2618863.pdf</a></td>
+</tr>
+<tr>
+  <td class="mono">10/09/2026</td>
+  <td>PO Subscription</td>
+  <td>Agreement to Be Bound by the Protective Order of James Earl Poole III and Dennis Duong</td>
+  <td>Stephen R. Smith <span class="case-sub">for Tower Semiconductor Ltd., Tower Partners Semiconductor, Ltd., Tower Semiconductor Italy S.r.l., Tower US Holdings, Inc., Tower Semiconductor San Antonio, Inc., Tower Semiconductor NPB Holdings, Inc., Tower Semiconductor Newport Beach, Inc., and Newport Fab LLC</span></td>
+  <td class="attachments"><a href="../../data/documents/337-1500/894445_2618693_2618693.pdf" target="_blank" rel="noopener">2618693.pdf</a></td>
+</tr>
+<tr>
+  <td class="mono">10/09/2026</td>
+  <td>PO Subscription</td>
+  <td>Agreement to Be Bound by the Protective Order of Jillian Doctor, Rebecca Klanderud, Bethany Woodward, Erik Larson, James Williams Jr., Caleb Welsh, and Jesse Castro</td>
+  <td>Bert C. Reiser <span class="case-sub">for GlobalFoundries U.S. Inc.</span></td>
+  <td class="attachments"><a href="../../data/documents/337-1500/894393_2618589_2618589.pdf" target="_blank" rel="noopener">2618589.pdf</a></td>
+</tr>
+<tr>
+  <td class="mono">08/09/2026</td>
+  <td>Motion</td>
+  <td>Complainant GlobalFoundries U.S. Inc.&#x27;s Motion for Leave to Amend the Complaint and Notice of Investigation</td>
+  <td>Bert C. Reiser <span class="case-sub">for GlobalFoundries U.S. Inc.</span></td>
+  <td class="attachments"><a href="../../data/documents/337-1500/894154_2617548_2617548.pdf" target="_blank" rel="noopener">2617548.pdf</a></td>
+</tr>
+<tr>
+  <td class="mono">04/09/2026</td>
+  <td>Brief Filed With ALJ</td>
+  <td>Respondents&#x27; Opening Brief on Claim Construction</td>
+  <td>Stephen R. Smith <span class="case-sub">for Tower Semiconductor Ltd., Tower Partners Semiconductor Co., Ltd., Tower Semiconductor Italy S.r.l., Tower US Holdings, Inc., Tower Semiconductor San Antonio, Inc., Tower Semiconductor NPB Holdings, Inc., Tower Semiconductor Newport Beach, Inc., and Newport Fab LLC</span></td>
+  <td class="attachments"><a href="../../data/documents/337-1500/894026_2616994_2616994.pdf" target="_blank" rel="noopener">2616994.pdf</a><a href="../../data/documents/337-1500/894026_2616995_2616995.pdf" target="_blank" rel="noopener">2616995.pdf</a><a href="../../data/documents/337-1500/894026_2616996_2616996.pdf" target="_blank" rel="noopener">2616996.pdf</a><a href="../../data/documents/337-1500/894026_2616997_2616997.pdf" target="_blank" rel="noopener">2616997.pdf</a><a href="../../data/documents/337-1500/894026_2616998_2616998.pdf" target="_blank" rel="noopener">2616998.pdf</a><a href="../../data/documents/337-1500/894026_2616999_2616999.pdf" target="_blank" rel="noopener">2616999.pdf</a><a href="../../data/documents/337-1500/894026_2617000_2617000.pdf" target="_blank" rel="noopener">2617000.pdf</a><a href="../../data/documents/337-1500/894026_2617001_2617001.pdf" target="_blank" rel="noopener">2617001.pdf</a><a href="../../data/documents/337-1500/894026_2617002_2617002.pdf" target="_blank" rel="noopener">2617002.pdf</a><a href="../../data/documents/337-1500/894026_2617003_2617003.pdf" target="_blank" rel="noopener">2617003.pdf</a><a href="../../data/documents/337-1500/894026_2617004_2617004.pdf" target="_blank" rel="noopener">2617004.pdf</a><a href="../../data/documents/337-1500/894026_2617005_2617005.pdf" target="_blank" rel="noopener">2617005.pdf</a><a href="../../data/documents/337-1500/894026_2617006_2617006.pdf" target="_blank" rel="noopener">2617006.pdf</a><a href="../../data/documents/337-1500/894026_2617007_2617007.pdf" target="_blank" rel="noopener">2617007.pdf</a><a href="../../data/documents/337-1500/894026_2617008_2617008.pdf" target="_blank" rel="noopener">2617008.pdf</a><a href="../../data/documents/337-1500/894026_2617009_2617009.pdf" target="_blank" rel="noopener">2617009.pdf</a><a href="../../data/documents/337-1500/894026_2617010_2617010.pdf" target="_blank" rel="noopener">2617010.pdf</a><a href="../../data/documents/337-1500/894026_2617011_2617011.pdf" target="_blank" rel="noopener">2617011.pdf</a><a href="../../data/documents/337-1500/894026_2617012_2617012.pdf" target="_blank" rel="noopener">2617012.pdf</a><a href="../../data/documents/337-1500/894026_2617013_2617013.pdf" target="_blank" rel="noopener">2617013.pdf</a><a href="../../data/documents/337-1500/894026_2617014_2617014.pdf" target="_blank" rel="noopener">2617014.pdf</a><a href="../../data/documents/337-1500/894026_2617015_2617015.pdf" target="_blank" rel="noopener">2617015.pdf</a><a href="../../data/documents/337-1500/894026_2617016_2617016.pdf" target="_blank" rel="noopener">2617016.pdf</a><a href="../../data/documents/337-1500/894026_2617017_2617017.pdf" target="_blank" rel="noopener">2617017.pdf</a><a href="../../data/documents/337-1500/894026_2617018_2617018.pdf" target="_blank" rel="noopener">2617018.pdf</a><a href="../../data/documents/337-1500/894026_2617019_2617019.pdf" target="_blank" rel="noopener">2617019.pdf</a><a href="../../data/documents/337-1500/894026_2617020_2617020.pdf" target="_blank" rel="noopener">2617020.pdf</a><a href="../../data/documents/337-1500/894026_2617021_2617021.pdf" target="_blank" rel="noopener">2617021.pdf</a><a href="../../data/documents/337-1500/894026_2617022_2617022.pdf" target="_blank" rel="noopener">2617022.pdf</a><a href="../../data/documents/337-1500/894026_2617023_2617023.pdf" target="_blank" rel="noopener">2617023.pdf</a><a href="../../data/documents/337-1500/894026_2617024_2617024.pdf" target="_blank" rel="noopener">2617024.pdf</a><a href="../../data/documents/337-1500/894026_2617025_2617025.pdf" target="_blank" rel="noopener">2617025.pdf</a><a href="../../data/documents/337-1500/894026_2617026_2617026.pdf" target="_blank" rel="noopener">2617026.pdf</a><a href="../../data/documents/337-1500/894026_2617027_2617027.pdf" target="_blank" rel="noopener">2617027.pdf</a><a href="../../data/documents/337-1500/894026_2617028_2617028.pdf" target="_blank" rel="noopener">2617028.pdf</a><a href="../../data/documents/337-1500/894026_2617029_2617029.pdf" target="_blank" rel="noopener">2617029.pdf</a><a href="../../data/documents/337-1500/894026_2617030_2617030.pdf" target="_blank" rel="noopener">2617030.pdf</a><a href="../../data/documents/337-1500/894026_2617031_2617031.pdf" target="_blank" rel="noopener">2617031.pdf</a><a href="../../data/documents/337-1500/894026_2617032_2617032.pdf" target="_blank" rel="noopener">2617032.pdf</a><a href="../../data/documents/337-1500/894026_2617033_2617033.pdf" target="_blank" rel="noopener">2617033.pdf</a><a href="../../data/documents/337-1500/894026_2617034_2617034.pdf" target="_blank" rel="noopener">2617034.pdf</a><a href="../../data/documents/337-1500/894026_2617035_2617035.pdf" target="_blank" rel="noopener">2617035.pdf</a><a href="../../data/documents/337-1500/894026_2617036_2617036.pdf" target="_blank" rel="noopener">2617036.pdf</a></td>
+</tr>
+<tr>
+  <td class="mono">04/09/2026</td>
+  <td>PO Subscription</td>
+  <td>Agreement to Be Bound by the Protective Order of Ashley Ahn, Kevin Hout, and Catherine Wilson</td>
+  <td>Stephen R. Smith <span class="case-sub">for Tower Semiconductor Ltd., Tower Partners Semiconductor Co., Ltd., Tower Semiconductor Italy S.r.l., Tower US Holdings, Inc., Tower Semiconductor San Antonio, Inc., Tower Semiconductor NPB Holdings, Inc., Tower Semiconductor Newport Beach, Inc., and Newport Fab LLC</span></td>
+  <td class="attachments"><a href="../../data/documents/337-1500/894006_2616893_2616893.pdf" target="_blank" rel="noopener">2616893.pdf</a></td>
+</tr>
+<tr>
+  <td class="mono">03/09/2026</td>
+  <td>Brief Filed With ALJ</td>
+  <td>Complainant&#x27;s Responsive Claim Construction Brief</td>
+  <td>Bert C. Reiser <span class="case-sub">for GlobalFoundries U.S. Inc.</span></td>
+  <td class="attachments"><a href="../../data/documents/337-1500/893926_2616544_2616544.pdf" target="_blank" rel="noopener">2616544.pdf</a></td>
+</tr>
+<tr>
+  <td class="mono">03/09/2026</td>
+  <td>Brief Filed With ALJ</td>
+  <td>Respondents&#x27; Responsive Brief on Claim Construction</td>
+  <td>Stephen R. Smith <span class="case-sub">for Tower Semiconductor Ltd., Tower Partners Semiconductor, Ltd., Tower Semiconductor Italy S.r.l., Tower US Holdings, Inc., Tower Semiconductor San Antonio, Inc., Tower Semiconductor NPB Holdings, Inc., Tower Semiconductor Newport Beach, Inc., and Newport Fab LLC</span></td>
+  <td class="attachments"><span class="case-sub">&mdash;</span></td>
+</tr>
+<tr>
+  <td class="mono">02/09/2026</td>
+  <td>PO Subscription</td>
+  <td>Agreement to Be Bound by the Protective Order for Shukri Souri</td>
+  <td>Bert C. Reiser <span class="case-sub">for GlobalFoundries U.S. Inc.</span></td>
+  <td class="attachments"><a href="../../data/documents/337-1500/893714_2615679_2615679.pdf" target="_blank" rel="noopener">2615679.pdf</a></td>
+</tr>
+<tr>
+  <td class="mono">31/08/2026</td>
+  <td>Motion</td>
+  <td>Complainant GlobalFoundries U.S. Inc.&#x27;s Motion for Leave to Amend the Complaint and Notice of Investigation</td>
+  <td>Bert C. Reiser <span class="case-sub">for GlobalFoundries U.S. Inc.</span></td>
+  <td class="attachments"><span class="case-sub">&mdash;</span></td>
+</tr>
+<tr>
+  <td class="mono">28/08/2026</td>
+  <td>PO Subscription</td>
+  <td>Agreement To Be Bound by the Protective Order of Suman Datta</td>
+  <td>Stephen R. Smith <span class="case-sub">for Tower Semiconductor Ltd., Tower Partners Semiconductor Co., Ltd., Tower Semiconductor Italy S.r.l., Tower US Holdings, Inc., Tower Semiconductor San Antonio, Inc., Tower Semiconductor NPB Holdings, Inc., Tower Semiconductor Newport Beach, Inc., and Newport Fab LLC</span></td>
+  <td class="attachments"><a href="../../data/documents/337-1500/893190_2614193_2614193.pdf" target="_blank" rel="noopener">2614193.pdf</a></td>
+</tr>
+<tr>
+  <td class="mono">28/08/2026</td>
+  <td>PO Subscription</td>
+  <td>Agreement to Be Bound by the Protective Order of Noel Rooney</td>
+  <td>Bert C. Reiser <span class="case-sub">for GlobalFoundries U.S. Inc.</span></td>
+  <td class="attachments"><a href="../../data/documents/337-1500/893180_2614076_2614076.pdf" target="_blank" rel="noopener">2614076.pdf</a></td>
+</tr>
+<tr>
+  <td class="mono">25/08/2026</td>
+  <td>Brief Filed With ALJ</td>
+  <td>Complainant&#x27;s Opening Claim Construction Brief</td>
+  <td>Bert C. Reiser <span class="case-sub">for GlobalFoundries U.S. Inc.</span></td>
+  <td class="attachments"><a href="../../data/documents/337-1500/892710_2612311_2612311.pdf" target="_blank" rel="noopener">2612311.pdf</a></td>
+</tr>
+<tr>
+  <td class="mono">25/08/2026</td>
+  <td>Brief Filed With ALJ</td>
+  <td>Respondents&#x27; Opening Brief on Claim Construction</td>
+  <td>Stephen R. Smith <span class="case-sub">for Tower Semiconductor Ltd., Tower Partners Semiconductor, Ltd., Tower Semiconductor Italy S.r.l., Tower US Holdings, Inc., Tower Semiconductor San Antonio, Inc., Tower Semiconductor NPB Holdings, Inc., Tower Semiconductor Newport Beach, Inc., and Newport Fab LLC</span></td>
+  <td class="attachments"><span class="case-sub">&mdash;</span></td>
+</tr>
+<tr>
+  <td class="mono">24/08/2026</td>
+  <td>Other</td>
+  <td>Chart of Agreed and Disputed Constructions</td>
+  <td>Bert C. Reiser <span class="case-sub">for GlobalFoundries U.S. Inc., Tower Semiconductor Ltd., Tower Partners Semiconductor Co., Ltd., Tower Semiconductor Italy S.r.l., Tower US Holdings, Inc., Tower Semiconductor San Antonio, Inc., Tower Semiconductor NPB Holdings, Inc., Tower Semiconductor Newport Beach, Inc., and Newport Fab LLC</span></td>
+  <td class="attachments"><a href="../../data/documents/337-1500/892542_2611853_2611853.pdf" target="_blank" rel="noopener">2611853.pdf</a></td>
+</tr>
+<tr>
+  <td class="mono">21/08/2026</td>
+  <td>Witness List</td>
+  <td>Complainant GlobalFoundries U.S. Inc.&#x27;s Identification of Expert Witnesses</td>
+  <td>Bert C. Reiser <span class="case-sub">for GlobalFoundries U.S. Inc.</span></td>
+  <td class="attachments"><a href="../../data/documents/337-1500/892378_2611169_2611169.pdf" target="_blank" rel="noopener">2611169.pdf</a></td>
+</tr>
+<tr>
+  <td class="mono">21/08/2026</td>
+  <td>Witness List</td>
+  <td>Respondents’ Identification of Expert Witnesses for Issues Other Than Claim Construction</td>
+  <td>Stephen R. Smith <span class="case-sub">for Tower Semiconductor Ltd., Tower Partners Semiconductor Co., Ltd., Tower Semiconductor Italy S.r.l., Tower US Holdings, Inc., Tower Semiconductor San Antonio, Inc., Tower Semiconductor NPB Holdings, Inc., Tower Semiconductor Newport Beach, Inc., and Newport Fab LLC</span></td>
+  <td class="attachments"><a href="../../data/documents/337-1500/892333_2610779_2610779.pdf" target="_blank" rel="noopener">2610779.pdf</a></td>
+</tr>
+<tr>
+  <td class="mono">18/08/2026</td>
+  <td>PO Subscription</td>
+  <td>Agreement to Be Bound by the Protective Order of Sanjay Banerjee, Jeffrey Bokor, David Choi, and Frank Ernst</td>
+  <td>Stephen R. Smith <span class="case-sub">for Tower Semiconductor Ltd., Tower Partners Semiconductor Co., Ltd., Tower Semiconductor Italy S.r.l., Tower US Holdings, Inc., Tower Semiconductor San Antonio, Inc., Tower Semiconductor NPB Holdings, Inc., Tower Semiconductor Newport Beach, Inc., and Newport Fab LLC</span></td>
+  <td class="attachments"><a href="../../data/documents/337-1500/891993_2608721_2608721.pdf" target="_blank" rel="noopener">2608721.pdf</a></td>
+</tr>
+<tr>
+  <td class="mono">17/08/2026</td>
+  <td>Witness List</td>
+  <td>Complainant GlobalFoundries U.S. Inc.&#x27;s Identification of Expert Witnesses for Claim Construction</td>
+  <td>Bert C. Reiser <span class="case-sub">for GlobalFoundries U.S. Inc.</span></td>
+  <td class="attachments"><a href="../../data/documents/337-1500/891905_2608428_2608428.pdf" target="_blank" rel="noopener">2608428.pdf</a></td>
+</tr>
+<tr>
+  <td class="mono">17/08/2026</td>
+  <td>Witness List</td>
+  <td>Respondents&#x27; Identification of Expert Witnesses for Claim Construction</td>
+  <td>Stephen R. Smith <span class="case-sub">for Tower Semiconductor Ltd., Tower Partners Semiconductor, Ltd., Tower Semiconductor Italy S.r.l., Tower US Holdings, Inc., Tower Semiconductor San Antonio, Inc., Tower Semiconductor NPB Holdings, Inc., Tower Semiconductor Newport Beach, Inc., and Newport Fab LLC</span></td>
+  <td class="attachments"><a href="../../data/documents/337-1500/891904_2608426_2608426.pdf" target="_blank" rel="noopener">2608426.pdf</a></td>
+</tr>
+<tr>
+  <td class="mono">04/08/2026</td>
+  <td>PO Subscription</td>
+  <td>Agreement to Be Bound by the Protective Order of Carla Mulhern</td>
+  <td>Bert C. Reiser <span class="case-sub">for GlobalFoundries U.S. Inc.</span></td>
+  <td class="attachments"><a href="../../data/documents/337-1500/890408_2599148_2599148.pdf" target="_blank" rel="noopener">2599148.pdf</a></td>
+</tr>
+<tr>
+  <td class="mono">03/08/2026</td>
+  <td>PO Subscription</td>
+  <td>Agreement to Be Bound by the Protective Order of Kyle Smith</td>
+  <td>Bert C. Reiser <span class="case-sub">for GlobalFoundries U.S. Inc.</span></td>
+  <td class="attachments"><a href="../../data/documents/337-1500/890239_2598575_2598575.pdf" target="_blank" rel="noopener">2598575.pdf</a></td>
+</tr>
+<tr>
+  <td class="mono">27/07/2026</td>
+  <td>PO Subscription</td>
+  <td>Agreement to Be Bound by the Protective Order for Brooke Purinton</td>
+  <td>Bert C. Reiser <span class="case-sub">for GlobalFoundries U.S. Inc.</span></td>
+  <td class="attachments"><a href="../../data/documents/337-1500/889404_2594707_2594707.pdf" target="_blank" rel="noopener">2594707.pdf</a></td>
+</tr>
+<tr>
+  <td class="mono">24/07/2026</td>
+  <td>PO Subscription</td>
+  <td>Agreement to Be Bound by the Protective Order of Julia Rowe</td>
+  <td>Stephen R. Smith <span class="case-sub">for Tower Semiconductor Ltd., Tower Partners Semiconductor Co., Ltd., Tower Semiconductor Italy S.r.l., Tower US Holdings, Inc., Tower Semiconductor San Antonio, Inc., Tower Semiconductor NPB Holdings, Inc., Tower Semiconductor Newport Beach, Inc., and Newport Fab LLC</span></td>
+  <td class="attachments"><a href="../../data/documents/337-1500/889341_2594339_2594339.pdf" target="_blank" rel="noopener">2594339.pdf</a></td>
+</tr>
+<tr>
+  <td class="mono">21/07/2026</td>
+  <td>PO Subscription</td>
+  <td>Agreement to Be Bound by the Protective Order of Stephen R. Smith, Eamonn Gardner, Phillip Morton, Matthew Brigham, Samuel Whitt, Patrick Lauppe, Matthew Ritter, and David Yun</td>
+  <td>Stephen R. Smith <span class="case-sub">for Tower Semiconductor Ltd., Tower Partners Semiconductor Co., Ltd., Tower Semiconductor Italy S.r.l., Tower US Holdings, Inc., Tower Semiconductor San Antonio, Inc., Tower Semiconductor NPB Holdings, Inc., Tower Semiconductor Newport Beach, Inc., and Newport Fab LLC</span></td>
+  <td class="attachments"><a href="../../data/documents/337-1500/888816_2589737_2589737.pdf" target="_blank" rel="noopener">2589737.pdf</a></td>
+</tr>
+<tr>
+  <td class="mono">20/07/2026</td>
+  <td>PO Subscription</td>
+  <td>Agreement to Be Bound by the Protective Order of John Bravman and David Kuan-Yu Liu</td>
+  <td>Bert C. Reiser <span class="case-sub">for GlobalFoundries U.S. Inc.</span></td>
+  <td class="attachments"><a href="../../data/documents/337-1500/888585_2585905_2585905.pdf" target="_blank" rel="noopener">2585905.pdf</a></td>
+</tr>
+<tr>
+  <td class="mono">17/07/2026</td>
+  <td>PO Subscription</td>
+  <td>Agreement to Be Bound by the Protective Order of Scott Thompson</td>
+  <td>Bert C. Reiser <span class="case-sub">for GlobalFoundries U.S. Inc.</span></td>
+  <td class="attachments"><a href="../../data/documents/337-1500/888380_2584842_2584842.pdf" target="_blank" rel="noopener">2584842.pdf</a></td>
+</tr>
+<tr>
+  <td class="mono">14/07/2026</td>
+  <td>PO Subscription</td>
+  <td>Agreement to Be Bound by the Protective Order of Clement Naples, Bert Reiser, Thomas Yeh, Charity Lee, Daniel Todd, Steven Peters, Socrates Boutsikaris, Akosua Kyereme-Tuah, Ruthie Wu, Amy Thomas, Mandy (WM) Chan, Jenna Hong, and Ayo Otukoya</td>
+  <td>Bert C. Reiser <span class="case-sub">for GlobalFoundries U.S. Inc.</span></td>
+  <td class="attachments"><a href="../../data/documents/337-1500/887966_2580550_2580550.pdf" target="_blank" rel="noopener">2580550.pdf</a></td>
+</tr>
+<tr>
+  <td class="mono">13/07/2026</td>
+  <td>PO Subscription</td>
+  <td>Agreement to Be Bound by the Protective Order of Sami Al-Marzoog and Marguerite Smith</td>
+  <td>Bert C. Reiser <span class="case-sub">for GlobalFoundries U.S. Inc.</span></td>
+  <td class="attachments"><a href="../../data/documents/337-1500/887825_2579672_2579672.pdf" target="_blank" rel="noopener">2579672.pdf</a></td>
+</tr>
+<tr>
+  <td class="mono">08/07/2026</td>
+  <td>Transcript</td>
+  <td>Case Management Conference (Pages 1-55)</td>
+  <td>Clark S. Cheney <span class="case-sub">for Chief Administrative Law Judge</span></td>
+  <td class="attachments"><a href="../../data/documents/337-1500/887815_2579653_2579653.pdf" target="_blank" rel="noopener">2579653.pdf</a></td>
+</tr>
+<tr>
+  <td class="mono">29/06/2026</td>
+  <td>Order</td>
+  <td>Granting Joint Motion to Amend the Protective Order</td>
+  <td>Clark S. Cheney <span class="case-sub">for Chief Administrative Law Judge</span></td>
+  <td class="attachments"><a href="../../data/documents/337-1500/886489_2573615_2573615.pdf" target="_blank" rel="noopener">2573615.pdf</a><a href="../../data/documents/337-1500/886489_2574110_2574110.pdf" target="_blank" rel="noopener">2574110.pdf</a></td>
+</tr>
+<tr>
+  <td class="mono">26/06/2026</td>
+  <td>Motion</td>
+  <td>Joint Supplement to the Joint Motion to Amend the Protective Order</td>
+  <td>Bert C. Reiser <span class="case-sub">for GlobalFoundries U.S. Inc., Tower Semiconductor Ltd., Tower Partners Semiconductor Co., Ltd., Tower Semiconductor Italy S.r.l., Tower US Holdings, Inc., Tower Semiconductor San Antonio, Inc., Tower Semiconductor NPB Holdings, Inc., Tower Semiconductor Newport Beach, Inc., and Newport Fab LLC</span></td>
+  <td class="attachments"><a href="../../data/documents/337-1500/886328_2572926_2572926.pdf" target="_blank" rel="noopener">2572926.pdf</a></td>
+</tr>
+<tr>
+  <td class="mono">24/06/2026</td>
+  <td>Voting Sheet</td>
+  <td>Unknown</td>
+  <td>Lisa R. Barton <span class="case-sub">for Office of the Secretary</span></td>
+  <td class="attachments"><a href="../../data/documents/337-1500/886564_2574176_2574176.pdf" target="_blank" rel="noopener">2574176.pdf</a></td>
+</tr>
+<tr>
+  <td class="mono">24/06/2026</td>
+  <td>Notice</td>
+  <td>Commission Determination Not to Review an Initial Determination Setting a 19-Month Target Date</td>
+  <td>Lisa R. Barton <span class="case-sub">for Office of the Secretary</span></td>
+  <td class="attachments"><a href="../../data/documents/337-1500/886092_2571460_2571460.pdf" target="_blank" rel="noopener">2571460.pdf</a><a href="../../data/documents/337-1500/886092_2571935_2571935.pdf" target="_blank" rel="noopener">2571935.pdf</a></td>
+</tr>
+<tr>
+  <td class="mono">23/06/2026</td>
+  <td>Motion</td>
+  <td>Joint Motion to Amend the Protective Order</td>
+  <td>Bert C. Reiser <span class="case-sub">for GlobalFoundries U.S. Inc., Tower Semiconductor Ltd., Tower Partners Semiconductor, Ltd., Tower Semiconductor Italy S.r.l., Tower US Holdings, Inc., Tower Semiconductor San Antonio, Inc., Tower Semiconductor NPB Holdings, Inc., Tower Semiconductor Newport Beach, Inc., and Newport Fab LLC</span></td>
+  <td class="attachments"><a href="../../data/documents/337-1500/885985_2571037_2571037.pdf" target="_blank" rel="noopener">2571037.pdf</a></td>
+</tr>
+<tr>
+  <td class="mono">09/06/2026</td>
+  <td>Order</td>
+  <td>Procedural Schedule</td>
+  <td>Clark S. Cheney <span class="case-sub">for Chief Administrative Law Judge</span></td>
+  <td class="attachments"><a href="../../data/documents/337-1500/884541_2560283_2560283.pdf" target="_blank" rel="noopener">2560283.pdf</a><a href="../../data/documents/337-1500/884541_2560388_2560388.pdf" target="_blank" rel="noopener">2560388.pdf</a></td>
+</tr>
+<tr>
+  <td class="mono">02/06/2026</td>
+  <td>Transcript</td>
+  <td>Preliminary Conference (Pages 1-54)</td>
+  <td>Clark S. Cheney <span class="case-sub">for Chief Administrative Law Judge</span></td>
+  <td class="attachments"><a href="../../data/documents/337-1500/884189_2558143_2558143.pdf" target="_blank" rel="noopener">2558143.pdf</a></td>
+</tr>
+<tr>
+  <td class="mono">02/06/2026</td>
+  <td>Answer to Complaint <span class="pill pill-blue">Complaint</span></td>
+  <td>Response of Respondents Tower Semiconductor Ltd., Tower Partners Semiconductor Co., Ltd., Tower Semiconductor Italy S.r.l., Tower US Holdings, Inc., Tower Semiconductor San Antonio, Inc., Tower Semiconductor NPB Holdings, Inc., Tower Semiconductor Newport Beach, Inc., and Newport Fab LLC to the Complaint and Notice of Investigation</td>
+  <td>Stephen R. Smith <span class="case-sub">for Tower Semiconductor Ltd., Tower Partners Semiconductor Co., Ltd., Tower Semiconductor Italy S.r.l., Tower US Holdings, Inc., Tower Semiconductor San Antonio, Inc., Tower Semiconductor NPB Holdings, Inc., Tower Semiconductor Newport Beach, Inc., and Newport Fab LLC</span></td>
+  <td class="attachments"><a href="../../data/documents/337-1500/884005_2557384_2557384.pdf" target="_blank" rel="noopener">2557384.pdf</a><a href="../../data/documents/337-1500/884005_2557385_2557385.pdf" target="_blank" rel="noopener">2557385.pdf</a></td>
+</tr>
+<tr>
+  <td class="mono">02/06/2026</td>
+  <td>Answer to Complaint <span class="pill pill-blue">Complaint</span></td>
+  <td>Response of Respondents Tower Semiconductor Ltd., Tower Partners Semiconductor Co., Ltd., Tower Semiconductor Italy S.r.l., Tower US Holdings, Inc., Tower Semiconductor San Antonio, Inc., Tower Semiconductor NPB Holdings, Inc., Tower Semiconductor Newport Beach, Inc., and Newport Fab LLC to the Complaint and Notice of Investigation</td>
+  <td>Stephen R. Smith <span class="case-sub">for Tower Semiconductor Ltd., Tower Partners Semiconductor Co., Ltd., Tower Semiconductor Italy S.r.l.., Tower US Holdings, Inc., Tower Semiconductor San Antonio, Inc., Tower Semiconductor NPB Holdings, Inc., Tower Semiconductor Newport Beach, Inc., and Newport Fab LLC</span></td>
+  <td class="attachments"><span class="case-sub">&mdash;</span></td>
+</tr>
+<tr>
+  <td class="mono">27/05/2026</td>
+  <td>ID/RD - Other Than Final on Violation</td>
+  <td>Initial Determination Setting 19-Month Target Date and Preliminary Conference</td>
+  <td>Clark S. Cheney <span class="case-sub">for Chief Administrative Law Judge</span></td>
+  <td class="attachments"><a href="../../data/documents/337-1500/883329_2553893_2553893.pdf" target="_blank" rel="noopener">2553893.pdf</a><a href="../../data/documents/337-1500/883329_2553942_2553942.pdf" target="_blank" rel="noopener">2553942.pdf</a></td>
+</tr>
+<tr>
+  <td class="mono">27/05/2026</td>
+  <td>Order</td>
+  <td>Revised Ground Rules</td>
+  <td>Clark S. Cheney <span class="case-sub">for Chief Administrative Law Judge</span></td>
+  <td class="attachments"><a href="../../data/documents/337-1500/883320_2553878_2553878.pdf" target="_blank" rel="noopener">2553878.pdf</a><a href="../../data/documents/337-1500/883320_2553892_2553892.pdf" target="_blank" rel="noopener">2553892.pdf</a></td>
+</tr>
+<tr>
+  <td class="mono">20/05/2026</td>
+  <td>Order</td>
+  <td>Granting Respondents an Extension of Time to Respond to the Complaint and Notice of Investigation</td>
+  <td>Clark S. Cheney <span class="case-sub">for Chief Administrative Law Judge</span></td>
+  <td class="attachments"><a href="../../data/documents/337-1500/882715_2550999_2550999.pdf" target="_blank" rel="noopener">2550999.pdf</a><a href="../../data/documents/337-1500/882715_2551007_2551007.pdf" target="_blank" rel="noopener">2551007.pdf</a></td>
+</tr>
+<tr>
+  <td class="mono">15/05/2026</td>
+  <td>PO Subscription</td>
+  <td>Agreement to Be Bound by the Protective Order of Jenna Hong and Ayo Otukoya</td>
+  <td>Bert C. Reiser <span class="case-sub">for GlobalFoundries U.S. Inc.</span></td>
+  <td class="attachments"><a href="../../data/documents/337-1500/882382_2548831_2548831.pdf" target="_blank" rel="noopener">2548831.pdf</a></td>
+</tr>
+<tr>
+  <td class="mono">14/05/2026</td>
+  <td>Discovery Statement</td>
+  <td>Joint Discovery Statement</td>
+  <td>Bert C. Reiser <span class="case-sub">for GlobalFoundries U.S. Inc., Tower Semiconductor Ltd., Tower Partners Semiconductor Co., Ltd., Tower Semiconductor Italy S.r.l., Tower US Holdings, Inc., Tower Semiconductor San Antonio, Inc., Tower Semiconductor NPB Holdings, Inc., Tower Semiconductor Newport Beach, Inc., and Newport Fab LLC</span></td>
+  <td class="attachments"><a href="../../data/documents/337-1500/882278_2548442_2548442.pdf" target="_blank" rel="noopener">2548442.pdf</a></td>
+</tr>
+<tr>
+  <td class="mono">13/05/2026</td>
+  <td>Motion</td>
+  <td>Respondents&#x27; Unopposed Motion for Extension of Time to File Responses to the Complaint and Notice of Institution of Investigation</td>
+  <td>Stephen R. Smith <span class="case-sub">for Tower Semiconductor Ltd., Tower Partners Semiconductor Co., Ltd., Tower Semiconductor Italy S.r.l., Tower US Holdings, Inc., Tower Semiconductor San Antonio, Inc., Tower Semiconductor NPB Holdings, Inc., Tower Semiconductor Newport Beach, Inc., and Newport Fab LLC</span></td>
+  <td class="attachments"><a href="../../data/documents/337-1500/882163_2548135_2548135.pdf" target="_blank" rel="noopener">2548135.pdf</a></td>
+</tr>
+<tr>
+  <td class="mono">05/05/2026</td>
+  <td>Notice</td>
+  <td>Reassignment to CALJ Cheney</td>
+  <td>Clark S. Cheney <span class="case-sub">for Chief Administrative Law Judge</span></td>
+  <td class="attachments"><a href="../../data/documents/337-1500/881340_2542995_2542995.pdf" target="_blank" rel="noopener">2542995.pdf</a><a href="../../data/documents/337-1500/881340_2543012_2543012.pdf" target="_blank" rel="noopener">2543012.pdf</a></td>
+</tr>
+<tr>
+  <td class="mono">05/05/2026</td>
+  <td>PO Subscription</td>
+  <td>Agreement to Be Bound by the Protective Order for Ruthie Wu</td>
+  <td>Bert C. Reiser <span class="case-sub">for GlobalFoundries U.S. Inc.</span></td>
+  <td class="attachments"><a href="../../data/documents/337-1500/881238_2542482_2542482.pdf" target="_blank" rel="noopener">2542482.pdf</a></td>
+</tr>
+<tr>
+  <td class="mono">01/05/2026</td>
+  <td>PO Subscription</td>
+  <td>Agreement to Be Bound by the Protective Order of Stephen R. Smith, Eamonn Gardner, Phillip Morton, Matthew Brigham, Samuel Whitt, Patrick Lauppe, Matthew Ritter, and David Yun</td>
+  <td>Stephen R. Smith <span class="case-sub">for Tower Semiconductor Ltd., Tower Partners Semiconductor, Ltd., Tower Semiconductor Italy S.r.l., Tower US Holdings, Inc., Tower Semiconductor San Antonio, Inc., Tower Semiconductor NPB Holdings, Inc., Tower Semiconductor Newport Beach, Inc., and Newport Fab LLC</span></td>
+  <td class="attachments"><a href="../../data/documents/337-1500/881006_2541111_2541111.pdf" target="_blank" rel="noopener">2541111.pdf</a></td>
+</tr>
+<tr>
+  <td class="mono">01/05/2026</td>
+  <td>PO Subscription</td>
+  <td>Agreement to Be Bound by the Protective Order of Clement Naples, Bert Reiser, Thomas Yeh, Sami Al-Marzoog, Charity Lee, Daniel Todd, Steven Peters, Socrates Boutsikaris, Akosua Kyereme-Tuah, Amy Thomas, Mandy (WM) Chan, and Marguerite Smith</td>
+  <td>Bert C. Reiser <span class="case-sub">for GlobalFoundries U.S. Inc.</span></td>
+  <td class="attachments"><a href="../../data/documents/337-1500/880991_2541002_2541002.pdf" target="_blank" rel="noopener">2541002.pdf</a></td>
+</tr>
+<tr>
+  <td class="mono">01/05/2026</td>
+  <td>Notice of Appearance</td>
+  <td>Notice of Appearance of Cleary Gottlieb Steen &amp; Hamilton LLP on Behalf of GlobalFoundries U.S. Inc.; Designation of Bert C. Reiser as Lead Counsel</td>
+  <td>Bert C. Reiser <span class="case-sub">for GlobalFoundries U.S. Inc.</span></td>
+  <td class="attachments"><a href="../../data/documents/337-1500/880975_2540976_2540976.pdf" target="_blank" rel="noopener">2540976.pdf</a></td>
+</tr>
+<tr>
+  <td class="mono">30/04/2026</td>
+  <td>Notice</td>
+  <td>F.R. Notice of Institution of Investigation</td>
+  <td>Lisa R. Barton <span class="case-sub">for Office of the Secretary</span></td>
+  <td class="attachments"><a href="../../data/documents/337-1500/881248_2542543_2542543.pdf" target="_blank" rel="noopener">2542543.pdf</a></td>
+</tr>
+<tr>
+  <td class="mono">30/04/2026</td>
+  <td>Order</td>
+  <td>Notice of Ground Rules; Order Setting Date for Submission of Joint Discovery Statement</td>
+  <td>Cameron R. Elliot <span class="case-sub">for Administrative Law Judge</span></td>
+  <td class="attachments"><a href="../../data/documents/337-1500/880780_2540208_2540208.pdf" target="_blank" rel="noopener">2540208.pdf</a></td>
+</tr>
+<tr>
+  <td class="mono">30/04/2026</td>
+  <td>Order</td>
+  <td>Protective Order</td>
+  <td>Cameron R. Elliot <span class="case-sub">for Administrative Law Judge</span></td>
+  <td class="attachments"><a href="../../data/documents/337-1500/880779_2540207_2540207.pdf" target="_blank" rel="noopener">2540207.pdf</a></td>
+</tr>
+<tr>
+  <td class="mono">28/04/2026</td>
+  <td>Request for Confidential Materials</td>
+  <td>Request for Confidential Information on Behalf of Tower Semiconductor Ltd., Tower Partners Semiconductor, Ltd., Tower Semiconductor Italy S.r.l., Tower US Holdings, Inc., Tower Semiconductor San Antonio, Inc., Tower Semiconductor NPB Holdings, Inc., Tower Semiconductor Newport Beach, Inc., and Newport Fab LLC</td>
+  <td>Stephen R. Smith <span class="case-sub">for Tower Semiconductor Ltd., Tower Partners Semiconductor, Ltd., Tower Semiconductor Italy S.r.l., Tower US Holdings, Inc., Tower Semiconductor San Antonio, Inc., Tower Semiconductor NPB Holdings, Inc., Tower Semiconductor Newport Beach, Inc., and Newport Fab LLC</span></td>
+  <td class="attachments"><a href="../../data/documents/337-1500/880499_2539003_2539003.pdf" target="_blank" rel="noopener">2539003.pdf</a></td>
+</tr>
+<tr>
+  <td class="mono">28/04/2026</td>
+  <td>Notice of Appearance</td>
+  <td>Notice of Appearance of Cooley LLP on Behalf of Tower Semiconductor Ltd., Tower Partners Semiconductor, Ltd., Tower Semiconductor Italy S.r.l., Tower US Holdings, Inc., Tower Semiconductor San Antonio, Inc., Tower Semiconductor NPB Holdings, Inc., Tower Semiconductor Newport Beach, Inc., and Newport Fab LLC; Designation of Stephen R. Smith as Lead Counsel</td>
+  <td>Stephen R. Smith <span class="case-sub">for Tower Semiconductor Ltd., Tower Partners Semiconductor, Ltd., Tower Semiconductor Italy S.r.l., Tower US Holdings, Inc., Tower Semiconductor San Antonio, Inc., Tower Semiconductor NPB Holdings, Inc., Tower Semiconductor Newport Beach, Inc., and Newport Fab LLC</span></td>
+  <td class="attachments"><a href="../../data/documents/337-1500/880498_2539001_2539001.pdf" target="_blank" rel="noopener">2539001.pdf</a></td>
+</tr>
+<tr>
+  <td class="mono">28/04/2026</td>
+  <td>Notice</td>
+  <td>Assignment of ALJ Elliot</td>
+  <td>Clark S. Cheney <span class="case-sub">for Chief Administrative Law Judge</span></td>
+  <td class="attachments"><a href="../../data/documents/337-1500/880431_2538889_2538889.pdf" target="_blank" rel="noopener">2538889.pdf</a></td>
+</tr>
+<tr>
+  <td class="mono">28/04/2026</td>
+  <td>Notice</td>
+  <td>Institution of Investigation</td>
+  <td>Lisa R. Barton <span class="case-sub">for Office of the Secretary</span></td>
+  <td class="attachments"><a href="../../data/documents/337-1500/880429_2538884_2538884.pdf" target="_blank" rel="noopener">2538884.pdf</a></td>
+</tr>
+<tr>
+  <td class="mono">27/04/2026</td>
+  <td>Voting Sheet</td>
+  <td>Unknown</td>
+  <td>Lisa R. Barton <span class="case-sub">for Office of the Secretary</span></td>
+  <td class="attachments"><a href="../../data/documents/337-1500/881569_2544510_2544510.pdf" target="_blank" rel="noopener">2544510.pdf</a></td>
+</tr>
+<tr>
+  <td class="mono">08/04/2026</td>
+  <td>Comments/Response to Comments</td>
+  <td>Third Party Statement on the Public Interest of a New Policy, Inc.</td>
+  <td>Josh Paul <span class="case-sub">for A New Policy, Inc.</span></td>
+  <td class="attachments"><a href="../../data/documents/337-1500/878279_2529487_2529487.pdf" target="_blank" rel="noopener">2529487.pdf</a></td>
+</tr>
+<tr>
+  <td class="mono">01/04/2026</td>
+  <td>Complaint <span class="pill pill-blue">Complaint</span></td>
+  <td>First Public Supplement to the Complaint</td>
+  <td>Bert C. Reiser <span class="case-sub">for GlobalFoundries U.S. Inc.</span></td>
+  <td class="attachments"><a href="../../data/documents/337-1500/877563_2525687_2525687.pdf" target="_blank" rel="noopener">2525687.pdf</a></td>
+</tr>
+<tr>
+  <td class="mono">31/03/2026</td>
+  <td>Notice</td>
+  <td>F.R. Notice of Receipt of Complaint; Solicitation of Comments Relating to the Public Interest</td>
+  <td>Lisa R. Barton <span class="case-sub">for Office of the Secretary</span></td>
+  <td class="attachments"><a href="../../data/documents/337-1500/877409_2525300_2525300.pdf" target="_blank" rel="noopener">2525300.pdf</a></td>
+</tr>
+<tr>
+  <td class="mono">26/03/2026</td>
+  <td>Notice</td>
+  <td>Receipt of Complaint; Solicitation of Comments Relating to the Public Interest</td>
+  <td>Lisa R. Barton <span class="case-sub">for Office of the Secretary</span></td>
+  <td class="attachments"><a href="../../data/documents/337-1500/876688_2523069_2523069.pdf" target="_blank" rel="noopener">2523069.pdf</a></td>
+</tr>
+<tr>
+  <td class="mono">26/03/2026</td>
+  <td>Complaint <span class="pill pill-blue">Complaint</span></td>
+  <td>Appendices A-H</td>
+  <td>Bert C. Reiser <span class="case-sub">for Globalfoundries U.S. Inc.</span></td>
+  <td class="attachments"><a href="../../data/documents/337-1500/876603_2522873_2522873.pdf" target="_blank" rel="noopener">2522873.pdf</a><a href="../../data/documents/337-1500/876603_2522874_2522874.pdf" target="_blank" rel="noopener">2522874.pdf</a><a href="../../data/documents/337-1500/876603_2522875_2522875.pdf" target="_blank" rel="noopener">2522875.pdf</a><a href="../../data/documents/337-1500/876603_2522876_2522876.pdf" target="_blank" rel="noopener">2522876.pdf</a><a href="../../data/documents/337-1500/876603_2522877_2522877.pdf" target="_blank" rel="noopener">2522877.pdf</a><a href="../../data/documents/337-1500/876603_2522878_2522878.pdf" target="_blank" rel="noopener">2522878.pdf</a><a href="../../data/documents/337-1500/876603_2522879_2522879.pdf" target="_blank" rel="noopener">2522879.pdf</a><a href="../../data/documents/337-1500/876603_2522880_2522880.pdf" target="_blank" rel="noopener">2522880.pdf</a><a href="../../data/documents/337-1500/876603_2522881_2522881.pdf" target="_blank" rel="noopener">2522881.pdf</a><a href="../../data/documents/337-1500/876603_2522882_2522882.pdf" target="_blank" rel="noopener">2522882.pdf</a></td>
+</tr>
+<tr>
+  <td class="mono">26/03/2026</td>
+  <td>Complaint <span class="pill pill-blue">Complaint</span></td>
+  <td>Confidential Exhibits to the Complaint</td>
+  <td>Bert C. Reiser <span class="case-sub">for GlobalFoundries U.S. Inc.</span></td>
+  <td class="attachments"><span class="case-sub">&mdash;</span></td>
+</tr>
+<tr>
+  <td class="mono">26/03/2026</td>
+  <td>Complaint <span class="pill pill-blue">Complaint</span></td>
+  <td>Public Complaint and Exhibits</td>
+  <td>Bert C. Reiser <span class="case-sub">for GlobalFoundries U.S. Inc.</span></td>
+  <td class="attachments"><a href="../../data/documents/337-1500/876598_2522756_2522756.pdf" target="_blank" rel="noopener">2522756.pdf</a><a href="../../data/documents/337-1500/876598_2522757_2522757.pdf" target="_blank" rel="noopener">2522757.pdf</a><a href="../../data/documents/337-1500/876598_2522758_2522758.pdf" target="_blank" rel="noopener">2522758.pdf</a><a href="../../data/documents/337-1500/876598_2522759_2522759.pdf" target="_blank" rel="noopener">2522759.pdf</a><a href="../../data/documents/337-1500/876598_2522760_2522760.pdf" target="_blank" rel="noopener">2522760.pdf</a><a href="../../data/documents/337-1500/876598_2522761_2522761.pdf" target="_blank" rel="noopener">2522761.pdf</a><a href="../../data/documents/337-1500/876598_2522762_2522762.pdf" target="_blank" rel="noopener">2522762.pdf</a><a href="../../data/documents/337-1500/876598_2522763_2522763.pdf" target="_blank" rel="noopener">2522763.pdf</a><a href="../../data/documents/337-1500/876598_2522764_2522764.pdf" target="_blank" rel="noopener">2522764.pdf</a><a href="../../data/documents/337-1500/876598_2522765_2522765.pdf" target="_blank" rel="noopener">2522765.pdf</a><a href="../../data/documents/337-1500/876598_2522766_2522766.pdf" target="_blank" rel="noopener">2522766.pdf</a><a href="../../data/documents/337-1500/876598_2522767_2522767.pdf" target="_blank" rel="noopener">2522767.pdf</a><a href="../../data/documents/337-1500/876598_2522768_2522768.pdf" target="_blank" rel="noopener">2522768.pdf</a><a href="../../data/documents/337-1500/876598_2522769_2522769.pdf" target="_blank" rel="noopener">2522769.pdf</a><a href="../../data/documents/337-1500/876598_2522770_2522770.pdf" target="_blank" rel="noopener">2522770.pdf</a><a href="../../data/documents/337-1500/876598_2522771_2522771.pdf" target="_blank" rel="noopener">2522771.pdf</a><a href="../../data/documents/337-1500/876598_2522772_2522772.pdf" target="_blank" rel="noopener">2522772.pdf</a><a href="../../data/documents/337-1500/876598_2522773_2522773.pdf" target="_blank" rel="noopener">2522773.pdf</a><a href="../../data/documents/337-1500/876598_2522774_2522774.pdf" target="_blank" rel="noopener">2522774.pdf</a><a href="../../data/documents/337-1500/876598_2522775_2522775.pdf" target="_blank" rel="noopener">2522775.pdf</a><a href="../../data/documents/337-1500/876598_2522776_2522776.pdf" target="_blank" rel="noopener">2522776.pdf</a><a href="../../data/documents/337-1500/876598_2522777_2522777.pdf" target="_blank" rel="noopener">2522777.pdf</a><a href="../../data/documents/337-1500/876598_2522778_2522778.pdf" target="_blank" rel="noopener">2522778.pdf</a><a href="../../data/documents/337-1500/876598_2522779_2522779.pdf" target="_blank" rel="noopener">2522779.pdf</a><a href="../../data/documents/337-1500/876598_2522780_2522780.pdf" target="_blank" rel="noopener">2522780.pdf</a><a href="../../data/documents/337-1500/876598_2522781_2522781.pdf" target="_blank" rel="noopener">2522781.pdf</a><a href="../../data/documents/337-1500/876598_2522782_2522782.pdf" target="_blank" rel="noopener">2522782.pdf</a><a href="../../data/documents/337-1500/876598_2522783_2522783.pdf" target="_blank" rel="noopener">2522783.pdf</a><a href="../../data/documents/337-1500/876598_2522784_2522784.pdf" target="_blank" rel="noopener">2522784.pdf</a><a href="../../data/documents/337-1500/876598_2522785_2522785.pdf" target="_blank" rel="noopener">2522785.pdf</a><a href="../../data/documents/337-1500/876598_2522786_2522786.pdf" target="_blank" rel="noopener">2522786.pdf</a><a href="../../data/documents/337-1500/876598_2522787_2522787.pdf" target="_blank" rel="noopener">2522787.pdf</a><a href="../../data/documents/337-1500/876598_2522788_2522788.pdf" target="_blank" rel="noopener">2522788.pdf</a><a href="../../data/documents/337-1500/876598_2522789_2522789.pdf" target="_blank" rel="noopener">2522789.pdf</a><a href="../../data/documents/337-1500/876598_2522790_2522790.pdf" target="_blank" rel="noopener">2522790.pdf</a><a href="../../data/documents/337-1500/876598_2522791_2522791.pdf" target="_blank" rel="noopener">2522791.pdf</a><a href="../../data/documents/337-1500/876598_2522792_2522792.pdf" target="_blank" rel="noopener">2522792.pdf</a><a href="../../data/documents/337-1500/876598_2522793_2522793.pdf" target="_blank" rel="noopener">2522793.pdf</a><a href="../../data/documents/337-1500/876598_2522794_2522794.pdf" target="_blank" rel="noopener">2522794.pdf</a><a href="../../data/documents/337-1500/876598_2522795_2522795.pdf" target="_blank" rel="noopener">2522795.pdf</a><a href="../../data/documents/337-1500/876598_2522796_2522796.pdf" target="_blank" rel="noopener">2522796.pdf</a><a href="../../data/documents/337-1500/876598_2522797_2522797.pdf" target="_blank" rel="noopener">2522797.pdf</a><a href="../../data/documents/337-1500/876598_2522798_2522798.pdf" target="_blank" rel="noopener">2522798.pdf</a><a href="../../data/documents/337-1500/876598_2522799_2522799.pdf" target="_blank" rel="noopener">2522799.pdf</a><a href="../../data/documents/337-1500/876598_2522800_2522800.pdf" target="_blank" rel="noopener">2522800.pdf</a><a href="../../data/documents/337-1500/876598_2522801_2522801.pdf" target="_blank" rel="noopener">2522801.pdf</a><a href="../../data/documents/337-1500/876598_2522802_2522802.pdf" target="_blank" rel="noopener">2522802.pdf</a><a href="../../data/documents/337-1500/876598_2522803_2522803.pdf" target="_blank" rel="noopener">2522803.pdf</a><a href="../../data/documents/337-1500/876598_2522804_2522804.pdf" target="_blank" rel="noopener">2522804.pdf</a><a href="../../data/documents/337-1500/876598_2522805_2522805.pdf" target="_blank" rel="noopener">2522805.pdf</a><a href="../../data/documents/337-1500/876598_2522806_2522806.pdf" target="_blank" rel="noopener">2522806.pdf</a><a href="../../data/documents/337-1500/876598_2522807_2522807.pdf" target="_blank" rel="noopener">2522807.pdf</a><a href="../../data/documents/337-1500/876598_2522808_2522808.pdf" target="_blank" rel="noopener">2522808.pdf</a><a href="../../data/documents/337-1500/876598_2522809_2522809.pdf" target="_blank" rel="noopener">2522809.pdf</a><a href="../../data/documents/337-1500/876598_2522810_2522810.pdf" target="_blank" rel="noopener">2522810.pdf</a><a href="../../data/documents/337-1500/876598_2522811_2522811.pdf" target="_blank" rel="noopener">2522811.pdf</a><a href="../../data/documents/337-1500/876598_2522812_2522812.pdf" target="_blank" rel="noopener">2522812.pdf</a><a href="../../data/documents/337-1500/876598_2522813_2522813.pdf" target="_blank" rel="noopener">2522813.pdf</a><a href="../../data/documents/337-1500/876598_2522814_2522814.pdf" target="_blank" rel="noopener">2522814.pdf</a><a href="../../data/documents/337-1500/876598_2522815_2522815.pdf" target="_blank" rel="noopener">2522815.pdf</a><a href="../../data/documents/337-1500/876598_2522816_2522816.pdf" target="_blank" rel="noopener">2522816.pdf</a><a href="../../data/documents/337-1500/876598_2522817_2522817.pdf" target="_blank" rel="noopener">2522817.pdf</a><a href="../../data/documents/337-1500/876598_2522818_2522818.pdf" target="_blank" rel="noopener">2522818.pdf</a><a href="../../data/documents/337-1500/876598_2522819_2522819.pdf" target="_blank" rel="noopener">2522819.pdf</a><a href="../../data/documents/337-1500/876598_2522820_2522820.pdf" target="_blank" rel="noopener">2522820.pdf</a><a href="../../data/documents/337-1500/876598_2522821_2522821.pdf" target="_blank" rel="noopener">2522821.pdf</a><a href="../../data/documents/337-1500/876598_2522822_2522822.pdf" target="_blank" rel="noopener">2522822.pdf</a><a href="../../data/documents/337-1500/876598_2522823_2522823.pdf" target="_blank" rel="noopener">2522823.pdf</a><a href="../../data/documents/337-1500/876598_2522824_2522824.pdf" target="_blank" rel="noopener">2522824.pdf</a><a href="../../data/documents/337-1500/876598_2522825_2522825.pdf" target="_blank" rel="noopener">2522825.pdf</a><a href="../../data/documents/337-1500/876598_2522826_2522826.pdf" target="_blank" rel="noopener">2522826.pdf</a><a href="../../data/documents/337-1500/876598_2522827_2522827.pdf" target="_blank" rel="noopener">2522827.pdf</a><a href="../../data/documents/337-1500/876598_2522828_2522828.pdf" target="_blank" rel="noopener">2522828.pdf</a><a href="../../data/documents/337-1500/876598_2522829_2522829.pdf" target="_blank" rel="noopener">2522829.pdf</a><a href="../../data/documents/337-1500/876598_2522830_2522830.pdf" target="_blank" rel="noopener">2522830.pdf</a><a href="../../data/documents/337-1500/876598_2522831_2522831.pdf" target="_blank" rel="noopener">2522831.pdf</a><a href="../../data/documents/337-1500/876598_2522832_2522832.pdf" target="_blank" rel="noopener">2522832.pdf</a><a href="../../data/documents/337-1500/876598_2522833_2522833.pdf" target="_blank" rel="noopener">2522833.pdf</a><a href="../../data/documents/337-1500/876598_2522834_2522834.pdf" target="_blank" rel="noopener">2522834.pdf</a></td>
+</tr>
+      </tbody>
+    </table>
+    
+  </div>
+</div>
+
+<p class="footer-note">Investigation 337-1500 &middot; last refreshed 2026-09-18T17:18:05.471074+00:00.</p>
+
+</div>
+
+</body>
+</html>

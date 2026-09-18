@@ -1,0 +1,52 @@
+{
+  "337-1478": {
+    "date_initiated": "01-13-2026",
+    "docket_number": "3866",
+    "investigation_number": "337-1478",
+    "investigation_phase": "Violation",
+    "investigation_status": "Active",
+    "investigation_type": "Sec 337",
+    "last_refreshed": "2026-09-18T17:16:49.950756+00:00",
+    "title": "Certain Wearable Devices; Inv. No. 337-TA-1478 (Violation)"
+  },
+  "337-1500": {
+    "date_initiated": "04-27-2026",
+    "docket_number": "3896",
+    "investigation_number": "337-1500",
+    "investigation_phase": "Violation",
+    "investigation_status": "Active",
+    "investigation_type": "Sec 337",
+    "last_refreshed": "2026-09-18T17:18:05.471074+00:00",
+    "title": "Certain Semiconductor Devices, Products Containing Same, and Components Thereof; Inv. No. 337-TA-1500 (Violation)"
+  },
+  "337-3933": {
+    "date_initiated": "2026/08/21 16:25:00  (approx., from earliest complaint filing)",
+    "docket_number": "3933",
+    "investigation_number": "337-3933",
+    "investigation_phase": "Violation",
+    "investigation_status": "Preinstitution",
+    "investigation_type": "Sec 337",
+    "last_refreshed": "2026-09-18T17:18:34.492117+00:00",
+    "title": "Certain Powered Rocker-Recliner and Glider-Recliner Mechanisms and Seating Units Containing Same; Inv. No. 337-TA-3933 (Violation)"
+  },
+  "337-3934": {
+    "date_initiated": "2026/09/03 14:56:00  (approx., from earliest complaint filing)",
+    "docket_number": "3934",
+    "investigation_number": "337-3934",
+    "investigation_phase": "Violation",
+    "investigation_status": "Preinstitution",
+    "investigation_type": "Sec 337",
+    "last_refreshed": "2026-09-18T17:18:38.262570+00:00",
+    "title": "Certain Mobile Electronic Devices and Components Thereof; Inv. No. 337-TA-3934 (Violation)"
+  },
+  "337-3936": {
+    "date_initiated": "2026/09/09 08:45:00  (approx., from earliest complaint filing)",
+    "docket_number": "3936",
+    "investigation_number": "337-3936",
+    "investigation_phase": "Violation",
+    "investigation_status": "Preinstitution",
+    "investigation_type": "Sec 337",
+    "last_refreshed": "2026-09-18T17:18:40.559251+00:00",
+    "title": "Certain Vertical Power Delivery Systems, Components Thereof, and Computing Systems Containing the Same; Inv. No. 337-TA-3936 (Violation)"
+  }
+}

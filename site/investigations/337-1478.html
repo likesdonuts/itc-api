@@ -1,0 +1,1421 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Certain Wearable Devices; Inv. No. 337-TA-1478 (Violation) - Docket</title>
+<style>
+:root {
+  color-scheme: light dark;
+  --bg: #f5f6f8;
+  --surface: #ffffff;
+  --surface-2: #fafbfc;
+  --border: #e3e6ea;
+  --ink: #14181f;
+  --muted: #64707d;
+  --accent: #3457d5;
+  --accent-weak: #eef1fd;
+  --shadow: 0 1px 2px rgba(16,24,40,0.04), 0 1px 8px rgba(16,24,40,0.04);
+  --radius: 12px;
+  --green-bg: #e6f6ec; --green-fg: #1b7a3d;
+  --amber-bg: #fef3e0; --amber-fg: #a15c00;
+  --gray-bg: #eef0f3; --gray-fg: #4a5361;
+  --blue-bg: #e8eefd; --blue-fg: #2646b8;
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #0f1216;
+    --surface: #171b21;
+    --surface-2: #1c2129;
+    --border: #2a2f38;
+    --ink: #e7eaee;
+    --muted: #8a94a3;
+    --accent: #7c93f7;
+    --accent-weak: #232a45;
+    --shadow: 0 1px 2px rgba(0,0,0,0.3), 0 1px 8px rgba(0,0,0,0.25);
+    --green-bg: #10301d; --green-fg: #5fd38a;
+    --amber-bg: #35270a; --amber-fg: #f0b545;
+    --gray-bg: #232830; --gray-fg: #aab2bd;
+    --blue-bg: #1c2440; --blue-fg: #9db0f5;
+  }
+}
+* { box-sizing: border-box; }
+body {
+  margin: 0;
+  padding: 2.5rem 1.25rem 4rem;
+  background: var(--bg);
+  color: var(--ink);
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+}
+a { color: var(--accent); text-decoration: none; }
+a:hover { text-decoration: underline; }
+.shell { max-width: 1080px; margin: 0 auto; }
+.hero {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 1rem;
+  flex-wrap: wrap;
+  margin-bottom: 1.75rem;
+}
+.hero .eyebrow {
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  font-size: 0.72rem;
+  font-weight: 600;
+  color: var(--muted);
+  margin: 0 0 0.35rem;
+}
+.hero h1 { margin: 0; font-size: 1.65rem; font-weight: 700; letter-spacing: -0.01em; }
+.hero .subtitle { margin: 0.3rem 0 0; color: var(--muted); font-size: 0.92rem; }
+.stats { display: flex; gap: 0.75rem; flex-wrap: wrap; }
+.stat {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 0.6rem 1rem;
+  min-width: 92px;
+  text-align: center;
+  box-shadow: var(--shadow);
+}
+.stat .n { font-size: 1.35rem; font-weight: 700; line-height: 1.1; }
+.stat .l { font-size: 0.68rem; text-transform: uppercase; letter-spacing: 0.05em; color: var(--muted); margin-top: 0.15rem; }
+.toolbar {
+  display: flex;
+  gap: 0.6rem;
+  flex-wrap: wrap;
+  margin-bottom: 1.1rem;
+}
+.toolbar input[type="search"], .toolbar select {
+  font: inherit;
+  font-size: 0.9rem;
+  padding: 0.55rem 0.8rem;
+  border: 1px solid var(--border);
+  border-radius: 9px;
+  background: var(--surface);
+  color: var(--ink);
+}
+.toolbar input[type="search"] { flex: 1 1 240px; }
+.toolbar select { flex: 0 0 auto; }
+.toolbar input:focus, .toolbar select:focus {
+  outline: none;
+  border-color: var(--accent);
+  box-shadow: 0 0 0 3px var(--accent-weak);
+}
+.card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  overflow: hidden;
+}
+table.list { width: 100%; border-collapse: collapse; }
+table.list th, table.list td {
+  text-align: left;
+  padding: 0.85rem 1.1rem;
+  font-size: 0.88rem;
+  vertical-align: middle;
+}
+table.list thead th {
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--muted);
+  font-weight: 600;
+  background: var(--surface-2);
+  border-bottom: 1px solid var(--border);
+}
+table.list tbody tr { border-bottom: 1px solid var(--border); transition: background 0.1s; }
+table.list tbody tr:last-child { border-bottom: none; }
+table.list tbody tr:hover { background: var(--surface-2); }
+table.list tbody tr[hidden] { display: none; }
+.case-link { display: block; font-weight: 600; color: var(--ink); }
+.case-link:hover { color: var(--accent); text-decoration: none; }
+.case-sub { color: var(--muted); font-size: 0.8rem; margin-top: 0.1rem; }
+.mono { font-variant-numeric: tabular-nums; white-space: nowrap; color: var(--muted); }
+.pill {
+  display: inline-flex;
+  align-items: center;
+  font-size: 0.74rem;
+  font-weight: 600;
+  padding: 0.22rem 0.6rem;
+  border-radius: 999px;
+  white-space: nowrap;
+}
+.pill-green { background: var(--green-bg); color: var(--green-fg); }
+.pill-amber { background: var(--amber-bg); color: var(--amber-fg); }
+.pill-gray { background: var(--gray-bg); color: var(--gray-fg); }
+.pill-blue { background: var(--blue-bg); color: var(--blue-fg); }
+.phase-chip {
+  display: inline-block;
+  font-size: 0.78rem;
+  color: var(--muted);
+}
+.empty-state, .no-results {
+  padding: 3rem 1rem;
+  text-align: center;
+  color: var(--muted);
+  font-size: 0.9rem;
+}
+.footer-note {
+  margin-top: 1.5rem;
+  font-size: 0.78rem;
+  color: var(--muted);
+  text-align: center;
+}
+.back-link {
+  display: inline-block;
+  margin-bottom: 1.1rem;
+  font-size: 0.85rem;
+  color: var(--muted);
+}
+.back-link:hover { color: var(--accent); }
+.detail-hero { margin-bottom: 1.75rem; }
+.detail-hero h1 { margin: 0.3rem 0 0.6rem; font-size: 1.55rem; font-weight: 700; letter-spacing: -0.01em; }
+.detail-hero .badges { display: flex; gap: 0.5rem; flex-wrap: wrap; align-items: center; }
+.section-block { margin-top: 1.75rem; }
+.section-block h2 {
+  font-size: 0.78rem;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--muted);
+  font-weight: 700;
+  margin: 0 0 0.75rem;
+}
+.field-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1.1rem 1.5rem;
+  padding: 1.25rem 1.4rem;
+}
+.field-grid .field-label {
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--muted);
+  margin-bottom: 0.25rem;
+}
+.field-grid .field-value { font-size: 0.95rem; }
+table.list .attachments a { display: block; font-size: 0.85rem; margin-bottom: 0.15rem; }
+table.list .attachments a:last-child { margin-bottom: 0; }
+</style>
+</head>
+<body>
+<div class="shell">
+
+<a class="back-link" href="../index.html">&larr; All investigations</a>
+<div class="detail-hero">
+  <p class="eyebrow">U.S. International Trade Commission &middot; Section 337</p>
+  <h1>Certain Wearable Devices; Inv. No. 337-TA-1478 (Violation)</h1>
+  <div class="badges">
+    <span class="pill pill-green">Active</span>
+    <span class="phase-chip">Violation</span>
+  </div>
+</div>
+
+<div class="section-block">
+  <h2>Investigation Information</h2>
+  <div class="card field-grid">
+    <div><div class="field-label">Investigation Number</div><div class="field-value">337-1478</div></div>
+    <div><div class="field-label">Date Initiated</div><div class="field-value">01-13-2026</div></div>
+    <div><div class="field-label">Investigation Type</div><div class="field-value">Sec 337</div></div>
+    <div><div class="field-label">ITC Docket Number</div><div class="field-value">3866</div></div>
+    <div><div class="field-label">Investigation Phase</div><div class="field-value">Violation</div></div>
+    <div><div class="field-label">Investigation Status</div><div class="field-value">Active</div></div>
+  </div>
+</div>
+
+<div class="section-block">
+  <h2>Parties</h2>
+  <div class="card field-grid">
+    <div><div class="field-label">Administrative Law Judge</div><div class="field-value">Doris Johnson Hines</div></div>
+    <div><div class="field-label">Complainant</div><div class="field-value">Samsung Electronics America, Inc. and Samsung Electronics Co., Ltd.</div></div>
+    <div><div class="field-label">Complainant Attorney</div><div class="field-value">D. Sean Trainor</div></div>
+    <div><div class="field-label">Complainant Law Firm</div><div class="field-value">O&#x27;Melveny &amp; Myers LLP</div></div>
+    <div><div class="field-label">Respondent</div><div class="field-value">Ouraring Inc. and Oura Health Oy</div></div>
+    <div><div class="field-label">Respondent Law Firm</div><div class="field-value">Mayer Brown LLP; Innovative Litigation Solutions LLC</div></div>
+  </div>
+</div>
+
+<div class="section-block">
+  <h2>Documents (165)</h2>
+  <div class="card">
+    <table class="list">
+      <thead>
+        <tr>
+          <th>Date</th>
+          <th>Type</th>
+          <th>Title</th>
+          <th>Filed By</th>
+          <th>Attachments</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+  <td class="mono">18/09/2026</td>
+  <td>Other</td>
+  <td>Supplement to Joint Stipulation regarding Importation and Inventory between Complainants and Respondents</td>
+  <td>Jasjit S. Vidwan <span class="case-sub">for Samsung Electronics Co., Ltd., Samsung Electronics America, Inc., Ouraring Inc., and Oura Health Oy</span></td>
+  <td class="attachments"><span class="case-sub">&mdash;</span></td>
+</tr>
+<tr>
+  <td class="mono">17/09/2026</td>
+  <td>Exhibit List</td>
+  <td>Amended Joint List of Unopposed Exhibits</td>
+  <td>D. Sean Trainor <span class="case-sub">for Samsung Electronics Co., Ltd., Samsung Electronics America, Inc., Ouraring Inc., and Oura Health Oy</span></td>
+  <td class="attachments"><a href="../../data/documents/337-1478/895044_2621175_2621175.pdf" target="_blank" rel="noopener">2621175.pdf</a></td>
+</tr>
+<tr>
+  <td class="mono">14/09/2026</td>
+  <td>Order</td>
+  <td>Regarding Motions in Limine</td>
+  <td>Doris Johnson Hines <span class="case-sub">for Administrative Law Judge</span></td>
+  <td class="attachments"><span class="case-sub">&mdash;</span></td>
+</tr>
+<tr>
+  <td class="mono">13/09/2026</td>
+  <td>PO Subscription</td>
+  <td>Agreement to Be Bound by the Protective Order of James Beall and Jordan Reese</td>
+  <td>Jasjit S. Vidwan <span class="case-sub">for Ouraring Inc. and Oura Health Oy</span></td>
+  <td class="attachments"><a href="../../data/documents/337-1478/894596_2619783_2619783.pdf" target="_blank" rel="noopener">2619783.pdf</a></td>
+</tr>
+<tr>
+  <td class="mono">11/09/2026</td>
+  <td>PO Subscription</td>
+  <td>Agreement to Be Bound by the Protective Order of Benjamin E. Berliner, Eric Ang, Gary Michaels, Jason Sabol, Layne Hastings, Lloyd Honda, and Richard Serp</td>
+  <td>D. Sean Trainor <span class="case-sub">for Samsung Electronics America, Inc. and Samsung Electronic Co., Ltd.</span></td>
+  <td class="attachments"><a href="../../data/documents/337-1478/894588_2619637_2619637.pdf" target="_blank" rel="noopener">2619637.pdf</a></td>
+</tr>
+<tr>
+  <td class="mono">11/09/2026</td>
+  <td>Exhibit List</td>
+  <td>Joint List of Unopposed Exhibits</td>
+  <td>D. Sean Trainor <span class="case-sub">for Samsung Electronics Co., Ltd., Samsung Electronics America, Inc., Ouraring Inc., and Ōura Health Oy</span></td>
+  <td class="attachments"><span class="case-sub">&mdash;</span></td>
+</tr>
+<tr>
+  <td class="mono">11/09/2026</td>
+  <td>ID/RD - Other Than Final on Violation</td>
+  <td>Initial Determination: (1) Granting Samsung’s Motion for Summary Determination of Satisfaction of the Technical Prong of Domestic Industry Requirement as to the ’677 and ’675 Patents (2) Denying Samsung’s Motion for Summary Determination of Infringement as to the ’677 and ’675 Patents</td>
+  <td>Doris Johnson Hines <span class="case-sub">for Administrative Law Judge</span></td>
+  <td class="attachments"><a href="../../data/documents/337-1478/894538_2619230_2619230.pdf" target="_blank" rel="noopener">2619230.pdf</a><a href="../../data/documents/337-1478/894538_2619850_2619850.pdf" target="_blank" rel="noopener">2619850.pdf</a></td>
+</tr>
+<tr>
+  <td class="mono">10/09/2026</td>
+  <td>Motion Response/Reply</td>
+  <td>Complainants&#x27; Opposition to Respondents&#x27; Motion in Limine No. 3 to Preclude Samsung from Presenting Untimely Evidence and Argument of Sea&#x27;s Purported Authority to Practice the Asserted Patents</td>
+  <td>D. Sean Trainor <span class="case-sub">for Samsung Electronics America, Inc. and Samsung Electronic Co., Ltd.</span></td>
+  <td class="attachments"><a href="../../data/documents/337-1478/894462_2619028_2619028.pdf" target="_blank" rel="noopener">2619028.pdf</a></td>
+</tr>
+<tr>
+  <td class="mono">10/09/2026</td>
+  <td>Motion Response/Reply</td>
+  <td>Complainants&#x27; Opposition to Respondents&#x27; Motion in Limine No. 2 to Preclude Samsung from Seeking a Bond Based on Licensing Rates</td>
+  <td>D. Sean Trainor <span class="case-sub">for Samsung Electronics America, Inc. and Samsung Electronic Co., Ltd.</span></td>
+  <td class="attachments"><a href="../../data/documents/337-1478/894461_2619026_2619026.pdf" target="_blank" rel="noopener">2619026.pdf</a></td>
+</tr>
+<tr>
+  <td class="mono">10/09/2026</td>
+  <td>Motion Response/Reply</td>
+  <td>Complainants&#x27; Opposition to Respondents&#x27; Motion in Limine No. 1 to Preclude Samsung from Presenting Untimely Infringement Arguments Relating to U.S. Patent No. 10,231,675</td>
+  <td>D. Sean Trainor <span class="case-sub">for Samsung Electronics America, Inc. and Samsung Electronic Co., Ltd.</span></td>
+  <td class="attachments"><a href="../../data/documents/337-1478/894460_2619024_2619024.pdf" target="_blank" rel="noopener">2619024.pdf</a></td>
+</tr>
+<tr>
+  <td class="mono">10/09/2026</td>
+  <td>Motion Response/Reply</td>
+  <td>Respondents&#x27; Opposition to Samsung&#x27;s Motion in Limine No. 4</td>
+  <td>Jasjit S. Vidwan <span class="case-sub">for Ouraring Inc. and Oura Health Oy</span></td>
+  <td class="attachments"><a href="../../data/documents/337-1478/894421_2618638_2618638.pdf" target="_blank" rel="noopener">2618638.pdf</a></td>
+</tr>
+<tr>
+  <td class="mono">10/09/2026</td>
+  <td>Motion Response/Reply</td>
+  <td>Respondents&#x27; Opposition to Samsung&#x27;s Motion in Limine No. 3</td>
+  <td>Jasjit S. Vidwan <span class="case-sub">for Ouraring Inc. and Oura Health Oy</span></td>
+  <td class="attachments"><a href="../../data/documents/337-1478/894420_2618636_2618636.pdf" target="_blank" rel="noopener">2618636.pdf</a></td>
+</tr>
+<tr>
+  <td class="mono">10/09/2026</td>
+  <td>Motion Response/Reply</td>
+  <td>Respondents&#x27; Opposition to Samsung&#x27;s Motion in Limine No. 2</td>
+  <td>Jasjit S. Vidwan <span class="case-sub">for Ouraring Inc. and Oura Health Oy</span></td>
+  <td class="attachments"><a href="../../data/documents/337-1478/894419_2618633_2618633.pdf" target="_blank" rel="noopener">2618633.pdf</a></td>
+</tr>
+<tr>
+  <td class="mono">10/09/2026</td>
+  <td>Motion Response/Reply</td>
+  <td>Respondents&#x27; Opposition to Samsung&#x27;s Motion in Limine No. 1</td>
+  <td>Jasjit S. Vidwan <span class="case-sub">for Ouraring Inc. and Oura Health Oy</span></td>
+  <td class="attachments"><a href="../../data/documents/337-1478/894418_2618630_2618630.pdf" target="_blank" rel="noopener">2618630.pdf</a></td>
+</tr>
+<tr>
+  <td class="mono">10/09/2026</td>
+  <td>Complaint <span class="pill pill-blue">Complaint</span></td>
+  <td>Supplemental Exhibits to Complaint</td>
+  <td>D. Sean Trainor <span class="case-sub">for Samsung Electronics Co., Ltd. and Samsung Electronics America, Inc.</span></td>
+  <td class="attachments"><a href="../../data/documents/337-1478/894392_2618587_2618587.pdf" target="_blank" rel="noopener">2618587.pdf</a></td>
+</tr>
+<tr>
+  <td class="mono">09/09/2026</td>
+  <td>ID/RD - Other Than Final on Violation</td>
+  <td>Initial Determination Granting Motion for Partial Termination of Certain Asserted Claims</td>
+  <td>Doris Johnson Hines <span class="case-sub">for Administrative Law Judge</span></td>
+  <td class="attachments"><a href="../../data/documents/337-1478/894273_2618255_2618255.pdf" target="_blank" rel="noopener">2618255.pdf</a><a href="../../data/documents/337-1478/894273_2618266_2618266.pdf" target="_blank" rel="noopener">2618266.pdf</a></td>
+</tr>
+<tr>
+  <td class="mono">09/09/2026</td>
+  <td>Motion</td>
+  <td>Complainants Samsung Electronics Col., Ltd.&#x27;s and Samsung Electronics America, Inc.;s Unopposed Motion for Partial Termination of the Investigation</td>
+  <td>D. Sean Trainor <span class="case-sub">for Samsung Electronics America, Inc. and Samsung Electronic Co., Ltd.</span></td>
+  <td class="attachments"><a href="../../data/documents/337-1478/894192_2618073_2618073.pdf" target="_blank" rel="noopener">2618073.pdf</a></td>
+</tr>
+<tr>
+  <td class="mono">08/09/2026</td>
+  <td>Order</td>
+  <td>Denying in Part Oura’s Motion to Strike Deposition Testimony</td>
+  <td>Doris Johnson Hines <span class="case-sub">for Administrative Law Judge</span></td>
+  <td class="attachments"><a href="../../data/documents/337-1478/894098_2617331_2617331.pdf" target="_blank" rel="noopener">2617331.pdf</a><a href="../../data/documents/337-1478/894098_2617336_2617336.pdf" target="_blank" rel="noopener">2617336.pdf</a></td>
+</tr>
+<tr>
+  <td class="mono">08/09/2026</td>
+  <td>Order</td>
+  <td>Denying Oura’s Motion for Summary Determination</td>
+  <td>Doris Johnson Hines <span class="case-sub">for Administrative Law Judge</span></td>
+  <td class="attachments"><a href="../../data/documents/337-1478/894094_2617319_2617319.pdf" target="_blank" rel="noopener">2617319.pdf</a><a href="../../data/documents/337-1478/894094_2617335_2617335.pdf" target="_blank" rel="noopener">2617335.pdf</a></td>
+</tr>
+<tr>
+  <td class="mono">04/09/2026</td>
+  <td>Correspondence</td>
+  <td>Responsive Discovery Dispute Letter regarding Motion to Strike from Ouraring Inc. and Oura Health Oy</td>
+  <td>Jasjit S. Vidwan <span class="case-sub">for Ouraring Inc. and Oura Health Oy</span></td>
+  <td class="attachments"><a href="../../data/documents/337-1478/894009_2616898_2616898.pdf" target="_blank" rel="noopener">2616898.pdf</a></td>
+</tr>
+<tr>
+  <td class="mono">03/09/2026</td>
+  <td>ID/RD - Other Than Final on Violation</td>
+  <td>Initial Determination: (1) Granting Samsung’s Motion for Summary Determination of Satisfaction of the Technical Prong of Domestic Industry Requirement as to the ’677 and ’675 Patents (2) Denying Samsung’s Motion for Summary Determination of Infringement as to the ’677 and ’675 Patents</td>
+  <td>Doris Johnson Hines <span class="case-sub">for Administrative Law Judge</span></td>
+  <td class="attachments"><span class="case-sub">&mdash;</span></td>
+</tr>
+<tr>
+  <td class="mono">02/09/2026</td>
+  <td>Motion Response/Reply</td>
+  <td>Complainants&#x27; Opposition to Respondents&#x27; Motion in Limine No. 4 to Preclude Samsung from Presenting an Untimely Significance Theory to Prove Domestic Industry Investments</td>
+  <td>D. Sean Trainor <span class="case-sub">for Samsung Electronics America, Inc. and Samsung Electronic Co., Ltd.</span></td>
+  <td class="attachments"><span class="case-sub">&mdash;</span></td>
+</tr>
+<tr>
+  <td class="mono">02/09/2026</td>
+  <td>Motion Response/Reply</td>
+  <td>Complainants&#x27; Opposition to Respondents&#x27; Motion in Limine No. 3 to Preclude Samsung from Presenting Untimely Evidence and Argument of Sea&#x27;s Purported Authority to Practice the Asserted Patents</td>
+  <td>D. Sean Trainor <span class="case-sub">for Samsung Electronics America, Inc. and Samsung Electronic Co., Ltd.</span></td>
+  <td class="attachments"><span class="case-sub">&mdash;</span></td>
+</tr>
+<tr>
+  <td class="mono">02/09/2026</td>
+  <td>Motion Response/Reply</td>
+  <td>Complainants&#x27; Opposition to Respondents&#x27; Motion in Limine No. 2 to Preclude Samsung from Seeking a Bond Based on Licensing Rates</td>
+  <td>D. Sean Trainor <span class="case-sub">for Samsung Electronics America, Inc. and Samsung Electronic Co., Ltd.</span></td>
+  <td class="attachments"><span class="case-sub">&mdash;</span></td>
+</tr>
+<tr>
+  <td class="mono">02/09/2026</td>
+  <td>Motion Response/Reply</td>
+  <td>Complainants&#x27; Opposition to Respondents&#x27; Motion in Limine No. 1 to Preclude Samsung from Presenting Untimely Infringement Arguments Relating to U.S. Patent No. 10,231,675</td>
+  <td>D. Sean Trainor <span class="case-sub">for Samsung Electronics America, Inc. and Samsung Electronic Co., Ltd.</span></td>
+  <td class="attachments"><span class="case-sub">&mdash;</span></td>
+</tr>
+<tr>
+  <td class="mono">02/09/2026</td>
+  <td>Motion Response/Reply</td>
+  <td>Respondents’ Opposition to Samsung’s Motion In Limine No. 4</td>
+  <td>Jasjit S. Vidwan <span class="case-sub">for Ouraring Inc. and Oura Health Oy</span></td>
+  <td class="attachments"><span class="case-sub">&mdash;</span></td>
+</tr>
+<tr>
+  <td class="mono">02/09/2026</td>
+  <td>Motion Response/Reply</td>
+  <td>Respondents’ Opposition to Samsung’s Motion In Limine No. 3</td>
+  <td>Jasjit S. Vidwan <span class="case-sub">for Ouraring Inc. and Oura Health Oy</span></td>
+  <td class="attachments"><span class="case-sub">&mdash;</span></td>
+</tr>
+<tr>
+  <td class="mono">02/09/2026</td>
+  <td>Motion Response/Reply</td>
+  <td>Respondents’ Opposition to Samsung’s Motion In Limine No. 2</td>
+  <td>Jasjit S. Vidwan <span class="case-sub">for Ouraring Inc. and Oura Health Oy</span></td>
+  <td class="attachments"><span class="case-sub">&mdash;</span></td>
+</tr>
+<tr>
+  <td class="mono">02/09/2026</td>
+  <td>Motion Response/Reply</td>
+  <td>Respondents’ Opposition to Samsung’s Motion In Limine No. 1</td>
+  <td>Jasjit S. Vidwan <span class="case-sub">for Ouraring Inc. and Oura Health Oy</span></td>
+  <td class="attachments"><span class="case-sub">&mdash;</span></td>
+</tr>
+<tr>
+  <td class="mono">31/08/2026</td>
+  <td>Motion</td>
+  <td>Complainants&#x27; Motion in Limine No. 3 to Preclude Testimony on Unproduced Documents and Evidence for Oura&#x27;s Own Alleged Prior Act Product, Oura Ring 1</td>
+  <td>D. Sean Trainor <span class="case-sub">for Samsung Electronics America, Inc. and Samsung Electronic Co., Ltd.</span></td>
+  <td class="attachments"><a href="../../data/documents/337-1478/893476_2615196_2615196.pdf" target="_blank" rel="noopener">2615196.pdf</a></td>
+</tr>
+<tr>
+  <td class="mono">31/08/2026</td>
+  <td>Motion</td>
+  <td>Complainants&#x27; Motion in Limine No. 2 to Exclude and Strike Untimely Noninfringement Arguments and Evidence regarding the &#x27;675 and &#x27;677 Patents</td>
+  <td>D. Sean Trainor <span class="case-sub">for Samsung Electronics America, Inc. and Samsung Electronic Co., Ltd.</span></td>
+  <td class="attachments"><a href="../../data/documents/337-1478/893474_2615193_2615193.pdf" target="_blank" rel="noopener">2615193.pdf</a></td>
+</tr>
+<tr>
+  <td class="mono">31/08/2026</td>
+  <td>Motion</td>
+  <td>Complainants&#x27; Motion in Limine No. 4 to Exclude Testimony and Evidence regarding Oura Ring 5</td>
+  <td>D. Sean Trainor <span class="case-sub">for Samsung Electronics America, Inc. and Samsung Electronic Co., Ltd.</span></td>
+  <td class="attachments"><a href="../../data/documents/337-1478/893477_2615198_2615198.pdf" target="_blank" rel="noopener">2615198.pdf</a></td>
+</tr>
+<tr>
+  <td class="mono">31/08/2026</td>
+  <td>Motion</td>
+  <td>Complainants&#x27; Motion in Limine No. 1 to Preclude Testimony on Economic Domestic Industry</td>
+  <td>D. Sean Trainor <span class="case-sub">for Samsung Electronic Co., Ltd. and Samsung Electronics America, Inc.</span></td>
+  <td class="attachments"><a href="../../data/documents/337-1478/893473_2615191_2615191.pdf" target="_blank" rel="noopener">2615191.pdf</a></td>
+</tr>
+<tr>
+  <td class="mono">31/08/2026</td>
+  <td>Motion</td>
+  <td>Respondents&#x27; Motion in Limine No. 4: to Preclude Samsung from Presenting an Untimely Significance Theory to Prove Domestic Industry Investments</td>
+  <td>Jasjit S. Vidwan <span class="case-sub">for Ouraring Inc. and Oura Health Oy</span></td>
+  <td class="attachments"><a href="../../data/documents/337-1478/893455_2615138_2615138.pdf" target="_blank" rel="noopener">2615138.pdf</a></td>
+</tr>
+<tr>
+  <td class="mono">31/08/2026</td>
+  <td>Motion</td>
+  <td>Respondents&#x27; Motion in Limine No. 3: to Preclude Samsung from Presenting Untimely Evidence and Argument of Sea&#x27;s Purported Authority to Practice the Asserted Patents</td>
+  <td>Jasjit S. Vidwan <span class="case-sub">for Ouraring Inc. and Oura Health Oy</span></td>
+  <td class="attachments"><a href="../../data/documents/337-1478/893453_2615135_2615135.pdf" target="_blank" rel="noopener">2615135.pdf</a></td>
+</tr>
+<tr>
+  <td class="mono">31/08/2026</td>
+  <td>Motion</td>
+  <td>Respondents&#x27; Motion in Limine No. 2: to Preclude Samsung from Seeking a Bond Based on Licensing Rates</td>
+  <td>Jasjit S. Vidwan <span class="case-sub">for Ouraring Inc. and Oura Health Oy</span></td>
+  <td class="attachments"><a href="../../data/documents/337-1478/893446_2615114_2615114.pdf" target="_blank" rel="noopener">2615114.pdf</a></td>
+</tr>
+<tr>
+  <td class="mono">31/08/2026</td>
+  <td>Motion</td>
+  <td>Respondents&#x27; Motion in Limine No. 1: to Preclude Samsung from Presenting Untimely Infringement Arguments Relating to U.S. Patent No. 10,231,675</td>
+  <td>Jasjit S. Vidwan <span class="case-sub">for Ouraring Inc. and Oura Health Oy</span></td>
+  <td class="attachments"><a href="../../data/documents/337-1478/893442_2615106_2615106.pdf" target="_blank" rel="noopener">2615106.pdf</a></td>
+</tr>
+<tr>
+  <td class="mono">31/08/2026</td>
+  <td>Other</td>
+  <td>Stipulation regarding Exchange of Exhibits, Demonstratives for the Evidentiary Hearing and Other Stipulations</td>
+  <td>D. Sean Trainor <span class="case-sub">for Samsung Electronics Co., Ltd., Samsung Electronics America, Inc., Ouraring Inc., and Ōura Health Oy</span></td>
+  <td class="attachments"><a href="../../data/documents/337-1478/893404_2614861_2614861.pdf" target="_blank" rel="noopener">2614861.pdf</a></td>
+</tr>
+<tr>
+  <td class="mono">27/08/2026</td>
+  <td>Order</td>
+  <td>Denying in Part Oura&#x27;s Motion to Strike Deposition Testimony</td>
+  <td>Doris Johnson Hines <span class="case-sub">for Administrative Law Judge</span></td>
+  <td class="attachments"><span class="case-sub">&mdash;</span></td>
+</tr>
+<tr>
+  <td class="mono">27/08/2026</td>
+  <td>Order</td>
+  <td>Denying Oura&#x27;s Motion for Summary Determination</td>
+  <td>Doris Johnson Hines <span class="case-sub">for Administrative Law Judge</span></td>
+  <td class="attachments"><span class="case-sub">&mdash;</span></td>
+</tr>
+<tr>
+  <td class="mono">26/08/2026</td>
+  <td>Voting Sheet</td>
+  <td>Unknown</td>
+  <td>Lisa R. Barton <span class="case-sub">for Office of the Secretary</span></td>
+  <td class="attachments"><a href="../../data/documents/337-1478/892867_2613229_2613229.pdf" target="_blank" rel="noopener">2613229.pdf</a></td>
+</tr>
+<tr>
+  <td class="mono">26/08/2026</td>
+  <td>Correspondence</td>
+  <td>Responsive Discovery Dispute Letter regarding Motion to Strike from Ouraring Inc. and Oura Health Oy</td>
+  <td>Jasjit S. Vidwan <span class="case-sub">for Ouraring Inc. and Oura Health Oy</span></td>
+  <td class="attachments"><span class="case-sub">&mdash;</span></td>
+</tr>
+<tr>
+  <td class="mono">26/08/2026</td>
+  <td>Notice</td>
+  <td>Commission Determination Not to Review an Initial Determination Granting Unopposed Motion for Partial Termination by Withdrawal of Certain Patent Claims</td>
+  <td>Lisa R. Barton <span class="case-sub">for Office of the Secretary</span></td>
+  <td class="attachments"><a href="../../data/documents/337-1478/892744_2612773_2612773.pdf" target="_blank" rel="noopener">2612773.pdf</a><a href="../../data/documents/337-1478/892744_2612916_2612916.pdf" target="_blank" rel="noopener">2612916.pdf</a></td>
+</tr>
+<tr>
+  <td class="mono">25/08/2026</td>
+  <td>Correspondence</td>
+  <td>Letter from Complainants Requesting to Strike Portions of the Rebuttal Expert Report of Dr. Mortazavi</td>
+  <td>D. Sean Trainor <span class="case-sub">for Samsung Electronics America, Inc. and Samsung Electronic Co., Ltd.</span></td>
+  <td class="attachments"><span class="case-sub">&mdash;</span></td>
+</tr>
+<tr>
+  <td class="mono">24/08/2026</td>
+  <td>Motion</td>
+  <td>Respondents’ Motion in Limine No. 4: to Preclude Samsung from Presenting an Untimely Significance Theory to Prove Domestic Industry Investments</td>
+  <td>Jasjit S. Vidwan <span class="case-sub">for Ouraring Inc. and Oura Health Oy</span></td>
+  <td class="attachments"><span class="case-sub">&mdash;</span></td>
+</tr>
+<tr>
+  <td class="mono">24/08/2026</td>
+  <td>Motion</td>
+  <td>Respondents’ Motion in Limine No. 3: to Preclude Samsung from Presenting Untimely Evidence and Argument of Sea’s Purported Authority to Practice the Asserted Patents</td>
+  <td>Jasjit S. Vidwan <span class="case-sub">for Ouraring Inc. and Oura Health Oy</span></td>
+  <td class="attachments"><span class="case-sub">&mdash;</span></td>
+</tr>
+<tr>
+  <td class="mono">24/08/2026</td>
+  <td>Motion</td>
+  <td>Complainants’ Motion in Limine No. 4 to Exclude Testimony and Evidence regarding Oura Ring 5 and Bentley</td>
+  <td>D. Sean Trainor <span class="case-sub">for Samsung Electronics America, Inc. and Samsung Electronic Co., Ltd.</span></td>
+  <td class="attachments"><span class="case-sub">&mdash;</span></td>
+</tr>
+<tr>
+  <td class="mono">24/08/2026</td>
+  <td>Motion</td>
+  <td>Respondents’ Motion in Limine No. 2: to Preclude Samsung from Seeking a Bond Based on Licensing Rates</td>
+  <td>Jasjit S. Vidwan <span class="case-sub">for Ouraring Inc. and Oura Health Oy</span></td>
+  <td class="attachments"><span class="case-sub">&mdash;</span></td>
+</tr>
+<tr>
+  <td class="mono">24/08/2026</td>
+  <td>Motion</td>
+  <td>Respondents’ Motion in Limine No. 1: to Preclude Samsung from Presenting Untimely Infringement Arguments Relating to U.S. Patent No. 10,231,675</td>
+  <td>Jasjit S. Vidwan <span class="case-sub">for Ouraring Inc. and Oura Health Oy</span></td>
+  <td class="attachments"><span class="case-sub">&mdash;</span></td>
+</tr>
+<tr>
+  <td class="mono">24/08/2026</td>
+  <td>Motion</td>
+  <td>Complainants’ Motion in Limine No. 2 to Exclude and Strike Untimely Noninfringement Arguments and Evidence regarding the ’675 and ’677 Patents</td>
+  <td>D. Sean Trainor <span class="case-sub">for Samsung Electronics America, Inc. and Samsung Electronic Co., Ltd.</span></td>
+  <td class="attachments"><span class="case-sub">&mdash;</span></td>
+</tr>
+<tr>
+  <td class="mono">24/08/2026</td>
+  <td>Motion</td>
+  <td>Complainants&#x27; Motion in Limine No. 1 to Preclude Testimony on Economic Domestic Industry</td>
+  <td>D. Sean Trainor <span class="case-sub">for Samsung Electronics America, Inc. and Samsung Electronic Co., Ltd.</span></td>
+  <td class="attachments"><span class="case-sub">&mdash;</span></td>
+</tr>
+<tr>
+  <td class="mono">24/08/2026</td>
+  <td>Motion</td>
+  <td>Complainants’ Motion in Limine No. 3 to Preclude Testimony on Unproduced Documents and Evidence for Oura’s Own Alleged Prior Art Product, Oura Ring 1</td>
+  <td>D. Sean Trainor <span class="case-sub">for Samsung Electronics America, Inc. and Samsung Electronic Co., Ltd.</span></td>
+  <td class="attachments"><span class="case-sub">&mdash;</span></td>
+</tr>
+<tr>
+  <td class="mono">21/08/2026</td>
+  <td>Brief Filed With ALJ</td>
+  <td>Respondents&#x27; Pre-Hearing Brief</td>
+  <td>Jasjit S. Vidwan <span class="case-sub">for Ouraring Inc. and Oura Health Oy</span></td>
+  <td class="attachments"><a href="../../data/documents/337-1478/892393_2611315_2611315.pdf" target="_blank" rel="noopener">2611315.pdf</a></td>
+</tr>
+<tr>
+  <td class="mono">21/08/2026</td>
+  <td>Brief Filed With ALJ</td>
+  <td>Complainants&#x27; Pre-Hearing Brief</td>
+  <td>D. Sean Trainor <span class="case-sub">for Samsung Electronics America, Inc. and Samsung Electronic Co., Ltd.</span></td>
+  <td class="attachments"><a href="../../data/documents/337-1478/892385_2611219_2611219.pdf" target="_blank" rel="noopener">2611219.pdf</a><a href="../../data/documents/337-1478/892385_2611220_2611220.pdf" target="_blank" rel="noopener">2611220.pdf</a></td>
+</tr>
+<tr>
+  <td class="mono">21/08/2026</td>
+  <td>Order</td>
+  <td>Denying Leave to Move to Strike</td>
+  <td>Doris Johnson Hines <span class="case-sub">for Administrative Law Judge</span></td>
+  <td class="attachments"><a href="../../data/documents/337-1478/892306_2610662_2610662.pdf" target="_blank" rel="noopener">2610662.pdf</a><a href="../../data/documents/337-1478/892306_2610722_2610722.pdf" target="_blank" rel="noopener">2610722.pdf</a></td>
+</tr>
+<tr>
+  <td class="mono">10/08/2026</td>
+  <td>Brief Filed With ALJ</td>
+  <td>Complainant&#x27;s Pre-Hearing Brief</td>
+  <td>D. Sean Trainor <span class="case-sub">for Samsung Electronics America, Inc. and Samsung Electronic Co., Ltd.</span></td>
+  <td class="attachments"><span class="case-sub">&mdash;</span></td>
+</tr>
+<tr>
+  <td class="mono">10/08/2026</td>
+  <td>Brief Filed With ALJ</td>
+  <td>Respondents&#x27; Pre-Hearing Brief</td>
+  <td>Jasjit S. Vidwan <span class="case-sub">for Ouraring Inc. and Oura Health Oy</span></td>
+  <td class="attachments"><span class="case-sub">&mdash;</span></td>
+</tr>
+<tr>
+  <td class="mono">10/08/2026</td>
+  <td>Brief Filed With ALJ</td>
+  <td>Complainant&#x27;s Pre-Hearing Statement</td>
+  <td>D. Sean Trainor <span class="case-sub">for Samsung Electronics America, Inc. and Samsung Electronic Co., Ltd.</span></td>
+  <td class="attachments"><span class="case-sub">&mdash;</span></td>
+</tr>
+<tr>
+  <td class="mono">10/08/2026</td>
+  <td>Pre-Hearing Statement</td>
+  <td>Respondents Pre-Hearing Statement</td>
+  <td>Jasjit S. Vidwan <span class="case-sub">for Ouraring Inc. and Oura Health Oy</span></td>
+  <td class="attachments"><a href="../../data/documents/337-1478/891043_2603085_2603085.pdf" target="_blank" rel="noopener">2603085.pdf</a></td>
+</tr>
+<tr>
+  <td class="mono">06/08/2026</td>
+  <td>Motion Response/Reply</td>
+  <td>Complainants&#x27; Opposition to Respondents&#x27; Motion for Summary Determination of Noninfringement by Oura&#x27;s Alternative Products</td>
+  <td>D. Sean Trainor <span class="case-sub">for Samsung Electronics America, Inc. and Samsung Electronic Co., Ltd.</span></td>
+  <td class="attachments"><a href="../../data/documents/337-1478/890735_2601163_2601163.pdf" target="_blank" rel="noopener">2601163.pdf</a><a href="../../data/documents/337-1478/890735_2601164_2601164.pdf" target="_blank" rel="noopener">2601164.pdf</a><a href="../../data/documents/337-1478/890735_2601165_2601165.pdf" target="_blank" rel="noopener">2601165.pdf</a></td>
+</tr>
+<tr>
+  <td class="mono">05/08/2026</td>
+  <td>Motion</td>
+  <td>Respondents Ouraring Inc. and Oura Health Oy’s Reply in Support of their Motion to Strike Deposition Testimony</td>
+  <td>Jasjit S. Vidwan <span class="case-sub">for Ouraring Inc. and Oura Health Oy</span></td>
+  <td class="attachments"><a href="../../data/documents/337-1478/890649_2600749_2600749.pdf" target="_blank" rel="noopener">2600749.pdf</a></td>
+</tr>
+<tr>
+  <td class="mono">05/08/2026</td>
+  <td>Motion Response/Reply</td>
+  <td>Respondents Ouraring Inc. and Oura Health Oy’s Reply in Support of their Motion for Summary Determination of Non-Infringement by Oura’s Alternative Products</td>
+  <td>Jasjit S. Vidwan <span class="case-sub">for Ouraring Inc. and Oura Health Oy</span></td>
+  <td class="attachments"><a href="../../data/documents/337-1478/890643_2600394_2600394.pdf" target="_blank" rel="noopener">2600394.pdf</a></td>
+</tr>
+<tr>
+  <td class="mono">05/08/2026</td>
+  <td>Motion Response/Reply</td>
+  <td>Respondents Ouraring Inc. and Oura Health Oy’s Opposition to Complainants’ Motion for Summary Determination regarding Infringement and Domestic Industry Technical Prong for U.S. Patent Nos 10,945,677 and 10,231,675</td>
+  <td>Jasjit S. Vidwan <span class="case-sub">for Ouraring Inc. and Oura Health Oy</span></td>
+  <td class="attachments"><a href="../../data/documents/337-1478/890641_2600295_2600295.pdf" target="_blank" rel="noopener">2600295.pdf</a></td>
+</tr>
+<tr>
+  <td class="mono">05/08/2026</td>
+  <td>Motion</td>
+  <td>Complainants&#x27; Reply in Support of Their Motion for Summary Determination regarding Infringement and Domestic Industry Technical Prong for U.S. Patent Nos. 10,945,677 and 10,231,675</td>
+  <td>D. Sean Trainor <span class="case-sub">for Samsung Electronics America, Inc. and Samsung Electronic Co., Ltd.</span></td>
+  <td class="attachments"><a href="../../data/documents/337-1478/890605_2599981_2599981.pdf" target="_blank" rel="noopener">2599981.pdf</a></td>
+</tr>
+<tr>
+  <td class="mono">03/08/2026</td>
+  <td>Motion</td>
+  <td>Complainants&#x27; Motion for Summary Determination regarding Infringement &amp; Domestic Industry Technical Prong for U.S. Patent Nos. 10,945,667 and 10,231,675</td>
+  <td>D. Sean Trainor <span class="case-sub">for Samsung Electronics America, Inc. and Samsung Electronic Co., Ltd.</span></td>
+  <td class="attachments"><a href="../../data/documents/337-1478/890318_2598826_2598826.pdf" target="_blank" rel="noopener">2598826.pdf</a><a href="../../data/documents/337-1478/890318_2598827_2598827.pdf" target="_blank" rel="noopener">2598827.pdf</a><a href="../../data/documents/337-1478/890318_2598828_2598828.pdf" target="_blank" rel="noopener">2598828.pdf</a><a href="../../data/documents/337-1478/890318_2598829_2598829.pdf" target="_blank" rel="noopener">2598829.pdf</a><a href="../../data/documents/337-1478/890318_2598830_2598830.pdf" target="_blank" rel="noopener">2598830.pdf</a><a href="../../data/documents/337-1478/890318_2598831_2598831.pdf" target="_blank" rel="noopener">2598831.pdf</a><a href="../../data/documents/337-1478/890318_2598832_2598832.pdf" target="_blank" rel="noopener">2598832.pdf</a></td>
+</tr>
+<tr>
+  <td class="mono">29/07/2026</td>
+  <td>ID/RD - Other Than Final on Violation</td>
+  <td>Initial Determination Granting Motion for Partial Termination of Certain Asserted Claims</td>
+  <td>Doris Johnson Hines <span class="case-sub">for Administrative Law Judge</span></td>
+  <td class="attachments"><a href="../../data/documents/337-1478/889677_2595901_2595901.pdf" target="_blank" rel="noopener">2595901.pdf</a><a href="../../data/documents/337-1478/889677_2595904_2595904.pdf" target="_blank" rel="noopener">2595904.pdf</a></td>
+</tr>
+<tr>
+  <td class="mono">28/07/2026</td>
+  <td>Motion</td>
+  <td>Respondents Ouraring Inc. and Oura Health Oy&#x27;s’ Reply in Support of Their Motion to Strike Deposition Testimony</td>
+  <td>Jasjit S. Vidwan <span class="case-sub">for Ouraring Inc. and Oura Health Oy</span></td>
+  <td class="attachments"><span class="case-sub">&mdash;</span></td>
+</tr>
+<tr>
+  <td class="mono">28/07/2026</td>
+  <td>Motion</td>
+  <td>Complainants&#x27; Reply in Support of Their Motion for Summary Determination regarding Infringement and Domestic Industry Technical Prong for U.S. Patent Nos. 10,945,677 AND 10,231,675</td>
+  <td>D. Sean Trainor <span class="case-sub">for Samsung Electronics America, Inc. and Samsung Electronic Co., Ltd.</span></td>
+  <td class="attachments"><span class="case-sub">&mdash;</span></td>
+</tr>
+<tr>
+  <td class="mono">28/07/2026</td>
+  <td>Motion</td>
+  <td>Complainants Samsung Electronics Co., Ltd.&#x27;s and Samsung Electronics America, Inc.&#x27;s Unopposed Motion for Partial Termination of the Investigation</td>
+  <td>D. Sean Trainor <span class="case-sub">for Samsung Electronics America, Inc. and Samsung Electronic Co., Ltd.</span></td>
+  <td class="attachments"><span class="case-sub">&mdash;</span></td>
+</tr>
+<tr>
+  <td class="mono">28/07/2026</td>
+  <td>Motion</td>
+  <td>Respondents Ouraring Inc. and Oura Health Oy&#x27;s Reply in Support of Their Motion for Summary Determination of Non-Infringement by Oura&#x27;s Alternative Products</td>
+  <td>Jasjit S. Vidwan <span class="case-sub">for Ouraring Inc. and Oura Health Oy</span></td>
+  <td class="attachments"><span class="case-sub">&mdash;</span></td>
+</tr>
+<tr>
+  <td class="mono">23/07/2026</td>
+  <td>Motion Response/Reply</td>
+  <td>Complainants&#x27; Opposition to Respondents&#x27; Motion to Strike Deposition Testimony</td>
+  <td>D. Sean Trainor <span class="case-sub">for Samsung Electronics America, Inc. and Samsung Electronic Co., Ltd.</span></td>
+  <td class="attachments"><span class="case-sub">&mdash;</span></td>
+</tr>
+<tr>
+  <td class="mono">23/07/2026</td>
+  <td>Motion Response/Reply</td>
+  <td>Respondents&#x27; Ouraring Inc. and Oura Health Oy&#x27;s Opposition to Complainants&#x27; Motion for Summary Determination regarding Infringement and Domestic Industry Technical Prong for US Patent Nos. 10,945,677 and 10,231,675</td>
+  <td>Jasjit S. Vidwan <span class="case-sub">for Ouraring Inc. and Oura Health Oy</span></td>
+  <td class="attachments"><span class="case-sub">&mdash;</span></td>
+</tr>
+<tr>
+  <td class="mono">23/07/2026</td>
+  <td>Motion Response/Reply</td>
+  <td>Complainants&#x27; Opposition to Respondents&#x27; Motion for Summary Determination of Noninfringement by Oura&#x27;s Alternative Products</td>
+  <td>D. Sean Trainor <span class="case-sub">for Samsung Electronics America, Inc. and Samsung Electronic Co., Ltd.</span></td>
+  <td class="attachments"><span class="case-sub">&mdash;</span></td>
+</tr>
+<tr>
+  <td class="mono">20/07/2026</td>
+  <td>Motion</td>
+  <td>Respondents Ouraring Inc. and Oura Health Oy’s Motion for Summary Determination of Non-Infringement by Oura’s Alternative Products</td>
+  <td>Jasjit S. Vidwan <span class="case-sub">for Ouraring Inc. and Oura Health Oy</span></td>
+  <td class="attachments"><a href="../../data/documents/337-1478/888636_2586375_2586375.pdf" target="_blank" rel="noopener">2586375.pdf</a></td>
+</tr>
+<tr>
+  <td class="mono">20/07/2026</td>
+  <td>Motion</td>
+  <td>Respondents Ouraring Inc. and Oura Health Oy’s Motion to Strike Deposition Testimony</td>
+  <td>Jasjit S. Vidwan <span class="case-sub">for Ouraring, Inc. and Oura Health Oy</span></td>
+  <td class="attachments"><a href="../../data/documents/337-1478/888604_2585980_2585980.pdf" target="_blank" rel="noopener">2585980.pdf</a></td>
+</tr>
+<tr>
+  <td class="mono">14/07/2026</td>
+  <td>Motion</td>
+  <td>Respondents Ouraring Inc. and Oura Health Oy&#x27;s Notice of Typological Error and Correction to Motion No. 1478-008</td>
+  <td>Jasjit S. Vidwan <span class="case-sub">for Ouraring Inc. and Oura Health Oy</span></td>
+  <td class="attachments"><a href="../../data/documents/337-1478/888013_2581719_2581719.pdf" target="_blank" rel="noopener">2581719.pdf</a></td>
+</tr>
+<tr>
+  <td class="mono">13/07/2026</td>
+  <td>Motion</td>
+  <td>Complainants&#x27; Motion for Summary Determination regarding Infringement &amp; Domestic Industry Technical Prong for U.S. Patent Nos. 10,945,677 and 10,231,675</td>
+  <td>D. Sean Trainor <span class="case-sub">for Samsung Electronics America, Inc. and Samsung Electronic Co., Ltd.</span></td>
+  <td class="attachments"><span class="case-sub">&mdash;</span></td>
+</tr>
+<tr>
+  <td class="mono">13/07/2026</td>
+  <td>Motion</td>
+  <td>Respondents Ouraring Inc. and Oura Health Oy’s Motion to Strike Deposition Testimony</td>
+  <td>Jasjit S. Vidwan <span class="case-sub">for Ouraring, Inc. and Oura Health Oy</span></td>
+  <td class="attachments"><span class="case-sub">&mdash;</span></td>
+</tr>
+<tr>
+  <td class="mono">13/07/2026</td>
+  <td>Motion</td>
+  <td>Respondents Ouraring Inc. and Oura Health Oy’s Motion for Summary Determination of Non-Infringement by Oura’s Alternative Products</td>
+  <td>Jasjit S. Vidwan <span class="case-sub">for Ouraring Inc. and Oura Health Oy</span></td>
+  <td class="attachments"><span class="case-sub">&mdash;</span></td>
+</tr>
+<tr>
+  <td class="mono">09/07/2026</td>
+  <td>Order</td>
+  <td>Regarding Pre-Hearing Briefs</td>
+  <td>Doris Johnson Hines <span class="case-sub">for Administrative Law Judge</span></td>
+  <td class="attachments"><a href="../../data/documents/337-1478/887491_2577682_2577682.pdf" target="_blank" rel="noopener">2577682.pdf</a><a href="../../data/documents/337-1478/887491_2577747_2577747.pdf" target="_blank" rel="noopener">2577747.pdf</a></td>
+</tr>
+<tr>
+  <td class="mono">07/07/2026</td>
+  <td>Response/Submission to ALJ Order</td>
+  <td>Respondents Ouraring Inc. and Oura Health Oy&#x27;s Statement of Uncontested Claim Elements</td>
+  <td>Jasjit S. Vidwan <span class="case-sub">for Ouraring Inc. and Oura Healthy Oy</span></td>
+  <td class="attachments"><a href="../../data/documents/337-1478/887269_2577073_2577073.pdf" target="_blank" rel="noopener">2577073.pdf</a></td>
+</tr>
+<tr>
+  <td class="mono">07/07/2026</td>
+  <td>Response/Submission to ALJ Order</td>
+  <td>Joint Statement on Proposed Word Limits to Pre-Hearing Briefs</td>
+  <td>D. Sean Trainor <span class="case-sub">for Samsung Electronics Co., Ltd., Samsung Electronics America, Inc., Ouraring Inc., and Ōura Health Oy</span></td>
+  <td class="attachments"><a href="../../data/documents/337-1478/887265_2577065_2577065.pdf" target="_blank" rel="noopener">2577065.pdf</a></td>
+</tr>
+<tr>
+  <td class="mono">07/07/2026</td>
+  <td>Response/Submission to ALJ Order</td>
+  <td>Complainants&#x27; Statement of Uncontested Claim Elements</td>
+  <td>D. Sean Trainor <span class="case-sub">for Samsung Electronics America, Inc. and Samsung Electronic Co., Ltd.</span></td>
+  <td class="attachments"><span class="case-sub">&mdash;</span></td>
+</tr>
+<tr>
+  <td class="mono">06/07/2026</td>
+  <td>PO Subscription</td>
+  <td>Agreement to Be Bound by the Protective Order of Debbie Leonard and Donna Kazaitis</td>
+  <td>Jasjit S. Vidwan <span class="case-sub">for Ouraring Inc. and Oura Health Oy</span></td>
+  <td class="attachments"><a href="../../data/documents/337-1478/887098_2576421_2576421.pdf" target="_blank" rel="noopener">2576421.pdf</a></td>
+</tr>
+<tr>
+  <td class="mono">02/07/2026</td>
+  <td>PO Subscription</td>
+  <td>Agreement to Be Bound by the Protective Order of Kelly Hassell, Carey Mook, Jason Snyder, and Robert Zellner</td>
+  <td>Jasjit S. Vidwan <span class="case-sub">for Ouraring Inc. and Oura Health Oy</span></td>
+  <td class="attachments"><a href="../../data/documents/337-1478/887022_2576025_2576025.pdf" target="_blank" rel="noopener">2576025.pdf</a></td>
+</tr>
+<tr>
+  <td class="mono">02/07/2026</td>
+  <td>Transcript</td>
+  <td>Case Management Conference (Pages 1-37)</td>
+  <td>Doris Johnson Hines <span class="case-sub">for Administrative Law Judge</span></td>
+  <td class="attachments"><a href="../../data/documents/337-1478/887020_2576021_2576021.pdf" target="_blank" rel="noopener">2576021.pdf</a></td>
+</tr>
+<tr>
+  <td class="mono">01/07/2026</td>
+  <td>Response/Submission to ALJ Order</td>
+  <td>Joint Report on Mediation</td>
+  <td>D. Sean Trainor <span class="case-sub">for Samsung Electronics Co., Ltd., Samsung Electronics America, Inc., Ouraring Inc. and Ōura Health Oy</span></td>
+  <td class="attachments"><a href="../../data/documents/337-1478/886806_2574845_2574845.pdf" target="_blank" rel="noopener">2574845.pdf</a></td>
+</tr>
+<tr>
+  <td class="mono">15/06/2026</td>
+  <td>Order</td>
+  <td>Construing Claim Terms</td>
+  <td>Doris Johnson Hines <span class="case-sub">for Administrative Law Judge</span></td>
+  <td class="attachments"><a href="../../data/documents/337-1478/885163_2562959_2562959.pdf" target="_blank" rel="noopener">2562959.pdf</a><a href="../../data/documents/337-1478/885163_2562979_2562979.pdf" target="_blank" rel="noopener">2562979.pdf</a></td>
+</tr>
+<tr>
+  <td class="mono">04/06/2026</td>
+  <td>Notice of Withdrawal of Appearance</td>
+  <td>Notice of Withdrawal of Appearance of Andrew Huntsinger from Mayer Brown LLP on Behalf of Ouraring Inc. and Oura Health Oy</td>
+  <td>Jasjit S. Vidwan <span class="case-sub">for Ouraring Inc. and Oura Health Oy</span></td>
+  <td class="attachments"><a href="../../data/documents/337-1478/884206_2558192_2558192.pdf" target="_blank" rel="noopener">2558192.pdf</a></td>
+</tr>
+<tr>
+  <td class="mono">03/06/2026</td>
+  <td>Transcript</td>
+  <td>Markman Hearing and Case Management Conference (Pages 1-122)</td>
+  <td>Doris Johnson Hines <span class="case-sub">for Administrative Law Judge</span></td>
+  <td class="attachments"><a href="../../data/documents/337-1478/884186_2558140_2558140.pdf" target="_blank" rel="noopener">2558140.pdf</a></td>
+</tr>
+<tr>
+  <td class="mono">03/06/2026</td>
+  <td>PO Subscription</td>
+  <td>Agreement to Be Bound by the Protective Order of Mary Agnello</td>
+  <td>Jasjit S. Vidwan <span class="case-sub">for Ouraring Inc. and Oura Health Oy</span></td>
+  <td class="attachments"><a href="../../data/documents/337-1478/884094_2557715_2557715.pdf" target="_blank" rel="noopener">2557715.pdf</a></td>
+</tr>
+<tr>
+  <td class="mono">02/06/2026</td>
+  <td>Response/Submission to ALJ Order</td>
+  <td>Complainants Samsung Electronics America, Inc. and Samsung Electronics Co., Ltd.’s Claim Construction Hearing Demonstratives</td>
+  <td>D. Sean Trainor <span class="case-sub">for Samsung Electronics America, Inc. and Samsung Electronic Co., Ltd.</span></td>
+  <td class="attachments"><a href="../../data/documents/337-1478/883963_2557251_2557251.pdf" target="_blank" rel="noopener">2557251.pdf</a></td>
+</tr>
+<tr>
+  <td class="mono">02/06/2026</td>
+  <td>Response/Submission to ALJ Order</td>
+  <td>Respondents Ouraring Inc. and Oura Health Oy&#x27;s Claim Construction Demonstrative Exhibits</td>
+  <td>Jasjit S.Vidwan <span class="case-sub">for Ouraring Inc. and Oura Health Oy</span></td>
+  <td class="attachments"><a href="../../data/documents/337-1478/883939_2557160_2557160.pdf" target="_blank" rel="noopener">2557160.pdf</a></td>
+</tr>
+<tr>
+  <td class="mono">01/06/2026</td>
+  <td>Other</td>
+  <td>Joint Stipulation regarding Importation and Inventory between Complainants and Respondents</td>
+  <td>D. Sean Trainor <span class="case-sub">for Samsung Electronics Co., Ltd., Samsung Electronics America, Inc., Ouraring Inc., and Ōura Health Oy</span></td>
+  <td class="attachments"><span class="case-sub">&mdash;</span></td>
+</tr>
+<tr>
+  <td class="mono">01/06/2026</td>
+  <td>PO Subscription</td>
+  <td>Agreement to Be Bound by the Protective Order of Kelly Myung</td>
+  <td>Jasjit S.Vidwan <span class="case-sub">for Ouraring Inc. and Oura Health Oy</span></td>
+  <td class="attachments"><a href="../../data/documents/337-1478/883775_2556330_2556330.pdf" target="_blank" rel="noopener">2556330.pdf</a></td>
+</tr>
+<tr>
+  <td class="mono">01/06/2026</td>
+  <td>Motion</td>
+  <td>Notice of Withdrawal of Oura Respondents&#x27; Opposed Motion for Leave to Amend Their Tentative Witness List</td>
+  <td>Jasjit S. Vidwan <span class="case-sub">for Ouraring Inc. and Oura Health Oy</span></td>
+  <td class="attachments"><a href="../../data/documents/337-1478/883769_2556319_2556319.pdf" target="_blank" rel="noopener">2556319.pdf</a></td>
+</tr>
+<tr>
+  <td class="mono">01/06/2026</td>
+  <td>Order</td>
+  <td>Granting Leave for Depositions out of Time</td>
+  <td>Doris Johnson Hines <span class="case-sub">for Administrative Law Judge</span></td>
+  <td class="attachments"><a href="../../data/documents/337-1478/883733_2556063_2556063.pdf" target="_blank" rel="noopener">2556063.pdf</a><a href="../../data/documents/337-1478/883733_2556065_2556065.pdf" target="_blank" rel="noopener">2556065.pdf</a></td>
+</tr>
+<tr>
+  <td class="mono">29/05/2026</td>
+  <td>Motion</td>
+  <td>Respondents Oura Health Oy and Ouraring Inc.&#x27;s Unopposed Motion for Leave to Take Depositions out of Time</td>
+  <td>Jasjit S. Vidwan <span class="case-sub">for Ouraring Inc. and Oura Health Oy</span></td>
+  <td class="attachments"><a href="../../data/documents/337-1478/883684_2555719_2555719.pdf" target="_blank" rel="noopener">2555719.pdf</a></td>
+</tr>
+<tr>
+  <td class="mono">28/05/2026</td>
+  <td>Motion</td>
+  <td>Oura Respondents&#x27; Opposed Motion for Leave to Amend Their Tentative Witness List</td>
+  <td>Jasjit S. Vidwan <span class="case-sub">for Ouraring Inc. and Oura Health Oy</span></td>
+  <td class="attachments"><span class="case-sub">&mdash;</span></td>
+</tr>
+<tr>
+  <td class="mono">27/05/2026</td>
+  <td>Motion</td>
+  <td>Motion for a Protective Order</td>
+  <td>D. Sean Trainor <span class="case-sub">for Samsung Electronics America, Inc. and Samsung Electronic Co., Ltd.</span></td>
+  <td class="attachments"><a href="../../data/documents/337-1478/883294_2553830_2553830.pdf" target="_blank" rel="noopener">2553830.pdf</a></td>
+</tr>
+<tr>
+  <td class="mono">21/05/2026</td>
+  <td>PO Subscription</td>
+  <td>Agreement to Be Bound by the Protective Order of Siew Ung</td>
+  <td>Jasjit S. Vidwan <span class="case-sub">for Ouraring Inc. and Oura Health Oy</span></td>
+  <td class="attachments"><a href="../../data/documents/337-1478/882922_2551808_2551808.pdf" target="_blank" rel="noopener">2551808.pdf</a></td>
+</tr>
+<tr>
+  <td class="mono">19/05/2026</td>
+  <td>PO Subscription</td>
+  <td>Agreement to Be Bound by the Protective Order of Eunice Hye Rim Lee, Michelle Kim, Myungran Ha, Seyon Lee, Sophie Jang, Early Langley, Gregg Eisman, Patricia Schuler, and Shawnna Hynes</td>
+  <td>D. Sean Trainor <span class="case-sub">for Samsung Electronics America, Inc. and Samsung Electronic Co., Ltd.</span></td>
+  <td class="attachments"><a href="../../data/documents/337-1478/882688_2550848_2550848.pdf" target="_blank" rel="noopener">2550848.pdf</a></td>
+</tr>
+<tr>
+  <td class="mono">19/05/2026</td>
+  <td>PO Subscription</td>
+  <td>Agreement to Be Bound by the Protective Order of Katherine Schilling, Melisa Duncan, Sunhee Sohn, Jason Snyder, Matthieu Leulier, and Miranda Glover</td>
+  <td>Jasjit S. Vidwan <span class="case-sub">for Ouraring Inc. and Oura Health Oy</span></td>
+  <td class="attachments"><a href="../../data/documents/337-1478/882640_2550722_2550722.pdf" target="_blank" rel="noopener">2550722.pdf</a></td>
+</tr>
+<tr>
+  <td class="mono">19/05/2026</td>
+  <td>PO Subscription</td>
+  <td>Agreement to Be Bound by the Protective Order of Mike Hensley, Albert Park, Kevin McMahon, and Lawrence Cossar</td>
+  <td>Jasjit S. Vidwan <span class="case-sub">for Ouraring Inc. and Oura Health Oy</span></td>
+  <td class="attachments"><a href="../../data/documents/337-1478/882599_2550515_2550515.pdf" target="_blank" rel="noopener">2550515.pdf</a></td>
+</tr>
+<tr>
+  <td class="mono">18/05/2026</td>
+  <td>Brief Filed With ALJ</td>
+  <td>Complainants&#x27; Responsive Claim Construction Brief</td>
+  <td>D. Sean Trainor <span class="case-sub">for Samsung Electronics America, Inc. and Samsung Electronic Co., Ltd.</span></td>
+  <td class="attachments"><a href="../../data/documents/337-1478/882533_2549813_2549813.pdf" target="_blank" rel="noopener">2549813.pdf</a></td>
+</tr>
+<tr>
+  <td class="mono">18/05/2026</td>
+  <td>Brief Filed With ALJ</td>
+  <td>Respondents Ouraring Inc. and Oura Health Oy’s Responsive Claim Construction Brief</td>
+  <td>Jasjit S.Vidwan <span class="case-sub">for Ouraring Inc. and Oura Health Oy</span></td>
+  <td class="attachments"><a href="../../data/documents/337-1478/882521_2549787_2549787.pdf" target="_blank" rel="noopener">2549787.pdf</a></td>
+</tr>
+<tr>
+  <td class="mono">13/05/2026</td>
+  <td>Notice of Prior Art</td>
+  <td>Respondents Ouraring Inc. and Oura Health Oy&#x27;s Notice of Prior Art</td>
+  <td>Jasjit S. Vidwan <span class="case-sub">for Ouraring Inc. and Oura Health Oy</span></td>
+  <td class="attachments"><a href="../../data/documents/337-1478/882164_2548138_2548138.pdf" target="_blank" rel="noopener">2548138.pdf</a></td>
+</tr>
+<tr>
+  <td class="mono">12/05/2026</td>
+  <td>PO Subscription</td>
+  <td>Agreement to Be Bound by the Protective Order of Hayden Kunz</td>
+  <td>Jasjit S. Vidwan <span class="case-sub">for Ouraring Inc. and Oura Health Oy</span></td>
+  <td class="attachments"><a href="../../data/documents/337-1478/882009_2547554_2547554.pdf" target="_blank" rel="noopener">2547554.pdf</a></td>
+</tr>
+<tr>
+  <td class="mono">07/05/2026</td>
+  <td>PO Subscription</td>
+  <td>Agreement to Be Bound by the Protective Order of Jane Werner and Marissa DeMonte</td>
+  <td>D. Sean Trainor <span class="case-sub">for Samsung Electronics America, Inc. and Samsung Electronic Co., Ltd.</span></td>
+  <td class="attachments"><a href="../../data/documents/337-1478/881655_2544771_2544771.pdf" target="_blank" rel="noopener">2544771.pdf</a></td>
+</tr>
+<tr>
+  <td class="mono">06/05/2026</td>
+  <td>PO Subscription</td>
+  <td>Agreement to Be Bound by the Protective Order of Tricia Lathouris and Billy Fahnert</td>
+  <td>Jasjit S. Vidwan <span class="case-sub">for Ouraring Inc. and Oura Health Oy</span></td>
+  <td class="attachments"><a href="../../data/documents/337-1478/881440_2543612_2543612.pdf" target="_blank" rel="noopener">2543612.pdf</a></td>
+</tr>
+<tr>
+  <td class="mono">05/05/2026</td>
+  <td>Order</td>
+  <td>Amending Procedural Schedule</td>
+  <td>Doris Johnson Hines <span class="case-sub">for Administrative Law Judge</span></td>
+  <td class="attachments"><a href="../../data/documents/337-1478/881268_2542612_2542612.pdf" target="_blank" rel="noopener">2542612.pdf</a><a href="../../data/documents/337-1478/881268_2542628_2542628.pdf" target="_blank" rel="noopener">2542628.pdf</a></td>
+</tr>
+<tr>
+  <td class="mono">04/05/2026</td>
+  <td>Motion</td>
+  <td>Complainants&#x27; Unopposed Motion to Amend the Procedural Schedule</td>
+  <td>D. Sean Trainor <span class="case-sub">for Samsung Electronics America, Inc. and Samsung Electronic Co., Ltd.</span></td>
+  <td class="attachments"><a href="../../data/documents/337-1478/881161_2542023_2542023.pdf" target="_blank" rel="noopener">2542023.pdf</a></td>
+</tr>
+<tr>
+  <td class="mono">01/05/2026</td>
+  <td>Brief Filed With ALJ</td>
+  <td>Complainants&#x27; Opening Claim Construction Brief</td>
+  <td>D. Sean Trainor <span class="case-sub">for Samsung Electronics America, Inc. and Samsung Electronic Co., Ltd.</span></td>
+  <td class="attachments"><a href="../../data/documents/337-1478/881026_2541256_2541256.pdf" target="_blank" rel="noopener">2541256.pdf</a></td>
+</tr>
+<tr>
+  <td class="mono">01/05/2026</td>
+  <td>Brief Filed With ALJ</td>
+  <td>Respondents Ouraring Inc. and Oura Health Oy&#x27;s Opening Claim Construction Brief</td>
+  <td>Jasjit S.Vidwan <span class="case-sub">for Ouraring Inc. and Oura Health Oy&#x27;s</span></td>
+  <td class="attachments"><a href="../../data/documents/337-1478/881025_2541240_2541240.pdf" target="_blank" rel="noopener">2541240.pdf</a><a href="../../data/documents/337-1478/881025_2541241_2541241.pdf" target="_blank" rel="noopener">2541241.pdf</a><a href="../../data/documents/337-1478/881025_2541242_2541242.pdf" target="_blank" rel="noopener">2541242.pdf</a><a href="../../data/documents/337-1478/881025_2541243_2541243.pdf" target="_blank" rel="noopener">2541243.pdf</a><a href="../../data/documents/337-1478/881025_2541244_2541244.pdf" target="_blank" rel="noopener">2541244.pdf</a><a href="../../data/documents/337-1478/881025_2541245_2541245.pdf" target="_blank" rel="noopener">2541245.pdf</a><a href="../../data/documents/337-1478/881025_2541246_2541246.pdf" target="_blank" rel="noopener">2541246.pdf</a><a href="../../data/documents/337-1478/881025_2541247_2541247.pdf" target="_blank" rel="noopener">2541247.pdf</a><a href="../../data/documents/337-1478/881025_2541248_2541248.pdf" target="_blank" rel="noopener">2541248.pdf</a></td>
+</tr>
+<tr>
+  <td class="mono">01/05/2026</td>
+  <td>Witness List</td>
+  <td>Complainant&#x27;s Tentative Witness List</td>
+  <td>D. Sean Trainor <span class="case-sub">for Samsung Electronics America, Inc. and Samsung Electronic Co., Ltd.</span></td>
+  <td class="attachments"><a href="../../data/documents/337-1478/881024_2541221_2541221.pdf" target="_blank" rel="noopener">2541221.pdf</a></td>
+</tr>
+<tr>
+  <td class="mono">01/05/2026</td>
+  <td>Witness List</td>
+  <td>Respondents Ouraring Inc. and Oura Health Oy&#x27;s Tentative Witness List</td>
+  <td>Jasjit S. Vidwan <span class="case-sub">for Ouraring Inc. and Oura Health Oy</span></td>
+  <td class="attachments"><a href="../../data/documents/337-1478/881011_2541161_2541161.pdf" target="_blank" rel="noopener">2541161.pdf</a></td>
+</tr>
+<tr>
+  <td class="mono">27/04/2026</td>
+  <td>Other</td>
+  <td>Joint Claim Construction Chart</td>
+  <td>D. Sean Trainor <span class="case-sub">for Samsung Electronics Co., Ltd., Samsung Electronics America, Inc., Ouraring Inc., and Ōura Health Oy</span></td>
+  <td class="attachments"><a href="../../data/documents/337-1478/880312_2538497_2538497.pdf" target="_blank" rel="noopener">2538497.pdf</a></td>
+</tr>
+<tr>
+  <td class="mono">09/04/2026</td>
+  <td>Other</td>
+  <td>Joint Discovery Stipulation</td>
+  <td>D. Sean Trainor <span class="case-sub">for Samsung Electronics Co., Ltd., Samsung Electronics America, Inc., Ouraring Inc., and Ōura Health Oy</span></td>
+  <td class="attachments"><a href="../../data/documents/337-1478/878423_2530438_2530438.pdf" target="_blank" rel="noopener">2530438.pdf</a></td>
+</tr>
+<tr>
+  <td class="mono">08/04/2026</td>
+  <td>Witness List</td>
+  <td>Complainants&#x27; Identification of Expert Witnesses</td>
+  <td>D. Sean Trainor <span class="case-sub">for Samsung Electronics America, Inc. and Samsung Electronic Co., Ltd.</span></td>
+  <td class="attachments"><a href="../../data/documents/337-1478/878308_2529597_2529597.pdf" target="_blank" rel="noopener">2529597.pdf</a></td>
+</tr>
+<tr>
+  <td class="mono">08/04/2026</td>
+  <td>Witness List</td>
+  <td>Respondents Ouraring Inc. and Oura Health Oy’s Identification of Expert Witnesses</td>
+  <td>Jasjit S. Vidwan <span class="case-sub">for Ouraring Inc. and Oura Health Oy</span></td>
+  <td class="attachments"><a href="../../data/documents/337-1478/878297_2529572_2529572.pdf" target="_blank" rel="noopener">2529572.pdf</a></td>
+</tr>
+<tr>
+  <td class="mono">30/03/2026</td>
+  <td>PO Subscription</td>
+  <td>Agreement to Be Bound by the Protective Order of Hailey S. Verano</td>
+  <td>D. Sean Trainor <span class="case-sub">for Samsung Electronics America, Inc. and Samsung Electronic Co., Ltd.</span></td>
+  <td class="attachments"><a href="../../data/documents/337-1478/876930_2524226_2524226.pdf" target="_blank" rel="noopener">2524226.pdf</a></td>
+</tr>
+<tr>
+  <td class="mono">19/03/2026</td>
+  <td>PO Subscription</td>
+  <td>Agreement to Be Bound by the Protective Order of Gregory Sefian</td>
+  <td>D. Sean Trainor <span class="case-sub">for Samsung Electronics America, Inc. and Samsung Electronic Co., Ltd.</span></td>
+  <td class="attachments"><a href="../../data/documents/337-1478/875975_2520519_2520519.pdf" target="_blank" rel="noopener">2520519.pdf</a></td>
+</tr>
+<tr>
+  <td class="mono">12/03/2026</td>
+  <td>PO Subscription</td>
+  <td>Agreement to Be Bound by the Protective Order of Aashik Padmanabhachary, Angelena Joseph, Babbalpreet Kaur, Badal Sharma, Jose Garza, Richard Powell, and John Jarosz</td>
+  <td>Jasjit S. Vidwan <span class="case-sub">for Ouraring Inc. and Oura Health Oy</span></td>
+  <td class="attachments"><a href="../../data/documents/337-1478/875309_2517379_2517379.pdf" target="_blank" rel="noopener">2517379.pdf</a></td>
+</tr>
+<tr>
+  <td class="mono">11/03/2026</td>
+  <td>PO Subscription</td>
+  <td>Agreement to Be Bound by the Protective Order of Liza Sneitzer</td>
+  <td>D. Sean Trainor <span class="case-sub">for Samsung Electronics America, Inc. and Samsung Electronic Co., Ltd.</span></td>
+  <td class="attachments"><a href="../../data/documents/337-1478/875132_2516653_2516653.pdf" target="_blank" rel="noopener">2516653.pdf</a></td>
+</tr>
+<tr>
+  <td class="mono">10/03/2026</td>
+  <td>PO Subscription</td>
+  <td>Agreement to Be Bound by the Protective Order of Tajana Simunic Rosing, Bobak Mortazavi, and Patrick Mercier</td>
+  <td>Jasjit S. Vidwan <span class="case-sub">for Ouraring Inc. and Oura Health Oy</span></td>
+  <td class="attachments"><a href="../../data/documents/337-1478/875089_2516485_2516485.pdf" target="_blank" rel="noopener">2516485.pdf</a></td>
+</tr>
+<tr>
+  <td class="mono">06/03/2026</td>
+  <td>PO Subscription</td>
+  <td>Agreement to Be Bound by the Protective Order for Aashik Padmanabhachary, Angelena Joseph, Babbalpreet Kaur, Badal Sharma, Jose Garza, Richard Powell, and John Jarosz</td>
+  <td>Jasjit S.Vidwan <span class="case-sub">for Ouraring Inc. and Oura Health Oy</span></td>
+  <td class="attachments"><a href="../../data/documents/337-1478/874628_2513440_2513440.pdf" target="_blank" rel="noopener">2513440.pdf</a></td>
+</tr>
+<tr>
+  <td class="mono">04/03/2026</td>
+  <td>PO Subscription</td>
+  <td>Agreement to Be Bound by the Protective Order of Kurt Fredrickson</td>
+  <td>D. Sean Trainor <span class="case-sub">for Samsung Electronics America, Inc. and Samsung Electronic Co., Ltd.</span></td>
+  <td class="attachments"><a href="../../data/documents/337-1478/874402_2512417_2512417.pdf" target="_blank" rel="noopener">2512417.pdf</a></td>
+</tr>
+<tr>
+  <td class="mono">23/02/2026</td>
+  <td>PO Subscription</td>
+  <td>Agreement to Be Bound by the Protective Order of Wm. Brady Nash</td>
+  <td>Jasjit S. Vidwan <span class="case-sub">for Ouraring Inc. and Oura Health Oy</span></td>
+  <td class="attachments"><a href="../../data/documents/337-1478/873231_2504279_2504279.pdf" target="_blank" rel="noopener">2504279.pdf</a></td>
+</tr>
+<tr>
+  <td class="mono">18/02/2026</td>
+  <td>Answer to Complaint <span class="pill pill-blue">Complaint</span></td>
+  <td>Notice of Erratum to Public Exhibit A to Response of Ouraring Inc. and Oura Health Oy to the First Amended Complaint under Section 337 of The Tariff Act of 1930, as Amended, and Notice of Institution of Investigation</td>
+  <td>Jasjit S. Vidwan <span class="case-sub">for Ouraring Inc. and Oura Health Oy</span></td>
+  <td class="attachments"><a href="../../data/documents/337-1478/872860_2499956_2499956.pdf" target="_blank" rel="noopener">2499956.pdf</a></td>
+</tr>
+<tr>
+  <td class="mono">18/02/2026</td>
+  <td>Order</td>
+  <td>Granting Motion to Amend the Protective Order and Addendum</td>
+  <td>Doris Johnson Hines <span class="case-sub">for Administrative Law Judge</span></td>
+  <td class="attachments"><a href="../../data/documents/337-1478/872838_2499915_2499915.pdf" target="_blank" rel="noopener">2499915.pdf</a><a href="../../data/documents/337-1478/872838_2499953_2499953.pdf" target="_blank" rel="noopener">2499953.pdf</a></td>
+</tr>
+<tr>
+  <td class="mono">17/02/2026</td>
+  <td>Answer to Complaint <span class="pill pill-blue">Complaint</span></td>
+  <td>Response of Ouraring Inc. and Oura Health Oy to the First Amended Complaint under Section 337 of The Tariff Act of 1930, as Amended, and Notice of Institution of Investigation</td>
+  <td>Jasjit S. Vidwan <span class="case-sub">for Ouraring Inc. and Oura Health Oy</span></td>
+  <td class="attachments"><span class="case-sub">&mdash;</span></td>
+</tr>
+<tr>
+  <td class="mono">17/02/2026</td>
+  <td>Answer to Complaint <span class="pill pill-blue">Complaint</span></td>
+  <td>Response of Ouraring Inc. and Oura Health Oy to the First Amended Complaint under Section 337 of The Tariff Act of 1930, as Amended, and Notice of Institution of Investigation</td>
+  <td>Jasjit S. Vidwan <span class="case-sub">for Ouraring Inc. and Oura Health Oy</span></td>
+  <td class="attachments"><a href="../../data/documents/337-1478/872778_2499741_2499741.pdf" target="_blank" rel="noopener">2499741.pdf</a></td>
+</tr>
+<tr>
+  <td class="mono">17/02/2026</td>
+  <td>Motion</td>
+  <td>Joint Motion to Amend the Protective Order</td>
+  <td>D. Sean Trainor <span class="case-sub">for Samsung Electronics Co., Ltd., Samsung Electronics America, Inc., Ouraring Inc., and Ōura Health Oy</span></td>
+  <td class="attachments"><a href="../../data/documents/337-1478/872774_2499692_2499692.pdf" target="_blank" rel="noopener">2499692.pdf</a></td>
+</tr>
+<tr>
+  <td class="mono">12/02/2026</td>
+  <td>PO Subscription</td>
+  <td>Agreement to Be Bound by the Protective Order of Julia Haines and Matthew A. Stanford</td>
+  <td>Jasjit S. Vidwan <span class="case-sub">for Ouraring Inc. and Oura Health Oy</span></td>
+  <td class="attachments"><a href="../../data/documents/337-1478/872422_2498048_2498048.pdf" target="_blank" rel="noopener">2498048.pdf</a></td>
+</tr>
+<tr>
+  <td class="mono">04/02/2026</td>
+  <td>PO Subscription</td>
+  <td>Agreement to Be Bound by the Protective Order of Brian W. Nolan</td>
+  <td>Jasjit S. Vidwan <span class="case-sub">for Ouraring Inc. and Oura Health Oy</span></td>
+  <td class="attachments"><a href="../../data/documents/337-1478/871652_2494902_2494902.pdf" target="_blank" rel="noopener">2494902.pdf</a></td>
+</tr>
+<tr>
+  <td class="mono">04/02/2026</td>
+  <td>PO Subscription</td>
+  <td>Agreement to Be Bound by the Protective Order of Christopher S. Schultz</td>
+  <td>Christopher S. Schultz <span class="case-sub">for Ouraring, Inc. and Oura Health Oy</span></td>
+  <td class="attachments"><a href="../../data/documents/337-1478/871634_2494346_2494346.pdf" target="_blank" rel="noopener">2494346.pdf</a></td>
+</tr>
+<tr>
+  <td class="mono">04/02/2026</td>
+  <td>Notice of Appearance</td>
+  <td>Supplemental Notice of Appearance; Additional Attorneys from ArentFox Schiff LLP on Behalf of Ouraring, Inc. and Oura Health Oy</td>
+  <td>Christopher S. Schultz <span class="case-sub">for Ouraring, Inc. and Oura Health Oy</span></td>
+  <td class="attachments"><a href="../../data/documents/337-1478/871633_2494343_2494343.pdf" target="_blank" rel="noopener">2494343.pdf</a></td>
+</tr>
+<tr>
+  <td class="mono">30/01/2026</td>
+  <td>Order</td>
+  <td>Procedural Schedule</td>
+  <td>Doris Johnson Hines <span class="case-sub">for Administrative Law Judge</span></td>
+  <td class="attachments"><a href="../../data/documents/337-1478/870855_2488887_2488887.pdf" target="_blank" rel="noopener">2488887.pdf</a><a href="../../data/documents/337-1478/870855_2488917_2488917.pdf" target="_blank" rel="noopener">2488917.pdf</a></td>
+</tr>
+<tr>
+  <td class="mono">29/01/2026</td>
+  <td>Transcript</td>
+  <td>Preliminary Conference (Pages 1-25)</td>
+  <td>Doris Johnson Hines <span class="case-sub">for Administrative Law Judge</span></td>
+  <td class="attachments"><a href="../../data/documents/337-1478/871008_2490678_2490678.pdf" target="_blank" rel="noopener">2490678.pdf</a></td>
+</tr>
+<tr>
+  <td class="mono">28/01/2026</td>
+  <td>Order</td>
+  <td>Granting Extension Motion</td>
+  <td>Doris Johnson Hines <span class="case-sub">for Administrative Law Judge</span></td>
+  <td class="attachments"><a href="../../data/documents/337-1478/870467_2486800_2486800.pdf" target="_blank" rel="noopener">2486800.pdf</a><a href="../../data/documents/337-1478/870467_2486894_2486894.pdf" target="_blank" rel="noopener">2486894.pdf</a></td>
+</tr>
+<tr>
+  <td class="mono">28/01/2026</td>
+  <td>Motion</td>
+  <td>Respondents&#x27; Unopposed Motion for Extension of Time to Respond to the Complaint and Notice of Investigation</td>
+  <td>Jasjit S. Vidwan <span class="case-sub">for Ouraring, Inc. and Oura Health Oy</span></td>
+  <td class="attachments"><a href="../../data/documents/337-1478/870429_2486504_2486504.pdf" target="_blank" rel="noopener">2486504.pdf</a></td>
+</tr>
+<tr>
+  <td class="mono">28/01/2026</td>
+  <td>Response/Submission to ALJ Order</td>
+  <td>Joint Submission regarding Procedural Schedule</td>
+  <td>D. Sean Trainor <span class="case-sub">for Samsung Electronics Co., Ltd., Samsung Electronics America, Inc., Ouraring, Inc., and Ōura Health Oy</span></td>
+  <td class="attachments"><a href="../../data/documents/337-1478/870421_2486483_2486483.pdf" target="_blank" rel="noopener">2486483.pdf</a></td>
+</tr>
+<tr>
+  <td class="mono">23/01/2026</td>
+  <td>Order</td>
+  <td>(1) Setting a 16-Month Target Date (2) Setting Preliminary Conference</td>
+  <td>Doris Johnson Hines <span class="case-sub">for Administrative Law Judge</span></td>
+  <td class="attachments"><a href="../../data/documents/337-1478/869917_2482495_2482495.pdf" target="_blank" rel="noopener">2482495.pdf</a><a href="../../data/documents/337-1478/869917_2482504_2482504.pdf" target="_blank" rel="noopener">2482504.pdf</a></td>
+</tr>
+<tr>
+  <td class="mono">22/01/2026</td>
+  <td>Notice of Appearance</td>
+  <td>Notice of Appearance of O&#x27;Melveny &amp; Myers LLP on Behalf of  Samsung Electronics Co., Ltd. and Samsung Electronics America, Inc.; Designation of D. Sean Trainor as Lead Counsel</td>
+  <td>D. Sean Trainor <span class="case-sub">for Samsung Electronics America, Inc. and Samsung Electronics Co., Ltd.</span></td>
+  <td class="attachments"><a href="../../data/documents/337-1478/869857_2482004_2482004.pdf" target="_blank" rel="noopener">2482004.pdf</a></td>
+</tr>
+<tr>
+  <td class="mono">22/01/2026</td>
+  <td>PO Subscription</td>
+  <td>Agreement to Be Bound by the Protective Order of D. Sean Trainor, Ryan K. Yagura, Nancy L. Schroeder, Ben Haber, Grace McFee, Ohona Chowdhury, Renia Zervos, Khanh Leon, Eric T. Ong, Jacob Boesch, Darin Snyder, Mark Liang, Bill Trac, Rui Li, Sorin Zaharia, Marc Pensabene, Laura G. Gore, Caitlin P. Hogan, Nate Legum, Joanne Bae, John Kappos, Cason Cole, Raj Paul, and Frances Mackay</td>
+  <td>D. Sean Trainor <span class="case-sub">for Samsung Electronics America, Inc. and Samsung Electronic Co., Ltd.</span></td>
+  <td class="attachments"><a href="../../data/documents/337-1478/869869_2482288_2482288.pdf" target="_blank" rel="noopener">2482288.pdf</a></td>
+</tr>
+<tr>
+  <td class="mono">22/01/2026</td>
+  <td>Response/Submission to ALJ Order</td>
+  <td>Joint Statement on Target Date</td>
+  <td>D. Sean Trainor <span class="case-sub">for Samsung Electronics Co., Ltd., Samsung Electronics America, Inc., Ouraring Inc., and Ōura Health Oy</span></td>
+  <td class="attachments"><a href="../../data/documents/337-1478/869850_2481988_2481988.pdf" target="_blank" rel="noopener">2481988.pdf</a></td>
+</tr>
+<tr>
+  <td class="mono">16/01/2026</td>
+  <td>Notice</td>
+  <td>F.R. Notice of Institution of Investigation</td>
+  <td>Lisa R. Barton <span class="case-sub">for Office of the Secretary</span></td>
+  <td class="attachments"><a href="../../data/documents/337-1478/871324_2492396_2492396.pdf" target="_blank" rel="noopener">2492396.pdf</a></td>
+</tr>
+<tr>
+  <td class="mono">16/01/2026</td>
+  <td>Request for Confidential Materials</td>
+  <td>Request for Confidential Materials on Behalf of Ouraring Inc. and Oura Health Oy</td>
+  <td>Jasjit S. Vidwan <span class="case-sub">for Ouraring Inc. and Oura Health Oy</span></td>
+  <td class="attachments"><a href="../../data/documents/337-1478/869244_2478796_2478796.pdf" target="_blank" rel="noopener">2478796.pdf</a></td>
+</tr>
+<tr>
+  <td class="mono">16/01/2026</td>
+  <td>PO Subscription</td>
+  <td>Agreement to Be Bound by the Protective Order of Jasjit S. Vidwan, James A. Fussell, III, Robert G. Pluta, Saqib J. Siddiqui, Bryan C. Nese, Michael L. Lindinger, Tiffany A. Miller, Clark S. Bakewell, Alison T. Gelsleichter, Tariq Javed, Amanda E. Stephenson, Seth W. Bruneel, Courtney Krawice, Séké Godo, Angeline Premraj, Paul Choi, Nicholas H. Ciulla, Sora Ko, Andrew Huntsinger, Jaspreet Momi, Jennifer Weinberg, Sydney N. Royer, and Melissa Kuylen</td>
+  <td>Jasjit S. Vidwan <span class="case-sub">for Ouraring Inc. and Oura Health Oy</span></td>
+  <td class="attachments"><a href="../../data/documents/337-1478/869232_2478740_2478740.pdf" target="_blank" rel="noopener">2478740.pdf</a></td>
+</tr>
+<tr>
+  <td class="mono">16/01/2026</td>
+  <td>Order</td>
+  <td>Seeking Joint Statement on Target Date</td>
+  <td>Doris Johnson Hines <span class="case-sub">for Administrative Law Judge</span></td>
+  <td class="attachments"><a href="../../data/documents/337-1478/869199_2478540_2478540.pdf" target="_blank" rel="noopener">2478540.pdf</a></td>
+</tr>
+<tr>
+  <td class="mono">16/01/2026</td>
+  <td>Order</td>
+  <td>Notice of Ground Rules</td>
+  <td>Doris Johnson Hines <span class="case-sub">for Administrative Law Judge</span></td>
+  <td class="attachments"><a href="../../data/documents/337-1478/869198_2478536_2478536.pdf" target="_blank" rel="noopener">2478536.pdf</a></td>
+</tr>
+<tr>
+  <td class="mono">16/01/2026</td>
+  <td>Order</td>
+  <td>Protective Order</td>
+  <td>Doris Johnson Hines <span class="case-sub">for Administrative Law Judge</span></td>
+  <td class="attachments"><a href="../../data/documents/337-1478/869195_2478535_2478535.pdf" target="_blank" rel="noopener">2478535.pdf</a></td>
+</tr>
+<tr>
+  <td class="mono">15/01/2026</td>
+  <td>Notice of Appearance</td>
+  <td>Notice of Appearance of Mayer Brown LLP on Behalf of Ouraring Inc. and Oura Health Oy; Designation of Jasjit S. Vidwan as Lead Counsel</td>
+  <td>Jasjit S. Vidwan <span class="case-sub">for Ouraring, Inc. and Ōura Health Oy</span></td>
+  <td class="attachments"><a href="../../data/documents/337-1478/869128_2478325_2478325.pdf" target="_blank" rel="noopener">2478325.pdf</a></td>
+</tr>
+<tr>
+  <td class="mono">15/01/2026</td>
+  <td>Notice</td>
+  <td>Assignment of ALJ Johnson Hines</td>
+  <td>Clark S. Cheney <span class="case-sub">for Chief Administrative Law Judge</span></td>
+  <td class="attachments"><a href="../../data/documents/337-1478/869117_2478280_2478280.pdf" target="_blank" rel="noopener">2478280.pdf</a></td>
+</tr>
+<tr>
+  <td class="mono">14/01/2026</td>
+  <td>Notice</td>
+  <td>Institution of Investigation</td>
+  <td>Lisa R. Barton <span class="case-sub">for Office of the Secretary</span></td>
+  <td class="attachments"><a href="../../data/documents/337-1478/868875_2477759_2477759.pdf" target="_blank" rel="noopener">2477759.pdf</a></td>
+</tr>
+<tr>
+  <td class="mono">13/01/2026</td>
+  <td>Voting Sheet</td>
+  <td>Unknown</td>
+  <td>Lisa R. Barton <span class="case-sub">for Office of the Secretary</span></td>
+  <td class="attachments"><a href="../../data/documents/337-1478/870432_2486508_2486508.pdf" target="_blank" rel="noopener">2486508.pdf</a></td>
+</tr>
+<tr>
+  <td class="mono">07/01/2026</td>
+  <td>Correspondence - USITC</td>
+  <td>Letter Denying Request for Leave to File out of Time</td>
+  <td>Lisa R. Barton <span class="case-sub">for Office of the Secretary</span></td>
+  <td class="attachments"><a href="../../data/documents/337-1478/868202_2473296_2473296.pdf" target="_blank" rel="noopener">2473296.pdf</a></td>
+</tr>
+<tr>
+  <td class="mono">05/01/2026</td>
+  <td>Motion</td>
+  <td>Proposed Respondents Ouraring Inc. and Oura Health OY&#x27;s Opposed Motion for Leave to File Its Request for 100-Day Pilot Program Designation out of Time</td>
+  <td>Jasjit S. Vidwan <span class="case-sub">for Ouraring Inc. and Oura Health Oy</span></td>
+  <td class="attachments"><a href="../../data/documents/337-1478/867920_2470830_2470830.pdf" target="_blank" rel="noopener">2470830.pdf</a></td>
+</tr>
+<tr>
+  <td class="mono">02/01/2026</td>
+  <td>Complaint <span class="pill pill-blue">Complaint</span></td>
+  <td>First Amended Public Complaint</td>
+  <td>D. Sean Trainor <span class="case-sub">for Samsung Electronics America, Inc. and Samsung Electronic Co., Ltd.</span></td>
+  <td class="attachments"><a href="../../data/documents/337-1478/867832_2470498_2470498.pdf" target="_blank" rel="noopener">2470498.pdf</a><a href="../../data/documents/337-1478/867832_2470499_2470499.pdf" target="_blank" rel="noopener">2470499.pdf</a><a href="../../data/documents/337-1478/867832_2470500_2470500.pdf" target="_blank" rel="noopener">2470500.pdf</a></td>
+</tr>
+<tr>
+  <td class="mono">31/12/2025</td>
+  <td>Complaint <span class="pill pill-blue">Complaint</span></td>
+  <td>First Supplement to the Complaint</td>
+  <td>D. Sean Trainor <span class="case-sub">for Samsung Electronics America, Inc. and Samsung Electronic Co., Ltd.</span></td>
+  <td class="attachments"><a href="../../data/documents/337-1478/867722_2470127_2470127.pdf" target="_blank" rel="noopener">2470127.pdf</a><a href="../../data/documents/337-1478/867722_2470128_2470128.pdf" target="_blank" rel="noopener">2470128.pdf</a><a href="../../data/documents/337-1478/867722_2470129_2470129.pdf" target="_blank" rel="noopener">2470129.pdf</a><a href="../../data/documents/337-1478/867722_2470130_2470130.pdf" target="_blank" rel="noopener">2470130.pdf</a><a href="../../data/documents/337-1478/867722_2470131_2470131.pdf" target="_blank" rel="noopener">2470131.pdf</a><a href="../../data/documents/337-1478/867722_2470132_2470132.pdf" target="_blank" rel="noopener">2470132.pdf</a><a href="../../data/documents/337-1478/867722_2470133_2470133.pdf" target="_blank" rel="noopener">2470133.pdf</a></td>
+</tr>
+<tr>
+  <td class="mono">17/12/2025</td>
+  <td>Notice</td>
+  <td>F.R. Notice of Receipt of Complaint; Solicitation of Comments Relating to the Public Interest</td>
+  <td>Lisa R. Barton <span class="case-sub">for Office of the Secretary</span></td>
+  <td class="attachments"><a href="../../data/documents/337-1478/866747_2465818_2465818.pdf" target="_blank" rel="noopener">2465818.pdf</a></td>
+</tr>
+<tr>
+  <td class="mono">15/12/2025</td>
+  <td>Notice</td>
+  <td>Receipt of Complaint; Solicitation of Comments Relating to the Public Interest</td>
+  <td>Lisa R. Barton <span class="case-sub">for Office of the Secretary</span></td>
+  <td class="attachments"><a href="../../data/documents/337-1478/866515_2464039_2464039.pdf" target="_blank" rel="noopener">2464039.pdf</a></td>
+</tr>
+<tr>
+  <td class="mono">12/12/2025</td>
+  <td>Complaint <span class="pill pill-blue">Complaint</span></td>
+  <td>Public Complaint and Exhibits</td>
+  <td>D. Sean Trainor <span class="case-sub">for Samsung Electronics America, Inc. and Samsung Electronics Co., Ltd.</span></td>
+  <td class="attachments"><a href="../../data/documents/337-1478/866474_2463820_2463820.pdf" target="_blank" rel="noopener">2463820.pdf</a><a href="../../data/documents/337-1478/866474_2463821_2463821.pdf" target="_blank" rel="noopener">2463821.pdf</a><a href="../../data/documents/337-1478/866474_2463822_2463822.pdf" target="_blank" rel="noopener">2463822.pdf</a><a href="../../data/documents/337-1478/866474_2463823_2463823.pdf" target="_blank" rel="noopener">2463823.pdf</a><a href="../../data/documents/337-1478/866474_2463824_2463824.pdf" target="_blank" rel="noopener">2463824.pdf</a><a href="../../data/documents/337-1478/866474_2463825_2463825.pdf" target="_blank" rel="noopener">2463825.pdf</a><a href="../../data/documents/337-1478/866474_2463826_2463826.pdf" target="_blank" rel="noopener">2463826.pdf</a><a href="../../data/documents/337-1478/866474_2463827_2463827.pdf" target="_blank" rel="noopener">2463827.pdf</a><a href="../../data/documents/337-1478/866474_2463828_2463828.pdf" target="_blank" rel="noopener">2463828.pdf</a><a href="../../data/documents/337-1478/866474_2463829_2463829.pdf" target="_blank" rel="noopener">2463829.pdf</a><a href="../../data/documents/337-1478/866474_2463830_2463830.pdf" target="_blank" rel="noopener">2463830.pdf</a><a href="../../data/documents/337-1478/866474_2463831_2463831.pdf" target="_blank" rel="noopener">2463831.pdf</a><a href="../../data/documents/337-1478/866474_2463832_2463832.pdf" target="_blank" rel="noopener">2463832.pdf</a><a href="../../data/documents/337-1478/866474_2463833_2463833.pdf" target="_blank" rel="noopener">2463833.pdf</a><a href="../../data/documents/337-1478/866474_2463834_2463834.pdf" target="_blank" rel="noopener">2463834.pdf</a><a href="../../data/documents/337-1478/866474_2463835_2463835.pdf" target="_blank" rel="noopener">2463835.pdf</a><a href="../../data/documents/337-1478/866474_2463836_2463836.pdf" target="_blank" rel="noopener">2463836.pdf</a><a href="../../data/documents/337-1478/866474_2463837_2463837.pdf" target="_blank" rel="noopener">2463837.pdf</a><a href="../../data/documents/337-1478/866474_2463838_2463838.pdf" target="_blank" rel="noopener">2463838.pdf</a><a href="../../data/documents/337-1478/866474_2463839_2463839.pdf" target="_blank" rel="noopener">2463839.pdf</a><a href="../../data/documents/337-1478/866474_2463840_2463840.pdf" target="_blank" rel="noopener">2463840.pdf</a><a href="../../data/documents/337-1478/866474_2463841_2463841.pdf" target="_blank" rel="noopener">2463841.pdf</a><a href="../../data/documents/337-1478/866474_2463842_2463842.pdf" target="_blank" rel="noopener">2463842.pdf</a><a href="../../data/documents/337-1478/866474_2463843_2463843.pdf" target="_blank" rel="noopener">2463843.pdf</a><a href="../../data/documents/337-1478/866474_2463844_2463844.pdf" target="_blank" rel="noopener">2463844.pdf</a><a href="../../data/documents/337-1478/866474_2463845_2463845.pdf" target="_blank" rel="noopener">2463845.pdf</a><a href="../../data/documents/337-1478/866474_2463846_2463846.pdf" target="_blank" rel="noopener">2463846.pdf</a><a href="../../data/documents/337-1478/866474_2463847_2463847.pdf" target="_blank" rel="noopener">2463847.pdf</a><a href="../../data/documents/337-1478/866474_2463848_2463848.pdf" target="_blank" rel="noopener">2463848.pdf</a><a href="../../data/documents/337-1478/866474_2463849_2463849.pdf" target="_blank" rel="noopener">2463849.pdf</a><a href="../../data/documents/337-1478/866474_2463850_2463850.pdf" target="_blank" rel="noopener">2463850.pdf</a><a href="../../data/documents/337-1478/866474_2463851_2463851.pdf" target="_blank" rel="noopener">2463851.pdf</a><a href="../../data/documents/337-1478/866474_2463852_2463852.pdf" target="_blank" rel="noopener">2463852.pdf</a><a href="../../data/documents/337-1478/866474_2463853_2463853.pdf" target="_blank" rel="noopener">2463853.pdf</a><a href="../../data/documents/337-1478/866474_2463854_2463854.pdf" target="_blank" rel="noopener">2463854.pdf</a><a href="../../data/documents/337-1478/866474_2463855_2463855.pdf" target="_blank" rel="noopener">2463855.pdf</a><a href="../../data/documents/337-1478/866474_2463856_2463856.pdf" target="_blank" rel="noopener">2463856.pdf</a><a href="../../data/documents/337-1478/866474_2463857_2463857.pdf" target="_blank" rel="noopener">2463857.pdf</a><a href="../../data/documents/337-1478/866474_2463858_2463858.pdf" target="_blank" rel="noopener">2463858.pdf</a><a href="../../data/documents/337-1478/866474_2463859_2463859.pdf" target="_blank" rel="noopener">2463859.pdf</a><a href="../../data/documents/337-1478/866474_2463860_2463860.pdf" target="_blank" rel="noopener">2463860.pdf</a></td>
+</tr>
+<tr>
+  <td class="mono">12/12/2025</td>
+  <td>Complaint <span class="pill pill-blue">Complaint</span></td>
+  <td>Confidential Exhibits to the Complaint</td>
+  <td>D. Sean Trainor <span class="case-sub">for Samsung Electronics America, Inc. and Samsung Electronic Co., Ltd.</span></td>
+  <td class="attachments"><span class="case-sub">&mdash;</span></td>
+</tr>
+<tr>
+  <td class="mono">12/12/2025</td>
+  <td>Complaint <span class="pill pill-blue">Complaint</span></td>
+  <td>Appendices A-D</td>
+  <td>D. Sean Trainor <span class="case-sub">for Samsung Electronics America, Inc. and Samsung Electronic Co., Ltd.</span></td>
+  <td class="attachments"><a href="../../data/documents/337-1478/866475_2463865_2463865.pdf" target="_blank" rel="noopener">2463865.pdf</a><a href="../../data/documents/337-1478/866475_2463866_2463866.pdf" target="_blank" rel="noopener">2463866.pdf</a><a href="../../data/documents/337-1478/866475_2463867_2463867.pdf" target="_blank" rel="noopener">2463867.pdf</a><a href="../../data/documents/337-1478/866475_2463868_2463868.pdf" target="_blank" rel="noopener">2463868.pdf</a><a href="../../data/documents/337-1478/866475_2464015_2464015.pdf" target="_blank" rel="noopener">2464015.pdf</a></td>
+</tr>
+      </tbody>
+    </table>
+    
+  </div>
+</div>
+
+<p class="footer-note">Investigation 337-1478 &middot; last refreshed 2026-09-18T17:16:49.950756+00:00.</p>
+
+</div>
+
+</body>
+</html>
