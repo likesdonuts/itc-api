@@ -71,7 +71,6 @@ a:hover { text-decoration: underline; }
   margin: 0 0 0.35rem;
 }
 .hero h1 { margin: 0; font-size: 1.65rem; font-weight: 700; letter-spacing: -0.01em; }
-.hero .subtitle { margin: 0.3rem 0 0; color: var(--muted); font-size: 0.92rem; }
 .stats { display: flex; gap: 0.75rem; flex-wrap: wrap; }
 .stat {
   background: var(--surface);
@@ -352,8 +351,7 @@ def render_index(investigations: list[dict[str, Any]]) -> str:
 <div class="hero">
   <div>
     <p class="eyebrow">U.S. International Trade Commission &middot; Section 337</p>
-    <h1>Tracked Investigations</h1>
-    <p class="subtitle">Newly filed complaints and their dockets, pulled from EDIS.</p>
+    <h1>ITC 337 Investigations</h1>
   </div>
   <div class="stats">{stats_html}</div>
 </div>
@@ -384,7 +382,7 @@ def render_index(investigations: list[dict[str, Any]]) -> str:
 </div>
 <p class="footer-note">Generated from EDIS data &middot; {len(rows)} investigation(s) tracked.</p>
 """
-    return _page("Tracked ITC Investigations", body, script=_INDEX_SCRIPT)
+    return _page("ITC 337 Investigations", body, script=_INDEX_SCRIPT)
 
 
 _PARTY_NAME_STOPWORDS = {
