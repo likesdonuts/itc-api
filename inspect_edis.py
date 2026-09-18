@@ -12,7 +12,7 @@ import sys
 import xml.dom.minidom as minidom
 from pathlib import Path
 
-from edis_client import EdisAuthError, EdisClient, EdisError, load_env
+from datalayer.client import EdisAuthError, EdisClient, EdisError, load_env
 
 ROOT = Path(__file__).parent
 
