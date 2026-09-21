@@ -72,6 +72,29 @@ class TestIndexPage(unittest.TestCase):
         self.assertEqual(order, sorted(order))
 
 
+class TestRowActions(unittest.TestCase):
+    def page(self):
+        return templates.render_index(
+            [investigation("337-1478", "2026-01-13"), investigation("337-3936", "2026-09-09")]
+        )
+
+    def test_each_row_offers_update_and_fetch_docs(self):
+        html = self.page()
+        for number in ("337-1478", "337-3936"):
+            self.assertIn(f'data-action="update" data-number="{number}"', html)
+            self.assertIn(f'data-action="fetch-docs" data-number="{number}"', html)
+
+    def test_the_table_has_an_actions_column(self):
+        self.assertIn("<th>Actions</th>", self.page())
+
+    def test_buttons_explain_themselves_when_opened_from_disk(self):
+        self.assertIn("python cli.py serve", self.page())
+
+    def test_the_detail_page_has_no_buttons(self):
+        html = templates.render_detail(investigation("337-1478", "2026-01-13"), [])
+        self.assertNotIn("data-action=", html)
+
+
 class TestDetailPage(unittest.TestCase):
     def page(self):
         return templates.render_detail(

@@ -156,6 +156,32 @@ table.list tbody tr[hidden] { display: none; }
   font-size: 0.78rem;
   color: var(--muted);
 }
+td.actions { white-space: nowrap; }
+.btn {
+  font: inherit;
+  font-size: 0.78rem;
+  font-weight: 600;
+  padding: 0.3rem 0.65rem;
+  margin-right: 0.35rem;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  background: var(--accent);
+  border-color: var(--accent);
+  color: #fff;
+  cursor: pointer;
+}
+.btn.btn-quiet { background: var(--surface); border-color: var(--border); color: var(--ink); }
+.btn:hover:not(:disabled) { filter: brightness(1.06); }
+.btn.btn-quiet:hover:not(:disabled) { border-color: var(--accent); color: var(--accent); }
+.btn:disabled { opacity: 0.45; cursor: not-allowed; }
+.action-status {
+  display: block;
+  margin-top: 0.3rem;
+  font-size: 0.74rem;
+  color: var(--muted);
+  white-space: normal;
+}
+.action-status.failed { color: var(--amber-fg); }
 .empty-state, .no-results {
   padding: 3rem 1rem;
   text-align: center;
@@ -286,6 +312,55 @@ _INDEX_SCRIPT = """
   if (statusFilter) statusFilter.addEventListener('change', apply);
   apply();
 })();
+
+(function () {
+  // The row buttons call the local server from cli.py serve. Opened straight
+  // off disk there is nothing listening, so say so rather than failing later.
+  const buttons = Array.from(document.querySelectorAll('button[data-action]'));
+  if (location.protocol === 'file:') {
+    buttons.forEach(function (button) {
+      button.disabled = true;
+      button.title = 'Start the local server first: python cli.py serve';
+    });
+    return;
+  }
+
+  function setBusy(busy) {
+    buttons.forEach(function (button) { button.disabled = busy; });
+  }
+
+  buttons.forEach(function (button) {
+    button.addEventListener('click', function () {
+      const row = button.closest('tr');
+      const status = row.querySelector('.action-status');
+      const withDocuments = button.dataset.action === 'fetch-docs';
+      setBusy(true);
+      status.hidden = false;
+      status.className = 'action-status';
+      status.textContent = withDocuments ? 'Fetching documents...' : 'Updating...';
+
+      fetch('api/update', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ number: button.dataset.number, documents: withDocuments })
+      }).then(function (response) {
+        return response.json().then(function (result) {
+          if (!response.ok || !result.ok) {
+            throw new Error(result.message || ('HTTP ' + response.status));
+          }
+          return result;
+        });
+      }).then(function (result) {
+        status.textContent = result.message + ' - reloading';
+        location.reload();
+      }).catch(function (error) {
+        status.className = 'action-status failed';
+        status.textContent = 'Failed: ' + error.message;
+        setBusy(false);
+      });
+    });
+  });
+})();
 """
 
 
@@ -330,6 +405,11 @@ def render_index(investigations: list[dict[str, Any]]) -> str:
   <td class="mono">{_date(inv.get('date_initiated'))}</td>
   <td><span class="phase-chip">{_val(inv.get('investigation_phase'))}</span></td>
   <td>{_status_pill(status)}</td>
+  <td class="actions">
+    <button class="btn" data-action="update" data-number="{_e(number)}" title="Pull new case and document details from EDIS, without downloading PDFs">Update</button>
+    <button class="btn btn-quiet" data-action="fetch-docs" data-number="{_e(number)}" title="Pull new details and download any missing PDFs">Fetch docs</button>
+    <span class="action-status" hidden></span>
+  </td>
 </tr>"""
             )
         body_rows = "\n".join(row_html)
@@ -358,6 +438,7 @@ def render_index(investigations: list[dict[str, Any]]) -> str:
         <th>Date Initiated</th>
         <th>Phase</th>
         <th>Status</th>
+        <th>Actions</th>
       </tr>
     </thead>
     <tbody>
