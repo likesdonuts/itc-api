@@ -173,6 +173,10 @@ def cmd_update(args: argparse.Namespace, store: Store) -> int:
 
 def cmd_render(args: argparse.Namespace, store: Store) -> int:
     _render(store, args.site_dir)
+    print(
+        "Opened from disk the page is read-only; 'python cli.py serve' enables "
+        "its Update / Fetch docs buttons."
+    )
     return 0
 
 
