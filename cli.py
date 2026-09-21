@@ -18,6 +18,7 @@ Examples:
     python cli.py update --all              # re-pull everything on disk
     python cli.py render                    # rebuild the site, offline
     python cli.py status                    # what's tracked, no network
+    python cli.py normalize                 # rewrite stored dates to ISO, offline
     python cli.py refresh                   # discover + update --all + render
 """
 
@@ -27,7 +28,7 @@ import argparse
 import sys
 from pathlib import Path
 
-from datalayer import discovery, update
+from datalayer import discovery, normalize, update
 from datalayer.config import DATA_DIR, MissingTokenError, SITE_DIR, load_token
 from datalayer.runner import ProcessAborted
 from datalayer.store import Store
@@ -95,6 +96,9 @@ def build_parser() -> argparse.ArgumentParser:
 
     sub.add_parser("render", help="UI layer only: rebuild site/ from data/ (offline)")
     sub.add_parser("status", help="list what's tracked on disk (offline)")
+    sub.add_parser(
+        "normalize", help="rewrite stored dates to ISO 8601 in place (offline, no API calls)"
+    )
 
     p_refresh = sub.add_parser(
         "refresh", help="discover, then update everything, then render (the old refresh.py)"
@@ -161,6 +165,12 @@ def cmd_render(args: argparse.Namespace, store: Store) -> int:
     return 0
 
 
+def cmd_normalize(args: argparse.Namespace, store: Store) -> int:
+    normalize.run(store)
+    _render(store, args.site_dir)
+    return 0
+
+
 def cmd_status(args: argparse.Namespace, store: Store) -> int:
     rows = store.summary_rows()
     if not rows:
@@ -204,6 +214,7 @@ COMMANDS = {
     "update": cmd_update,
     "render": cmd_render,
     "status": cmd_status,
+    "normalize": cmd_normalize,
     "refresh": cmd_refresh,
 }
 

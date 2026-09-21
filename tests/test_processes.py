@@ -20,7 +20,7 @@ from unittest import mock
 sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
 
 import cli  # noqa: E402
-from datalayer import discovery, update  # noqa: E402
+from datalayer import discovery, normalize, update  # noqa: E402
 from datalayer.client import RssItem  # noqa: E402
 from datalayer.store import Store, lookup_candidates, number_key  # noqa: E402
 from ui.render import render_site  # noqa: E402
@@ -294,6 +294,68 @@ class TestUpdate(ProcessTestCase):
         )
         with mock.patch("datalayer.discovery.fetch_rss", side_effect=AssertionError("RSS called")):
             self.run_update(client, ["337-1478"])
+
+
+class TestStoredDatesAreNormalized(ProcessTestCase):
+    def test_fetched_records_are_written_as_iso(self):
+        client = FakeEdisClient(
+            investigations={"337-1478": [INSTITUTED_ROW]},
+            documents={"337-1478": INSTITUTED_DOCS},
+        )
+        store, _ = self.run_discovery(client, [rss_item("337-1478", "100")])
+
+        document = store.documents["337-1478"][0]
+        self.assertEqual(document["document_date"], "2026-01-13")
+        self.assertEqual(document["official_received_date"], "2026-01-13T09:00:00")
+        self.assertEqual(
+            store.investigations["337-1478"]["date_initiated"], "2026-01-13T09:00:00"
+        )
+        self.assertEqual(
+            store.investigations["337-1478"]["date_initiated_note"],
+            "approx., from earliest complaint filing",
+        )
+
+    def test_normalize_rewrites_records_stored_before_the_change(self):
+        store = self.store()
+        store.put(
+            "337-1478",
+            {"investigation_number": "337-1478", "date_initiated": "01-13-2026"},
+            [{"id": "1", "document_date": "2026/09/18 11:39:00"}],
+        )
+        store.put(
+            "337-3933",
+            {
+                "investigation_number": "337-3933",
+                "date_initiated": "2026/08/21 16:25:00  (approx., from earliest complaint filing)",
+            },
+            [],
+        )
+        store.save_investigations()
+
+        report = normalize.run(store, log=lambda msg: None)
+
+        self.assertEqual(report.changed, 3)
+        self.assertEqual(store.investigations["337-1478"]["date_initiated"], "2026-01-13")
+        self.assertEqual(store.documents["337-1478"][0]["document_date"], "2026-09-18T11:39:00")
+        self.assertEqual(
+            store.investigations["337-3933"]["date_initiated"], "2026-08-21T16:25:00"
+        )
+        self.assertEqual(
+            store.investigations["337-3933"]["date_initiated_note"],
+            "approx., from earliest complaint filing",
+        )
+
+        on_disk = json.loads((self.data_dir / "investigations.json").read_text())
+        self.assertEqual(on_disk["337-1478"]["date_initiated"], "2026-01-13")
+
+    def test_normalize_is_a_no_op_the_second_time(self):
+        store = self.store()
+        store.put("337-1478", {"date_initiated": "01-13-2026"}, [])
+        store.save_investigations()
+
+        normalize.run(store, log=lambda msg: None)
+        again = normalize.run(store, log=lambda msg: None)
+        self.assertEqual(again.changed, 0)
 
 
 class TestCommandLine(ProcessTestCase):

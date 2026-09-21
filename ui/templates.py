@@ -7,6 +7,8 @@ import re
 from collections import Counter
 from typing import Any
 
+import dates
+
 APP_STYLE = """
 :root {
   color-scheme: light dark;
@@ -252,54 +254,11 @@ def _status_pill(status: str | None) -> str:
     return f'<span class="pill {css_class}">{_e(status)}</span>'
 
 
-def _parse_date(value: str | None) -> tuple[int, int, int] | None:
-    """Read any date shape this app stores and return (year, month, day).
-
-    The sources disagree: EDIS uses "YYYY/MM/DD HH:MM:SS", the RSS-derived
-    records use ISO datetimes, and the public IDS feed uses US-style
-    "MM-DD-YYYY". Some values also carry a trailing "  (approx., ...)" note.
+def _date(value: str | None) -> str:
+    """Every date on the site goes through here. See dates.py for why the
+    day/month order is decided by the source format rather than per value.
     """
-    if not value:
-        return None
-    main = str(value).partition("  (")[0].strip()
-    if not main:
-        return None
-
-    parts = re.split(r"[-/]", main.split("T")[0].split(" ")[0])
-    if len(parts) != 3 or not all(p.isdigit() for p in parts):
-        return None
-
-    if len(parts[0]) == 4:
-        year, month, day = (int(p) for p in parts)
-    elif len(parts[2]) == 4:
-        month, day, year = (int(p) for p in parts)
-    else:
-        return None
-
-    # A month past 12 means the source was day-first after all.
-    if month > 12 and day <= 12:
-        month, day = day, month
-    if not (1 <= month <= 12 and 1 <= day <= 31):
-        return None
-    return year, month, day
-
-
-def _format_ddmmyyyy(value: str | None) -> str:
-    """Every date on the site is rendered through here, as DD/MM/YYYY."""
-    parsed = _parse_date(value)
-    if parsed is None:
-        main = str(value or "").partition("  (")[0].strip()
-        return _e(main) if main else "Unknown"
-    year, month, day = parsed
-    return f"{day:02d}/{month:02d}/{year:04d}"
-
-
-def _date_sort_key(value: str | None) -> tuple[int, int, int]:
-    """Order by real calendar date, not by the string the source happened to
-    use -- "01-13-2026" from IDS and "2026/08/21" from EDIS otherwise sort
-    against each other character by character.
-    """
-    return _parse_date(value) or (0, 0, 0)
+    return _e(dates.format_ui(value))
 
 
 _INDEX_SCRIPT = """
@@ -331,8 +290,8 @@ _INDEX_SCRIPT = """
 
 
 def render_index(investigations: list[dict[str, Any]]) -> str:
-    def sort_key(inv: dict[str, Any]) -> tuple[int, int, int]:
-        return _date_sort_key(inv.get("date_initiated") or inv.get("last_refreshed"))
+    def sort_key(inv: dict[str, Any]) -> str:
+        return dates.sort_key(inv.get("date_initiated") or inv.get("last_refreshed"))
 
     rows = sorted(investigations, key=sort_key, reverse=True)
     status_counts: Counter[str] = Counter((inv.get("investigation_status") or "Unknown") for inv in rows)
@@ -368,7 +327,7 @@ def render_index(investigations: list[dict[str, Any]]) -> str:
                 f"""<tr data-search="{search_blob}" data-status="{_e(status)}">
   <td><a class="case-link" href="investigations/{_e(slug_for(number))}.html">{_val(title)}</a></td>
   <td class="mono">{_val(number)}</td>
-  <td class="mono">{_format_ddmmyyyy(inv.get('date_initiated'))}</td>
+  <td class="mono">{_date(inv.get('date_initiated'))}</td>
   <td><span class="phase-chip">{_val(inv.get('investigation_phase'))}</span></td>
   <td>{_status_pill(status)}</td>
 </tr>"""
@@ -456,7 +415,7 @@ def _extract_parties(documents: list[dict[str, Any]]) -> dict[str, str | None]:
     """
 
     def sort_key(doc: dict[str, Any]) -> str:
-        return doc.get("document_date") or doc.get("official_received_date") or ""
+        return dates.sort_key(doc.get("document_date") or doc.get("official_received_date"))
 
     docs_asc = sorted(documents, key=sort_key)
 
@@ -509,7 +468,7 @@ def _extract_parties(documents: list[dict[str, Any]]) -> dict[str, str | None]:
 
 def render_detail(investigation: dict[str, Any], documents: list[dict[str, Any]]) -> str:
     def doc_sort_key(doc: dict[str, Any]) -> str:
-        return doc.get("document_date") or doc.get("official_received_date") or ""
+        return dates.sort_key(doc.get("document_date") or doc.get("official_received_date"))
 
     docs_sorted = sorted(documents, key=doc_sort_key, reverse=True)
 
@@ -528,7 +487,7 @@ def render_detail(investigation: dict[str, Any], documents: list[dict[str, Any]]
             ) or '<span class="case-sub">&mdash;</span>'
             doc_rows_list.append(
                 f"""<tr>
-  <td class="mono">{_format_ddmmyyyy(doc.get('document_date') or doc.get('official_received_date'))}</td>
+  <td class="mono">{_date(doc.get('document_date') or doc.get('official_received_date'))}</td>
   <td>{_val(doc.get('document_type'))}{badge}</td>
   <td>{_val(doc.get('title'))}</td>
   <td>{_val(doc.get('filed_by'))}{f' <span class="case-sub">for {_e(doc.get("on_behalf_of"))}</span>' if doc.get('on_behalf_of') else ''}</td>
@@ -555,7 +514,7 @@ def render_detail(investigation: dict[str, Any], documents: list[dict[str, Any]]
   <h2>Investigation Information</h2>
   <div class="card field-grid">
     <div><div class="field-label">Investigation Number</div><div class="field-value">{_val(number)}</div></div>
-    <div><div class="field-label">Date Initiated</div><div class="field-value">{_format_ddmmyyyy(investigation.get('date_initiated'))}</div></div>
+    <div><div class="field-label">Date Initiated</div><div class="field-value">{_date(investigation.get('date_initiated'))}</div></div>
     <div><div class="field-label">Investigation Type</div><div class="field-value">{_val(investigation.get('investigation_type'))}</div></div>
     <div><div class="field-label">ITC Docket Number</div><div class="field-value">{_val(investigation.get('docket_number'))}</div></div>
     <div><div class="field-label">Investigation Phase</div><div class="field-value">{_val(investigation.get('investigation_phase'))}</div></div>
@@ -596,6 +555,6 @@ def render_detail(investigation: dict[str, Any], documents: list[dict[str, Any]]
   </div>
 </div>
 
-<p class="footer-note">Investigation {_e(number)} &middot; last refreshed {_format_ddmmyyyy(investigation.get('last_refreshed'))}.</p>
+<p class="footer-note">Investigation {_e(number)} &middot; last refreshed {_date(investigation.get('last_refreshed'))}.</p>
 """
     return _page(f"{investigation.get('title') or number} - Docket", body)
