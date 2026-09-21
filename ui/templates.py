@@ -181,6 +181,7 @@ td.actions { white-space: nowrap; }
   color: var(--muted);
   white-space: normal;
 }
+.action-status.done { color: var(--green-fg); font-weight: 600; }
 .action-status.failed { color: var(--amber-fg); }
 .empty-state, .no-results {
   padding: 3rem 1rem;
@@ -351,8 +352,11 @@ _INDEX_SCRIPT = """
           return result;
         });
       }).then(function (result) {
-        status.textContent = result.message + ' - reloading';
-        location.reload();
+        // Hold the outcome on screen long enough to read before the page
+        // reloads onto the freshly rendered data.
+        status.className = 'action-status done';
+        status.textContent = result.message;
+        setTimeout(function () { location.reload(); }, 1500);
       }).catch(function (error) {
         status.className = 'action-status failed';
         status.textContent = 'Failed: ' + error.message;
