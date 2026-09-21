@@ -151,6 +151,32 @@ table.list tbody tr[hidden] { display: none; }
   font-size: 0.78rem;
   color: var(--muted);
 }
+td.actions { white-space: nowrap; }
+.btn {
+  font: inherit;
+  font-size: 0.78rem;
+  font-weight: 600;
+  padding: 0.3rem 0.65rem;
+  margin-right: 0.35rem;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  background: var(--accent);
+  border-color: var(--accent);
+  color: #fff;
+  cursor: pointer;
+}
+.btn.btn-quiet { background: var(--surface); border-color: var(--border); color: var(--ink); }
+.btn:hover:not(:disabled) { filter: brightness(1.06); }
+.btn.btn-quiet:hover:not(:disabled) { border-color: var(--accent); color: var(--accent); }
+.btn:disabled { opacity: 0.45; cursor: not-allowed; }
+.action-status {
+  display: block;
+  margin-top: 0.3rem;
+  font-size: 0.74rem;
+  color: var(--muted);
+  white-space: normal;
+}
+.action-status.failed { color: var(--amber-fg); }
 .empty-state, .no-results {
   padding: 3rem 1rem;
   text-align: center;
@@ -217,7 +243,7 @@ table.list .attachments a:last-child { margin-bottom: 0; }
   <h2>Investigation Information</h2>
   <div class="card field-grid">
     <div><div class="field-label">Investigation Number</div><div class="field-value">337-3936</div></div>
-    <div><div class="field-label">Date Initiated</div><div class="field-value">09/09/2026</div></div>
+    <div><div class="field-label">Date Initiated</div><div class="field-value">09 Sep 2026</div></div>
     <div><div class="field-label">Investigation Type</div><div class="field-value">Sec 337</div></div>
     <div><div class="field-label">ITC Docket Number</div><div class="field-value">3936</div></div>
     <div><div class="field-label">Investigation Phase</div><div class="field-value">Violation</div></div>
@@ -252,42 +278,42 @@ table.list .attachments a:last-child { margin-bottom: 0; }
       </thead>
       <tbody>
         <tr>
-  <td class="mono">10/09/2026</td>
+  <td class="mono">10 Sep 2026</td>
   <td>Complaint <span class="pill pill-blue">Complaint</span></td>
   <td>First Public Supplement to the Complaint</td>
   <td>Louis S. Mastriani <span class="case-sub">for Vicor Corporation</span></td>
   <td class="attachments"><a href="../../data/documents/337-3936/894387_2618578_2618578.pdf" target="_blank" rel="noopener">2618578.pdf</a><a href="../../data/documents/337-3936/894387_2618579_2618579.pdf" target="_blank" rel="noopener">2618579.pdf</a><a href="../../data/documents/337-3936/894387_2618580_2618580.pdf" target="_blank" rel="noopener">2618580.pdf</a></td>
 </tr>
 <tr>
-  <td class="mono">10/09/2026</td>
+  <td class="mono">10 Sep 2026</td>
   <td>Complaint <span class="pill pill-blue">Complaint</span></td>
   <td>First Confidential Supplement to the Complaint</td>
   <td>Louis S. Mastriani <span class="case-sub">for Vicor Corporation</span></td>
   <td class="attachments"><span class="case-sub">&mdash;</span></td>
 </tr>
 <tr>
-  <td class="mono">09/09/2026</td>
+  <td class="mono">09 Sep 2026</td>
   <td>Notice</td>
   <td>Receipt of Complaint; Solicitation of Comments Relating to the Public Interest</td>
   <td>Lisa R. Barton <span class="case-sub">for Office of the Secretary</span></td>
   <td class="attachments"><a href="../../data/documents/337-3936/894247_2618175_2618175.pdf" target="_blank" rel="noopener">2618175.pdf</a></td>
 </tr>
 <tr>
-  <td class="mono">08/09/2026</td>
+  <td class="mono">08 Sep 2026</td>
   <td>Complaint <span class="pill pill-blue">Complaint</span></td>
   <td>Confidential Exhibits to the Complaint</td>
   <td>Louis S. Mastriani <span class="case-sub">for Vicor Corporation</span></td>
   <td class="attachments"><span class="case-sub">&mdash;</span></td>
 </tr>
 <tr>
-  <td class="mono">08/09/2026</td>
+  <td class="mono">08 Sep 2026</td>
   <td>Complaint <span class="pill pill-blue">Complaint</span></td>
   <td>Public Complaint and Exhibits</td>
   <td>Louis S. Mastriani <span class="case-sub">for Vicor Corporation</span></td>
   <td class="attachments"><a href="../../data/documents/337-3936/894182_2617900_2617900.pdf" target="_blank" rel="noopener">2617900.pdf</a><a href="../../data/documents/337-3936/894182_2617901_2617901.pdf" target="_blank" rel="noopener">2617901.pdf</a><a href="../../data/documents/337-3936/894182_2617902_2617902.pdf" target="_blank" rel="noopener">2617902.pdf</a><a href="../../data/documents/337-3936/894182_2617903_2617903.pdf" target="_blank" rel="noopener">2617903.pdf</a><a href="../../data/documents/337-3936/894182_2617904_2617904.pdf" target="_blank" rel="noopener">2617904.pdf</a><a href="../../data/documents/337-3936/894182_2617905_2617905.pdf" target="_blank" rel="noopener">2617905.pdf</a><a href="../../data/documents/337-3936/894182_2617906_2617906.pdf" target="_blank" rel="noopener">2617906.pdf</a><a href="../../data/documents/337-3936/894182_2617907_2617907.pdf" target="_blank" rel="noopener">2617907.pdf</a><a href="../../data/documents/337-3936/894182_2617908_2617908.pdf" target="_blank" rel="noopener">2617908.pdf</a><a href="../../data/documents/337-3936/894182_2617909_2617909.pdf" target="_blank" rel="noopener">2617909.pdf</a><a href="../../data/documents/337-3936/894182_2617910_2617910.pdf" target="_blank" rel="noopener">2617910.pdf</a><a href="../../data/documents/337-3936/894182_2617911_2617911.pdf" target="_blank" rel="noopener">2617911.pdf</a><a href="../../data/documents/337-3936/894182_2617912_2617912.pdf" target="_blank" rel="noopener">2617912.pdf</a><a href="../../data/documents/337-3936/894182_2617913_2617913.pdf" target="_blank" rel="noopener">2617913.pdf</a><a href="../../data/documents/337-3936/894182_2617914_2617914.pdf" target="_blank" rel="noopener">2617914.pdf</a><a href="../../data/documents/337-3936/894182_2617915_2617915.pdf" target="_blank" rel="noopener">2617915.pdf</a><a href="../../data/documents/337-3936/894182_2617916_2617916.pdf" target="_blank" rel="noopener">2617916.pdf</a><a href="../../data/documents/337-3936/894182_2617917_2617917.pdf" target="_blank" rel="noopener">2617917.pdf</a><a href="../../data/documents/337-3936/894182_2617918_2617918.pdf" target="_blank" rel="noopener">2617918.pdf</a><a href="../../data/documents/337-3936/894182_2617919_2617919.pdf" target="_blank" rel="noopener">2617919.pdf</a><a href="../../data/documents/337-3936/894182_2617920_2617920.pdf" target="_blank" rel="noopener">2617920.pdf</a><a href="../../data/documents/337-3936/894182_2617921_2617921.pdf" target="_blank" rel="noopener">2617921.pdf</a><a href="../../data/documents/337-3936/894182_2617922_2617922.pdf" target="_blank" rel="noopener">2617922.pdf</a><a href="../../data/documents/337-3936/894182_2617923_2617923.pdf" target="_blank" rel="noopener">2617923.pdf</a><a href="../../data/documents/337-3936/894182_2617924_2617924.pdf" target="_blank" rel="noopener">2617924.pdf</a><a href="../../data/documents/337-3936/894182_2617925_2617925.pdf" target="_blank" rel="noopener">2617925.pdf</a><a href="../../data/documents/337-3936/894182_2617926_2617926.pdf" target="_blank" rel="noopener">2617926.pdf</a><a href="../../data/documents/337-3936/894182_2617927_2617927.pdf" target="_blank" rel="noopener">2617927.pdf</a><a href="../../data/documents/337-3936/894182_2617928_2617928.pdf" target="_blank" rel="noopener">2617928.pdf</a><a href="../../data/documents/337-3936/894182_2617929_2617929.pdf" target="_blank" rel="noopener">2617929.pdf</a><a href="../../data/documents/337-3936/894182_2617930_2617930.pdf" target="_blank" rel="noopener">2617930.pdf</a><a href="../../data/documents/337-3936/894182_2617931_2617931.pdf" target="_blank" rel="noopener">2617931.pdf</a><a href="../../data/documents/337-3936/894182_2617932_2617932.pdf" target="_blank" rel="noopener">2617932.pdf</a><a href="../../data/documents/337-3936/894182_2617933_2617933.pdf" target="_blank" rel="noopener">2617933.pdf</a><a href="../../data/documents/337-3936/894182_2617934_2617934.pdf" target="_blank" rel="noopener">2617934.pdf</a><a href="../../data/documents/337-3936/894182_2617935_2617935.pdf" target="_blank" rel="noopener">2617935.pdf</a><a href="../../data/documents/337-3936/894182_2617936_2617936.pdf" target="_blank" rel="noopener">2617936.pdf</a><a href="../../data/documents/337-3936/894182_2617937_2617937.pdf" target="_blank" rel="noopener">2617937.pdf</a><a href="../../data/documents/337-3936/894182_2617938_2617938.pdf" target="_blank" rel="noopener">2617938.pdf</a></td>
 </tr>
 <tr>
-  <td class="mono">08/09/2026</td>
+  <td class="mono">08 Sep 2026</td>
   <td>Complaint <span class="pill pill-blue">Complaint</span></td>
   <td>Appendices to Complaint</td>
   <td>Louis S. Mastriani <span class="case-sub">for Vicor Corporation</span></td>
@@ -299,7 +325,7 @@ table.list .attachments a:last-child { margin-bottom: 0; }
   </div>
 </div>
 
-<p class="footer-note">Investigation 337-3936 &middot; last refreshed 18/09/2026.</p>
+<p class="footer-note">Investigation 337-3936 &middot; last refreshed 18 Sep 2026.</p>
 
 </div>
 

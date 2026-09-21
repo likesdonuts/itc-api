@@ -151,6 +151,32 @@ table.list tbody tr[hidden] { display: none; }
   font-size: 0.78rem;
   color: var(--muted);
 }
+td.actions { white-space: nowrap; }
+.btn {
+  font: inherit;
+  font-size: 0.78rem;
+  font-weight: 600;
+  padding: 0.3rem 0.65rem;
+  margin-right: 0.35rem;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  background: var(--accent);
+  border-color: var(--accent);
+  color: #fff;
+  cursor: pointer;
+}
+.btn.btn-quiet { background: var(--surface); border-color: var(--border); color: var(--ink); }
+.btn:hover:not(:disabled) { filter: brightness(1.06); }
+.btn.btn-quiet:hover:not(:disabled) { border-color: var(--accent); color: var(--accent); }
+.btn:disabled { opacity: 0.45; cursor: not-allowed; }
+.action-status {
+  display: block;
+  margin-top: 0.3rem;
+  font-size: 0.74rem;
+  color: var(--muted);
+  white-space: normal;
+}
+.action-status.failed { color: var(--amber-fg); }
 .empty-state, .no-results {
   padding: 3rem 1rem;
   text-align: center;
@@ -217,7 +243,7 @@ table.list .attachments a:last-child { margin-bottom: 0; }
   <h2>Investigation Information</h2>
   <div class="card field-grid">
     <div><div class="field-label">Investigation Number</div><div class="field-value">337-3934</div></div>
-    <div><div class="field-label">Date Initiated</div><div class="field-value">03/09/2026</div></div>
+    <div><div class="field-label">Date Initiated</div><div class="field-value">03 Sep 2026</div></div>
     <div><div class="field-label">Investigation Type</div><div class="field-value">Sec 337</div></div>
     <div><div class="field-label">ITC Docket Number</div><div class="field-value">3934</div></div>
     <div><div class="field-label">Investigation Phase</div><div class="field-value">Violation</div></div>
@@ -252,42 +278,42 @@ table.list .attachments a:last-child { margin-bottom: 0; }
       </thead>
       <tbody>
         <tr>
-  <td class="mono">17/09/2026</td>
+  <td class="mono">17 Sep 2026</td>
   <td>Comments/Response to Comments</td>
   <td>Proposed Respondent Apple Inc.&#x27;s Public Interest Statement</td>
   <td>Sarah R. Frazier <span class="case-sub">for Apple Inc.</span></td>
   <td class="attachments"><a href="../../data/documents/337-3934/895102_2621385_2621385.pdf" target="_blank" rel="noopener">2621385.pdf</a></td>
 </tr>
 <tr>
-  <td class="mono">17/09/2026</td>
+  <td class="mono">17 Sep 2026</td>
   <td>Complaint <span class="pill pill-blue">Complaint</span></td>
   <td>Supplement to Complaint</td>
   <td>S. Alex Lasher <span class="case-sub">for trinamiX Sensing LLC and trinamiX GmbH</span></td>
   <td class="attachments"><a href="../../data/documents/337-3934/895052_2621197_2621197.pdf" target="_blank" rel="noopener">2621197.pdf</a><a href="../../data/documents/337-3934/895052_2621198_2621198.pdf" target="_blank" rel="noopener">2621198.pdf</a><a href="../../data/documents/337-3934/895052_2621199_2621199.pdf" target="_blank" rel="noopener">2621199.pdf</a><a href="../../data/documents/337-3934/895052_2621200_2621200.pdf" target="_blank" rel="noopener">2621200.pdf</a><a href="../../data/documents/337-3934/895052_2621201_2621201.pdf" target="_blank" rel="noopener">2621201.pdf</a><a href="../../data/documents/337-3934/895052_2621202_2621202.pdf" target="_blank" rel="noopener">2621202.pdf</a></td>
 </tr>
 <tr>
-  <td class="mono">04/09/2026</td>
+  <td class="mono">04 Sep 2026</td>
   <td>Notice</td>
   <td>Receipt of Complaint; Solicitation of Comments relating to the Public Interest</td>
   <td>Lisa R. Barton <span class="case-sub">for Office of the Secretary</span></td>
   <td class="attachments"><a href="../../data/documents/337-3934/893977_2616801_2616801.pdf" target="_blank" rel="noopener">2616801.pdf</a></td>
 </tr>
 <tr>
-  <td class="mono">03/09/2026</td>
+  <td class="mono">03 Sep 2026</td>
   <td>Complaint <span class="pill pill-blue">Complaint</span></td>
   <td>Public Complaint Appendices</td>
   <td>S. Alex Lasher <span class="case-sub">for trinamiX Sensing LLC and trinamiX GmbH</span></td>
   <td class="attachments"><a href="../../data/documents/337-3934/893898_2616366_2616366.pdf" target="_blank" rel="noopener">2616366.pdf</a><a href="../../data/documents/337-3934/893898_2616367_2616367.pdf" target="_blank" rel="noopener">2616367.pdf</a><a href="../../data/documents/337-3934/893898_2616368_2616368.pdf" target="_blank" rel="noopener">2616368.pdf</a><a href="../../data/documents/337-3934/893898_2616369_2616369.pdf" target="_blank" rel="noopener">2616369.pdf</a><a href="../../data/documents/337-3934/893898_2616370_2616370.pdf" target="_blank" rel="noopener">2616370.pdf</a><a href="../../data/documents/337-3934/893898_2616371_2616371.pdf" target="_blank" rel="noopener">2616371.pdf</a><a href="../../data/documents/337-3934/893898_2616372_2616372.pdf" target="_blank" rel="noopener">2616372.pdf</a></td>
 </tr>
 <tr>
-  <td class="mono">03/09/2026</td>
+  <td class="mono">03 Sep 2026</td>
   <td>Complaint <span class="pill pill-blue">Complaint</span></td>
   <td>Confidential Complaint Exhibits</td>
   <td>S. Alex Lasher <span class="case-sub">for trinamiX Sensing LLC and trinamiX GmbH</span></td>
   <td class="attachments"><span class="case-sub">&mdash;</span></td>
 </tr>
 <tr>
-  <td class="mono">03/09/2026</td>
+  <td class="mono">03 Sep 2026</td>
   <td>Complaint <span class="pill pill-blue">Complaint</span></td>
   <td>Public Complaint and Exhibits</td>
   <td>S. Alex Lasher <span class="case-sub">for trinamiX Sensing LLC and trinamiX GmbH</span></td>
@@ -299,7 +325,7 @@ table.list .attachments a:last-child { margin-bottom: 0; }
   </div>
 </div>
 
-<p class="footer-note">Investigation 337-3934 &middot; last refreshed 18/09/2026.</p>
+<p class="footer-note">Investigation 337-3934 &middot; last refreshed 18 Sep 2026.</p>
 
 </div>
 
