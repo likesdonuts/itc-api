@@ -9,6 +9,8 @@ straight from disk.
 
 ```
 cli.py                one entry point for every command
+dates.py              what a date from each feed means, shared by both layers
+server.py             local server so the page buttons can run the data layer
 datalayer/            DATA LAYER - talks to EDIS/RSS, owns data/
   client.py             HTTP client for the EDIS API, IDS feed and RSS feed
   config.py             paths, feed URLs, .env token loading
@@ -16,6 +18,7 @@ datalayer/            DATA LAYER - talks to EDIS/RSS, owns data/
   records.py            builds the stored record shape for one case
   discovery.py          process 1: new case discovery
   update.py             process 2: targeted update
+  normalize.py          offline maintenance: rewrite stored dates to ISO
   runner.py             shared session handling for both processes
 ui/                   UI LAYER - reads data/, owns site/
   templates.py          all HTML/CSS
@@ -53,11 +56,13 @@ telling you to generate a new one. The UI layer keeps working without a token.
 | `python cli.py update 337-1478 337-3936` | EDIS | Process 2. Re-pulls exactly the case numbers you name. |
 | `python cli.py update --all` | EDIS | Process 2 over every case already on disk. |
 | `python cli.py render` | none | UI layer. Rebuilds `site/` from `data/`. |
+| `python cli.py serve` | localhost | Serves the site so its Update / Fetch docs buttons work. |
 | `python cli.py status` | none | Lists what is tracked, with document and file counts. |
+| `python cli.py normalize` | none | Rewrites stored dates to ISO 8601 in place. |
 | `python cli.py refresh` | RSS + EDIS | Discover, then update everything, then render. The old all-in-one behaviour. |
 
 Windows users can double-click `discover.bat`, `update.bat` (it prompts for
-numbers), `render.bat`, or `run.bat` (full refresh).
+numbers), `render.bat`, `serve.bat`, or `run.bat` (full refresh).
 
 ### Process 1: new case discovery
 
@@ -98,6 +103,49 @@ python cli.py render
 Reads `data/investigations.json` and `data/documents_index.json` and rewrites
 the site. Edit `ui/templates.py`, re-run this, refresh the browser. Pages for
 cases that no longer exist under that number are removed.
+
+### Updating a case from the page
+
+```
+python cli.py serve
+```
+
+This serves the site on <http://127.0.0.1:8765> and gives the two buttons on
+each row of the list page something to call:
+
+- **Update** pulls fresh case and document details from EDIS, without
+  downloading any PDFs.
+- **Fetch docs** pulls the same details and also downloads any PDFs missing
+  from `data/documents/`.
+
+Both run the same targeted update process as `python cli.py update`, with
+downloads off or on. The row reports what happened and the page reloads onto
+the freshly rendered data. One action runs at a time. Opened straight from
+disk (`file://`) the buttons are disabled, since nothing is listening.
+
+Only `site/` and `data/documents/` are reachable over HTTP; the document root
+has to be the repository so the PDF links resolve, and `.env` lives there.
+
+## Dates
+
+Each feed writes dates differently, and two of the shapes cannot be told
+apart by looking at one value:
+
+| Source | Example | Order |
+| --- | --- | --- |
+| EDIS documents | `2026/09/18 11:39:00` | year first |
+| EDIS / RSS | `2026-09-18T12:00:00+00:00` | ISO 8601 |
+| RSS `pubDate` | `Fri, 18 Sep 2026 11:39:05 GMT` | RFC 822 |
+| IDS investigations | `01-13-2026` | US month first |
+
+`04-05-2026` from IDS is 5 April, but read day-first it is 4 May, and 329 of
+the feed's 886 Section 337 start dates are ambiguous like that. So `dates.py`
+decides the order from the source format, never from the value, the data
+layer stores everything as ISO 8601, and the site renders `18 Sep 2026` --
+day, month, year, month named so it cannot be misread.
+
+Records fetched before this keep working, and `python cli.py normalize`
+rewrites them in place without any API calls.
 
 ## How a case is stored
 

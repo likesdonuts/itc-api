@@ -17,7 +17,9 @@ Examples:
     python cli.py update 337-1478 337-3936  # re-pull only those two cases
     python cli.py update --all              # re-pull everything on disk
     python cli.py render                    # rebuild the site, offline
+    python cli.py serve                     # browse the site with working buttons
     python cli.py status                    # what's tracked, no network
+    python cli.py normalize                 # rewrite stored dates to ISO, offline
     python cli.py refresh                   # discover + update --all + render
 """
 
@@ -27,7 +29,7 @@ import argparse
 import sys
 from pathlib import Path
 
-from datalayer import discovery, update
+from datalayer import discovery, normalize, update
 from datalayer.config import DATA_DIR, MissingTokenError, SITE_DIR, load_token
 from datalayer.runner import ProcessAborted
 from datalayer.store import Store
@@ -95,6 +97,19 @@ def build_parser() -> argparse.ArgumentParser:
 
     sub.add_parser("render", help="UI layer only: rebuild site/ from data/ (offline)")
     sub.add_parser("status", help="list what's tracked on disk (offline)")
+    sub.add_parser(
+        "normalize", help="rewrite stored dates to ISO 8601 in place (offline, no API calls)"
+    )
+
+    p_serve = sub.add_parser(
+        "serve",
+        help="serve the site locally so its Update / Fetch docs buttons work",
+    )
+    p_serve.add_argument("--port", type=int, default=8765, help="port to listen on (default 8765)")
+    p_serve.add_argument("--host", default="127.0.0.1", help=argparse.SUPPRESS)
+    p_serve.add_argument(
+        "--no-browser", action="store_true", help="don't open a browser window on startup"
+    )
 
     p_refresh = sub.add_parser(
         "refresh", help="discover, then update everything, then render (the old refresh.py)"
@@ -161,6 +176,27 @@ def cmd_render(args: argparse.Namespace, store: Store) -> int:
     return 0
 
 
+def cmd_normalize(args: argparse.Namespace, store: Store) -> int:
+    normalize.run(store)
+    _render(store, args.site_dir)
+    return 0
+
+
+def cmd_serve(args: argparse.Namespace, store: Store) -> int:
+    from server import serve
+
+    _render(store, args.site_dir)
+    serve(
+        load_token(),
+        host=args.host,
+        port=args.port,
+        data_dir=args.data_dir,
+        site_dir=args.site_dir,
+        open_browser=not args.no_browser,
+    )
+    return 0
+
+
 def cmd_status(args: argparse.Namespace, store: Store) -> int:
     rows = store.summary_rows()
     if not rows:
@@ -203,7 +239,9 @@ COMMANDS = {
     "discover": cmd_discover,
     "update": cmd_update,
     "render": cmd_render,
+    "serve": cmd_serve,
     "status": cmd_status,
+    "normalize": cmd_normalize,
     "refresh": cmd_refresh,
 }
 

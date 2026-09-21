@@ -151,6 +151,33 @@ table.list tbody tr[hidden] { display: none; }
   font-size: 0.78rem;
   color: var(--muted);
 }
+td.actions { white-space: nowrap; }
+.btn {
+  font: inherit;
+  font-size: 0.78rem;
+  font-weight: 600;
+  padding: 0.3rem 0.65rem;
+  margin-right: 0.35rem;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  background: var(--accent);
+  border-color: var(--accent);
+  color: #fff;
+  cursor: pointer;
+}
+.btn.btn-quiet { background: var(--surface); border-color: var(--border); color: var(--ink); }
+.btn:hover:not(:disabled) { filter: brightness(1.06); }
+.btn.btn-quiet:hover:not(:disabled) { border-color: var(--accent); color: var(--accent); }
+.btn:disabled { opacity: 0.45; cursor: not-allowed; }
+.action-status {
+  display: block;
+  margin-top: 0.3rem;
+  font-size: 0.74rem;
+  color: var(--muted);
+  white-space: normal;
+}
+.action-status.done { color: var(--green-fg); font-weight: 600; }
+.action-status.failed { color: var(--amber-fg); }
 .empty-state, .no-results {
   padding: 3rem 1rem;
   text-align: center;
@@ -226,43 +253,69 @@ table.list .attachments a:last-child { margin-bottom: 0; }
         <th>Date Initiated</th>
         <th>Phase</th>
         <th>Status</th>
+        <th>Actions</th>
       </tr>
     </thead>
     <tbody>
       <tr data-search="certain vertical power delivery systems, components thereof, and computing systems containing the same; inv. no. 337-ta-3936 (violation) 337-3936 3936 sec 337 preinstitution" data-status="Preinstitution">
   <td><a class="case-link" href="investigations/337-3936.html">Certain Vertical Power Delivery Systems, Components Thereof, and Computing Systems Containing the Same; Inv. No. 337-TA-3936 (Violation)</a></td>
   <td class="mono">337-3936</td>
-  <td class="mono">09/09/2026</td>
+  <td class="mono">09 Sep 2026</td>
   <td><span class="phase-chip">Violation</span></td>
   <td><span class="pill pill-blue">Preinstitution</span></td>
+  <td class="actions">
+    <button class="btn" data-action="update" data-number="337-3936" title="Pull new case and document details from EDIS, without downloading PDFs">Update</button>
+    <button class="btn btn-quiet" data-action="fetch-docs" data-number="337-3936" title="Pull new details and download any missing PDFs">Fetch docs</button>
+    <span class="action-status" hidden></span>
+  </td>
 </tr>
 <tr data-search="certain mobile electronic devices and components thereof; inv. no. 337-ta-3934 (violation) 337-3934 3934 sec 337 preinstitution" data-status="Preinstitution">
   <td><a class="case-link" href="investigations/337-3934.html">Certain Mobile Electronic Devices and Components Thereof; Inv. No. 337-TA-3934 (Violation)</a></td>
   <td class="mono">337-3934</td>
-  <td class="mono">03/09/2026</td>
+  <td class="mono">03 Sep 2026</td>
   <td><span class="phase-chip">Violation</span></td>
   <td><span class="pill pill-blue">Preinstitution</span></td>
+  <td class="actions">
+    <button class="btn" data-action="update" data-number="337-3934" title="Pull new case and document details from EDIS, without downloading PDFs">Update</button>
+    <button class="btn btn-quiet" data-action="fetch-docs" data-number="337-3934" title="Pull new details and download any missing PDFs">Fetch docs</button>
+    <span class="action-status" hidden></span>
+  </td>
 </tr>
 <tr data-search="certain powered rocker-recliner and glider-recliner mechanisms and seating units containing same; inv. no. 337-ta-3933 (violation) 337-3933 3933 sec 337 preinstitution" data-status="Preinstitution">
   <td><a class="case-link" href="investigations/337-3933.html">Certain Powered Rocker-Recliner and Glider-Recliner Mechanisms and Seating Units Containing Same; Inv. No. 337-TA-3933 (Violation)</a></td>
   <td class="mono">337-3933</td>
-  <td class="mono">21/08/2026</td>
+  <td class="mono">21 Aug 2026</td>
   <td><span class="phase-chip">Violation</span></td>
   <td><span class="pill pill-blue">Preinstitution</span></td>
+  <td class="actions">
+    <button class="btn" data-action="update" data-number="337-3933" title="Pull new case and document details from EDIS, without downloading PDFs">Update</button>
+    <button class="btn btn-quiet" data-action="fetch-docs" data-number="337-3933" title="Pull new details and download any missing PDFs">Fetch docs</button>
+    <span class="action-status" hidden></span>
+  </td>
 </tr>
 <tr data-search="certain semiconductor devices, products containing same, and components thereof; inv. no. 337-ta-1500 (violation) 337-1500 3896 sec 337 active" data-status="Active">
   <td><a class="case-link" href="investigations/337-1500.html">Certain Semiconductor Devices, Products Containing Same, and Components Thereof; Inv. No. 337-TA-1500 (Violation)</a></td>
   <td class="mono">337-1500</td>
-  <td class="mono">27/04/2026</td>
+  <td class="mono">27 Apr 2026</td>
   <td><span class="phase-chip">Violation</span></td>
   <td><span class="pill pill-green">Active</span></td>
+  <td class="actions">
+    <button class="btn" data-action="update" data-number="337-1500" title="Pull new case and document details from EDIS, without downloading PDFs">Update</button>
+    <button class="btn btn-quiet" data-action="fetch-docs" data-number="337-1500" title="Pull new details and download any missing PDFs">Fetch docs</button>
+    <span class="action-status" hidden></span>
+  </td>
 </tr>
 <tr data-search="certain wearable devices; inv. no. 337-ta-1478 (violation) 337-1478 3866 sec 337 active" data-status="Active">
   <td><a class="case-link" href="investigations/337-1478.html">Certain Wearable Devices; Inv. No. 337-TA-1478 (Violation)</a></td>
   <td class="mono">337-1478</td>
-  <td class="mono">13/01/2026</td>
+  <td class="mono">13 Jan 2026</td>
   <td><span class="phase-chip">Violation</span></td>
   <td><span class="pill pill-green">Active</span></td>
+  <td class="actions">
+    <button class="btn" data-action="update" data-number="337-1478" title="Pull new case and document details from EDIS, without downloading PDFs">Update</button>
+    <button class="btn btn-quiet" data-action="fetch-docs" data-number="337-1478" title="Pull new details and download any missing PDFs">Fetch docs</button>
+    <span class="action-status" hidden></span>
+  </td>
 </tr>
     </tbody>
   </table>
@@ -296,6 +349,58 @@ table.list .attachments a:last-child { margin-bottom: 0; }
   if (search) search.addEventListener('input', apply);
   if (statusFilter) statusFilter.addEventListener('change', apply);
   apply();
+})();
+
+(function () {
+  // The row buttons call the local server from cli.py serve. Opened straight
+  // off disk there is nothing listening, so say so rather than failing later.
+  const buttons = Array.from(document.querySelectorAll('button[data-action]'));
+  if (location.protocol === 'file:') {
+    buttons.forEach(function (button) {
+      button.disabled = true;
+      button.title = 'Start the local server first: python cli.py serve';
+    });
+    return;
+  }
+
+  function setBusy(busy) {
+    buttons.forEach(function (button) { button.disabled = busy; });
+  }
+
+  buttons.forEach(function (button) {
+    button.addEventListener('click', function () {
+      const row = button.closest('tr');
+      const status = row.querySelector('.action-status');
+      const withDocuments = button.dataset.action === 'fetch-docs';
+      setBusy(true);
+      status.hidden = false;
+      status.className = 'action-status';
+      status.textContent = withDocuments ? 'Fetching documents...' : 'Updating...';
+
+      fetch('api/update', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ number: button.dataset.number, documents: withDocuments })
+      }).then(function (response) {
+        return response.json().then(function (result) {
+          if (!response.ok || !result.ok) {
+            throw new Error(result.message || ('HTTP ' + response.status));
+          }
+          return result;
+        });
+      }).then(function (result) {
+        // Hold the outcome on screen long enough to read before the page
+        // reloads onto the freshly rendered data.
+        status.className = 'action-status done';
+        status.textContent = result.message;
+        setTimeout(function () { location.reload(); }, 1500);
+      }).catch(function (error) {
+        status.className = 'action-status failed';
+        status.textContent = 'Failed: ' + error.message;
+        setBusy(false);
+      });
+    });
+  });
 })();
 </script>
 </body>

@@ -11,7 +11,7 @@ from pathlib import Path
 from typing import Any, Callable
 
 from datalayer.config import DATA_DIR, SITE_DIR
-from datalayer.store import Store
+from datalayer.store import Store, write_text_atomic
 
 from . import templates
 
@@ -39,16 +39,14 @@ def render_site(
 
     investigations: dict[str, Any] = store.investigations
     index_path = site_dir / "index.html"
-    index_path.write_text(
-        templates.render_index(list(investigations.values())), encoding="utf-8"
-    )
+    write_text_atomic(index_path, templates.render_index(list(investigations.values())))
 
     written: set[Path] = set()
     for number, record in investigations.items():
         slug = templates.slug_for(number)
         documents = store.documents.get(number, [])
         page = detail_dir / f"{slug}.html"
-        page.write_text(templates.render_detail(record, documents), encoding="utf-8")
+        write_text_atomic(page, templates.render_detail(record, documents))
         written.add(page)
 
     # A pre-institution docket gets renumbered once it's instituted; drop the

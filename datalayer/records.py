@@ -13,6 +13,8 @@ from datetime import datetime, timezone
 from pathlib import Path
 from typing import Any, Callable
 
+import dates
+
 from .client import EdisAuthError, EdisClient, EdisError
 from .store import Store, lookup_candidates
 
@@ -124,7 +126,7 @@ def instituted_record(edis_row: dict[str, Any], ids_meta: dict[str, Any]) -> dic
         "investigation_type": _pick(edis_row.get("investigationType"), ids_meta.get("Investigation Type")),
         "investigation_status": _pick(edis_row.get("investigationStatus"), ids_meta.get("Investigation Status")),
         "investigation_phase": _pick(edis_row.get("investigationPhase"), ids_meta.get("Phase Number")),
-        "date_initiated": ids_meta.get("Start Date"),
+        "date_initiated": dates.to_iso(ids_meta.get("Start Date")),
         "last_refreshed": _now(),
     }
 
@@ -134,7 +136,9 @@ def pending_record(docket_number: str, rss_documents: dict[str, Any]) -> dict[st
     Everything we know comes from the RSS feed plus direct attachment lookups
     keyed by the document IDs the feed gave us.
     """
-    pub_dates = [d.get("pub_date_iso") or d.get("pub_date") for d in rss_documents.values()]
+    pub_dates = [
+        dates.to_iso(d.get("pub_date_iso") or d.get("pub_date")) for d in rss_documents.values()
+    ]
     pub_dates = [d for d in pub_dates if d]
     return {
         "investigation_number": docket_number,
@@ -178,8 +182,8 @@ def collect_edis_documents(
                 "filed_by": doc.get("filedBy"),
                 "on_behalf_of": doc.get("onBehalfOf"),
                 "firm_organization": doc.get("firmOrganization"),
-                "document_date": doc.get("documentDate"),
-                "official_received_date": doc.get("officialReceivedDate"),
+                "document_date": dates.to_iso(doc.get("documentDate")),
+                "official_received_date": dates.to_iso(doc.get("officialReceivedDate")),
                 "attachments": attachments,
             }
         )
@@ -217,8 +221,10 @@ def collect_rss_documents(
                 "filed_by": None,
                 "on_behalf_of": None,
                 "firm_organization": None,
-                "document_date": meta.get("pub_date_iso") or meta.get("pub_date"),
-                "official_received_date": meta.get("pub_date_iso") or meta.get("pub_date"),
+                "document_date": dates.to_iso(meta.get("pub_date_iso") or meta.get("pub_date")),
+                "official_received_date": dates.to_iso(
+                    meta.get("pub_date_iso") or meta.get("pub_date")
+                ),
                 "attachments": attachments,
             }
         )
@@ -227,13 +233,13 @@ def collect_rss_documents(
 
 
 def _earliest_complaint_date(raw_documents: list[dict[str, Any]]) -> str | None:
-    dates = [
-        d.get("officialReceivedDate") or d.get("documentDate")
+    filed = [
+        dates.to_iso(d.get("officialReceivedDate") or d.get("documentDate"))
         for d in raw_documents
         if "complaint" in (d.get("documentType") or "").lower()
     ]
-    dates = [d for d in dates if d]
-    return min(dates) if dates else None
+    filed = [d for d in filed if d]
+    return min(filed) if filed else None
 
 
 def sync_case(
@@ -273,7 +279,8 @@ def sync_case(
         if not record["date_initiated"]:
             approx = _earliest_complaint_date(raw_documents)
             if approx:
-                record["date_initiated"] = f"{approx}  (approx., from earliest complaint filing)"
+                record["date_initiated"] = approx
+                record["date_initiated_note"] = "approx., from earliest complaint filing"
         documents, downloaded = collect_edis_documents(
             client, store.docs_dir, key, raw_documents, download=download, log=log
         )

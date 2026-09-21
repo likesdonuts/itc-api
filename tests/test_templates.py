@@ -1,10 +1,14 @@
-"""UI layer tests: page chrome and date presentation.
+"""UI layer tests: page chrome, dates as rendered, and the row action buttons.
+
+Date parsing itself is covered in test_dates.py; here we only care that the
+pages show one consistent format and nothing raw leaks through.
 
     python -m unittest discover -s tests
 """
 
 from __future__ import annotations
 
+import re
 import sys
 import unittest
 from pathlib import Path
@@ -13,30 +17,9 @@ sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
 
 from ui import templates  # noqa: E402
 
-
-class TestDateFormatting(unittest.TestCase):
-    def test_every_stored_date_shape_renders_as_ddmmyyyy(self):
-        cases = {
-            "2026/01/13 09:00:00": "13/01/2026",  # EDIS document date
-            "2026-09-18T12:00:00+00:00": "18/09/2026",  # RSS-derived date
-            "2026-01-13": "13/01/2026",  # plain ISO date
-            "01-13-2026": "13/01/2026",  # IDS start date, US order
-            "04-27-2026": "27/04/2026",
-            "2026/08/21 16:25:00  (approx., from earliest complaint filing)": "21/08/2026",
-        }
-        for stored, expected in cases.items():
-            with self.subTest(stored=stored):
-                self.assertEqual(templates._format_ddmmyyyy(stored), expected)
-
-    def test_missing_dates_say_unknown(self):
-        self.assertEqual(templates._format_ddmmyyyy(None), "Unknown")
-        self.assertEqual(templates._format_ddmmyyyy(""), "Unknown")
-
-    def test_unparseable_dates_are_shown_as_stored(self):
-        self.assertEqual(templates._format_ddmmyyyy("sometime in 2026"), "sometime in 2026")
-
-    def test_day_first_input_is_not_swapped_into_an_impossible_month(self):
-        self.assertEqual(templates._format_ddmmyyyy("27-04-2026"), "27/04/2026")
+# Anything numeric like 13/01/2026 or 01-13-2026 means a raw feed value
+# reached the page instead of going through the formatter.
+RAW_DATE_RE = re.compile(r"\d{1,4}[-/]\d{1,2}[-/]\d{1,4}")
 
 
 def investigation(number: str, date_initiated: str | None, **extra):
@@ -50,20 +33,32 @@ def investigation(number: str, date_initiated: str | None, **extra):
     }
 
 
+def body_of(html: str) -> str:
+    """Strip the <style> and <script> blocks, which contain no page data."""
+    without_style = re.sub(r"<style>.*?</style>", "", html, flags=re.S)
+    return re.sub(r"<script>.*?</script>", "", without_style, flags=re.S)
+
+
 class TestIndexPage(unittest.TestCase):
     def test_heading_and_title(self):
-        html = templates.render_index([investigation("337-1478", "01-13-2026")])
+        html = templates.render_index([investigation("337-1478", "2026-01-13")])
         self.assertIn("<title>ITC 337 Investigations</title>", html)
         self.assertIn("<h1>ITC 337 Investigations</h1>", html)
 
     def test_strapline_is_gone(self):
-        html = templates.render_index([investigation("337-1478", "01-13-2026")])
+        html = templates.render_index([investigation("337-1478", "2026-01-13")])
         self.assertNotIn("Newly filed complaints and their dockets", html)
 
-    def test_dates_are_formatted(self):
+    def test_dates_render_day_month_year(self):
+        html = templates.render_index([investigation("337-1478", "2026-01-13")])
+        self.assertIn("13 Jan 2026", html)
+        self.assertNotRegex(body_of(html), RAW_DATE_RE)
+
+    def test_legacy_month_first_data_still_renders_correctly(self):
+        # Records stored before dates were normalized keep the IDS spelling.
         html = templates.render_index([investigation("337-1478", "01-13-2026")])
-        self.assertIn("13/01/2026", html)
-        self.assertNotIn("01-13-2026", html)
+        self.assertIn("13 Jan 2026", html)
+        self.assertNotRegex(body_of(html), RAW_DATE_RE)
 
     def test_rows_are_ordered_by_real_date_not_by_string(self):
         html = templates.render_index(
@@ -77,34 +72,52 @@ class TestIndexPage(unittest.TestCase):
         self.assertEqual(order, sorted(order))
 
 
+class TestRowActions(unittest.TestCase):
+    def page(self):
+        return templates.render_index(
+            [investigation("337-1478", "2026-01-13"), investigation("337-3936", "2026-09-09")]
+        )
+
+    def test_each_row_offers_update_and_fetch_docs(self):
+        html = self.page()
+        for number in ("337-1478", "337-3936"):
+            self.assertIn(f'data-action="update" data-number="{number}"', html)
+            self.assertIn(f'data-action="fetch-docs" data-number="{number}"', html)
+
+    def test_the_table_has_an_actions_column(self):
+        self.assertIn("<th>Actions</th>", self.page())
+
+    def test_buttons_explain_themselves_when_opened_from_disk(self):
+        self.assertIn("python cli.py serve", self.page())
+
+    def test_the_detail_page_has_no_buttons(self):
+        html = templates.render_detail(investigation("337-1478", "2026-01-13"), [])
+        self.assertNotIn("data-action=", html)
+
+
 class TestDetailPage(unittest.TestCase):
     def page(self):
         return templates.render_detail(
-            investigation("337-1478", "01-13-2026", investigation_phase="Violation"),
+            investigation("337-1478", "2026-01-13", investigation_phase="Violation"),
             [
                 {
                     "id": "100",
                     "document_type": "Complaint",
                     "title": "Complaint of Acme",
-                    "document_date": "2026/01/13 00:00:00",
-                    "official_received_date": "2026/01/13 09:00:00",
+                    "document_date": "2026-01-13",
+                    "official_received_date": "2026-01-13T09:00:00",
                     "attachments": [],
                 }
             ],
         )
 
-    def test_date_initiated_is_formatted(self):
-        self.assertIn("13/01/2026", self.page())
-
-    def test_last_refreshed_is_formatted(self):
+    def test_dates_render_day_month_year(self):
         html = self.page()
-        self.assertIn("last refreshed 18/09/2026", html)
-        self.assertNotIn("2026-09-18T17:16:49", html)
+        self.assertIn("13 Jan 2026", html)
+        self.assertIn("last refreshed 18 Sep 2026", html)
 
-    def test_no_raw_date_shapes_survive_anywhere_on_the_page(self):
-        html = self.page()
-        for raw in ("01-13-2026", "2026/01/13", "2026-09-18T"):
-            self.assertNotIn(raw, html)
+    def test_no_raw_date_shape_survives_anywhere_on_the_page(self):
+        self.assertNotRegex(body_of(self.page()), RAW_DATE_RE)
 
 
 if __name__ == "__main__":

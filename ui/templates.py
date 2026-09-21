@@ -7,6 +7,8 @@ import re
 from collections import Counter
 from typing import Any
 
+import dates
+
 APP_STYLE = """
 :root {
   color-scheme: light dark;
@@ -154,6 +156,33 @@ table.list tbody tr[hidden] { display: none; }
   font-size: 0.78rem;
   color: var(--muted);
 }
+td.actions { white-space: nowrap; }
+.btn {
+  font: inherit;
+  font-size: 0.78rem;
+  font-weight: 600;
+  padding: 0.3rem 0.65rem;
+  margin-right: 0.35rem;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  background: var(--accent);
+  border-color: var(--accent);
+  color: #fff;
+  cursor: pointer;
+}
+.btn.btn-quiet { background: var(--surface); border-color: var(--border); color: var(--ink); }
+.btn:hover:not(:disabled) { filter: brightness(1.06); }
+.btn.btn-quiet:hover:not(:disabled) { border-color: var(--accent); color: var(--accent); }
+.btn:disabled { opacity: 0.45; cursor: not-allowed; }
+.action-status {
+  display: block;
+  margin-top: 0.3rem;
+  font-size: 0.74rem;
+  color: var(--muted);
+  white-space: normal;
+}
+.action-status.done { color: var(--green-fg); font-weight: 600; }
+.action-status.failed { color: var(--amber-fg); }
 .empty-state, .no-results {
   padding: 3rem 1rem;
   text-align: center;
@@ -252,54 +281,11 @@ def _status_pill(status: str | None) -> str:
     return f'<span class="pill {css_class}">{_e(status)}</span>'
 
 
-def _parse_date(value: str | None) -> tuple[int, int, int] | None:
-    """Read any date shape this app stores and return (year, month, day).
-
-    The sources disagree: EDIS uses "YYYY/MM/DD HH:MM:SS", the RSS-derived
-    records use ISO datetimes, and the public IDS feed uses US-style
-    "MM-DD-YYYY". Some values also carry a trailing "  (approx., ...)" note.
+def _date(value: str | None) -> str:
+    """Every date on the site goes through here. See dates.py for why the
+    day/month order is decided by the source format rather than per value.
     """
-    if not value:
-        return None
-    main = str(value).partition("  (")[0].strip()
-    if not main:
-        return None
-
-    parts = re.split(r"[-/]", main.split("T")[0].split(" ")[0])
-    if len(parts) != 3 or not all(p.isdigit() for p in parts):
-        return None
-
-    if len(parts[0]) == 4:
-        year, month, day = (int(p) for p in parts)
-    elif len(parts[2]) == 4:
-        month, day, year = (int(p) for p in parts)
-    else:
-        return None
-
-    # A month past 12 means the source was day-first after all.
-    if month > 12 and day <= 12:
-        month, day = day, month
-    if not (1 <= month <= 12 and 1 <= day <= 31):
-        return None
-    return year, month, day
-
-
-def _format_ddmmyyyy(value: str | None) -> str:
-    """Every date on the site is rendered through here, as DD/MM/YYYY."""
-    parsed = _parse_date(value)
-    if parsed is None:
-        main = str(value or "").partition("  (")[0].strip()
-        return _e(main) if main else "Unknown"
-    year, month, day = parsed
-    return f"{day:02d}/{month:02d}/{year:04d}"
-
-
-def _date_sort_key(value: str | None) -> tuple[int, int, int]:
-    """Order by real calendar date, not by the string the source happened to
-    use -- "01-13-2026" from IDS and "2026/08/21" from EDIS otherwise sort
-    against each other character by character.
-    """
-    return _parse_date(value) or (0, 0, 0)
+    return _e(dates.format_ui(value))
 
 
 _INDEX_SCRIPT = """
@@ -327,12 +313,64 @@ _INDEX_SCRIPT = """
   if (statusFilter) statusFilter.addEventListener('change', apply);
   apply();
 })();
+
+(function () {
+  // The row buttons call the local server from cli.py serve. Opened straight
+  // off disk there is nothing listening, so say so rather than failing later.
+  const buttons = Array.from(document.querySelectorAll('button[data-action]'));
+  if (location.protocol === 'file:') {
+    buttons.forEach(function (button) {
+      button.disabled = true;
+      button.title = 'Start the local server first: python cli.py serve';
+    });
+    return;
+  }
+
+  function setBusy(busy) {
+    buttons.forEach(function (button) { button.disabled = busy; });
+  }
+
+  buttons.forEach(function (button) {
+    button.addEventListener('click', function () {
+      const row = button.closest('tr');
+      const status = row.querySelector('.action-status');
+      const withDocuments = button.dataset.action === 'fetch-docs';
+      setBusy(true);
+      status.hidden = false;
+      status.className = 'action-status';
+      status.textContent = withDocuments ? 'Fetching documents...' : 'Updating...';
+
+      fetch('api/update', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ number: button.dataset.number, documents: withDocuments })
+      }).then(function (response) {
+        return response.json().then(function (result) {
+          if (!response.ok || !result.ok) {
+            throw new Error(result.message || ('HTTP ' + response.status));
+          }
+          return result;
+        });
+      }).then(function (result) {
+        // Hold the outcome on screen long enough to read before the page
+        // reloads onto the freshly rendered data.
+        status.className = 'action-status done';
+        status.textContent = result.message;
+        setTimeout(function () { location.reload(); }, 1500);
+      }).catch(function (error) {
+        status.className = 'action-status failed';
+        status.textContent = 'Failed: ' + error.message;
+        setBusy(false);
+      });
+    });
+  });
+})();
 """
 
 
 def render_index(investigations: list[dict[str, Any]]) -> str:
-    def sort_key(inv: dict[str, Any]) -> tuple[int, int, int]:
-        return _date_sort_key(inv.get("date_initiated") or inv.get("last_refreshed"))
+    def sort_key(inv: dict[str, Any]) -> str:
+        return dates.sort_key(inv.get("date_initiated") or inv.get("last_refreshed"))
 
     rows = sorted(investigations, key=sort_key, reverse=True)
     status_counts: Counter[str] = Counter((inv.get("investigation_status") or "Unknown") for inv in rows)
@@ -368,9 +406,14 @@ def render_index(investigations: list[dict[str, Any]]) -> str:
                 f"""<tr data-search="{search_blob}" data-status="{_e(status)}">
   <td><a class="case-link" href="investigations/{_e(slug_for(number))}.html">{_val(title)}</a></td>
   <td class="mono">{_val(number)}</td>
-  <td class="mono">{_format_ddmmyyyy(inv.get('date_initiated'))}</td>
+  <td class="mono">{_date(inv.get('date_initiated'))}</td>
   <td><span class="phase-chip">{_val(inv.get('investigation_phase'))}</span></td>
   <td>{_status_pill(status)}</td>
+  <td class="actions">
+    <button class="btn" data-action="update" data-number="{_e(number)}" title="Pull new case and document details from EDIS, without downloading PDFs">Update</button>
+    <button class="btn btn-quiet" data-action="fetch-docs" data-number="{_e(number)}" title="Pull new details and download any missing PDFs">Fetch docs</button>
+    <span class="action-status" hidden></span>
+  </td>
 </tr>"""
             )
         body_rows = "\n".join(row_html)
@@ -399,6 +442,7 @@ def render_index(investigations: list[dict[str, Any]]) -> str:
         <th>Date Initiated</th>
         <th>Phase</th>
         <th>Status</th>
+        <th>Actions</th>
       </tr>
     </thead>
     <tbody>
@@ -456,7 +500,7 @@ def _extract_parties(documents: list[dict[str, Any]]) -> dict[str, str | None]:
     """
 
     def sort_key(doc: dict[str, Any]) -> str:
-        return doc.get("document_date") or doc.get("official_received_date") or ""
+        return dates.sort_key(doc.get("document_date") or doc.get("official_received_date"))
 
     docs_asc = sorted(documents, key=sort_key)
 
@@ -509,7 +553,7 @@ def _extract_parties(documents: list[dict[str, Any]]) -> dict[str, str | None]:
 
 def render_detail(investigation: dict[str, Any], documents: list[dict[str, Any]]) -> str:
     def doc_sort_key(doc: dict[str, Any]) -> str:
-        return doc.get("document_date") or doc.get("official_received_date") or ""
+        return dates.sort_key(doc.get("document_date") or doc.get("official_received_date"))
 
     docs_sorted = sorted(documents, key=doc_sort_key, reverse=True)
 
@@ -528,7 +572,7 @@ def render_detail(investigation: dict[str, Any], documents: list[dict[str, Any]]
             ) or '<span class="case-sub">&mdash;</span>'
             doc_rows_list.append(
                 f"""<tr>
-  <td class="mono">{_format_ddmmyyyy(doc.get('document_date') or doc.get('official_received_date'))}</td>
+  <td class="mono">{_date(doc.get('document_date') or doc.get('official_received_date'))}</td>
   <td>{_val(doc.get('document_type'))}{badge}</td>
   <td>{_val(doc.get('title'))}</td>
   <td>{_val(doc.get('filed_by'))}{f' <span class="case-sub">for {_e(doc.get("on_behalf_of"))}</span>' if doc.get('on_behalf_of') else ''}</td>
@@ -555,7 +599,7 @@ def render_detail(investigation: dict[str, Any], documents: list[dict[str, Any]]
   <h2>Investigation Information</h2>
   <div class="card field-grid">
     <div><div class="field-label">Investigation Number</div><div class="field-value">{_val(number)}</div></div>
-    <div><div class="field-label">Date Initiated</div><div class="field-value">{_format_ddmmyyyy(investigation.get('date_initiated'))}</div></div>
+    <div><div class="field-label">Date Initiated</div><div class="field-value">{_date(investigation.get('date_initiated'))}</div></div>
     <div><div class="field-label">Investigation Type</div><div class="field-value">{_val(investigation.get('investigation_type'))}</div></div>
     <div><div class="field-label">ITC Docket Number</div><div class="field-value">{_val(investigation.get('docket_number'))}</div></div>
     <div><div class="field-label">Investigation Phase</div><div class="field-value">{_val(investigation.get('investigation_phase'))}</div></div>
@@ -596,6 +640,6 @@ def render_detail(investigation: dict[str, Any], documents: list[dict[str, Any]]
   </div>
 </div>
 
-<p class="footer-note">Investigation {_e(number)} &middot; last refreshed {_format_ddmmyyyy(investigation.get('last_refreshed'))}.</p>
+<p class="footer-note">Investigation {_e(number)} &middot; last refreshed {_date(investigation.get('last_refreshed'))}.</p>
 """
     return _page(f"{investigation.get('title') or number} - Docket", body)

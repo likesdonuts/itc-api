@@ -8,6 +8,7 @@ file handling here means neither side has to know about paths or formats.
 from __future__ import annotations
 
 import json
+import os
 import re
 import shutil
 from dataclasses import dataclass, field
@@ -34,9 +35,20 @@ def load_json(path: Path, default: Any) -> Any:
         return default
 
 
-def save_json(path: Path, value: Any) -> None:
+def write_text_atomic(path: Path, text: str) -> None:
+    """Write via a temporary file so a reader never sees a half-written file.
+
+    The local server rewrites data and pages while a browser may be loading
+    them, and an interrupted run should not truncate the store either.
+    """
     path.parent.mkdir(parents=True, exist_ok=True)
-    path.write_text(json.dumps(value, indent=2, sort_keys=True), encoding="utf-8")
+    tmp = path.with_name(f".{path.name}.tmp")
+    tmp.write_text(text, encoding="utf-8")
+    os.replace(tmp, path)
+
+
+def save_json(path: Path, value: Any) -> None:
+    write_text_atomic(path, json.dumps(value, indent=2, sort_keys=True))
 
 
 def number_key(value: str) -> str:
