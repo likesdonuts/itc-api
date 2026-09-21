@@ -156,6 +156,21 @@ table.list tbody tr[hidden] { display: none; }
   font-size: 0.78rem;
   color: var(--muted);
 }
+.notice {
+  background: var(--amber-bg);
+  color: var(--amber-fg);
+  border: 1px solid transparent;
+  border-radius: var(--radius);
+  padding: 0.75rem 1rem;
+  margin-bottom: 1.1rem;
+  font-size: 0.85rem;
+}
+.notice code {
+  background: rgba(0,0,0,0.06);
+  border-radius: 5px;
+  padding: 0.05rem 0.3rem;
+  font-size: 0.82rem;
+}
 td.actions { white-space: nowrap; }
 .btn {
   font: inherit;
@@ -319,6 +334,8 @@ _INDEX_SCRIPT = """
   // off disk there is nothing listening, so say so rather than failing later.
   const buttons = Array.from(document.querySelectorAll('button[data-action]'));
   if (location.protocol === 'file:') {
+    const notice = document.getElementById('offline-notice');
+    if (notice) notice.hidden = false;
     buttons.forEach(function (button) {
       button.disabled = true;
       button.title = 'Start the local server first: python cli.py serve';
@@ -425,6 +442,12 @@ def render_index(investigations: list[dict[str, Any]]) -> str:
     <h1>ITC 337 Investigations</h1>
   </div>
   <div class="stats">{stats_html}</div>
+</div>
+<div class="notice" id="offline-notice" hidden>
+  <strong>Update and Fetch docs are switched off</strong> because this page was opened
+  straight from disk, where it has no way to reach EDIS. Run
+  <code>python cli.py serve</code> (or double-click <code>serve.bat</code>) and use the
+  page it opens to enable them.
 </div>
 <div class="toolbar">
   <input type="search" id="search" placeholder="Search by case name, docket, or number&hellip;">

@@ -87,8 +87,13 @@ class TestRowActions(unittest.TestCase):
     def test_the_table_has_an_actions_column(self):
         self.assertIn("<th>Actions</th>", self.page())
 
-    def test_buttons_explain_themselves_when_opened_from_disk(self):
-        self.assertIn("python cli.py serve", self.page())
+    def test_a_notice_explains_the_disabled_buttons_when_opened_from_disk(self):
+        html = self.page()
+        # Hidden by default; the page script reveals it under file://, where
+        # there is no server for the buttons to call.
+        self.assertIn('<div class="notice" id="offline-notice" hidden>', html)
+        self.assertIn("python cli.py serve", html)
+        self.assertIn("if (notice) notice.hidden = false;", html)
 
     def test_the_detail_page_has_no_buttons(self):
         html = templates.render_detail(investigation("337-1478", "2026-01-13"), [])
