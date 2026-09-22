@@ -35,6 +35,12 @@ def body_of(html: str) -> str:
     return re.sub(r"<script>.*?</script>", "", without_style, flags=re.S)
 
 
+def stage_block(html: str, anchor: str) -> str:
+    """The collapsed <details> block for one stage of a case page."""
+    start = html.index(f'<details class="stage" id="{anchor}">')
+    return html[start : html.index("</details>", start)]
+
+
 class TestIndexPage(unittest.TestCase):
     def page(self, *cases_, **kwargs):
         return templates.render_index(list(cases_) or [case()], SCHEMA, **kwargs)
@@ -151,6 +157,39 @@ class TestDetailPage(unittest.TestCase):
         self.assertIn('href="#stage-2"', html)
         self.assertIn('<details class="stage" id="stage-1">', html)
         self.assertIn("2 stages", html)
+
+    def test_a_stage_block_shows_only_what_that_stage_says(self):
+        built = cases.build_cases(
+            [
+                ids_row("337-1478", investigation_id=1, start_date="05-20-2026"),
+                ids_row(
+                    "337-1478",
+                    phase="Remand",
+                    investigation_id=2,
+                    start_date="10-16-2028",
+                    respondents=("Initech LLC",),
+                ),
+            ]
+        )["337-1478"]
+        remand = stage_block(self.page(built), "stage-2")
+
+        self.assertIn("Initech LLC", remand)
+        # Shared with the investigation, so the sections above already say it.
+        self.assertNotIn("337-1478", remand)
+        self.assertNotIn("Acme Inc.", remand)
+        self.assertNotIn("Globex Corp.", remand)
+
+    def test_the_primary_stage_block_says_the_page_above_describes_it(self):
+        built = cases.build_cases(
+            [
+                ids_row("337-1478", investigation_id=1, start_date="05-20-2026"),
+                ids_row("337-1478", phase="Remand", investigation_id=2, start_date="10-16-2028"),
+            ]
+        )["337-1478"]
+        primary = stage_block(self.page(built), "stage-1")
+
+        self.assertIn("the sections above describe this stage", primary)
+        self.assertNotIn("field-label", primary)
 
     def test_documents_are_listed_with_their_attachments(self):
         html = self.page(
