@@ -91,6 +91,16 @@ class TestIndexPage(unittest.TestCase):
         self.assertIn("acme inc.", row)
         self.assertIn("certain wearable devices", row)
 
+    def test_a_withdrawn_case_is_flagged_searchable_and_filterable(self):
+        html = self.page({**case(), "withdrawn": True, "last_listed_snapshot": "2026-09-22"})
+
+        self.assertIn(templates.WITHDRAWN_PILL, html)
+        self.assertIn(f'data-status="{templates.WITHDRAWN_LABEL}"', html)
+        self.assertIn(f'<option value="{templates.WITHDRAWN_LABEL}">', html)
+        self.assertIn(templates.WITHDRAWN_LABEL.lower(), re.search(r'data-search="([^"]*)"', html).group(1))
+        # The last known status still shows in the Status column.
+        self.assertIn(">Active<", html)
+
 
 class TestRowActions(unittest.TestCase):
     def page(self):
@@ -140,6 +150,16 @@ class TestDetailPage(unittest.TestCase):
         html = self.page()
         self.assertIn("20 May 2026", html)
         self.assertNotRegex(body_of(html), RAW_DATE_RE)
+
+    def test_a_withdrawn_case_says_when_it_was_last_listed(self):
+        html = self.page(
+            {**case(), "withdrawn": True, "last_listed_snapshot": "2026-09-22"}
+        )
+        self.assertIn(templates.WITHDRAWN_LABEL, html)
+        self.assertIn("last listed\n  this case on 22 Sep 2026", html)
+
+    def test_a_current_case_has_no_withdrawal_notice(self):
+        self.assertNotIn(templates.WITHDRAWN_LABEL, self.page())
 
     def test_a_single_stage_case_has_no_stage_table(self):
         self.assertNotIn("Stages (1)", self.page())

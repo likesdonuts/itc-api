@@ -48,6 +48,14 @@ def _add_render_flag(parser: argparse.ArgumentParser) -> None:
     )
 
 
+def _add_removals_flag(parser: argparse.ArgumentParser) -> None:
+    parser.add_argument(
+        "--allow-removals",
+        action="store_true",
+        help="accept a snapshot that drops an implausible number of cases",
+    )
+
+
 def build_parser() -> argparse.ArgumentParser:
     parser = argparse.ArgumentParser(
         prog="cli.py",
@@ -74,12 +82,14 @@ def build_parser() -> argparse.ArgumentParser:
         help=f"snapshots to keep on disk (default {ids.DEFAULT_KEEP}, 0 keeps all)",
     )
     p_sync.add_argument("--no-rss", action="store_true", help="skip the EDIS complaint RSS feed")
+    _add_removals_flag(p_sync)
     _add_render_flag(p_sync)
 
     p_parse = sub.add_parser(
         "parse", help="rebuild cases from the newest stored snapshot (offline, no download)"
     )
     p_parse.add_argument("--no-rss", action="store_true", help="ignore dockets logged from RSS")
+    _add_removals_flag(p_parse)
     _add_render_flag(p_parse)
 
     p_docs = sub.add_parser(
@@ -154,11 +164,13 @@ def cmd_sync(args: argparse.Namespace, store: Store) -> int:
         force=args.force,
         keep=args.keep,
         use_rss=not args.no_rss,
+        allow_removals=args.allow_removals,
         log=print,
     )
     print(
         f"\nSync done. {report.cases} investigation(s) from IDS snapshot "
-        f"{report.snapshot_day}, {len(report.added)} new, {len(report.removed)} gone."
+        f"{report.snapshot_day}, {len(report.added)} new, "
+        f"{len(report.withdrawn)} kept after leaving the feed."
     )
     if args.render:
         _render(args, store)
@@ -168,7 +180,13 @@ def cmd_sync(args: argparse.Namespace, store: Store) -> int:
 
 
 def cmd_parse(args: argparse.Namespace, store: Store) -> int:
-    report = ingest.run(store, ids_dir=args.ids_dir, offline=True, use_rss=not args.no_rss)
+    report = ingest.run(
+        store,
+        ids_dir=args.ids_dir,
+        offline=True,
+        use_rss=not args.no_rss,
+        allow_removals=args.allow_removals,
+    )
     print(f"\nParsed {report.cases} investigation(s) from snapshot {report.snapshot_day}.")
     if args.render:
         _render(args, store)
