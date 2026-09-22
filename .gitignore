@@ -2,5 +2,11 @@
 __pycache__/
 *.pyc
 
-# Daily IDS snapshots: a few MB each, and re-downloadable from ids.usitc.gov
+# Both rebuilt from the public IDS feed by 'python cli.py sync', large, and
+# different every day.
 data/ids/
+data/investigations.json
+
+# Rebuilt from data/ by 'python cli.py render': a page per investigation, with
+# no source of truth of its own.
+site/
