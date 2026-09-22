@@ -106,14 +106,37 @@ never rewritten, so every day you keep a copy you can go back to; run again on
 the same day and it reuses that copy rather than re-downloading 37 MB.
 
 `data/investigations.json` is then rebuilt from the snapshot in full. That is
-deliberate: when the Commission renumbers, retitles or withdraws something,
-the rebuilt file reflects it instead of accumulating stale entries. The run
-reports what appeared and what disappeared since last time.
+deliberate: when the Commission renumbers or retitles something, the rebuilt
+file reflects it instead of accumulating stale entries. The run reports what
+appeared and what disappeared since last time.
 
 To have it happen daily on Windows, point Task Scheduler at `sync.bat`, or:
 
 ```
 schtasks /create /tn "ITC 337 sync" /tr "\"%CD%\sync.bat\"" /sc daily /st 07:00
+```
+
+#### When a case stops appearing in the feed
+
+Rebuilding in full would otherwise mean a case the feed drops loses its page.
+It doesn't: the case is kept with whatever the last snapshot that listed it
+said, its page carries a notice giving that date, and its row on the list page
+is flagged and grouped under "No longer in the IDS feed" so the status filter
+finds all of them at once. Nothing about it changes again until the feed lists
+it, at which point it is rebuilt from the feed like any other and the mark
+goes. Documents are untouched throughout — they are on the EDIS side.
+
+Because cases in the IDS file are historical and effectively never leave, a
+snapshot that drops more than 2% of the cases on disk (and more than ten of
+them) is far likelier to be an incomplete download than a real withdrawal.
+Sync refuses such a snapshot and changes nothing rather than marking a
+thousand pages withdrawn:
+
+```
+IDS ERROR: snapshot 2026-09-25 lists 156 of the 1381 cases on disk, dropping
+1225 (89%). The IDS feed is a historical file that should never lose that many
+in a day, so this one is most likely incomplete and nothing has been changed.
+Check the download, or re-run with --allow-removals if the withdrawals are real.
 ```
 
 ### Stages: why one investigation can have several records
