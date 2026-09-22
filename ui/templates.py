@@ -358,6 +358,37 @@ def _rendered(spec: ui_schema.FieldSpec, value: Any, *, href: str | None = None)
     return _e(value)
 
 
+def _resolved_cells(
+    section: ui_schema.Section,
+    case: dict[str, Any],
+    *,
+    stage: dict[str, Any] | None = None,
+    extra: dict[str, Any] | None = None,
+    stage_only: bool = False,
+) -> list[tuple[str, str]]:
+    """The section's (label, HTML) pairs, dropping the fields with nothing in them."""
+    cells = []
+    for spec in section.fields:
+        value = ui_schema.resolve(
+            spec, case, stage=stage, extra=extra, stage_only=stage_only
+        )
+        rendered = _rendered(spec, value)
+        if rendered:
+            cells.append((spec.label, rendered))
+    return cells
+
+
+def _field_grid(cells: list[tuple[str, str]], *, card: bool = True) -> str:
+    if not cells:
+        return ""
+    body = "".join(
+        f'<div><div class="field-label">{_e(label)}</div>'
+        f'<div class="field-value">{rendered}</div></div>'
+        for label, rendered in cells
+    )
+    return f'<div class="{"card field-grid" if card else "field-grid"}">{body}</div>'
+
+
 def _fields_section(
     section: ui_schema.Section,
     case: dict[str, Any],
@@ -368,22 +399,14 @@ def _fields_section(
     stage_only: bool = False,
 ) -> str:
     """A field grid, with empty fields left out. Returns "" if nothing is set."""
-    cells = []
-    for spec in section.fields:
-        value = ui_schema.resolve(
-            spec, case, stage=stage, extra=extra, stage_only=stage_only
-        )
-        rendered = _rendered(spec, value)
-        if rendered:
-            cells.append(
-                f'<div><div class="field-label">{_e(spec.label)}</div>'
-                f'<div class="field-value">{rendered}</div></div>'
-            )
+    cells = _resolved_cells(
+        section, case, stage=stage, extra=extra, stage_only=stage_only
+    )
     if not cells:
         return ""
-    grid = f'<div class="card field-grid">{"".join(cells)}</div>'
     if not heading:
-        return f'<div class="field-grid">{"".join(cells)}</div>'
+        return _field_grid(cells, card=False)
+    grid = _field_grid(cells)
     return f'<div class="section-block"><h2>{_e(section.title)}</h2>{grid}</div>'
 
 
@@ -639,18 +662,38 @@ def _stages_section(
             cells.append(f"<td>{rendered or DASH}</td>")
         rows.append(f"<tr>{''.join(cells)}</tr>")
 
+    # A stage block is there to say what that stage says, so a field holding
+    # the same value as the primary stage -- the investigation number, its
+    # type, often the parties -- is left out rather than repeated per stage.
+    primary = ui_schema.stage_for(case, "primary") or stages[0]
+    baselines = [
+        dict(_resolved_cells(field_section, case, stage=primary, stage_only=True))
+        for field_section in field_sections
+    ]
+
     blocks = []
     for stage in stages:
         anchor = f"stage-{stage.get('stage_id')}"
         grids = "".join(
-            _fields_section(field_section, case, stage=stage, heading=False, stage_only=True)
-            for field_section in field_sections
+            _field_grid(
+                [
+                    (label, rendered)
+                    for label, rendered in _resolved_cells(
+                        field_section, case, stage=stage, stage_only=True
+                    )
+                    if baseline.get(label) != rendered
+                ],
+                card=False,
+            )
+            for field_section, baseline in zip(field_sections, baselines)
         )
-        note = (
-            '<span class="case-sub">the sections above describe this stage</span>'
-            if stage.get("is_primary")
-            else ""
-        )
+        if stage.get("is_primary"):
+            note = "the sections above describe this stage"
+        elif not grids:
+            note = "nothing recorded for this stage differs from the sections above"
+        else:
+            note = ""
+        note = f'<span class="case-sub">{note}</span>' if note else ""
         blocks.append(
             f"""<details class="stage" id="{_e(anchor)}">
   <summary>{_e(_stage_label(stage))} {_status_pill(stage.get('status'))} {note}</summary>

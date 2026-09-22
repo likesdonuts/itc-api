@@ -304,7 +304,8 @@ def cmd_status(args: argparse.Namespace, store: Store) -> int:
     width = max(len(row["investigation_number"]) for row in with_docs)
     print(f"\n{'NUMBER'.ljust(width)}  {'STATUS':<22} {'STAGES':>6} {'DOCS':>5} {'FILES':>6}  FETCHED")
     for row in with_docs:
-        fetched = (row["documents_fetched_at"] or "never")[:19]
+        # Documents fetched before documents_state.json existed have no time.
+        fetched = (row["documents_fetched_at"] or "unknown")[:19]
         print(
             f"{row['investigation_number'].ljust(width)}  {row['status'][:22]:<22} "
             f"{row['stages']:>6} {row['documents']:>5} {row['attachments']:>6}  {fetched}"
