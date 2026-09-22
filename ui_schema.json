@@ -1,0 +1,100 @@
+{
+  "version": 1,
+  "$comment": [
+    "Which IDS fields the site shows, and what to call them. Edit this file and",
+    "re-run 'python cli.py render' -- no re-fetching, no code changes.",
+    "",
+    "Each field is {label, source, type} plus optional keys:",
+    "  type    text | mono | long_text | date | bool | number | list | status | case_link",
+    "  stage   primary (the Violation phase, default) or current (the newest stage)",
+    "  where   keep only list items matching these values, e.g. {\"role\": \"Complainant\"}",
+    "  item    which part of a list item to show (default \"label\")",
+    "  limit   show at most this many list items",
+    "",
+    "'source' names a case field, a stage field, or a stage list, in that order.",
+    "Run 'python cli.py fields' to print every name the feed offers, with samples.",
+    "Fields with nothing in them are left off the page."
+  ],
+  "index_columns": [
+    { "label": "Case", "source": "title", "type": "case_link" },
+    { "label": "Number", "source": "investigation_number", "type": "mono" },
+    { "label": "Instituted", "source": "date_initiated", "type": "date" },
+    { "label": "Stages", "source": "stage_count", "type": "number" },
+    { "label": "Status", "source": "status", "type": "status" },
+    { "label": "Docs", "source": "document_count", "type": "number" }
+  ],
+  "sections": [
+    {
+      "title": "Investigation Information",
+      "kind": "fields",
+      "fields": [
+        { "label": "Investigation Number", "source": "investigation_number" },
+        { "label": "ITC Docket Number", "source": "docket_number" },
+        { "label": "Investigation Type", "source": "investigation_type" },
+        { "label": "Status", "source": "status", "type": "status" },
+        { "label": "Current Phase", "source": "phase" },
+        { "label": "Instituted", "source": "date_initiated", "type": "date" },
+        { "label": "Complaint Received", "source": "initiating_document_received_date", "type": "date" },
+        { "label": "Target Date", "source": "target_date", "type": "date" },
+        { "label": "Notice of Institution", "source": "fr_citation_for_notice_of_institution" },
+        { "label": "Notice Published", "source": "date_of_publication_of_fr_notice_noi", "type": "date" },
+        { "label": "Hearing Begins", "source": "hearing_conf_start_date", "type": "date" },
+        { "label": "Hearing Ends", "source": "hearing_conf_end_date", "type": "date" },
+        { "label": "Initial Determination", "source": "initial_determination_date", "type": "date" },
+        { "label": "Initial Determination Type", "source": "initial_determination_type" },
+        { "label": "Final Determination", "source": "final_determination_date", "type": "date" },
+        { "label": "Final Determination Type", "source": "final_determination_type" },
+        { "label": "Terminated", "source": "investigation_termination_date", "type": "date" },
+        { "label": "Product Category", "source": "category_basket" },
+        { "label": "Unfair Acts Alleged", "source": "unfair_act", "item": "name", "type": "list" },
+        { "label": "OUII Participation", "source": "ouii_participation_level" }
+      ]
+    },
+    {
+      "title": "Parties",
+      "kind": "fields",
+      "fields": [
+        { "label": "Complainant(s)", "source": "participants", "where": { "role": "Complainant" }, "item": "name", "type": "list" },
+        { "label": "Respondent(s)", "source": "participants", "where": { "role": "Respondent" }, "item": "name", "type": "list" },
+        { "label": "Intervenor(s)", "source": "participants", "where": { "role": "Intervenor" }, "item": "name", "type": "list" },
+        { "label": "Administrative Law Judge", "source": "staff", "where": { "role": "ALJ" }, "item": "name", "type": "list" },
+        { "label": "ALJ Attorney Advisor", "source": "staff", "where": { "role": "ALJ Attorney Advisor" }, "item": "name", "type": "list" },
+        { "label": "OUII Investigative Attorney", "source": "staff", "where": { "role": ["OUII Investigative Attorney", "OUII Supervisory Attorney"] }, "item": "name", "type": "list" },
+        { "label": "Case Manager", "source": "case_manager" },
+        { "label": "Case Manager Contact", "source": "case_manager_email" }
+      ]
+    },
+    {
+      "title": "Asserted Intellectual Property",
+      "kind": "fields",
+      "fields": [
+        { "label": "Patents, trademarks and other IP", "source": "intellectual_property", "item": "label", "type": "list" },
+        { "label": "HTS Numbers", "source": "hts_number", "item": "number", "type": "list", "limit": 12 }
+      ]
+    },
+    {
+      "title": "Orders and Related Proceedings",
+      "kind": "fields",
+      "fields": [
+        { "label": "Unfair Import Orders", "source": "unfair_import_orders", "item": "title", "type": "list" },
+        { "label": "Associated Litigation", "source": "associated_litigation", "item": "label", "type": "list" }
+      ]
+    },
+    {
+      "title": "Stages",
+      "kind": "stages",
+      "columns": [
+        { "label": "Phase", "source": "investigation_phase" },
+        { "label": "Started", "source": "start_date", "type": "date" },
+        { "label": "Ended", "source": "investigation_end_date", "type": "date" },
+        { "label": "Status", "source": "investigation_status", "type": "status" },
+        { "label": "Target Date", "source": "target_date", "type": "date" },
+        { "label": "Determination", "source": "final_determination_type" }
+      ]
+    },
+    {
+      "title": "Documents",
+      "kind": "documents"
+    }
+  ]
+}
