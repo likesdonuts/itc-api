@@ -148,7 +148,77 @@ class TestIngest(DataDirTestCase):
 
         self.assertEqual(report.added, ["337-1479"])
         self.assertEqual(report.removed, ["337-1478"])
-        self.assertEqual(list(store.investigations), ["337-1479"])
+        self.assertEqual(sorted(store.investigations), ["337-1478", "337-1479"])
+
+    def test_a_case_the_feed_stops_listing_is_kept_and_marked(self):
+        store, _ = self.parse([ids_row(topic="Certain Wearable Devices")])
+        store, report = self.parse(
+            [ids_row("337-1479", investigation_id=2)], store=store, day="2026-09-23"
+        )
+
+        self.assertEqual(report.withdrawn, ["337-1478"])
+        kept = store.investigations["337-1478"]
+        self.assertTrue(kept["withdrawn"])
+        # Still says what the last snapshot that listed it said.
+        self.assertEqual(kept["title"], "Certain Wearable Devices")
+        self.assertEqual(kept["last_listed_snapshot"], "2026-09-22")
+
+    def test_a_case_that_stays_away_is_only_reported_the_first_time(self):
+        store, _ = self.parse([ids_row()])
+        rows = [ids_row("337-1479", investigation_id=2)]
+        store, _ = self.parse(rows, store=store, day="2026-09-23")
+        store, report = self.parse(rows, store=store, day="2026-09-24")
+
+        self.assertEqual(report.removed, [])
+        self.assertEqual(report.withdrawn, ["337-1478"])
+        self.assertEqual(
+            store.investigations["337-1478"]["last_listed_snapshot"], "2026-09-22"
+        )
+
+    def test_a_case_the_feed_lists_again_loses_the_mark(self):
+        store, _ = self.parse([ids_row(status="Active")])
+        store, _ = self.parse(
+            [ids_row("337-1479", investigation_id=2)], store=store, day="2026-09-23"
+        )
+        store, _ = self.parse(
+            [ids_row(status="Terminated"), ids_row("337-1479", investigation_id=2)],
+            store=store,
+            day="2026-09-24",
+        )
+
+        back = store.investigations["337-1478"]
+        self.assertNotIn("withdrawn", back)
+        self.assertNotIn("last_listed_snapshot", back)
+        self.assertEqual(back["status"], "Terminated")
+
+    def test_a_snapshot_that_drops_most_of_the_cases_is_refused(self):
+        rows = [ids_row(f"337-{1400 + n}", investigation_id=n) for n in range(60)]
+        store, _ = self.parse(rows)
+        before = dict(store.investigations)
+
+        with self.assertRaises(ingest.SuspectSnapshotError) as caught:
+            self.parse(rows[:10], store=store, day="2026-09-23")
+
+        self.assertIn("most likely incomplete", str(caught.exception))
+        self.assertEqual(store.investigations, before)
+        self.assertEqual(self.read_json("investigations.json").keys(), before.keys())
+
+    def test_a_refused_snapshot_goes_through_with_allow_removals(self):
+        rows = [ids_row(f"337-{1400 + n}", investigation_id=n) for n in range(60)]
+        store, _ = self.parse(rows)
+        store, report = self.parse(
+            rows[:10], store=store, day="2026-09-23", allow_removals=True
+        )
+
+        self.assertEqual(len(report.removed), 50)
+        self.assertEqual(len(report.withdrawn), 50)
+
+    def test_a_handful_of_withdrawals_is_not_treated_as_suspect(self):
+        rows = [ids_row(f"337-{1400 + n}", investigation_id=n) for n in range(60)]
+        store, _ = self.parse(rows)
+        store, report = self.parse(rows[:-3], store=store, day="2026-09-23")
+
+        self.assertEqual(len(report.removed), 3)
 
     def test_a_docket_only_the_rss_feed_knows_is_kept_on_the_site(self):
         store = self.store()

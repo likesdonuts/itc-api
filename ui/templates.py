@@ -508,6 +508,22 @@ _DETAIL_SCRIPT = """
 """
 
 
+WITHDRAWN_LABEL = "No longer in the IDS feed"
+WITHDRAWN_PILL = f'<span class="pill pill-amber">{WITHDRAWN_LABEL}</span>'
+
+
+def _filter_status(case: dict[str, Any]) -> str:
+    """What the status filter and the headline counts group a case under.
+
+    A withdrawn case keeps its last known status in the Status column, but
+    groups under the withdrawal, which is the more useful thing to filter on
+    and the only way to find them all at once.
+    """
+    if case.get("withdrawn"):
+        return WITHDRAWN_LABEL
+    return str(case.get("status") or "Unknown")
+
+
 def _search_blob(case: dict[str, Any]) -> str:
     parts = [
         case.get("title"),
@@ -515,6 +531,7 @@ def _search_blob(case: dict[str, Any]) -> str:
         case.get("docket_number"),
         case.get("official_number"),
         case.get("status"),
+        WITHDRAWN_LABEL if case.get("withdrawn") else None,
         *(case.get("phases") or []),
     ]
     stage = ui_schema.stage_for(case)
@@ -541,7 +558,7 @@ def render_index(
         reverse=True,
     )
 
-    status_counts: Counter[str] = Counter(str(case.get("status") or "Unknown") for case in rows)
+    status_counts: Counter[str] = Counter(_filter_status(case) for case in rows)
     headline = [("Total", len(rows)), *status_counts.most_common(4)]
     stats_html = "".join(
         f'<div class="stat"><div class="n">{count}</div><div class="l">{_e(label)}</div></div>'
@@ -563,10 +580,12 @@ def render_index(
         for column in columns:
             value = ui_schema.resolve(column, case, extra=extra)
             rendered = _rendered(column, value, href=href)
-            cells.append(f"<td>{rendered or DASH}</td>")
-        status = str(case.get("status") or "Unknown")
+            cells.append(rendered or DASH)
+        if case.get("withdrawn"):
+            cells[0] += f" {WITHDRAWN_PILL}"
+        cells = [f"<td>{cell}</td>" for cell in cells]
         row_html.append(
-            f"""<tr data-search="{_search_blob(case)}" data-status="{_e(status)}">
+            f"""<tr data-search="{_search_blob(case)}" data-status="{_e(_filter_status(case))}">
   {''.join(cells)}
   <td class="actions">
     <button class="btn" data-action="update" data-number="{_e(number)}" title="Refresh this case's document list from EDIS, without downloading PDFs">Update</button>
@@ -800,6 +819,15 @@ def render_detail(
         else "from the EDIS complaint feed; not in IDS yet"
     )
 
+    withdrawn_notice = ""
+    if case.get("withdrawn"):
+        last_listed = _date(case.get("last_listed_snapshot") or case.get("ids_snapshot"))
+        withdrawn_notice = f"""<div class="notice">
+  <strong>{WITHDRAWN_LABEL}.</strong> The Commission's investigations file last listed
+  this case on {last_listed}, so everything below is as it stood that day and will not
+  change until it is listed again. Its documents are unaffected and can still be fetched.
+</div>"""
+
     body = f"""
 <a class="back-link" href="../index.html">&larr; All investigations</a>
 <div class="detail-hero">
@@ -811,6 +839,7 @@ def render_detail(
     {stage_badge}
   </div>
 </div>
+{withdrawn_notice}
 {''.join(block for block in blocks if block)}
 <p class="footer-note">
   Investigation {_e(number)} &middot; case information {_e(source_note)}

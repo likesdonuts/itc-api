@@ -22,6 +22,21 @@ from .store import Store, number_key
 
 Logger = Callable[[str], None]
 
+# A snapshot dropping more than this share of the cases already on disk is
+# far likelier to be an incomplete feed than a real mass withdrawal: in the
+# IDS file cases are historical and effectively never leave, so a normal day
+# removes none. The floor keeps a handful of cases from tripping it while
+# there is barely anything on disk.
+REMOVAL_LIMIT = 0.02
+REMOVAL_FLOOR = 10
+
+
+class SuspectSnapshotError(ids.IdsError):
+    """A snapshot that drops so many cases it is probably incomplete.
+
+    Subclasses IdsError so the CLI reports it like any other bad snapshot.
+    """
+
 
 @dataclass
 class IngestReport:
@@ -34,6 +49,7 @@ class IngestReport:
     multi_stage: int = 0
     added: list[str] = field(default_factory=list)
     removed: list[str] = field(default_factory=list)
+    withdrawn: list[str] = field(default_factory=list)
     placeholders: list[str] = field(default_factory=list)
     migrated: list[tuple[str, str]] = field(default_factory=list)
 
@@ -64,11 +80,56 @@ def _migrate_instituted_dockets(
     return migrated
 
 
+def _check_removals(gone: list[str], previous: int, day: str, allow: bool) -> None:
+    # Both conditions have to hold: the share catches a feed that came back
+    # gutted, and the floor keeps a real handful of withdrawals from tripping
+    # it while there is barely anything on disk. An empty `gone` short-circuits
+    # on the floor, so `previous` is never zero by the time it is divided by.
+    if allow or len(gone) <= REMOVAL_FLOOR or len(gone) / previous <= REMOVAL_LIMIT:
+        return
+    raise SuspectSnapshotError(
+        f"snapshot {day} lists {previous - len(gone)} of the {previous} cases on disk, "
+        f"dropping {len(gone)} ({len(gone) / previous:.0%}). The IDS feed is a "
+        "historical file that should never lose that many in a day, so this one is "
+        "most likely incomplete and nothing has been changed. Check the download, or "
+        "re-run with --allow-removals if the withdrawals are real."
+    )
+
+
+def _carry_withdrawn(
+    store: Store, built: dict[str, dict[str, Any]], day: str
+) -> list[str]:
+    """Keep a case the feed has stopped listing, marked and dated.
+
+    Its page stays up saying whatever the last snapshot that listed it said,
+    rather than vanishing, and the documents fetched for it stay reachable.
+    The mark is not sticky: a case the feed lists again is rebuilt from the
+    feed like any other, flag and all.
+
+    Returns every case currently carried this way, not only the new ones.
+    """
+    carried = []
+    for key, record in store.investigations.items():
+        # RSS placeholders are rebuilt from rss_log.json every run, so one
+        # missing here means the log dropped it, not that IDS withdrew it.
+        if key in built or not cases.is_case_record(record):
+            continue
+        if record.get("source") != cases.IDS_SOURCE:
+            continue
+        record = dict(record)
+        record.setdefault("last_listed_snapshot", record.get("ids_snapshot") or day)
+        record["withdrawn"] = True
+        built[key] = record
+        carried.append(key)
+    return sorted(carried)
+
+
 def parse_snapshot(
     store: Store,
     snapshot: ids.Snapshot,
     *,
     use_rss: bool = True,
+    allow_removals: bool = False,
     log: Logger = print,
 ) -> IngestReport:
     """Turn one stored snapshot into case records, offline."""
@@ -103,8 +164,18 @@ def parse_snapshot(
                 report.placeholders.append(docket)
 
     previous = set(store.investigations)
+    # Cases already marked withdrawn are expected to be missing, so only the
+    # ones the feed listed last time count as having gone this time.
+    listed = {
+        key
+        for key, record in store.investigations.items()
+        if not (isinstance(record, dict) and record.get("withdrawn"))
+    }
     report.added = sorted(set(built) - previous)
-    report.removed = sorted(previous - set(built))
+    report.removed = sorted(listed - set(built))
+
+    _check_removals(report.removed, len(listed), snapshot.day, allow_removals)
+    report.withdrawn = _carry_withdrawn(store, built, snapshot.day)
 
     store.investigations = dict(sorted(built.items()))
     store.save_cases()
@@ -120,8 +191,13 @@ def parse_snapshot(
         log(f"  new since the last parse: {', '.join(report.added[:12])}"
             + (" ..." if len(report.added) > 12 else ""))
     if report.removed:
-        log(f"  no longer in the feed: {', '.join(report.removed[:12])}"
-            + (" ..." if len(report.removed) > 12 else ""))
+        log(
+            f"  no longer in the feed: {', '.join(report.removed[:12])}"
+            + (" ..." if len(report.removed) > 12 else "")
+            + ". Their pages stay up, marked as withdrawn."
+        )
+    if len(report.withdrawn) > len(report.removed):
+        log(f"  {len(report.withdrawn)} case(s) are marked withdrawn in total.")
     return report
 
 
@@ -133,6 +209,7 @@ def run(
     keep: int = ids.DEFAULT_KEEP,
     offline: bool = False,
     use_rss: bool = True,
+    allow_removals: bool = False,
     day: str | None = None,
     log: Logger = print,
 ) -> IngestReport:
@@ -141,6 +218,7 @@ def run(
     With `offline=True` the newest stored snapshot is parsed instead, which is
     how you re-parse after changing the parser without touching the network.
     """
+    parse = dict(use_rss=use_rss, allow_removals=allow_removals, log=log)
     if offline:
         snapshot = ids.latest(ids_dir)
         if snapshot is None:
@@ -148,10 +226,10 @@ def run(
                 f"no stored IDS snapshot in {ids_dir}. Run 'python cli.py sync' once first."
             )
         log(f"Parsing stored snapshot {snapshot.path.name} (offline).")
-        report = parse_snapshot(store, snapshot, use_rss=use_rss, log=log)
+        report = parse_snapshot(store, snapshot, **parse)
     else:
         sync = ids.sync(ids_dir=ids_dir, force=force, keep=keep, day=day, log=log)
-        report = parse_snapshot(store, sync.snapshot, use_rss=use_rss, log=log)
+        report = parse_snapshot(store, sync.snapshot, **parse)
         report.downloaded = sync.downloaded
 
     store.record_run(
@@ -161,7 +239,7 @@ def run(
         cases=report.cases,
         stages=report.stages,
         added=len(report.added),
-        removed=len(report.removed),
+        withdrawn=len(report.withdrawn),
     )
     store.save_state()
     return report
