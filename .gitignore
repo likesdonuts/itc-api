@@ -1,3 +1,6 @@
 .env
 __pycache__/
 *.pyc
+
+# Daily IDS snapshots: a few MB each, and re-downloadable from ids.usitc.gov
+data/ids/
