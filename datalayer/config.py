@@ -8,9 +8,14 @@ ROOT = Path(__file__).resolve().parent.parent
 
 DATA_DIR = ROOT / "data"
 DOCS_DIR = DATA_DIR / "documents"
+IDS_DIR = DATA_DIR / "ids"
 SITE_DIR = ROOT / "site"
 
 ENV_PATH = ROOT / ".env"
+
+# The mapping from IDS field names to what the site shows. Lives at the top
+# level, in plain JSON, because it is meant to be edited.
+SCHEMA_PATH = ROOT / "ui_schema.json"
 
 RSS_URL = "https://edis.usitc.gov/external/rss/render.rss?criteria=CRITERIONAOIDEL:8:13:CRITERIONANOTIFY:true"
 

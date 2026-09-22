@@ -263,19 +263,3 @@ def fetch_rss(url: str, timeout: float = 30.0) -> list[RssItem]:
             )
         )
     return items
-
-
-def fetch_ids_investigations(timeout: float = 30.0) -> dict[str, dict[str, Any]]:
-    """Public, unauthenticated feed with a 'Start Date' field EDIS itself lacks."""
-    resp = httpx.get(IDS_URL, timeout=timeout)
-    resp.raise_for_status()
-    payload = resp.json()
-    data = payload.get("data") if isinstance(payload, dict) else payload
-    result: dict[str, dict[str, Any]] = {}
-    if not isinstance(data, list):
-        return result
-    for row in data:
-        number = row.get("Investigation Number")
-        if number:
-            result[number] = row
-    return result

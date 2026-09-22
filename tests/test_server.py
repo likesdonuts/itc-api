@@ -10,7 +10,6 @@ allowed to reach over HTTP.
 from __future__ import annotations
 
 import json
-import sys
 import tempfile
 import threading
 import unittest
@@ -19,12 +18,13 @@ import urllib.request
 from pathlib import Path
 from unittest import mock
 
-sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
+from support import ids_row, write_snapshot
 
 import server  # noqa: E402
-from datalayer.records import SyncResult  # noqa: E402
+from datalayer import ingest  # noqa: E402
+from datalayer.docs import DocsReport, DocsResult  # noqa: E402
 from datalayer.store import Store  # noqa: E402
-from datalayer.update import UpdateReport  # noqa: E402
+from ui.render import render_site  # noqa: E402
 
 
 class ServerTestCase(unittest.TestCase):
@@ -35,19 +35,15 @@ class ServerTestCase(unittest.TestCase):
         self.data_dir = root / "data"
         self.site_dir = root / "site"
         self.data_dir.mkdir()
+        # The document root holds the token file, so the 404 below is the
+        # check that nothing outside site/ and data/documents/ is served.
+        (root / ".env").write_text("EDIS_TOKEN=secret", encoding="utf-8")
 
         store = Store.load(self.data_dir)
-        store.put(
-            "337-1478",
-            {
-                "investigation_number": "337-1478",
-                "title": "Certain Wearable Devices",
-                "investigation_status": "Active",
-                "date_initiated": "2026-01-13",
-            },
-            [],
-        )
-        store.save_investigations()
+        snapshot = write_snapshot(self.data_dir / "ids", [ids_row()])
+        ingest.parse_snapshot(store, snapshot, log=lambda msg: None)
+        # cli.py serve renders before it listens, so the site exists here too.
+        render_site(store, site_dir=self.site_dir, log=lambda msg: None)
 
         self.calls: list[dict] = []
         self.controller = server.Controller(
@@ -63,20 +59,19 @@ class ServerTestCase(unittest.TestCase):
         self.addCleanup(self.httpd.server_close)
         self.addCleanup(self.httpd.shutdown)
 
-    def fake_update(self, downloaded: int = 0, ok: bool = True, documents: int = 3):
+    def fake_docs(self, downloaded: int = 0, ok: bool = True, documents: int = 3):
         def _run(store, token, numbers, **kwargs):
             self.calls.append({"numbers": list(numbers), **kwargs})
             result = (
-                SyncResult(
+                DocsResult(
                     key=list(numbers)[0],
-                    status="Active",
                     document_count=documents,
                     downloaded=downloaded,
                 )
                 if ok
-                else SyncResult.skipped(list(numbers)[0], "EDIS said no")
+                else DocsResult.skipped(list(numbers)[0], "EDIS said no")
             )
-            return UpdateReport(requested=list(numbers), results=[result])
+            return DocsReport(requested=list(numbers), results=[result])
 
         return _run
 
@@ -101,9 +96,9 @@ class ServerTestCase(unittest.TestCase):
             return exc.code
 
 
-class TestUpdateEndpoint(ServerTestCase):
+class TestDocumentsEndpoint(ServerTestCase):
     def test_update_button_skips_pdf_downloads(self):
-        with mock.patch("datalayer.update.run", self.fake_update()):
+        with mock.patch("datalayer.docs.run", self.fake_docs()):
             status, body = self.post({"number": "337-1478", "documents": False})
 
         self.assertEqual(status, 200)
@@ -112,7 +107,7 @@ class TestUpdateEndpoint(ServerTestCase):
         self.assertFalse(self.calls[0]["download"])
 
     def test_fetch_docs_button_downloads_pdfs(self):
-        with mock.patch("datalayer.update.run", self.fake_update(downloaded=2)):
+        with mock.patch("datalayer.docs.run", self.fake_docs(downloaded=2)):
             status, body = self.post({"number": "337-1478", "documents": True})
 
         self.assertEqual(status, 200)
@@ -120,21 +115,21 @@ class TestUpdateEndpoint(ServerTestCase):
         self.assertIn("2 new file(s)", body["message"])
 
     def test_the_site_is_rebuilt_so_the_reload_shows_new_data(self):
-        with mock.patch("datalayer.update.run", self.fake_update()):
+        with mock.patch("datalayer.docs.run", self.fake_docs()):
             self.post({"number": "337-1478", "documents": False})
 
         index = (self.site_dir / "index.html").read_text()
         self.assertIn("Certain Wearable Devices", index)
 
     def test_loose_number_spellings_resolve(self):
-        with mock.patch("datalayer.update.run", self.fake_update()):
+        with mock.patch("datalayer.docs.run", self.fake_docs()):
             status, _ = self.post({"number": "337-TA-1478", "documents": False})
 
         self.assertEqual(status, 200)
         self.assertEqual(self.calls[0]["numbers"], ["337-1478"])
 
     def test_untracked_numbers_are_refused(self):
-        with mock.patch("datalayer.update.run", self.fake_update()):
+        with mock.patch("datalayer.docs.run", self.fake_docs()):
             status, body = self.post({"number": "337-9999", "documents": False})
 
         self.assertEqual(status, 404)
@@ -142,7 +137,7 @@ class TestUpdateEndpoint(ServerTestCase):
         self.assertEqual(self.calls, [])
 
     def test_a_failed_fetch_is_reported_to_the_browser(self):
-        with mock.patch("datalayer.update.run", self.fake_update(ok=False)):
+        with mock.patch("datalayer.docs.run", self.fake_docs(ok=False)):
             status, body = self.post({"number": "337-1478", "documents": False})
 
         self.assertEqual(status, 502)
@@ -172,9 +167,10 @@ class TestStaticServing(ServerTestCase):
             self.assertTrue(response.geturl().endswith("/site/index.html"))
 
     def test_only_the_site_and_documents_are_reachable(self):
+        self.assertEqual(self.get("/site/index.html"), 200)
         self.assertEqual(self.get("/.env"), 404)
         self.assertEqual(self.get("/data/investigations.json"), 404)
-        self.assertEqual(self.get("/cli.py"), 404)
+        self.assertEqual(self.get("/data/ids/investigations-2026-09-22.json.gz"), 404)
 
 
 if __name__ == "__main__":
