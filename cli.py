@@ -1,26 +1,29 @@
-"""Entry point for the ITC 337 docket tracker.
+"""Entry point for the ITC 337 investigation tracker.
 
 The work is split into two independent layers so that changing how the site
 looks never means re-fetching anything:
 
-  Data layer (datalayer/)  -- talks to EDIS/RSS, writes data/*.json + PDFs
-  UI layer   (ui/)         -- reads data/*.json, writes site/*.html
+  Data layer (datalayer/)  -- talks to IDS/EDIS/RSS, writes data/*.json + PDFs
+  UI layer   (ui/)         -- reads data/*.json + ui_schema.json, writes site/
 
-and the data layer has two separate processes:
+and the data layer has two separate processes over two separate sources:
 
-  discover  RSS feed + EDIS API; finds and fetches cases we don't track yet
-  update    EDIS API only, for the specific investigation numbers you name
+  sync   the daily IDS snapshot. Every investigation, its stages, its
+         parties. Owns data/investigations.json. No token needed.
+  docs   the EDIS API, for the numbers you name. Owns document lists and
+         downloaded PDFs, and cannot touch a case record.
 
 Examples:
-    python cli.py discover                  # look for newly filed complaints
-    python cli.py discover --dry-run        # just log the feed, no EDIS calls
-    python cli.py update 337-1478 337-3936  # re-pull only those two cases
-    python cli.py update --all              # re-pull everything on disk
+    python cli.py sync                      # download today's IDS file, rebuild cases
+    python cli.py sync --render             # ...and rebuild the site too
+    python cli.py parse                     # re-parse the stored snapshot, offline
+    python cli.py docs 337-1478 337-3936    # fetch those cases' documents
+    python cli.py docs 337-1478 --no-attachments
     python cli.py render                    # rebuild the site, offline
     python cli.py serve                     # browse the site with working buttons
-    python cli.py status                    # what's tracked, no network
-    python cli.py normalize                 # rewrite stored dates to ISO, offline
-    python cli.py refresh                   # discover + update --all + render
+    python cli.py fields                    # what ui_schema.json can name
+    python cli.py status                    # what's on disk, no network
+    python cli.py refresh                   # sync + documents we already have + render
 """
 
 from __future__ import annotations
@@ -29,24 +32,15 @@ import argparse
 import sys
 from pathlib import Path
 
-from datalayer import discovery, normalize, update
-from datalayer.config import DATA_DIR, MissingTokenError, SITE_DIR, load_token
+import schema as ui_schema
+from datalayer import docs, feed, ids, ingest, normalize
+from datalayer.config import DATA_DIR, IDS_DIR, MissingTokenError, SCHEMA_PATH, SITE_DIR, load_token
 from datalayer.runner import ProcessAborted
 from datalayer.store import Store
 from ui.render import render_site
 
 
-def _add_fetch_flags(parser: argparse.ArgumentParser) -> None:
-    parser.add_argument(
-        "--no-attachments",
-        action="store_true",
-        help="record document metadata only; skip downloading PDFs",
-    )
-    parser.add_argument(
-        "--no-ids",
-        action="store_true",
-        help="skip the public IDS feed (start dates may be missing)",
-    )
+def _add_render_flag(parser: argparse.ArgumentParser) -> None:
     parser.add_argument(
         "--render",
         action="store_true",
@@ -62,48 +56,70 @@ def build_parser() -> argparse.ArgumentParser:
     )
     parser.add_argument("--data-dir", type=Path, default=DATA_DIR, help=argparse.SUPPRESS)
     parser.add_argument("--site-dir", type=Path, default=SITE_DIR, help=argparse.SUPPRESS)
+    parser.add_argument("--ids-dir", type=Path, default=IDS_DIR, help=argparse.SUPPRESS)
+    parser.add_argument("--schema", type=Path, default=SCHEMA_PATH, help=argparse.SUPPRESS)
     sub = parser.add_subparsers(dest="command", required=True)
 
-    p_discover = sub.add_parser(
-        "discover",
-        help="new case discovery: RSS feed + EDIS API for dockets we don't track yet",
+    p_sync = sub.add_parser(
+        "sync",
+        help="daily IDS snapshot: download it if today's is missing, rebuild every case",
     )
-    p_discover.add_argument(
-        "--limit", type=int, help="fetch at most this many newly discovered dockets"
+    p_sync.add_argument(
+        "--force", action="store_true", help="download again even if today's snapshot is stored"
     )
-    p_discover.add_argument(
-        "--dry-run",
-        action="store_true",
-        help="refresh the RSS log and report what's new, but make no EDIS calls",
+    p_sync.add_argument(
+        "--keep",
+        type=int,
+        default=ids.DEFAULT_KEEP,
+        help=f"snapshots to keep on disk (default {ids.DEFAULT_KEEP}, 0 keeps all)",
     )
-    _add_fetch_flags(p_discover)
+    p_sync.add_argument("--no-rss", action="store_true", help="skip the EDIS complaint RSS feed")
+    _add_render_flag(p_sync)
 
-    p_update = sub.add_parser(
-        "update",
-        help="targeted update: re-pull the investigation numbers you name from EDIS",
+    p_parse = sub.add_parser(
+        "parse", help="rebuild cases from the newest stored snapshot (offline, no download)"
     )
-    p_update.add_argument(
+    p_parse.add_argument("--no-rss", action="store_true", help="ignore dockets logged from RSS")
+    _add_render_flag(p_parse)
+
+    p_docs = sub.add_parser(
+        "docs", help="EDIS documents for the case numbers you name (writes nothing else)"
+    )
+    p_docs.add_argument(
         "numbers",
         nargs="*",
         help="investigation or docket numbers, e.g. 337-1478 337-TA-1478 337-3936",
     )
-    p_update.add_argument("--all", action="store_true", help="update every case already on disk")
-    p_update.add_argument(
+    p_docs.add_argument(
+        "--existing",
+        action="store_true",
+        help="every case documents have already been fetched for",
+    )
+    p_docs.add_argument(
+        "--all", action="store_true", help="every case on disk (over a thousand EDIS calls)"
+    )
+    p_docs.add_argument("--limit", type=int, help="stop after this many cases")
+    p_docs.add_argument(
+        "--no-attachments",
+        action="store_true",
+        help="record document metadata only; skip downloading PDFs",
+    )
+    p_docs.add_argument(
         "--known-only",
         action="store_true",
-        help="refuse numbers that aren't tracked yet instead of asking EDIS about them",
+        help="refuse numbers that aren't on disk instead of asking EDIS about them",
     )
-    _add_fetch_flags(p_update)
+    _add_render_flag(p_docs)
 
     sub.add_parser("render", help="UI layer only: rebuild site/ from data/ (offline)")
-    sub.add_parser("status", help="list what's tracked on disk (offline)")
+    sub.add_parser("fields", help="list the field names ui_schema.json can use (offline)")
+    sub.add_parser("status", help="list what's on disk (offline)")
     sub.add_parser(
         "normalize", help="rewrite stored dates to ISO 8601 in place (offline, no API calls)"
     )
 
     p_serve = sub.add_parser(
-        "serve",
-        help="serve the site locally so its Update / Fetch docs buttons work",
+        "serve", help="serve the site locally so its Update / Fetch docs buttons work"
     )
     p_serve.add_argument("--port", type=int, default=8765, help="port to listen on (default 8765)")
     p_serve.add_argument("--host", default="127.0.0.1", help=argparse.SUPPRESS)
@@ -112,67 +128,88 @@ def build_parser() -> argparse.ArgumentParser:
     )
 
     p_refresh = sub.add_parser(
-        "refresh", help="discover, then update everything, then render (the old refresh.py)"
+        "refresh",
+        help="the daily job: sync, refresh documents already fetched, render",
     )
-    _add_fetch_flags(p_refresh)
+    p_refresh.add_argument(
+        "--no-attachments", action="store_true", help="skip downloading PDFs"
+    )
+    p_refresh.add_argument(
+        "--no-documents", action="store_true", help="IDS only; make no EDIS calls"
+    )
 
     return parser
 
 
-def _render(store: Store, site_dir: Path) -> None:
-    print("Rendering site...")
-    report = render_site(store, site_dir=site_dir)
-    print(f"Open: {report.index_path}")
+def _render(args: argparse.Namespace, store: Store) -> None:
+    render_site(store, site_dir=args.site_dir, schema_path=args.schema)
 
 
-def cmd_discover(args: argparse.Namespace, store: Store) -> int:
-    token = None if args.dry_run else load_token()
-    report = discovery.run(
+def cmd_sync(args: argparse.Namespace, store: Store) -> int:
+    if not args.no_rss:
+        feed.run(store)
+    report = ingest.run(
         store,
-        token,
-        limit=args.limit,
-        download=not args.no_attachments,
-        use_ids=not args.no_ids,
-        dry_run=args.dry_run,
+        ids_dir=args.ids_dir,
+        force=args.force,
+        keep=args.keep,
+        use_rss=not args.no_rss,
+        log=print,
     )
     print(
-        f"\nDiscovery done. {len(report.added)} new case(s) added, "
-        f"{report.downloaded} attachment(s) downloaded, {len(report.failed)} skipped."
+        f"\nSync done. {report.cases} investigation(s) from IDS snapshot "
+        f"{report.snapshot_day}, {len(report.added)} new, {len(report.removed)} gone."
     )
-    if args.render and not args.dry_run:
-        _render(store, args.site_dir)
-    elif report.added:
-        print("Run 'python cli.py render' to show them on the site.")
+    if args.render:
+        _render(args, store)
+    else:
+        print("Run 'python cli.py render' to rebuild the site.")
     return 0
 
 
-def cmd_update(args: argparse.Namespace, store: Store) -> int:
+def cmd_parse(args: argparse.Namespace, store: Store) -> int:
+    report = ingest.run(store, ids_dir=args.ids_dir, offline=True, use_rss=not args.no_rss)
+    print(f"\nParsed {report.cases} investigation(s) from snapshot {report.snapshot_day}.")
+    if args.render:
+        _render(args, store)
+    return 0
+
+
+def cmd_docs(args: argparse.Namespace, store: Store) -> int:
     numbers = list(args.numbers)
     if args.all:
         numbers = store.tracked_numbers()
+    elif args.existing:
+        numbers = store.numbers_with_documents()
+    if args.limit:
+        numbers = numbers[: args.limit]
+
     if not numbers:
-        print("Give one or more investigation numbers, or use --all.")
+        print(
+            "Give one or more investigation numbers, or use --existing "
+            "(cases already fetched) or --all."
+        )
         return 1
 
-    report = update.run(
+    report = docs.run(
         store,
         load_token(),
         numbers,
         download=not args.no_attachments,
-        use_ids=not args.no_ids,
         known_only=args.known_only,
     )
     print(
-        f"\nUpdate done. {len(report.updated)} case(s) updated, "
+        f"\nDocuments done. {len(report.fetched)} case(s) fetched, "
         f"{report.downloaded} attachment(s) downloaded, {len(report.failed)} skipped."
     )
     if args.render:
-        _render(store, args.site_dir)
-    return 0 if report.updated or not report.failed else 1
+        _render(args, store)
+    return 0 if report.fetched or not report.failed else 1
 
 
 def cmd_render(args: argparse.Namespace, store: Store) -> int:
-    _render(store, args.site_dir)
+    report = render_site(store, site_dir=args.site_dir, schema_path=args.schema)
+    print(f"Open: {report.index_path}")
     print(
         "Opened from disk the page is read-only; 'python cli.py serve' enables "
         "its Update / Fetch docs buttons."
@@ -180,22 +217,64 @@ def cmd_render(args: argparse.Namespace, store: Store) -> int:
     return 0
 
 
+def cmd_fields(args: argparse.Namespace, store: Store) -> int:
+    """Print what ui_schema.json can name, since that is the whole point of
+    having the mapping in a file the user edits.
+    """
+    from collections import Counter
+
+    cases = [c for c in store.investigations.values() if isinstance(c, dict)]
+    if not cases:
+        print("Nothing on disk yet. Run 'python cli.py sync' first.")
+        return 1
+
+    counts: Counter[str] = Counter()
+    kinds: dict[str, str] = {}
+    samples: dict[str, str] = {}
+    for case in cases:
+        for name, kind in ui_schema.sources(case).items():
+            counts[name] += 1
+            kinds[name] = kind
+            if name in samples:
+                continue
+            spec = ui_schema.FieldSpec(label=name, source=name, type="text")
+            for stage in case.get("stages") or [None]:
+                value = ui_schema.resolve(spec, case, stage=stage)
+                if value not in (None, "", []):
+                    samples[name] = str(value)[:44]
+                    break
+
+    for kind in ("case", "stage field", "stage list"):
+        group = sorted(name for name, k in kinds.items() if k == kind)
+        print(f"\n{kind.upper()}S ({len(group)}) -- usable as \"source\" in {args.schema.name}")
+        for name in group:
+            share = f"{counts[name]}/{len(cases)}"
+            print(f"  {name:<46} {share:>12}  {samples.get(name, '')}")
+
+    print(
+        '\nList sources also take "where" (e.g. {"role": "Complainant"}), "item" '
+        'and "limit".'
+    )
+    return 0
+
+
 def cmd_normalize(args: argparse.Namespace, store: Store) -> int:
     normalize.run(store)
-    _render(store, args.site_dir)
+    _render(args, store)
     return 0
 
 
 def cmd_serve(args: argparse.Namespace, store: Store) -> int:
     from server import serve
 
-    _render(store, args.site_dir)
+    _render(args, store)
     serve(
         load_token(),
         host=args.host,
         port=args.port,
         data_dir=args.data_dir,
         site_dir=args.site_dir,
+        schema_path=args.schema,
         open_browser=not args.no_browser,
     )
     return 0
@@ -204,53 +283,81 @@ def cmd_serve(args: argparse.Namespace, store: Store) -> int:
 def cmd_status(args: argparse.Namespace, store: Store) -> int:
     rows = store.summary_rows()
     if not rows:
-        print("Nothing tracked yet. Run 'python cli.py discover'.")
+        print("Nothing on disk yet. Run 'python cli.py sync'.")
         return 0
 
-    width = max(len(row["investigation_number"]) for row in rows)
-    print(f"{'NUMBER'.ljust(width)}  {'STATUS':<20} {'DOCS':>5} {'FILES':>6}  LAST REFRESHED")
-    for row in rows:
-        refreshed = (row["last_refreshed"] or "never")[:19]
+    stored = ids.snapshots(args.ids_dir)
+    if stored:
+        print(f"IDS snapshots: {len(stored)}, newest {stored[-1].day} ({stored[-1].path.name})")
+    else:
+        print("IDS snapshots: none stored yet")
+
+    with_docs = [row for row in rows if row["documents"]]
+    print(
+        f"{len(rows)} investigation(s) tracked in {store.data_dir}; "
+        f"{len(with_docs)} have documents fetched."
+    )
+    if not with_docs:
+        print("\nNo documents fetched yet. Try 'python cli.py docs <number>'.")
+        return 0
+
+    width = max(len(row["investigation_number"]) for row in with_docs)
+    print(f"\n{'NUMBER'.ljust(width)}  {'STATUS':<22} {'STAGES':>6} {'DOCS':>5} {'FILES':>6}  FETCHED")
+    for row in with_docs:
+        fetched = (row["documents_fetched_at"] or "never")[:19]
         print(
-            f"{row['investigation_number'].ljust(width)}  {row['status'][:20]:<20} "
-            f"{row['documents']:>5} {row['attachments']:>6}  {refreshed}"
+            f"{row['investigation_number'].ljust(width)}  {row['status'][:22]:<22} "
+            f"{row['stages']:>6} {row['documents']:>5} {row['attachments']:>6}  {fetched}"
         )
-    print(f"\n{len(rows)} case(s) tracked in {store.data_dir}.")
     return 0
 
 
 def cmd_refresh(args: argparse.Namespace, store: Store) -> int:
-    token = load_token()
-    download = not args.no_attachments
-    use_ids = not args.no_ids
+    feed.run(store)
+    report = ingest.run(store, ids_dir=args.ids_dir)
 
-    discovery_report = discovery.run(store, token, download=download, use_ids=use_ids)
-    print()
-    just_fetched = {r.key for r in discovery_report.results if r.ok}
-    stale = [n for n in store.tracked_numbers() if n not in just_fetched]
-    update_report = update.run(store, token, stale, download=download, use_ids=use_ids)
+    if not args.no_documents:
+        targets = store.numbers_with_documents()
+        if targets:
+            print(f"\nRefreshing documents for {len(targets)} case(s) already fetched...")
+            docs.run(
+                store, load_token(), targets, download=not args.no_attachments
+            )
 
-    _render(store, args.site_dir)
-    downloaded = discovery_report.downloaded + update_report.downloaded
+    _render(args, store)
     print(
-        f"\nDone. {len(store.investigations)} investigation(s) tracked, "
-        f"{downloaded} attachment(s) downloaded this run."
+        f"\nDone. {report.cases} investigation(s) tracked from IDS snapshot "
+        f"{report.snapshot_day}."
     )
     return 0
 
 
 COMMANDS = {
-    "discover": cmd_discover,
-    "update": cmd_update,
+    "sync": cmd_sync,
+    "parse": cmd_parse,
+    "docs": cmd_docs,
     "render": cmd_render,
+    "fields": cmd_fields,
     "serve": cmd_serve,
     "status": cmd_status,
     "normalize": cmd_normalize,
     "refresh": cmd_refresh,
 }
 
+# The old names, from when EDIS was the only source.
+RENAMED = {"discover": "sync", "update": "docs"}
+
 
 def main(argv: list[str] | None = None) -> int:
+    argv = list(sys.argv[1:] if argv is None else argv)
+    for index, token in enumerate(argv):
+        if token in COMMANDS:
+            break
+        if token in RENAMED:
+            print(f"'{token}' is now '{RENAMED[token]}'; running that instead.\n")
+            argv[index] = RENAMED[token]
+            break
+
     args = build_parser().parse_args(argv)
     store = Store.load(args.data_dir)
     try:
@@ -258,11 +365,16 @@ def main(argv: list[str] | None = None) -> int:
     except MissingTokenError as exc:
         print(exc)
         return 1
+    except ids.IdsError as exc:
+        print(f"IDS ERROR: {exc}")
+        return 1
+    except ui_schema.SchemaError as exc:
+        print(f"SCHEMA ERROR: {exc}")
+        return 1
     except ProcessAborted as exc:
         print(f"AUTH ERROR: {exc}")
         return 1
     except KeyboardInterrupt:
-        store.save_investigations()
         print("\nInterrupted; data collected so far has been saved.")
         return 130
 

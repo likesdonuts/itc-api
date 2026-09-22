@@ -1,9 +1,9 @@
-"""Offline maintenance: rewrite stored dates into ISO 8601.
+"""Offline maintenance: rewrite stored document dates to ISO 8601.
 
-Records written before dates were normalized on the way in still hold the
-shape their source used -- "01-13-2026" from IDS next to "2026/08/21
-16:25:00" from EDIS. Nothing here talks to an API; it just re-reads what is
-already on disk through the same parser the data layer now uses.
+EDIS hands out dates in its own format ("2026/09/18 11:39:00") and older runs
+of this app stored them as they came. Case records do not need this -- they
+are rebuilt from the IDS snapshot every sync, already normalized -- so this
+only has documents left to fix.
 """
 
 from __future__ import annotations
@@ -17,10 +17,7 @@ from .store import Store
 
 Logger = Callable[[str], None]
 
-RECORD_DATE_FIELDS = ("date_initiated", "last_refreshed")
 DOCUMENT_DATE_FIELDS = ("document_date", "official_received_date")
-
-APPROX_NOTE = "approx., from earliest complaint filing"
 
 
 @dataclass
@@ -34,29 +31,24 @@ def _rewrite(container: dict[str, Any], fields: tuple[str, ...], report: Normali
         original = container.get(name)
         if not original:
             continue
-        note = dates.note_of(original)
         normalized = dates.to_iso(original)
         if normalized != original:
             container[name] = normalized
             report.changed += 1
         if dates.parse(original) is None:
             report.unparsed.append(str(original))
-        if note and name == "date_initiated":
-            container.setdefault("date_initiated_note", note)
 
 
 def run(store: Store, *, log: Logger = print) -> NormalizeReport:
     report = NormalizeReport()
 
-    for record in store.investigations.values():
-        _rewrite(record, RECORD_DATE_FIELDS, report)
     for documents in store.documents.values():
         for document in documents:
             _rewrite(document, DOCUMENT_DATE_FIELDS, report)
 
     if report.changed:
-        store.save_investigations()
-    log(f"Normalized {report.changed} stored date(s) to ISO 8601.")
+        store.save_documents()
+    log(f"Normalized {report.changed} stored document date(s) to ISO 8601.")
     if report.unparsed:
         sample = ", ".join(sorted(set(report.unparsed))[:5])
         log(f"  ! {len(report.unparsed)} value(s) were left as-is, unrecognized: {sample}")

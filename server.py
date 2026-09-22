@@ -2,7 +2,7 @@
 
 The generated pages are static, so the Update / Fetch docs buttons on the
 index need something to call. This serves the repository over localhost and
-exposes one endpoint that runs the data layer's targeted update process,
+exposes one endpoint that runs the EDIS documents process for one case,
 re-renders the site, and reports what changed.
 
 It is the only place the two layers are wired together at runtime; both
@@ -22,8 +22,8 @@ from http.server import SimpleHTTPRequestHandler, ThreadingHTTPServer
 from pathlib import Path
 from typing import Any, Callable
 
-from datalayer import update
-from datalayer.config import DATA_DIR, ROOT, SITE_DIR
+from datalayer import docs
+from datalayer.config import DATA_DIR, SCHEMA_PATH, SITE_DIR
 from datalayer.runner import ProcessAborted
 from datalayer.store import Store
 from ui.render import render_site
@@ -40,10 +40,11 @@ class Controller:
     token: str
     data_dir: Path = DATA_DIR
     site_dir: Path = SITE_DIR
+    schema_path: Path = SCHEMA_PATH
     log: Logger = print
     _lock: threading.Lock = field(default_factory=threading.Lock)
 
-    def update_case(self, number: str, *, documents: bool) -> tuple[int, dict[str, Any]]:
+    def fetch_documents(self, number: str, *, documents: bool) -> tuple[int, dict[str, Any]]:
         if not self._lock.acquire(blocking=False):
             return HTTPStatus.CONFLICT, {
                 "ok": False,
@@ -55,18 +56,22 @@ class Controller:
             if key is None:
                 return HTTPStatus.NOT_FOUND, {
                     "ok": False,
-                    "message": f"{number} is not tracked; discover it first",
+                    "message": f"{number} is not on disk; run 'python cli.py sync' first",
                 }
 
-            report = update.run(
-                store, self.token, [key], download=documents, log=self.log
-            )
+            report = docs.run(store, self.token, [key], download=documents, log=self.log)
             result = report.results[0] if report.results else None
             if result is None or not result.ok:
                 note = result.note if result else "no result"
                 return HTTPStatus.BAD_GATEWAY, {"ok": False, "message": f"EDIS: {note}"}
 
-            render_site(store, data_dir=self.data_dir, site_dir=self.site_dir, log=self.log)
+            render_site(
+                store,
+                data_dir=self.data_dir,
+                site_dir=self.site_dir,
+                schema_path=self.schema_path,
+                log=self.log,
+            )
 
             if documents:
                 message = (
@@ -74,11 +79,11 @@ class Controller:
                     f"{result.downloaded} new file(s) downloaded"
                 )
             else:
-                message = f"{result.document_count} document(s), details refreshed"
+                message = f"{result.document_count} document(s) listed"
             return HTTPStatus.OK, {
                 "ok": True,
                 "key": result.key,
-                "status": result.status,
+                "source": result.source,
                 "documents": result.document_count,
                 "downloaded": result.downloaded,
                 "message": message,
@@ -100,29 +105,30 @@ class Handler(SimpleHTTPRequestHandler):
 
     def __init__(self, *args: Any, controller: Controller, **kwargs: Any) -> None:
         self.controller = controller
-        super().__init__(*args, directory=str(ROOT), **kwargs)
+        # The document root is the directory holding site/ and data/, so that
+        # the "../../data/documents/..." links on a case page resolve.
+        super().__init__(*args, directory=str(controller.site_dir.parent), **kwargs)
 
     def do_GET(self) -> None:
         if self.path in ("/", "/index.html"):
             self.send_response(HTTPStatus.FOUND)
-            self.send_header("Location", "/site/index.html")
+            self.send_header("Location", f"/{self.controller.site_dir.name}/index.html")
             self.end_headers()
             return
         if not self._is_servable(self.path):
-            # The repository root is the document root so that the PDF links
-            # in site/investigations/*.html resolve, but nothing else down
-            # here (.env above all) should be reachable over HTTP.
+            # Nothing else under the document root -- .env above all -- should
+            # be reachable over HTTP.
             self.send_error(HTTPStatus.NOT_FOUND)
             return
         super().do_GET()
 
-    @staticmethod
-    def _is_servable(path: str) -> bool:
+    def _is_servable(self, path: str) -> bool:
         clean = path.split("?", 1)[0].split("#", 1)[0]
-        return clean.startswith(("/site/", "/data/documents/"))
+        return clean.startswith((f"/{self.controller.site_dir.name}/", "/data/documents/"))
 
     def do_POST(self) -> None:
-        if self.path.rstrip("/") not in ("/api/update", "/site/api/update"):
+        endpoint = self.path.rstrip("/")
+        if endpoint not in ("/api/update", f"/{self.controller.site_dir.name}/api/update"):
             self._send_json(HTTPStatus.NOT_FOUND, {"ok": False, "message": "unknown endpoint"})
             return
 
@@ -146,7 +152,7 @@ class Handler(SimpleHTTPRequestHandler):
         documents = bool(payload.get("documents"))
         action = "fetch docs for" if documents else "update"
         self.controller.log(f"[browser] {action} {number}")
-        status, body = self.controller.update_case(number, documents=documents)
+        status, body = self.controller.fetch_documents(number, documents=documents)
         self._send_json(status, body)
 
     def _send_json(self, status: HTTPStatus, body: dict[str, Any]) -> None:
@@ -181,10 +187,17 @@ def serve(
     port: int = 8765,
     data_dir: Path = DATA_DIR,
     site_dir: Path = SITE_DIR,
+    schema_path: Path = SCHEMA_PATH,
     open_browser: bool = True,
     log: Logger = print,
 ) -> None:
-    controller = Controller(token=token, data_dir=data_dir, site_dir=site_dir, log=log)
+    controller = Controller(
+        token=token,
+        data_dir=data_dir,
+        site_dir=site_dir,
+        schema_path=schema_path,
+        log=log,
+    )
     httpd = make_server(controller, host, port)
     url = f"http://{host}:{httpd.server_address[1]}/site/index.html"
 

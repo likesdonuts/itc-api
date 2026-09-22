@@ -3,6 +3,15 @@
 The JSON files under data/ are the contract between the two layers: data
 processes write them, the UI layer only ever reads them. Keeping all the
 file handling here means neither side has to know about paths or formats.
+
+Each file has exactly one writer, which is what keeps the two data processes
+from treading on each other:
+
+    investigations.json   the IDS ingest (cases, stages, parties)
+    documents_index.json  the EDIS documents process
+    documents_state.json  the EDIS documents process (its own bookkeeping)
+    rss_log.json          the RSS feed check
+    state.json            every process, one entry each
 """
 
 from __future__ import annotations
@@ -20,6 +29,7 @@ from .config import DATA_DIR, DOCS_DIR
 
 INVESTIGATIONS_FILE = "investigations.json"
 DOCUMENTS_INDEX_FILE = "documents_index.json"
+DOCUMENTS_STATE_FILE = "documents_state.json"
 RSS_LOG_FILE = "rss_log.json"
 STATE_FILE = "state.json"
 
@@ -88,6 +98,20 @@ def lookup_candidates(value: str) -> list[str]:
     return [c for c in candidates if c]
 
 
+def _repoint_attachments(
+    documents: list[dict[str, Any]], old_key: str, new_key: str
+) -> list[dict[str, Any]]:
+    """Attachment links carry the case number in their path, so they have to
+    follow the files when a docket is renumbered.
+    """
+    for document in documents:
+        for attachment in document.get("attachments") or []:
+            href = attachment.get("href")
+            if href:
+                attachment["href"] = href.replace(f"/documents/{old_key}/", f"/documents/{new_key}/")
+    return documents
+
+
 @dataclass
 class Store:
     """In-memory view of data/, loaded once and saved explicitly."""
@@ -96,6 +120,7 @@ class Store:
     docs_dir: Path = DOCS_DIR
     investigations: dict[str, Any] = field(default_factory=dict)
     documents: dict[str, list[dict[str, Any]]] = field(default_factory=dict)
+    documents_state: dict[str, Any] = field(default_factory=dict)
     rss_log: dict[str, Any] = field(default_factory=dict)
     state: dict[str, Any] = field(default_factory=dict)
 
@@ -107,13 +132,19 @@ class Store:
             docs_dir=base / "documents",
             investigations=load_json(base / INVESTIGATIONS_FILE, {}),
             documents=load_json(base / DOCUMENTS_INDEX_FILE, {}),
+            documents_state=load_json(base / DOCUMENTS_STATE_FILE, {}),
             rss_log=load_json(base / RSS_LOG_FILE, {}),
             state=load_json(base / STATE_FILE, {}),
         )
 
-    def save_investigations(self) -> None:
+    def save_cases(self) -> None:
+        """Only the IDS ingest calls this."""
         save_json(self.data_dir / INVESTIGATIONS_FILE, self.investigations)
+
+    def save_documents(self) -> None:
+        """Only the EDIS documents process calls this."""
         save_json(self.data_dir / DOCUMENTS_INDEX_FILE, self.documents)
+        save_json(self.data_dir / DOCUMENTS_STATE_FILE, self.documents_state)
 
     def save_rss_log(self) -> None:
         save_json(self.data_dir / RSS_LOG_FILE, self.rss_log)
@@ -122,7 +153,8 @@ class Store:
         save_json(self.data_dir / STATE_FILE, self.state)
 
     def save(self) -> None:
-        self.save_investigations()
+        self.save_cases()
+        self.save_documents()
         self.save_rss_log()
         self.save_state()
 
@@ -153,12 +185,23 @@ class Store:
     def tracked_numbers(self) -> list[str]:
         return sorted(set(self.investigations) | set(self.rss_log))
 
+    def numbers_with_documents(self) -> list[str]:
+        """Cases the documents process has already been run for."""
+        return sorted(key for key, docs in self.documents.items() if docs)
+
     def rss_documents(self, key: str) -> dict[str, Any]:
         return self.rss_log.get(key, {}).get("documents", {})
 
-    def put(self, key: str, record: dict[str, Any], documents: list[dict[str, Any]]) -> None:
+    def put_case(self, key: str, record: dict[str, Any]) -> None:
         self.investigations[key] = record
+
+    def put_documents(self, key: str, documents: list[dict[str, Any]], **state: Any) -> None:
         self.documents[key] = documents
+        self.documents_state[key] = {
+            "fetched_at": datetime.now(timezone.utc).isoformat(),
+            "documents": len(documents),
+            **state,
+        }
 
     def rename(self, old_key: str, new_key: str) -> None:
         """A pre-institution docket (337-3936) becomes an investigation number
@@ -168,7 +211,12 @@ class Store:
         if old_key == new_key:
             return
         self.investigations.pop(old_key, None)
-        self.documents.pop(old_key, None)
+        old_documents = self.documents.pop(old_key, None)
+        old_state = self.documents_state.pop(old_key, None)
+        if old_documents and not self.documents.get(new_key):
+            self.documents[new_key] = _repoint_attachments(old_documents, old_key, new_key)
+            if old_state:
+                self.documents_state[new_key] = old_state
         if old_key in self.rss_log:
             old_entry = self.rss_log.pop(old_key)
             new_entry = self.rss_log.get(new_key, {})
@@ -198,12 +246,13 @@ class Store:
                 {
                     "key": key,
                     "investigation_number": record.get("investigation_number") or key,
-                    "status": record.get("investigation_status") or "(not fetched)",
+                    "status": record.get("status") or "(not in IDS)",
+                    "stages": record.get("stage_count") or 0,
                     "documents": len(self.documents.get(key, [])),
                     "attachments": sum(
                         len(doc.get("attachments") or []) for doc in self.documents.get(key, [])
                     ),
-                    "last_refreshed": record.get("last_refreshed"),
+                    "documents_fetched_at": (self.documents_state.get(key) or {}).get("fetched_at"),
                 }
             )
         return rows
