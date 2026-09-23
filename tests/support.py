@@ -136,14 +136,19 @@ def payload(rows: list[dict[str, Any]], *, date: str = "2026-09-21T22:00:01.996+
 
 
 def write_snapshot(
-    ids_dir: Path, rows: list[dict[str, Any]], *, day: str = "2026-09-22"
+    ids_dir: Path,
+    rows: list[dict[str, Any]],
+    *,
+    day: str = "2026-09-22",
+    at: str = "120000",
 ) -> ids.Snapshot:
     ids_dir = Path(ids_dir)
     ids_dir.mkdir(parents=True, exist_ok=True)
-    path = ids_dir / f"{ids.PREFIX}{day}{ids.SUFFIX}"
+    stamp = f"{day}T{at}Z"
+    path = ids_dir / f"{ids.PREFIX}{stamp}{ids.SUFFIX}"
     with gzip.open(path, "wt", encoding="utf-8") as handle:
         json.dump(payload(rows), handle)
-    return ids.Snapshot(path=path, day=day)
+    return ids.Snapshot(path=path, stamp=stamp)
 
 
 EDIS_DOCUMENTS = [

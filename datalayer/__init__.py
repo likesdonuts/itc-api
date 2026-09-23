@@ -7,12 +7,15 @@ Two processes, deliberately kept separate, over two different sources:
 * `docs`   -- the EDIS API. Owns document lists and downloaded PDFs, and only
   those; it cannot change a case record.
 
+`runlog` records what each ingest did, one CSV row per run, so the daily
+download can be watched for anomalies.
+
 Nothing in here renders HTML; the UI layer reads the JSON these processes write.
 """
 
 from __future__ import annotations
 
-from . import cases, docs, flatten, ids, ingest, normalize, runner
+from . import cases, docs, flatten, ids, ingest, normalize, runlog, runner
 from .client import EdisAuthError, EdisClient, EdisError
 from .config import MissingTokenError, load_token
 from .runner import ProcessAborted
@@ -32,5 +35,6 @@ __all__ = [
     "ingest",
     "load_token",
     "normalize",
+    "runlog",
     "runner",
 ]

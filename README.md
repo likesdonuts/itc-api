@@ -41,6 +41,7 @@ data/                 the handoff between the layers
   investigations.json   one record per investigation  <- written by ingest
   documents_index.json  documents per case            <- written by docs
   documents_state.json  when each case was last fetched
+  sync_log.csv          one row per sync, for watching the daily download
   documents/<number>/   downloaded PDFs
 site/                 generated output
 tests/                offline tests; no token, no network
@@ -81,7 +82,7 @@ telling you to generate a new one. Everything else keeps working without it.
 | `python cli.py render` | none | UI layer. Rebuilds `site/` from `data/` and `ui_schema.json`. |
 | `python cli.py serve` | localhost | Serves the site so its Update / Fetch docs buttons work. |
 | `python cli.py fields` | none | Lists every field name `ui_schema.json` can use, with samples. |
-| `python cli.py status` | none | Which snapshot is current, and which cases have documents. |
+| `python cli.py status` | none | Which snapshot is current, which cases have documents, and the last few syncs. |
 | `python cli.py normalize` | none | Rewrites stored document dates to ISO 8601 in place. |
 | `python cli.py refresh` | IDS + EDIS | The daily job: sync, re-fetch documents already on disk, render. |
 
@@ -99,9 +100,13 @@ python cli.py sync --keep 90        # keep 90 days of snapshots instead of 30
 python cli.py parse                 # rebuild from the newest snapshot, offline
 ```
 
-The download is stored as `data/ids/investigations-YYYY-MM-DD.json.gz` and is
-never rewritten, so every day you keep a copy you can go back to; run again on
-the same day and it reuses that copy rather than re-downloading 37 MB.
+The download is stored as
+`data/ids/investigations-2026-09-23T134502Z.json.gz` -- the moment it arrived,
+UTC -- and is never rewritten, so every copy you keep is one you can go back
+to and a `--force` download cannot overwrite the morning's. Run again on the
+same day without `--force` and it reuses the copy rather than re-downloading
+37 MB. `--keep` counts days, not files, so taking a second copy never pushes
+an older day off the end.
 
 `data/investigations.json` is then rebuilt from the snapshot in full. That is
 deliberate: when the Commission renumbers or retitles something, the rebuilt
@@ -113,6 +118,30 @@ To have it happen daily on Windows, point Task Scheduler at `sync.bat`, or:
 ```
 schtasks /create /tn "ITC 337 sync" /tr "\"%CD%\sync.bat\"" /sc daily /st 07:00
 ```
+
+#### Watching the daily download (`data/sync_log.csv`)
+
+Every sync appends a row, whether it downloaded, reused today's copy, or
+re-parsed offline. Open it in a spreadsheet and an anomaly shows up as a
+number that moved when it shouldn't have:
+
+| Column | What it should look like |
+| --- | --- |
+| `run_at`, `mode`, `outcome` | when, `download`/`cached`/`offline`, `ok`/`refused` |
+| `snapshot`, `snapshot_taken_at`, `snapshot_bytes` | which file was read, and its size -- a download that came back short shows up here first |
+| `feed_date` | the Commission's own timestamp inside the file. It should advance each day; the same value twice means you re-read the same data |
+| `rows_total`, `rows_337` | rows in the file and how many were Section 337. Both should barely move day to day |
+| `cases_in_file`, `stages_in_file` | after grouping the rows by investigation number |
+| `cases_added` | new investigation numbers. A handful at most |
+| `cases_changed`, `status_changes` | cases the file actually changed, and how many of those were a status. Ignoring the sync timestamps, so a day with nothing new reads as 0 -- not everything |
+| `cases_left_feed`, `cases_withdrawn_total` | dropped this run, and carried in total |
+| `cases_renumbered` | dockets instituted under a new number |
+| `cases_on_site` | what the site will hold, cases in the file plus withdrawn |
+| `seconds`, `note` | how long it took, and why a run was refused |
+
+`python cli.py status` prints the last five rows. A refused snapshot is logged
+too, with `outcome` as `refused` and the reason in `note`, so the guard below
+leaves a record rather than a gap.
 
 #### When a case stops appearing in the feed
 
@@ -268,8 +297,9 @@ rewrites them in place without any API calls.
 `data/ids/` (the snapshots) and `data/investigations.json` are both rebuilt
 from the public feed by one offline-friendly command, and both are large and
 change every day, so they are not tracked. `site/` is generated too. What is
-tracked is the work you cannot re-download for free: the documents index and
-the PDFs under `data/documents/`.
+tracked is the work you cannot re-download for free: the documents index, the
+PDFs under `data/documents/`, and `data/sync_log.csv`, which is a record of
+downloads that already happened and cannot be reconstructed.
 
 After pulling, run:
 
@@ -285,8 +315,9 @@ python -m unittest discover -s tests
 
 They need neither a token nor a network connection: the IDS feed is replaced
 with rows shaped like the real thing and EDIS with a fake client. They cover
-the snapshot store, flattening, stage grouping, the field mapping, rendering,
-the local server, and that fetching documents leaves case information alone.
+the snapshot store, flattening, stage grouping, the field mapping, the sync
+log, rendering, the local server, and that fetching documents leaves case
+information alone.
 
 ## Poking at the raw API
 

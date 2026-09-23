@@ -10,6 +10,7 @@ from treading on each other:
     investigations.json   the IDS ingest (cases, stages, parties)
     documents_index.json  the EDIS documents process
     documents_state.json  the EDIS documents process (its own bookkeeping)
+    sync_log.csv          the IDS ingest, one appended row per run
     state.json            every process, one entry each
 """
 
