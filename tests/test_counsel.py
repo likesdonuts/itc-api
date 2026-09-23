@@ -478,6 +478,22 @@ class TestAppearanceDownloads(DataDirTestCase):
         kept = {d["id"]: [a["label"] for a in d["attachments"]] for d in store.documents["337-1478"]}
         self.assertEqual(kept, {"1": ["noa.pdf"], "2": ["motion.pdf"]})
 
+    def test_a_refresh_relinks_pdfs_whose_links_were_lost(self):
+        store = self.store()
+        self.fetch(store, self.client())
+        # An older refresh dropped the links; the files stayed on disk.
+        for document in store.documents["337-1478"]:
+            document["attachments"] = []
+        self.fetch(store, self.client(), download=False)
+        relinked = {d["id"]: [a["href"] for a in d["attachments"]] for d in store.documents["337-1478"]}
+        self.assertEqual(
+            relinked,
+            {
+                "1": ["../../data/documents/337-1478/1_10_noa.pdf"],
+                "2": ["../../data/documents/337-1478/2_20_motion.pdf"],
+            },
+        )
+
 
 if __name__ == "__main__":
     unittest.main()

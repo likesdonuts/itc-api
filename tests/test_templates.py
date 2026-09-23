@@ -92,6 +92,32 @@ class TestIndexPage(unittest.TestCase):
         self.assertIn("<th>Docs</th>", html)
         self.assertIn(">7<", html)
 
+    def test_documents_and_documents_with_pdfs_are_separate_columns(self):
+        html = self.page(case(), document_counts={"337-1478": 44}, pdf_counts={"337-1478": 3})
+        self.assertIn("<th>Docs</th>", html)
+        self.assertIn("<th>With PDFs</th>", html)
+        row = html[html.index("<tr data-search") :]
+        self.assertLess(row.index(">44<"), row.index(">3<"))
+
+    def test_only_pdfs_actually_on_disk_count(self):
+        import tempfile
+        from pathlib import Path
+
+        from ui.render import _has_pdf
+
+        with tempfile.TemporaryDirectory() as tmp:
+            case_dir = Path(tmp)
+            (case_dir / "1_2_2.pdf").write_bytes(b"%PDF")
+            on_disk = {"attachments": [{"href": "../../data/documents/337-1478/1_2_2.pdf"}]}
+            missing = {"attachments": [{"href": "../../data/documents/337-1478/9_9_9.pdf"}]}
+            listed_only = {"attachments": []}
+            self.assertTrue(_has_pdf(case_dir, on_disk))
+            self.assertFalse(_has_pdf(case_dir, missing))
+            self.assertFalse(_has_pdf(case_dir, listed_only))
+            # A file whose link the index lost still counts, by its document id.
+            self.assertTrue(_has_pdf(case_dir, {"id": "1", "attachments": []}, on_disk={"1"}))
+            self.assertFalse(_has_pdf(case_dir, {"id": "12", "attachments": []}, on_disk={"1"}))
+
     def test_each_row_says_when_its_documents_were_last_fetched(self):
         stamp = "2026-09-23T17:42:14+00:00"
         html = self.page(case(), fetched_at={"337-1478": stamp})

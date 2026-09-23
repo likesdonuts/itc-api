@@ -97,6 +97,12 @@ The panel at the top of the list page does the day's work:
 Its status line says whether today's sync has run, which day's case data is
 loaded, when documents were last fetched, and when the EDIS token expires.
 
+The list's **Docs** column counts the documents EDIS lists for each case, and
+**With PDFs** how many of those have a PDF on this computer, so a case reads
+as not fetched (0), listed only (44 / 0) or downloaded (44 / 42).
+Confidential documents never have PDFs, so a fully downloaded case can still
+be a few short.
+
 Every case also shows when **its own** documents were last fetched: the
 **Docs fetched** column on the list, and the status line and Documents heading
 on its page, in green when that was today. Tick cases that were already
