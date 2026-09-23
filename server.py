@@ -1,12 +1,22 @@
 """Local control panel for the site.
 
-The generated pages are static, so the Update / Fetch docs buttons on the
-index need something to call. This serves the repository over localhost and
-exposes one endpoint that runs the EDIS documents process for one case,
-re-renders the site, and reports what changed.
+The generated pages are static, so their buttons need something to call.
+This serves the repository over localhost and runs the data layer on the
+page's behalf:
 
-It is the only place the two layers are wired together at runtime; both
-still work on their own from the command line.
+    POST /api/jobs          start a job: the daily sync, or documents for the
+                            cases picked on the page
+    GET  /api/jobs/current  the running (or last) job, with its progress
+    GET  /api/status        when the last sync and fetch ran, the token's expiry
+
+A job runs in the background, one at a time, while the page polls for its
+progress; syncs and multi-case fetches take minutes, far longer than one
+request should hang. The EDIS token is read when a job starts rather than
+when the server does, so the site works without one and a renewed token in
+.env is picked up without a restart.
+
+It is the only place the layers are wired together at runtime; both still
+work on their own from the command line.
 
     python cli.py serve
 """
@@ -16,88 +26,280 @@ from __future__ import annotations
 import json
 import threading
 from dataclasses import dataclass, field
+from datetime import datetime, timezone
 from functools import partial
 from http import HTTPStatus
 from http.server import SimpleHTTPRequestHandler, ThreadingHTTPServer
 from pathlib import Path
 from typing import Any, Callable
 
-from datalayer import counsel, docs
-from datalayer.config import DATA_DIR, SCHEMA_PATH, SITE_DIR
+from datalayer import counsel, docs, ingest, ids
+from datalayer.client import decode_jwt_exp
+from datalayer.config import DATA_DIR, SCHEMA_PATH, SITE_DIR, MissingTokenError, load_token
 from datalayer.runner import ProcessAborted
-from datalayer.store import Store
+from datalayer.store import STATE_FILE, Store, load_json
 from ui.render import render_site
 
 Logger = Callable[[str], None]
 
 MAX_BODY_BYTES = 8 * 1024
+MAX_CASES_PER_JOB = 100
+# Only the tail of a job's log goes to the page; the console gets all of it.
+LOG_LINES_KEPT = 400
+
+
+def _now() -> str:
+    return datetime.now(timezone.utc).isoformat()
+
+
+@dataclass
+class Job:
+    """One run of the data layer on the page's behalf, and what it has said."""
+
+    id: int
+    kind: str
+    label: str
+    state: str = "running"  # running | done
+    level: str = "ok"  # ok | warn | error, once done
+    message: str = ""
+    started_at: str = field(default_factory=_now)
+    finished_at: str | None = None
+    lines: list[str] = field(default_factory=list)
+    _lock: threading.Lock = field(default_factory=threading.Lock, repr=False)
+
+    def log(self, line: str) -> None:
+        with self._lock:
+            self.lines.append(str(line))
+            del self.lines[:-LOG_LINES_KEPT]
+
+    def finish(self, message: str, level: str = "ok") -> None:
+        self.message, self.level = message, level
+        self.finished_at = _now()
+        self.state = "done"
+
+    def to_dict(self, tail: int = 14) -> dict[str, Any]:
+        with self._lock:
+            lines = self.lines[-tail:]
+        return {
+            "id": self.id,
+            "kind": self.kind,
+            "label": self.label,
+            "state": self.state,
+            "level": self.level,
+            "message": self.message,
+            "started_at": self.started_at,
+            "finished_at": self.finished_at,
+            "lines": lines,
+        }
+
+
+class JobRefused(Exception):
+    def __init__(self, status: HTTPStatus, message: str) -> None:
+        super().__init__(message)
+        self.status = status
 
 
 @dataclass
 class Controller:
-    """Runs one data-layer action at a time on behalf of the browser."""
+    """Runs one data-layer job at a time on behalf of the browser."""
 
-    token: str
     data_dir: Path = DATA_DIR
     site_dir: Path = SITE_DIR
     schema_path: Path = SCHEMA_PATH
+    token_loader: Callable[[], str] = load_token
     log: Logger = print
     _lock: threading.Lock = field(default_factory=threading.Lock)
+    _job: Job | None = None
+    _thread: threading.Thread | None = None
+    _next_id: int = 1
 
-    def fetch_documents(self, number: str, *, documents: bool) -> tuple[int, dict[str, Any]]:
-        if not self._lock.acquire(blocking=False):
-            return HTTPStatus.CONFLICT, {
-                "ok": False,
-                "message": "Another fetch is still running; wait for it to finish",
-            }
+    # -- reading ------------------------------------------------------------
+
+    def current_job(self) -> Job | None:
+        return self._job
+
+    def token_status(self) -> dict[str, Any]:
         try:
-            store = Store.load(self.data_dir)
-            key = store.find_key(number)
-            if key is None:
-                return HTTPStatus.NOT_FOUND, {
-                    "ok": False,
-                    "message": f"{number} is not on disk; run 'python cli.py sync' first",
-                }
+            token = self.token_loader()
+        except MissingTokenError:
+            return {"state": "missing"}
+        expires = decode_jwt_exp(token)
+        if expires is None:
+            return {"state": "ok", "expires_at": None}
+        state = "expired" if expires <= datetime.now(timezone.utc) else "ok"
+        return {"state": state, "expires_at": expires.isoformat()}
 
-            report = docs.run(store, self.token, [key], download=documents, log=self.log)
-            result = report.results[0] if report.results else None
-            if result is None or not result.ok:
-                note = result.note if result else "no result"
-                return HTTPStatus.BAD_GATEWAY, {"ok": False, "message": f"EDIS: {note}"}
+    def status(self) -> dict[str, Any]:
+        """What the dashboard shows. Reads only state.json, so it stays quick."""
+        runs = (load_json(Path(self.data_dir) / STATE_FILE, {}) or {}).get("runs") or {}
+        sync = runs.get("ingest") or {}
+        fetched = runs.get("documents") or {}
+        job = self._job
+        return {
+            "ok": True,
+            "sync": {
+                "finished_at": sync.get("finished_at"),
+                "snapshot": sync.get("snapshot"),
+            },
+            "documents": {
+                "finished_at": fetched.get("finished_at"),
+                "numbers": fetched.get("numbers") or [],
+            },
+            "token": self.token_status(),
+            "job": job.to_dict() if job else None,
+        }
 
-            counsel.run(store, log=self.log)
-            render_site(
-                store,
-                data_dir=self.data_dir,
-                site_dir=self.site_dir,
-                schema_path=self.schema_path,
-                log=self.log,
+    # -- starting -----------------------------------------------------------
+
+    def start_daily(self) -> Job:
+        return self._start("daily", "Daily sync", self._run_daily)
+
+    def start_documents(self, numbers: list[str], *, download: bool) -> Job:
+        numbers = [str(n).strip() for n in numbers if str(n).strip()]
+        if not numbers:
+            raise JobRefused(HTTPStatus.BAD_REQUEST, "Pick at least one case first")
+        if len(numbers) > MAX_CASES_PER_JOB:
+            raise JobRefused(
+                HTTPStatus.BAD_REQUEST,
+                f"That is {len(numbers)} cases; pick at most {MAX_CASES_PER_JOB} at a time",
+            )
+        store = Store.load(self.data_dir)
+        keys, unknown = docs.resolve_targets(store, numbers)
+        if unknown:
+            raise JobRefused(
+                HTTPStatus.NOT_FOUND,
+                f"Not on disk: {', '.join(unknown)}. Run the daily sync first.",
+            )
+        try:
+            token = self.token_loader()
+        except MissingTokenError:
+            raise JobRefused(
+                HTTPStatus.BAD_REQUEST,
+                "No EDIS token: add EDIS_TOKEN to the .env file (see the README)",
+            ) from None
+        if self.token_status()["state"] == "expired":
+            raise JobRefused(
+                HTTPStatus.UNAUTHORIZED,
+                "The EDIS token has expired. Generate a new one at edis.usitc.gov "
+                "-> profile -> API Token Generator and put it in .env",
             )
 
-            if documents:
-                message = (
-                    f"{result.document_count} document(s), "
-                    f"{result.downloaded} new file(s) downloaded"
-                )
-            else:
-                message = f"{result.document_count} document(s) listed"
-            return HTTPStatus.OK, {
-                "ok": True,
-                "key": result.key,
-                "documents": result.document_count,
-                "downloaded": result.downloaded,
-                "message": message,
-            }
-        except ProcessAborted as exc:
-            return HTTPStatus.UNAUTHORIZED, {"ok": False, "message": str(exc)}
-        except Exception as exc:  # the browser should see why, not just a hang
-            self.log(f"  ! {type(exc).__name__}: {exc}")
-            return HTTPStatus.INTERNAL_SERVER_ERROR, {
-                "ok": False,
-                "message": f"{type(exc).__name__}: {exc}",
-            }
-        finally:
-            self._lock.release()
+        what = "Fetch documents" if download else "Update document lists"
+        label = f"{what}: {keys[0]}" if len(keys) == 1 else f"{what}: {len(keys)} cases"
+        return self._start(
+            "documents", label, lambda job: self._run_documents(job, token, keys, download)
+        )
+
+    def _start(self, kind: str, label: str, work: Callable[[Job], None]) -> Job:
+        if not self._lock.acquire(blocking=False):
+            raise JobRefused(HTTPStatus.CONFLICT, "Another job is still running; wait for it to finish")
+        job = Job(id=self._next_id, kind=kind, label=label)
+        self._next_id += 1
+        self._job = job
+
+        def target() -> None:
+            try:
+                work(job)
+            except ProcessAborted as exc:
+                job.finish(f"EDIS refused the token: {exc}", "error")
+            except ids.IdsError as exc:
+                job.finish(f"IDS: {exc}", "error")
+            except Exception as exc:  # the page should see why, not a spinner forever
+                job.finish(f"{type(exc).__name__}: {exc}", "error")
+            finally:
+                if job.state != "done":
+                    job.finish("Stopped without a result", "error")
+                self.log(f"[{job.label}] {job.message}")
+                self._lock.release()
+
+        self.log(f"[browser] {label}")
+        self._thread = threading.Thread(target=target, name=f"job-{job.id}", daemon=True)
+        self._thread.start()
+        return job
+
+    def wait(self, timeout: float | None = None) -> None:
+        """Block until the current job is done (for tests and scripts)."""
+        if self._thread is not None:
+            self._thread.join(timeout)
+
+    # -- the jobs -----------------------------------------------------------
+
+    def _logger(self, job: Job) -> Logger:
+        def log(line: str) -> None:
+            job.log(line)
+            self.log(line)
+
+        return log
+
+    def _rebuild(self, store: Store, log: Logger) -> None:
+        counsel.run(store, log=log)
+        render_site(
+            store, data_dir=self.data_dir, site_dir=self.site_dir, schema_path=self.schema_path, log=log
+        )
+
+    def _run_daily(self, job: Job) -> None:
+        """Today's case data, then the document lists and appearance notices
+        of every case whose documents have been collected before.
+        """
+        log = self._logger(job)
+        store = Store.load(self.data_dir)
+        report = ingest.run(store, ids_dir=Path(self.data_dir) / "ids", log=log)
+        message = (
+            f"Case data from {report.snapshot_day}: {len(report.added)} new, "
+            f"{len(report.changed)} changed."
+        )
+        level = "ok"
+
+        targets = store.numbers_with_documents()
+        if targets:
+            try:
+                token = self.token_loader()
+            except MissingTokenError:
+                token = None
+                message += " Documents not refreshed: no EDIS token in .env."
+                level = "warn"
+            if token:
+                log(f"Refreshing documents for {len(targets)} case(s) (appearance PDFs only)...")
+                try:
+                    fetched = docs.run(
+                        store,
+                        token,
+                        targets,
+                        download=True,
+                        only_types=docs.APPEARANCE_TYPES,
+                        log=log,
+                    )
+                except ProcessAborted as exc:
+                    message += f" Documents not refreshed: {exc}"
+                    level = "warn"
+                else:
+                    message += (
+                        f" Documents refreshed for {len(fetched.fetched)} case(s), "
+                        f"{fetched.downloaded} new file(s)."
+                    )
+                    if fetched.failed:
+                        message += f" {len(fetched.failed)} skipped."
+                        level = "warn"
+
+        self._rebuild(store, log)
+        job.finish(message, level)
+
+    def _run_documents(self, job: Job, token: str, keys: list[str], download: bool) -> None:
+        log = self._logger(job)
+        store = Store.load(self.data_dir)
+        report = docs.run(store, token, keys, download=download, log=log)
+        self._rebuild(store, log)
+
+        message = f"{len(report.fetched)} of {len(keys)} case(s) updated"
+        if download:
+            message += f", {report.downloaded} new file(s) downloaded"
+        message += "."
+        level = "ok"
+        if report.failed:
+            skipped = "; ".join(f"{r.key}: {r.note}" for r in report.failed[:3])
+            message += f" Skipped {skipped}"
+            level = "error" if not report.fetched else "warn"
+        job.finish(message, level)
 
 
 class Handler(SimpleHTTPRequestHandler):
@@ -109,11 +311,22 @@ class Handler(SimpleHTTPRequestHandler):
         # the "../../data/documents/..." links on a case page resolve.
         super().__init__(*args, directory=str(controller.site_dir.parent), **kwargs)
 
+    def _endpoint(self) -> str:
+        return self.path.split("?", 1)[0].split("#", 1)[0].rstrip("/")
+
     def do_GET(self) -> None:
-        if self.path in ("/", "/index.html"):
+        endpoint = self._endpoint()
+        if endpoint in ("", "/index.html"):
             self.send_response(HTTPStatus.FOUND)
             self.send_header("Location", f"/{self.controller.site_dir.name}/index.html")
             self.end_headers()
+            return
+        if endpoint == "/api/status":
+            self._send_json(HTTPStatus.OK, self.controller.status())
+            return
+        if endpoint == "/api/jobs/current":
+            job = self.controller.current_job()
+            self._send_json(HTTPStatus.OK, {"ok": True, "job": job.to_dict() if job else None})
             return
         if not self._is_servable(self.path):
             # Nothing else under the document root -- .env above all -- should
@@ -127,8 +340,7 @@ class Handler(SimpleHTTPRequestHandler):
         return clean.startswith((f"/{self.controller.site_dir.name}/", "/data/documents/"))
 
     def do_POST(self) -> None:
-        endpoint = self.path.rstrip("/")
-        if endpoint not in ("/api/update", f"/{self.controller.site_dir.name}/api/update"):
+        if self._endpoint() != "/api/jobs":
             self._send_json(HTTPStatus.NOT_FOUND, {"ok": False, "message": "unknown endpoint"})
             return
 
@@ -142,18 +354,28 @@ class Handler(SimpleHTTPRequestHandler):
 
         try:
             payload = json.loads(self.rfile.read(length))
-            number = str(payload["number"])
+            kind = str(payload["kind"])
         except (json.JSONDecodeError, KeyError, TypeError, UnicodeDecodeError):
             self._send_json(
-                HTTPStatus.BAD_REQUEST, {"ok": False, "message": "expected {number, documents}"}
+                HTTPStatus.BAD_REQUEST,
+                {"ok": False, "message": 'expected {"kind": "daily"} or {"kind": "documents", "numbers": [...]}'},
             )
             return
 
-        documents = bool(payload.get("documents"))
-        action = "fetch docs for" if documents else "update"
-        self.controller.log(f"[browser] {action} {number}")
-        status, body = self.controller.fetch_documents(number, documents=documents)
-        self._send_json(status, body)
+        try:
+            if kind == "daily":
+                job = self.controller.start_daily()
+            elif kind == "documents":
+                numbers = payload.get("numbers")
+                if not isinstance(numbers, list):
+                    raise JobRefused(HTTPStatus.BAD_REQUEST, "numbers must be a list")
+                job = self.controller.start_documents(numbers, download=bool(payload.get("download")))
+            else:
+                raise JobRefused(HTTPStatus.BAD_REQUEST, f"unknown job kind {kind!r}")
+        except JobRefused as exc:
+            self._send_json(exc.status, {"ok": False, "message": str(exc)})
+            return
+        self._send_json(HTTPStatus.ACCEPTED, {"ok": True, "job": job.to_dict()})
 
     def _send_json(self, status: HTTPStatus, body: dict[str, Any]) -> None:
         raw = json.dumps(body).encode("utf-8")
@@ -181,7 +403,6 @@ def make_server(
 
 
 def serve(
-    token: str,
     *,
     host: str = "127.0.0.1",
     port: int = 8765,
@@ -192,7 +413,6 @@ def serve(
     log: Logger = print,
 ) -> None:
     controller = Controller(
-        token=token,
         data_dir=data_dir,
         site_dir=site_dir,
         schema_path=schema_path,
@@ -201,9 +421,8 @@ def serve(
     httpd = make_server(controller, host, port)
     url = f"http://{host}:{httpd.server_address[1]}/site/index.html"
 
-    log(f"Serving {url}")
-    log("The Update and Fetch docs buttons on the list page work while this is running.")
-    log("Press Ctrl+C to stop.")
+    log(f"ITC tracker running at {url}")
+    log("Keep this window open while you use the app; close it (or press Ctrl+C) to stop.")
 
     if open_browser:
         import webbrowser

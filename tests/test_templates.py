@@ -119,25 +119,35 @@ class TestRowActions(unittest.TestCase):
             [case(), case(ids_row("337-3936", docket="3936"), number="337-3936")], SCHEMA
         )
 
-    def test_each_row_offers_update_and_fetch_docs(self):
+    def test_each_row_can_be_ticked_and_the_header_ticks_them_all(self):
         html = self.page()
         for number in ("337-1478", "337-3936"):
-            self.assertIn(f'data-action="update" data-number="{number}"', html)
-            self.assertIn(f'data-action="fetch-docs" data-number="{number}"', html)
+            self.assertIn(f'<input type="checkbox" class="pick-case" value="{number}"', html)
+        self.assertIn('id="pick-all"', html)
+        self.assertNotIn("<th>Actions</th>", html)
 
-    def test_the_table_has_an_actions_column(self):
-        self.assertIn("<th>Actions</th>", self.page())
+    def test_the_panel_runs_the_daily_sync_and_fetches_the_ticked_cases(self):
+        html = self.page()
+        self.assertIn('data-job="daily"', html)
+        self.assertIn('data-job="documents" data-download="1"', html)
+        self.assertIn('data-job="documents" data-download="0"', html)
+        self.assertIn("fetch('/api/jobs'", html)
+        self.assertIn("fetch('/api/status')", html)
 
     def test_a_notice_explains_the_disabled_buttons_when_opened_from_disk(self):
         html = self.page()
         # Hidden by default; the page script reveals it under file://, where
         # there is no server for the buttons to call.
         self.assertIn('<div class="notice" id="offline-notice" hidden>', html)
-        self.assertIn("python cli.py serve", html)
+        self.assertIn("ITC Tracker.bat", html)
         self.assertIn("if (notice) notice.hidden = false;", html)
 
-    def test_the_detail_page_has_no_buttons(self):
-        self.assertNotIn("data-action=", templates.render_detail(case(), [], SCHEMA))
+    def test_the_case_page_fetches_its_own_documents(self):
+        html = templates.render_detail(case(), [], SCHEMA)
+        self.assertIn('id="control-panel" data-number="337-1478"', html)
+        self.assertIn('data-job="documents" data-download="1"', html)
+        self.assertNotIn('data-job="daily"', html)
+        self.assertNotIn('<input type="checkbox" class="pick-case"', html)
 
 
 class TestDetailPage(unittest.TestCase):
@@ -296,8 +306,7 @@ class TestDetailPage(unittest.TestCase):
     def test_a_case_with_no_documents_says_how_to_fetch_them(self):
         html = self.page()
         self.assertIn("Documents (0)", html)
-        self.assertIn("Fetch docs", html)
-        self.assertIn("python cli.py docs", html)
+        self.assertIn("Use <strong>Fetch documents</strong> at the top of this page", html)
 
 
 if __name__ == "__main__":

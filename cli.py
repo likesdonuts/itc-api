@@ -27,7 +27,7 @@ Examples:
     python cli.py docs --existing --appearances   # just the Notice of Appearance PDFs
     python cli.py counsel                   # rebuild who-represents-whom, offline
     python cli.py render                    # rebuild the site, offline
-    python cli.py serve                     # browse the site with working buttons
+    python cli.py serve                     # open the app (what ITC Tracker.bat runs)
     python cli.py fields                    # what ui_schema.json can name
     python cli.py status                    # what's on disk, no network
     python cli.py refresh                   # sync + documents we already have + render
@@ -146,7 +146,8 @@ def build_parser() -> argparse.ArgumentParser:
     )
 
     p_serve = sub.add_parser(
-        "serve", help="serve the site locally so its Update / Fetch docs buttons work"
+        "serve",
+        help="open the app: the site plus its buttons for the daily sync and document fetches",
     )
     p_serve.add_argument("--port", type=int, default=8765, help="port to listen on (default 8765)")
     p_serve.add_argument("--host", default="127.0.0.1", help=argparse.SUPPRESS)
@@ -270,8 +271,8 @@ def cmd_render(args: argparse.Namespace, store: Store) -> int:
     report = render_site(store, site_dir=args.site_dir, schema_path=args.schema)
     print(f"Open: {report.index_path}")
     print(
-        "Opened from disk the page is read-only; 'python cli.py serve' enables "
-        "its Update / Fetch docs buttons."
+        "Opened from disk the page is read-only; start the app (ITC Tracker.bat, or "
+        "'python cli.py serve') to use its buttons."
     )
     return 0
 
@@ -328,7 +329,6 @@ def cmd_serve(args: argparse.Namespace, store: Store) -> int:
 
     _render(args, store)
     serve(
-        load_token(),
         host=args.host,
         port=args.port,
         data_dir=args.data_dir,
