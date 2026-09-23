@@ -59,7 +59,11 @@ def render_site(
     write_text_atomic(
         index_path,
         templates.render_index(
-            list(cases.values()), schema, document_counts=document_counts, meta=meta
+            list(cases.values()),
+            schema,
+            document_counts=document_counts,
+            counsel=store.counsel,
+            meta=meta,
         ),
     )
 
@@ -67,7 +71,13 @@ def render_site(
     for number, case in cases.items():
         page = detail_dir / f"{templates.slug_for(number)}.html"
         write_text_atomic(
-            page, templates.render_detail(case, store.documents.get(number, []), schema)
+            page,
+            templates.render_detail(
+                case,
+                store.documents.get(number, []),
+                schema,
+                counsel=store.counsel.get(number),
+            ),
         )
         written.add(page)
 

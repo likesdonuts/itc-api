@@ -7,6 +7,9 @@ __pycache__/
 data/ids/
 data/investigations.json
 
+# Rebuilt from the cases and the documents by 'python cli.py counsel'.
+data/counsel.json
+
 # Rebuilt from data/ by 'python cli.py render': a page per investigation, with
 # no source of truth of its own.
 site/

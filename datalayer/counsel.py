@@ -1,0 +1,633 @@
+"""Process 3 -- who represents whom, read from what has been filed.
+
+Neither source says it outright. IDS lists the parties and nothing about
+their lawyers; EDIS lists every filing with who filed it, for whom, and from
+which firm:
+
+    filed_by       Jasjit S. Vidwan
+    on_behalf_of   Ouraring Inc. and Oura Health Oy
+    firm           Mayer Brown LLP
+
+So this reads the documents index the EDIS process already wrote, matches
+each filing's "on behalf of" text to the case's IDS parties, and groups the
+result into *representations*: one firm acting for a set of parties in one
+case. That shape is what lets several complainants share a firm, lets two
+respondents have different ones, and lets one party have two.
+
+Three things in the filings are read, in increasing detail:
+
+1. every filing's metadata -- the firm, its parties, and the filing attorney
+2. Notice of Appearance titles, which follow a fixed form naming the firm,
+   the parties and the lead counsel; supplemental notices add attorneys and
+   withdrawal notices remove them
+3. Notice of Appearance PDFs, where downloaded (`docs --appearances`): the
+   signature block lists the whole team
+
+A notice of appearance says who a firm acts for, so where a firm has filed
+one, its parties come from its notices alone. Otherwise they come from its
+filings, leaving out any filed jointly by both sides (a joint stipulation
+filed by the complainant's firm "on behalf of" everyone would otherwise make
+it counsel for the respondents too).
+
+It writes data/counsel.json and nothing else, needs no network and no token,
+and is rebuilt in full every run, like the case records.
+"""
+
+from __future__ import annotations
+
+import re
+import unicodedata
+from collections import Counter
+from dataclasses import dataclass, field
+from difflib import SequenceMatcher
+from pathlib import Path
+from typing import Any, Callable, Iterable
+
+import dates
+
+from .store import Store
+
+Logger = Callable[[str], None]
+
+APPEARANCE_TYPE = "Notice of Appearance"
+
+# Filings by the Commission itself (orders, notices, OUII designations) name
+# no party's counsel.
+_COMMISSION_FIRMS = {"usitc", "usinternationaltradecommission", "unitedstatesinternationaltradecommission"}
+
+# How close a stretch of "on behalf of" text must be to a party's name, after
+# normalizing both, to count as naming it. High enough that "Samsung
+# Electronics America" does not pass for "Samsung Electronics Co., Ltd.", low
+# enough to forgive "Samsung Electronic Co., Ltd." and "Ergo Baby"/"Ergobaby".
+PARTY_MATCH = 0.9
+# The same for two spellings of one attorney ("Bas de Blanc"/"Bas de Blank").
+ATTORNEY_MATCH = 0.9
+
+# Words that end a company's name rather than being part of it; a piece of a
+# comma-split party list made only of these belongs to the piece before it.
+_ENTITY_WORDS = {
+    "inc", "incorporated", "llc", "llp", "lp", "ltd", "limited", "co", "corp",
+    "corporation", "company", "gmbh", "ag", "sa", "sas", "srl", "spa", "bv",
+    "nv", "oy", "ab", "as", "plc", "pte", "pty", "kk", "pc", "pllc", "pa",
+    "lllp", "sarl", "se", "us", "usa",
+}
+_FIRM_SUFFIX_RE = re.compile(
+    r"\b(LLP|L\.L\.P\.|LLC|L\.L\.C\.|P\.C\.|PC|PLLC|P\.L\.L\.C\.|P\.A\.|Ltd\.?|LPA)\s*(\(US\))?\s*$",
+    re.I,
+)
+
+
+# --------------------------------------------------------------------------
+# Names
+
+
+def _fold(text: Any) -> str:
+    """Lower case, accents off ("Ōura" -> "oura"), "&" as "and"."""
+    text = unicodedata.normalize("NFKD", str(text or ""))
+    text = "".join(ch for ch in text if not unicodedata.combining(ch))
+    return text.casefold().replace("&", " and ")
+
+
+def _words(text: Any) -> list[str]:
+    """Words of a name with the punctuation gone, so "Co., Ltd." is "co ltd"
+    and "B.V." is "bv".
+    """
+    return re.sub(r"[^\w\s]", "", _fold(text).replace(",", " ")).split()
+
+
+def name_key(text: Any) -> str:
+    """One spelling for comparing names: "Jasjit S.Vidwan" == "Jasjit S. Vidwan"."""
+    return "".join(_words(text))
+
+
+def firm_key(text: Any) -> str:
+    """One spelling per firm: "Finnegan, Henderson, Farabow, Garrett & Dunner,
+    L.L.P." and "Finnegan Henderson Farabow Garrett and Dunner LLP" agree.
+    """
+    words = [word for word in _words(text) if word != "and"]
+    while len(words) > 1 and words[-1] in _ENTITY_WORDS:
+        words.pop()
+    return "".join(words)
+
+
+def _similar(a: str, b: str) -> float:
+    return SequenceMatcher(None, a, b).ratio() if a and b else 0.0
+
+
+def split_parties(text: Any) -> list[str]:
+    """A party list as EDIS writes it, one name per item.
+
+    "Samsung Electronics Co., Ltd., Samsung Electronics America, Inc., and
+    Oura Health Oy" -> three names: split at commas and "and", then put the
+    "Ltd." and "Inc." pieces back on the name they end.
+    """
+    pieces = [p.strip() for p in re.split(r",\s*(?:and\s+)?|\s+and\s+", str(text or "")) if p.strip()]
+    names: list[str] = []
+    for piece in pieces:
+        words = _words(piece)
+        if names and words and all(word in _ENTITY_WORDS for word in words):
+            names[-1] = f"{names[-1]}, {piece}"
+        else:
+            names.append(piece)
+    return names
+
+
+def match_parties(text: Any, participants: Iterable[dict[str, Any]]) -> list[dict[str, Any]]:
+    """The IDS parties an "on behalf of" text names.
+
+    Each party's name is looked for as a run of words in the text, compared
+    with the spaces taken out, so neither the splitting of the text nor small
+    spelling differences between the two sources decide the answer.
+    """
+    words = _words(text)
+    found = []
+    for party in participants:
+        target = "".join(_words(party.get("name")))
+        size = len(_words(party.get("name")))
+        if not target or not size:
+            continue
+        best = 0.0
+        for width in (size - 1, size, size + 1):
+            if width < 1:
+                continue
+            for start in range(0, max(len(words) - width + 1, 0)):
+                best = max(best, _similar(target, "".join(words[start : start + width])))
+                if best == 1.0:
+                    break
+        if best >= PARTY_MATCH:
+            found.append(party)
+    return found
+
+
+def _is_commission(doc: dict[str, Any]) -> bool:
+    if firm_key(doc.get("firm_organization")) in _COMMISSION_FIRMS:
+        return True
+    return str(doc.get("on_behalf_of") or "").strip().lower().startswith(
+        ("office of", "administrative law judge", "commission")
+    )
+
+
+# --------------------------------------------------------------------------
+# Notice of Appearance titles
+
+
+@dataclass
+class TitleFacts:
+    firms: list[str] = field(default_factory=list)
+    lead: str | None = None
+    withdrawn: list[str] = field(default_factory=list)
+
+
+_APPEARANCE_RE = re.compile(r"^Notice of Appearance of (?P<firms>.+?) on Behalf of ", re.I)
+_SUPPLEMENTAL_RE = re.compile(
+    r"^Supplemental Notice of Appearance; Additional Attorneys? (?:from|of) (?P<firms>.+?) on Behalf of ",
+    re.I,
+)
+_WITHDRAWAL_RE = re.compile(
+    r"^Notice of Withdrawal of Appearance of (?P<names>.+?) (?:from|of) (?P<firm>.+?) on Behalf of ",
+    re.I,
+)
+_LEAD_RE = re.compile(r"Designation of (?P<lead>.+?) as Lead (?:Counsel|Attorney)", re.I)
+
+
+def _split_firms(text: str) -> list[str]:
+    """ "Morrison & Foerster LLP and Goldman Ismail ... LLP" is two firms, but
+    "Wilmer Cutler Pickering Hale and Dorr LLP" is one: split at "and" only
+    where the words before it end the way a firm's name does.
+    """
+    firms: list[str] = []
+    rest = text.strip()
+    while True:
+        for match in re.finditer(r"\s+and\s+", rest):
+            left = rest[: match.start()]
+            if _FIRM_SUFFIX_RE.search(left):
+                firms.append(left.strip(" ,"))
+                rest = rest[match.end() :]
+                break
+        else:
+            break
+    firms.append(rest.strip(" ,"))
+    return [firm for firm in firms if firm]
+
+
+def _split_people(text: str) -> list[str]:
+    return [p.strip() for p in re.split(r",\s*(?:and\s+)?|\s+and\s+", text) if p.strip()]
+
+
+def parse_title(title: Any) -> TitleFacts:
+    """What a notice of appearance or withdrawal says in its title alone."""
+    title = " ".join(str(title or "").split())
+    facts = TitleFacts()
+    match = _APPEARANCE_RE.match(title) or _SUPPLEMENTAL_RE.match(title)
+    if match:
+        facts.firms = _split_firms(match.group("firms"))
+    withdrawal = _WITHDRAWAL_RE.match(title)
+    if withdrawal:
+        facts.firms = [withdrawal.group("firm").strip(" ,")]
+        facts.withdrawn = _split_people(withdrawal.group("names"))
+    lead = _LEAD_RE.search(title)
+    if lead:
+        facts.lead = lead.group("lead").strip()
+    return facts
+
+
+def is_appearance(doc: dict[str, Any]) -> bool:
+    title = str(doc.get("title") or "").lower()
+    return doc.get("document_type") == APPEARANCE_TYPE or "notice of appearance" in title
+
+
+def is_withdrawal(doc: dict[str, Any]) -> bool:
+    return "withdrawal of appearance" in str(doc.get("title") or "").lower()
+
+
+# --------------------------------------------------------------------------
+# Signature blocks (Notice of Appearance PDFs)
+
+
+@dataclass
+class Signature:
+    """The people and firms in a filing's signature block, in order."""
+
+    attorneys: list[tuple[str, str | None]] = field(default_factory=list)  # (name, firm line)
+    emails: list[str] = field(default_factory=list)
+
+
+_EMAIL_RE = re.compile(r"[\w.+'-]+@[\w-]+(?:\.[\w-]+)+")
+_NAME_SUFFIX_RE = re.compile(r",?\s+(Jr\.?|Sr\.?|II|III|IV|Esq\.?)$")
+_PARTICLES = {"de", "da", "di", "del", "della", "der", "van", "von", "la", "le", "du", "st.", "bin", "al"}
+_ROMAN = {"II", "III", "IV"}
+# A line with any of these is an address, a heading or a phone line, never a person.
+_NOT_A_NAME = {
+    "counsel", "attorney", "attorneys", "respectfully", "submitted", "via", "email", "dated",
+    "telephone", "tel", "fax", "facsimile", "suite", "floor", "street", "st", "avenue", "ave",
+    "drive", "road", "center", "centre", "plaza", "tower", "building", "boulevard", "blvd",
+    "place", "square", "lane", "way", "park", "court", "circle", "highway", "commission",
+    "investigation", "honorable", "certain", "llp", "llc", "pc", "pllc", "office", "paralegal",
+    "secretary", "judge", "washington", "york", "chicago", "boston", "angeles", "francisco",
+}
+_BLOCK_END_RE = re.compile(r"^(counsel|attorneys?) (for|to)\b|^certificate of service", re.I)
+
+
+def is_person_name(line: str) -> bool:
+    """Whether a line of a signature block is someone's name.
+
+    Names in these blocks are one per line, in title case, two to five words,
+    with initials and particles ("Bas de Blank", "James A. Fussell, III").
+    Everything else there -- firms, streets, cities, phones, emails -- has a
+    digit, a symbol, a comma, capitals throughout, or a telltale word.
+    """
+    line = _NAME_SUFFIX_RE.sub("", line.strip())
+    if not line or re.search(r"[\d@:&/()\[\],;\"“”]", line):
+        return False
+    tokens = line.split()
+    if not 2 <= len(tokens) <= 5:
+        return False
+    for token in tokens:
+        bare = token.strip(".").replace("’", "'")
+        if token.lower() in _PARTICLES:
+            continue
+        if not bare or not all(ch.isalpha() or ch in ".'-" for ch in bare):
+            return False
+        if not bare[0].isupper():
+            return False
+        if len(bare) > 1 and bare.isupper() and bare not in _ROMAN:
+            return False
+        if bare.lower().strip("'") in _NOT_A_NAME:
+            return False
+    return True
+
+
+def _clean_name(line: str) -> str:
+    return " ".join(line.replace("/s/", "").split()).strip(" ,")
+
+
+def parse_signature(text: str, known_firms: Iterable[str] = ()) -> Signature:
+    """The first signature block of a filing: from the "/s/" line to the
+    "Counsel for ..." line under it.
+
+    The names in it come before the firm and office they belong to, so each
+    name goes to the next firm line below it -- which is what keeps two firms
+    signing one notice apart.
+    """
+    lines = [" ".join(line.split()) for line in text.splitlines()]
+    start = next((i for i, line in enumerate(lines) if line.startswith("/s/")), None)
+    if start is None:
+        return Signature()
+
+    firm_keys = {firm_key(firm): firm for firm in known_firms if firm}
+    signature = Signature()
+    pending: list[str] = []
+    last_firm: str | None = None
+
+    def is_firm(line: str) -> bool:
+        key = firm_key(line)
+        if not key or not (key in firm_keys or _FIRM_SUFFIX_RE.search(line)):
+            return False
+        # Some firms sign each partner as their own professional corporation
+        # ("Paul F. Brinkman, P.C."); that is a person, not another firm.
+        return not is_person_name(line.split(",")[0])
+
+    for index, line in enumerate(lines[start : start + 120]):
+        if index and _BLOCK_END_RE.search(line):
+            break
+        for email in _EMAIL_RE.findall(line):
+            if email not in signature.emails:
+                signature.emails.append(email)
+        candidate = _clean_name(line) if index == 0 else line
+        if _FIRM_SUFFIX_RE.search(candidate) and not is_firm(candidate):
+            candidate = candidate.split(",")[0]
+        if index and is_firm(line):
+            last_firm = line.strip(" ,")
+            signature.attorneys.extend((name, last_firm) for name in pending)
+            pending = []
+        elif is_person_name(candidate):
+            name = _NAME_SUFFIX_RE.sub(lambda m: f", {m.group(1)}", _clean_name(candidate))
+            if name_key(name) not in {name_key(n) for n in pending} | {
+                name_key(n) for n, _ in signature.attorneys
+            }:
+                pending.append(name)
+    signature.attorneys.extend((name, last_firm) for name in pending)
+    return signature
+
+
+def pdf_text(path: Path) -> str:
+    from pypdf import PdfReader  # only this process needs it
+
+    return "\n".join(page.extract_text() or "" for page in PdfReader(str(path)).pages)
+
+
+# --------------------------------------------------------------------------
+# Building a case's representations
+
+
+@dataclass
+class _Attorney:
+    spellings: Counter = field(default_factory=Counter)
+    lead: bool = False
+    withdrawn_on: str | None = None
+    sources: set = field(default_factory=set)
+    order: int = 0
+
+    def to_dict(self) -> dict[str, Any]:
+        out: dict[str, Any] = {"name": self.spellings.most_common(1)[0][0], "sources": sorted(self.sources)}
+        if self.lead:
+            out["lead"] = True
+        if self.withdrawn_on:
+            out["withdrawn_on"] = self.withdrawn_on
+        return out
+
+
+@dataclass
+class _Representation:
+    key: str
+    spellings: Counter = field(default_factory=Counter)
+    appearance_parties: dict[str, dict[str, Any]] = field(default_factory=dict)
+    filing_parties: dict[str, dict[str, Any]] = field(default_factory=dict)
+    unmatched: list[str] = field(default_factory=list)
+    attorneys: list[_Attorney] = field(default_factory=list)
+    emails: list[str] = field(default_factory=list)
+    appearances: list[dict[str, Any]] = field(default_factory=list)
+    filings: int = 0
+    first_filed: str | None = None
+    last_filed: str | None = None
+
+    def attorney(self, name: str, source: str) -> _Attorney:
+        """The attorney by this name, merging near-identical spellings."""
+        key = name_key(name)
+        for attorney in self.attorneys:
+            if any(_similar(key, name_key(s)) >= ATTORNEY_MATCH for s in attorney.spellings):
+                break
+        else:
+            attorney = _Attorney(order=len(self.attorneys))
+            self.attorneys.append(attorney)
+        attorney.spellings[name] += 1
+        attorney.sources.add(source)
+        return attorney
+
+    def filed(self, day: str | None) -> None:
+        self.filings += 1
+        if day:
+            self.first_filed = min(filter(None, (self.first_filed, day)))
+            self.last_filed = max(filter(None, (self.last_filed, day)))
+
+    def parties(self) -> list[dict[str, Any]]:
+        return list((self.appearance_parties or self.filing_parties).values())
+
+    def to_dict(self) -> dict[str, Any]:
+        attorneys = sorted(
+            self.attorneys,
+            key=lambda a: (not a.lead, a.withdrawn_on is not None, a.order),
+        )
+        parties = self.parties()
+        out: dict[str, Any] = {
+            "firm": self.spellings.most_common(1)[0][0],
+            "firm_key": self.key,
+            "roles": sorted({p["role"] for p in parties if p.get("role")}),
+            "parties": parties,
+            "attorneys": [a.to_dict() for a in attorneys],
+            "emails": self.emails,
+            "appearances": self.appearances,
+            "filings": self.filings,
+            "first_filed": self.first_filed,
+            "last_filed": self.last_filed,
+        }
+        if not parties and self.unmatched:
+            out["on_behalf_of"] = self.unmatched
+        return out
+
+
+def case_participants(case: dict[str, Any] | None) -> list[dict[str, Any]]:
+    """Every party IDS lists for the case, across all its stages, once each."""
+    seen: dict[tuple[str, Any], dict[str, Any]] = {}
+    for stage in (case or {}).get("stages") or []:
+        for item in (stage.get("lists") or {}).get("participants") or []:
+            name = item.get("name")
+            if name and (name, item.get("role")) not in seen:
+                seen[(name, item.get("role"))] = {
+                    key: item[key] for key in ("name", "role", "participant_id") if item.get(key) is not None
+                }
+    return list(seen.values())
+
+
+def _is_alias(rep: _Representation, reps: Iterable[_Representation]) -> bool:
+    """A "firm" that never appeared and whose every attorney belongs to one
+    that did: a misspelling of it in EDIS's firm field, or the filing vendor
+    an attorney happened to file one document through.
+    """
+    if rep.appearances or not rep.attorneys:
+        return False
+    for other in reps:
+        if other is rep or not other.appearances:
+            continue
+        others = {name_key(s) for a in other.attorneys for s in a.spellings}
+        if all(any(name_key(s) in others for s in a.spellings) for a in rep.attorneys):
+            return True
+    return False
+
+
+def _party_ref(party: dict[str, Any]) -> str:
+    return f"{party.get('role')}|{party.get('name')}"
+
+
+def _day(doc: dict[str, Any]) -> str | None:
+    value = doc.get("document_date") or doc.get("official_received_date")
+    return str(value)[:10] if value else None
+
+
+def _appearance_pdfs(docs_dir: Path, doc_id: Any) -> list[Path]:
+    if not doc_id or not docs_dir.is_dir():
+        return []
+    return sorted(docs_dir.glob(f"{doc_id}_*.pdf"))
+
+
+def build_case_counsel(
+    case: dict[str, Any] | None,
+    documents: list[dict[str, Any]],
+    *,
+    docs_dir: Path,
+    read_pdf: Callable[[Path], str] = pdf_text,
+    log: Logger = print,
+) -> dict[str, Any]:
+    participants = case_participants(case)
+    reps: dict[str, _Representation] = {}
+    rosters = 0
+
+    def rep_for(firm: str) -> _Representation:
+        key = firm_key(firm)
+        rep = reps.setdefault(key, _Representation(key=key))
+        rep.spellings[firm.strip(" ,")] += 1
+        return rep
+
+    ordered = sorted(documents, key=lambda d: dates.sort_key(_day(d)))
+    # Firms that speak for a party, first; filings from firms that never do
+    # (a trade group's public-interest comment) are not counsel of record.
+    for doc in ordered:
+        if _is_commission(doc) or not doc.get("firm_organization"):
+            continue
+        parties = match_parties(doc.get("on_behalf_of"), participants)
+        roles = {p.get("role") for p in parties}
+        if len(roles) > 1:  # filed jointly by both sides
+            continue
+        appearance = is_appearance(doc) and not is_withdrawal(doc)
+        if not parties and not appearance:
+            continue
+        facts = parse_title(doc.get("title")) if appearance else TitleFacts()
+        for firm in facts.firms or [doc["firm_organization"]]:
+            rep = rep_for(firm)
+            target = rep.appearance_parties if appearance else rep.filing_parties
+            for party in parties:
+                target.setdefault(_party_ref(party), party)
+            if not parties and doc.get("on_behalf_of") and doc["on_behalf_of"] not in rep.unmatched:
+                rep.unmatched.append(doc["on_behalf_of"])
+
+    for doc in ordered:
+        if _is_commission(doc) or not doc.get("firm_organization"):
+            continue
+        rep = reps.get(firm_key(doc["firm_organization"]))
+        if rep is None:
+            continue
+        doc_id = str(doc.get("id") or "")
+        day = _day(doc)
+        rep.filed(day)
+        rep.spellings[doc["firm_organization"].strip(" ,")] += 1
+        if doc.get("filed_by"):
+            rep.attorney(doc["filed_by"], doc_id)
+
+        if is_withdrawal(doc):
+            facts = parse_title(doc.get("title"))
+            target = reps.get(firm_key(facts.firms[0])) if facts.firms else rep
+            for name in facts.withdrawn:
+                (target or rep).attorney(name, doc_id).withdrawn_on = day
+            continue
+        if not is_appearance(doc):
+            continue
+
+        facts = parse_title(doc.get("title"))
+        pdfs = [str(p.name) for p in _appearance_pdfs(docs_dir, doc_id)]
+        for firm in facts.firms or [doc["firm_organization"]]:
+            named = reps.get(firm_key(firm))
+            if named is not None:
+                named.appearances.append(
+                    {"id": doc_id, "date": day, "title": doc.get("title"), "files": pdfs}
+                )
+        if facts.lead:
+            rep.attorney(facts.lead, doc_id).lead = True
+
+        for path in _appearance_pdfs(docs_dir, doc_id):
+            try:
+                text = read_pdf(path)
+            except Exception as exc:  # one unreadable PDF should not stop the rest
+                log(f"    ! could not read {path.name}: {exc}")
+                continue
+            known = [firm for r in reps.values() for firm in r.spellings] + facts.firms
+            signature = parse_signature(text, known_firms=known)
+            if not signature.attorneys:
+                continue
+            rosters += 1
+            for name, firm_line in signature.attorneys:
+                target = rep
+                if firm_line and firm_key(firm_line) != rep.key:
+                    # Co-counsel from another firm on the same notice acts
+                    # for the same parties.
+                    target = reps.get(firm_key(firm_line)) or rep_for(firm_line)
+                    for party in rep.parties():
+                        target.appearance_parties.setdefault(_party_ref(party), party)
+                target.attorney(name, doc_id)
+            for email in signature.emails:
+                if email not in rep.emails:
+                    rep.emails.append(email)
+
+    kept = [rep for rep in reps.values() if (rep.attorneys or rep.parties()) and not _is_alias(rep, reps.values())]
+    representations = [rep.to_dict() for rep in kept]
+    representations.sort(key=lambda r: (r["first_filed"] or "9999", r["firm"]))
+    return {"representations": representations, "rosters_read": rosters}
+
+
+# --------------------------------------------------------------------------
+# The process
+
+
+@dataclass
+class CounselReport:
+    cases: int = 0
+    representations: int = 0
+    rosters_read: int = 0
+    unmatched: list[str] = field(default_factory=list)
+
+
+def run(store: Store, *, log: Logger = print) -> CounselReport:
+    """Rebuild data/counsel.json from the documents and cases on disk."""
+    report = CounselReport()
+    counsel: dict[str, Any] = {}
+    for key, documents in sorted(store.documents.items()):
+        if not documents:
+            continue
+        built = build_case_counsel(
+            store.investigations.get(key), documents, docs_dir=store.docs_dir / key, log=log
+        )
+        if not built["representations"]:
+            continue
+        counsel[key] = built
+        report.cases += 1
+        report.representations += len(built["representations"])
+        report.rosters_read += built["rosters_read"]
+        for rep in built["representations"]:
+            if not rep["parties"]:
+                report.unmatched.append(f"{key}: {rep['firm']} for {'; '.join(rep.get('on_behalf_of') or [])}")
+
+    store.counsel = counsel
+    store.save_counsel()
+    store.record_run(
+        "counsel",
+        cases=report.cases,
+        representations=report.representations,
+        rosters_read=report.rosters_read,
+    )
+    store.save_state()
+    log(
+        f"Counsel: {report.representations} representation(s) across {report.cases} case(s), "
+        f"{report.rosters_read} appearance roster(s) read from PDFs."
+    )
+    for line in report.unmatched:
+        log(f"  ? no IDS party matched {line}")
+    return report

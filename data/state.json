@@ -1,3 +1,30 @@
 {
-  "last_run": "2026-09-18T16:33:20.426992+00:00"
+  "last_run": "2026-09-23T17:47:02.270157+00:00",
+  "runs": {
+    "counsel": {
+      "cases": 14,
+      "finished_at": "2026-09-23T17:47:02.270157+00:00",
+      "representations": 45,
+      "rosters_read": 15
+    },
+    "documents": {
+      "attachments_downloaded": 61,
+      "fetched": 1,
+      "finished_at": "2026-09-23T17:43:57.077909+00:00",
+      "numbers": [
+        "337-1517"
+      ],
+      "with_attachments": true
+    },
+    "ingest": {
+      "added": 0,
+      "cases": 1382,
+      "changed": 113,
+      "feed_date": "2026-09-21T22:00:01.996+00:00",
+      "finished_at": "2026-09-23T17:42:03.456598+00:00",
+      "snapshot": "2026-09-23",
+      "stages": 1680,
+      "withdrawn": 0
+    }
+  }
 }

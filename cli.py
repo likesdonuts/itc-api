@@ -13,12 +13,19 @@ and the data layer has two separate processes over two separate sources:
   docs   the EDIS API, for the numbers you name. Owns document lists and
          downloaded PDFs, and cannot touch a case record.
 
+plus one that reads what those two wrote, offline:
+
+  counsel  which firms and attorneys represent which parties, read from the
+           filings. Owns data/counsel.json. Runs after sync and docs.
+
 Examples:
     python cli.py sync                      # download today's IDS file, rebuild cases
     python cli.py sync --render             # ...and rebuild the site too
     python cli.py parse                     # re-parse the stored snapshot, offline
     python cli.py docs 337-1478 337-3936    # fetch those cases' documents
     python cli.py docs 337-1478 --no-attachments
+    python cli.py docs --existing --appearances   # just the Notice of Appearance PDFs
+    python cli.py counsel                   # rebuild who-represents-whom, offline
     python cli.py render                    # rebuild the site, offline
     python cli.py serve                     # browse the site with working buttons
     python cli.py fields                    # what ui_schema.json can name
@@ -33,7 +40,7 @@ import sys
 from pathlib import Path
 
 import schema as ui_schema
-from datalayer import docs, ids, ingest, normalize, runlog
+from datalayer import counsel, docs, ids, ingest, normalize, runlog
 from datalayer.config import DATA_DIR, IDS_DIR, MissingTokenError, SCHEMA_PATH, SITE_DIR, load_token
 from datalayer.runner import ProcessAborted
 from datalayer.store import Store
@@ -107,10 +114,16 @@ def build_parser() -> argparse.ArgumentParser:
         "--all", action="store_true", help="every case on disk (over a thousand EDIS calls)"
     )
     p_docs.add_argument("--limit", type=int, help="stop after this many cases")
-    p_docs.add_argument(
+    attachments = p_docs.add_mutually_exclusive_group()
+    attachments.add_argument(
         "--no-attachments",
         action="store_true",
         help="record document metadata only; skip downloading PDFs",
+    )
+    attachments.add_argument(
+        "--appearances",
+        action="store_true",
+        help="download only Notice of Appearance PDFs (they name each party's attorneys)",
     )
     p_docs.add_argument(
         "--known-only",
@@ -118,6 +131,12 @@ def build_parser() -> argparse.ArgumentParser:
         help="refuse numbers that aren't on disk instead of asking EDIS about them",
     )
     _add_render_flag(p_docs)
+
+    p_counsel = sub.add_parser(
+        "counsel",
+        help="rebuild which firms and attorneys represent which parties, from the filings (offline)",
+    )
+    _add_render_flag(p_counsel)
 
     sub.add_parser("render", help="UI layer only: rebuild site/ from data/ (offline)")
     sub.add_parser("fields", help="list the field names ui_schema.json can use (offline)")
@@ -139,8 +158,12 @@ def build_parser() -> argparse.ArgumentParser:
         "refresh",
         help="the daily job: sync, refresh documents already fetched, render",
     )
-    p_refresh.add_argument(
+    refresh_attachments = p_refresh.add_mutually_exclusive_group()
+    refresh_attachments.add_argument(
         "--no-attachments", action="store_true", help="skip downloading PDFs"
+    )
+    refresh_attachments.add_argument(
+        "--appearances", action="store_true", help="download only Notice of Appearance PDFs"
     )
     p_refresh.add_argument(
         "--no-documents", action="store_true", help="IDS only; make no EDIS calls"
@@ -153,6 +176,17 @@ def _render(args: argparse.Namespace, store: Store) -> None:
     render_site(store, site_dir=args.site_dir, schema_path=args.schema)
 
 
+def _counsel(store: Store) -> None:
+    """Counsel is matched against the IDS parties and read from the EDIS
+    filings, so it is rebuilt whenever either of those changes.
+    """
+    counsel.run(store, log=print)
+
+
+def _only_types(args: argparse.Namespace) -> frozenset[str] | None:
+    return docs.APPEARANCE_TYPES if getattr(args, "appearances", False) else None
+
+
 def cmd_sync(args: argparse.Namespace, store: Store) -> int:
     report = ingest.run(
         store,
@@ -162,6 +196,7 @@ def cmd_sync(args: argparse.Namespace, store: Store) -> int:
         allow_removals=args.allow_removals,
         log=print,
     )
+    _counsel(store)
     print(
         f"\nSync done. {report.cases} investigation(s) from IDS snapshot "
         f"{report.snapshot_day}: {len(report.added)} new, {len(report.changed)} changed, "
@@ -182,6 +217,7 @@ def cmd_parse(args: argparse.Namespace, store: Store) -> int:
         offline=True,
         allow_removals=args.allow_removals,
     )
+    _counsel(store)
     print(f"\nParsed {report.cases} investigation(s) from snapshot {report.snapshot_day}.")
     if args.render:
         _render(args, store)
@@ -209,15 +245,25 @@ def cmd_docs(args: argparse.Namespace, store: Store) -> int:
         load_token(),
         numbers,
         download=not args.no_attachments,
+        only_types=_only_types(args),
         known_only=args.known_only,
     )
     print(
         f"\nDocuments done. {len(report.fetched)} case(s) fetched, "
         f"{report.downloaded} attachment(s) downloaded, {len(report.failed)} skipped."
     )
+    if report.fetched:
+        _counsel(store)
     if args.render:
         _render(args, store)
     return 0 if report.fetched or not report.failed else 1
+
+
+def cmd_counsel(args: argparse.Namespace, store: Store) -> int:
+    _counsel(store)
+    if args.render:
+        _render(args, store)
+    return 0
 
 
 def cmd_render(args: argparse.Namespace, store: Store) -> int:
@@ -355,9 +401,14 @@ def cmd_refresh(args: argparse.Namespace, store: Store) -> int:
         if targets:
             print(f"\nRefreshing documents for {len(targets)} case(s) already fetched...")
             docs.run(
-                store, load_token(), targets, download=not args.no_attachments
+                store,
+                load_token(),
+                targets,
+                download=not args.no_attachments,
+                only_types=_only_types(args),
             )
 
+    _counsel(store)
     _render(args, store)
     print(
         f"\nDone. {report.cases} investigation(s) tracked from IDS snapshot "
@@ -370,6 +421,7 @@ COMMANDS = {
     "sync": cmd_sync,
     "parse": cmd_parse,
     "docs": cmd_docs,
+    "counsel": cmd_counsel,
     "render": cmd_render,
     "fields": cmd_fields,
     "serve": cmd_serve,

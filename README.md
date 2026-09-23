@@ -15,6 +15,10 @@ Two sources, two jobs, no overlap:
 The EDIS side cannot write a case record, so asking for documents never
 overwrites investigation information or parties.
 
+A third, offline process reads what those two wrote and works out **counsel**:
+which firms and attorneys represent which parties (see
+[Counsel](#counsel-who-represents-whom)).
+
 ## Layout
 
 ```
@@ -29,6 +33,7 @@ datalayer/            DATA LAYER - talks to IDS and EDIS, owns data/
   cases.py              rows -> one record per investigation, with its stages
   ingest.py             process 1: rebuild every case from a snapshot
   docs.py               process 2: EDIS documents for named cases only
+  counsel.py            process 3: who represents whom, from the filings
   client.py             HTTP client for the EDIS API and the IDS file
   store.py              reads/writes data/*.json, resolves case numbers
   config.py             paths, feed URLs, .env token loading
@@ -41,6 +46,7 @@ data/                 the handoff between the layers
   investigations.json   one record per investigation  <- written by ingest
   documents_index.json  documents per case            <- written by docs
   documents_state.json  when each case was last fetched
+  counsel.json          firms and attorneys per case  <- written by counsel
   sync_log.csv          one row per sync, for watching the daily download
   documents/<number>/   downloaded PDFs
 site/                 generated output
@@ -79,6 +85,8 @@ telling you to generate a new one. Everything else keeps working without it.
 | `python cli.py parse` | none | Rebuilds the case records from the newest stored snapshot. |
 | `python cli.py docs 337-1478` | EDIS | Process 2. Fetches document lists and PDFs for the numbers you name. |
 | `python cli.py docs --existing` | EDIS | Process 2 over every case you have already fetched documents for. |
+| `python cli.py docs 337-1478 --appearances` | EDIS | Lists every document but downloads only the Notice of Appearance PDFs. |
+| `python cli.py counsel` | none | Process 3. Rebuilds who represents whom from the documents on disk. Runs by itself after `sync`, `parse`, `docs` and `refresh`. |
 | `python cli.py render` | none | UI layer. Rebuilds `site/` from `data/` and `ui_schema.json`. |
 | `python cli.py serve` | localhost | Serves the site so its Update / Fetch docs buttons work. |
 | `python cli.py fields` | none | Lists every field name `ui_schema.json` can use, with samples. |
@@ -195,8 +203,13 @@ with `"stage": "current"`.
 python cli.py docs 337-1478
 python cli.py docs 337-TA-1478 337-3936 --render
 python cli.py docs 337-1478 --no-attachments     # metadata only, no PDFs
+python cli.py docs 337-1478 --appearances        # only Notice of Appearance PDFs
 python cli.py docs --existing                    # refresh what you already have
 ```
+
+A document that isn't downloaded on a run keeps the links to any of its PDFs
+already on disk, so a metadata-only refresh never orphans files you fetched
+earlier.
 
 Only the numbers you pass are requested. Numbers are matched loosely, so
 `337-TA-1478`, `337-1478` and `1478` all reach the same case. This process
@@ -206,6 +219,59 @@ test holds it to that.
 
 There is no `docs` for all 1382 cases by default (`--all` exists, and it is
 1382 EDIS calls); documents are fetched per case, when you want them.
+
+### Counsel: who represents whom
+
+```
+python cli.py counsel                  # rebuild data/counsel.json, offline
+python cli.py counsel --render         # ...and the site
+python cli.py docs --existing --appearances   # fetch the PDFs that name whole teams
+```
+
+IDS lists the parties and nothing about their lawyers. EDIS lists every
+filing with who filed it, for whom and from which firm. The counsel process
+reads the documents index, matches each filing's "on behalf of" text to the
+case's IDS parties, and records **representations**: one firm acting for a
+set of parties in one case. So several complainants can share a firm, two
+respondents can have different ones, and one party can have two.
+
+It reads three things, each more detailed than the last:
+
+| Source | Gives | Needs |
+| --- | --- | --- |
+| Every filing's metadata | the firm, its parties, the filing attorney | the document list |
+| Notice of Appearance titles | the firm(s), the parties, the lead counsel; supplemental notices add attorneys, withdrawals remove them | the document list |
+| Notice of Appearance PDFs | the whole team from the signature block, and the service email | `docs --appearances` |
+
+A few rules keep the picture honest:
+
+- **A notice of appearance says who a firm acts for.** Where a firm has filed
+  one, its parties come from its notices. Otherwise they come from its filings.
+- **Joint filings are skipped.** A stipulation filed by the complainant's firm
+  "on behalf of" every party names both sides, so it is left out rather than
+  making that firm counsel for the respondents.
+- **The Commission's own filings and non-party comments are not counsel.**
+  Orders, OUII designations, and comments from firms that never act for a
+  party are left out.
+- **Near-duplicates fold together.** "Fabricant Rubino Lambrianakos LLP" and
+  "Fabricant, Rubino & Lambrianakos LLP" are one firm, "Bas de Blanc" and
+  "Bas de Blank" are one attorney. A "firm" whose only attorneys all belong to
+  a firm that appeared (a filing vendor, a misspelling) folds into that firm.
+
+Party names are matched loosely, so accents, punctuation and small typos
+("Samsung Electronic Co., Ltd.") still match, but one company cannot pass for
+its sister ("Samsung Electronics America"). A firm whose parties match no IDS
+party is still shown, under "Other counsel of record", and the run lists it
+so you can check it.
+
+On the case page, the **Parties and Counsel** section lists each side's
+parties grouped by the firms representing them. Parties with exactly the same
+firms share a block. Lead counsel is marked, withdrawn attorneys are struck
+through, and a long team folds after the first six names. The list page
+search also finds cases by firm or attorney.
+
+The IDS participant ID (the same for one company in every case) is kept on
+each party, for matching across cases later.
 
 ### The field mapping (`ui_schema.json`)
 
@@ -218,6 +284,10 @@ sections, the labels and the field names:
 { "label": "Complainant(s)", "source": "participants",
   "where": { "role": "Complainant" }, "item": "name", "type": "list" }
 ```
+
+A section's `kind` is `fields` (a grid of the fields below), `parties` (the
+parties grouped with their counsel, with `roles` as `{label, role}` pairs),
+`stages` or `documents`.
 
 - `type` -- `text`, `mono`, `long_text`, `date`, `bool`, `number`, `list`,
   `status` or `case_link`
@@ -296,7 +366,8 @@ rewrites them in place without any API calls.
 
 `data/ids/` (the snapshots) and `data/investigations.json` are both rebuilt
 from the public feed by one offline-friendly command, and both are large and
-change every day, so they are not tracked. `site/` is generated too. What is
+change every day, so they are not tracked. Nor is `data/counsel.json`, which
+`sync` rebuilds from those and the documents. `site/` is generated too. What is
 tracked is the work you cannot re-download for free: the documents index, the
 PDFs under `data/documents/`, and `data/sync_log.csv`, which is a record of
 downloads that already happened and cannot be reconstructed.
@@ -316,8 +387,8 @@ python -m unittest discover -s tests
 They need neither a token nor a network connection: the IDS feed is replaced
 with rows shaped like the real thing and EDIS with a fake client. They cover
 the snapshot store, flattening, stage grouping, the field mapping, the sync
-log, rendering, the local server, and that fetching documents leaves case
-information alone.
+log, rendering, the local server, reading counsel from filings, and that
+fetching documents leaves case information alone.
 
 ## Poking at the raw API
 

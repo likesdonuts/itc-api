@@ -270,6 +270,37 @@ details.stage > summary .case-sub { margin: 0; font-weight: 400; }
 details.stage .field-grid { padding: 1rem 0 0.25rem; }
 table.list .attachments a { display: block; font-size: 0.85rem; margin-bottom: 0.15rem; }
 table.list .attachments a:last-child { margin-bottom: 0; }
+.role-block { padding: 1.1rem 1.4rem; border-top: 1px solid var(--border); }
+.role-block:first-child { border-top: none; }
+.role-label {
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--muted);
+  margin-bottom: 0.6rem;
+}
+.party-group {
+  display: grid;
+  grid-template-columns: minmax(200px, 1fr) minmax(260px, 2fr);
+  gap: 0.5rem 1.5rem;
+  padding: 0.75rem 0;
+  border-top: 1px dashed var(--border);
+}
+.party-group:first-of-type { border-top: none; padding-top: 0; }
+@media (max-width: 640px) { .party-group { grid-template-columns: 1fr; } }
+.party-names { margin: 0; padding: 0; list-style: none; }
+.party-names li { font-size: 0.95rem; font-weight: 600; margin-bottom: 0.2rem; }
+.party-names .case-sub { font-weight: 400; }
+.firm { margin-bottom: 0.7rem; }
+.firm:last-child { margin-bottom: 0; }
+.firm-name { font-size: 0.92rem; font-weight: 600; }
+.firm-meta { font-size: 0.78rem; color: var(--muted); }
+.attorneys { font-size: 0.88rem; margin-top: 0.15rem; overflow-wrap: anywhere; }
+.attorneys .withdrawn { color: var(--muted); text-decoration: line-through; }
+.attorneys details { display: inline; }
+.attorneys summary { display: inline; cursor: pointer; color: var(--accent); }
+.pill-lead { font-size: 0.66rem; padding: 0.08rem 0.45rem; margin-left: 0.2rem; vertical-align: 0.08em; }
+.no-counsel { font-size: 0.85rem; color: var(--muted); font-style: italic; }
 """
 
 
@@ -524,7 +555,7 @@ def _filter_status(case: dict[str, Any]) -> str:
     return str(case.get("status") or "Unknown")
 
 
-def _search_blob(case: dict[str, Any]) -> str:
+def _search_blob(case: dict[str, Any], counsel: dict[str, Any] | None = None) -> str:
     parts = [
         case.get("title"),
         case.get("investigation_number"),
@@ -538,6 +569,9 @@ def _search_blob(case: dict[str, Any]) -> str:
     if stage:
         for item in (stage.get("lists") or {}).get("participants", []):
             parts.append(item.get("name"))
+    for rep in (counsel or {}).get("representations") or []:
+        parts.append(rep.get("firm"))
+        parts.extend(attorney.get("name") for attorney in rep.get("attorneys") or [])
     return _e(" ".join(str(part) for part in parts if part).lower())
 
 
@@ -546,9 +580,11 @@ def render_index(
     schema: ui_schema.Schema,
     *,
     document_counts: dict[str, int] | None = None,
+    counsel: dict[str, Any] | None = None,
     meta: dict[str, Any] | None = None,
 ) -> str:
     document_counts = document_counts or {}
+    counsel = counsel or {}
     meta = meta or {}
     columns = schema.index_columns
 
@@ -585,7 +621,7 @@ def render_index(
             cells[0] += f" {WITHDRAWN_PILL}"
         cells = [f"<td>{cell}</td>" for cell in cells]
         row_html.append(
-            f"""<tr data-search="{_search_blob(case)}" data-status="{_e(_filter_status(case))}">
+            f"""<tr data-search="{_search_blob(case, counsel.get(number))}" data-status="{_e(_filter_status(case))}">
   {''.join(cells)}
   <td class="actions">
     <button class="btn" data-action="update" data-number="{_e(number)}" title="Refresh this case's document list from EDIS, without downloading PDFs">Update</button>
@@ -621,7 +657,7 @@ def render_index(
   page it opens to enable them.
 </div>
 <div class="toolbar">
-  <input type="search" id="search" placeholder="Search by case name, number, party&hellip;">
+  <input type="search" id="search" placeholder="Search by case name, number, party, firm, attorney&hellip;">
   <select id="status-filter">
     <option value="">All statuses</option>
     {status_options}
@@ -735,6 +771,144 @@ def _stages_section(
 </div>"""
 
 
+SHOWN_ATTORNEYS = 6
+
+
+def _attorneys_html(attorneys: list[dict[str, Any]]) -> str:
+    """Lead first, then the rest; a long team folds after the first few, and
+    whoever has withdrawn is struck through at the end.
+    """
+    def one(attorney: dict[str, Any]) -> str:
+        name = _e(attorney.get("name"))
+        if attorney.get("withdrawn_on"):
+            return (
+                f'<span class="withdrawn" title="Withdrew {_date(attorney["withdrawn_on"])}">'
+                f"{name}</span>"
+            )
+        if attorney.get("lead"):
+            return f'{name}<span class="pill pill-blue pill-lead">Lead</span>'
+        return name
+
+    if not attorneys:
+        return '<div class="attorneys no-counsel">No attorneys named in the filings yet</div>'
+    shown = [one(a) for a in attorneys[:SHOWN_ATTORNEYS]]
+    rest = [one(a) for a in attorneys[SHOWN_ATTORNEYS:]]
+    folded = (
+        f", <details><summary>+{len(rest)} more</summary>{', '.join(rest)}</details>"
+        if rest
+        else ""
+    )
+    return f'<div class="attorneys">{", ".join(shown)}{folded}</div>'
+
+
+def _firm_html(rep: dict[str, Any], number: str) -> str:
+    meta = []
+    appearance = next(iter(rep.get("appearances") or []), None)
+    if appearance:
+        label = f"Appeared {_date(appearance.get('date'))}"
+        files = appearance.get("files") or []
+        if files:
+            href = f"../../data/documents/{slug_for(number)}/{files[0]}"
+            label = f'<a href="{_e(href)}" target="_blank" rel="noopener">{label}</a>'
+        meta.append(label)
+    elif rep.get("first_filed"):
+        meta.append(f"First filed {_date(rep['first_filed'])}")
+    if rep.get("filings"):
+        meta.append(f"{rep['filings']} filing{'s' if rep['filings'] != 1 else ''}")
+    emails = rep.get("emails") or []
+    if emails:
+        meta.append(f"service: {_e(emails[0])}")
+    for_text = ""
+    if not rep.get("parties") and rep.get("on_behalf_of"):
+        for_text = f'<div class="firm-meta">for {_e("; ".join(rep["on_behalf_of"]))}</div>'
+    return f"""<div class="firm">
+  <div class="firm-name">{_e(rep.get('firm'))}</div>
+  <div class="firm-meta">{' &middot; '.join(meta)}</div>
+  {for_text}
+  {_attorneys_html(rep.get('attorneys') or [])}
+</div>"""
+
+
+def _party_key(role: Any, name: Any) -> tuple[str, str]:
+    return (str(role or "").strip().lower(), str(name or "").strip().lower())
+
+
+def _parties_section(
+    section: ui_schema.Section, case: dict[str, Any], counsel: dict[str, Any] | None
+) -> str:
+    """Each role's parties, grouped by who represents them.
+
+    Parties sharing exactly the same firms are one group, so two
+    complainants with one legal team read as one block, and a respondent with
+    its own counsel stands apart. The groupings come from counsel.json; IDS
+    alone still lists the parties when no filings have been read.
+    """
+    number = str(case.get("investigation_number") or "")
+    stage = ui_schema.stage_for(case) or {}
+    participants = (stage.get("lists") or {}).get("participants") or []
+    reps = (counsel or {}).get("representations") or []
+
+    represented: dict[tuple[str, str], list[int]] = {}
+    for index, rep in enumerate(reps):
+        for party in rep.get("parties") or []:
+            represented.setdefault(_party_key(party.get("role"), party.get("name")), []).append(index)
+
+    blocks = []
+    for role in section.roles:
+        parties = [
+            p for p in participants if str(p.get("role") or "").strip().lower() == role.role.lower()
+        ]
+        if not parties:
+            continue
+        groups: dict[tuple[int, ...], list[dict[str, Any]]] = {}
+        for party in parties:
+            key = tuple(represented.get(_party_key(party.get("role"), party.get("name")), []))
+            groups.setdefault(key, []).append(party)
+
+        group_html = []
+        for rep_indexes, members in groups.items():
+            names = "".join(
+                f"<li>{_e(p.get('name'))}"
+                + (f' <span class="case-sub">{_e(p["disposition"])}</span>' if p.get("disposition") else "")
+                + "</li>"
+                for p in members
+            )
+            if rep_indexes:
+                firms = "".join(_firm_html(reps[i], number) for i in rep_indexes)
+            elif reps:
+                firms = '<div class="no-counsel">Counsel not identified in the filings</div>'
+            else:
+                firms = ""
+            group_html.append(
+                f'<div class="party-group"><ul class="party-names">{names}</ul><div>{firms}</div></div>'
+            )
+        blocks.append(
+            f'<div class="role-block"><div class="role-label">{_e(role.label)}</div>{"".join(group_html)}</div>'
+        )
+
+    others = [rep for rep in reps if not rep.get("parties")]
+    if others:
+        firms = "".join(_firm_html(rep, number) for rep in others)
+        blocks.append(
+            '<div class="role-block"><div class="role-label">Other counsel of record</div>'
+            f"{firms}</div>"
+        )
+
+    if not blocks:
+        return ""
+    note = ""
+    if not reps:
+        note = (
+            '<p class="case-sub">Counsel is read from this case\'s EDIS filings; fetch its '
+            "documents to see who represents each party.</p>"
+        )
+    return f"""<div class="section-block">
+  <h2>{_e(section.title)}</h2>
+  <div class="card">{''.join(blocks)}</div>
+  {note}
+</div>"""
+
+
 def _documents_section(section: ui_schema.Section, documents: list[dict[str, Any]]) -> str:
     def sort_key(doc: dict[str, Any]) -> str:
         return dates.sort_key(doc.get("document_date") or doc.get("official_received_date"))
@@ -793,16 +967,28 @@ def _documents_section(section: ui_schema.Section, documents: list[dict[str, Any
 
 
 def render_detail(
-    case: dict[str, Any], documents: list[dict[str, Any]], schema: ui_schema.Schema
+    case: dict[str, Any],
+    documents: list[dict[str, Any]],
+    schema: ui_schema.Schema,
+    *,
+    counsel: dict[str, Any] | None = None,
 ) -> str:
     number = case.get("investigation_number")
-    field_sections = [s for s in schema.sections if s.kind == "fields"]
+    # What a stage block compares against the primary stage: the field
+    # sections, and the parties section as its bare name lists.
+    field_sections = [
+        s if s.kind == "fields" else s.party_fields()
+        for s in schema.sections
+        if s.kind in ("fields", "parties")
+    ]
     extra = {"document_count": len(documents)}
 
     blocks = []
     for section in schema.sections:
         if section.kind == "fields":
             blocks.append(_fields_section(section, case, extra=extra))
+        elif section.kind == "parties":
+            blocks.append(_parties_section(section, case, counsel))
         elif section.kind == "stages":
             blocks.append(_stages_section(section, case, field_sections))
         elif section.kind == "documents":
