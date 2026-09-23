@@ -19,7 +19,6 @@ from typing import Any
 sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
 
 from datalayer import ids  # noqa: E402
-from datalayer.client import RssItem  # noqa: E402
 from datalayer.store import Store  # noqa: E402
 
 
@@ -137,27 +136,19 @@ def payload(rows: list[dict[str, Any]], *, date: str = "2026-09-21T22:00:01.996+
 
 
 def write_snapshot(
-    ids_dir: Path, rows: list[dict[str, Any]], *, day: str = "2026-09-22"
+    ids_dir: Path,
+    rows: list[dict[str, Any]],
+    *,
+    day: str = "2026-09-22",
+    at: str = "120000",
 ) -> ids.Snapshot:
     ids_dir = Path(ids_dir)
     ids_dir.mkdir(parents=True, exist_ok=True)
-    path = ids_dir / f"{ids.PREFIX}{day}{ids.SUFFIX}"
+    stamp = f"{day}T{at}Z"
+    path = ids_dir / f"{ids.PREFIX}{stamp}{ids.SUFFIX}"
     with gzip.open(path, "wt", encoding="utf-8") as handle:
         json.dump(payload(rows), handle)
-    return ids.Snapshot(path=path, day=day)
-
-
-def rss_item(docket: str, doc_id: str, doc_type: str = "Complaint") -> RssItem:
-    return RssItem(
-        title=f"Document Approved : {docket} Violation : Doc ID {doc_id}, {doc_type}",
-        link=f"https://edis.usitc.gov/docid/{doc_id}",
-        guid=doc_id,
-        pub_date="Fri, 18 Sep 2026 12:00:00 GMT",
-        pub_date_iso="2026-09-18T12:00:00+00:00",
-        docket_number=docket,
-        doc_id=doc_id,
-        doc_type=doc_type,
-    )
+    return ids.Snapshot(path=path, stamp=stamp)
 
 
 EDIS_DOCUMENTS = [

@@ -1,5 +1,4 @@
-"""Client for the USITC EDIS data API, the public IDS investigation feed, and
-the 337-complaint RSS feed.
+"""Client for the USITC EDIS data API and the public IDS investigation feed.
 
 EDIS reference (endpoints, headers, XML field names) was reverse-engineered
 from the open-source patent-client-agents connector
@@ -12,9 +11,7 @@ from __future__ import annotations
 import base64
 import html
 import json
-import re
 import xml.etree.ElementTree as ET
-from dataclasses import dataclass, field
 from datetime import datetime, timezone
 from pathlib import Path
 from typing import Any
@@ -35,19 +32,6 @@ except ImportError:
 
 EDIS_BASE_URL = "https://edis.usitc.gov/data"
 IDS_URL = "https://ids.usitc.gov/investigations.json"
-
-# RSS item titles look like:
-#   "Document Approved : 337-3936 Violation : Doc ID 894182, Complaint"
-# The "337-3936" is a raw USITC docket number for a complaint that has not
-# yet been instituted as a formal investigation (which would get a
-# "337-TA-####" number instead). The RSS feed is how you find out about a
-# complaint before EDIS has an /investigation record for it at all.
-RSS_TITLE_RE = re.compile(
-    r"(?P<docket>337-\d+)\s+Violation\s*:\s*Doc(?:ument)?\s*ID\s*(?P<doc_id>\d+)\s*,\s*(?P<doc_type>.+)$",
-    re.IGNORECASE,
-)
-DOCKET_NUMBER_RE = re.compile(r"337-\d+")
-DOC_ID_RE = re.compile(r"Doc(?:ument)?\s*ID[:\s]*(\d+)", re.IGNORECASE)
 
 
 class EdisError(RuntimeError):
@@ -194,72 +178,3 @@ class EdisClient:
         dest.parent.mkdir(parents=True, exist_ok=True)
         dest.write_bytes(resp.content)
         return dest
-
-
-@dataclass
-class RssItem:
-    title: str
-    link: str
-    guid: str
-    pub_date: str | None
-    pub_date_iso: str | None
-    docket_number: str | None
-    doc_id: str | None
-    doc_type: str | None
-
-
-def _parse_pub_date(pub_date: str | None) -> str | None:
-    if not pub_date:
-        return None
-    try:
-        from email.utils import parsedate_to_datetime
-
-        dt = parsedate_to_datetime(pub_date)
-        if dt.tzinfo is None:
-            dt = dt.replace(tzinfo=timezone.utc)
-        return dt.astimezone(timezone.utc).isoformat()
-    except (TypeError, ValueError):
-        return None
-
-
-def fetch_rss(url: str, timeout: float = 30.0) -> list[RssItem]:
-    resp = httpx.get(url, timeout=timeout)
-    resp.raise_for_status()
-    root = ET.fromstring(resp.text)
-    items: list[RssItem] = []
-    for item in root.findall(".//item"):
-        title = _text(item.find("title")) or ""
-        link = _text(item.find("link")) or ""
-        guid = _text(item.find("guid")) or link or title
-        pub_date = _text(item.find("pubDate"))
-        description = _text(item.find("description")) or ""
-        haystack = f"{title} {description}"
-
-        docket_number: str | None = None
-        doc_id: str | None = None
-        doc_type: str | None = None
-
-        strict = RSS_TITLE_RE.search(haystack)
-        if strict:
-            docket_number = strict.group("docket")
-            doc_id = strict.group("doc_id")
-            doc_type = strict.group("doc_type").strip()
-        else:
-            docket_match = DOCKET_NUMBER_RE.search(haystack)
-            doc_id_match = DOC_ID_RE.search(haystack)
-            docket_number = docket_match.group(0) if docket_match else None
-            doc_id = doc_id_match.group(1) if doc_id_match else None
-
-        items.append(
-            RssItem(
-                title=title,
-                link=link,
-                guid=guid,
-                pub_date=pub_date,
-                pub_date_iso=_parse_pub_date(pub_date),
-                docket_number=docket_number,
-                doc_id=doc_id,
-                doc_type=doc_type,
-            )
-        )
-    return items

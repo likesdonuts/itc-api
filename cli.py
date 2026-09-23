@@ -3,7 +3,7 @@
 The work is split into two independent layers so that changing how the site
 looks never means re-fetching anything:
 
-  Data layer (datalayer/)  -- talks to IDS/EDIS/RSS, writes data/*.json + PDFs
+  Data layer (datalayer/)  -- talks to IDS and EDIS, writes data/ + PDFs
   UI layer   (ui/)         -- reads data/*.json + ui_schema.json, writes site/
 
 and the data layer has two separate processes over two separate sources:
@@ -33,7 +33,7 @@ import sys
 from pathlib import Path
 
 import schema as ui_schema
-from datalayer import docs, feed, ids, ingest, normalize
+from datalayer import docs, ids, ingest, normalize, runlog
 from datalayer.config import DATA_DIR, IDS_DIR, MissingTokenError, SCHEMA_PATH, SITE_DIR, load_token
 from datalayer.runner import ProcessAborted
 from datalayer.store import Store
@@ -79,16 +79,14 @@ def build_parser() -> argparse.ArgumentParser:
         "--keep",
         type=int,
         default=ids.DEFAULT_KEEP,
-        help=f"snapshots to keep on disk (default {ids.DEFAULT_KEEP}, 0 keeps all)",
+        help=f"days of snapshots to keep on disk (default {ids.DEFAULT_KEEP}, 0 keeps all)",
     )
-    p_sync.add_argument("--no-rss", action="store_true", help="skip the EDIS complaint RSS feed")
     _add_removals_flag(p_sync)
     _add_render_flag(p_sync)
 
     p_parse = sub.add_parser(
         "parse", help="rebuild cases from the newest stored snapshot (offline, no download)"
     )
-    p_parse.add_argument("--no-rss", action="store_true", help="ignore dockets logged from RSS")
     _add_removals_flag(p_parse)
     _add_render_flag(p_parse)
 
@@ -156,22 +154,20 @@ def _render(args: argparse.Namespace, store: Store) -> None:
 
 
 def cmd_sync(args: argparse.Namespace, store: Store) -> int:
-    if not args.no_rss:
-        feed.run(store)
     report = ingest.run(
         store,
         ids_dir=args.ids_dir,
         force=args.force,
         keep=args.keep,
-        use_rss=not args.no_rss,
         allow_removals=args.allow_removals,
         log=print,
     )
     print(
         f"\nSync done. {report.cases} investigation(s) from IDS snapshot "
-        f"{report.snapshot_day}, {len(report.added)} new, "
+        f"{report.snapshot_day}: {len(report.added)} new, {len(report.changed)} changed, "
         f"{len(report.withdrawn)} kept after leaving the feed."
     )
+    print(f"Logged this run to {runlog.path_for(args.data_dir)}.")
     if args.render:
         _render(args, store)
     else:
@@ -184,7 +180,6 @@ def cmd_parse(args: argparse.Namespace, store: Store) -> int:
         store,
         ids_dir=args.ids_dir,
         offline=True,
-        use_rss=not args.no_rss,
         allow_removals=args.allow_removals,
     )
     print(f"\nParsed {report.cases} investigation(s) from snapshot {report.snapshot_day}.")
@@ -298,6 +293,23 @@ def cmd_serve(args: argparse.Namespace, store: Store) -> int:
     return 0
 
 
+def _print_recent_syncs(data_dir: Path, limit: int = 5) -> None:
+    recent = runlog.read(data_dir, last=limit)
+    if not recent:
+        return
+    print(f"\nLast {len(recent)} sync(s) -- full history in {runlog.path_for(data_dir)}")
+    print(
+        f"{'RUN AT':<20} {'MODE':<9} {'OUTCOME':<8} {'337 ROWS':>9} {'CASES':>6} "
+        f"{'NEW':>4} {'CHANGED':>8} {'GONE':>5}"
+    )
+    for row in recent:
+        print(
+            f"{row['run_at'][:19]:<20} {row['mode']:<9} {row['outcome']:<8} "
+            f"{row['rows_337']:>9} {row['cases_in_file']:>6} {row['cases_added']:>4} "
+            f"{row['cases_changed']:>8} {row['cases_left_feed']:>5}"
+        )
+
+
 def cmd_status(args: argparse.Namespace, store: Store) -> int:
     rows = store.summary_rows()
     if not rows:
@@ -306,7 +318,9 @@ def cmd_status(args: argparse.Namespace, store: Store) -> int:
 
     stored = ids.snapshots(args.ids_dir)
     if stored:
-        print(f"IDS snapshots: {len(stored)}, newest {stored[-1].day} ({stored[-1].path.name})")
+        newest = stored[-1]
+        taken = newest.taken_at or newest.day
+        print(f"IDS snapshots: {len(stored)}, newest taken {taken} ({newest.path.name})")
     else:
         print("IDS snapshots: none stored yet")
 
@@ -317,6 +331,7 @@ def cmd_status(args: argparse.Namespace, store: Store) -> int:
     )
     if not with_docs:
         print("\nNo documents fetched yet. Try 'python cli.py docs <number>'.")
+        _print_recent_syncs(args.data_dir)
         return 0
 
     width = max(len(row["investigation_number"]) for row in with_docs)
@@ -328,11 +343,11 @@ def cmd_status(args: argparse.Namespace, store: Store) -> int:
             f"{row['investigation_number'].ljust(width)}  {row['status'][:22]:<22} "
             f"{row['stages']:>6} {row['documents']:>5} {row['attachments']:>6}  {fetched}"
         )
+    _print_recent_syncs(args.data_dir)
     return 0
 
 
 def cmd_refresh(args: argparse.Namespace, store: Store) -> int:
-    feed.run(store)
     report = ingest.run(store, ids_dir=args.ids_dir)
 
     if not args.no_documents:

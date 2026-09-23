@@ -23,14 +23,13 @@ ui_schema.json        which IDS fields the site shows, and what to call them
 schema.py             loads and applies that mapping (used by both layers)
 dates.py              what a date from each feed means, shared by both layers
 server.py             local server so the page buttons can run the data layer
-datalayer/            DATA LAYER - talks to IDS/EDIS/RSS, owns data/
+datalayer/            DATA LAYER - talks to IDS and EDIS, owns data/
   ids.py                the daily download and the snapshots on disk
   flatten.py            one IDS row -> plain named values
   cases.py              rows -> one record per investigation, with its stages
   ingest.py             process 1: rebuild every case from a snapshot
   docs.py               process 2: EDIS documents for named cases only
-  feed.py               the complaint RSS feed (document IDs, brand-new dockets)
-  client.py             HTTP client for the EDIS API and the RSS feed
+  client.py             HTTP client for the EDIS API and the IDS file
   store.py              reads/writes data/*.json, resolves case numbers
   config.py             paths, feed URLs, .env token loading
   normalize.py          offline maintenance: rewrite stored dates to ISO
@@ -42,7 +41,7 @@ data/                 the handoff between the layers
   investigations.json   one record per investigation  <- written by ingest
   documents_index.json  documents per case            <- written by docs
   documents_state.json  when each case was last fetched
-  rss_log.json          what the complaint feed has reported
+  sync_log.csv          one row per sync, for watching the daily download
   documents/<number>/   downloaded PDFs
 site/                 generated output
 tests/                offline tests; no token, no network
@@ -76,14 +75,14 @@ telling you to generate a new one. Everything else keeps working without it.
 
 | Command | Network | What it does |
 | --- | --- | --- |
-| `python cli.py sync` | IDS + RSS | Process 1. Downloads today's IDS file if it isn't stored yet and rebuilds every case record from it. |
+| `python cli.py sync` | IDS | Process 1. Downloads today's IDS file if it isn't stored yet and rebuilds every case record from it. |
 | `python cli.py parse` | none | Rebuilds the case records from the newest stored snapshot. |
 | `python cli.py docs 337-1478` | EDIS | Process 2. Fetches document lists and PDFs for the numbers you name. |
 | `python cli.py docs --existing` | EDIS | Process 2 over every case you have already fetched documents for. |
 | `python cli.py render` | none | UI layer. Rebuilds `site/` from `data/` and `ui_schema.json`. |
 | `python cli.py serve` | localhost | Serves the site so its Update / Fetch docs buttons work. |
 | `python cli.py fields` | none | Lists every field name `ui_schema.json` can use, with samples. |
-| `python cli.py status` | none | Which snapshot is current, and which cases have documents. |
+| `python cli.py status` | none | Which snapshot is current, which cases have documents, and the last few syncs. |
 | `python cli.py normalize` | none | Rewrites stored document dates to ISO 8601 in place. |
 | `python cli.py refresh` | IDS + EDIS | The daily job: sync, re-fetch documents already on disk, render. |
 
@@ -101,9 +100,13 @@ python cli.py sync --keep 90        # keep 90 days of snapshots instead of 30
 python cli.py parse                 # rebuild from the newest snapshot, offline
 ```
 
-The download is stored as `data/ids/investigations-YYYY-MM-DD.json.gz` and is
-never rewritten, so every day you keep a copy you can go back to; run again on
-the same day and it reuses that copy rather than re-downloading 37 MB.
+The download is stored as
+`data/ids/investigations-2026-09-23T134502Z.json.gz` -- the moment it arrived,
+UTC -- and is never rewritten, so every copy you keep is one you can go back
+to and a `--force` download cannot overwrite the morning's. Run again on the
+same day without `--force` and it reuses the copy rather than re-downloading
+37 MB. `--keep` counts days, not files, so taking a second copy never pushes
+an older day off the end.
 
 `data/investigations.json` is then rebuilt from the snapshot in full. That is
 deliberate: when the Commission renumbers or retitles something, the rebuilt
@@ -115,6 +118,30 @@ To have it happen daily on Windows, point Task Scheduler at `sync.bat`, or:
 ```
 schtasks /create /tn "ITC 337 sync" /tr "\"%CD%\sync.bat\"" /sc daily /st 07:00
 ```
+
+#### Watching the daily download (`data/sync_log.csv`)
+
+Every sync appends a row, whether it downloaded, reused today's copy, or
+re-parsed offline. Open it in a spreadsheet and an anomaly shows up as a
+number that moved when it shouldn't have:
+
+| Column | What it should look like |
+| --- | --- |
+| `run_at`, `mode`, `outcome` | when, `download`/`cached`/`offline`, `ok`/`refused` |
+| `snapshot`, `snapshot_taken_at`, `snapshot_bytes` | which file was read, and its size -- a download that came back short shows up here first |
+| `feed_date` | the Commission's own timestamp inside the file. It should advance each day; the same value twice means you re-read the same data |
+| `rows_total`, `rows_337` | rows in the file and how many were Section 337. Both should barely move day to day |
+| `cases_in_file`, `stages_in_file` | after grouping the rows by investigation number |
+| `cases_added` | new investigation numbers. A handful at most |
+| `cases_changed`, `status_changes` | cases the file actually changed, and how many of those were a status. Ignoring the sync timestamps, so a day with nothing new reads as 0 -- not everything |
+| `cases_left_feed`, `cases_withdrawn_total` | dropped this run, and carried in total |
+| `cases_renumbered` | dockets instituted under a new number |
+| `cases_on_site` | what the site will hold, cases in the file plus withdrawn |
+| `seconds`, `note` | how long it took, and why a run was refused |
+
+`python cli.py status` prints the last five rows. A refused snapshot is logged
+too, with `outcome` as `refused` and the reason in `note`, so the guard below
+leaves a record rather than a gap.
 
 #### When a case stops appearing in the feed
 
@@ -214,18 +241,13 @@ Edit the file, run `python cli.py render`, refresh the browser. Fields with
 nothing in them are left off the page, and a `source` that no case can answer
 is reported when rendering rather than silently showing blank.
 
-### The complaint RSS feed
+### When a docket becomes an investigation number
 
-The IDS file already lists pre-institution dockets (as `337-3936`, status
-"Pre-institution"), so the feed is no longer how cases are discovered. It is
-still read during `sync` for two things: a complaint it names before IDS's
-next rebuild is kept on the site as a placeholder until IDS lists it, and its
-EDIS document IDs are the only route to the PDFs of a case EDIS has no
-investigation record for yet.
-
-Once a complaint is instituted, IDS lists it under a real number that keeps the
-docket as a field (`337-1521`, docket `3936`). The sync notices that, and moves
-the documents and PDFs already downloaded for `337-3936` onto the new number.
+The IDS file lists pre-institution dockets too (as `337-3936`, status
+"Pre-institution"), so every case on the site comes from that one file. Once a
+complaint is instituted, IDS lists it under a real number that keeps the docket
+as a field (`337-1521`, docket `3936`). The sync notices that, and moves the
+documents and PDFs already downloaded for `337-3936` onto the new number.
 
 ### Updating a case from the page
 
@@ -261,7 +283,6 @@ apart by looking at one value:
 | IDS investigations | `01-13-2026` | US month first |
 | IDS date objects | `{"date": "2026-05-26T12:00:00.000+00:00"}` | ISO 8601 |
 | EDIS documents | `2026/09/18 11:39:00` | year first |
-| RSS `pubDate` | `Fri, 18 Sep 2026 11:39:05 GMT` | RFC 822 |
 
 `04-05-2026` from IDS is 5 April, but read day-first it is 4 May. So `dates.py`
 decides the order from the source format, never from the value, the data layer
@@ -276,8 +297,9 @@ rewrites them in place without any API calls.
 `data/ids/` (the snapshots) and `data/investigations.json` are both rebuilt
 from the public feed by one offline-friendly command, and both are large and
 change every day, so they are not tracked. `site/` is generated too. What is
-tracked is the work you cannot re-download for free: the documents index and
-the PDFs under `data/documents/`.
+tracked is the work you cannot re-download for free: the documents index, the
+PDFs under `data/documents/`, and `data/sync_log.csv`, which is a record of
+downloads that already happened and cannot be reconstructed.
 
 After pulling, run:
 
@@ -293,8 +315,9 @@ python -m unittest discover -s tests
 
 They need neither a token nor a network connection: the IDS feed is replaced
 with rows shaped like the real thing and EDIS with a fake client. They cover
-the snapshot store, flattening, stage grouping, the field mapping, rendering,
-the local server, and that fetching documents leaves case information alone.
+the snapshot store, flattening, stage grouping, the field mapping, the sync
+log, rendering, the local server, and that fetching documents leaves case
+information alone.
 
 ## Poking at the raw API
 

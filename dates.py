@@ -3,9 +3,8 @@
 Every feed this app reads writes dates differently, and two of the shapes are
 impossible to tell apart by looking at a single value:
 
-    EDIS documents   "2026/09/18 11:39:00"     year first
-    EDIS/RSS         "2026-09-18T12:00:00Z"    ISO 8601
-    RSS pubDate      "Fri, 18 Sep 2026 ..."    RFC 822
+    EDIS documents      "2026/09/18 11:39:00"  year first
+    EDIS timestamps     "2026-09-18T12:00:00Z" ISO 8601
     IDS investigations  "01-13-2026"           US month first
 
 "04-05-2026" from IDS is 5 April, but read as day-first it is 4 May, and 37%
@@ -23,7 +22,6 @@ from __future__ import annotations
 
 import re
 from datetime import datetime
-from email.utils import parsedate_to_datetime
 from typing import Any
 
 APPROX_SEPARATOR = "  ("
@@ -57,12 +55,6 @@ def parse(value: Any) -> datetime | None:
     text = strip_note(value)
     if not text:
         return None
-
-    if text[:3] in ("Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"):
-        try:
-            return parsedate_to_datetime(text).replace(tzinfo=None)
-        except (TypeError, ValueError):
-            return None
 
     match = _YEAR_FIRST_RE.match(text)
     if match:

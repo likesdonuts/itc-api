@@ -813,11 +813,6 @@ def render_detail(
         if (case.get("stage_count") or 0) > 1
         else ""
     )
-    source_note = (
-        "from the IDS investigations feed"
-        if case.get("source") == "ids"
-        else "from the EDIS complaint feed; not in IDS yet"
-    )
 
     withdrawn_notice = ""
     if case.get("withdrawn"):
@@ -842,8 +837,8 @@ def render_detail(
 {withdrawn_notice}
 {''.join(block for block in blocks if block)}
 <p class="footer-note">
-  Investigation {_e(number)} &middot; case information {_e(source_note)}
-  &middot; IDS snapshot {_date(case.get('ids_snapshot'))}
+  Investigation {_e(number)} &middot; case information from the IDS investigations
+  feed &middot; IDS snapshot {_date(case.get('ids_snapshot'))}
 </p>
 """
     return _page(f"{case.get('title') or number} - Investigation", body, script=_DETAIL_SCRIPT)

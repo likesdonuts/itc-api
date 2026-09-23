@@ -4,9 +4,9 @@ from __future__ import annotations
 
 import unittest
 
-from support import DataDirTestCase, ids_row, rss_item, write_snapshot
+from support import DataDirTestCase, ids_row, write_snapshot
 
-from datalayer import cases, feed, ingest
+from datalayer import cases, ingest
 from datalayer.flatten import flatten_row, slug
 
 
@@ -220,28 +220,8 @@ class TestIngest(DataDirTestCase):
 
         self.assertEqual(len(report.removed), 3)
 
-    def test_a_docket_only_the_rss_feed_knows_is_kept_on_the_site(self):
-        store = self.store()
-        store.rss_log, _ = feed.update_rss_log({}, [rss_item("337-3940", "700")], self.quiet)
-        store, report = self.parse([ids_row()], store=store)
-
-        self.assertEqual(report.placeholders, ["337-3940"])
-        self.assertEqual(store.investigations["337-3940"]["source"], "rss")
-        self.assertEqual(store.investigations["337-3940"]["date_initiated"], "2026-09-18T12:00:00")
-
-    def test_a_docket_ids_now_lists_is_not_duplicated_as_a_placeholder(self):
-        store = self.store()
-        store.rss_log, _ = feed.update_rss_log({}, [rss_item("337-3936", "700")], self.quiet)
-        store, report = self.parse(
-            [ids_row("337-3936", status="Pre-institution", docket="3936")], store=store
-        )
-
-        self.assertEqual(report.placeholders, [])
-        self.assertEqual(store.investigations["337-3936"]["source"], "ids")
-
     def test_documents_follow_a_docket_that_has_been_instituted(self):
         store = self.store()
-        store.rss_log, _ = feed.update_rss_log({}, [rss_item("337-3866", "700")], self.quiet)
         store.put_documents(
             "337-3866",
             [{"id": "700", "attachments": [{"href": "../../data/documents/337-3866/a.pdf"}]}],

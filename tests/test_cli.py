@@ -13,7 +13,6 @@ from support import (
     FakeEdisClient,
     ids_row,
     payload,
-    rss_item,
     write_snapshot,
 )
 
@@ -45,7 +44,7 @@ class CliTestCase(DataDirTestCase):
                 exit_code = cli.main(full)
         return exit_code, "\n".join(printed)
 
-    def invoke(self, argv, *, client=None, rss_items=(), raw=None, capture=False):
+    def invoke(self, argv, *, client=None, raw=None, capture=False):
         """Run a command with every network call faked out.
 
         `raw` is the bytes the IDS download returns; without it a download is
@@ -57,8 +56,8 @@ class CliTestCase(DataDirTestCase):
             if raw is not None
             else mock.patch.object(ids, "download", side_effect=AssertionError("downloaded"))
         )
-        with download, mock.patch("cli.load_token", return_value="fake-token"), mock.patch(
-            "datalayer.feed.fetch_rss", return_value=list(rss_items)
+        with download, mock.patch(
+            "cli.load_token", return_value="fake-token"
         ), mock.patch.object(
             docs, "edis_session", lambda token: _session(client or FakeEdisClient())
         ):
@@ -72,24 +71,18 @@ class CliTestCase(DataDirTestCase):
 class TestSync(CliTestCase):
     def test_sync_downloads_parses_and_can_render(self):
         raw = json.dumps(payload([ids_row()])).encode()
-        exit_code, _ = self.invoke(
-            ["sync", "--render"], raw=raw, rss_items=[rss_item("337-3940", "1")]
-        )
+        exit_code, _ = self.invoke(["sync", "--render"], raw=raw)
 
         self.assertEqual(exit_code, 0)
         cases = self.read_json("investigations.json")
         self.assertEqual(cases["337-1478"]["title"], "Certain Wearable Devices")
-        # A docket only the RSS feed has seen is kept until IDS lists it.
-        self.assertEqual(cases["337-3940"]["source"], "rss")
         self.assertTrue((self.site_dir / "index.html").exists())
         self.assertTrue((self.site_dir / "investigations" / "337-1478.html").exists())
 
     def test_sync_needs_no_edis_token(self):
         raw = json.dumps(payload([ids_row()])).encode()
         with mock.patch("cli.load_token", side_effect=AssertionError("token requested")):
-            with mock.patch.object(ids, "download", return_value=raw), mock.patch(
-                "datalayer.feed.fetch_rss", return_value=[]
-            ):
+            with mock.patch.object(ids, "download", return_value=raw):
                 exit_code, _ = self.run_cli(["sync"])
         self.assertEqual(exit_code, 0)
 
@@ -130,15 +123,17 @@ class TestDocs(CliTestCase):
         self.invoke(["docs", "--existing"], client=again)
         self.assertEqual(again.document_calls, ["337-1478"])
 
-    def test_docs_never_reads_the_rss_feed(self):
+    def test_docs_leaves_the_case_records_alone(self):
+        # `invoke` also fails the test if the command reaches the IDS feed.
         self.seed_cases()
+        before = (self.data_dir / "investigations.json").read_text(encoding="utf-8")
         client = FakeEdisClient(documents={"337-1478": EDIS_DOCUMENTS})
-        with mock.patch("datalayer.feed.fetch_rss", side_effect=AssertionError("RSS called")):
-            with mock.patch("cli.load_token", return_value="fake-token"), mock.patch.object(
-                docs, "edis_session", lambda token: _session(client)
-            ):
-                exit_code, _ = self.run_cli(["docs", "337-1478"])
+        exit_code, _ = self.invoke(["docs", "337-1478"], client=client)
+
         self.assertEqual(exit_code, 0)
+        self.assertEqual(
+            before, (self.data_dir / "investigations.json").read_text(encoding="utf-8")
+        )
 
 
 class TestOtherCommands(CliTestCase):

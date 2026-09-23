@@ -28,11 +28,6 @@ class TestParsing(unittest.TestCase):
         self.assertEqual(dates.parse("2026-09-18T12:00:00+00:00"), datetime(2026, 9, 18, 12, 0))
         self.assertEqual(dates.parse("2026-09-18"), datetime(2026, 9, 18))
 
-    def test_rss_pubdates_are_rfc_822(self):
-        self.assertEqual(
-            dates.parse("Fri, 18 Sep 2026 11:39:05 GMT"), datetime(2026, 9, 18, 11, 39, 5)
-        )
-
     def test_ids_values_are_month_first(self):
         # Verified against the live feed: 886 of 886 Section 337 start dates
         # are month-first, so "04-05-2026" is 5 April, not 4 May.
@@ -64,7 +59,6 @@ class TestNormalizing(unittest.TestCase):
         self.assertEqual(dates.to_iso("01-13-2026"), "2026-01-13")
         self.assertEqual(dates.to_iso("2026/09/18 11:39:00"), "2026-09-18T11:39:00")
         self.assertEqual(dates.to_iso("2026-09-18T12:00:00+00:00"), "2026-09-18T12:00:00")
-        self.assertEqual(dates.to_iso("Fri, 18 Sep 2026 00:00:00 GMT"), "2026-09-18")
 
     def test_normalizing_is_idempotent(self):
         once = dates.to_iso("2026/09/18 11:39:00")

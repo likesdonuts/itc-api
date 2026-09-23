@@ -12,13 +12,15 @@ investigation information and parties from being overwritten by the API.
 
 from __future__ import annotations
 
+import time
 from dataclasses import dataclass, field
+from datetime import datetime
 from pathlib import Path
 from typing import Any, Callable
 
-from . import cases, ids
+from . import cases, ids, runlog
 from .config import IDS_DIR
-from .store import Store, number_key
+from .store import Store
 
 Logger = Callable[[str], None]
 
@@ -38,20 +40,60 @@ class SuspectSnapshotError(ids.IdsError):
     """
 
 
+# Every case record carries when it was last rebuilt, which differs on every
+# run whether or not the feed said anything new. Comparing without these is
+# what makes "changed" mean the Commission changed something.
+RESTATED_EVERY_RUN = ("ids_synced_at", "ids_snapshot")
+
+
 @dataclass
 class IngestReport:
-    snapshot_day: str | None = None
+    snapshot: ids.Snapshot | None = None
+    mode: str = "offline"
+    outcome: str = "ok"
+    started: float = 0.0
     downloaded: bool = False
     feed_date: str | None = None
+    rows_total: int = 0
     rows: int = 0
     cases: int = 0
     stages: int = 0
     multi_stage: int = 0
     added: list[str] = field(default_factory=list)
+    changed: list[str] = field(default_factory=list)
+    status_changes: int = 0
     removed: list[str] = field(default_factory=list)
     withdrawn: list[str] = field(default_factory=list)
-    placeholders: list[str] = field(default_factory=list)
     migrated: list[tuple[str, str]] = field(default_factory=list)
+    note: str = ""
+
+    @property
+    def snapshot_day(self) -> str | None:
+        return self.snapshot.day if self.snapshot else None
+
+    @property
+    def seconds(self) -> float:
+        return round(time.monotonic() - self.started, 2) if self.started else 0.0
+
+
+def _comparable(record: dict[str, Any]) -> dict[str, Any]:
+    return {k: v for k, v in record.items() if k not in RESTATED_EVERY_RUN}
+
+
+def _compare(
+    before: dict[str, Any], built: dict[str, dict[str, Any]]
+) -> tuple[list[str], int]:
+    """Which cases the snapshot actually changed, and how many changed status."""
+    changed = []
+    status_changes = 0
+    for key, record in built.items():
+        previous = before.get(key)
+        if not isinstance(previous, dict) or _comparable(previous) == _comparable(record):
+            continue
+        changed.append(key)
+        if previous.get("status") != record.get("status"):
+            status_changes += 1
+    return changed, status_changes
 
 
 def _migrate_instituted_dockets(
@@ -72,7 +114,7 @@ def _migrate_instituted_dockets(
         old_key = f"337-{docket}"
         if old_key in new_cases or old_key == key:
             continue
-        if old_key not in store.documents and old_key not in store.rss_log:
+        if old_key not in store.documents:
             continue
         store.rename(old_key, key)
         migrated.append((old_key, key))
@@ -110,11 +152,7 @@ def _carry_withdrawn(
     """
     carried = []
     for key, record in store.investigations.items():
-        # RSS placeholders are rebuilt from rss_log.json every run, so one
-        # missing here means the log dropped it, not that IDS withdrew it.
         if key in built or not cases.is_case_record(record):
-            continue
-        if record.get("source") != cases.IDS_SOURCE:
             continue
         record = dict(record)
         record.setdefault("last_listed_snapshot", record.get("ids_snapshot") or day)
@@ -128,19 +166,24 @@ def parse_snapshot(
     store: Store,
     snapshot: ids.Snapshot,
     *,
-    use_rss: bool = True,
+    mode: str = "offline",
+    started: float | None = None,
     allow_removals: bool = False,
     log: Logger = print,
 ) -> IngestReport:
     """Turn one stored snapshot into case records, offline."""
     payload = snapshot.load()
-    rows = ids.section_337_rows(payload)
-    built = cases.build_cases(rows, snapshot_day=snapshot.day)
+    rows = ids.rows(payload)
+    section_337 = ids.section_337_rows(payload)
+    built = cases.build_cases(section_337, snapshot_day=snapshot.day)
 
     report = IngestReport(
-        snapshot_day=snapshot.day,
+        snapshot=snapshot,
+        mode=mode,
+        started=time.monotonic() if started is None else started,
         feed_date=payload.get("date"),
-        rows=len(rows),
+        rows_total=len(rows),
+        rows=len(section_337),
         cases=len(built),
         stages=sum(case["stage_count"] for case in built.values()),
         multi_stage=sum(1 for case in built.values() if case["stage_count"] > 1),
@@ -148,45 +191,40 @@ def parse_snapshot(
 
     report.migrated = _migrate_instituted_dockets(store, built, log)
 
-    if use_rss:
-        # A docket is "known" both under its own number and as the docket of
-        # the investigation it was instituted as, so an instituted complaint
-        # does not come back as a second, pre-institution entry.
-        known = {number_key(number) for number in built}
-        known |= {
-            number_key(f"337-{case['docket_number']}")
-            for case in built.values()
-            if case.get("docket_number")
-        }
-        for docket, entry in store.rss_log.items():
-            if number_key(docket) not in known:
-                built[docket] = cases.rss_placeholder(docket, entry)
-                report.placeholders.append(docket)
-
-    previous = set(store.investigations)
+    before = store.investigations
     # Cases already marked withdrawn are expected to be missing, so only the
     # ones the feed listed last time count as having gone this time.
     listed = {
         key
-        for key, record in store.investigations.items()
+        for key, record in before.items()
         if not (isinstance(record, dict) and record.get("withdrawn"))
     }
-    report.added = sorted(set(built) - previous)
+    report.added = sorted(set(built) - set(before))
     report.removed = sorted(listed - set(built))
+    report.changed, report.status_changes = _compare(before, built)
 
-    _check_removals(report.removed, len(listed), snapshot.day, allow_removals)
+    try:
+        _check_removals(report.removed, len(listed), snapshot.day, allow_removals)
+    except SuspectSnapshotError as exc:
+        report.outcome = "refused"
+        report.note = str(exc)
+        runlog.append(store.data_dir, report)
+        raise
+
     report.withdrawn = _carry_withdrawn(store, built, snapshot.day)
 
     store.investigations = dict(sorted(built.items()))
     store.save_cases()
     store.save_documents()
+    runlog.append(store.data_dir, report)
 
     log(
         f"  {report.cases} investigation(s) from {report.rows} row(s); "
         f"{report.multi_stage} have more than one stage."
     )
-    if report.placeholders:
-        log(f"  {len(report.placeholders)} docket(s) from the RSS feed are not in IDS yet.")
+    if report.changed:
+        log(f"  {len(report.changed)} existing case(s) changed, "
+            f"{report.status_changes} of them in status.")
     if report.added:
         log(f"  new since the last parse: {', '.join(report.added[:12])}"
             + (" ..." if len(report.added) > 12 else ""))
@@ -208,9 +246,8 @@ def run(
     force: bool = False,
     keep: int = ids.DEFAULT_KEEP,
     offline: bool = False,
-    use_rss: bool = True,
     allow_removals: bool = False,
-    day: str | None = None,
+    now: datetime | None = None,
     log: Logger = print,
 ) -> IngestReport:
     """Download today's snapshot if it is not stored yet, then parse it.
@@ -218,7 +255,9 @@ def run(
     With `offline=True` the newest stored snapshot is parsed instead, which is
     how you re-parse after changing the parser without touching the network.
     """
-    parse = dict(use_rss=use_rss, allow_removals=allow_removals, log=log)
+    started = time.monotonic()
+    parse = dict(started=started, allow_removals=allow_removals, log=log)
+
     if offline:
         snapshot = ids.latest(ids_dir)
         if snapshot is None:
@@ -226,10 +265,11 @@ def run(
                 f"no stored IDS snapshot in {ids_dir}. Run 'python cli.py sync' once first."
             )
         log(f"Parsing stored snapshot {snapshot.path.name} (offline).")
-        report = parse_snapshot(store, snapshot, **parse)
+        report = parse_snapshot(store, snapshot, mode="offline", **parse)
     else:
-        sync = ids.sync(ids_dir=ids_dir, force=force, keep=keep, day=day, log=log)
-        report = parse_snapshot(store, sync.snapshot, **parse)
+        sync = ids.sync(ids_dir=ids_dir, force=force, keep=keep, now=now, log=log)
+        mode = "download" if sync.downloaded else "cached"
+        report = parse_snapshot(store, sync.snapshot, mode=mode, **parse)
         report.downloaded = sync.downloaded
 
     store.record_run(
@@ -239,6 +279,7 @@ def run(
         cases=report.cases,
         stages=report.stages,
         added=len(report.added),
+        changed=len(report.changed),
         withdrawn=len(report.withdrawn),
     )
     store.save_state()
