@@ -48,7 +48,7 @@ data/                 the handoff between the layers
   documents_state.json  when each case was last fetched
   counsel.json          firms and attorneys per case  <- written by counsel
   sync_log.csv          one row per sync, for watching the daily download
-  documents/<number>/   downloaded PDFs
+  documents/<number>/   downloaded PDFs (gitignored)
 site/                 generated output
 tests/                offline tests; no token, no network
 ```
@@ -367,16 +367,24 @@ rewrites them in place without any API calls.
 `data/ids/` (the snapshots) and `data/investigations.json` are both rebuilt
 from the public feed by one offline-friendly command, and both are large and
 change every day, so they are not tracked. Nor is `data/counsel.json`, which
-`sync` rebuilds from those and the documents. `site/` is generated too. What is
-tracked is the work you cannot re-download for free: the documents index, the
-PDFs under `data/documents/`, and `data/sync_log.csv`, which is a record of
-downloads that already happened and cannot be reconstructed.
+`sync` rebuilds from those and the documents. `site/` is generated too.
+
+The PDFs under `data/documents/` are not tracked either: they run to
+gigabytes, and EDIS will serve them again. They live only on the machine that
+downloaded them, so back that folder up some other way if you need to.
+
+What is tracked is the record of what was fetched: the documents index, which
+lists every document and its attachments, and `data/sync_log.csv`, a record
+of downloads that already happened and cannot be reconstructed.
 
 After pulling, run:
 
 ```
 python cli.py sync --render
 ```
+
+On a fresh clone the index lists documents whose PDFs aren't on disk yet;
+`python cli.py docs --existing` downloads them again (it needs an EDIS token).
 
 ## Tests
 
