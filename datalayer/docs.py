@@ -139,18 +139,32 @@ def fetch_document_rows(client: EdisClient, key: str) -> list[dict[str, Any]]:
 
 
 def _kept_attachments(
-    docs_dir: Path, key: str, previous: list[dict[str, Any]] | None
+    docs_dir: Path, key: str, doc_id: Any, previous: list[dict[str, Any]] | None
 ) -> list[dict[str, str]]:
-    """Attachments recorded last time whose files are still on disk.
+    """The document's PDFs already on disk, whether or not the index knew.
 
     A document that is not downloaded this run keeps the links it already
-    had, so a metadata-only refresh does not orphan PDFs fetched earlier.
+    had, so a metadata-only refresh does not orphan PDFs fetched earlier. Its
+    files are also looked up by name ("<document id>_<attachment id>_...")
+    to relink any whose links an older refresh did drop.
     """
-    return [
+    kept = [
         att
         for att in previous or []
         if att.get("href") and (docs_dir / key / Path(att["href"]).name).exists()
     ]
+    case_dir = docs_dir / key
+    if doc_id and case_dir.is_dir():
+        linked = {Path(att["href"]).name for att in kept}
+        for path in sorted(case_dir.glob(f"{doc_id}_*")):
+            if path.name not in linked:
+                kept.append(
+                    {
+                        "href": f"../../data/documents/{key}/{path.name}",
+                        "label": path.name.split("_", 2)[-1],
+                    }
+                )
+    return kept
 
 
 def _edis_documents(
@@ -180,7 +194,9 @@ def _edis_documents(
                 client, docs_dir, key, str(doc_id), row.get("securityLevel"), log
             )
         else:
-            attachments = _kept_attachments(docs_dir, key, previous_attachments.get(str(doc_id)))
+            attachments = _kept_attachments(
+                docs_dir, key, doc_id, previous_attachments.get(str(doc_id))
+            )
         downloaded_total += downloaded
         documents.append(
             {

@@ -30,6 +30,29 @@ class RenderReport:
     unused_sources: list[str] = field(default_factory=list)
 
 
+def _has_pdf(case_dir: Path, document: dict[str, Any], on_disk: set[str] | None = None) -> bool:
+    """Whether a document has at least one of its PDFs on this computer.
+
+    Checked on disk rather than trusted from the index: the PDFs are not in
+    git, so another clone's index lists files that are not there, and an
+    older refresh could drop links to files that are. Files are named
+    "<document id>_<attachment id>_...", so `on_disk` -- the document ids
+    with a file in the case's folder -- answers without the index.
+    """
+    if on_disk is not None and str(document.get("id") or "") in on_disk:
+        return True
+    return any(
+        att.get("href") and (case_dir / Path(att["href"]).name).exists()
+        for att in document.get("attachments") or []
+    )
+
+
+def _documents_on_disk(case_dir: Path) -> set[str]:
+    if not case_dir.is_dir():
+        return set()
+    return {path.name.split("_", 1)[0] for path in case_dir.iterdir() if "_" in path.name}
+
+
 def render_site(
     store: Store | None = None,
     *,
@@ -53,6 +76,11 @@ def render_site(
             skipped.append(number)
 
     document_counts = {number: len(docs) for number, docs in store.documents.items()}
+    pdf_counts = {}
+    for number, docs in store.documents.items():
+        case_dir = store.docs_dir / number
+        on_disk = _documents_on_disk(case_dir)
+        pdf_counts[number] = sum(1 for doc in docs if _has_pdf(case_dir, doc, on_disk))
     # When each case's documents were last fetched. Cases fetched before the
     # app recorded that have documents but no time, which is worth saying
     # rather than leaving blank like a case never fetched.
@@ -70,6 +98,7 @@ def render_site(
             list(cases.values()),
             schema,
             document_counts=document_counts,
+            pdf_counts=pdf_counts,
             fetched_at=fetched_at,
             counsel=store.counsel,
             meta=meta,

@@ -815,12 +815,16 @@ def render_index(
     schema: ui_schema.Schema,
     *,
     document_counts: dict[str, int] | None = None,
+    pdf_counts: dict[str, int] | None = None,
     fetched_at: dict[str, str] | None = None,
     counsel: dict[str, Any] | None = None,
     meta: dict[str, Any] | None = None,
 ) -> str:
-    """`fetched_at` is when each case's documents were last fetched."""
+    """`pdf_counts` is how many of each case's documents have a PDF on disk;
+    `fetched_at` is when each case's documents were last fetched.
+    """
     document_counts = document_counts or {}
+    pdf_counts = pdf_counts or {}
     fetched_at = fetched_at or {}
     counsel = counsel or {}
     meta = meta or {}
@@ -850,6 +854,7 @@ def render_index(
         number = str(case.get("investigation_number") or "")
         extra = {
             "document_count": document_counts.get(number, 0),
+            "pdf_document_count": pdf_counts.get(number, 0),
             "documents_fetched_at": fetched_at.get(number),
         }
         href = f"investigations/{slug_for(number)}.html"

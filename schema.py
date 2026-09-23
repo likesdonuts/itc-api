@@ -40,7 +40,7 @@ FIELD_TYPES = {
 }
 
 # Values the UI layer supplies itself rather than reading from a case record.
-RENDER_EXTRAS = {"document_count", "documents_fetched_at"}
+RENDER_EXTRAS = {"document_count", "pdf_document_count", "documents_fetched_at"}
 
 SECTION_KINDS = {"fields", "stages", "documents", "parties"}
 STAGE_CHOICES = {"primary", "current"}
