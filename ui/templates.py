@@ -321,6 +321,9 @@ table.list .attachments a:last-child { margin-bottom: 0; }
 th.pick, td.pick { width: 2.2rem; padding-right: 0; }
 table.list td.pick + td { min-width: 230px; }
 input.pick-case, #pick-all { width: 1rem; height: 1rem; cursor: pointer; }
+time.stamp.today { color: var(--green-fg); font-weight: 600; }
+.picked-count.fresh { color: var(--amber-fg); }
+.heading-note { font-weight: 400; text-transform: none; letter-spacing: 0; }
 """
 
 
@@ -344,6 +347,17 @@ def _date(value: Any) -> str:
     day/month order is decided by the source format rather than per value.
     """
     return _e(dates.format_ui(value))
+
+
+def _stamp(value: Any) -> str:
+    """A moment the app recorded, in local time. The page script marks the
+    ones from today, which it has to do itself: the page may be opened days
+    after it was rendered.
+    """
+    return (
+        f'<time class="mono stamp" datetime="{_e(value)}">'
+        f"{_e(dates.format_ui_time(value))}</time>"
+    )
 
 
 def _page(title: str, body: str, *, style: str = APP_STYLE, script: str = "") -> str:
@@ -394,6 +408,8 @@ def _rendered(spec: ui_schema.FieldSpec, value: Any, *, href: str | None = None)
         return _status_pill(value)
     if spec.type == "date":
         return f'<span class="mono">{_date(value)}</span>'
+    if spec.type == "datetime":
+        return _stamp(value)
     if spec.type in ("number", "mono"):
         return f'<span class="mono">{_e(value)}</span>'
     if spec.type == "bool":
@@ -525,17 +541,33 @@ _CONTROL_SCRIPT = """
   function sameDay(a, b) {
     return a.getFullYear() === b.getFullYear() && a.getMonth() === b.getMonth() && a.getDate() === b.getDate();
   }
+  function isToday(iso) {
+    const d = iso ? new Date(iso) : null;
+    return !!d && !isNaN(d) && sameDay(d, new Date());
+  }
+  // "Today" depends on when the page is looked at, not when it was rendered.
+  document.querySelectorAll('time.stamp').forEach(function (t) {
+    if (isToday(t.getAttribute('datetime'))) t.classList.add('today');
+  });
+  function ticked() {
+    return picks.filter(function (p) { return p.checked && !p.closest('tr').hidden; });
+  }
   function selected() {
     if (panel.dataset.number) return [panel.dataset.number];
-    return picks.filter(function (p) { return p.checked && !p.closest('tr').hidden; })
-                .map(function (p) { return p.value; });
+    return ticked().map(function (p) { return p.value; });
   }
   function refresh() {
     const n = selected().length;
     buttons.forEach(function (b) {
       b.disabled = offline || running || (b.dataset.job === 'documents' && n === 0);
     });
-    if (count) count.textContent = n ? n + (n === 1 ? ' case selected' : ' cases selected') : 'Tick cases below to fetch their documents';
+    if (count) {
+      const fresh = ticked().filter(function (p) { return isToday(p.dataset.fetched); }).length;
+      count.textContent = !n ? 'Tick cases below to fetch their documents'
+        : n + (n === 1 ? ' case selected' : ' cases selected')
+          + (fresh ? ' \\u00b7 ' + (fresh === n ? (n === 1 ? 'already' : 'all') : fresh) + ' fetched today' : '');
+      count.className = 'picked-count' + (fresh ? ' fresh' : '');
+    }
     if (pickAll) {
       const shown = picks.filter(function (p) { return !p.closest('tr').hidden; });
       pickAll.checked = shown.length > 0 && shown.every(function (p) { return p.checked; });
@@ -574,7 +606,17 @@ _CONTROL_SCRIPT = """
       parts.push(item(sync.finished_at ? "Today's sync has not run yet (last " + when(sync.finished_at) + ')' : 'Never synced', 'warn'));
     }
     if (sync.snapshot) parts.push(item('Case data from ' + when(sync.snapshot, false)));
-    parts.push(item('Documents last fetched ' + when((s.documents || {}).finished_at)));
+    if ('fetchedAt' in panel.dataset) {
+      // A case page: when this case's documents were fetched, not the app's.
+      const mine = panel.dataset.fetchedAt;
+      parts.push(!mine
+        ? item("This case's documents have not been fetched yet", 'warn')
+        : mine === 'unknown'
+          ? item("This case's documents were fetched before fetch times were recorded")
+          : item("This case's documents fetched " + when(mine), isToday(mine) ? 'ok' : ''));
+    } else {
+      parts.push(item('Documents last fetched ' + when((s.documents || {}).finished_at)));
+    }
     const token = s.token || {};
     if (token.state === 'missing') {
       parts.push(item('No EDIS token in .env', 'warn'));
@@ -673,7 +715,7 @@ _CONTROL_SCRIPT = """
 """
 
 
-def _control_panel(number: str | None = None) -> str:
+def _control_panel(number: str | None = None, fetched_at: str | None = None) -> str:
     """The panel of buttons and status that drives the data layer.
 
     On the list page it runs the daily sync and fetches documents for the
@@ -690,7 +732,11 @@ def _control_panel(number: str | None = None) -> str:
     <button class="btn" data-job="documents" data-download="1" title="List the ticked cases' documents and download any PDFs not on disk yet">Fetch documents</button>
     <button class="btn btn-quiet" data-job="documents" data-download="0" title="Refresh the ticked cases' document lists without downloading PDFs">Update lists</button>
     <span class="picked-count" id="picked-count"></span>"""
-    data_number = f' data-number="{_e(number)}"' if number else ""
+    # On a case page the status line reports that case's last fetch, not the
+    # app's; the attribute is there (empty) even when it was never fetched.
+    data_number = (
+        f' data-number="{_e(number)}" data-fetched-at="{_e(fetched_at or "")}"' if number else ""
+    )
     return f"""<div class="notice" id="offline-notice" hidden>
   <strong>These buttons are switched off</strong> because this page was opened
   straight from disk. Double-click <code>ITC Tracker.bat</code> (or run
@@ -763,10 +809,13 @@ def render_index(
     schema: ui_schema.Schema,
     *,
     document_counts: dict[str, int] | None = None,
+    fetched_at: dict[str, str] | None = None,
     counsel: dict[str, Any] | None = None,
     meta: dict[str, Any] | None = None,
 ) -> str:
+    """`fetched_at` is when each case's documents were last fetched."""
     document_counts = document_counts or {}
+    fetched_at = fetched_at or {}
     counsel = counsel or {}
     meta = meta or {}
     columns = schema.index_columns
@@ -793,7 +842,10 @@ def render_index(
     row_html = []
     for case in rows:
         number = str(case.get("investigation_number") or "")
-        extra = {"document_count": document_counts.get(number, 0)}
+        extra = {
+            "document_count": document_counts.get(number, 0),
+            "documents_fetched_at": fetched_at.get(number),
+        }
         href = f"investigations/{slug_for(number)}.html"
         cells = []
         for column in columns:
@@ -805,7 +857,7 @@ def render_index(
         cells = [f"<td>{cell}</td>" for cell in cells]
         pick = (
             f'<td class="pick"><input type="checkbox" class="pick-case" value="{_e(number)}" '
-            f'aria-label="Select {_e(number)}"></td>'
+            f'data-fetched="{_e(fetched_at.get(number) or "")}" aria-label="Select {_e(number)}"></td>'
         )
         row_html.append(
             f"""<tr data-search="{_search_blob(case, counsel.get(number))}" data-status="{_e(_filter_status(case))}">
@@ -1086,7 +1138,9 @@ def _parties_section(
 </div>"""
 
 
-def _documents_section(section: ui_schema.Section, documents: list[dict[str, Any]]) -> str:
+def _documents_section(
+    section: ui_schema.Section, documents: list[dict[str, Any]], fetched_at: str | None = None
+) -> str:
     def sort_key(doc: dict[str, Any]) -> str:
         return dates.sort_key(doc.get("document_date") or doc.get("official_received_date"))
 
@@ -1122,8 +1176,13 @@ def _documents_section(section: ui_schema.Section, documents: list[dict[str, Any
             )
         rows = "".join(parts)
 
+    fetched = (
+        f' <span class="heading-note">&middot; last fetched {_stamp(fetched_at)}</span>'
+        if fetched_at
+        else ""
+    )
     return f"""<div class="section-block">
-  <h2>{_e(section.title)} ({len(docs_sorted)})</h2>
+  <h2>{_e(section.title)} ({len(docs_sorted)}){fetched}</h2>
   <div class="card">
     <table class="list">
       <thead>
@@ -1148,7 +1207,9 @@ def render_detail(
     schema: ui_schema.Schema,
     *,
     counsel: dict[str, Any] | None = None,
+    fetched_at: str | None = None,
 ) -> str:
+    """`fetched_at` is when this case's documents were last fetched."""
     number = case.get("investigation_number")
     # What a stage block compares against the primary stage: the field
     # sections, and the parties section as its bare name lists.
@@ -1157,7 +1218,7 @@ def render_detail(
         for s in schema.sections
         if s.kind in ("fields", "parties")
     ]
-    extra = {"document_count": len(documents)}
+    extra = {"document_count": len(documents), "documents_fetched_at": fetched_at}
 
     blocks = []
     for section in schema.sections:
@@ -1168,7 +1229,7 @@ def render_detail(
         elif section.kind == "stages":
             blocks.append(_stages_section(section, case, field_sections))
         elif section.kind == "documents":
-            blocks.append(_documents_section(section, documents))
+            blocks.append(_documents_section(section, documents, fetched_at))
 
     stage_badge = (
         f'<span class="phase-chip">{case["stage_count"]} stages</span>'
@@ -1197,7 +1258,7 @@ def render_detail(
   </div>
 </div>
 {withdrawn_notice}
-{_control_panel(str(number or ""))}
+{_control_panel(str(number or ""), fetched_at)}
 {''.join(block for block in blocks if block)}
 <p class="footer-note">
   Investigation {_e(number)} &middot; case information from the IDS investigations

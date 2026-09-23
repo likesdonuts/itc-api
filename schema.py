@@ -35,10 +35,12 @@ from typing import Any, Iterable
 
 from datalayer.config import SCHEMA_PATH
 
-FIELD_TYPES = {"text", "long_text", "date", "bool", "list", "mono", "number", "status", "case_link"}
+FIELD_TYPES = {
+    "text", "long_text", "date", "datetime", "bool", "list", "mono", "number", "status", "case_link",
+}
 
 # Values the UI layer supplies itself rather than reading from a case record.
-RENDER_EXTRAS = {"document_count"}
+RENDER_EXTRAS = {"document_count", "documents_fetched_at"}
 
 SECTION_KINDS = {"fields", "stages", "documents", "parties"}
 STAGE_CHOICES = {"primary", "current"}

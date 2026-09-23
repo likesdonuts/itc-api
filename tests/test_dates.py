@@ -89,6 +89,16 @@ class TestDisplay(unittest.TestCase):
         self.assertEqual(dates.format_ui(None), "Unknown")
         self.assertEqual(dates.format_ui(""), "Unknown")
 
+    def test_app_timestamps_show_date_and_local_time(self):
+        stamp = "2026-09-23T17:42:14.123456+00:00"
+        local = datetime.fromisoformat(stamp).astimezone()
+        self.assertEqual(
+            dates.format_ui_time(stamp),
+            f"{local.day:02d} {local.strftime('%b')} {local.year}, {local:%H:%M}",
+        )
+        self.assertEqual(dates.format_ui_time("unknown"), "unknown")
+        self.assertEqual(dates.format_ui_time(None), "Unknown")
+
     def test_sorting_works_across_shapes(self):
         values = ["2026/08/21 16:25:00", "01-13-2026", "2026-09-18T12:00:00+00:00", "04-27-2026"]
         self.assertEqual(
