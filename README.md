@@ -77,6 +77,33 @@ Tokens come from <https://edis.usitc.gov> → profile → API Token Generator, a
 they expire; when one does, the documents command stops with an `AUTH ERROR`
 telling you to generate a new one. Everything else keeps working without it.
 
+## Using the app
+
+Double-click **`ITC Tracker.bat`** (a desktop shortcut to it works too). It
+starts the app and opens it in your browser; if the app is already running it
+just opens another tab. Keep its window open while you work, and close it to
+stop.
+
+The panel at the top of the list page does the day's work:
+
+- **Run daily sync** downloads today's case data, then re-lists the documents
+  of every case whose documents you have collected before and downloads only
+  their Notice of Appearance PDFs, then rebuilds attorneys and pages.
+- **Tick cases** in the list, then **Fetch documents** (lists and downloads
+  every PDF not on disk yet) or **Update lists** (lists only, no downloads).
+- Each case's own page has the same **Fetch documents** / **Update list**
+  buttons for that case.
+
+Its status line says whether today's sync has run, which day's case data is
+loaded, when documents were last fetched, and when the EDIS token expires. A
+job runs in the background with its progress shown on the page, one at a time,
+and the page reloads onto the new data when it finishes. The token is read
+when a job starts, so after pasting a new one into `.env` there is nothing to
+restart.
+
+Everything below is what those buttons run, for when you want a step on its
+own from the command line.
+
 ## Commands
 
 | Command | Network | What it does |
@@ -88,15 +115,16 @@ telling you to generate a new one. Everything else keeps working without it.
 | `python cli.py docs 337-1478 --appearances` | EDIS | Lists every document but downloads only the Notice of Appearance PDFs. |
 | `python cli.py counsel` | none | Process 3. Rebuilds who represents whom from the documents on disk. Runs by itself after `sync`, `parse`, `docs` and `refresh`. |
 | `python cli.py render` | none | UI layer. Rebuilds `site/` from `data/` and `ui_schema.json`. |
-| `python cli.py serve` | localhost | Serves the site so its Update / Fetch docs buttons work. |
+| `python cli.py serve` | localhost | Opens the app (what `ITC Tracker.bat` runs): the site plus its buttons. |
 | `python cli.py fields` | none | Lists every field name `ui_schema.json` can use, with samples. |
 | `python cli.py status` | none | Which snapshot is current, which cases have documents, and the last few syncs. |
 | `python cli.py normalize` | none | Rewrites stored document dates to ISO 8601 in place. |
 | `python cli.py refresh` | IDS + EDIS | The daily job: sync, re-fetch documents already on disk, render. |
 
-Windows users can double-click `sync.bat`, `docs.bat` (it prompts for numbers),
-`render.bat`, `serve.bat`, or `run.bat` (full refresh). `discover` and `update`
-still work as the old names for `sync` and `docs`.
+Besides `ITC Tracker.bat`, Windows users can double-click `sync.bat`,
+`docs.bat` (it prompts for numbers), `render.bat`, `serve.bat`, or `run.bat`
+(full refresh). `discover` and `update` still work as the old names for `sync`
+and `docs`.
 
 ### Process 1: the daily IDS sync
 
@@ -319,29 +347,31 @@ complaint is instituted, IDS lists it under a real number that keeps the docket
 as a field (`337-1521`, docket `3936`). The sync notices that, and moves the
 documents and PDFs already downloaded for `337-3936` onto the new number.
 
-### Updating a case from the page
+### The app's server (`server.py`)
 
-```
-python cli.py serve
-```
+`ITC Tracker.bat` runs `python cli.py serve`, which serves the site on
+<http://127.0.0.1:8765> and runs the page's buttons as background jobs:
 
-This serves the site on <http://127.0.0.1:8765> and gives the two buttons on
-each row of the list page something to call:
+| Endpoint | What it does |
+| --- | --- |
+| `POST /api/jobs` `{"kind": "daily"}` | sync, then documents (appearance PDFs only) for cases already collected, then counsel and render |
+| `POST /api/jobs` `{"kind": "documents", "numbers": [...], "download": true}` | the documents process for those cases, with or without PDFs, then counsel and render |
+| `GET /api/jobs/current` | the running or last job: its state, its outcome, and the tail of its log |
+| `GET /api/status` | the last sync and fetch, and the token's expiry, from `state.json` and `.env` |
 
-- **Update** refreshes that case's document list from EDIS, without
-  downloading any PDFs.
-- **Fetch docs** refreshes the list and also downloads any PDFs missing from
-  `data/documents/`.
+A job refuses to start, with the reason on the page, when another is running,
+when a case number is not on disk, or when a documents job has no token or an
+expired one. The daily job still updates case data without a token and says
+the documents were skipped. The console window shows the full log of every
+job.
 
-Both run the same documents process as `python cli.py docs`, with downloads off
-or on, and neither touches case information. The row reports what happened and
-the page reloads onto the freshly rendered data. One action runs at a time.
-Opened straight from disk (`file://`) the buttons are disabled and the page
-says why, since nothing is listening.
+Opened straight from disk (`file://`), the pages still read fine, but the
+buttons are disabled and the page says how to start the app, since nothing is
+listening.
 
-Only `site/` and `data/documents/` are reachable over HTTP; the document root
-has to be the directory above them so the PDF links resolve, and `.env` lives
-there.
+Only `site/`, `data/documents/` and `/api/` are reachable over HTTP; the
+document root has to be the directory above them so the PDF links resolve, and
+`.env` lives there.
 
 ## Dates
 

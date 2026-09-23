@@ -3,7 +3,8 @@
 What appears on a page is not decided here: `ui_schema.json` lists the
 sections, labels and IDS field names, and this module renders whatever it
 says (see schema.py). The only things hard-coded are the page furniture --
-the hero, the stage table, the EDIS documents table and the row buttons.
+the hero, the stage table, the EDIS documents table and the control panel
+that drives the local server (server.py).
 """
 
 from __future__ import annotations
@@ -137,7 +138,7 @@ table.list thead th {
   background: var(--surface-2);
   border-bottom: 1px solid var(--border);
 }
-table.list td:first-child { min-width: 230px; }
+table.list td:first-child:not(.pick) { min-width: 230px; }
 /* Column count comes from the schema, so let a wide table scroll inside its
    card rather than squeezing the case name into one word per line. */
 .table-wrap { overflow-x: auto; }
@@ -178,7 +179,6 @@ table.list tbody tr[hidden] { display: none; }
   padding: 0.05rem 0.3rem;
   font-size: 0.82rem;
 }
-td.actions { white-space: nowrap; }
 .btn {
   font: inherit;
   font-size: 0.78rem;
@@ -196,15 +196,6 @@ td.actions { white-space: nowrap; }
 .btn:hover:not(:disabled) { filter: brightness(1.06); }
 .btn.btn-quiet:hover:not(:disabled) { border-color: var(--accent); color: var(--accent); }
 .btn:disabled { opacity: 0.45; cursor: not-allowed; }
-.action-status {
-  display: block;
-  margin-top: 0.3rem;
-  font-size: 0.74rem;
-  color: var(--muted);
-  white-space: normal;
-}
-.action-status.done { color: var(--green-fg); font-weight: 600; }
-.action-status.failed { color: var(--amber-fg); }
 .empty-state, .no-results {
   padding: 3rem 1rem;
   text-align: center;
@@ -301,6 +292,35 @@ table.list .attachments a:last-child { margin-bottom: 0; }
 .attorneys summary { display: inline; cursor: pointer; color: var(--accent); }
 .pill-lead { font-size: 0.66rem; padding: 0.08rem 0.45rem; margin-left: 0.2rem; vertical-align: 0.08em; }
 .no-counsel { font-size: 0.85rem; color: var(--muted); font-style: italic; }
+.panel { padding: 0.9rem 1.1rem; margin-bottom: 1.1rem; }
+.panel-status { display: flex; flex-wrap: wrap; gap: 0.35rem 1.1rem; font-size: 0.82rem; color: var(--muted); }
+.panel-status .ok { color: var(--green-fg); font-weight: 600; }
+.panel-status .warn { color: var(--amber-fg); font-weight: 600; }
+.panel-actions { display: flex; flex-wrap: wrap; gap: 0.5rem; align-items: center; margin-top: 0.75rem; }
+.panel-actions .btn { margin-right: 0; font-size: 0.84rem; padding: 0.45rem 0.85rem; }
+.panel-actions .divider { width: 1px; align-self: stretch; background: var(--border); margin: 0 0.35rem; }
+.picked-count { font-size: 0.82rem; color: var(--muted); }
+.job { margin-top: 0.85rem; border-top: 1px solid var(--border); padding-top: 0.75rem; }
+.job-head { font-size: 0.86rem; font-weight: 600; display: flex; gap: 0.5rem; align-items: center; flex-wrap: wrap; }
+.job-message { font-size: 0.85rem; margin-top: 0.3rem; }
+.job-message.warn { color: var(--amber-fg); }
+.job-message.error { color: var(--amber-fg); font-weight: 600; }
+.job-log {
+  margin: 0.5rem 0 0;
+  padding: 0.6rem 0.75rem;
+  max-height: 14rem;
+  overflow: auto;
+  background: var(--surface-2);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  font-size: 0.76rem;
+  line-height: 1.45;
+  white-space: pre-wrap;
+  color: var(--muted);
+}
+th.pick, td.pick { width: 2.2rem; padding-right: 0; }
+table.list td.pick + td { min-width: 230px; }
+input.pick-case, #pick-all { width: 1rem; height: 1rem; cursor: pointer; }
 """
 
 
@@ -462,67 +482,230 @@ _INDEX_SCRIPT = """
     });
     if (noResults) noResults.hidden = rows.length === 0 || visible > 0;
     if (shown) shown.textContent = visible;
+    // A filtered-out row stays checked but is not acted on; tell the panel.
+    document.dispatchEvent(new Event('rows-filtered'));
   }
 
   if (search) search.addEventListener('input', apply);
   if (statusFilter) statusFilter.addEventListener('change', apply);
   apply();
 })();
+"""
 
+# The control panel on both pages. It talks to server.py, so opened straight
+# from disk (file://) there is nothing to call: the buttons are disabled and
+# the page says how to start the app instead.
+_CONTROL_SCRIPT = """
 (function () {
-  // The row buttons call the local server from cli.py serve. Opened straight
-  // off disk there is nothing listening, so say so rather than failing later.
-  const buttons = Array.from(document.querySelectorAll('button[data-action]'));
-  if (location.protocol === 'file:') {
+  const panel = document.getElementById('control-panel');
+  if (!panel) return;
+  const buttons = Array.from(panel.querySelectorAll('button[data-job]'));
+  const picks = Array.from(document.querySelectorAll('input.pick-case'));
+  const pickAll = document.getElementById('pick-all');
+  const count = document.getElementById('picked-count');
+  const statusEl = document.getElementById('panel-status');
+  const jobBox = document.getElementById('job');
+  const offline = location.protocol === 'file:';
+  const MONTHS = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
+  let running = false;
+
+  function when(iso, withTime) {
+    if (!iso) return 'never';
+    // A bare day ("2026-09-23") is a calendar date, not midnight UTC -- which
+    // would show as the day before anywhere west of Greenwich.
+    const day = /^(\\d{4})-(\\d{2})-(\\d{2})$/.exec(iso);
+    const d = day ? new Date(+day[1], +day[2] - 1, +day[3]) : new Date(iso);
+    if (isNaN(d)) return iso;
+    let text = d.getDate() + ' ' + MONTHS[d.getMonth()] + ' ' + d.getFullYear();
+    if (withTime !== false) {
+      text += ', ' + String(d.getHours()).padStart(2, '0') + ':' + String(d.getMinutes()).padStart(2, '0');
+    }
+    return text;
+  }
+  function sameDay(a, b) {
+    return a.getFullYear() === b.getFullYear() && a.getMonth() === b.getMonth() && a.getDate() === b.getDate();
+  }
+  function selected() {
+    if (panel.dataset.number) return [panel.dataset.number];
+    return picks.filter(function (p) { return p.checked && !p.closest('tr').hidden; })
+                .map(function (p) { return p.value; });
+  }
+  function refresh() {
+    const n = selected().length;
+    buttons.forEach(function (b) {
+      b.disabled = offline || running || (b.dataset.job === 'documents' && n === 0);
+    });
+    if (count) count.textContent = n ? n + (n === 1 ? ' case selected' : ' cases selected') : 'Tick cases below to fetch their documents';
+    if (pickAll) {
+      const shown = picks.filter(function (p) { return !p.closest('tr').hidden; });
+      pickAll.checked = shown.length > 0 && shown.every(function (p) { return p.checked; });
+    }
+  }
+  picks.forEach(function (p) { p.addEventListener('change', refresh); });
+  if (pickAll) {
+    pickAll.addEventListener('change', function () {
+      picks.forEach(function (p) { if (!p.closest('tr').hidden) p.checked = pickAll.checked; });
+      refresh();
+    });
+  }
+  document.addEventListener('rows-filtered', refresh);
+
+  function item(text, cls) {
+    const span = document.createElement('span');
+    span.textContent = text;
+    if (cls) span.className = cls;
+    return span;
+  }
+
+  if (offline) {
     const notice = document.getElementById('offline-notice');
     if (notice) notice.hidden = false;
-    buttons.forEach(function (button) {
-      button.disabled = true;
-      button.title = 'Start the local server first: python cli.py serve';
-    });
+    statusEl.replaceChildren(item('Opened from disk: start the app to use these buttons', 'warn'));
+    refresh();
     return;
   }
 
-  function setBusy(busy) {
-    buttons.forEach(function (button) { button.disabled = busy; });
+  function showStatus(s) {
+    const parts = [];
+    const sync = s.sync || {};
+    if (sync.finished_at && sameDay(new Date(sync.finished_at), new Date())) {
+      parts.push(item('\\u2713 Synced today at ' + when(sync.finished_at).split(', ')[1], 'ok'));
+    } else {
+      parts.push(item(sync.finished_at ? "Today's sync has not run yet (last " + when(sync.finished_at) + ')' : 'Never synced', 'warn'));
+    }
+    if (sync.snapshot) parts.push(item('Case data from ' + when(sync.snapshot, false)));
+    parts.push(item('Documents last fetched ' + when((s.documents || {}).finished_at)));
+    const token = s.token || {};
+    if (token.state === 'missing') {
+      parts.push(item('No EDIS token in .env', 'warn'));
+    } else if (token.state === 'expired') {
+      parts.push(item('EDIS token expired ' + when(token.expires_at), 'warn'));
+    } else if (token.expires_at) {
+      const hours = (new Date(token.expires_at) - new Date()) / 36e5;
+      parts.push(item('EDIS token valid until ' + when(token.expires_at), hours < 48 ? 'warn' : ''));
+    }
+    statusEl.replaceChildren.apply(statusEl, parts);
   }
 
-  buttons.forEach(function (button) {
-    button.addEventListener('click', function () {
-      const row = button.closest('tr');
-      const status = row.querySelector('.action-status');
-      const withDocuments = button.dataset.action === 'fetch-docs';
-      setBusy(true);
-      status.hidden = false;
-      status.className = 'action-status';
-      status.textContent = withDocuments ? 'Fetching documents...' : 'Updating...';
+  function showJob(job) {
+    if (!job) return;
+    jobBox.hidden = false;
+    document.getElementById('job-title').textContent = job.label;
+    const state = document.getElementById('job-state');
+    const message = document.getElementById('job-message');
+    if (job.state === 'running') {
+      state.className = 'pill pill-blue';
+      state.textContent = 'Running\\u2026';
+      message.textContent = '';
+      message.className = 'job-message';
+    } else {
+      state.className = 'pill ' + (job.level === 'ok' ? 'pill-green' : 'pill-amber');
+      state.textContent = job.level === 'ok' ? 'Done' : (job.level === 'warn' ? 'Done, with warnings' : 'Failed');
+      message.textContent = job.message;
+      message.className = 'job-message ' + job.level;
+    }
+    const log = document.getElementById('job-log');
+    log.textContent = (job.lines || []).join('\\n');
+    log.scrollTop = log.scrollHeight;
+  }
 
-      fetch('api/update', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ number: button.dataset.number, documents: withDocuments })
-      }).then(function (response) {
-        return response.json().then(function (result) {
-          if (!response.ok || !result.ok) {
-            throw new Error(result.message || ('HTTP ' + response.status));
-          }
-          return result;
-        });
-      }).then(function (result) {
-        // Hold the outcome on screen long enough to read before the page
-        // reloads onto the freshly rendered data.
-        status.className = 'action-status done';
-        status.textContent = result.message;
-        setTimeout(function () { location.reload(); }, 1500);
-      }).catch(function (error) {
-        status.className = 'action-status failed';
-        status.textContent = 'Failed: ' + error.message;
-        setBusy(false);
+  function poll() {
+    setTimeout(function () {
+      fetch('/api/jobs/current').then(function (r) { return r.json(); }).then(function (body) {
+        showJob(body.job);
+        if (body.job && body.job.state === 'running') return poll();
+        running = false;
+        if (body.job && body.job.level === 'ok') {
+          // Reload onto the freshly rendered pages; the result shows again after.
+          setTimeout(function () { location.reload(); }, 1500);
+        } else {
+          refresh();
+          fetch('/api/status').then(function (r) { return r.json(); }).then(showStatus);
+        }
+      }).catch(function () { poll(); });
+    }, 1000);
+  }
+
+  function start(body) {
+    running = true;
+    refresh();
+    fetch('/api/jobs', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(body)
+    }).then(function (response) {
+      return response.json().then(function (result) {
+        if (!response.ok || !result.ok) throw new Error(result.message || ('HTTP ' + response.status));
+        showJob(result.job);
+        poll();
       });
+    }).catch(function (error) {
+      running = false;
+      showJob({ label: 'Could not start', state: 'done', level: 'error', message: error.message, lines: [] });
+      refresh();
+    });
+  }
+
+  buttons.forEach(function (b) {
+    b.addEventListener('click', function () {
+      if (b.dataset.job === 'daily') start({ kind: 'daily' });
+      else start({ kind: 'documents', numbers: selected(), download: b.dataset.download === '1' });
     });
   });
+
+  fetch('/api/status').then(function (r) { return r.json(); }).then(function (s) {
+    showStatus(s);
+    const job = s.job;
+    if (job && job.state === 'running') {
+      running = true;
+      showJob(job);
+      poll();
+    } else if (job && job.finished_at && (new Date() - new Date(job.finished_at)) < 120000) {
+      showJob(job);  // the outcome of the job that just reloaded this page
+    }
+    refresh();
+  }).catch(function () {
+    statusEl.replaceChildren(item('Cannot reach the app. Is its window still open?', 'warn'));
+    buttons.forEach(function (b) { b.disabled = true; });
+  });
+  refresh();
 })();
 """
+
+
+def _control_panel(number: str | None = None) -> str:
+    """The panel of buttons and status that drives the data layer.
+
+    On the list page it runs the daily sync and fetches documents for the
+    ticked rows; on a case page (`number`) it fetches for that case alone.
+    """
+    if number:
+        actions = f"""
+    <button class="btn" data-job="documents" data-download="1" title="List this case's documents and download any PDFs not on disk yet">Fetch documents</button>
+    <button class="btn btn-quiet" data-job="documents" data-download="0" title="Refresh the document list without downloading PDFs">Update list</button>"""
+    else:
+        actions = """
+    <button class="btn" data-job="daily" title="Download today's case data, refresh the documents and attorneys of cases already collected, and rebuild the pages">Run daily sync</button>
+    <span class="divider"></span>
+    <button class="btn" data-job="documents" data-download="1" title="List the ticked cases' documents and download any PDFs not on disk yet">Fetch documents</button>
+    <button class="btn btn-quiet" data-job="documents" data-download="0" title="Refresh the ticked cases' document lists without downloading PDFs">Update lists</button>
+    <span class="picked-count" id="picked-count"></span>"""
+    data_number = f' data-number="{_e(number)}"' if number else ""
+    return f"""<div class="notice" id="offline-notice" hidden>
+  <strong>These buttons are switched off</strong> because this page was opened
+  straight from disk. Double-click <code>ITC Tracker.bat</code> (or run
+  <code>python cli.py serve</code>) and use the page it opens.
+</div>
+<div class="card panel" id="control-panel"{data_number}>
+  <div class="panel-status" id="panel-status"><span>Checking status&hellip;</span></div>
+  <div class="panel-actions">{actions}
+  </div>
+  <div class="job" id="job" hidden>
+    <div class="job-head"><span id="job-title"></span><span id="job-state"></span></div>
+    <div class="job-message" id="job-message"></div>
+    <pre class="job-log" id="job-log"></pre>
+  </div>
+</div>"""
 
 _DETAIL_SCRIPT = """
 (function () {
@@ -620,14 +803,13 @@ def render_index(
         if case.get("withdrawn"):
             cells[0] += f" {WITHDRAWN_PILL}"
         cells = [f"<td>{cell}</td>" for cell in cells]
+        pick = (
+            f'<td class="pick"><input type="checkbox" class="pick-case" value="{_e(number)}" '
+            f'aria-label="Select {_e(number)}"></td>'
+        )
         row_html.append(
             f"""<tr data-search="{_search_blob(case, counsel.get(number))}" data-status="{_e(_filter_status(case))}">
-  {''.join(cells)}
-  <td class="actions">
-    <button class="btn" data-action="update" data-number="{_e(number)}" title="Refresh this case's document list from EDIS, without downloading PDFs">Update</button>
-    <button class="btn btn-quiet" data-action="fetch-docs" data-number="{_e(number)}" title="Refresh the document list and download any missing PDFs">Fetch docs</button>
-    <span class="action-status" hidden></span>
-  </td>
+  {pick}{''.join(cells)}
 </tr>"""
         )
 
@@ -650,12 +832,7 @@ def render_index(
   </div>
   <div class="stats">{stats_html}</div>
 </div>
-<div class="notice" id="offline-notice" hidden>
-  <strong>Update and Fetch docs are switched off</strong> because this page was opened
-  straight from disk, where it has no way to reach EDIS. Run
-  <code>python cli.py serve</code> (or double-click <code>serve.bat</code>) and use the
-  page it opens to enable them.
-</div>
+{_control_panel()}
 <div class="toolbar">
   <input type="search" id="search" placeholder="Search by case name, number, party, firm, attorney&hellip;">
   <select id="status-filter">
@@ -668,8 +845,8 @@ def render_index(
     <table class="list">
       <thead>
         <tr>
+          <th class="pick"><input type="checkbox" id="pick-all" aria-label="Select every case shown"></th>
           {header_html}
-          <th>Actions</th>
         </tr>
       </thead>
       <tbody>
@@ -684,7 +861,7 @@ def render_index(
   Showing <span id="shown-count">{len(rows)}</span> of {len(rows)} investigation(s) &middot; {provenance}
 </p>
 """
-    return _page("ITC 337 Investigations", body, script=_INDEX_SCRIPT)
+    return _page("ITC 337 Investigations", body, script=_INDEX_SCRIPT + _CONTROL_SCRIPT)
 
 
 def _stage_label(stage: dict[str, Any]) -> str:
@@ -918,9 +1095,8 @@ def _documents_section(section: ui_schema.Section, documents: list[dict[str, Any
     if not docs_sorted:
         rows = ""
         empty = (
-            '<div class="empty-state">No documents fetched yet. Use the '
-            "<strong>Fetch docs</strong> button on the list page, or run "
-            "<code>python cli.py docs &lt;number&gt;</code>.</div>"
+            '<div class="empty-state">No documents fetched yet. Use '
+            "<strong>Fetch documents</strong> at the top of this page.</div>"
         )
     else:
         empty = ""
@@ -1021,10 +1197,15 @@ def render_detail(
   </div>
 </div>
 {withdrawn_notice}
+{_control_panel(str(number or ""))}
 {''.join(block for block in blocks if block)}
 <p class="footer-note">
   Investigation {_e(number)} &middot; case information from the IDS investigations
   feed &middot; IDS snapshot {_date(case.get('ids_snapshot'))}
 </p>
 """
-    return _page(f"{case.get('title') or number} - Investigation", body, script=_DETAIL_SCRIPT)
+    return _page(
+        f"{case.get('title') or number} - Investigation",
+        body,
+        script=_DETAIL_SCRIPT + _CONTROL_SCRIPT,
+    )
