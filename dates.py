@@ -119,6 +119,26 @@ def format_ui(value: Any, fallback: str = "Unknown") -> str:
     return f"{parsed.day:02d} {_MONTH_NAMES[parsed.month - 1]} {parsed.year:04d}"
 
 
+def format_ui_time(value: Any, fallback: str = "Unknown") -> str:
+    """Render a moment the app itself recorded as "23 Sep 2026, 13:42".
+
+    Those are UTC timestamps with an offset ("2026-09-23T17:42:14+00:00"),
+    so unlike the feeds' dates they are shown in this computer's local time,
+    which is when you did it.
+    """
+    text = str(value or "").strip()
+    try:
+        moment = datetime.fromisoformat(text)
+    except ValueError:
+        return format_ui(value, fallback)
+    if moment.tzinfo is not None:
+        moment = moment.astimezone()
+    return (
+        f"{moment.day:02d} {_MONTH_NAMES[moment.month - 1]} {moment.year:04d}, "
+        f"{moment.hour:02d}:{moment.minute:02d}"
+    )
+
+
 def sort_key(value: Any) -> str:
     """Chronological ordering that works across every stored shape."""
     parsed = parse(value)

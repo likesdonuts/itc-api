@@ -53,6 +53,14 @@ def render_site(
             skipped.append(number)
 
     document_counts = {number: len(docs) for number, docs in store.documents.items()}
+    # When each case's documents were last fetched. Cases fetched before the
+    # app recorded that have documents but no time, which is worth saying
+    # rather than leaving blank like a case never fetched.
+    fetched_at = {
+        number: (store.documents_state.get(number) or {}).get("fetched_at") or "unknown"
+        for number, docs in store.documents.items()
+        if docs
+    }
     meta = {"snapshot_day": (store.state.get("runs", {}).get("ingest") or {}).get("snapshot")}
 
     index_path = site_dir / "index.html"
@@ -62,6 +70,7 @@ def render_site(
             list(cases.values()),
             schema,
             document_counts=document_counts,
+            fetched_at=fetched_at,
             counsel=store.counsel,
             meta=meta,
         ),
@@ -77,6 +86,7 @@ def render_site(
                 store.documents.get(number, []),
                 schema,
                 counsel=store.counsel.get(number),
+                fetched_at=fetched_at.get(number),
             ),
         )
         written.add(page)

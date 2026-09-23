@@ -95,7 +95,15 @@ The panel at the top of the list page does the day's work:
   buttons for that case.
 
 Its status line says whether today's sync has run, which day's case data is
-loaded, when documents were last fetched, and when the EDIS token expires. A
+loaded, when documents were last fetched, and when the EDIS token expires.
+
+Every case also shows when **its own** documents were last fetched: the
+**Docs fetched** column on the list, and the status line and Documents heading
+on its page, in green when that was today. Tick cases that were already
+fetched today and the panel says so ("3 cases selected · 2 fetched today"),
+so a case that is already current isn't fetched again by accident. Cases
+fetched before the app kept these times show "unknown" until their next
+fetch. A
 job runs in the background with its progress shown on the page, one at a time,
 and the page reloads onto the new data when it finishes. The token is read
 when a job starts, so after pasting a new one into `.env` there is nothing to
@@ -317,8 +325,9 @@ A section's `kind` is `fields` (a grid of the fields below), `parties` (the
 parties grouped with their counsel, with `roles` as `{label, role}` pairs),
 `stages` or `documents`.
 
-- `type` -- `text`, `mono`, `long_text`, `date`, `bool`, `number`, `list`,
-  `status` or `case_link`
+- `type` -- `text`, `mono`, `long_text`, `date`, `datetime` (a time the app
+  recorded, shown in local time), `bool`, `number`, `list`, `status` or
+  `case_link`
 - `stage` -- `primary` (default) or `current`
 - `where` -- keep only list items matching these values
 - `item` -- which part of a list item to show (default `label`)

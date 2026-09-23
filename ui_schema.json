@@ -5,7 +5,7 @@
     "re-run 'python cli.py render' -- no re-fetching, no code changes.",
     "",
     "Each field is {label, source, type} plus optional keys:",
-    "  type    text | mono | long_text | date | bool | number | list | status | case_link",
+    "  type    text | mono | long_text | date | datetime | bool | number | list | status | case_link",
     "  stage   primary (the Violation phase, default) or current (the newest stage)",
     "  where   keep only list items matching these values, e.g. {\"role\": \"Complainant\"}",
     "  item    which part of a list item to show (default \"label\")",
@@ -25,7 +25,8 @@
     { "label": "Instituted", "source": "date_initiated", "type": "date" },
     { "label": "Stages", "source": "stage_count", "type": "number" },
     { "label": "Status", "source": "status", "type": "status" },
-    { "label": "Docs", "source": "document_count", "type": "number" }
+    { "label": "Docs", "source": "document_count", "type": "number" },
+    { "label": "Docs fetched", "source": "documents_fetched_at", "type": "datetime" }
   ],
   "sections": [
     {

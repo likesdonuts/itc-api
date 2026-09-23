@@ -92,6 +92,21 @@ class TestIndexPage(unittest.TestCase):
         self.assertIn("<th>Docs</th>", html)
         self.assertIn(">7<", html)
 
+    def test_each_row_says_when_its_documents_were_last_fetched(self):
+        stamp = "2026-09-23T17:42:14+00:00"
+        html = self.page(case(), fetched_at={"337-1478": stamp})
+        self.assertIn("<th>Docs fetched</th>", html)
+        self.assertIn(f'<time class="mono stamp" datetime="{stamp}">', html)
+        # The checkbox carries it too, for the "already fetched today" count.
+        self.assertIn(f'data-fetched="{stamp}"', html)
+        self.assertIn("fetched today", html)
+
+    def test_a_case_never_fetched_shows_a_dash_not_a_date(self):
+        html = self.page(case())
+        row = html[html.index('<tr data-search') :]
+        self.assertNotIn("<time", row)
+        self.assertIn('data-fetched=""', row)
+
     def test_it_says_which_snapshot_the_page_was_built_from(self):
         html = self.page(case(), meta={"snapshot_day": "2026-09-22"})
         self.assertIn("IDS snapshot 22 Sep 2026", html)
@@ -302,6 +317,17 @@ class TestDetailPage(unittest.TestCase):
         row = re.search(r'data-search="([^"]*)"', html).group(1)
         self.assertIn("firm llp", row)
         self.assertIn("a. lawyer", row)
+
+    def test_the_case_page_reports_its_own_last_fetch(self):
+        stamp = "2026-09-23T17:42:14+00:00"
+        html = templates.render_detail(case(), [], SCHEMA, fetched_at=stamp)
+        self.assertIn(f'data-number="337-1478" data-fetched-at="{stamp}"', html)
+        self.assertIn(f'last fetched <time class="mono stamp" datetime="{stamp}">', html)
+        self.assertIn("This case's documents fetched", html)
+
+        never = templates.render_detail(case(), [], SCHEMA)
+        self.assertIn('data-fetched-at=""', never)
+        self.assertNotIn("last fetched <time", never)
 
     def test_a_case_with_no_documents_says_how_to_fetch_them(self):
         html = self.page()
