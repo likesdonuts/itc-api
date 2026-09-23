@@ -294,6 +294,20 @@ A few rules keep the picture honest:
   "Bas de Blank" are one attorney. A "firm" whose only attorneys all belong to
   a firm that appeared (a filing vendor, a misspelling) folds into that firm.
 
+**Non-parties** -- companies or people subpoenaed into a case -- are never in
+the IDS feed, but their own filings name them: "Notice of Limited Appearance
+of Cooley LLP on Behalf of **Non-Party** Apple, Inc.", "**Non-Party** ABC
+Coke's Unopposed Motion ...". Only filings a non-party makes itself count;
+an order granting its motion, or a party's response to it, merely mentions
+it. Each non-party is then matched like any party, so its counsel is found
+the same way, and the reason it is in the case is read from its notice of
+limited appearance ("for the limited purpose of responding to the subpoena
+... served on September 11, 2026, by Respondents ..."), which gives who
+served the subpoena and when. A non-party with no notice gets its reason
+from its own filings (a motion to quash, public-interest comments). They are
+listed under **Non-Party(s)** on the case page, with the notice's sentence
+and their filings under **Details**, and the list page search finds them.
+
 Party names are matched loosely, so accents, punctuation and small typos
 ("Samsung Electronic Co., Ltd.") still match, but one company cannot pass for
 its sister ("Samsung Electronics America"). A firm whose parties match no IDS
