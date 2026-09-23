@@ -34,7 +34,6 @@ from .flatten import flatten_row
 # that happen afterwards.
 PRIMARY_PHASE = "Violation"
 
-RSS_SOURCE = "rss"
 IDS_SOURCE = "ids"
 
 
@@ -135,42 +134,6 @@ def build_cases(
     return {
         number: build_case(number, group, snapshot_day=snapshot_day)
         for number, group in sorted(grouped.items())
-    }
-
-
-def rss_placeholder(docket: str, entry: dict[str, Any]) -> dict[str, Any]:
-    """A complaint the RSS feed has seen but IDS has not listed yet.
-
-    IDS does carry pre-institution dockets (as "337-3936", status
-    "Pre-institution"), but only after its next daily rebuild, so the feed
-    can be a day ahead of it. This keeps such a docket on the site in the
-    meantime, and it is replaced by the real record on the next sync.
-    """
-    published = sorted(
-        filter(
-            None,
-            (
-                dates.to_iso(doc.get("pub_date_iso") or doc.get("pub_date"))
-                for doc in (entry.get("documents") or {}).values()
-            ),
-        )
-    )
-    return {
-        "investigation_number": docket,
-        "title": f"Complaint {docket} (not in the IDS feed yet)",
-        "docket_number": docket.split("-")[-1],
-        "status": "Pre-institution",
-        "phase": None,
-        "date_initiated": published[0] if published else None,
-        "date_ended": None,
-        "phases": [],
-        "stage_count": 0,
-        "primary_stage": None,
-        "current_stage": None,
-        "source": RSS_SOURCE,
-        "ids_snapshot": None,
-        "ids_synced_at": _now(),
-        "stages": [],
     }
 
 

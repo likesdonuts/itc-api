@@ -3,7 +3,7 @@
 The work is split into two independent layers so that changing how the site
 looks never means re-fetching anything:
 
-  Data layer (datalayer/)  -- talks to IDS/EDIS/RSS, writes data/*.json + PDFs
+  Data layer (datalayer/)  -- talks to IDS and EDIS, writes data/ + PDFs
   UI layer   (ui/)         -- reads data/*.json + ui_schema.json, writes site/
 
 and the data layer has two separate processes over two separate sources:
@@ -33,7 +33,7 @@ import sys
 from pathlib import Path
 
 import schema as ui_schema
-from datalayer import docs, feed, ids, ingest, normalize
+from datalayer import docs, ids, ingest, normalize
 from datalayer.config import DATA_DIR, IDS_DIR, MissingTokenError, SCHEMA_PATH, SITE_DIR, load_token
 from datalayer.runner import ProcessAborted
 from datalayer.store import Store
@@ -81,14 +81,12 @@ def build_parser() -> argparse.ArgumentParser:
         default=ids.DEFAULT_KEEP,
         help=f"snapshots to keep on disk (default {ids.DEFAULT_KEEP}, 0 keeps all)",
     )
-    p_sync.add_argument("--no-rss", action="store_true", help="skip the EDIS complaint RSS feed")
     _add_removals_flag(p_sync)
     _add_render_flag(p_sync)
 
     p_parse = sub.add_parser(
         "parse", help="rebuild cases from the newest stored snapshot (offline, no download)"
     )
-    p_parse.add_argument("--no-rss", action="store_true", help="ignore dockets logged from RSS")
     _add_removals_flag(p_parse)
     _add_render_flag(p_parse)
 
@@ -156,14 +154,11 @@ def _render(args: argparse.Namespace, store: Store) -> None:
 
 
 def cmd_sync(args: argparse.Namespace, store: Store) -> int:
-    if not args.no_rss:
-        feed.run(store)
     report = ingest.run(
         store,
         ids_dir=args.ids_dir,
         force=args.force,
         keep=args.keep,
-        use_rss=not args.no_rss,
         allow_removals=args.allow_removals,
         log=print,
     )
@@ -184,7 +179,6 @@ def cmd_parse(args: argparse.Namespace, store: Store) -> int:
         store,
         ids_dir=args.ids_dir,
         offline=True,
-        use_rss=not args.no_rss,
         allow_removals=args.allow_removals,
     )
     print(f"\nParsed {report.cases} investigation(s) from snapshot {report.snapshot_day}.")
@@ -332,7 +326,6 @@ def cmd_status(args: argparse.Namespace, store: Store) -> int:
 
 
 def cmd_refresh(args: argparse.Namespace, store: Store) -> int:
-    feed.run(store)
     report = ingest.run(store, ids_dir=args.ids_dir)
 
     if not args.no_documents:

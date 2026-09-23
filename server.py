@@ -83,7 +83,6 @@ class Controller:
             return HTTPStatus.OK, {
                 "ok": True,
                 "key": result.key,
-                "source": result.source,
                 "documents": result.document_count,
                 "downloaded": result.downloaded,
                 "message": message,

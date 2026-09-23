@@ -10,7 +10,6 @@ from treading on each other:
     investigations.json   the IDS ingest (cases, stages, parties)
     documents_index.json  the EDIS documents process
     documents_state.json  the EDIS documents process (its own bookkeeping)
-    rss_log.json          the RSS feed check
     state.json            every process, one entry each
 """
 
@@ -30,7 +29,6 @@ from .config import DATA_DIR, DOCS_DIR
 INVESTIGATIONS_FILE = "investigations.json"
 DOCUMENTS_INDEX_FILE = "documents_index.json"
 DOCUMENTS_STATE_FILE = "documents_state.json"
-RSS_LOG_FILE = "rss_log.json"
 STATE_FILE = "state.json"
 
 DIGITS_RE = re.compile(r"\d+")
@@ -121,7 +119,6 @@ class Store:
     investigations: dict[str, Any] = field(default_factory=dict)
     documents: dict[str, list[dict[str, Any]]] = field(default_factory=dict)
     documents_state: dict[str, Any] = field(default_factory=dict)
-    rss_log: dict[str, Any] = field(default_factory=dict)
     state: dict[str, Any] = field(default_factory=dict)
 
     @classmethod
@@ -133,7 +130,6 @@ class Store:
             investigations=load_json(base / INVESTIGATIONS_FILE, {}),
             documents=load_json(base / DOCUMENTS_INDEX_FILE, {}),
             documents_state=load_json(base / DOCUMENTS_STATE_FILE, {}),
-            rss_log=load_json(base / RSS_LOG_FILE, {}),
             state=load_json(base / STATE_FILE, {}),
         )
 
@@ -146,19 +142,15 @@ class Store:
         save_json(self.data_dir / DOCUMENTS_INDEX_FILE, self.documents)
         save_json(self.data_dir / DOCUMENTS_STATE_FILE, self.documents_state)
 
-    def save_rss_log(self) -> None:
-        save_json(self.data_dir / RSS_LOG_FILE, self.rss_log)
-
     def save_state(self) -> None:
         save_json(self.data_dir / STATE_FILE, self.state)
 
     def save(self) -> None:
         self.save_cases()
         self.save_documents()
-        self.save_rss_log()
         self.save_state()
 
-    def find_investigation_key(self, number: str) -> str | None:
+    def find_key(self, number: str) -> str | None:
         """Resolve any spelling of a case number to the key it is stored under."""
         wanted = number_key(number)
         if not wanted:
@@ -169,28 +161,12 @@ class Store:
                     return key
         return None
 
-    def find_key(self, number: str) -> str | None:
-        """Like `find_investigation_key`, but also matches dockets that the RSS
-        feed has reported without a fetched investigation record yet.
-        """
-        key = self.find_investigation_key(number)
-        if key:
-            return key
-        wanted = number_key(number)
-        for key in self.rss_log:
-            if _matches(wanted, number_key(key)):
-                return key
-        return None
-
     def tracked_numbers(self) -> list[str]:
-        return sorted(set(self.investigations) | set(self.rss_log))
+        return sorted(self.investigations)
 
     def numbers_with_documents(self) -> list[str]:
         """Cases the documents process has already been run for."""
         return sorted(key for key, docs in self.documents.items() if docs)
-
-    def rss_documents(self, key: str) -> dict[str, Any]:
-        return self.rss_log.get(key, {}).get("documents", {})
 
     def put_case(self, key: str, record: dict[str, Any]) -> None:
         self.investigations[key] = record
@@ -217,15 +193,6 @@ class Store:
             self.documents[new_key] = _repoint_attachments(old_documents, old_key, new_key)
             if old_state:
                 self.documents_state[new_key] = old_state
-        if old_key in self.rss_log:
-            old_entry = self.rss_log.pop(old_key)
-            new_entry = self.rss_log.get(new_key, {})
-            merged = {**new_entry, **old_entry}
-            merged["documents"] = {
-                **new_entry.get("documents", {}),
-                **old_entry.get("documents", {}),
-            }
-            self.rss_log[new_key] = merged
 
         old_dir = self.docs_dir / old_key
         new_dir = self.docs_dir / new_key
@@ -240,7 +207,7 @@ class Store:
 
     def summary_rows(self) -> list[dict[str, Any]]:
         rows = []
-        for key in sorted(set(self.investigations) | set(self.rss_log)):
+        for key in sorted(set(self.investigations) | set(self.documents)):
             record = self.investigations.get(key, {})
             rows.append(
                 {

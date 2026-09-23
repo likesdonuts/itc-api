@@ -18,7 +18,7 @@ from typing import Any, Callable
 
 from . import cases, ids
 from .config import IDS_DIR
-from .store import Store, number_key
+from .store import Store
 
 Logger = Callable[[str], None]
 
@@ -50,7 +50,6 @@ class IngestReport:
     added: list[str] = field(default_factory=list)
     removed: list[str] = field(default_factory=list)
     withdrawn: list[str] = field(default_factory=list)
-    placeholders: list[str] = field(default_factory=list)
     migrated: list[tuple[str, str]] = field(default_factory=list)
 
 
@@ -72,7 +71,7 @@ def _migrate_instituted_dockets(
         old_key = f"337-{docket}"
         if old_key in new_cases or old_key == key:
             continue
-        if old_key not in store.documents and old_key not in store.rss_log:
+        if old_key not in store.documents:
             continue
         store.rename(old_key, key)
         migrated.append((old_key, key))
@@ -110,11 +109,7 @@ def _carry_withdrawn(
     """
     carried = []
     for key, record in store.investigations.items():
-        # RSS placeholders are rebuilt from rss_log.json every run, so one
-        # missing here means the log dropped it, not that IDS withdrew it.
         if key in built or not cases.is_case_record(record):
-            continue
-        if record.get("source") != cases.IDS_SOURCE:
             continue
         record = dict(record)
         record.setdefault("last_listed_snapshot", record.get("ids_snapshot") or day)
@@ -128,7 +123,6 @@ def parse_snapshot(
     store: Store,
     snapshot: ids.Snapshot,
     *,
-    use_rss: bool = True,
     allow_removals: bool = False,
     log: Logger = print,
 ) -> IngestReport:
@@ -147,21 +141,6 @@ def parse_snapshot(
     )
 
     report.migrated = _migrate_instituted_dockets(store, built, log)
-
-    if use_rss:
-        # A docket is "known" both under its own number and as the docket of
-        # the investigation it was instituted as, so an instituted complaint
-        # does not come back as a second, pre-institution entry.
-        known = {number_key(number) for number in built}
-        known |= {
-            number_key(f"337-{case['docket_number']}")
-            for case in built.values()
-            if case.get("docket_number")
-        }
-        for docket, entry in store.rss_log.items():
-            if number_key(docket) not in known:
-                built[docket] = cases.rss_placeholder(docket, entry)
-                report.placeholders.append(docket)
 
     previous = set(store.investigations)
     # Cases already marked withdrawn are expected to be missing, so only the
@@ -185,8 +164,6 @@ def parse_snapshot(
         f"  {report.cases} investigation(s) from {report.rows} row(s); "
         f"{report.multi_stage} have more than one stage."
     )
-    if report.placeholders:
-        log(f"  {len(report.placeholders)} docket(s) from the RSS feed are not in IDS yet.")
     if report.added:
         log(f"  new since the last parse: {', '.join(report.added[:12])}"
             + (" ..." if len(report.added) > 12 else ""))
@@ -208,7 +185,6 @@ def run(
     force: bool = False,
     keep: int = ids.DEFAULT_KEEP,
     offline: bool = False,
-    use_rss: bool = True,
     allow_removals: bool = False,
     day: str | None = None,
     log: Logger = print,
@@ -218,7 +194,7 @@ def run(
     With `offline=True` the newest stored snapshot is parsed instead, which is
     how you re-parse after changing the parser without touching the network.
     """
-    parse = dict(use_rss=use_rss, allow_removals=allow_removals, log=log)
+    parse = dict(allow_removals=allow_removals, log=log)
     if offline:
         snapshot = ids.latest(ids_dir)
         if snapshot is None:

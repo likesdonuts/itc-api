@@ -17,8 +17,6 @@ ENV_PATH = ROOT / ".env"
 # level, in plain JSON, because it is meant to be edited.
 SCHEMA_PATH = ROOT / "ui_schema.json"
 
-RSS_URL = "https://edis.usitc.gov/external/rss/render.rss?criteria=CRITERIONAOIDEL:8:13:CRITERIONANOTIFY:true"
-
 TOKEN_HELP = (
     "Missing EDIS_TOKEN. Put it in a .env file at the repository root:\n"
     "  EDIS_TOKEN=<your token>\n"

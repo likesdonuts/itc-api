@@ -19,7 +19,6 @@ from typing import Any
 sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
 
 from datalayer import ids  # noqa: E402
-from datalayer.client import RssItem  # noqa: E402
 from datalayer.store import Store  # noqa: E402
 
 
@@ -145,19 +144,6 @@ def write_snapshot(
     with gzip.open(path, "wt", encoding="utf-8") as handle:
         json.dump(payload(rows), handle)
     return ids.Snapshot(path=path, day=day)
-
-
-def rss_item(docket: str, doc_id: str, doc_type: str = "Complaint") -> RssItem:
-    return RssItem(
-        title=f"Document Approved : {docket} Violation : Doc ID {doc_id}, {doc_type}",
-        link=f"https://edis.usitc.gov/docid/{doc_id}",
-        guid=doc_id,
-        pub_date="Fri, 18 Sep 2026 12:00:00 GMT",
-        pub_date_iso="2026-09-18T12:00:00+00:00",
-        docket_number=docket,
-        doc_id=doc_id,
-        doc_type=doc_type,
-    )
 
 
 EDIS_DOCUMENTS = [

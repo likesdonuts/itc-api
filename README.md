@@ -23,14 +23,13 @@ ui_schema.json        which IDS fields the site shows, and what to call them
 schema.py             loads and applies that mapping (used by both layers)
 dates.py              what a date from each feed means, shared by both layers
 server.py             local server so the page buttons can run the data layer
-datalayer/            DATA LAYER - talks to IDS/EDIS/RSS, owns data/
+datalayer/            DATA LAYER - talks to IDS and EDIS, owns data/
   ids.py                the daily download and the snapshots on disk
   flatten.py            one IDS row -> plain named values
   cases.py              rows -> one record per investigation, with its stages
   ingest.py             process 1: rebuild every case from a snapshot
   docs.py               process 2: EDIS documents for named cases only
-  feed.py               the complaint RSS feed (document IDs, brand-new dockets)
-  client.py             HTTP client for the EDIS API and the RSS feed
+  client.py             HTTP client for the EDIS API and the IDS file
   store.py              reads/writes data/*.json, resolves case numbers
   config.py             paths, feed URLs, .env token loading
   normalize.py          offline maintenance: rewrite stored dates to ISO
@@ -42,7 +41,6 @@ data/                 the handoff between the layers
   investigations.json   one record per investigation  <- written by ingest
   documents_index.json  documents per case            <- written by docs
   documents_state.json  when each case was last fetched
-  rss_log.json          what the complaint feed has reported
   documents/<number>/   downloaded PDFs
 site/                 generated output
 tests/                offline tests; no token, no network
@@ -76,7 +74,7 @@ telling you to generate a new one. Everything else keeps working without it.
 
 | Command | Network | What it does |
 | --- | --- | --- |
-| `python cli.py sync` | IDS + RSS | Process 1. Downloads today's IDS file if it isn't stored yet and rebuilds every case record from it. |
+| `python cli.py sync` | IDS | Process 1. Downloads today's IDS file if it isn't stored yet and rebuilds every case record from it. |
 | `python cli.py parse` | none | Rebuilds the case records from the newest stored snapshot. |
 | `python cli.py docs 337-1478` | EDIS | Process 2. Fetches document lists and PDFs for the numbers you name. |
 | `python cli.py docs --existing` | EDIS | Process 2 over every case you have already fetched documents for. |
@@ -214,18 +212,13 @@ Edit the file, run `python cli.py render`, refresh the browser. Fields with
 nothing in them are left off the page, and a `source` that no case can answer
 is reported when rendering rather than silently showing blank.
 
-### The complaint RSS feed
+### When a docket becomes an investigation number
 
-The IDS file already lists pre-institution dockets (as `337-3936`, status
-"Pre-institution"), so the feed is no longer how cases are discovered. It is
-still read during `sync` for two things: a complaint it names before IDS's
-next rebuild is kept on the site as a placeholder until IDS lists it, and its
-EDIS document IDs are the only route to the PDFs of a case EDIS has no
-investigation record for yet.
-
-Once a complaint is instituted, IDS lists it under a real number that keeps the
-docket as a field (`337-1521`, docket `3936`). The sync notices that, and moves
-the documents and PDFs already downloaded for `337-3936` onto the new number.
+The IDS file lists pre-institution dockets too (as `337-3936`, status
+"Pre-institution"), so every case on the site comes from that one file. Once a
+complaint is instituted, IDS lists it under a real number that keeps the docket
+as a field (`337-1521`, docket `3936`). The sync notices that, and moves the
+documents and PDFs already downloaded for `337-3936` onto the new number.
 
 ### Updating a case from the page
 
@@ -261,7 +254,6 @@ apart by looking at one value:
 | IDS investigations | `01-13-2026` | US month first |
 | IDS date objects | `{"date": "2026-05-26T12:00:00.000+00:00"}` | ISO 8601 |
 | EDIS documents | `2026/09/18 11:39:00` | year first |
-| RSS `pubDate` | `Fri, 18 Sep 2026 11:39:05 GMT` | RFC 822 |
 
 `04-05-2026` from IDS is 5 April, but read day-first it is 4 May. So `dates.py`
 decides the order from the source format, never from the value, the data layer

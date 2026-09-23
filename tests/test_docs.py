@@ -16,11 +16,10 @@ from support import (
     EDIS_DOCUMENTS,
     FakeEdisClient,
     ids_row,
-    rss_item,
     write_snapshot,
 )
 
-from datalayer import docs, feed, ingest
+from datalayer import docs, ingest
 from datalayer.store import Store, lookup_candidates, number_key
 
 
@@ -30,11 +29,8 @@ def _session(client):
 
 
 class DocsTestCase(DataDirTestCase):
-    def seeded_store(self, rows=None, feed_items=()) -> Store:
+    def seeded_store(self, rows=None) -> Store:
         store = self.store()
-        if feed_items:
-            store.rss_log, _ = feed.update_rss_log({}, list(feed_items), self.quiet)
-            store.save_rss_log()
         snapshot = write_snapshot(self.ids_dir, rows or [ids_row()])
         ingest.parse_snapshot(store, snapshot, log=self.quiet)
         return store
@@ -74,7 +70,6 @@ class TestDocuments(DocsTestCase):
 
         state = self.read_json("documents_state.json")["337-1478"]
         self.assertEqual(state["documents"], 1)
-        self.assertEqual(state["source"], "edis")
         self.assertTrue(state["fetched_at"])
 
     def test_metadata_only_skips_the_downloads(self):
@@ -103,17 +98,16 @@ class TestDocuments(DocsTestCase):
         self.assertEqual([r.key for r in report.failed], ["337-1478"])
         self.assertEqual(len(store.documents["337-1478"]), 1)
 
-    def test_a_pre_institution_docket_falls_back_to_the_rss_document_ids(self):
+    def test_a_docket_edis_does_not_answer_for_is_reported_not_invented(self):
+        # EDIS is the only source of documents now, so a pre-institution
+        # docket it has nothing for simply has no documents.
         store = self.seeded_store(
-            rows=[ids_row("337-3936", status="Pre-institution", docket="3936", start_date=None)],
-            feed_items=[rss_item("337-3936", "555")],
+            rows=[ids_row("337-3936", status="Pre-institution", docket="3936", start_date=None)]
         )
-        client = FakeEdisClient(attachments={"555": [{"id": "1", "originalFileName": "c.pdf"}]})
-        report = self.fetch(client, store, ["337-3936"])
+        report = self.fetch(FakeEdisClient(), store, ["337-3936"])
 
-        self.assertEqual([r.source for r in report.fetched], ["rss"])
-        self.assertEqual(store.documents["337-3936"][0]["id"], "555")
-        self.assertEqual(client.downloads, [("555", "1")])
+        self.assertEqual([r.key for r in report.failed], ["337-3936"])
+        self.assertNotIn("337-3936", store.documents)
 
     def test_an_unknown_number_is_tried_anyway_unless_refused(self):
         store = self.seeded_store()

@@ -10,10 +10,6 @@ the IDS feed (see cases.py), which is a different source with different
 spellings and a different idea of what a case is. Letting the API write case
 fields as a side effect of fetching documents is how the two would start
 overwriting each other, so this process simply has no way to do it.
-
-For a complaint EDIS has no investigation record for yet, the document IDs
-logged from the RSS feed are used instead, which is the only way to reach the
-PDFs of a case that has not been instituted.
 """
 
 from __future__ import annotations
@@ -45,7 +41,6 @@ class DocsResult:
     key: str
     document_count: int = 0
     downloaded: int = 0
-    source: str = "edis"
     note: str | None = None
     ok: bool = True
 
@@ -177,46 +172,6 @@ def _edis_documents(
     return documents, downloaded_total
 
 
-def _rss_documents(
-    client: EdisClient,
-    docs_dir: Path,
-    key: str,
-    logged: dict[str, Any],
-    *,
-    download: bool,
-    log: Logger,
-) -> tuple[list[dict[str, Any]], int]:
-    documents: list[dict[str, Any]] = []
-    downloaded_total = 0
-
-    for doc_id, meta in sorted(logged.items()):
-        attachments: list[dict[str, str]] = []
-        downloaded = 0
-        if download:
-            attachments, downloaded = download_document_attachments(
-                client, docs_dir, key, doc_id, "Public", log
-            )
-        downloaded_total += downloaded
-        doc_type = meta.get("doc_type") or "Document"
-        filed = dates.to_iso(meta.get("pub_date_iso") or meta.get("pub_date"))
-        documents.append(
-            {
-                "id": doc_id,
-                "document_type": doc_type,
-                "title": doc_type,
-                "security_level": None,
-                "filed_by": None,
-                "on_behalf_of": None,
-                "firm_organization": None,
-                "document_date": filed,
-                "official_received_date": filed,
-                "attachments": attachments,
-            }
-        )
-
-    return documents, downloaded_total
-
-
 def fetch_case(
     client: EdisClient,
     store: Store,
@@ -227,25 +182,14 @@ def fetch_case(
 ) -> DocsResult:
     """Refresh one case's documents. Touches nothing else about the case."""
     rows = fetch_document_rows(client, key)
+    if not rows:
+        return DocsResult.skipped(key, "EDIS lists no documents for this number")
 
-    if rows:
-        documents, downloaded = _edis_documents(
-            client, store.docs_dir, key, rows, download=download, log=log
-        )
-        source = "edis"
-    else:
-        logged = store.rss_documents(key)
-        if not logged:
-            return DocsResult.skipped(key, "EDIS lists no documents for this number")
-        documents, downloaded = _rss_documents(
-            client, store.docs_dir, key, logged, download=download, log=log
-        )
-        source = "rss"
-
-    store.put_documents(key, documents, source=source, attachments_downloaded=downloaded)
-    return DocsResult(
-        key=key, document_count=len(documents), downloaded=downloaded, source=source
+    documents, downloaded = _edis_documents(
+        client, store.docs_dir, key, rows, download=download, log=log
     )
+    store.put_documents(key, documents, attachments_downloaded=downloaded)
+    return DocsResult(key=key, document_count=len(documents), downloaded=downloaded)
 
 
 def fetch_many(
@@ -271,7 +215,7 @@ def fetch_many(
 
         if result.ok:
             log(
-                f"  {result.document_count} document(s) from {result.source}, "
+                f"  {result.document_count} document(s) listed, "
                 f"{result.downloaded} new attachment(s) downloaded."
             )
         else:
