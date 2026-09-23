@@ -10,6 +10,7 @@ from treading on each other:
     investigations.json   the IDS ingest (cases, stages, parties)
     documents_index.json  the EDIS documents process
     documents_state.json  the EDIS documents process (its own bookkeeping)
+    counsel.json          the counsel process (who represents whom, per case)
     sync_log.csv          the IDS ingest, one appended row per run
     state.json            every process, one entry each
 """
@@ -30,6 +31,7 @@ from .config import DATA_DIR, DOCS_DIR
 INVESTIGATIONS_FILE = "investigations.json"
 DOCUMENTS_INDEX_FILE = "documents_index.json"
 DOCUMENTS_STATE_FILE = "documents_state.json"
+COUNSEL_FILE = "counsel.json"
 STATE_FILE = "state.json"
 
 DIGITS_RE = re.compile(r"\d+")
@@ -120,6 +122,7 @@ class Store:
     investigations: dict[str, Any] = field(default_factory=dict)
     documents: dict[str, list[dict[str, Any]]] = field(default_factory=dict)
     documents_state: dict[str, Any] = field(default_factory=dict)
+    counsel: dict[str, Any] = field(default_factory=dict)
     state: dict[str, Any] = field(default_factory=dict)
 
     @classmethod
@@ -131,6 +134,7 @@ class Store:
             investigations=load_json(base / INVESTIGATIONS_FILE, {}),
             documents=load_json(base / DOCUMENTS_INDEX_FILE, {}),
             documents_state=load_json(base / DOCUMENTS_STATE_FILE, {}),
+            counsel=load_json(base / COUNSEL_FILE, {}),
             state=load_json(base / STATE_FILE, {}),
         )
 
@@ -142,6 +146,10 @@ class Store:
         """Only the EDIS documents process calls this."""
         save_json(self.data_dir / DOCUMENTS_INDEX_FILE, self.documents)
         save_json(self.data_dir / DOCUMENTS_STATE_FILE, self.documents_state)
+
+    def save_counsel(self) -> None:
+        """Only the counsel process calls this."""
+        save_json(self.data_dir / COUNSEL_FILE, self.counsel)
 
     def save_state(self) -> None:
         save_json(self.data_dir / STATE_FILE, self.state)

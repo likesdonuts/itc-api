@@ -40,7 +40,7 @@ FIELD_TYPES = {"text", "long_text", "date", "bool", "list", "mono", "number", "s
 # Values the UI layer supplies itself rather than reading from a case record.
 RENDER_EXTRAS = {"document_count"}
 
-SECTION_KINDS = {"fields", "stages", "documents"}
+SECTION_KINDS = {"fields", "stages", "documents", "parties"}
 STAGE_CHOICES = {"primary", "current"}
 
 
@@ -90,11 +90,26 @@ class FieldSpec:
 
 
 @dataclass(frozen=True)
+class RoleSpec:
+    """One side of a "parties" section: {"label": "Respondents", "role": "Respondent"}."""
+
+    label: str
+    role: str
+
+    @classmethod
+    def from_dict(cls, raw: dict[str, Any]) -> "RoleSpec":
+        if not isinstance(raw, dict) or not raw.get("role"):
+            raise SchemaError(f"a party role must be an object with a 'role', got {raw!r}")
+        return cls(label=str(raw.get("label") or raw["role"]), role=str(raw["role"]))
+
+
+@dataclass(frozen=True)
 class Section:
     title: str
     kind: str = "fields"
     fields: tuple[FieldSpec, ...] = ()
     columns: tuple[FieldSpec, ...] = ()
+    roles: tuple[RoleSpec, ...] = ()
 
     @classmethod
     def from_dict(cls, raw: dict[str, Any]) -> "Section":
@@ -109,6 +124,25 @@ class Section:
             kind=kind,
             fields=tuple(FieldSpec.from_dict(f) for f in raw.get("fields") or ()),
             columns=tuple(FieldSpec.from_dict(c) for c in raw.get("columns") or ()),
+            roles=tuple(RoleSpec.from_dict(r) for r in raw.get("roles") or ()),
+        )
+
+    def party_fields(self) -> "Section":
+        """A "parties" section as plain name lists, one per role -- what a
+        stage block shows, since counsel is recorded per case, not per stage.
+        """
+        return Section(
+            title=self.title,
+            fields=tuple(
+                FieldSpec(
+                    label=role.label,
+                    source="participants",
+                    where={"role": role.role},
+                    item="name",
+                    type="list",
+                )
+                for role in self.roles
+            ),
         )
 
 

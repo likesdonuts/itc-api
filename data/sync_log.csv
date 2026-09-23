@@ -1,0 +1,5 @@
+run_at,mode,outcome,snapshot,snapshot_taken_at,snapshot_bytes,feed_date,rows_total,rows_337,cases_in_file,stages_in_file,cases_added,cases_changed,status_changes,cases_left_feed,cases_withdrawn_total,cases_renumbered,cases_on_site,seconds,note
+2026-09-23T17:20:44+00:00,offline,ok,investigations-2026-09-23T143005Z.json.gz,2026-09-23T14:30:05+00:00,3287435,2026-09-21T22:00:01.996+00:00,4422,1680,1382,1680,0,0,0,0,0,0,1382,0.99,
+2026-09-23T17:21:38+00:00,cached,ok,investigations-2026-09-23T143005Z.json.gz,2026-09-23T14:30:05+00:00,3287435,2026-09-21T22:00:01.996+00:00,4422,1680,1382,1680,0,0,0,0,0,0,1382,1.4,
+2026-09-23T17:40:42+00:00,offline,ok,investigations-2026-09-23T143005Z.json.gz,2026-09-23T14:30:05+00:00,3287435,2026-09-21T22:00:01.996+00:00,4422,1680,1382,1680,0,950,0,0,0,0,1382,1.05,
+2026-09-23T17:42:03+00:00,offline,ok,investigations-2026-09-23T143005Z.json.gz,2026-09-23T14:30:05+00:00,3287435,2026-09-21T22:00:01.996+00:00,4422,1680,1382,1680,0,113,0,0,0,0,1382,1.12,

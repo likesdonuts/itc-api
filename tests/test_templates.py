@@ -29,6 +29,17 @@ def case(*rows, number: str = "337-1478") -> dict:
     return cases.build_cases(rows or [ids_row()])[number]
 
 
+def rep(firm: str, parties, attorneys) -> dict:
+    """One representation as counsel.json stores it."""
+    return {
+        "firm": firm,
+        "parties": [{"role": role, "name": name} for role, name in parties],
+        "attorneys": attorneys,
+        "filings": 3,
+        "first_filed": "2026-01-15",
+    }
+
+
 def body_of(html: str) -> str:
     """Strip the <style> and <script> blocks, which contain no page data."""
     without_style = re.sub(r"<style>.*?</style>", "", html, flags=re.S)
@@ -229,6 +240,58 @@ class TestDetailPage(unittest.TestCase):
         self.assertIn("Documents (1)", html)
         self.assertIn("13 Jan 2026", html)
         self.assertIn('href="../../data/documents/337-1478/c.pdf"', html)
+
+    def test_parties_with_the_same_counsel_are_grouped_under_it(self):
+        built = case(
+            ids_row(
+                complainants=("Acme Inc.", "Acme Holdings LLC"),
+                respondents=("Globex Corp.", "Initech LLC", "Hooli Inc."),
+            )
+        )
+        counsel = {
+            "representations": [
+                rep("Firm LLP", [("Complainant", "Acme Inc."), ("Complainant", "Acme Holdings LLC")],
+                    [{"name": "A. Lawyer", "lead": True}, {"name": "B. Lawyer"}]),
+                rep("Defense LLP", [("Respondent", "Globex Corp."), ("Respondent", "Initech LLC")],
+                    [{"name": "C. Lawyer"}, {"name": "D. Gone", "withdrawn_on": "2026-06-04"}]),
+                rep("Second Chair PC", [("Respondent", "Initech LLC")], []),
+            ]
+        }
+        html = templates.render_detail(built, [], SCHEMA, counsel=counsel)
+        section = html[html.index("Parties and Counsel") :]
+
+        # Both complainants under one firm, listed once.
+        self.assertEqual(section.count("Firm LLP"), 1)
+        self.assertIn("A. Lawyer<span class=\"pill pill-blue pill-lead\">Lead</span>", section)
+        # Initech has a second firm, so it is its own group, apart from Globex.
+        globex = section.index("Globex Corp.")
+        initech = section.index("Initech LLC")
+        self.assertLess(globex, section.index("Defense LLP"))
+        self.assertLess(section.index("Defense LLP"), initech)
+        self.assertIn("Second Chair PC", section[initech:])
+        self.assertIn('<span class="withdrawn" title="Withdrew 04 Jun 2026">D. Gone</span>', section)
+        # Hooli has no counsel in the filings.
+        self.assertIn("Counsel not identified", section[section.index("Hooli Inc.") :])
+
+    def test_a_long_team_folds_after_the_first_few(self):
+        team = [{"name": f"Lawyer {chr(65 + i)}"} for i in range(9)]
+        counsel = {"representations": [rep("Firm LLP", [("Complainant", "Acme Inc.")], team)]}
+        html = templates.render_detail(case(), [], SCHEMA, counsel=counsel)
+        self.assertIn("<summary>+3 more</summary>", html)
+
+    def test_without_counsel_data_the_parties_are_still_listed(self):
+        html = self.page()
+        self.assertIn("Parties and Counsel", html)
+        self.assertIn("Acme Inc.", html)
+        self.assertIn("fetch its documents to see who represents each party", html)
+        self.assertNotIn("Counsel not identified", html)
+
+    def test_firms_and_attorneys_are_searchable_from_the_list(self):
+        counsel = {"337-1478": {"representations": [rep("Firm LLP", [], [{"name": "A. Lawyer"}])]}}
+        html = templates.render_index([case()], SCHEMA, counsel=counsel)
+        row = re.search(r'data-search="([^"]*)"', html).group(1)
+        self.assertIn("firm llp", row)
+        self.assertIn("a. lawyer", row)
 
     def test_a_case_with_no_documents_says_how_to_fetch_them(self):
         html = self.page()

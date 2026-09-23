@@ -152,13 +152,15 @@ def _participants(items: list[Any]) -> list[dict[str, Any]]:
         if not isinstance(item, dict):
             continue
         party = item.get("Participant") or {}
-        name = party.get("Name")
+        name = str(party.get("Name") or "").strip()
         if not name:
             continue
         out.append(
             {
                 "label": str(name),
                 "name": str(name),
+                # IDS's own ID for the party, the same in every case it is in.
+                "participant_id": party.get("ID"),
                 "role": (item.get("Participant Type") or {}).get("name"),
                 "country": (party.get("Country") or {}).get("name"),
                 "disposition": (item.get("Participant Disposition") or {}).get("name"),

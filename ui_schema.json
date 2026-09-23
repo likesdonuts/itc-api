@@ -11,6 +11,10 @@
     "  item    which part of a list item to show (default \"label\")",
     "  limit   show at most this many list items",
     "",
+    "A section of kind 'parties' lists each role's parties grouped by the firms and",
+    "attorneys representing them (from 'python cli.py counsel'); its 'roles' are",
+    "{label, role} pairs, role being the IDS participant type.",
+    "",
     "'source' names a case field, a stage field, or a stage list, in that order.",
     "Run 'python cli.py fields' to print every name the feed offers, with samples.",
     "Fields with nothing in them are left off the page."
@@ -51,12 +55,18 @@
       ]
     },
     {
-      "title": "Parties",
+      "title": "Parties and Counsel",
+      "kind": "parties",
+      "roles": [
+        { "label": "Complainant(s)", "role": "Complainant" },
+        { "label": "Respondent(s)", "role": "Respondent" },
+        { "label": "Intervenor(s)", "role": "Intervenor" }
+      ]
+    },
+    {
+      "title": "Commission Staff",
       "kind": "fields",
       "fields": [
-        { "label": "Complainant(s)", "source": "participants", "where": { "role": "Complainant" }, "item": "name", "type": "list" },
-        { "label": "Respondent(s)", "source": "participants", "where": { "role": "Respondent" }, "item": "name", "type": "list" },
-        { "label": "Intervenor(s)", "source": "participants", "where": { "role": "Intervenor" }, "item": "name", "type": "list" },
         { "label": "Administrative Law Judge", "source": "staff", "where": { "role": "ALJ" }, "item": "name", "type": "list" },
         { "label": "ALJ Attorney Advisor", "source": "staff", "where": { "role": "ALJ Attorney Advisor" }, "item": "name", "type": "list" },
         { "label": "OUII Investigative Attorney", "source": "staff", "where": { "role": ["OUII Investigative Attorney", "OUII Supervisory Attorney"] }, "item": "name", "type": "list" },

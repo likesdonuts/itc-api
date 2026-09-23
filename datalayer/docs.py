@@ -31,6 +31,11 @@ Logger = Callable[[str], None]
 
 UNSAFE_FILENAME_RE = re.compile(r"[^A-Za-z0-9._-]+")
 
+# The filings whose PDFs list a party's whole legal team (see counsel.py).
+# `docs --appearances` downloads only these, which is a few small files per
+# case instead of every exhibit.
+APPEARANCE_TYPES = frozenset({"Notice of Appearance"})
+
 
 def safe_filename(name: str) -> str:
     return UNSAFE_FILENAME_RE.sub("_", name).strip("_") or "file"
@@ -133,6 +138,21 @@ def fetch_document_rows(client: EdisClient, key: str) -> list[dict[str, Any]]:
     return []
 
 
+def _kept_attachments(
+    docs_dir: Path, key: str, previous: list[dict[str, Any]] | None
+) -> list[dict[str, str]]:
+    """Attachments recorded last time whose files are still on disk.
+
+    A document that is not downloaded this run keeps the links it already
+    had, so a metadata-only refresh does not orphan PDFs fetched earlier.
+    """
+    return [
+        att
+        for att in previous or []
+        if att.get("href") and (docs_dir / key / Path(att["href"]).name).exists()
+    ]
+
+
 def _edis_documents(
     client: EdisClient,
     docs_dir: Path,
@@ -140,19 +160,27 @@ def _edis_documents(
     rows: list[dict[str, Any]],
     *,
     download: bool,
+    only_types: frozenset[str] | None = None,
+    previous: list[dict[str, Any]] | None = None,
     log: Logger,
 ) -> tuple[list[dict[str, Any]], int]:
     documents: list[dict[str, Any]] = []
     downloaded_total = 0
+    previous_attachments = {
+        str(doc.get("id")): doc.get("attachments") for doc in previous or []
+    }
 
     for row in rows:
         doc_id = row.get("id")
         attachments: list[dict[str, str]] = []
         downloaded = 0
-        if doc_id and download:
+        wanted = download and (only_types is None or row.get("documentType") in only_types)
+        if doc_id and wanted:
             attachments, downloaded = download_document_attachments(
                 client, docs_dir, key, str(doc_id), row.get("securityLevel"), log
             )
+        else:
+            attachments = _kept_attachments(docs_dir, key, previous_attachments.get(str(doc_id)))
         downloaded_total += downloaded
         documents.append(
             {
@@ -178,6 +206,7 @@ def fetch_case(
     key: str,
     *,
     download: bool = True,
+    only_types: frozenset[str] | None = None,
     log: Logger = print,
 ) -> DocsResult:
     """Refresh one case's documents. Touches nothing else about the case."""
@@ -186,7 +215,14 @@ def fetch_case(
         return DocsResult.skipped(key, "EDIS lists no documents for this number")
 
     documents, downloaded = _edis_documents(
-        client, store.docs_dir, key, rows, download=download, log=log
+        client,
+        store.docs_dir,
+        key,
+        rows,
+        download=download,
+        only_types=only_types,
+        previous=store.documents.get(key),
+        log=log,
     )
     store.put_documents(key, documents, attachments_downloaded=downloaded)
     return DocsResult(key=key, document_count=len(documents), downloaded=downloaded)
@@ -198,6 +234,7 @@ def fetch_many(
     keys: Iterable[str],
     *,
     download: bool = True,
+    only_types: frozenset[str] | None = None,
     log: Logger = print,
 ) -> list[DocsResult]:
     """One case failing is not the run failing; a rejected token is."""
@@ -205,7 +242,9 @@ def fetch_many(
     for key in keys:
         log(f"{key}...")
         try:
-            result = fetch_case(client, store, key, download=download, log=log)
+            result = fetch_case(
+                client, store, key, download=download, only_types=only_types, log=log
+            )
         except EdisAuthError:
             raise
         except EdisError as exc:
@@ -256,9 +295,13 @@ def run(
     numbers: Iterable[str],
     *,
     download: bool = True,
+    only_types: frozenset[str] | None = None,
     known_only: bool = False,
     log: Logger = print,
 ) -> DocsReport:
+    """`only_types` limits downloads to those document types; every
+    document is still listed.
+    """
     targets, unknown = resolve_targets(store, numbers)
     report = DocsReport(requested=targets)
 
@@ -275,7 +318,9 @@ def run(
         return report
 
     with edis_session(token) as client:
-        report.results = fetch_many(client, store, targets, download=download, log=log)
+        report.results = fetch_many(
+            client, store, targets, download=download, only_types=only_types, log=log
+        )
 
     store.save_documents()
     store.record_run(
@@ -284,6 +329,7 @@ def run(
         fetched=len(report.fetched),
         attachments_downloaded=report.downloaded,
         with_attachments=download,
+        attachment_types=sorted(only_types) if only_types else None,
     )
     store.save_state()
     return report

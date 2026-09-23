@@ -135,17 +135,17 @@ class TestShippedSchema(unittest.TestCase):
 
     def test_it_loads_and_covers_the_expected_sections(self):
         self.assertIn("Investigation Information", self.schema.section_titles())
-        self.assertIn("Parties", self.schema.section_titles())
-        self.assertEqual(
-            [s.kind for s in self.schema.sections].count("documents"), 1
-        )
+        self.assertIn("Parties and Counsel", self.schema.section_titles())
+        kinds = [s.kind for s in self.schema.sections]
+        self.assertEqual(kinds.count("documents"), 1)
+        self.assertEqual(kinds.count("parties"), 1)
 
     def test_the_fields_it_names_resolve_against_a_real_shaped_case(self):
         built = case()
         resolved = {
             spec.label: ui_schema.resolve(spec, built, extra={"document_count": 0})
             for section in self.schema.sections
-            for spec in section.fields
+            for spec in (section.party_fields() if section.kind == "parties" else section).fields
         }
         self.assertEqual(resolved["Investigation Number"], "337-1478")
         self.assertEqual(resolved["Instituted"], "2026-05-20")
@@ -163,6 +163,14 @@ class TestShippedSchema(unittest.TestCase):
             }
         )
         self.assertEqual(ui_schema.unused_sources(schema, [case()]), ["targt_date"])
+
+    def test_a_parties_section_needs_a_role_for_each_side(self):
+        section = ui_schema.Section.from_dict(
+            {"title": "P", "kind": "parties", "roles": [{"label": "Respondents", "role": "Respondent"}]}
+        )
+        self.assertEqual(section.roles, (ui_schema.RoleSpec("Respondents", "Respondent"),))
+        with self.assertRaises(ui_schema.SchemaError):
+            ui_schema.Section.from_dict({"title": "P", "kind": "parties", "roles": [{"label": "x"}]})
 
     def test_the_file_is_readable_json_with_a_version(self):
         raw = json.loads(SCHEMA_PATH.read_text(encoding="utf-8"))

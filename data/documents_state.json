@@ -1,1 +1,67 @@
-{}
+{
+  "337-1500": {
+    "attachments_downloaded": 0,
+    "documents": 71,
+    "fetched_at": "2026-09-23T17:23:22.459118+00:00"
+  },
+  "337-1514": {
+    "attachments_downloaded": 0,
+    "documents": 95,
+    "fetched_at": "2026-09-23T17:25:59.776342+00:00"
+  },
+  "337-1516": {
+    "attachments_downloaded": 0,
+    "documents": 36,
+    "fetched_at": "2026-09-23T17:23:52.365559+00:00"
+  },
+  "337-1517": {
+    "attachments_downloaded": 61,
+    "documents": 23,
+    "fetched_at": "2026-09-23T17:43:57.069215+00:00"
+  },
+  "337-1518": {
+    "attachments_downloaded": 145,
+    "documents": 44,
+    "fetched_at": "2026-09-23T17:39:48.432495+00:00"
+  },
+  "337-1519": {
+    "attachments_downloaded": 0,
+    "documents": 43,
+    "fetched_at": "2026-09-23T17:22:46.974681+00:00"
+  },
+  "337-1520": {
+    "attachments_downloaded": 0,
+    "documents": 36,
+    "fetched_at": "2026-09-23T17:22:18.750336+00:00"
+  },
+  "337-1521": {
+    "attachments_downloaded": 0,
+    "documents": 30,
+    "fetched_at": "2026-09-23T17:19:23.851913+00:00"
+  },
+  "337-3930": {
+    "attachments_downloaded": 310,
+    "documents": 28,
+    "fetched_at": "2026-09-23T17:33:57.811322+00:00"
+  },
+  "337-3933": {
+    "attachments_downloaded": 0,
+    "documents": 8,
+    "fetched_at": "2026-09-23T17:42:14.529284+00:00"
+  },
+  "337-3934": {
+    "attachments_downloaded": 0,
+    "documents": 7,
+    "fetched_at": "2026-09-23T17:22:08.981629+00:00"
+  },
+  "337-3936": {
+    "attachments_downloaded": 0,
+    "documents": 9,
+    "fetched_at": "2026-09-23T17:22:01.367053+00:00"
+  },
+  "337-563": {
+    "attachments_downloaded": 51,
+    "documents": 48,
+    "fetched_at": "2026-09-23T17:25:13.610808+00:00"
+  }
+}

@@ -22,7 +22,7 @@ from http.server import SimpleHTTPRequestHandler, ThreadingHTTPServer
 from pathlib import Path
 from typing import Any, Callable
 
-from datalayer import docs
+from datalayer import counsel, docs
 from datalayer.config import DATA_DIR, SCHEMA_PATH, SITE_DIR
 from datalayer.runner import ProcessAborted
 from datalayer.store import Store
@@ -65,6 +65,7 @@ class Controller:
                 note = result.note if result else "no result"
                 return HTTPStatus.BAD_GATEWAY, {"ok": False, "message": f"EDIS: {note}"}
 
+            counsel.run(store, log=self.log)
             render_site(
                 store,
                 data_dir=self.data_dir,
