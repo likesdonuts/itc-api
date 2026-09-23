@@ -10,6 +10,11 @@ data/investigations.json
 # Rebuilt from the cases and the documents by 'python cli.py counsel'.
 data/counsel.json
 
+# Downloaded PDFs stay on this machine: gigabytes of them, and EDIS can serve
+# them again ('python cli.py docs --existing'). The documents index that lists
+# them is still tracked.
+data/documents/
+
 # Rebuilt from data/ by 'python cli.py render': a page per investigation, with
 # no source of truth of its own.
 site/
