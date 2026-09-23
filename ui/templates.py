@@ -813,6 +813,7 @@ def render_detail(
         if (case.get("stage_count") or 0) > 1
         else ""
     )
+
     withdrawn_notice = ""
     if case.get("withdrawn"):
         last_listed = _date(case.get("last_listed_snapshot") or case.get("ids_snapshot"))
