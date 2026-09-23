@@ -292,6 +292,11 @@ table.list .attachments a:last-child { margin-bottom: 0; }
 .attorneys summary { display: inline; cursor: pointer; color: var(--accent); }
 .pill-lead { font-size: 0.66rem; padding: 0.08rem 0.45rem; margin-left: 0.2rem; vertical-align: 0.08em; }
 .no-counsel { font-size: 0.85rem; color: var(--muted); font-style: italic; }
+.non-party-reason { font-size: 0.84rem; font-weight: 400; color: var(--muted); margin-top: 0.15rem; }
+.non-party-reason details.why { margin-top: 0.2rem; }
+.non-party-reason details.why summary { cursor: pointer; color: var(--accent); }
+.non-party-reason details.why p, .non-party-reason details.why ul { margin: 0.35rem 0 0; }
+.non-party-reason details.why ul { padding-left: 1.1rem; }
 .panel { padding: 0.9rem 1.1rem; margin-bottom: 1.1rem; }
 .panel-status { display: flex; flex-wrap: wrap; gap: 0.35rem 1.1rem; font-size: 0.82rem; color: var(--muted); }
 .panel-status .ok { color: var(--green-fg); font-weight: 600; }
@@ -801,6 +806,7 @@ def _search_blob(case: dict[str, Any], counsel: dict[str, Any] | None = None) ->
     for rep in (counsel or {}).get("representations") or []:
         parts.append(rep.get("firm"))
         parts.extend(attorney.get("name") for attorney in rep.get("attorneys") or [])
+    parts.extend(party.get("name") for party in (counsel or {}).get("non_parties") or [])
     return _e(" ".join(str(part) for part in parts if part).lower())
 
 
@@ -1058,6 +1064,44 @@ def _firm_html(rep: dict[str, Any], number: str) -> str:
 </div>"""
 
 
+def _non_party_reason(party: dict[str, Any], number: str) -> str:
+    """Why a non-party is in the case: a line, and the evidence under it --
+    the purpose its notice states, and the papers it filed itself.
+    """
+    summary = party.get("summary")
+    if not summary:
+        return ""
+    if party.get("served_on"):
+        summary = f"{summary} on {dates.format_ui(party['served_on'])}"
+
+    evidence = []
+    notice = party.get("notice") or {}
+    if party.get("purpose"):
+        files = notice.get("files") or []
+        source = "Notice of limited appearance"
+        if files:
+            href = f"../../data/documents/{slug_for(number)}/{files[0]}"
+            source = f'<a href="{_e(href)}" target="_blank" rel="noopener">{source}</a>'
+        if notice.get("date"):
+            source += f", {_date(notice['date'])}"
+        purpose = str(party["purpose"]).rstrip(" .")
+        evidence.append(f"<p>{source}: &ldquo;&hellip;for the limited purpose of {_e(purpose)}.&rdquo;</p>")
+    filings = party.get("filings") or []
+    if filings:
+        items = "".join(
+            f'<li><span class="mono">{_date(f.get("date"))}</span> {_e(f.get("title"))}</li>'
+            for f in filings
+        )
+        evidence.append(f"<p>Its own filings:</p><ul>{items}</ul>")
+
+    details = (
+        f'<details class="why"><summary>Details</summary>{"".join(evidence)}</details>'
+        if evidence
+        else ""
+    )
+    return f'<div class="non-party-reason">{_e(summary)}{details}</div>'
+
+
 def _party_key(role: Any, name: Any) -> tuple[str, str]:
     return (str(role or "").strip().lower(), str(name or "").strip().lower())
 
@@ -1074,7 +1118,11 @@ def _parties_section(
     """
     number = str(case.get("investigation_number") or "")
     stage = ui_schema.stage_for(case) or {}
-    participants = (stage.get("lists") or {}).get("participants") or []
+    # IDS's parties, plus the non-parties only the filings name (see counsel.py).
+    participants = [
+        *((stage.get("lists") or {}).get("participants") or []),
+        *((counsel or {}).get("non_parties") or []),
+    ]
     reps = (counsel or {}).get("representations") or []
 
     represented: dict[tuple[str, str], list[int]] = {}
@@ -1099,6 +1147,7 @@ def _parties_section(
             names = "".join(
                 f"<li>{_e(p.get('name'))}"
                 + (f' <span class="case-sub">{_e(p["disposition"])}</span>' if p.get("disposition") else "")
+                + _non_party_reason(p, number)
                 + "</li>"
                 for p in members
             )

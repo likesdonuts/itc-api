@@ -23,6 +23,11 @@ Three things in the filings are read, in increasing detail:
 3. Notice of Appearance PDFs, where downloaded (`docs --appearances`): the
    signature block lists the whole team
 
+Non-parties -- companies subpoenaed into a case, which IDS never lists -- are
+recognized from filing titles ("... on Behalf of Non-Party Apple, Inc.") and
+matched like any party, and the reason they appeared is read from their
+notice of limited appearance.
+
 A notice of appearance says who a firm acts for, so where a firm has filed
 one, its parties come from its notices alone. Otherwise they come from its
 filings, leaving out any filed jointly by both sides (a joint stipulation
@@ -39,6 +44,7 @@ import re
 import unicodedata
 from collections import Counter
 from dataclasses import dataclass, field
+from datetime import datetime
 from difflib import SequenceMatcher
 from pathlib import Path
 from typing import Any, Callable, Iterable
@@ -229,6 +235,122 @@ def parse_title(title: Any) -> TitleFacts:
     if lead:
         facts.lead = lead.group("lead").strip()
     return facts
+
+
+# --------------------------------------------------------------------------
+# Non-parties
+#
+# IDS lists complainants, respondents and intervenors, but not the companies
+# that appear only because someone subpoenaed them. EDIS names them in the
+# title instead: "Notice of Limited Appearance of Cooley LLP on Behalf of
+# Non-Party Apple, Inc.", "Non-Party ABC Coke's Unopposed Motion ...".
+
+NON_PARTY_ROLE = "Non-Party"
+
+# A filing speaks *for* a non-party only when the non-party is its filer:
+# its own notice of appearance, or a paper that opens "Non-Party X's ...".
+# Everything else -- an order granting a non-party's motion, a party's
+# response to one, "Discovery of Non-Party Confidential Material" -- only
+# mentions one, and its "on behalf of" is somebody else.
+_NON_PARTY_FILER_RE = re.compile(
+    r"^Non-?Part(?:y|ies)\s"
+    r"|^(?:Supplemental\s+)?Notice of (?:Limited\s+)?Appearance\b.*\bon Behalf of Non-?Part(?:y|ies)\b",
+    re.I,
+)
+_LIMITED_PURPOSE_RE = re.compile(
+    r"for the limited purposes? of (?P<purpose>.+?)"
+    r"(?:\s+in the above[- ]captioned (?:investigation|matter)|\s+in this investigation|:)",
+    re.I,
+)
+# When the sentence ends some other way, the first full stop before a
+# capitalized word -- not one inside "Inc. and" or "Co. Ltd." ideally, which
+# is why it is only the fallback.
+_LIMITED_PURPOSE_SENTENCE_RE = re.compile(
+    r"for the limited purposes? of (?P<purpose>.+?)(?-i:\.\s+[A-Z][a-z])", re.I
+)
+_SERVED_BY_RE = re.compile(r"\bserved\b.*?\bby\s+(?:the\s+)?(?P<by>Complainants?|Respondents?|Commission Investigative Staff|OUII)\b", re.I)
+_SERVED_ON_RE = re.compile(r"\bserved\s+on\s+(?P<date>[A-Z][a-z]+\.?\s+\d{1,2},\s+\d{4})")
+
+
+def non_party_names(doc: dict[str, Any]) -> list[str]:
+    """The non-parties a filing was filed by, or none.
+
+    The name comes from EDIS's own "on behalf of" field ("Apple Inc."),
+    since commas inside a name ("Hickman, Williams & Company") make the
+    title's wording unsafe to split; "Non-Parties X and Y" is split like any
+    party list.
+    """
+    title = " ".join(str(doc.get("title") or "").split())
+    who = str(doc.get("on_behalf_of") or "").strip()
+    if not who or _is_commission(doc) or not _NON_PARTY_FILER_RE.search(title):
+        return []
+    return split_parties(who) if re.search(r"\bNon-?Parties\b", title, re.I) else [who]
+
+
+def _served_on(text: str) -> str | None:
+    match = _SERVED_ON_RE.search(text)
+    if not match:
+        return None
+    for fmt in ("%B %d, %Y", "%b. %d, %Y", "%b %d, %Y"):
+        try:
+            return datetime.strptime(match.group("date"), fmt).strftime("%Y-%m-%d")
+        except ValueError:
+            continue
+    return None
+
+
+def limited_purpose(text: str) -> dict[str, Any] | None:
+    """Why a non-party appeared, from its notice of limited appearance.
+
+    The notices state it in one standard sentence -- "... as counsel for
+    non-party Apple Inc. for the limited purposes of responding to the
+    subpoena duces tecum ... served on Apple by Complainants InterDigital ...
+    in the above-captioned investigation" -- from which this keeps the
+    sentence, and, for a subpoena, who served it and when.
+    """
+    body = " ".join(text.split())
+    match = _LIMITED_PURPOSE_RE.search(body) or _LIMITED_PURPOSE_SENTENCE_RE.search(body)
+    if not match:
+        return None
+    purpose = match.group("purpose").strip(" ,")
+    reason: dict[str, Any] = {"purpose": purpose}
+    served_by = _SERVED_BY_RE.search(purpose)
+    if served_by:
+        by = served_by.group("by")
+        reason["served_by"] = by if by.isupper() else by.rstrip("s").title() + "s"
+    served_on = _served_on(purpose)
+    if served_on:
+        reason["served_on"] = served_on
+    if "subpoena" in purpose.lower():
+        reason["subpoena"] = True
+    return reason
+
+
+def _non_party_summary(reason: dict[str, Any], filings: list[dict[str, Any]]) -> str:
+    """One line on why a non-party is in the case, for the case page.
+
+    From its notice when that was read ("Responding to subpoenas served by
+    Respondents"; the page adds the date served, `served_on`, in its own
+    format); otherwise from what its own filings are about; otherwise, that
+    its notice has not been downloaded.
+    """
+    if reason.get("purpose"):
+        if reason.get("subpoena"):
+            summary = "Responding to subpoenas"
+            if reason.get("served_by"):
+                summary += f" served by {reason['served_by']}"
+            return summary
+        return f"Limited appearance: {reason['purpose']}"
+    titles = " ".join(str(f.get("title") or "") for f in filings).lower()
+    if "quash" in titles:
+        return "Moved to quash or limit a subpoena"
+    if "subpoena" in titles:
+        return "Responding to a subpoena"
+    if "public interest" in titles:
+        return "Filed comments on the public interest"
+    if reason.get("notice"):
+        return "Limited appearance; the notice's PDF has not been downloaded yet"
+    return "Appears through its own filings"
 
 
 def is_appearance(doc: dict[str, Any]) -> bool:
@@ -499,6 +621,28 @@ def build_case_counsel(
         return rep
 
     ordered = sorted(documents, key=lambda d: dates.sort_key(_day(d)))
+
+    # Non-parties join the case's parties for matching, so their counsel is
+    # found exactly as a respondent's is. A name IDS already lists as a party
+    # stays that party.
+    non_parties: list[dict[str, Any]] = []
+    # Each non-party's own filings, which are the reason it is in the case
+    # when it never filed a notice saying so.
+    own_filings: dict[str, list[dict[str, Any]]] = {}
+    for doc in ordered:
+        for name in non_party_names(doc):
+            if match_parties(name, participants):
+                continue
+            known = match_parties(name, non_parties)
+            if not known:
+                known = [{"name": name, "role": NON_PARTY_ROLE}]
+                non_parties.extend(known)
+            own_filings.setdefault(known[0]["name"], []).append(
+                {"id": str(doc.get("id") or ""), "date": _day(doc), "title": doc.get("title")}
+            )
+    participants = participants + non_parties
+    # Why each non-party is here, from the first notice that says so.
+    reasons: dict[str, dict[str, Any]] = {}
     # Firms that speak for a party, first; filings from firms that never do
     # (a trade group's public-interest comment) are not counsel of record.
     for doc in ordered:
@@ -553,12 +697,24 @@ def build_case_counsel(
         if facts.lead:
             rep.attorney(facts.lead, doc_id).lead = True
 
+        appearing_for = match_parties(doc.get("on_behalf_of"), non_parties)
+        for party in appearing_for:
+            # The notice is recorded even before its PDF is downloaded, so the
+            # page can say where the reason will come from.
+            reasons.setdefault(party["name"], {"notice": {"id": doc_id, "date": day, "files": pdfs}})
+
         for path in _appearance_pdfs(docs_dir, doc_id):
             try:
                 text = read_pdf(path)
             except Exception as exc:  # one unreadable PDF should not stop the rest
                 log(f"    ! could not read {path.name}: {exc}")
                 continue
+            reason = limited_purpose(text) if appearing_for else None
+            for party in appearing_for:
+                known_reason = reasons[party["name"]]
+                if reason and "purpose" not in known_reason:
+                    known_reason.update(reason)
+                    known_reason["notice"] = {"id": doc_id, "date": day, "files": pdfs}
             known = [firm for r in reps.values() for firm in r.spellings] + facts.firms
             signature = parse_signature(text, known_firms=known)
             if not signature.attorneys:
@@ -580,7 +736,19 @@ def build_case_counsel(
     kept = [rep for rep in reps.values() if (rep.attorneys or rep.parties()) and not _is_alias(rep, reps.values())]
     representations = [rep.to_dict() for rep in kept]
     representations.sort(key=lambda r: (r["first_filed"] or "9999", r["firm"]))
-    return {"representations": representations, "rosters_read": rosters}
+    return {
+        "representations": representations,
+        "non_parties": [
+            {
+                **party,
+                **reasons.get(party["name"], {}),
+                "summary": _non_party_summary(reasons.get(party["name"], {}), own_filings.get(party["name"], [])),
+                "filings": own_filings.get(party["name"], []),
+            }
+            for party in non_parties
+        ],
+        "rosters_read": rosters,
+    }
 
 
 # --------------------------------------------------------------------------
@@ -592,6 +760,7 @@ class CounselReport:
     cases: int = 0
     representations: int = 0
     rosters_read: int = 0
+    non_parties: int = 0
     unmatched: list[str] = field(default_factory=list)
 
 
@@ -611,6 +780,10 @@ def run(store: Store, *, log: Logger = print) -> CounselReport:
         report.cases += 1
         report.representations += len(built["representations"])
         report.rosters_read += built["rosters_read"]
+        for party in built["non_parties"]:
+            report.non_parties += 1
+            why = "reason read" if party.get("purpose") else "no notice PDF read yet"
+            log(f"  {key}: non-party {party['name']} ({why})")
         for rep in built["representations"]:
             if not rep["parties"]:
                 report.unmatched.append(f"{key}: {rep['firm']} for {'; '.join(rep.get('on_behalf_of') or [])}")

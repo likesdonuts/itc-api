@@ -61,7 +61,8 @@
       "roles": [
         { "label": "Complainant(s)", "role": "Complainant" },
         { "label": "Respondent(s)", "role": "Respondent" },
-        { "label": "Intervenor(s)", "role": "Intervenor" }
+        { "label": "Intervenor(s)", "role": "Intervenor" },
+        { "label": "Non-Party(s)", "role": "Non-Party" }
       ]
     },
     {

@@ -298,6 +298,33 @@ class TestDetailPage(unittest.TestCase):
         # Hooli has no counsel in the filings.
         self.assertIn("Counsel not identified", section[section.index("Hooli Inc.") :])
 
+    def test_non_parties_are_listed_with_their_reason_and_counsel(self):
+        counsel = {
+            "representations": [rep("Cooley LLP", [("Non-Party", "Apple Inc.")], [{"name": "Stephen R. Smith", "lead": True}])],
+            "non_parties": [
+                {
+                    "name": "Apple Inc.",
+                    "role": "Non-Party",
+                    "summary": "Responding to subpoenas served by Respondents",
+                    "served_on": "2026-09-11",
+                    "purpose": "responding to the subpoena duces tecum",
+                    "notice": {"id": "1", "date": "2026-02-17", "files": ["1_2_3.pdf"]},
+                    "filings": [{"id": "1", "date": "2026-02-17", "title": "Notice of Limited Appearance"}],
+                }
+            ],
+        }
+        html = templates.render_detail(case(), [], SCHEMA, counsel=counsel)
+        section = html[html.index("Non-Party(s)") :]
+        self.assertIn("Apple Inc.", section)
+        self.assertIn("Responding to subpoenas served by Respondents on 11 Sep 2026", section)
+        self.assertIn("for the limited purpose of responding to the subpoena duces tecum", section)
+        self.assertIn('href="../../data/documents/337-1478/1_2_3.pdf"', section)
+        self.assertIn("Cooley LLP", section)
+        self.assertNotIn("Other counsel of record", html)
+
+        listed = templates.render_index([case()], SCHEMA, counsel={"337-1478": counsel})
+        self.assertIn("apple inc.", re.search(r'data-search="([^"]*)"', listed).group(1))
+
     def test_a_long_team_folds_after_the_first_few(self):
         team = [{"name": f"Lawyer {chr(65 + i)}"} for i in range(9)]
         counsel = {"representations": [rep("Firm LLP", [("Complainant", "Acme Inc.")], team)]}

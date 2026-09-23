@@ -299,6 +299,114 @@ class TestRepresentations(DataDirTestCase):
         self.assertEqual(names(reps["Morrison & Foerster LLP"]), ["Mary Prendergast"])
 
 
+APPLE_NOTICE = (
+    "NOTICE OF LIMITED APPEARANCE FOR NON-PARTY APPLE INC. Please note the limited appearance of the "
+    "following attorneys as counsel of record for non- party Apple Inc. ( “Apple”) for the limited "
+    "purposes of responding to the subpoena duces tecum and subpoena ad testificandum served on Apple by "
+    "Complainants InterDigital, Inc. and InterDigital VC Holdings, Inc. in the above-captioned investigation. "
+    "Stephen R. Smith Brittany Cazakoff COOLEY LLP\n"
+    "/s/ Stephen R. Smith\nStephen R. Smith\nBrittany Cazakoff\nCOOLEY LLP\n"
+    "Counsel for Non-Party Apple Inc.\n"
+)
+ABC_NOTICE = (
+    "Notice is hereby given, pursuant to Commission Rules 210.11 and 210.32, of the appearance of the "
+    "following as counsel for non-party ABC Coke (“ABC Coke”) for the limited purpose of objecting to, "
+    "moving to limit or quash, and/or otherwise responding to the subpoena duces tecum and ad testificandum "
+    "(collectively, “Subpoenas”) served on September 11, 2026, by Respondents Italiana Coke S.r.l., "
+    "Terminal Alti Fondali Savona S.r.l., and AMEX Coal Sp. z o.o. (collectively, “Respondents”) in the "
+    "above-captioned investigation: Ryan W. O'Donnell VOLPE KOENIG"
+)
+INTERDIGITAL = [
+    {"name": "InterDigital, Inc.", "role": "Complainant"},
+    {"name": "InterDigital VC Holdings, Inc.", "role": "Complainant"},
+    {"name": "Amazon.com, Inc.", "role": "Respondent"},
+]
+
+
+class TestNonParties(DataDirTestCase):
+    def test_only_a_non_partys_own_filings_name_it(self):
+        own = [
+            doc(1, type_="Notice of Appearance", on_behalf_of="Apple Inc.", firm="Cooley LLP",
+                title="Notice of Limited Appearance of Cooley LLP on Behalf of Non-Party Apple, Inc.; "
+                      "Designation of Stephen R. Smith as Lead Counsel"),
+            doc(2, on_behalf_of="Hickman, Williams & Company", firm="FBT Gibbons LLP",
+                title="Non-Party Hickman, Williams & Company's Unopposed Motion for Extension of Time"),
+        ]
+        self.assertEqual(counsel.non_party_names(own[0]), ["Apple Inc."])
+        # A comma inside the name is not a list.
+        self.assertEqual(counsel.non_party_names(own[1]), ["Hickman, Williams & Company"])
+
+        mentions = [
+            doc(3, type_="Order", on_behalf_of="Administrative Law Judge", firm="USITC",
+                title="Granting Non-Party ABC Coke's Unopposed Motion for Extension of Time"),
+            doc(4, on_behalf_of="InterDigital, Inc.", firm="McKool Smith P.C.",
+                title="Complainants' Unopposed Motion for Entry of Supplemental Protective Order Governing "
+                      "Discovery of Non-Party Confidential Material"),
+            doc(5, on_behalf_of="Serendia, LLC", firm="Latham & Watkins LLP",
+                title="Complainant Serendia LLC's Response to Non-Party Merle Richman's Motion to Quash"),
+        ]
+        for mention in mentions:
+            self.assertEqual(counsel.non_party_names(mention), [], mention["title"])
+
+    def test_the_purpose_of_a_limited_appearance_is_read_from_the_notice(self):
+        apple = counsel.limited_purpose(APPLE_NOTICE)
+        self.assertTrue(apple["purpose"].startswith("responding to the subpoena duces tecum"))
+        self.assertTrue(apple["purpose"].endswith("InterDigital VC Holdings, Inc."))
+        self.assertEqual(apple["served_by"], "Complainants")
+        self.assertNotIn("served_on", apple)
+
+        abc = counsel.limited_purpose(ABC_NOTICE)
+        self.assertEqual(abc["served_by"], "Respondents")
+        self.assertEqual(abc["served_on"], "2026-09-11")
+        self.assertTrue(abc["subpoena"])
+        self.assertIsNone(counsel.limited_purpose("Notice of Appearance of the following counsel"))
+
+    def test_a_non_party_gets_its_counsel_and_its_reason(self):
+        pdf_dir = self.root / "documents" / "337-1481"
+        pdf_dir.mkdir(parents=True)
+        (pdf_dir / "872720_2499478_2499478.pdf").write_bytes(b"%PDF")
+        notice = doc(872720, type_="Notice of Appearance", on_behalf_of="Apple Inc.", firm="Cooley LLP",
+                     filed_by="Stephen R. Smith",
+                     title="Notice of Limited Appearance of Cooley LLP on Behalf of Non-Party Apple, Inc.; "
+                           "Designation of Stephen R. Smith as Lead Counsel")
+        case = {"stages": [{"lists": {"participants": INTERDIGITAL}}]}
+        built = counsel.build_case_counsel(
+            case, [notice], docs_dir=pdf_dir, read_pdf=lambda p: APPLE_NOTICE, log=lambda m: None
+        )
+
+        apple = built["non_parties"][0]
+        self.assertEqual(apple["name"], "Apple Inc.")
+        self.assertEqual(apple["role"], "Non-Party")
+        self.assertEqual(apple["summary"], "Responding to subpoenas served by Complainants")
+        self.assertEqual(apple["notice"]["files"], ["872720_2499478_2499478.pdf"])
+        cooley = built["representations"][0]
+        self.assertEqual(cooley["roles"], ["Non-Party"])
+        self.assertEqual([a["name"] for a in cooley["attorneys"]], ["Stephen R. Smith", "Brittany Cazakoff"])
+
+    def test_without_a_notice_the_reason_comes_from_its_own_filings(self):
+        motion = doc(9, on_behalf_of="Merle Richman", firm="FisherBroyles, LLP", filed_by="Paul C. Goulet",
+                     title="Non-Party Merle Richman's Motion to Quash or Otherwise Limit BTL's Subpoena")
+        comment = doc(10, type_="Comments/Response to Comments", on_behalf_of="Google LLC",
+                      firm="Wolf, Greenfield & Sacks, PC", filed_by="Gregory F. Corbett",
+                      title="Non-Party Google LLC's Response to the Commission's Solicitation of Comments "
+                            "Relating to the Public Interest")
+        built = counsel.build_case_counsel(
+            {"stages": []}, [motion, comment], docs_dir=self.root / "none", log=lambda m: None
+        )
+        summaries = {p["name"]: p["summary"] for p in built["non_parties"]}
+        self.assertEqual(summaries["Merle Richman"], "Moved to quash or limit a subpoena")
+        self.assertEqual(summaries["Google LLC"], "Filed comments on the public interest")
+        self.assertEqual(built["non_parties"][0]["filings"][0]["id"], "9")
+
+    def test_a_name_ids_lists_as_a_party_stays_that_party(self):
+        mislabelled = doc(11, on_behalf_of="Amazon.com, Inc.", firm="Firm LLP",
+                          title="Non-Party Amazon.com, Inc.'s Motion")
+        case = {"stages": [{"lists": {"participants": INTERDIGITAL}}]}
+        built = counsel.build_case_counsel(case, [mislabelled], docs_dir=self.root / "none", log=lambda m: None)
+        self.assertEqual(built["non_parties"], [])
+        self.assertEqual(built["representations"][0]["roles"], ["Respondent"])
+
+
 @contextmanager
 def _session(client):
     yield client
