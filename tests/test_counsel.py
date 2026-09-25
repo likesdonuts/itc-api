@@ -591,7 +591,7 @@ class TestTheProcess(DataDirTestCase):
         store.save_documents()
         before = {
             name: (self.data_dir / name).read_text(encoding="utf-8")
-            for name in ("investigations.json", "documents_index.json")
+            for name in ("investigations.json", "documents_index/337-1478.json")
         }
 
         counsel.run(store, log=self.quiet)

@@ -144,7 +144,9 @@ class EdisClient:
         root = ET.fromstring(resp.text)
         return [_elements_to_dict(inv) for inv in root.findall(".//investigation")]
 
-    def list_documents(self, investigation_number: str, max_pages: int = 50) -> list[dict[str, Any]]:
+    # 50 pages (1,000 documents) cut 337-TA-395's docket short; the largest
+    # dockets run to several thousand.
+    def list_documents(self, investigation_number: str, max_pages: int = 1000) -> list[dict[str, Any]]:
         documents: list[dict[str, Any]] = []
         page = 1
         while page <= max_pages:

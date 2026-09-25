@@ -5,7 +5,9 @@ This serves the repository over localhost and runs the data layer on the
 page's behalf:
 
     POST /api/jobs          start a job: the daily sync, documents for the
-                            cases picked on the page, or one claims analysis
+                            cases picked on the page, one claims analysis,
+                            or the document-list backfill
+    POST /api/jobs/stop     ask the running job to stop (the backfill only)
     GET  /api/jobs/current  the running (or last) job, with its progress
     GET  /api/status        when the last sync and fetch ran, the token's expiry
 
@@ -33,7 +35,7 @@ from http.server import SimpleHTTPRequestHandler, ThreadingHTTPServer
 from pathlib import Path
 from typing import Any, Callable
 
-from datalayer import counsel, docs, ingest, ids
+from datalayer import backfill, counsel, docs, ingest, ids
 from datalayer.client import decode_jwt_exp
 from datalayer.config import DATA_DIR, SCHEMA_PATH, SITE_DIR, MissingTokenError, load_token
 from datalayer.runner import ProcessAborted
@@ -65,6 +67,9 @@ class Job:
     started_at: str = field(default_factory=_now)
     finished_at: str | None = None
     lines: list[str] = field(default_factory=list)
+    # A long job that checks `stop` between steps can be stopped from the page.
+    stoppable: bool = False
+    stop: threading.Event = field(default_factory=threading.Event, repr=False)
     _lock: threading.Lock = field(default_factory=threading.Lock, repr=False)
 
     def log(self, line: str) -> None:
@@ -89,6 +94,8 @@ class Job:
             "message": self.message,
             "started_at": self.started_at,
             "finished_at": self.finished_at,
+            "stoppable": self.stoppable and self.state == "running",
+            "stopping": self.stop.is_set(),
             "lines": lines,
         }
 
@@ -134,6 +141,7 @@ class Controller:
         runs = (load_json(Path(self.data_dir) / STATE_FILE, {}) or {}).get("runs") or {}
         sync = runs.get("ingest") or {}
         fetched = runs.get("documents") or {}
+        filled = runs.get("backfill") or {}
         job = self._job
         return {
             "ok": True,
@@ -144,6 +152,11 @@ class Controller:
             "documents": {
                 "finished_at": fetched.get("finished_at"),
                 "numbers": fetched.get("numbers") or [],
+            },
+            "backfill": {
+                "finished_at": filled.get("finished_at"),
+                "remaining": filled.get("remaining"),
+                "of": filled.get("of"),
             },
             "token": self.token_status(),
             "job": job.to_dict() if job else None,
@@ -170,6 +183,34 @@ class Controller:
                 HTTPStatus.NOT_FOUND,
                 f"Not on disk: {', '.join(unknown)}. Run the daily sync first.",
             )
+        token = self._usable_token()
+
+        what = "Fetch documents" if download else "Update document lists"
+        label = f"{what}: {keys[0]}" if len(keys) == 1 else f"{what}: {len(keys)} cases"
+        return self._start(
+            "documents", label, lambda job: self._run_documents(job, token, keys, download)
+        )
+
+    def start_backfill(self) -> Job:
+        """List the documents of every case that has no list yet (no PDFs).
+        Long; it saves as it goes, can be stopped, and continues next time.
+        """
+        token = self._usable_token()
+        return self._start(
+            "backfill", "Backfill document lists", lambda job: self._run_backfill(job, token), stoppable=True
+        )
+
+    def stop_job(self) -> Job:
+        job = self._job
+        if job is None or job.state != "running":
+            raise JobRefused(HTTPStatus.CONFLICT, "No job is running")
+        if not job.stoppable:
+            raise JobRefused(HTTPStatus.CONFLICT, f"{job.label} cannot be stopped; wait for it to finish")
+        job.stop.set()
+        job.log("Stop requested; finishing the current case and saving...")
+        return job
+
+    def _usable_token(self) -> str:
         try:
             token = self.token_loader()
         except MissingTokenError:
@@ -183,12 +224,7 @@ class Controller:
                 "The EDIS token has expired. Generate a new one at edis.usitc.gov "
                 "-> profile -> API Token Generator and put it in .env",
             )
-
-        what = "Fetch documents" if download else "Update document lists"
-        label = f"{what}: {keys[0]}" if len(keys) == 1 else f"{what}: {len(keys)} cases"
-        return self._start(
-            "documents", label, lambda job: self._run_documents(job, token, keys, download)
-        )
+        return token
 
     def start_claims(self, number: str) -> Job:
         """Create, update or retry one investigation's claims analysis. One
@@ -200,10 +236,10 @@ class Controller:
             raise JobRefused(HTTPStatus.NOT_FOUND, f"{number} is not on disk. Run the daily sync first.")
         return self._start("claims", f"Claims analysis: {key}", lambda job: self._run_claims(job, key))
 
-    def _start(self, kind: str, label: str, work: Callable[[Job], None]) -> Job:
+    def _start(self, kind: str, label: str, work: Callable[[Job], None], *, stoppable: bool = False) -> Job:
         if not self._lock.acquire(blocking=False):
             raise JobRefused(HTTPStatus.CONFLICT, "Another job is still running; wait for it to finish")
-        job = Job(id=self._next_id, kind=kind, label=label)
+        job = Job(id=self._next_id, kind=kind, label=label, stoppable=stoppable)
         self._next_id += 1
         self._job = job
 
@@ -270,7 +306,8 @@ class Controller:
                 f"{len(report.changed)} changed."
             )
 
-        targets = store.numbers_with_documents()
+        # Backfilled cases only while they are open; see backfill.py.
+        targets = backfill.daily_targets(store)
         if targets:
             try:
                 token = self.token_loader()
@@ -287,6 +324,7 @@ class Controller:
                         targets,
                         download=True,
                         only_types=docs.APPEARANCE_TYPES,
+                        by_hand=False,
                         log=log,
                     )
                 except ProcessAborted as exc:
@@ -327,6 +365,26 @@ class Controller:
             job.finish(f"Built from {events} claim event(s), with warnings: {'; '.join(warnings)}.{cost}", "warn")
         else:
             job.finish(f"Built from {events} claim event(s).{cost}", "ok")
+
+    def _run_backfill(self, job: Job, token: str) -> None:
+        log = self._logger(job)
+        store = Store.load(self.data_dir)
+        report = backfill.run(store, token, should_stop=job.stop.is_set, log=log)
+        if report.listed:
+            self._rebuild(store, log)
+
+        message = (
+            f"{len(report.listed)} case(s) listed ({report.documents} documents), "
+            f"{len(report.empty)} with nothing in EDIS. {report.remaining} still to do."
+        )
+        level = "ok"
+        if report.stopped:
+            message += f" Stopped: {report.stopped}. Run it again to continue."
+            level = "warn"
+        if report.failed:
+            message += f" {len(report.failed)} failed (tried again next run)."
+            level = "warn"
+        job.finish(message, level)
 
     def _run_documents(self, job: Job, token: str, keys: list[str], download: bool) -> None:
         log = self._logger(job)
@@ -384,6 +442,14 @@ class Handler(SimpleHTTPRequestHandler):
         return clean.startswith((f"/{self.controller.site_dir.name}/", "/data/documents/"))
 
     def do_POST(self) -> None:
+        if self._endpoint() == "/api/jobs/stop":
+            try:
+                job = self.controller.stop_job()
+            except JobRefused as exc:
+                self._send_json(exc.status, {"ok": False, "message": str(exc)})
+                return
+            self._send_json(HTTPStatus.ACCEPTED, {"ok": True, "job": job.to_dict()})
+            return
         if self._endpoint() != "/api/jobs":
             self._send_json(HTTPStatus.NOT_FOUND, {"ok": False, "message": "unknown endpoint"})
             return
@@ -416,6 +482,8 @@ class Handler(SimpleHTTPRequestHandler):
                 job = self.controller.start_documents(numbers, download=bool(payload.get("download")))
             elif kind == "claims":
                 job = self.controller.start_claims(str(payload.get("number") or ""))
+            elif kind == "backfill":
+                job = self.controller.start_backfill()
             else:
                 raise JobRefused(HTTPStatus.BAD_REQUEST, f"unknown job kind {kind!r}")
         except JobRefused as exc:

@@ -2,7 +2,7 @@
 
 You name one or more investigation numbers, this asks EDIS for their document
 lists and (optionally) downloads the public PDFs. It writes
-`data/documents_index.json`, `data/documents_state.json` and files under
+`data/documents_index/` (one file per case), `data/documents_state.json` and files under
 `data/documents/` -- never `data/investigations.json`.
 
 That boundary is deliberate: investigation information and parties come from
@@ -322,13 +322,19 @@ def run(
     only_types: frozenset[str] | None = None,
     only_ids: frozenset[str] | None = None,
     known_only: bool = False,
+    by_hand: bool = True,
     log: Logger = print,
 ) -> DocsReport:
     """`only_types` limits downloads to those document types and `only_ids`
     to those documents (a claims analysis's sources); every document is
     still listed.
+
+    A fetch you ask for (`by_hand`) makes a backfilled case one of yours; a
+    routine refresh (the daily sync) leaves it marked as backfilled, so it
+    drops out of the daily sync once it closes (see backfill.py).
     """
     targets, unknown = resolve_targets(store, numbers)
+    backfilled = {k for k in targets if (store.documents_state.get(k) or {}).get("backfill")}
     report = DocsReport(requested=targets)
 
     if unknown:
@@ -347,6 +353,10 @@ def run(
         report.results = fetch_many(
             client, store, targets, download=download, only_types=only_types, only_ids=only_ids, log=log
         )
+    if not by_hand:
+        for key in backfilled:
+            if key in store.documents_state:
+                store.documents_state[key]["backfill"] = True
 
     store.save_documents()
     store.record_run(

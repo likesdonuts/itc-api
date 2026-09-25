@@ -52,7 +52,7 @@ class TestDocuments(DocsTestCase):
 
         self.assertEqual([r.key for r in report.fetched], ["337-1478"])
         self.assertEqual(client.downloads, [("100", "900")])
-        stored = self.read_json("documents_index.json")["337-1478"][0]
+        stored = self.read_documents()["337-1478"][0]
         self.assertEqual(stored["document_type"], "Complaint")
         self.assertEqual(stored["document_date"], "2026-01-13")
         self.assertEqual(
@@ -169,7 +169,7 @@ class TestItLeavesCaseDataAlone(DocsTestCase):
         store = self.seeded_store()
         client = FakeEdisClient(documents={"337-1478": EDIS_DOCUMENTS})
         self.fetch(client, store, ["337-1478"])
-        before = (self.data_dir / "documents_index.json").read_text(encoding="utf-8")
+        before = (self.data_dir / "documents_index" / "337-1478.json").read_text(encoding="utf-8")
 
         snapshot = write_snapshot(
             self.ids_dir, [ids_row(status="Terminated")], day="2026-09-23"
@@ -177,7 +177,7 @@ class TestItLeavesCaseDataAlone(DocsTestCase):
         ingest.parse_snapshot(store, snapshot, log=self.quiet)
 
         self.assertEqual(
-            before, (self.data_dir / "documents_index.json").read_text(encoding="utf-8")
+            before, (self.data_dir / "documents_index" / "337-1478.json").read_text(encoding="utf-8")
         )
         self.assertEqual(store.investigations["337-1478"]["status"], "Terminated")
 

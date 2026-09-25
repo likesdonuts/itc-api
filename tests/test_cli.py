@@ -17,7 +17,7 @@ from support import (
 )
 
 import cli
-from datalayer import docs, ids
+from datalayer import backfill, docs, ids
 
 
 @contextmanager
@@ -103,7 +103,7 @@ class TestDocs(CliTestCase):
 
         self.assertEqual(exit_code, 0)
         self.assertEqual(client.document_calls, ["337-1478"])
-        self.assertIn("337-1478", self.read_json("documents_index.json"))
+        self.assertIn("337-1478", self.read_documents())
 
     def test_docs_without_numbers_is_an_error_that_says_what_to_do(self):
         self.seed_cases()
@@ -178,6 +178,28 @@ class TestOtherCommands(CliTestCase):
         self.assertIn("IDS ERROR", output)
         self.assertEqual(again.document_calls, ["337-1478"])
         self.assertTrue((self.site_dir / "index.html").exists())
+
+    def test_backfill_lists_cases_without_a_list_and_downloads_nothing(self):
+        self.seed_cases([ids_row(), ids_row("337-1479", investigation_id=2, topic="Certain Widgets")])
+        self.invoke(["docs", "337-1478"], client=FakeEdisClient(documents={"337-1478": EDIS_DOCUMENTS}))
+
+        client = FakeEdisClient(documents={"337-1479": EDIS_DOCUMENTS})
+        with mock.patch("cli._app_is_running", return_value=False), mock.patch.object(
+            backfill, "edis_session", lambda token: _session(client)
+        ), mock.patch.object(backfill, "PAUSE_SECONDS", 0):
+            exit_code, _ = self.invoke(["backfill", "--pause", "0"], client=client)
+
+        self.assertEqual(exit_code, 0)
+        self.assertEqual(client.document_calls, ["337-1479"])
+        self.assertEqual(client.downloads, [])
+        self.assertIn("337-1479", self.read_documents())
+
+    def test_backfill_refuses_while_the_app_is_open(self):
+        self.seed_cases()
+        with mock.patch("cli._app_is_running", return_value=True):
+            exit_code, output = self.invoke(["backfill"], capture=True)
+        self.assertEqual(exit_code, 1)
+        self.assertIn("Backfill all cases", output)
 
     def test_fields_lists_what_the_schema_can_name(self):
         self.seed_cases()

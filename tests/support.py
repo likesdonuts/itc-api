@@ -207,6 +207,13 @@ class DataDirTestCase(unittest.TestCase):
     def read_json(self, name: str):
         return json.loads((self.data_dir / name).read_text(encoding="utf-8"))
 
+    def read_documents(self) -> dict:
+        """data/documents_index/, one file per case, as {case: documents}."""
+        return {
+            path.stem: json.loads(path.read_text(encoding="utf-8"))
+            for path in sorted((self.data_dir / "documents_index").glob("*.json"))
+        }
+
     @staticmethod
     def quiet(_message: str) -> None:
         return None

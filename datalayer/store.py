@@ -8,7 +8,8 @@ Each file has exactly one writer, which is what keeps the two data processes
 from treading on each other:
 
     investigations.json   the IDS ingest (cases, stages, parties)
-    documents_index.json  the EDIS documents process
+    documents_index/      the EDIS documents process: one <case>.json per
+                          case, each that case's document list
     documents_state.json  the EDIS documents process (its own bookkeeping)
     counsel.json          the counsel process (who represents whom, per case)
     sync_log.csv          the IDS ingest, one appended row per run
@@ -29,6 +30,12 @@ from typing import Any
 from .config import DATA_DIR, DOCS_DIR
 
 INVESTIGATIONS_FILE = "investigations.json"
+# One file per case: with every case's list on disk, a single file would be
+# well past the 100 MB GitHub accepts, and one day's refresh of a few open
+# cases would rewrite all of it.
+DOCUMENTS_INDEX_DIR = "documents_index"
+# The single file it used to be; read if it is still there, and replaced by
+# the directory on the next save.
 DOCUMENTS_INDEX_FILE = "documents_index.json"
 DOCUMENTS_STATE_FILE = "documents_state.json"
 COUNSEL_FILE = "counsel.json"
@@ -58,8 +65,60 @@ def write_text_atomic(path: Path, text: str) -> None:
     os.replace(tmp, path)
 
 
+def dump_json(value: Any) -> str:
+    return json.dumps(value, indent=2, sort_keys=True)
+
+
 def save_json(path: Path, value: Any) -> None:
-    write_text_atomic(path, json.dumps(value, indent=2, sort_keys=True))
+    write_text_atomic(path, dump_json(value))
+
+
+_SAFE_KEY_RE = re.compile(r"^[A-Za-z0-9][A-Za-z0-9._-]*$")
+
+
+def load_documents_index(data_dir: Path) -> tuple[dict[str, list[dict[str, Any]]], dict[str, int]]:
+    """Every case's document list, and a fingerprint of each file as read
+    (so a save can skip the cases that did not change).
+
+    Reads the old single documents_index.json when the directory is not
+    there yet.
+    """
+    directory = Path(data_dir) / DOCUMENTS_INDEX_DIR
+    if not directory.is_dir():
+        return load_json(Path(data_dir) / DOCUMENTS_INDEX_FILE, {}), {}
+    documents: dict[str, list[dict[str, Any]]] = {}
+    fingerprints: dict[str, int] = {}
+    for path in sorted(directory.glob("*.json")):
+        try:
+            text = path.read_text(encoding="utf-8")
+            documents[path.stem] = json.loads(text)
+        except (OSError, json.JSONDecodeError):
+            continue
+        fingerprints[path.stem] = hash(text)
+    return documents, fingerprints
+
+
+def save_documents_index(
+    data_dir: Path, documents: dict[str, list[dict[str, Any]]], fingerprints: dict[str, int]
+) -> None:
+    """Write each case whose list changed, remove the files of cases no longer
+    listed (a renumbered docket), and retire the old single file.
+    """
+    directory = Path(data_dir) / DOCUMENTS_INDEX_DIR
+    directory.mkdir(parents=True, exist_ok=True)
+    for key, value in documents.items():
+        if not _SAFE_KEY_RE.match(key):
+            raise ValueError(f"unexpected case key for a file name: {key!r}")
+        text = dump_json(value)
+        if fingerprints.get(key) != hash(text) or not (directory / f"{key}.json").exists():
+            write_text_atomic(directory / f"{key}.json", text)
+            fingerprints[key] = hash(text)
+    for gone in set(fingerprints) - set(documents):
+        (directory / f"{gone}.json").unlink(missing_ok=True)
+        del fingerprints[gone]
+    legacy = Path(data_dir) / DOCUMENTS_INDEX_FILE
+    if legacy.exists():
+        legacy.unlink()
 
 
 def number_key(value: str) -> str:
@@ -124,18 +183,21 @@ class Store:
     documents_state: dict[str, Any] = field(default_factory=dict)
     counsel: dict[str, Any] = field(default_factory=dict)
     state: dict[str, Any] = field(default_factory=dict)
+    _documents_on_disk: dict[str, int] = field(default_factory=dict, repr=False)
 
     @classmethod
     def load(cls, data_dir: Path = DATA_DIR) -> "Store":
         base = Path(data_dir)
+        documents, on_disk = load_documents_index(base)
         return cls(
             data_dir=base,
             docs_dir=base / "documents",
             investigations=load_json(base / INVESTIGATIONS_FILE, {}),
-            documents=load_json(base / DOCUMENTS_INDEX_FILE, {}),
+            documents=documents,
             documents_state=load_json(base / DOCUMENTS_STATE_FILE, {}),
             counsel=load_json(base / COUNSEL_FILE, {}),
             state=load_json(base / STATE_FILE, {}),
+            _documents_on_disk=on_disk,
         )
 
     def save_cases(self) -> None:
@@ -144,7 +206,7 @@ class Store:
 
     def save_documents(self) -> None:
         """Only the EDIS documents process calls this."""
-        save_json(self.data_dir / DOCUMENTS_INDEX_FILE, self.documents)
+        save_documents_index(self.data_dir, self.documents, self._documents_on_disk)
         save_json(self.data_dir / DOCUMENTS_STATE_FILE, self.documents_state)
 
     def save_counsel(self) -> None:

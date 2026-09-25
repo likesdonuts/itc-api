@@ -25,6 +25,7 @@ Examples:
     python cli.py docs 337-1478 337-3936    # fetch those cases' documents
     python cli.py docs 337-1478 --no-attachments
     python cli.py docs --existing --appearances   # just the Notice of Appearance PDFs
+    python cli.py backfill                  # document lists (no PDFs) for every case; resumable
     python cli.py counsel                   # rebuild who-represents-whom, offline
     python cli.py claims 337-1366 --render  # build a claims analysis
     python cli.py render                    # rebuild the site, offline
@@ -41,7 +42,7 @@ import sys
 from pathlib import Path
 
 import schema as ui_schema
-from datalayer import counsel, docs, ids, ingest, normalize, runlog
+from datalayer import backfill, counsel, docs, ids, ingest, normalize, runlog
 from datalayer.config import DATA_DIR, IDS_DIR, MissingTokenError, SCHEMA_PATH, SITE_DIR, load_token
 from datalayer.runner import ProcessAborted
 from datalayer.store import Store
@@ -132,6 +133,22 @@ def build_parser() -> argparse.ArgumentParser:
         help="refuse numbers that aren't on disk instead of asking EDIS about them",
     )
     _add_render_flag(p_docs)
+
+    p_backfill = sub.add_parser(
+        "backfill",
+        help="list the documents (no PDFs) of every case that has no list yet; resumable",
+    )
+    p_backfill.add_argument("--limit", type=int, help="stop after this many cases")
+    p_backfill.add_argument(
+        "--retry-empty", action="store_true", help="ask EDIS again about cases it had nothing for"
+    )
+    p_backfill.add_argument(
+        "--pause", type=float, default=None, help="seconds between cases (default 0.5)"
+    )
+    p_backfill.add_argument(
+        "--force", action="store_true", help=argparse.SUPPRESS  # run even with the app open
+    )
+    _add_render_flag(p_backfill)
 
     p_claims = sub.add_parser(
         "claims",
@@ -264,6 +281,8 @@ def cmd_docs(args: argparse.Namespace, store: Store) -> int:
         download=not args.no_attachments,
         only_types=_only_types(args),
         known_only=args.known_only,
+        # Naming cases makes them yours; --existing/--all is a refresh.
+        by_hand=not (args.all or args.existing),
     )
     print(
         f"\nDocuments done. {len(report.fetched)} case(s) fetched, "
@@ -274,6 +293,34 @@ def cmd_docs(args: argparse.Namespace, store: Store) -> int:
     if args.render:
         _render(args, store)
     return 0 if report.fetched or not report.failed else 1
+
+
+def _app_is_running(port: int = 8765) -> bool:
+    import socket
+
+    with socket.socket(socket.AF_INET, socket.SOCK_STREAM) as probe:
+        probe.settimeout(0.5)
+        return probe.connect_ex(("127.0.0.1", port)) == 0
+
+
+def cmd_backfill(args: argparse.Namespace, store: Store) -> int:
+    if _app_is_running() and not args.force:
+        # Both would rewrite the document lists (data/documents_index/),
+        # each without the other's changes.
+        print(
+            "The app is open. Use its 'Backfill all cases' button instead, or close it "
+            "first: two processes writing the document lists would overwrite each other."
+        )
+        return 1
+    options = {"pause": args.pause} if args.pause is not None else {}
+    report = backfill.run(
+        store, load_token(), limit=args.limit, retry_empty=args.retry_empty, **options
+    )
+    if report.listed:
+        _counsel(store)
+    if args.render:
+        _render(args, store)
+    return 1 if report.stopped else 0
 
 
 def cmd_claims(args: argparse.Namespace, store: Store) -> int:
@@ -440,7 +487,8 @@ def cmd_refresh(args: argparse.Namespace, store: Store) -> int:
         print(f"IDS ERROR: {exc}\nCase data not updated; refreshing documents with the case data on disk.")
 
     if not args.no_documents:
-        targets = store.numbers_with_documents()
+        # Backfilled cases only while they are open, as in the app.
+        targets = backfill.daily_targets(store)
         if targets:
             print(f"\nRefreshing documents for {len(targets)} case(s) already fetched...")
             docs.run(
@@ -449,6 +497,7 @@ def cmd_refresh(args: argparse.Namespace, store: Store) -> int:
                 targets,
                 download=not args.no_attachments,
                 only_types=_only_types(args),
+                by_hand=False,
             )
 
     _counsel(store)
@@ -467,6 +516,7 @@ COMMANDS = {
     "sync": cmd_sync,
     "parse": cmd_parse,
     "docs": cmd_docs,
+    "backfill": cmd_backfill,
     "counsel": cmd_counsel,
     "claims": cmd_claims,
     "render": cmd_render,
