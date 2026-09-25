@@ -1,0 +1,38 @@
+[
+  {
+    "attachments": [],
+    "document_date": "2009-05-21",
+    "document_type": "Complaint",
+    "filed_by": "John D. Gugliotta",
+    "firm_organization": "Patent, Copyright & Trademark Law Group, LLC",
+    "id": "403684",
+    "official_received_date": "2009-05-21T16:09:00",
+    "on_behalf_of": "OurPet's Company",
+    "security_level": "Public",
+    "title": "Withdrawal"
+  },
+  {
+    "attachments": [],
+    "document_date": "2009-05-11",
+    "document_type": "Complaint",
+    "filed_by": "John D. Gugliotta",
+    "firm_organization": "Patent, Copyright, & Trademark Law Group, LLC",
+    "id": "402811",
+    "official_received_date": "2009-05-15T11:12:00",
+    "on_behalf_of": "OurPet's Company",
+    "security_level": "Public",
+    "title": null
+  },
+  {
+    "attachments": [],
+    "document_date": "2009-05-11",
+    "document_type": "Complaint",
+    "filed_by": "John D Gugliotta",
+    "firm_organization": "Patent, Copyright, & Trademark Law Group, LLC",
+    "id": "402854",
+    "official_received_date": "2009-05-11T12:21:00",
+    "on_behalf_of": "OurPet's Company",
+    "security_level": "Confidential",
+    "title": "Complaint  - Confidential Appendix C"
+  }
+]

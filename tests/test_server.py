@@ -221,6 +221,22 @@ class TestDailyJob(ServerTestCase):
         self.assertEqual(self.calls[1]["numbers"], ["337-1478"])
         self.assertTrue(self.calls[1]["download"])
         self.assertEqual(self.calls[1]["only_types"], {"Notice of Appearance"})
+        self.assertFalse(self.calls[1]["by_hand"])
+
+    def test_a_closed_backfilled_case_is_not_refreshed(self):
+        store = Store.load(self.data_dir)
+        store.investigations["337-1478"]["status"] = "Terminated"
+        store.save_cases()
+        store.put_documents("337-1478", [{"id": "1", "title": "Complaint"}])
+        store.documents_state["337-1478"]["backfill"] = True
+        store.save_documents()
+
+        with mock.patch("datalayer.ingest.run", self.fake_ingest()), mock.patch(
+            "datalayer.docs.run", self.fake_docs()
+        ):
+            self.run_job({"kind": "daily"})
+
+        self.assertEqual([call for call in self.calls if "numbers" in call], [])
 
     def test_without_a_token_the_case_data_still_updates(self):
         self.token = None
@@ -290,6 +306,72 @@ class TestDailyJob(ServerTestCase):
         self.assertEqual(second, 409)
         self.assertIn("still running", body["message"])
         self.assertEqual(running["state"], "running")
+
+
+class TestBackfillJob(ServerTestCase):
+    def fake_backfill(self, *, wait_for_stop=False):
+        from datalayer.backfill import BackfillReport
+
+        def _run(store, token, *, should_stop, log, **kwargs):
+            self.calls.append({"backfill": True, "token": token})
+            if wait_for_stop:
+                for _ in range(500):
+                    if should_stop():
+                        return BackfillReport(listed=["337-1478"], documents=3, remaining=9,
+                                              stopped="stopped on request")
+                    threading.Event().wait(0.01)
+            return BackfillReport(listed=["337-1478"], documents=3, remaining=0)
+
+        return _run
+
+    def test_it_runs_the_backfill_and_rebuilds(self):
+        with mock.patch("datalayer.backfill.run", self.fake_backfill()), mock.patch(
+            "datalayer.counsel.run"
+        ) as rebuilt:
+            job = self.run_job({"kind": "backfill"})
+
+        self.assertEqual(job["level"], "ok", job["message"])
+        self.assertIn("1 case(s) listed", job["message"])
+        self.assertEqual(self.calls[0]["token"], "fake-token")
+        rebuilt.assert_called_once()
+
+    def test_it_can_be_stopped_and_says_how_to_continue(self):
+        with mock.patch("datalayer.backfill.run", self.fake_backfill(wait_for_stop=True)), mock.patch(
+            "datalayer.counsel.run"
+        ):
+            status, body = self.post({"kind": "backfill"})
+            self.assertEqual(status, 202)
+            self.assertTrue(body["job"]["stoppable"])
+            stop = urllib.request.Request(f"http://127.0.0.1:{self.port}/api/jobs/stop", data=b"", method="POST")
+            with urllib.request.urlopen(stop) as response:
+                self.assertEqual(response.status, 202)
+            self.controller.wait(10)
+        job = self.get_json("/api/jobs/current")["job"]
+
+        self.assertEqual(job["level"], "warn")
+        self.assertIn("Run it again to continue", job["message"])
+
+    def test_other_jobs_cannot_be_stopped(self):
+        release = threading.Event()
+
+        def slow(store, **kwargs):
+            release.wait(5)
+            return ingest.IngestReport()
+
+        with mock.patch("datalayer.ingest.run", slow):
+            self.post({"kind": "daily"})
+            stop = urllib.request.Request(f"http://127.0.0.1:{self.port}/api/jobs/stop", data=b"", method="POST")
+            with self.assertRaises(urllib.error.HTTPError) as refused:
+                urllib.request.urlopen(stop)
+            release.set()
+            self.controller.wait(10)
+        self.assertEqual(refused.exception.code, 409)
+
+    def test_without_a_token_it_is_refused(self):
+        self.token = None
+        status, body = self.post({"kind": "backfill"})
+        self.assertEqual(status, 400)
+        self.assertIn("EDIS_TOKEN", body["message"])
 
 
 class TestClaimsJob(ServerTestCase):

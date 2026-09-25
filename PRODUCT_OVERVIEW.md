@@ -34,7 +34,8 @@ from a known file, and every sync is logged to help spot bad data days.
 - **185 cases with full dockets:** 39,379 filings listed, and 5,619 PDFs
   (about 20 GB) on disk.
 - **Counsel:** 1,058 firm-to-client relationships across 179 cases,
-  covering 322 law firms and 1,409 attorneys.
+  covering 322 law firms and 1,409 attorneys. The backfill will extend this
+  to the rest of the ~1,200 cases.
 - **Non-parties:** 200 companies and people pulled into 73 cases by subpoena
   or intervention.
 - **Claims analysis:** 3 pilot cases analyzed for about $0.15 in total AI
@@ -49,6 +50,7 @@ from a known file, and every sync is logged to help spot bad data days.
 | Companies subpoenaed into a case never appear in the official party list. | The app finds them from their own filings. It shows why they are involved, such as "responding to a subpoena served by Respondents", read from their notices, including scanned documents. |
 | It was hard to know whether a case's data is current. | Each case shows when its documents were last fetched, plus how many documents it has and how many have PDFs on disk. |
 | Following how patent claims narrow means reading hundreds of pages of rulings. | An AI-assisted claims timeline shows, for each respondent, which claims were withdrawn, dismissed or found invalid, and when. Every finding links back to its source sentence and is checked before it is shown. Cost is tracked against a hard budget. |
+| Firm and attorney information only existed for the ~185 cases someone had chosen to fetch, too few for firm-level trends. | A one-click backfill lists the filings of every case (no PDFs), newest first. It can be stopped and resumed, and it lays the groundwork for the upcoming representation analytics (firm and attorney leaderboards, who-opposed-whom). |
 | The USITC's daily data file sometimes fails to download. | The download retries automatically. If it still fails, the rest of the daily update runs anyway and the failure is logged. |
 | Gigabytes of PDFs slowed down version control. | Documents stay on the local machine only, and can be downloaded again from the USITC at any time. |
 
@@ -57,3 +59,12 @@ from a known file, and every sync is logged to help spot bad data days.
 - The app is single-user and runs on one PC.
 - The EDIS access token expires and has to be renewed by hand.
 - The claims analysis has only been run on three pilot cases so far.
+- The full backfill takes a few hours of requests to the USITC. The oldest
+  cases (before the USITC's electronic filing system) have no filings to list.
+
+## In progress
+
+- **Representation analytics**, a separate app: which law firms and attorneys
+  appear most, who each firm represented and opposed, co-counsel pairings,
+  firm caseloads over time, and company litigation histories, including
+  former company names.

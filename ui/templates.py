@@ -694,6 +694,12 @@ _CONTROL_SCRIPT = """
           : item("This case's documents fetched " + when(mine), isToday(mine) ? 'ok' : ''));
     } else {
       parts.push(item('Documents last fetched ' + when((s.documents || {}).finished_at)));
+      const filled = s.backfill || {};
+      if (filled.remaining != null) {
+        parts.push(filled.remaining
+          ? item('Backfill: ' + filled.remaining + ' cases still without a document list', 'warn')
+          : item('\\u2713 Every case has its document list', 'ok'));
+      }
     }
     const token = s.token || {};
     if (token.state === 'missing') {
@@ -724,10 +730,20 @@ _CONTROL_SCRIPT = """
       message.textContent = job.message;
       message.className = 'job-message ' + job.level;
     }
+    const stop = document.getElementById('job-stop');
+    stop.hidden = !job.stoppable;
+    stop.disabled = !!job.stopping;
+    stop.textContent = job.stopping ? 'Stopping\\u2026' : 'Stop';
     const log = document.getElementById('job-log');
     log.textContent = (job.lines || []).join('\\n');
     log.scrollTop = log.scrollHeight;
   }
+  document.getElementById('job-stop').addEventListener('click', function () {
+    const stop = this;
+    stop.disabled = true;
+    stop.textContent = 'Stopping\\u2026';
+    fetch('/api/jobs/stop', { method: 'POST' }).catch(function () { stop.disabled = false; });
+  });
 
   function poll() {
     setTimeout(function () {
@@ -769,6 +785,7 @@ _CONTROL_SCRIPT = """
   buttons.forEach(function (b) {
     b.addEventListener('click', function () {
       if (b.dataset.job === 'daily') start({ kind: 'daily' });
+      else if (b.dataset.job === 'backfill') start({ kind: 'backfill' });
       else if (b.dataset.job === 'claims') start({ kind: 'claims', number: panel.dataset.number });
       else start({ kind: 'documents', numbers: selected(), download: b.dataset.download === '1' });
     });
@@ -840,6 +857,7 @@ def _control_panel(
     else:
         actions = """
     <button class="btn" data-job="daily" title="Download today's case data, refresh the documents and attorneys of cases already collected, and rebuild the pages">Run daily sync</button>
+    <button class="btn btn-quiet" data-job="backfill" title="List the documents (no PDFs) of every case that has no document list yet, newest first. Long: it saves as it goes, can be stopped, and continues where it left off">Backfill all cases</button>
     <span class="divider"></span>
     <button class="btn" data-job="documents" data-download="1" title="List the ticked cases' documents and download any PDFs not on disk yet">Fetch documents</button>
     <button class="btn btn-quiet" data-job="documents" data-download="0" title="Refresh the ticked cases' document lists without downloading PDFs">Update lists</button>
@@ -859,7 +877,7 @@ def _control_panel(
   <div class="panel-actions">{actions}
   </div>{_claims_actions(claims_state) if number else ""}
   <div class="job" id="job" hidden>
-    <div class="job-head"><span id="job-title"></span><span id="job-state"></span></div>
+    <div class="job-head"><span id="job-title"></span><span id="job-state"></span><button class="btn btn-quiet" id="job-stop" hidden title="Stop after the current case; what is done so far is kept">Stop</button></div>
     <div class="job-message" id="job-message"></div>
     <pre class="job-log" id="job-log"></pre>
   </div>

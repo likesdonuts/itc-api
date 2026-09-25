@@ -33,6 +33,7 @@ datalayer/            DATA LAYER - talks to IDS and EDIS, owns data/
   cases.py              rows -> one record per investigation, with its stages
   ingest.py             process 1: rebuild every case from a snapshot
   docs.py               process 2: EDIS documents for named cases only
+  backfill.py           process 2, once: document lists for every case, resumable
   counsel.py            process 3: who represents whom, from the filings
   client.py             HTTP client for the EDIS API and the IDS file
   store.py              reads/writes data/*.json, resolves case numbers
@@ -44,8 +45,8 @@ ui/                   UI LAYER - reads data/ + ui_schema.json, owns site/
 data/                 the handoff between the layers
   ids/                  dated snapshots of the IDS file (gitignored)
   investigations.json   one record per investigation  <- written by ingest
-  documents_index.json  documents per case            <- written by docs
-  documents_state.json  when each case was last fetched
+  documents_index/      one <number>.json per case: its documents  <- written by docs
+  documents_state.json  when each case was last fetched, and which were backfilled
   counsel.json          firms and attorneys per case  <- written by counsel
   sync_log.csv          one row per sync, for watching the daily download
   documents/<number>/   downloaded PDFs (gitignored)
@@ -91,6 +92,12 @@ The panel at the top of the list page does the day's work:
   their Notice of Appearance PDFs, then rebuilds attorneys and pages. If the
   IDS download fails (it is tried three times), the rest still runs on the
   case data already on disk, and the job ends with a warning saying so.
+  Backfilled cases (below) are included only while they are open.
+- **Backfill all cases** lists the documents of every case that has no list
+  yet, without PDFs, so counsel covers the whole history. It is long (see
+  [the backfill](#the-backfill-every-cases-document-list)); **Stop** ends it
+  after the current case, and running it again continues where it stopped.
+  The status line says how many cases are still without a list.
 - **Tick cases** in the list, then **Fetch documents** (lists and downloads
   every PDF not on disk yet) or **Update lists** (lists only, no downloads).
 - Each case's own page has the same **Fetch documents** / **Update list**
@@ -129,6 +136,7 @@ own from the command line.
 | `python cli.py docs 337-1478` | EDIS | Process 2. Fetches document lists and PDFs for the numbers you name. |
 | `python cli.py docs --existing` | EDIS | Process 2 over every case you have already fetched documents for. |
 | `python cli.py docs 337-1478 --appearances` | EDIS | Lists every document but downloads only the Notice of Appearance PDFs. |
+| `python cli.py backfill` | EDIS | Lists the documents (no PDFs) of every case that has no list yet, newest first; resumable. Refuses while the app is open (use its button). |
 | `python cli.py claims 337-1366` | Federal Register | Builds or updates the claims analysis for the investigations you name (also the **Create / Update claims analysis** button on a case page). |
 | `python cli.py counsel` | none | Process 3. Rebuilds who represents whom from the documents on disk. Runs by itself after `sync`, `parse`, `docs` and `refresh`. |
 | `python cli.py render` | none | UI layer. Rebuilds `site/` from `data/` and `ui_schema.json`. |
@@ -259,12 +267,52 @@ earlier.
 
 Only the numbers you pass are requested. Numbers are matched loosely, so
 `337-TA-1478`, `337-1478` and `1478` all reach the same case. This process
-writes `data/documents_index.json`, `data/documents_state.json` and files under
+writes `data/documents_index/`, `data/documents_state.json` and files under
 `data/documents/` -- nothing else. It has no route to the case writer, and a
 test holds it to that.
 
-There is no `docs` for all 1382 cases by default (`--all` exists, and it is
-1382 EDIS calls); documents are fetched per case, when you want them.
+The document lists are stored one file per case (`data/documents_index/337-1478.json`).
+A single file would pass GitHub's 100 MB limit once every case is listed,
+and a save rewrites only the cases whose list changed, so a daily sync's git
+diff is the few open cases it touched. A leftover `data/documents_index.json`
+from before is read and converted on the next save.
+
+EDIS returns a case's documents 20 to a page; the client reads up to 1,000
+pages. (It used to stop at 50 pages, which cut 337-TA-395 off at exactly
+1,000 documents -- "Update list" on it once fetches the rest.)
+
+#### The backfill: every case's document list
+
+```
+python cli.py backfill                 # all cases without a list, newest first
+python cli.py backfill --limit 100     # just the 100 newest
+python cli.py backfill --retry-empty   # ask again about cases EDIS had nothing for
+```
+
+Counsel, and the representation analytics built on it, can only cover cases
+whose document list is on disk. The backfill lists the rest: metadata only,
+no PDFs, roughly one EDIS request per 20 filings -- over a thousand cases,
+about 12,000-15,000 requests, a few hours with its half-second pause between
+cases. So it is built to be interrupted:
+
+- newest cases first, so a partial run already covers the ones that matter
+- progress saved every 25 cases, so Stop, a closed window or an expired token
+  loses at most that many
+- a case already listed is skipped, so running it again continues; a case
+  EDIS has nothing for (many pre-EDIS cases) is recorded as `edis_empty` and
+  not asked again unless `--retry-empty`
+
+Backfilled cases are marked `"backfill": true` in `documents_state.json`. The
+daily sync refreshes a backfilled case only while its status is open (Active,
+Pending before the ALJ or the Commission, Pre-institution), so it stays at the
+cases that can still get filings instead of growing to every case on file.
+Fetching or updating a case by hand clears the mark: it becomes one of yours
+and is refreshed daily like any other. `docs --existing` and `--all` are
+refreshes and keep the mark.
+
+Run it from the app's button: the app runs one job at a time, so nothing else
+writes the document lists meanwhile. The command refuses while the app is
+open for that reason.
 
 ### Counsel: who represents whom
 
@@ -511,10 +559,12 @@ documents and PDFs already downloaded for `337-3936` onto the new number.
 
 | Endpoint | What it does |
 | --- | --- |
-| `POST /api/jobs` `{"kind": "daily"}` | sync, then documents (appearance PDFs only) for cases already collected, then counsel and render |
+| `POST /api/jobs` `{"kind": "daily"}` | sync, then documents (appearance PDFs only) for cases already collected and open backfilled cases, then counsel and render |
 | `POST /api/jobs` `{"kind": "documents", "numbers": [...], "download": true}` | the documents process for those cases, with or without PDFs, then counsel and render |
+| `POST /api/jobs` `{"kind": "backfill"}` | the backfill, then counsel and render; stoppable |
+| `POST /api/jobs/stop` | ask the running job to stop after its current step; only the backfill can be (409 otherwise) |
 | `GET /api/jobs/current` | the running or last job: its state, its outcome, and the tail of its log |
-| `GET /api/status` | the last sync and fetch, and the token's expiry, from `state.json` and `.env` |
+| `GET /api/status` | the last sync, fetch and backfill (with how many cases still have no list), and the token's expiry, from `state.json` and `.env` |
 
 A job refuses to start, with the reason on the page, when another is running,
 when a case number is not on disk, or when a documents job has no token or an
@@ -560,9 +610,11 @@ The PDFs under `data/documents/` are not tracked either: they run to
 gigabytes, and EDIS will serve them again. They live only on the machine that
 downloaded them, so back that folder up some other way if you need to.
 
-What is tracked is the record of what was fetched: the documents index, which
-lists every document and its attachments, and `data/sync_log.csv`, a record
-of downloads that already happened and cannot be reconstructed.
+What is tracked is the record of what was fetched: the documents index
+(`data/documents_index/`, one file per case), which lists every document and
+its attachments and took hours of EDIS requests to build, and
+`data/sync_log.csv`, a record of downloads that already happened and cannot
+be reconstructed.
 
 After pulling, run:
 

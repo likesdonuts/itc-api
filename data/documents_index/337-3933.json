@@ -1,0 +1,98 @@
+[
+  {
+    "attachments": [],
+    "document_date": "2026-09-10",
+    "document_type": "Complaint",
+    "filed_by": "Aarti Shah",
+    "firm_organization": "Kilpatrick Townsend & Stockton LLP",
+    "id": "894435",
+    "official_received_date": "2026-09-10T16:07:00",
+    "on_behalf_of": "Ultra-Mek, Inc., Leggett & Platt, Inc., and L&P Property Management Company",
+    "security_level": "Public",
+    "title": "Second Public Supplement to Complaint"
+  },
+  {
+    "attachments": [],
+    "document_date": "2026-09-09",
+    "document_type": "Complaint",
+    "filed_by": "Aarti Shah",
+    "firm_organization": "Kilpatrick Townsend & Stockton LLP",
+    "id": "894265",
+    "official_received_date": "2026-09-09T15:54:00",
+    "on_behalf_of": "Ultra-Mek, Inc., Leggett & Platt, Inc., and L&P Property Management Company",
+    "security_level": "Public",
+    "title": "First Public Supplement to Complaint"
+  },
+  {
+    "attachments": [],
+    "document_date": "2026-09-04",
+    "document_type": "Action Request",
+    "filed_by": "Matthew J. Rizzolo",
+    "firm_organization": "Morgan Lewis & Bockius LLP",
+    "id": "893992",
+    "official_received_date": "2026-09-04T13:15:00",
+    "on_behalf_of": "Living Style Group, Ltd., Living Style (Singapore) Pte. Ltd., Living Style (Vietnam) Ltd., and True Innovations & Design (USA) LLC",
+    "security_level": "Public",
+    "title": "Living Style's Request for Partial Non-Institution"
+  },
+  {
+    "attachments": [],
+    "document_date": "2026-08-27",
+    "document_type": "Notice",
+    "filed_by": "Lisa R. Barton",
+    "firm_organization": "USITC",
+    "id": "893175",
+    "official_received_date": "2026-08-28T16:15:00",
+    "on_behalf_of": "Office of the Secretary",
+    "security_level": "Public",
+    "title": "F.R. Notice of Receipt of Complaint; Solicitation of Comments Relating to the Public Interest"
+  },
+  {
+    "attachments": [],
+    "document_date": "2026-08-24",
+    "document_type": "Notice",
+    "filed_by": "Lisa R. Barton",
+    "firm_organization": "USITC",
+    "id": "892467",
+    "official_received_date": "2026-08-24T14:06:00",
+    "on_behalf_of": "Office of the Secretary",
+    "security_level": "Public",
+    "title": "Receipt of Complaint; Solicitation of Comments Relating to the Public Interest"
+  },
+  {
+    "attachments": [],
+    "document_date": "2026-08-21",
+    "document_type": "Complaint",
+    "filed_by": "Aarti Shah",
+    "firm_organization": "Kilpatrick Townsend & Stockton LLP",
+    "id": "892379",
+    "official_received_date": "2026-08-21T16:53:00",
+    "on_behalf_of": "Ultra-Mek, Incorporated, Leggett & Platt, Incorporated, and L&P Property Management Company",
+    "security_level": "Confidential",
+    "title": "Confidential Exhibits to Complaint"
+  },
+  {
+    "attachments": [],
+    "document_date": "2026-08-21",
+    "document_type": "Complaint",
+    "filed_by": "Aarti Shah",
+    "firm_organization": "Kilpatrick Townsend & Stockton LLP",
+    "id": "892374",
+    "official_received_date": "2026-08-21T16:43:00",
+    "on_behalf_of": "Ultra-Mek, Incorporated, Leggett & Platt, Incorporated, and L&P Property Management Company",
+    "security_level": "Public",
+    "title": "Appendices A-E to the Complaint"
+  },
+  {
+    "attachments": [],
+    "document_date": "2026-08-21",
+    "document_type": "Complaint",
+    "filed_by": "Aarti Shah",
+    "firm_organization": "Kilpatrick Townsend & Stockton LLP",
+    "id": "892362",
+    "official_received_date": "2026-08-21T16:25:00",
+    "on_behalf_of": "Ultra-Mek, Incorporated, Leggett & Platt, Incorporated, and L&P Property Management Company",
+    "security_level": "Public",
+    "title": "Public Complaint and Exhibits"
+  }
+]

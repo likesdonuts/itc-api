@@ -46,6 +46,7 @@ from collections import Counter
 from dataclasses import dataclass, field
 from datetime import datetime
 from difflib import SequenceMatcher
+from functools import lru_cache
 from pathlib import Path
 from typing import Any, Callable, Iterable
 
@@ -161,24 +162,38 @@ def match_parties(text: Any, participants: Iterable[dict[str, Any]]) -> list[dic
     with the spaces taken out, so neither the splitting of the text nor small
     spelling differences between the two sources decide the answer.
     """
+    participants = list(participants)
+    names = tuple(str(party.get("name") or "") for party in participants)
+    return [participants[index] for index in _matching_names(str(text or ""), names)]
+
+
+# A case's filings repeat the same few "on behalf of" texts hundreds of
+# times, so each (text, party list) pair is worked out once.
+@lru_cache(maxsize=65536)
+def _matching_names(text: str, names: tuple[str, ...]) -> tuple[int, ...]:
     words = _words(text)
-    found = []
-    for party in participants:
-        target = "".join(_words(party.get("name")))
-        size = len(_words(party.get("name")))
-        if not target or not size:
+    return tuple(index for index, name in enumerate(names) if _names_in(words, _words(name)))
+
+
+def _names_in(words: list[str], name_words: list[str]) -> bool:
+    """Whether some run of `words` is within PARTY_MATCH of the name."""
+    target = "".join(name_words)
+    size = len(name_words)
+    if not target:
+        return False
+    for width in (size - 1, size, size + 1):
+        if width < 1:
             continue
-        best = 0.0
-        for width in (size - 1, size, size + 1):
-            if width < 1:
+        for start in range(0, max(len(words) - width + 1, 0)):
+            candidate = "".join(words[start : start + width])
+            # The ratio can be at most 2*shorter/total, and quick_ratio is an
+            # upper bound too; both only skip windows that cannot pass.
+            if 2 * min(len(target), len(candidate)) < PARTY_MATCH * (len(target) + len(candidate)):
                 continue
-            for start in range(0, max(len(words) - width + 1, 0)):
-                best = max(best, _similar(target, "".join(words[start : start + width])))
-                if best == 1.0:
-                    break
-        if best >= PARTY_MATCH:
-            found.append(party)
-    return found
+            matcher = SequenceMatcher(None, target, candidate)
+            if matcher.quick_ratio() >= PARTY_MATCH and matcher.ratio() >= PARTY_MATCH:
+                return True
+    return False
 
 
 def _match_with_non_parties(text: Any, participants: Iterable[dict[str, Any]]) -> list[dict[str, Any]]:

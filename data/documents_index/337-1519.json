@@ -1,0 +1,791 @@
+[
+  {
+    "attachments": [
+      {
+        "href": "../../data/documents/337-1519/895355_2623509_2623509.pdf",
+        "label": "2623509.pdf"
+      }
+    ],
+    "document_date": "2026-09-22",
+    "document_type": "Answer to Complaint",
+    "filed_by": "Derek A. Gosma",
+    "firm_organization": "Wilmer Cutler Pickering Hale and Dorr LLP",
+    "id": "895355",
+    "official_received_date": "2026-09-22T12:49:00",
+    "on_behalf_of": "SkylineDX Holding B.V. and SkylineDX USA, Inc.",
+    "security_level": "Public",
+    "title": "Response of SkylineDX Holding B.V. and SkylineDX USA, Inc. to Complaint and Notice of Investigation"
+  },
+  {
+    "attachments": [],
+    "document_date": "2026-09-15",
+    "document_type": "Answer to Complaint",
+    "filed_by": "Derek A. Gosma",
+    "firm_organization": "Wilmer Cutler Pickering Hale and Dorr LLP",
+    "id": "894798",
+    "official_received_date": "2026-09-15T16:59:00",
+    "on_behalf_of": "SkylineDX Holding B.V. and SkylineDX USA, Inc.",
+    "security_level": "Confidential",
+    "title": "Response of SkylineDX Holding B.V. and SkylineDX USA, Inc.'s to Complaint and Notice of Investigation"
+  },
+  {
+    "attachments": [
+      {
+        "href": "../../data/documents/337-1519/894774_2620314_2620314.pdf",
+        "label": "2620314.pdf"
+      }
+    ],
+    "document_date": "2026-09-15",
+    "document_type": "Answer to Complaint",
+    "filed_by": "Siegmund Gutman",
+    "firm_organization": "Mintz, Levin, Cohn, Ferris, Glovsky and Popeo, P.C.",
+    "id": "894774",
+    "official_received_date": "2026-09-15T16:04:00",
+    "on_behalf_of": "QIAGEN GmbH and QIAGEN LLC",
+    "security_level": "Public",
+    "title": "Respondents QIAGEN GmbH and QIAGEN LLC\u2019s Response and Affirmative and Other Defenses to the Complaint and Notice of Investigation"
+  },
+  {
+    "attachments": [
+      {
+        "href": "../../data/documents/337-1519/894604_2619860_2619860.pdf",
+        "label": "2619860.pdf"
+      }
+    ],
+    "document_date": "2026-09-14",
+    "document_type": "PO Subscription",
+    "filed_by": "Derek A. Gosma",
+    "firm_organization": "Wilmer Cutler Pickering Hale and Dorr LLP",
+    "id": "894604",
+    "official_received_date": "2026-09-14T10:09:00",
+    "on_behalf_of": "SkylineDX Holdings B.V. and SkylineDX USA, Inc",
+    "security_level": "Public",
+    "title": "Agreement to Be Bound by the Protective Order of Mendocino Steele"
+  },
+  {
+    "attachments": [
+      {
+        "href": "../../data/documents/337-1519/894486_2619123_2619123.pdf",
+        "label": "2619123.pdf"
+      }
+    ],
+    "document_date": "2026-09-09",
+    "document_type": "Voting Sheet",
+    "filed_by": "Lisa R. Barton",
+    "firm_organization": "USITC",
+    "id": "894486",
+    "official_received_date": "2026-09-11T08:45:00",
+    "on_behalf_of": "Office of the Secretary",
+    "security_level": "Public",
+    "title": null
+  },
+  {
+    "attachments": [
+      {
+        "href": "../../data/documents/337-1519/894394_2618592_2618592.pdf",
+        "label": "2618592.pdf"
+      }
+    ],
+    "document_date": "2026-09-10",
+    "document_type": "Response/Submission to ALJ Order",
+    "filed_by": "Andrew K. Beverina",
+    "firm_organization": "Arnall Golden Gregory LLP",
+    "id": "894394",
+    "official_received_date": "2026-09-10T13:47:00",
+    "on_behalf_of": "Castle Biosciences Inc., SkylineDX Holdings B.V., SkylineDX USA, Inc., Qiagen GmbH, Qiagen LLC, and Office of Unfair Import Investigations",
+    "security_level": "Public",
+    "title": "Joint Statement regarding Target Date"
+  },
+  {
+    "attachments": [
+      {
+        "href": "../../data/documents/337-1519/894384_2618568_2618568.pdf",
+        "label": "2618568.pdf"
+      }
+    ],
+    "document_date": "2026-09-10",
+    "document_type": "PO Subscription",
+    "filed_by": "Siegmund Gutman",
+    "firm_organization": "Mintz, Levin, Cohn, Ferris, Glovsky and Popeo, P.C.",
+    "id": "894384",
+    "official_received_date": "2026-09-10T13:19:00",
+    "on_behalf_of": "Qiagen GmbH and Qiagen LLC",
+    "security_level": "Public",
+    "title": "Agreement to Be Bound by the Protective Order of Michael J. Leib"
+  },
+  {
+    "attachments": [
+      {
+        "href": "../../data/documents/337-1519/894362_2618518_2618518.pdf",
+        "label": "2618518.pdf"
+      }
+    ],
+    "document_date": "2026-09-10",
+    "document_type": "PO Subscription",
+    "filed_by": "Derek A. Gosma",
+    "firm_organization": "Wilmer Cutler Pickering Hale and Dorr LLP",
+    "id": "894362",
+    "official_received_date": "2026-09-10T11:08:00",
+    "on_behalf_of": "SkylineDX Holdings B.V. and SkylineDX USA, Inc.",
+    "security_level": "Public",
+    "title": "Agreement to Be Bound by the Protective Order of Patrick Nyman and Jeffrey Wu"
+  },
+  {
+    "attachments": [
+      {
+        "href": "../../data/documents/337-1519/894295_2618365_2618365.pdf",
+        "label": "2618365.pdf"
+      }
+    ],
+    "document_date": "2026-09-09",
+    "document_type": "Correspondence - USITC",
+    "filed_by": "Lisa R. Barton",
+    "firm_organization": "USITC",
+    "id": "894295",
+    "official_received_date": "2026-09-10T08:45:00",
+    "on_behalf_of": "Office of the Secretary",
+    "security_level": "Public",
+    "title": "Granting Former Employee's Request to Appear"
+  },
+  {
+    "attachments": [
+      {
+        "href": "../../data/documents/337-1519/893637_2615489_2615489.pdf",
+        "label": "2615489.pdf"
+      }
+    ],
+    "document_date": "2026-09-01",
+    "document_type": "PO Subscription",
+    "filed_by": "Andrew K. Beverina",
+    "firm_organization": "Arnall Golden Gregory LLP",
+    "id": "893637",
+    "official_received_date": "2026-09-01T16:31:00",
+    "on_behalf_of": "Castle Biosciences, Inc.",
+    "security_level": "Public",
+    "title": "Agreement to Be Bound by the Protective Order of Andrew K. Beverina, Brian R. Stimson, Gabe H. Scannapieco, J. Tucker Barr, Avery E. Carter, Thomas J. Caulfield, and April M. Meeks"
+  },
+  {
+    "attachments": [
+      {
+        "href": "../../data/documents/337-1519/893407_2614867_2614867.pdf",
+        "label": "2614867.pdf"
+      }
+    ],
+    "document_date": "2026-08-31",
+    "document_type": "Correspondence",
+    "filed_by": "Michael J. Leib",
+    "firm_organization": "Mintz, Levin, Cohn, Ferris, Glovsky and Popeo, P.C.",
+    "id": "893407",
+    "official_received_date": "2026-08-31T15:23:00",
+    "on_behalf_of": "Qiagen GmbH and Qiagen LLC",
+    "security_level": "Public",
+    "title": "Letter to Commission Pursuant to Rule 201.15(b)"
+  },
+  {
+    "attachments": [
+      {
+        "href": "../../data/documents/337-1519/893373_2614785_2614785.pdf",
+        "label": "2614785.pdf"
+      }
+    ],
+    "document_date": "2026-08-31",
+    "document_type": "Request for Confidential Materials",
+    "filed_by": "Siegmund Gutman",
+    "firm_organization": "Mintz, Levin, Cohn, Ferris, Glovsky and Popeo, P.C.",
+    "id": "893373",
+    "official_received_date": "2026-08-31T14:40:00",
+    "on_behalf_of": "Qiagen GmbH and Qiagen LLC",
+    "security_level": "Public",
+    "title": "Request for Confidential Materials on Behalf of Qiagen GmbH and Qiagen LLC"
+  },
+  {
+    "attachments": [
+      {
+        "href": "../../data/documents/337-1519/893370_2614778_2614778.pdf",
+        "label": "2614778.pdf"
+      }
+    ],
+    "document_date": "2026-08-31",
+    "document_type": "PO Subscription",
+    "filed_by": "Siegmund Gutman",
+    "firm_organization": "Mintz, Levin, Cohn, Ferris, Glovsky and Popeo, P.C.",
+    "id": "893370",
+    "official_received_date": "2026-08-31T14:35:00",
+    "on_behalf_of": "Qiagen GmbH and Qiagen LLC",
+    "security_level": "Public",
+    "title": "Agreement to Be Bound by the Protective Order of Siegmund Gutman, Michael T. Renaud, Matthew C. Hurley, James J. Thomson and Stephen H. Chen."
+  },
+  {
+    "attachments": [
+      {
+        "href": "../../data/documents/337-1519/893236_2614371_2614371.pdf",
+        "label": "2614371.pdf"
+      }
+    ],
+    "document_date": "2026-08-28",
+    "document_type": "Notice of Appearance",
+    "filed_by": "Matthew C. Hurley",
+    "firm_organization": "Mintz, Levin, Cohn, Ferris, Glovsky and Popeo, P.C.",
+    "id": "893236",
+    "official_received_date": "2026-08-31T08:45:00",
+    "on_behalf_of": "QIAGEN GmbH and QIAGEN LLC",
+    "security_level": "Public",
+    "title": "Notice of Appearance of Mintz, Levin, Cohn, Ferris, Glovsky and Popeo, P.C. on Behalf of QIAGEN GmbH and QIAGEN LLC; Designation of Matthew C. Hurley as Lead Counsel for Service of Process"
+  },
+  {
+    "attachments": [
+      {
+        "href": "../../data/documents/337-1519/893215_2614299_2614299.pdf",
+        "label": "2614299.pdf"
+      }
+    ],
+    "document_date": "2026-08-28",
+    "document_type": "PO Subscription",
+    "filed_by": "Derek A. Gosma",
+    "firm_organization": "Wilmer Cutler Pickering Hale and Dorr LLP",
+    "id": "893215",
+    "official_received_date": "2026-08-28T17:02:00",
+    "on_behalf_of": "SkylineDX Holdings B.V. and SkylineDX USA, Inc.",
+    "security_level": "Public",
+    "title": "Agreement to Be Bound by the Protective Order of Rhonda Schmidtlein"
+  },
+  {
+    "attachments": [
+      {
+        "href": "../../data/documents/337-1519/893208_2614274_2614274.pdf",
+        "label": "2614274.pdf"
+      }
+    ],
+    "document_date": "2026-08-28",
+    "document_type": "Request for Confidential Materials",
+    "filed_by": "Derek A. Gosma",
+    "firm_organization": "Wilmer Cutler Pickering Hale and Dorr LLP",
+    "id": "893208",
+    "official_received_date": "2026-08-28T16:53:00",
+    "on_behalf_of": "SkylineDx Holding B.V. and SkylineDx USA, Inc",
+    "security_level": "Public",
+    "title": "Request for Confidential Materials on Behalf of SkylineDx Holding B.V. and SkylineDx USA, Inc"
+  },
+  {
+    "attachments": [
+      {
+        "href": "../../data/documents/337-1519/893185_2614182_2614182.pdf",
+        "label": "2614182.pdf"
+      }
+    ],
+    "document_date": "2026-08-28",
+    "document_type": "PO Subscription",
+    "filed_by": "Derek A. Gosma",
+    "firm_organization": "Wilmer Cutler Pickering Hale and Dorr LLP",
+    "id": "893185",
+    "official_received_date": "2026-08-28T16:28:00",
+    "on_behalf_of": "SkylineDX Holdings B.V. and SkylineDX USA, Inc.",
+    "security_level": "Public",
+    "title": "Agreement to Be Bound by the Protective Order of Elizabeth Argenti, Bryan Baniaga, James Dowd, Derek Gosma, Heather Mansour, Courtney Merrill, Barish Ozdamar, Laura Powell, and Kate Saxton"
+  },
+  {
+    "attachments": [
+      {
+        "href": "../../data/documents/337-1519/893178_2614073_2614073.pdf",
+        "label": "2614073.pdf"
+      }
+    ],
+    "document_date": "2026-08-27",
+    "document_type": "Notice",
+    "filed_by": "Lisa R. Barton",
+    "firm_organization": "USITC",
+    "id": "893178",
+    "official_received_date": "2026-08-28T16:17:00",
+    "on_behalf_of": "Office of the Secretary",
+    "security_level": "Public",
+    "title": "F.R. Notice of Institution of Investigation"
+  },
+  {
+    "attachments": [
+      {
+        "href": "../../data/documents/337-1519/892943_2613347_2613347.pdf",
+        "label": "2613347.pdf"
+      },
+      {
+        "href": "../../data/documents/337-1519/892943_2613434_2613434.pdf",
+        "label": "2613434.pdf"
+      }
+    ],
+    "document_date": "2026-08-27",
+    "document_type": "Order",
+    "filed_by": "Clark S. Cheney",
+    "firm_organization": "USITC",
+    "id": "892943",
+    "official_received_date": "2026-08-27T13:28:00",
+    "on_behalf_of": "Chief Administrative Law Judge",
+    "security_level": "Public",
+    "title": "Seeking Submission on Target Date"
+  },
+  {
+    "attachments": [
+      {
+        "href": "../../data/documents/337-1519/892941_2613345_2613345.pdf",
+        "label": "2613345.pdf"
+      },
+      {
+        "href": "../../data/documents/337-1519/892941_2613432_2613432.pdf",
+        "label": "2613432.pdf"
+      }
+    ],
+    "document_date": "2026-08-27",
+    "document_type": "Order",
+    "filed_by": "Clark S. Cheney",
+    "firm_organization": "USITC",
+    "id": "892941",
+    "official_received_date": "2026-08-27T13:26:00",
+    "on_behalf_of": "Chief Administrative Law Judge",
+    "security_level": "Public",
+    "title": "Notice of Ground Rules"
+  },
+  {
+    "attachments": [
+      {
+        "href": "../../data/documents/337-1519/892937_2613339_2613339.pdf",
+        "label": "2613339.pdf"
+      },
+      {
+        "href": "../../data/documents/337-1519/892937_2613420_2613420.pdf",
+        "label": "2613420.pdf"
+      }
+    ],
+    "document_date": "2026-08-27",
+    "document_type": "Order",
+    "filed_by": "Clark S. Cheney",
+    "firm_organization": "USITC",
+    "id": "892937",
+    "official_received_date": "2026-08-27T13:23:00",
+    "on_behalf_of": "Chief Aministrative Law Judge",
+    "security_level": "Public",
+    "title": "Protective Order"
+  },
+  {
+    "attachments": [
+      {
+        "href": "../../data/documents/337-1519/892852_2613214_2613214.pdf",
+        "label": "2613214.pdf"
+      }
+    ],
+    "document_date": "2026-08-27",
+    "document_type": "Voting Sheet",
+    "filed_by": "Lisa R. Barton",
+    "firm_organization": "USITC",
+    "id": "892852",
+    "official_received_date": "2026-08-27T08:45:00",
+    "on_behalf_of": "Office of the Secretary",
+    "security_level": "Public",
+    "title": null
+  },
+  {
+    "attachments": [
+      {
+        "href": "../../data/documents/337-1519/892819_2612965_2612965.pdf",
+        "label": "2612965.pdf"
+      }
+    ],
+    "document_date": "2026-08-26",
+    "document_type": "Notice of Appearance",
+    "filed_by": "Derek Gosma",
+    "firm_organization": "Wilmer Cutler Pickering Hale and Dorr LLP",
+    "id": "892819",
+    "official_received_date": "2026-08-26T16:27:00",
+    "on_behalf_of": "SkylineDx Holding B.V. and SkylineDx USA, Inc.",
+    "security_level": "Public",
+    "title": "Notice of Appearance of Wilmer Cutler Pickering Hale and Dorr LLP on Behalf of SkylineDx Holding B.V. and SkylineDx USA, Inc.; Designation of Derek Gosma as Lead Counsel"
+  },
+  {
+    "attachments": [
+      {
+        "href": "../../data/documents/337-1519/892778_2612864_2612864.pdf",
+        "label": "2612864.pdf"
+      }
+    ],
+    "document_date": "2026-08-26",
+    "document_type": "Notice of Appearance",
+    "filed_by": "Andrew K. Beverina",
+    "firm_organization": "Arnall Golden Gregory LLP",
+    "id": "892778",
+    "official_received_date": "2026-08-26T14:16:00",
+    "on_behalf_of": "Castle Biosciences, Inc.",
+    "security_level": "Public",
+    "title": "Notice of Appearance of Arnall Golden Gregory LLP on Behalf of Castle Biosciences, Inc.; Designation of Andrew K. Beverina as Lead Counsel"
+  },
+  {
+    "attachments": [
+      {
+        "href": "../../data/documents/337-1519/892666_2612146_2612146.pdf",
+        "label": "2612146.pdf"
+      }
+    ],
+    "document_date": "2026-08-25",
+    "document_type": "Notice",
+    "filed_by": "Clark S. Cheney",
+    "firm_organization": "USITC",
+    "id": "892666",
+    "official_received_date": "2026-08-25T14:26:00",
+    "on_behalf_of": "Chief Administrative Law Judge",
+    "security_level": "Public",
+    "title": "Assignment of Chief ALJ Cheney"
+  },
+  {
+    "attachments": [
+      {
+        "href": "../../data/documents/337-1519/892647_2612102_2612102.pdf",
+        "label": "2612102.pdf"
+      }
+    ],
+    "document_date": "2026-08-25",
+    "document_type": "Order, Commission",
+    "filed_by": "Lisa R. Barton",
+    "firm_organization": "USITC",
+    "id": "892647",
+    "official_received_date": "2026-08-25T12:31:00",
+    "on_behalf_of": "Office of the Secretary",
+    "security_level": "Public",
+    "title": "Order Denying Request for Entry into Early Disposition Program"
+  },
+  {
+    "attachments": [
+      {
+        "href": "../../data/documents/337-1519/892646_2612099_2612099.pdf",
+        "label": "2612099.pdf"
+      }
+    ],
+    "document_date": "2026-08-25",
+    "document_type": "Notice",
+    "filed_by": "Lisa R. Barton",
+    "firm_organization": "USITC",
+    "id": "892646",
+    "official_received_date": "2026-08-25T12:30:00",
+    "on_behalf_of": "Office of the Secretary",
+    "security_level": "Public",
+    "title": "Institution of Investigation"
+  },
+  {
+    "attachments": [
+      {
+        "href": "../../data/documents/337-1519/891591_2607316_2607316.pdf",
+        "label": "2607316.pdf"
+      }
+    ],
+    "document_date": "2026-08-11",
+    "document_type": "Voting Sheet",
+    "filed_by": "Lisa R. Barton",
+    "firm_organization": "USITC",
+    "id": "891591",
+    "official_received_date": "2026-08-14T11:33:00",
+    "on_behalf_of": "Office of the Secretary",
+    "security_level": "Public",
+    "title": null
+  },
+  {
+    "attachments": [
+      {
+        "href": "../../data/documents/337-1519/891237_2605959_2605959.pdf",
+        "label": "2605959.pdf"
+      }
+    ],
+    "document_date": "2026-08-12",
+    "document_type": "Correspondence - USITC",
+    "filed_by": "Lisa R. Barton",
+    "firm_organization": "USITC",
+    "id": "891237",
+    "official_received_date": "2026-08-12T09:44:00",
+    "on_behalf_of": "Office of the Secretary",
+    "security_level": "Public",
+    "title": "Postponement Letter for Andrew K. Beverina"
+  },
+  {
+    "attachments": [
+      {
+        "href": "../../data/documents/337-1519/889471_2594919_2594919.pdf",
+        "label": "2594919.pdf"
+      }
+    ],
+    "document_date": "2026-07-27",
+    "document_type": "Comments/Response to Comments",
+    "filed_by": "Andrew K. Beverina",
+    "firm_organization": "Arnall Golden Gregory LLP",
+    "id": "889471",
+    "official_received_date": "2026-07-27T16:16:00",
+    "on_behalf_of": "Castle Biosciences, Inc.",
+    "security_level": "Public",
+    "title": "Complainant Castle Biosciences, Inc.'s Response to Public Interest Statement of Skyline Dx"
+  },
+  {
+    "attachments": [
+      {
+        "href": "../../data/documents/337-1519/889470_2594917_2594917.pdf",
+        "label": "2594917.pdf"
+      }
+    ],
+    "document_date": "2026-07-27",
+    "document_type": "Action Request",
+    "filed_by": "Andrew K. Beverina",
+    "firm_organization": "Arnall Golden Gregory LLP",
+    "id": "889470",
+    "official_received_date": "2026-07-27T16:14:00",
+    "on_behalf_of": "Castle Biosciences, Inc.",
+    "security_level": "Public",
+    "title": "Complainant Castle Biosciences, Inc.'s Response to Qiagen GmbH and Qiagen LLC's Request for Non-Institution"
+  },
+  {
+    "attachments": [
+      {
+        "href": "../../data/documents/337-1519/889469_2594915_2594915.pdf",
+        "label": "2594915.pdf"
+      }
+    ],
+    "document_date": "2026-07-27",
+    "document_type": "Action Request",
+    "filed_by": "Andrew K. Beverina",
+    "firm_organization": "Arnall Golden Gregory LLP",
+    "id": "889469",
+    "official_received_date": "2026-07-27T16:12:00",
+    "on_behalf_of": "Castle Biosciences, Inc.",
+    "security_level": "Public",
+    "title": "Complainant Castle Biosciences, Inc.'s Response to SkylineDx's Alternative Request to Delegate Importation and Nexus to the 100-Day Program"
+  },
+  {
+    "attachments": [
+      {
+        "href": "../../data/documents/337-1519/889468_2594913_2594913.pdf",
+        "label": "2594913.pdf"
+      }
+    ],
+    "document_date": "2026-07-27",
+    "document_type": "Action Request",
+    "filed_by": "Andrew K. Beverina",
+    "firm_organization": "Arnall Golden Gregory LLP",
+    "id": "889468",
+    "official_received_date": "2026-07-27T16:10:00",
+    "on_behalf_of": "Castle Biosciences, Inc.",
+    "security_level": "Public",
+    "title": "Complainant Castle Biosciences, Inc.'s Response to SkylineDx's Request for Non-Institution"
+  },
+  {
+    "attachments": [
+      {
+        "href": "../../data/documents/337-1519/889466_2594908_2594908.pdf",
+        "label": "2594908.pdf"
+      }
+    ],
+    "document_date": "2026-07-27",
+    "document_type": "Comments/Response to Comments",
+    "filed_by": "Andrew K. Beverina",
+    "firm_organization": "Arnall Golden Gregory LLP",
+    "id": "889466",
+    "official_received_date": "2026-07-27T16:05:00",
+    "on_behalf_of": "Castle Biosciences, Inc.",
+    "security_level": "Public",
+    "title": "Complainant Castle Biosciences, Inc.'s Response to the Public Interest Statement of Vernon K. Sondak, MD"
+  },
+  {
+    "attachments": [
+      {
+        "href": "../../data/documents/337-1519/889208_2592320_2592320.pdf",
+        "label": "2592320.pdf"
+      }
+    ],
+    "document_date": "2026-07-23",
+    "document_type": "Action Request",
+    "filed_by": "James M. Dowd",
+    "firm_organization": "Wilmer Cutler Pickering Hale and Dorr LLP",
+    "id": "889208",
+    "official_received_date": "2026-07-23T17:08:00",
+    "on_behalf_of": "Skylinedx Holding B.V. and Skylinedx USA, Inc.",
+    "security_level": "Public",
+    "title": "Proposed Respondents Skylinedx Holding B.V. and Skylinedx USA, Inc.'s Request to Decline to Institute"
+  },
+  {
+    "attachments": [
+      {
+        "href": "../../data/documents/337-1519/889207_2592312_2592312.pdf",
+        "label": "2592312.pdf"
+      }
+    ],
+    "document_date": "2026-07-23",
+    "document_type": "Comments/Response to Comments",
+    "filed_by": "Vernon K. Sondak",
+    "firm_organization": "H. Lee Moffitt Cancer Center",
+    "id": "889207",
+    "official_received_date": "2026-07-23T17:06:00",
+    "on_behalf_of": "H. Lee Moffitt Cancer Center",
+    "security_level": "Public",
+    "title": "Public Interest Comment from Vernon K. Sondak"
+  },
+  {
+    "attachments": [
+      {
+        "href": "../../data/documents/337-1519/889204_2592302_2592302.pdf",
+        "label": "2592302.pdf"
+      }
+    ],
+    "document_date": "2026-07-23",
+    "document_type": "Action Request",
+    "filed_by": "James M. Dowd",
+    "firm_organization": "Wilmer Cutler Pickering Hale and Dorr LLP",
+    "id": "889204",
+    "official_received_date": "2026-07-23T16:56:00",
+    "on_behalf_of": "Skylinedx Holding B.V. and Skylinedx USA, Inc.",
+    "security_level": "Public",
+    "title": "Proposed Respondents Skylinedx Holding B.V. and Skylinedx USA, Inc.'s Request, in the Alternative, That the Commission Designate the Importation and Nexus Issue for Early Disposition under the 100-Day Program"
+  },
+  {
+    "attachments": [
+      {
+        "href": "../../data/documents/337-1519/889203_2592240_2592240.pdf",
+        "label": "2592240.pdf"
+      }
+    ],
+    "document_date": "2026-07-23",
+    "document_type": "Comments/Response to Comments",
+    "filed_by": "James M. Dowd",
+    "firm_organization": "Wilmer Cutler Pickering Hale and Dorr LLP",
+    "id": "889203",
+    "official_received_date": "2026-07-23T16:52:00",
+    "on_behalf_of": "Skylinedx Holding B.V. and Skylinedx USA, Inc.",
+    "security_level": "Public",
+    "title": "Proposed Respondents Skylinedx Holding B.V. and Skylinedx USA, Inc.'s Public Interest Statement"
+  },
+  {
+    "attachments": [
+      {
+        "href": "../../data/documents/337-1519/889188_2592170_2592170.pdf",
+        "label": "2592170.pdf"
+      }
+    ],
+    "document_date": "2026-07-23",
+    "document_type": "Action Request",
+    "filed_by": "Matthew C. Hurley",
+    "firm_organization": "Mintz, Levin, Cohn, Ferris, Glovsky and Popeo, P.C.",
+    "id": "889188",
+    "official_received_date": "2026-07-23T16:14:00",
+    "on_behalf_of": "QIAGEN GmbH and QIAGEN LLC",
+    "security_level": "Public",
+    "title": "Request for Non-Institution by Proposed Respondents QIAGEN GmbH and QIAGEN LLC"
+  },
+  {
+    "attachments": [
+      {
+        "href": "../../data/documents/337-1519/888056_2582647_2582647.pdf",
+        "label": "2582647.pdf"
+      }
+    ],
+    "document_date": "2026-07-15",
+    "document_type": "Notice",
+    "filed_by": "Lisa R. Barton",
+    "firm_organization": "USITC",
+    "id": "888056",
+    "official_received_date": "2026-07-15T08:45:00",
+    "on_behalf_of": "Office of the Secretary",
+    "security_level": "Public",
+    "title": "F.R. Notice of Receipt of Complaint; Solicitation of Comments Relating to the Public Interest"
+  },
+  {
+    "attachments": [
+      {
+        "href": "../../data/documents/337-1519/887712_2578504_2578504.pdf",
+        "label": "2578504.pdf"
+      }
+    ],
+    "document_date": "2026-07-10",
+    "document_type": "Notice",
+    "filed_by": "Lisa R. Barton",
+    "firm_organization": "USITC",
+    "id": "887712",
+    "official_received_date": "2026-07-10T14:56:00",
+    "on_behalf_of": "Office of the Secretary",
+    "security_level": "Public",
+    "title": "Receipt of Complaint; Solicitation of Comments Relating to the Public Interest"
+  },
+  {
+    "attachments": [],
+    "document_date": "2026-07-10",
+    "document_type": "Complaint",
+    "filed_by": "Andrew K. Beverina",
+    "firm_organization": "Arnall Golden Gregory LLP",
+    "id": "887673",
+    "official_received_date": "2026-07-10T11:44:00",
+    "on_behalf_of": "Castle Biosciences, Inc.",
+    "security_level": "Confidential",
+    "title": "Confidential Complaint and Exhibits"
+  },
+  {
+    "attachments": [
+      {
+        "href": "../../data/documents/337-1519/887664_2578385_2578385.pdf",
+        "label": "2578385.pdf"
+      },
+      {
+        "href": "../../data/documents/337-1519/887664_2578386_2578386.pdf",
+        "label": "2578386.pdf"
+      },
+      {
+        "href": "../../data/documents/337-1519/887664_2578387_2578387.pdf",
+        "label": "2578387.pdf"
+      },
+      {
+        "href": "../../data/documents/337-1519/887664_2578388_2578388.pdf",
+        "label": "2578388.pdf"
+      },
+      {
+        "href": "../../data/documents/337-1519/887664_2578389_2578389.pdf",
+        "label": "2578389.pdf"
+      },
+      {
+        "href": "../../data/documents/337-1519/887664_2578390_2578390.pdf",
+        "label": "2578390.pdf"
+      },
+      {
+        "href": "../../data/documents/337-1519/887664_2578391_2578391.pdf",
+        "label": "2578391.pdf"
+      },
+      {
+        "href": "../../data/documents/337-1519/887664_2578392_2578392.pdf",
+        "label": "2578392.pdf"
+      },
+      {
+        "href": "../../data/documents/337-1519/887664_2578393_2578393.pdf",
+        "label": "2578393.pdf"
+      },
+      {
+        "href": "../../data/documents/337-1519/887664_2578394_2578394.pdf",
+        "label": "2578394.pdf"
+      },
+      {
+        "href": "../../data/documents/337-1519/887664_2578395_2578395.pdf",
+        "label": "2578395.pdf"
+      },
+      {
+        "href": "../../data/documents/337-1519/887664_2578396_2578396.pdf",
+        "label": "2578396.pdf"
+      },
+      {
+        "href": "../../data/documents/337-1519/887664_2578397_2578397.pdf",
+        "label": "2578397.pdf"
+      },
+      {
+        "href": "../../data/documents/337-1519/887664_2578398_2578398.pdf",
+        "label": "2578398.pdf"
+      },
+      {
+        "href": "../../data/documents/337-1519/887664_2578475_2578475.pdf",
+        "label": "2578475.pdf"
+      }
+    ],
+    "document_date": "2026-07-10",
+    "document_type": "Complaint",
+    "filed_by": "Andrew K. Beverina",
+    "firm_organization": "Arnall Golden Gregory LLP",
+    "id": "887664",
+    "official_received_date": "2026-07-10T11:26:00",
+    "on_behalf_of": "Castle Biosciences, Inc.",
+    "security_level": "Public",
+    "title": "Public Complaint and Exhibits"
+  }
+]
