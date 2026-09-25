@@ -89,10 +89,26 @@ class TestSnapshots(DataDirTestCase):
         self.assertEqual(stored[0].load()["count"], 1)
 
     def test_a_response_that_is_not_the_feed_is_refused(self):
-        with mock.patch.object(ids, "download", return_value=b"<html>maintenance</html>"):
-            with self.assertRaises(ids.IdsError):
+        with mock.patch.object(ids, "RETRY_WAITS", (0, 0)), mock.patch.object(
+            ids, "download", return_value=b"<html>maintenance</html>"
+        ) as download:
+            with self.assertRaises(ids.IdsError) as caught:
                 ids.sync(ids_dir=self.ids_dir, now=NOON, log=self.quiet)
         self.assertEqual(ids.snapshots(self.ids_dir), [])
+        self.assertEqual(download.call_count, 3)
+        self.assertIn("after 3 attempts", str(caught.exception))
+
+    def test_a_failed_download_is_retried(self):
+        raw = json.dumps(payload([ids_row()])).encode()
+        attempts = [ids.IdsError("IDS download failed: 502 Bad Gateway"), raw]
+        with mock.patch.object(ids, "RETRY_WAITS", (0, 0)), mock.patch.object(
+            ids, "download", side_effect=attempts
+        ) as download:
+            result = ids.sync(ids_dir=self.ids_dir, now=NOON, log=self.quiet)
+
+        self.assertEqual(download.call_count, 2)
+        self.assertTrue(result.downloaded)
+        self.assertEqual(result.rows, 1)
 
     def test_a_truncated_snapshot_is_reported_not_treated_as_empty(self):
         snapshot = write_snapshot(self.ids_dir, [ids_row()], day="2026-09-22")

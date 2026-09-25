@@ -149,6 +149,9 @@ def build_parser() -> argparse.ArgumentParser:
         "counsel",
         help="rebuild which firms and attorneys represent which parties, from the filings (offline)",
     )
+    p_counsel.add_argument(
+        "--verbose", action="store_true", help="list each non-party and where its reason stands"
+    )
     _add_render_flag(p_counsel)
 
     sub.add_parser("render", help="UI layer only: rebuild site/ from data/ (offline)")
@@ -190,11 +193,11 @@ def _render(args: argparse.Namespace, store: Store) -> None:
     render_site(store, site_dir=args.site_dir, schema_path=args.schema)
 
 
-def _counsel(store: Store) -> None:
+def _counsel(store: Store, *, verbose: bool = False) -> None:
     """Counsel is matched against the IDS parties and read from the EDIS
     filings, so it is rebuilt whenever either of those changes.
     """
-    counsel.run(store, log=print)
+    counsel.run(store, verbose=verbose, log=print)
 
 
 def _only_types(args: argparse.Namespace) -> frozenset[str] | None:
@@ -296,7 +299,7 @@ def cmd_claims(args: argparse.Namespace, store: Store) -> int:
 
 
 def cmd_counsel(args: argparse.Namespace, store: Store) -> int:
-    _counsel(store)
+    _counsel(store, verbose=args.verbose)
     if args.render:
         _render(args, store)
     return 0
@@ -429,7 +432,12 @@ def cmd_status(args: argparse.Namespace, store: Store) -> int:
 
 
 def cmd_refresh(args: argparse.Namespace, store: Store) -> int:
-    report = ingest.run(store, ids_dir=args.ids_dir)
+    try:
+        report = ingest.run(store, ids_dir=args.ids_dir)
+    except ids.IdsError as exc:
+        # Carry on with the documents: they don't depend on today's feed.
+        report = None
+        print(f"IDS ERROR: {exc}\nCase data not updated; refreshing documents with the case data on disk.")
 
     if not args.no_documents:
         targets = store.numbers_with_documents()
@@ -445,6 +453,9 @@ def cmd_refresh(args: argparse.Namespace, store: Store) -> int:
 
     _counsel(store)
     _render(args, store)
+    if report is None:
+        print("\nDone, but the case data was not updated (see IDS ERROR above).")
+        return 1
     print(
         f"\nDone. {report.cases} investigation(s) tracked from IDS snapshot "
         f"{report.snapshot_day}."

@@ -162,6 +162,23 @@ class TestOtherCommands(CliTestCase):
         self.assertEqual(self.read_json("investigations.json")["337-1478"]["status"], "Terminated")
         self.assertTrue((self.site_dir / "index.html").exists())
 
+    def test_refresh_still_refreshes_documents_when_the_case_download_fails(self):
+        self.seed_cases(day="2020-01-01")
+        self.invoke(
+            ["docs", "337-1478"], client=FakeEdisClient(documents={"337-1478": EDIS_DOCUMENTS})
+        )
+
+        again = FakeEdisClient(documents={"337-1478": EDIS_DOCUMENTS})
+        with mock.patch.object(ids, "RETRY_WAITS", ()):
+            exit_code, output = self.invoke(
+                ["refresh"], client=again, raw=b"<html>maintenance</html>", capture=True
+            )
+
+        self.assertEqual(exit_code, 1)
+        self.assertIn("IDS ERROR", output)
+        self.assertEqual(again.document_calls, ["337-1478"])
+        self.assertTrue((self.site_dir / "index.html").exists())
+
     def test_fields_lists_what_the_schema_can_name(self):
         self.seed_cases()
         exit_code, output = self.invoke(["fields"], capture=True)

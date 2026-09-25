@@ -253,12 +253,22 @@ class Controller:
         """
         log = self._logger(job)
         store = Store.load(self.data_dir)
-        report = ingest.run(store, ids_dir=Path(self.data_dir) / "ids", log=log)
-        message = (
-            f"Case data from {report.snapshot_day}: {len(report.added)} new, "
-            f"{len(report.changed)} changed."
-        )
         level = "ok"
+        try:
+            report = ingest.run(store, ids_dir=Path(self.data_dir) / "ids", log=log)
+        except ids.IdsError as exc:
+            # The case data is one step of the job, not a precondition: the
+            # documents and appearance notices are refreshed anyway, against
+            # the case data already on disk.
+            on_disk = ((store.state.get("runs") or {}).get("ingest") or {}).get("snapshot") or "the last sync"
+            log(f"  ! Case data not updated: {exc}. Continuing with the case data from {on_disk}.")
+            message = f"Case data not updated ({exc}); using the case data from {on_disk}."
+            level = "warn"
+        else:
+            message = (
+                f"Case data from {report.snapshot_day}: {len(report.added)} new, "
+                f"{len(report.changed)} changed."
+            )
 
         targets = store.numbers_with_documents()
         if targets:

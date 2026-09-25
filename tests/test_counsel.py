@@ -407,6 +407,170 @@ class TestNonParties(DataDirTestCase):
         self.assertEqual(built["representations"][0]["roles"], ["Respondent"])
 
 
+def _np_filing(doc_id, who, *, title=None, notice=False, day="2026-02-01"):
+    """A filing by a non-party, as a notice of limited appearance or its own motion."""
+    if notice:
+        title = title or f"Notice of Limited Appearance of Firm LLP on Behalf of Non-Party {who}"
+        return doc(doc_id, type_="Notice of Appearance", on_behalf_of=who, firm="Firm LLP", title=title, day=day)
+    return doc(doc_id, on_behalf_of=who, firm="Firm LLP", title=title or f"Non-Party {who}'s Motion", day=day)
+
+
+class TestNonPartyNames(DataDirTestCase):
+    def test_a_joint_filing_is_split_when_every_piece_is_a_whole_name(self):
+        cases_ = {
+            "MediaTek Inc. and MediaTek USA Inc.": ["MediaTek Inc.", "MediaTek USA Inc."],
+            "Samsung Electronics America, Inc. and Samsung Austin Semiconductor, LLC":
+                ["Samsung Electronics America, Inc.", "Samsung Austin Semiconductor, LLC"],
+            "Google LLC, Mobashar Yazdani, and Shuai Jiang": ["Google LLC", "Mobashar Yazdani", "Shuai Jiang"],
+            # Not a list: a piece of it is not a name on its own.
+            "Alliance of U.S. Startups and Inventors for Jobs": ["Alliance of U.S. Startups and Inventors for Jobs"],
+            "Hickman, Williams & Company": ["Hickman, Williams & Company"],
+        }
+        for who, expected in cases_.items():
+            self.assertEqual(counsel.non_party_names(_np_filing(1, who, notice=True)), expected, who)
+
+    def test_harvards_corporate_name_is_kept_whole(self):
+        filing = _np_filing(
+            1, "President and Fellows of Harvard College and Eric Mazur",
+            title="Notice of Limited Appearance of Troutman Pepper Hamilton Sanders LLP on Behalf of "
+                  "Non-Parties President and Fellows of Harvard College and Eric Mazur",
+            notice=True,
+        )
+        self.assertEqual(
+            counsel.non_party_names(filing), ["President and Fellows of Harvard College", "Eric Mazur"]
+        )
+        self.assertEqual(
+            counsel.non_party_names(_np_filing(2, "President and Fellows of Harvard College")),
+            ["President and Fellows of Harvard College"],
+        )
+
+    def test_labels_come_off_and_redacted_names_are_skipped(self):
+        self.assertEqual(
+            counsel.non_party_names(_np_filing(1, "Non-Party Rakuten Symphony USA LLC", notice=True)),
+            ["Rakuten Symphony USA LLC"],
+        )
+        self.assertEqual(counsel.non_party_names(_np_filing(2, "Dr. William Wilcox")), ["William Wilcox"])
+        self.assertEqual(counsel.non_party_names(_np_filing(3, "[ ]", title="Non-Party [ ]'s Opposition")), [])
+
+    def test_one_company_under_two_corporate_forms_is_one_non_party(self):
+        filings = [
+            _np_filing(1, "Google Inc.", day="2026-01-01"),
+            _np_filing(2, "Google LLC", day="2026-01-02"),
+            _np_filing(3, "Google LLC", day="2026-01-03"),
+        ]
+        built = counsel.build_case_counsel({"stages": []}, filings, docs_dir=self.root / "none", log=lambda m: None)
+        self.assertEqual([p["name"] for p in built["non_parties"]], ["Google LLC"])
+        self.assertEqual(len(built["non_parties"][0]["filings"]), 3)
+        # Their representation names the same spelling.
+        self.assertEqual([p["name"] for p in built["representations"][0]["parties"]], ["Google LLC"])
+
+    def test_a_different_company_with_a_similar_name_stays_apart(self):
+        filings = [_np_filing(1, "MediaTek Inc."), _np_filing(2, "MediaTek USA Inc.")]
+        built = counsel.build_case_counsel({"stages": []}, filings, docs_dir=self.root / "none", log=lambda m: None)
+        self.assertEqual([p["name"] for p in built["non_parties"]], ["MediaTek Inc.", "MediaTek USA Inc."])
+
+
+MEDIATEK_NOTICE = (
+    "Notice is hereby given of the limited appearance of the undersigned as counsel for non- party "
+    "MediaTek USA Inc. (“MediaTek USA”) to address issues related to a “Subpoena Duces "
+    "Tecum and Ad Testificandum to MediaTek USA Inc.,” dated May 23, 2025, received by MediaTek USA "
+    "on May 27, 2025, and issued on behalf of Respondents in connection with the above-captioned "
+    "investigation (the “Subpoena”). This limited appearance does not waive any rights of MediaTek USA."
+)
+TERNS_NOTICE = (
+    "Notice is hereby given of the limited appearance of the undersigned counsel for Non- Party Terns "
+    "Pharmaceuticals, Inc. who has been served with a Subpoena Duces Tecum and Ad Testificandum in the "
+    "above-captioned Investigation. Pursuant to Commission Rule 210.7(b), Stephen Smith is designated."
+)
+INTERVENOR_NOTICE = (
+    "Pursuant to 19 C.F.R. 201.11, please note the appearance of the following attorneys as counsel for "
+    "Proposed Intervenor Xenogenic Development LLC in the above-captioned investigation: J.C. Rozendaal"
+)
+
+
+class TestNonPartyReasons(DataDirTestCase):
+    def test_subpoena_notices_without_the_limited_purposes_formula(self):
+        mediatek = counsel.limited_purpose(MEDIATEK_NOTICE)
+        self.assertTrue(mediatek["subpoena"])
+        self.assertEqual(mediatek["served_by"], "Respondents")
+        self.assertTrue(mediatek["purpose"].startswith("a “Subpoena Duces Tecum"))
+
+        terns = counsel.limited_purpose(TERNS_NOTICE)
+        self.assertTrue(terns["subpoena"])
+        self.assertTrue(terns["purpose"].startswith("a Subpoena Duces Tecum"))
+
+    def test_a_proposed_intervenor(self):
+        reason = counsel.limited_purpose(INTERVENOR_NOTICE)
+        self.assertEqual(reason, {"purpose": "proposed intervenor", "intervenor": True})
+        self.assertEqual(counsel._non_party_summary(reason, []), "Proposed intervenor")
+
+    def test_the_summary_says_where_the_reason_stands(self):
+        not_downloaded = {"notice": {"id": "1", "files": []}}
+        read_no_reason = {"notice": {"id": "1", "files": ["1_2_3.pdf"]}}
+        self.assertEqual(counsel.non_party_status(not_downloaded), "not_downloaded")
+        self.assertIn("not been downloaded", counsel._non_party_summary(not_downloaded, []))
+        self.assertEqual(counsel.non_party_status(read_no_reason), "no_reason")
+        self.assertEqual(
+            counsel._non_party_summary(read_no_reason, []), "Appeared through counsel; the notice does not say why"
+        )
+        self.assertEqual(counsel.non_party_status({}), "no_notice")
+        self.assertEqual(counsel._non_party_summary({}, []), "Appears through its own filings")
+
+    def test_a_scanned_notice_is_ocrd_once_and_cached(self):
+        pdf = self.root / "1_2_3.pdf"
+        pdf.write_bytes(b"%PDF")
+        cache = self.root / "cache"
+        from datalayer.claims import ocr
+
+        with mock.patch.object(counsel, "pdf_text", return_value=""), mock.patch.object(
+            ocr, "available", return_value=True
+        ), mock.patch.object(ocr, "pdf_text", return_value=TERNS_NOTICE) as scanned:
+            read = counsel.notice_reader(cache, log=lambda m: None)
+            self.assertEqual(read(pdf), TERNS_NOTICE)
+            self.assertEqual(read(pdf), TERNS_NOTICE)
+        scanned.assert_called_once()
+        self.assertTrue((cache / "1_2_3.pdf.ocr.txt").exists())
+
+    def test_a_notice_with_a_text_layer_is_not_ocrd(self):
+        from datalayer.claims import ocr
+
+        with mock.patch.object(counsel, "pdf_text", return_value=TERNS_NOTICE), mock.patch.object(
+            ocr, "pdf_text", side_effect=AssertionError("OCR'd")
+        ):
+            read = counsel.notice_reader(self.root / "cache", log=lambda m: None)
+            self.assertEqual(read(self.root / "x.pdf"), TERNS_NOTICE)
+
+
+class TestTheLog(DataDirTestCase):
+    def run_counsel(self, **kwargs):
+        store = self.store()
+        store.put_documents("337-1478", [
+            _np_filing(1, "Apple Inc.", notice=True),
+            _np_filing(2, "Merle Richman"),
+        ])
+        store.save_documents()
+        lines: list[str] = []
+        counsel.run(store, log=lines.append, **kwargs)
+        return lines
+
+    def test_non_parties_are_one_line_with_what_to_do_next(self):
+        lines = self.run_counsel()
+        self.assertFalse(any("non-party Apple" in line for line in lines))
+        summary = next(line for line in lines if line.startswith("Non-parties:"))
+        self.assertIn("2 in 1 case(s)", summary)
+        self.assertIn("1 whose notice PDF is not downloaded yet", summary)
+        self.assertIn("1 that filed no notice", summary)
+        self.assertTrue(any("Run daily sync" in line for line in lines))
+        self.assertTrue(any("--verbose" in line for line in lines))
+
+    def test_verbose_lists_each_one(self):
+        lines = self.run_counsel(verbose=True)
+        self.assertIn("  337-1478: non-party Apple Inc. (notice PDF not downloaded yet)", lines)
+        self.assertIn(
+            "  337-1478: non-party Merle Richman (no notice filed; described from its own filings)", lines
+        )
+
+
 @contextmanager
 def _session(client):
     yield client

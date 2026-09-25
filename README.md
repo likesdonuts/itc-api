@@ -88,7 +88,9 @@ The panel at the top of the list page does the day's work:
 
 - **Run daily sync** downloads today's case data, then re-lists the documents
   of every case whose documents you have collected before and downloads only
-  their Notice of Appearance PDFs, then rebuilds attorneys and pages.
+  their Notice of Appearance PDFs, then rebuilds attorneys and pages. If the
+  IDS download fails (it is tried three times), the rest still runs on the
+  case data already on disk, and the job ends with a warning saying so.
 - **Tick cases** in the list, then **Fetch documents** (lists and downloads
   every PDF not on disk yet) or **Update lists** (lists only, no downloads).
 - Each case's own page has the same **Fetch documents** / **Update list**
@@ -134,7 +136,7 @@ own from the command line.
 | `python cli.py fields` | none | Lists every field name `ui_schema.json` can use, with samples. |
 | `python cli.py status` | none | Which snapshot is current, which cases have documents, and the last few syncs. |
 | `python cli.py normalize` | none | Rewrites stored document dates to ISO 8601 in place. |
-| `python cli.py refresh` | IDS + EDIS | The daily job: sync, re-fetch documents already on disk, render. |
+| `python cli.py refresh` | IDS + EDIS | The daily job: sync, re-fetch documents already on disk, render. A failed IDS download does not stop the documents; the command then exits with 1. |
 
 Besides `ITC Tracker.bat`, Windows users can double-click `sync.bat`,
 `docs.bat` (it prompts for numbers), `render.bat`, `serve.bat`, or `run.bat`
@@ -157,7 +159,8 @@ UTC -- and is never rewritten, so every copy you keep is one you can go back
 to and a `--force` download cannot overwrite the morning's. Run again on the
 same day without `--force` and it reuses the copy rather than re-downloading
 37 MB. `--keep` counts days, not files, so taking a second copy never pushes
-an older day off the end.
+an older day off the end. A download that fails, or comes back as something
+other than the complete feed, is tried again after 10 and then 30 seconds.
 
 `data/investigations.json` is then rebuilt from the snapshot in full. That is
 deliberate: when the Commission renumbers or retitles something, the rebuilt
@@ -178,7 +181,7 @@ number that moved when it shouldn't have:
 
 | Column | What it should look like |
 | --- | --- |
-| `run_at`, `mode`, `outcome` | when, `download`/`cached`/`offline`, `ok`/`refused` |
+| `run_at`, `mode`, `outcome` | when, `download`/`cached`/`offline`, `ok`/`refused`/`failed` (`failed`: the download failed on every try; the reason is in `note`) |
 | `snapshot`, `snapshot_taken_at`, `snapshot_bytes` | which file was read, and its size -- a download that came back short shows up here first |
 | `feed_date` | the Commission's own timestamp inside the file. It should advance each day; the same value twice means you re-read the same data |
 | `rows_total`, `rows_337` | rows in the file and how many were Section 337. Both should barely move day to day |
@@ -268,6 +271,7 @@ There is no `docs` for all 1382 cases by default (`--all` exists, and it is
 ```
 python cli.py counsel                  # rebuild data/counsel.json, offline
 python cli.py counsel --render         # ...and the site
+python cli.py counsel --verbose        # ...listing each non-party and where its reason stands
 python cli.py docs --existing --appearances   # fetch the PDFs that name whole teams
 ```
 
@@ -314,6 +318,25 @@ served the subpoena and when. A non-party with no notice gets its reason
 from its own filings (a motion to quash, public-interest comments). They are
 listed under **Non-Party(s)** on the case page, with the notice's sentence
 and their filings under **Details**, and the list page search finds them.
+
+Notices that skip the "limited purpose" wording are read too ("... who has
+been served with a Subpoena Duces Tecum ...", "... to address issues related
+to a Subpoena ... issued on behalf of Respondents ..."), as are proposed
+intervenors. A scanned notice with no text layer is OCR'd locally, the same
+way as the claims analysis, and the text is cached in `data/counsel_text/`.
+
+Names are tidied as they are read: a joint filing ("MediaTek Inc. and
+MediaTek USA Inc.") becomes one non-party per name when every piece is a
+name by itself, so "Alliance of U.S. Startups and Inventors for Jobs" and
+"President and Fellows of Harvard College" stay whole. A leading "Non-Party"
+or "Dr." comes off, redacted names ("[ ]") are skipped, and one company under
+two corporate forms in a case ("Google Inc." / "Google LLC") is one non-party,
+shown under its most common spelling.
+
+The run sums the non-parties up in one line: how many have their reason read,
+how many have a notice whose PDF is not downloaded yet (Run daily sync, or
+`docs --existing --appearances`, downloads them), how many notices give no
+reason, and how many never filed one. `--verbose` lists each.
 
 Party names are matched loosely, so accents, punctuation and small typos
 ("Samsung Electronic Co., Ltd.") still match, but one company cannot pass for

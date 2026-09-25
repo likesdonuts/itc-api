@@ -20,6 +20,7 @@ import gzip
 import json
 import os
 import re
+import time
 from dataclasses import dataclass
 from datetime import datetime, timezone
 from pathlib import Path
@@ -203,6 +204,25 @@ def section_337_rows(payload: dict[str, Any]) -> list[dict[str, Any]]:
     return [row for row in rows(payload) if is_section_337(row)]
 
 
+# Seconds to wait before each retry of a failed download. The feed is one
+# large file and a download that fails often fails halfway, so both a network
+# error and a response that is not complete JSON are retried.
+RETRY_WAITS = (10.0, 30.0)
+
+
+def _download_with_retries(url: str, *, now: datetime, ids_dir: Path, log: Logger) -> Snapshot:
+    for attempt in range(len(RETRY_WAITS) + 1):
+        log(f"Downloading {url} ..." if attempt == 0 else f"Downloading {url} again (attempt {attempt + 1}) ...")
+        try:
+            return store(download(url), now=now, ids_dir=ids_dir)
+        except IdsError as exc:
+            if attempt == len(RETRY_WAITS):
+                raise IdsError(f"{exc} (after {attempt + 1} attempts)") from exc
+            log(f"  ! {exc}; retrying in {RETRY_WAITS[attempt]:.0f} seconds")
+            time.sleep(RETRY_WAITS[attempt])
+    raise AssertionError("unreachable")
+
+
 def sync(
     *,
     ids_dir: Path = IDS_DIR,
@@ -224,8 +244,7 @@ def sync(
         log(f"Today's IDS snapshot is already stored ({existing.path.name}).")
         snapshot, downloaded = existing, False
     else:
-        log(f"Downloading {url} ...")
-        snapshot = store(download(url), now=now, ids_dir=ids_dir)
+        snapshot = _download_with_retries(url, now=now, ids_dir=ids_dir, log=log)
         log(f"  stored {snapshot.path.name} ({snapshot.size / 1_000_000:.1f} MB gzipped).")
         downloaded = True
 
