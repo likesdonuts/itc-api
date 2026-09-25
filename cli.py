@@ -28,6 +28,8 @@ Examples:
     python cli.py backfill                  # document lists (no PDFs) for every case; resumable
     python cli.py counsel                   # rebuild who-represents-whom, offline
     python cli.py analytics                 # firms, attorneys, companies as entities
+    python cli.py decide                    # the name pairs waiting for you; decide 3 same
+    python cli.py analytics-serve           # open the analytics app (what ITC Analytics.bat runs)
     python cli.py claims 337-1366 --render  # build a claims analysis
     python cli.py render                    # rebuild the site, offline
     python cli.py serve                     # open the app (what ITC Tracker.bat runs)
@@ -162,6 +164,23 @@ def build_parser() -> argparse.ArgumentParser:
     p_analytics.add_argument(
         "--max-review", type=int, default=None, help="ask the model about at most this many pairs (default 300)"
     )
+
+    p_analytics_serve = sub.add_parser(
+        "analytics-serve",
+        help="open the analytics app (what ITC Analytics.bat runs): leaderboards, firms, attorneys, companies",
+    )
+    p_analytics_serve.add_argument("--port", type=int, default=8766, help="port to listen on (default 8766)")
+    p_analytics_serve.add_argument("--no-browser", action="store_true", help="don't open a browser window on startup")
+
+    p_decide = sub.add_parser(
+        "decide",
+        help="settle the analytics name pairs that need a person: list them, show one, or record an answer",
+    )
+    p_decide.add_argument("number", nargs="?", type=int, help="the pair's number in the list")
+    p_decide.add_argument(
+        "answer", nargs="?", help="same | different | a-became-b | b-became-a (firms) | split | one (firm fields)"
+    )
+    p_decide.add_argument("parts", nargs="*", help="for split: the firms the field names")
 
     p_claims = sub.add_parser(
         "claims",
@@ -341,7 +360,69 @@ def cmd_analytics(args: argparse.Namespace, store: Store) -> int:
 
     options = {"max_review_items": args.max_review} if args.max_review is not None else {}
     report = analytics_build.run(store, review=not args.no_review, **options)
+    _refresh_analytics_app(args)
     return 1 if report.review.stopped else 0
+
+
+def _refresh_analytics_app(args: argparse.Namespace, log=print) -> None:
+    """Keep the analytics app's page in step with a rebuild from here."""
+    from analytics_ui import render as analytics_render
+
+    analytics_render.render(args.data_dir, _analytics_site(args), log=log)
+
+
+def _analytics_site(args: argparse.Namespace) -> Path:
+    # Beside the tracker's site/: site_analytics/ in the project folder.
+    return Path(args.site_dir).parent / "site_analytics"
+
+
+def cmd_analytics_serve(args: argparse.Namespace, store: Store) -> int:
+    from analytics_server import serve
+
+    serve(port=args.port, data_dir=args.data_dir, site_dir=_analytics_site(args), open_browser=not args.no_browser)
+    return 0
+
+
+def cmd_decide(args: argparse.Namespace, store: Store) -> int:
+    from datalayer.analytics import build as analytics_build
+    from datalayer.analytics import decide
+
+    try:
+        items = decide.pending(args.data_dir)
+    except decide.DecideError as exc:
+        print(exc)
+        return 1
+    if not items:
+        print("Nothing waiting: every analytics pair is settled.")
+        return 0
+
+    if args.number is None:
+        print(f"{len(items)} pair(s) need a person. Nothing is merged until you decide.\n")
+        for number, item in enumerate(items, 1):
+            print(decide.summary_line(number, item))
+        print("\nSee one:   python cli.py decide <number>")
+        print("Answer:    python cli.py decide <number> same | different  (firms also: a-became-b | b-became-a)")
+        return 0
+
+    if not 1 <= args.number <= len(items):
+        print(f"There is no pair {args.number}; the list has 1 to {len(items)}.")
+        return 1
+    item = items[args.number - 1]
+    if args.answer is None:
+        print("\n".join(decide.details(args.number, item)))
+        return 0
+
+    try:
+        recorded = decide.record(item, args.answer, args.parts)
+    except decide.DecideError as exc:
+        print(exc)
+        return 1
+    print(f"Recorded in analytics_reference.json ({recorded.section}): {recorded.entry}")
+    analytics_build.run(store, review=False, log=lambda line: None)
+    _refresh_analytics_app(args, log=lambda line: None)
+    left = decide.pending(args.data_dir)
+    print(f"Rebuilt. {len(left)} pair(s) still waiting" + (" (the numbers have moved: run 'python cli.py decide')." if left else "."))
+    return 0
 
 
 def cmd_claims(args: argparse.Namespace, store: Store) -> int:
@@ -540,6 +621,8 @@ COMMANDS = {
     "backfill": cmd_backfill,
     "counsel": cmd_counsel,
     "analytics": cmd_analytics,
+    "decide": cmd_decide,
+    "analytics-serve": cmd_analytics_serve,
     "claims": cmd_claims,
     "render": cmd_render,
     "fields": cmd_fields,

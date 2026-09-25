@@ -140,9 +140,13 @@ def build(
     parts_of: dict[tuple[str, int], list[str]] = {}
     key_spellings: dict[str, Counter] = {}
     split_cache: dict[str, list[str]] = {}
+    decided_splits = {
+        " ".join(str(field_text).split()): [str(p) for p in parts]
+        for field_text, parts in (reference.section("firms").get("splits") or {}).items()
+    }
     for where, (firm, spellings) in fields.items():
         if firm not in split_cache:
-            split_cache[firm] = _split(firm, known, decisions, review, splits)
+            split_cache[firm] = _split(firm, known, decisions, review, splits, decided_splits)
         parts = split_cache[firm]
         keys = []
         for part in parts:
@@ -279,10 +283,17 @@ def _split(
     decisions: Decisions,
     review: list[ReviewItem],
     splits: list[dict[str, Any]],
+    decided: dict[str, list[str]] | None = None,
 ) -> list[str]:
     result = names.split_firm_field(firm, known)
     parts = result.parts
-    if result.review:
+    # A person's answer (analytics_reference.json firms.splits) wins.
+    by_hand = (decided or {}).get(" ".join(firm.split()))
+    if by_hand:
+        parts = list(by_hand)
+        if len(parts) > 1:
+            splits.append({"field": firm, "parts": parts, "rule": "reference split"})
+    elif result.review:
         item = ReviewItem(
             kind="firm_split",
             keys=(firm,),

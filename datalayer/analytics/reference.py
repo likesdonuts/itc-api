@@ -51,7 +51,8 @@ class Reference:
         return out
 
 
-def load_reference(path: Path = REFERENCE_PATH) -> Reference:
+def load_reference(path: Path | None = None) -> Reference:
+    path = path or REFERENCE_PATH  # looked up when called, so tests can point it elsewhere
     if not path.exists():
         return Reference()
     try:
