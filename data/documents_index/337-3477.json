@@ -1,0 +1,122 @@
+[
+  {
+    "attachments": [],
+    "document_date": "2020-09-02",
+    "document_type": "Complaint",
+    "filed_by": "George Moustakas",
+    "firm_organization": "Harness, Dickey, Pierce, P.L.C.",
+    "id": "718644",
+    "official_received_date": "2020-09-02T09:46:00",
+    "on_behalf_of": "Trijicon, Inc.",
+    "security_level": "Public",
+    "title": "Notice of Withdrawal of Complaint"
+  },
+  {
+    "attachments": [],
+    "document_date": "2020-08-25",
+    "document_type": "Voting Sheet",
+    "filed_by": "Lisa R. Barton",
+    "firm_organization": "USITC",
+    "id": "718177",
+    "official_received_date": "2020-08-26T11:27:00",
+    "on_behalf_of": "Office of the Secretary",
+    "security_level": "Public",
+    "title": null
+  },
+  {
+    "attachments": [],
+    "document_date": "2020-08-25",
+    "document_type": "Correspondence - USITC",
+    "filed_by": "Lisa R. Barton",
+    "firm_organization": "USITC",
+    "id": "718076",
+    "official_received_date": "2020-08-25T14:08:00",
+    "on_behalf_of": "Office of the Secretary",
+    "security_level": "Public",
+    "title": "Postponement Letter to George Moustakas of Harness Dickey & Pierce, P.L.C."
+  },
+  {
+    "attachments": [],
+    "document_date": "2020-08-21",
+    "document_type": "Action Request",
+    "filed_by": "George Moustakas",
+    "firm_organization": "Harness, Dickey, Pierce, P.L.C.",
+    "id": "717834",
+    "official_received_date": "2020-08-21T11:08:00",
+    "on_behalf_of": "Trijicon, Inc.",
+    "security_level": "Public",
+    "title": "Request for a Seven Day Postponement of the Commission's Institution Decision"
+  },
+  {
+    "attachments": [],
+    "document_date": "2020-08-11",
+    "document_type": "Complaint",
+    "filed_by": "George Moustakas",
+    "firm_organization": "Harness, Dickey, Pierce, P.L.C.",
+    "id": "716919",
+    "official_received_date": "2020-08-11T13:34:00",
+    "on_behalf_of": "Trijicon, Inc.",
+    "security_level": "Public",
+    "title": "Second Supplement to the Complaint and Exhibits"
+  },
+  {
+    "attachments": [],
+    "document_date": "2020-08-04",
+    "document_type": "Notice",
+    "filed_by": "Lisa R. Barton",
+    "firm_organization": "USITC",
+    "id": "716390",
+    "official_received_date": "2020-08-04T16:47:00",
+    "on_behalf_of": "Office of the Secretary",
+    "security_level": "Public",
+    "title": "F.R. Notice of Receipt of Complaint; Solicitation of Comments Relating to the Public Interest"
+  },
+  {
+    "attachments": [],
+    "document_date": "2020-07-29",
+    "document_type": "Notice",
+    "filed_by": "Lisa R. Barton",
+    "firm_organization": "USITC",
+    "id": "715972",
+    "official_received_date": "2020-07-29T15:50:00",
+    "on_behalf_of": "Office of the Secretary",
+    "security_level": "Public",
+    "title": "Receipt of Complaint; Solicitation of Comments Relating to the Public Interest"
+  },
+  {
+    "attachments": [],
+    "document_date": "2020-07-29",
+    "document_type": "Complaint",
+    "filed_by": "George Moustakas",
+    "firm_organization": "Harness, Dickey, Pierce, P.L.C.",
+    "id": "715919",
+    "official_received_date": "2020-07-29T09:48:00",
+    "on_behalf_of": "Trijicon, Inc.",
+    "security_level": "Public",
+    "title": "Supplement to the Complaint and Exhibits"
+  },
+  {
+    "attachments": [],
+    "document_date": "2020-07-28",
+    "document_type": "Complaint",
+    "filed_by": "George Moustakas",
+    "firm_organization": "Harness, Dickey, Pierce, P.L.C.",
+    "id": "715911",
+    "official_received_date": "2020-07-29T08:45:00",
+    "on_behalf_of": "Trijicon, Inc.",
+    "security_level": "Confidential",
+    "title": "Confidential Exhibits to the Complaint"
+  },
+  {
+    "attachments": [],
+    "document_date": "2020-07-28",
+    "document_type": "Complaint",
+    "filed_by": "George Moustakas",
+    "firm_organization": "Harness, Dickey, Pierce, P.L.C.",
+    "id": "715909",
+    "official_received_date": "2020-07-29T08:45:00",
+    "on_behalf_of": "Trijicon, Inc.",
+    "security_level": "Public",
+    "title": "Complaint and Exhibits"
+  }
+]

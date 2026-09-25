@@ -1,0 +1,62 @@
+[
+  {
+    "attachments": [],
+    "document_date": "2008-07-01",
+    "document_type": "Complaint",
+    "filed_by": "John D. Gugliotta",
+    "firm_organization": "Patent, Coypright, & Trademark Law Group, LLC",
+    "id": "304581",
+    "official_received_date": "2008-07-03",
+    "on_behalf_of": "OurPet's Company",
+    "security_level": "Public",
+    "title": "Letter re: Request a Formal Withdrawal of the Present Complaint"
+  },
+  {
+    "attachments": [],
+    "document_date": "2008-06-23",
+    "document_type": "Complaint",
+    "filed_by": "John D. Gugliotta",
+    "firm_organization": "Not Applicable",
+    "id": "303768",
+    "official_received_date": "2008-06-23",
+    "on_behalf_of": "OurPet's Company",
+    "security_level": "Public",
+    "title": "Letter Including Correction of Title"
+  },
+  {
+    "attachments": [],
+    "document_date": "2008-06-19",
+    "document_type": "Other",
+    "filed_by": "Marilyn R. Abbott",
+    "firm_organization": "USITC",
+    "id": "303577",
+    "official_received_date": "2008-06-20T09:10:34",
+    "on_behalf_of": "Office of the Secretary",
+    "security_level": "Public",
+    "title": "Transmittal of Physical Exhibits"
+  },
+  {
+    "attachments": [],
+    "document_date": "2008-06-16",
+    "document_type": "Complaint",
+    "filed_by": "John D. Gugliotta",
+    "firm_organization": "Patent, Copyright & Trademark Law Group, LLC",
+    "id": "303507",
+    "official_received_date": "2008-06-19",
+    "on_behalf_of": "OurPet's Company",
+    "security_level": "Public",
+    "title": null
+  },
+  {
+    "attachments": [],
+    "document_date": "2008-06-16",
+    "document_type": "Complaint",
+    "filed_by": "John D. Gugliotta",
+    "firm_organization": "Patent, Copyright & Trademark Law Group, LLC",
+    "id": "303508",
+    "official_received_date": "2008-06-19",
+    "on_behalf_of": "OurPet's Company",
+    "security_level": "Confidential",
+    "title": null
+  }
+]

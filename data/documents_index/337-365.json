@@ -1,0 +1,110 @@
+[
+  {
+    "attachments": [],
+    "document_date": "2022-12-20",
+    "document_type": "Complaint",
+    "filed_by": "Janine Carlan",
+    "firm_organization": "ArentFox Schiff LLP",
+    "id": "786661",
+    "official_received_date": "2022-12-20T16:16:00",
+    "on_behalf_of": "Johnson Controls Technology Company, Johnson Controls Inc.",
+    "security_level": "Public",
+    "title": "Notice of Withdrawal of Complaint"
+  },
+  {
+    "attachments": [],
+    "document_date": "2022-12-16",
+    "document_type": "Action Request",
+    "filed_by": "Janine A. Carlan",
+    "firm_organization": "ArentFox Schiff LLP",
+    "id": "786494",
+    "official_received_date": "2022-12-16T10:53:00",
+    "on_behalf_of": "Johnson Controls Technology Company and Johnson Controls Inc.",
+    "security_level": "Public",
+    "title": "Request to Postpone the Date by Which the Commission Votes on Institution"
+  },
+  {
+    "attachments": [],
+    "document_date": "2022-12-05",
+    "document_type": "Notice",
+    "filed_by": "Katherine M. Hiner",
+    "firm_organization": "USITC",
+    "id": "786011",
+    "official_received_date": "2022-12-09T10:30:00",
+    "on_behalf_of": "Office of the Secretary",
+    "security_level": "Public",
+    "title": "F.R. Notice of Receipt of Complaint; Solicitation of Comments Relating to the Public Interest"
+  },
+  {
+    "attachments": [],
+    "document_date": "2022-11-30",
+    "document_type": "Notice",
+    "filed_by": "Katherine M. Hiner",
+    "firm_organization": "USITC",
+    "id": "785361",
+    "official_received_date": "2022-11-30T10:38:00",
+    "on_behalf_of": "Office of the Secretary",
+    "security_level": "Public",
+    "title": "Notice of Receipt of Complaint; Solicitation of Comments Relating to the Public Interest"
+  },
+  {
+    "attachments": [],
+    "document_date": "2022-11-29",
+    "document_type": "Complaint",
+    "filed_by": "Janine Carlan",
+    "firm_organization": "ArentFox Schiff LLP",
+    "id": "785332",
+    "official_received_date": "2022-11-29T15:35:00",
+    "on_behalf_of": "Johnson Controls Inc. and Johnson Controls Technology Co.",
+    "security_level": "Confidential",
+    "title": "Confidential Complaint and Exhibits"
+  },
+  {
+    "attachments": [],
+    "document_date": "2022-11-29",
+    "document_type": "Complaint",
+    "filed_by": "Janine Carlan",
+    "firm_organization": "ArentFox Schiff LLP",
+    "id": "785300",
+    "official_received_date": "2022-11-29T11:52:00",
+    "on_behalf_of": "Johnson Controls Inc. and Johnson Controls Technology Co.",
+    "security_level": "Public",
+    "title": "Appendices A-F"
+  },
+  {
+    "attachments": [],
+    "document_date": "2022-11-29",
+    "document_type": "Complaint",
+    "filed_by": "Janine Carlan",
+    "firm_organization": "ArentFox Schiff LLP",
+    "id": "785292",
+    "official_received_date": "2022-11-29T10:59:00",
+    "on_behalf_of": "Johnson Controls Inc. and Johnson Controls Technology Co.",
+    "security_level": "Public",
+    "title": "Public Complaint and Exhibits"
+  },
+  {
+    "attachments": [],
+    "document_date": "1995-08-01",
+    "document_type": "Publication - USITC",
+    "filed_by": "Marilyn R. Abbott",
+    "firm_organization": "USITC",
+    "id": "235435",
+    "official_received_date": "2005-07-28",
+    "on_behalf_of": "Office of the Secretary",
+    "security_level": "Public",
+    "title": null
+  },
+  {
+    "attachments": [],
+    "document_date": "2004-08-01",
+    "document_type": "Publication - USITC",
+    "filed_by": "Marilyn R. Abbott",
+    "firm_organization": "USITC",
+    "id": "216780",
+    "official_received_date": "2004-10-27",
+    "on_behalf_of": "Office of the Secretary",
+    "security_level": "Public",
+    "title": null
+  }
+]

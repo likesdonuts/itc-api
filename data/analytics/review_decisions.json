@@ -1,4 +1,291 @@
 {
+  "attorney:005bf351a0096a9c": {
+    "confidence": 0.9,
+    "decided_at": "2026-09-25T21:28:24+00:00",
+    "decision": "different",
+    "keys": [
+      "j john lee",
+      "joshua lee"
+    ],
+    "kind": "attorney",
+    "model": "claude-haiku-4-5-20251001",
+    "parts": [],
+    "reason": "J. John Lee at Kirkland Ellis (2008) vs Joshua Lee at Kilpatrick Townsend Stockton (2017). 'Joshua' is a substantially different first name from 'John', different law firms, and different years. Unlikely to be the same person."
+  },
+  "attorney:0e4697155dfdf28f": {
+    "confidence": 0.9,
+    "decided_at": "2026-09-25T21:28:24+00:00",
+    "decision": "different",
+    "keys": [
+      "j jason williams",
+      "jan williams"
+    ],
+    "kind": "attorney",
+    "model": "claude-haiku-4-5-20251001",
+    "parts": [],
+    "reason": "J. Jason Williams at Jones Day (2016, 2019) vs Jan Williams at Miller Chevalier (2005). 'Jason' and 'Jan' are different first names. Different firms and different years (2005 vs 2016-2019) suggest different individuals."
+  },
+  "attorney:0fa7ceb4e613fa44": {
+    "confidence": 0.85,
+    "decided_at": "2026-09-25T21:28:54+00:00",
+    "decision": "same",
+    "keys": [
+      "laura beth miller",
+      "laura miller"
+    ],
+    "kind": "attorney",
+    "model": "claude-haiku-4-5-20251001",
+    "parts": [
+      "Laura Beth Miller",
+      "Laura Miller"
+    ],
+    "reason": "Laura Beth Miller and Laura Miller are the same attorney. Name variation from full middle name to last name only is common. Both spellings appear in legal practice with overlapping timeframe (2003-2015) and both have represented similar interests in intellectual property cases."
+  },
+  "attorney:165364335f8c8af9": {
+    "confidence": 0.9,
+    "decided_at": "2026-09-25T21:28:24+00:00",
+    "decision": "different",
+    "keys": [
+      "j helena kim",
+      "john kim"
+    ],
+    "kind": "attorney",
+    "model": "claude-haiku-4-5-20251001",
+    "parts": [],
+    "reason": "J. Helena Kim at Bryan Cave (2006) vs John Kim at Lewis Roca Rothgerber Christie (2021). 'Helena' vs 'John' are clearly different first names. Substantial difference in years (2006 vs 2021), different firms, strongly suggests different individuals."
+  },
+  "attorney:1e205596c58e3774": {
+    "confidence": 0.85,
+    "decided_at": "2026-09-25T21:28:24+00:00",
+    "decision": "different",
+    "keys": [
+      "s emma lee",
+      "sejung lee"
+    ],
+    "kind": "attorney",
+    "model": "claude-haiku-4-5-20251001",
+    "parts": [],
+    "reason": "S. Emma Lee at Kilpatrick Townsend Stockton (2023) vs Sejung Lee at Yoon Yang (2023). Both in 2023 but at different firms. 'Emma' and 'Sejung' are clearly different names. Likely different individuals."
+  },
+  "attorney:1ef8e84c4e9ca1c7": {
+    "confidence": 0.85,
+    "decided_at": "2026-09-25T21:27:56+00:00",
+    "decision": "different",
+    "keys": [
+      "david a smith",
+      "david smith"
+    ],
+    "kind": "attorney",
+    "model": "claude-haiku-4-5-20251001",
+    "parts": [
+      "David A. Smith",
+      "David Smith"
+    ],
+    "reason": "David A. Smith vs David Smith: Both are named David Smith, but different firms (Fish Richardson vs Mayer Brown), years apart (2007 vs 2019), and the first entry includes 'Ph.D.' credential. While they could be the same person, the time gap and different professional contexts suggest caution; treating as different without more evidence."
+  },
+  "attorney:2158576d882c0655": {
+    "confidence": 0.9,
+    "decided_at": "2026-09-25T21:28:24+00:00",
+    "decision": "different",
+    "keys": [
+      "j helena kim",
+      "joon kim"
+    ],
+    "kind": "attorney",
+    "model": "claude-haiku-4-5-20251001",
+    "parts": [],
+    "reason": "J. Helena Kim at Bryan Cave (2006) vs Joon Kim at Cleary Gottlieb (2019). 'Helena' and 'Joon' are different names. Different firms and significant year gap (2006 vs 2019) suggest different individuals."
+  },
+  "attorney:279a46fae6ca31ec": {
+    "confidence": 0.9,
+    "decided_at": "2026-09-25T21:28:54+00:00",
+    "decision": "same",
+    "keys": [
+      "tara sg sharp",
+      "tara sharp"
+    ],
+    "kind": "attorney",
+    "model": "claude-haiku-4-5-20251001",
+    "parts": [
+      "Tara S.G. Sharp",
+      "Tara Sharp"
+    ],
+    "reason": "Tara S.G. Sharp and Tara Sharp are the same attorney. The initials S.G. likely represent middle names. Both appear in 2012 with overlapping years at different firms. The name and timeframe match clearly indicates this is one attorney."
+  },
+  "attorney:296b8f35e8d9ba67": {
+    "confidence": 0.35,
+    "decided_at": "2026-09-25T21:28:54+00:00",
+    "decision": "unsure",
+    "keys": [
+      "s fuller",
+      "samuel fuller"
+    ],
+    "kind": "attorney",
+    "model": "claude-haiku-4-5-20251001",
+    "parts": [
+      "s fuller",
+      "Samuel Fuller"
+    ],
+    "reason": "S Fuller and Samuel Fuller could be the same person, but the evidence is weak. Different firms (McDermott Will Emery vs Cleary Gottlieb), 20-year gap between appearances (1999 vs 2019), and only one uses the initial 'S' without full spelling. Too uncertain without additional confirmation."
+  },
+  "attorney:2a7cee9b402a86b8": {
+    "confidence": 0.8,
+    "decided_at": "2026-09-25T21:28:24+00:00",
+    "decision": "different",
+    "keys": [
+      "robert j williams",
+      "robert williams"
+    ],
+    "kind": "attorney",
+    "model": "claude-haiku-4-5-20251001",
+    "parts": [],
+    "reason": "Robert J. Williams at Heller Ehrman (2007) vs Robert Williams at DLA Piper/Covington Burling (2008, 2025). Both named Robert Williams, appearing one year apart. However, different firms and the gap between 2007 and 2025 suggest these are likely different individuals. Without middle name confirmation, cannot confidently merge."
+  },
+  "attorney:41533af6bd3a8fb2": {
+    "confidence": 0.9,
+    "decided_at": "2026-09-25T21:28:24+00:00",
+    "decision": "different",
+    "keys": [
+      "j john lee",
+      "joon lee"
+    ],
+    "kind": "attorney",
+    "model": "claude-haiku-4-5-20251001",
+    "parts": [],
+    "reason": "J. John Lee at Kirkland Ellis (2008) vs Joon Lee at Baker Botts (2007). 'Joon' is a Korean name distinct from 'John'. Different firms and different first names indicate different individuals."
+  },
+  "attorney:418e76760d3cdc86": {
+    "confidence": 0.85,
+    "decided_at": "2026-09-25T21:28:24+00:00",
+    "decision": "different",
+    "keys": [
+      "john jg kim",
+      "john kim"
+    ],
+    "kind": "attorney",
+    "model": "claude-haiku-4-5-20251001",
+    "parts": [],
+    "reason": "John J.G. Kim at Burns Doane Swecker Mathis (2003) vs John Kim at Lewis Roca Rothgerber Christie (2021). Both named John Kim but 18-year gap between appearances, different firms. Without additional information, the long time gap and firm change suggest different individuals."
+  },
+  "attorney:43a94589f9a97cf0": {
+    "confidence": 0.85,
+    "decided_at": "2026-09-25T21:28:24+00:00",
+    "decision": "different",
+    "keys": [
+      "j john lee",
+      "jinyung lee"
+    ],
+    "kind": "attorney",
+    "model": "claude-haiku-4-5-20251001",
+    "parts": [],
+    "reason": "J. John Lee at Kirkland Ellis (2008) vs Jinyung Lee at Sidley Austin/Weil Gotshal (2007, 2016). 'Jinyung' is a Korean first name distinct from 'John'. Different firms, overlapping years, and substantially different name spellings suggest different individuals."
+  },
+  "attorney:45ea34a1d9fe25f2": {
+    "confidence": 0.85,
+    "decided_at": "2026-09-25T21:28:24+00:00",
+    "decision": "different",
+    "keys": [
+      "j helena kim",
+      "jae kim"
+    ],
+    "kind": "attorney",
+    "model": "claude-haiku-4-5-20251001",
+    "parts": [],
+    "reason": "J. Helena Kim at Bryan Cave (2006) vs Jae Kim at Orrick Herrington Sutcliffe (2007). 'Helena' and 'Jae' are distinctly different first names. Different firms and years suggest different individuals."
+  },
+  "attorney:476d59804b85c656": {
+    "confidence": 0.55,
+    "decided_at": "2026-09-25T21:28:54+00:00",
+    "decision": "unsure",
+    "keys": [
+      "harry e manbeck",
+      "harry manbeck"
+    ],
+    "kind": "attorney",
+    "model": "claude-haiku-4-5-20251001",
+    "parts": [
+      "Harry E. Manbeck",
+      "Harry Manbeck"
+    ],
+    "reason": "Harry E. Manbeck, Jr. and Harry Manbeck could be the same person, though the 'Jr.' designation suggests it might relate to a family relationship. Both appear in 2007 but at different firms (Fish Richardson vs Goodwin Procter). The suffix and firm difference make this uncertain."
+  },
+  "attorney:4a95f880f1872387": {
+    "confidence": 0.4,
+    "decided_at": "2026-09-25T21:28:54+00:00",
+    "decision": "unsure",
+    "keys": [
+      "julia d klein",
+      "julia drayton klein"
+    ],
+    "kind": "attorney",
+    "model": "claude-haiku-4-5-20251001",
+    "parts": [
+      "Julia D. Klein",
+      "Julia Drayton Klein"
+    ],
+    "reason": "Julia D. Klein and Julia Drayton Klein could be the same person. The 'D' in first entry likely stands for 'Drayton', but they appear at different firms (Robins Kaplan vs Thompson Hine) with a 2-year gap (2011 vs 2013). Without overlapping firm placement or closer dates, identity cannot be confirmed with confidence."
+  },
+  "attorney:4b9de32c910bac7a": {
+    "confidence": 0.95,
+    "decided_at": "2026-09-25T21:28:24+00:00",
+    "decision": "different",
+    "keys": [
+      "j roger williams",
+      "jan williams"
+    ],
+    "kind": "attorney",
+    "model": "claude-haiku-4-5-20251001",
+    "parts": [],
+    "reason": "J. Roger Williams Jr. at Richards Rodriquez Skeith (2019) vs Jan Williams at Miller Chevalier (2005). 'Roger' and 'Jan' are completely different first names. Different firms and years strongly suggest different individuals."
+  },
+  "attorney:554b435d14cd12ac": {
+    "confidence": 0.9,
+    "decided_at": "2026-09-25T21:27:56+00:00",
+    "decision": "different",
+    "keys": [
+      "s lloyd smith",
+      "stefani smith"
+    ],
+    "kind": "attorney",
+    "model": "claude-haiku-4-5-20251001",
+    "parts": [
+      "S. Lloyd Smith",
+      "Stefani Smith"
+    ],
+    "reason": "S. Lloyd Smith vs Stefani Smith: 'S. Lloyd' and 'Stefani' are very different name structures. Lloyd is typically a surname or rare given name, while Stefani is a given name. Different firms and different career patterns (S. Lloyd appears at multiple prestigious firms 2003-2026, while Stefani at different firms 2010-2018) suggest different people."
+  },
+  "attorney:565928f723c85fd3": {
+    "confidence": 0.85,
+    "decided_at": "2026-09-25T21:27:56+00:00",
+    "decision": "different",
+    "keys": [
+      "d jacques smith",
+      "daniel smith"
+    ],
+    "kind": "attorney",
+    "model": "claude-haiku-4-5-20251001",
+    "parts": [
+      "D. Jacques Smith",
+      "Daniel Smith"
+    ],
+    "reason": "D. Jacques Smith vs Daniel Smith: 'Jacques' is a distinctive middle name unlikely to be short for 'Daniel'. Different firms (Arent Fox Kintner Plotkin Kahn vs Adduci Mastriani Schaumberg/AMS Trade), years apart (2003 vs 2017-2022), and different given name patterns suggest different people."
+  },
+  "attorney:579bed75c0651099": {
+    "confidence": 0.45,
+    "decided_at": "2026-09-25T21:27:56+00:00",
+    "decision": "unsure",
+    "keys": [
+      "matthew brown",
+      "matthew d brown"
+    ],
+    "kind": "attorney",
+    "model": "claude-haiku-4-5-20251001",
+    "parts": [
+      "Matthew Brown",
+      "Matthew D. Brown"
+    ],
+    "reason": "Matthew Brown vs Matthew D. Brown: Middle initial 'D' could match if this is the same person, but different firms (Baker Hostetler vs Cooley) and years apart (2010 vs 2016) provide weak signals. Without more context, cannot definitively say same or different."
+  },
   "attorney:589064aa391b20ba": {
     "confidence": 0.3,
     "decided_at": "2026-09-25T18:02:38+00:00",
@@ -11,6 +298,131 @@
     "model": "claude-haiku-4-5-20251001",
     "parts": [],
     "reason": "S. Lloyd Smith and Stephen Smith could be the same person (Stephen could shorten to S., Lloyd could be a middle name). However, different firms (Buchanan-Insersoll-Rooney vs. Cooley) and different years (2026 vs. 2023) are inconsistent. Not enough information to confirm identity. Conservatively marking unsure."
+  },
+  "attorney:5bd4366e12698d26": {
+    "confidence": 0.75,
+    "decided_at": "2026-09-25T21:28:54+00:00",
+    "decision": "different",
+    "keys": [
+      "james fussell",
+      "james tripp fussell"
+    ],
+    "kind": "attorney",
+    "model": "claude-haiku-4-5-20251001",
+    "parts": [
+      "James Fussell",
+      "James Tripp Fussell"
+    ],
+    "reason": "James Fussell and James Tripp Fussell appear to be different attorneys. While both named James and associated with legal work, 'Tripp' as a middle name is distinct and different from 'Aubrey' (from previous entries). The Fish Richardson appearance in 2007 (James Tripp Fussell) vs Mayer Brown 2022-2025 (James Fussell) suggests different individuals."
+  },
+  "attorney:5cf60881bf323aec": {
+    "confidence": 0.85,
+    "decided_at": "2026-09-25T21:28:54+00:00",
+    "decision": "same",
+    "keys": [
+      "james aubrey fussell",
+      "james fussell"
+    ],
+    "kind": "attorney",
+    "model": "claude-haiku-4-5-20251001",
+    "parts": [
+      "James Aubrey Fussell",
+      "James Fussell"
+    ],
+    "reason": "James Aubrey Fussell and James Fussell are the same attorney. The full middle name and last name only variant is typical. However, fish-richardson (2010) vs mayer-brown (2022, 2025) suggests career movement between firms, which is normal for attorneys. The name match is clear."
+  },
+  "attorney:5ed6dfb454a70ae7": {
+    "confidence": 0.85,
+    "decided_at": "2026-09-25T21:27:56+00:00",
+    "decision": "different",
+    "keys": [
+      "j john lee",
+      "jennifer lee"
+    ],
+    "kind": "attorney",
+    "model": "claude-haiku-4-5-20251001",
+    "parts": [
+      "J. John Lee",
+      "Jennifer Lee"
+    ],
+    "reason": "J. John Lee vs Jennifer Lee: 'John' vs 'Jennifer' are distinctly different given names. While both have 'J.' initial and 'Lee' surname, the gender and name presentation differ significantly. Different firms (Kirkland Ellis vs unknown), years (2008 vs 2005), and clear name difference indicate different people."
+  },
+  "attorney:63b4c63bbe6fe82a": {
+    "confidence": 0.55,
+    "decided_at": "2026-09-25T21:28:54+00:00",
+    "decision": "unsure",
+    "keys": [
+      "james a fussell",
+      "james aubrey fussell"
+    ],
+    "kind": "attorney",
+    "model": "claude-haiku-4-5-20251001",
+    "parts": [
+      "James A. Fussell",
+      "James Aubrey Fussell"
+    ],
+    "reason": "James A. Fussell and James Aubrey Fussell likely refer to the same person (A = Aubrey), but they appear at different firms with a significant time gap (Fish Richardson 2010 vs Mayer Brown starting 2012). The relationship is plausible but not definitively confirmed."
+  },
+  "attorney:65242003fbdf9565": {
+    "confidence": 0.65,
+    "decided_at": "2026-09-25T21:28:24+00:00",
+    "decision": "unsure",
+    "keys": [
+      "t cy walker",
+      "timothy walker"
+    ],
+    "kind": "attorney",
+    "model": "claude-haiku-4-5-20251001",
+    "parts": [],
+    "reason": "T. Cy Walker at Baker Hostetler/Kenyon Kenyon (2007-2020) vs Timothy Walker at K&L Gates (2007-2010). Both have first initial 'T' and both named Walker. 'Cy' could be a nickname or middle name for 'Timothy'. Overlapping years (2007-2010) at different firms. Given the name similarity and overlapping period, could be the same person, but 'Cy' as a standalone first name vs 'Timothy' creates doubt. Conservative approach needed here."
+  },
+  "attorney:6ac9556650f89059": {
+    "confidence": 0.8,
+    "decided_at": "2026-09-25T21:28:54+00:00",
+    "decision": "same",
+    "keys": [
+      "kyle fleming",
+      "kyle j fleming"
+    ],
+    "kind": "attorney",
+    "model": "claude-haiku-4-5-20251001",
+    "parts": [
+      "Kyle Fleming",
+      "Kyle J. Fleming"
+    ],
+    "reason": "Kyle Fleming and Kyle J. Fleming are the same attorney. The middle initial J is a natural variation. Both entries appear close in time (2012 and 2026 suggest ongoing career). Name match is clear with only initial variation."
+  },
+  "attorney:6daad7b674d6c982": {
+    "confidence": 0.8,
+    "decided_at": "2026-09-25T21:28:54+00:00",
+    "decision": "same",
+    "keys": [
+      "mimi lain",
+      "mimi senjane lain"
+    ],
+    "kind": "attorney",
+    "model": "claude-haiku-4-5-20251001",
+    "parts": [
+      "Mimi Lain",
+      "Mimi Sen-Jane Lain"
+    ],
+    "reason": "Mimi Lain and Mimi Sen-Jane Lain are the same attorney. The middle name 'Sen-Jane' (or 'Senjane') is a full version represented as 'SJ' in abbreviated forms. Both entries are from 2007, the same year, suggesting these are variant name spellings of the same person."
+  },
+  "attorney:6e4a5d02f2853eb7": {
+    "confidence": 0.9,
+    "decided_at": "2026-09-25T21:27:56+00:00",
+    "decision": "different",
+    "keys": [
+      "j william jones",
+      "jeremy jones"
+    ],
+    "kind": "attorney",
+    "model": "claude-haiku-4-5-20251001",
+    "parts": [
+      "J. William Jones",
+      "Jeremy Jones"
+    ],
+    "reason": "J. William Jones vs Jeremy Jones: 'J. William' most likely represents William as the given name (William J. Jones), while Jeremy is a different given name. Different firms (Adduci Mastriani Schaumberg vs Goodwin Procter), 20-year gap (2005 vs 2025), and different name structures indicate different people."
   },
   "attorney:77c903908eb89ac8": {
     "confidence": 0.2,
@@ -25,6 +437,565 @@
     "parts": [],
     "reason": "R. Kevin Williams and Robert Williams could be the same attorney (R. could indicate Robert), but different firms (Clark Hill vs. DLA Piper) and consecutive years (2024 vs. 2025) create uncertainty. Without middle names or more context, cannot confirm if this is the same person who moved firms or different people."
   },
+  "attorney:79634bc44cd3c8e8": {
+    "confidence": 0.75,
+    "decided_at": "2026-09-25T21:28:24+00:00",
+    "decision": "different",
+    "keys": [
+      "j roger williams",
+      "jason williams"
+    ],
+    "kind": "attorney",
+    "model": "claude-haiku-4-5-20251001",
+    "parts": [],
+    "reason": "J. Roger Williams Jr. at Richards Rodriquez Skeith (2019) vs Jason Williams at Jones Day/Quinn Emanuel (2017, 2022). 'Roger' vs 'Jason' are different first names. Both share middle initial 'J' initials with their first names, but the substantive first names differ. Different primary firms suggest different individuals, though cautious given overlapping years (2017-2019)."
+  },
+  "attorney:7a33d76a7db66f9a": {
+    "confidence": 0.9,
+    "decided_at": "2026-09-25T21:27:56+00:00",
+    "decision": "different",
+    "keys": [
+      "j william jones",
+      "julian jones"
+    ],
+    "kind": "attorney",
+    "model": "claude-haiku-4-5-20251001",
+    "parts": [
+      "J. William Jones",
+      "Julian Jones"
+    ],
+    "reason": "J. William Jones vs Julian Jones: 'J. William' most likely represents William as primary given name, not Julian. Different firms (Adduci Mastriani Schaumberg vs Steptoe & Johnson), one year apart (2005 vs 2006), but very different name patterns indicate different people."
+  },
+  "attorney:7a7a31c1e37a905a": {
+    "confidence": 0.5,
+    "decided_at": "2026-09-25T21:28:24+00:00",
+    "decision": "unsure",
+    "keys": [
+      "j john lee",
+      "julia lee"
+    ],
+    "kind": "attorney",
+    "model": "claude-haiku-4-5-20251001",
+    "parts": [],
+    "reason": "J. John Lee at Kirkland Ellis (2008) vs Julia Lee at unknown firm (2005). 'Julia' vs 'John' are clearly different first names suggesting different individuals. However, the unknown firm and limited context makes it difficult to be certain. Conservative approach given name differences suggests 'different' but unknown firm creates doubt."
+  },
+  "attorney:7b6241a5d2d2481d": {
+    "confidence": 0.5,
+    "decided_at": "2026-09-25T21:27:56+00:00",
+    "decision": "unsure",
+    "keys": [
+      "c john brown",
+      "catherine brown"
+    ],
+    "kind": "attorney",
+    "model": "claude-haiku-4-5-20251001",
+    "parts": [
+      "C. John Brown",
+      "Catherine Brown"
+    ],
+    "reason": "C. John Brown vs Catherine Brown: 'C.' could be short for Catherine, and both appear in 2005. However, the gender presentation differs (John vs Catherine as primary name), and one firm is unknown. Insufficient information to determine if this is one person who uses different name forms or two different people."
+  },
+  "attorney:7b691474903a653f": {
+    "confidence": 0.85,
+    "decided_at": "2026-09-25T21:27:56+00:00",
+    "decision": "same",
+    "keys": [
+      "douglas a smith",
+      "douglas smith"
+    ],
+    "kind": "attorney",
+    "model": "claude-haiku-4-5-20251001",
+    "parts": [
+      "Douglas A. Smith",
+      "Douglas Smith"
+    ],
+    "reason": "Douglas A. Smith vs Douglas Smith: Same given name (Douglas), same middle initial pattern (A.), both named Smith. Different firms (McKool Smith vs Arnold Porter) and years (2019 vs 2021) are close enough that this could be the same person who moved firms. The consistent Douglas + Smith + similar timeframe supports same identity."
+  },
+  "attorney:7cb2a8e396f6f89a": {
+    "confidence": 0.45,
+    "decided_at": "2026-09-25T21:27:56+00:00",
+    "decision": "unsure",
+    "keys": [
+      "brian a jones",
+      "brian jones"
+    ],
+    "kind": "attorney",
+    "model": "claude-haiku-4-5-20251001",
+    "parts": [
+      "Brian A. Jones",
+      "Brian Jones"
+    ],
+    "reason": "Brian A. Jones vs Brian Jones: Middle initial 'A' could indicate the same person, and same first name and surname. However, different firms (McDermott Will & Emery vs Brinks Hofer Gilson Lione) and years (2018-2020 vs 2011) create timing questions. Could be same person at different career stages, but unclear."
+  },
+  "attorney:7ee7a30244f44fab": {
+    "confidence": 0.9,
+    "decided_at": "2026-09-25T21:27:56+00:00",
+    "decision": "different",
+    "keys": [
+      "d jacques smith",
+      "david smith"
+    ],
+    "kind": "attorney",
+    "model": "claude-haiku-4-5-20251001",
+    "parts": [
+      "D. Jacques Smith",
+      "David Smith"
+    ],
+    "reason": "D. Jacques Smith vs David Smith: 'Jacques' is very unlikely to be a middle name for someone named David. Different firms (Arent Fox vs Mayer Brown), significant time gap (2003 vs 2019), and completely different given names indicate different people."
+  },
+  "attorney:94597c620b84beec": {
+    "confidence": 0.45,
+    "decided_at": "2026-09-25T21:28:54+00:00",
+    "decision": "unsure",
+    "keys": [
+      "david d nelson",
+      "david nelson"
+    ],
+    "kind": "attorney",
+    "model": "claude-haiku-4-5-20251001",
+    "parts": [
+      "David D Nelson",
+      "David Nelson"
+    ],
+    "reason": "David D Nelson and David Nelson share same first and last names with middle initial in first variant, but they appear at completely different firms (Hogan Hartson vs Quinn Emanuel) with an 8-year gap (2004 vs 2012). Without additional confirmation, this could be two different attorneys with the same name."
+  },
+  "attorney:96ac3958b0371bdc": {
+    "confidence": 0.8,
+    "decided_at": "2026-09-25T21:28:54+00:00",
+    "decision": "same",
+    "keys": [
+      "jonathan j lamberson",
+      "jonathan lamberson"
+    ],
+    "kind": "attorney",
+    "model": "claude-haiku-4-5-20251001",
+    "parts": [
+      "Jonathan J. Lamberson",
+      "Jonathan Lamberson"
+    ],
+    "reason": "Jonathan J. Lamberson and Jonathan Lamberson are the same attorney. The middle initial J is a typical variation. Both are documented with reasonable name match, and attorneys commonly appear at multiple firms throughout their careers."
+  },
+  "attorney:9955f304c0d63d6a": {
+    "confidence": 0.5,
+    "decided_at": "2026-09-25T21:28:54+00:00",
+    "decision": "unsure",
+    "keys": [
+      "jonathan l lamberson",
+      "jonathan lamberson"
+    ],
+    "kind": "attorney",
+    "model": "claude-haiku-4-5-20251001",
+    "parts": [
+      "Jonathan L. Lamberson",
+      "Jonathan Lamberson"
+    ],
+    "reason": "Jonathan L. Lamberson and Jonathan Lamberson appear to be the same person (middle initial L variant), but without more context it's unclear if this is one attorney or two with similar names. They appear at different firms (Fish Richardson 2008 vs White Case 2026) with an 18-year gap. The middle initial difference (L vs J from other record) raises ambiguity."
+  },
+  "attorney:a609e5fdbb121e74": {
+    "confidence": 0.88,
+    "decided_at": "2026-09-25T21:27:56+00:00",
+    "decision": "different",
+    "keys": [
+      "j john lee",
+      "jenfeng lee"
+    ],
+    "kind": "attorney",
+    "model": "claude-haiku-4-5-20251001",
+    "parts": [
+      "J. John Lee",
+      "Jen-Feng Lee"
+    ],
+    "reason": "J. John Lee vs Jen-Feng Lee: 'John' and 'Jen-Feng' are different given names. While both have 'J.' initial, 'John' is Western while 'Jen-Feng' is an Asian name format (Taiwanese/Chinese). Different firms (Kirkland Ellis vs World Esquire Law Firm), years very close (2008 vs 2007), but name structure differences strongly suggest different people."
+  },
+  "attorney:a63e9e4b62899bc9": {
+    "confidence": 0.85,
+    "decided_at": "2026-09-25T21:28:54+00:00",
+    "decision": "same",
+    "keys": [
+      "wasif a qureshi",
+      "wasif qureshi"
+    ],
+    "kind": "attorney",
+    "model": "claude-haiku-4-5-20251001",
+    "parts": [
+      "Wasif A. Qureshi",
+      "Wasif Qureshi"
+    ],
+    "reason": "Wasif A. Qureshi and Wasif Qureshi are the same attorney. The middle initial A is a simple variation. Both appear in 2008, the same year, so this represents one attorney appearing in different cases at different firms."
+  },
+  "attorney:a723d1edcd57cd38": {
+    "confidence": 0.4,
+    "decided_at": "2026-09-25T21:27:56+00:00",
+    "decision": "unsure",
+    "keys": [
+      "brian jones",
+      "brian s jones"
+    ],
+    "kind": "attorney",
+    "model": "claude-haiku-4-5-20251001",
+    "parts": [
+      "Brian Jones",
+      "Brian S. Jones"
+    ],
+    "reason": "Brian Jones vs Brian S. Jones: Middle initial 'S' could indicate the same person, but different firms (Brinks Hofer Gilson Lione vs Not Listed) and years (2011 vs 2012) are very close. The 'Not Listed' firm designation creates uncertainty. Could be same person, but need more data."
+  },
+  "attorney:a7b78783993169cc": {
+    "confidence": 0.6,
+    "decided_at": "2026-09-25T21:28:24+00:00",
+    "decision": "unsure",
+    "keys": [
+      "jason c williams",
+      "jason williams"
+    ],
+    "kind": "attorney",
+    "model": "claude-haiku-4-5-20251001",
+    "parts": [],
+    "reason": "Jason C. Williams at Quinn Emanuel (2025) vs Jason Williams at Jones Day/Quinn Emanuel Trial Lawyers (2017, 2022). Both named Jason Williams and both have appearances at Quinn Emanuel entities. The 'C' middle initial could match other information about Jason Williams. However, the different years (2025 vs 2017, 2022) and the slight variation in firm names (Quinn Emanuel vs Quinn Emanuel Trial Lawyers) create uncertainty. Could be the same person moving between Quinn Emanuel entities or different attorneys with the same name."
+  },
+  "attorney:a832a5d3b6176ac1": {
+    "confidence": 0.85,
+    "decided_at": "2026-09-25T21:28:24+00:00",
+    "decision": "different",
+    "keys": [
+      "j helena kim",
+      "jenny kim"
+    ],
+    "kind": "attorney",
+    "model": "claude-haiku-4-5-20251001",
+    "parts": [],
+    "reason": "J. Helena Kim at Bryan Cave (2006) vs Jenny Kim at Miller Chevalier (2007). 'Helena' and 'Jenny' are different first names. While both could be female attorneys, the names are substantially different and they appear at different firms."
+  },
+  "attorney:ab483bbd4241f965": {
+    "confidence": 0.9,
+    "decided_at": "2026-09-25T21:28:24+00:00",
+    "decision": "different",
+    "keys": [
+      "s emma lee",
+      "sharon lee"
+    ],
+    "kind": "attorney",
+    "model": "claude-haiku-4-5-20251001",
+    "parts": [],
+    "reason": "S. Emma Lee at Kilpatrick Townsend Stockton (2023) vs Sharon Lee at Ropes Gray/Sidley Austin (2016, 2026). 'Emma' and 'Sharon' are distinct first names. Different primary firms and substantially different names indicate different individuals."
+  },
+  "attorney:af1662c1b90ac0d8": {
+    "confidence": 0.4,
+    "decided_at": "2026-09-25T21:27:56+00:00",
+    "decision": "unsure",
+    "keys": [
+      "matthew brown",
+      "matthew s brown"
+    ],
+    "kind": "attorney",
+    "model": "claude-haiku-4-5-20251001",
+    "parts": [
+      "Matthew Brown",
+      "Matthew S. Brown"
+    ],
+    "reason": "Matthew Brown vs Matthew S. Brown: Middle initial 'S' differs from no middle initial shown in the first entry. Different firms (Baker Hostetler vs Morrison Foerster) and Matthew Brown in 2010 is earlier than Matthew S. Brown in 2007. These could be the same person at different points in his career, but the timeline is unclear and middle initial mismatch creates doubt."
+  },
+  "attorney:b1f3f232cd0d57e7": {
+    "confidence": 0.85,
+    "decided_at": "2026-09-25T21:28:24+00:00",
+    "decision": "different",
+    "keys": [
+      "j scott anderson",
+      "jacob anderson"
+    ],
+    "kind": "attorney",
+    "model": "claude-haiku-4-5-20251001",
+    "parts": [],
+    "reason": "J. Scott Anderson at Needle Rosenberg (2007) vs Jacob Anderson at DLA Piper (2010-2017). 'Scott' and 'Jacob' are different first names. Different firms and years suggest different individuals."
+  },
+  "attorney:b2951a212ca30590": {
+    "confidence": 0.9,
+    "decided_at": "2026-09-25T21:27:56+00:00",
+    "decision": "different",
+    "keys": [
+      "j john lee",
+      "ji lee"
+    ],
+    "kind": "attorney",
+    "model": "claude-haiku-4-5-20251001",
+    "parts": [
+      "J. John Lee",
+      "Ji Lee"
+    ],
+    "reason": "J. John Lee vs Ji Lee: 'John' and 'Ji' are very different names. 'J. John' suggests John as the primary given name, while 'Ji' is a completely different Asian given name. Different firms (Kirkland Ellis vs Hogan Hartson), years close (2008 vs 2006), but distinct name patterns indicate different people."
+  },
+  "attorney:b479a5c7af2c8da4": {
+    "confidence": 0.5,
+    "decided_at": "2026-09-25T21:27:56+00:00",
+    "decision": "unsure",
+    "keys": [
+      "s lloyd smith",
+      "steven smith"
+    ],
+    "kind": "attorney",
+    "model": "claude-haiku-4-5-20251001",
+    "parts": [
+      "S. Lloyd Smith",
+      "Steven Smith"
+    ],
+    "reason": "S. Lloyd Smith vs Steven Smith: 'S.' could stand for 'Steven', and 'Lloyd' could be a middle name for Steven. However, the name patterns are quite different (Lloyd as prominent identifier vs Steven without middle name shown). Both present in 2005, but one firm is unknown. Insufficient information."
+  },
+  "attorney:b7ceb7cabed292ad": {
+    "confidence": 0.85,
+    "decided_at": "2026-09-25T21:27:56+00:00",
+    "decision": "different",
+    "keys": [
+      "j john lee",
+      "jaebok lee"
+    ],
+    "kind": "attorney",
+    "model": "claude-haiku-4-5-20251001",
+    "parts": [
+      "J. John Lee",
+      "Jaebok Lee"
+    ],
+    "reason": "J. John Lee vs Jaebok Lee: 'John' and 'Jaebok' are very different names. While 'J.' could match, the given names do not align. Different firms (Kirkland Ellis vs Brinks Gilson Lione), 11-year gap (2008 vs 2019), and completely different name structures indicate different people."
+  },
+  "attorney:bf521551e1310697": {
+    "confidence": 0.9,
+    "decided_at": "2026-09-25T21:28:24+00:00",
+    "decision": "different",
+    "keys": [
+      "j helena kim",
+      "jongwook kim"
+    ],
+    "kind": "attorney",
+    "model": "claude-haiku-4-5-20251001",
+    "parts": [],
+    "reason": "J. Helena Kim at Bryan Cave (2006) vs Jongwook Kim at Quinn Emanuel (2015, 2016). 'Helena' and 'Jongwook' are completely different names. Different firms, different years, suggest different individuals."
+  },
+  "attorney:c2df325c8e50098e": {
+    "confidence": 0.9,
+    "decided_at": "2026-09-25T21:27:56+00:00",
+    "decision": "different",
+    "keys": [
+      "d jacques smith",
+      "douglas smith"
+    ],
+    "kind": "attorney",
+    "model": "claude-haiku-4-5-20251001",
+    "parts": [
+      "D. Jacques Smith",
+      "Douglas Smith"
+    ],
+    "reason": "D. Jacques Smith vs Douglas Smith: 'Jacques' is not a typical middle name for Douglas. Different firms (Arent Fox vs Arnold Porter), 18-year gap (2003 vs 2021), and very different name patterns strongly suggest different people."
+  },
+  "attorney:c7113a9ec11c2f3b": {
+    "confidence": 0.9,
+    "decided_at": "2026-09-25T21:28:54+00:00",
+    "decision": "same",
+    "keys": [
+      "michael joseph mcmanus",
+      "michael mcmanus"
+    ],
+    "kind": "attorney",
+    "model": "claude-haiku-4-5-20251001",
+    "parts": [
+      "Michael Joseph McManus",
+      "Michael McManus"
+    ],
+    "reason": "Michael Joseph McManus and Michael McManus are the same attorney. The full middle name Joseph matches the initial 'J' from other records. Both appear in 2012 at different firms. This is clearly one person with name variations."
+  },
+  "attorney:cc2a94c3335bc3f7": {
+    "confidence": 0.9,
+    "decided_at": "2026-09-25T21:27:56+00:00",
+    "decision": "different",
+    "keys": [
+      "j william jones",
+      "jonathan jones"
+    ],
+    "kind": "attorney",
+    "model": "claude-haiku-4-5-20251001",
+    "parts": [
+      "J. William Jones",
+      "Jonathan Jones"
+    ],
+    "reason": "J. William Jones vs Jonathan Jones: 'J. William' likely refers to William J., not Jonathan. 'William' and 'Jonathan' are distinct given names. Different firms (Adduci Mastriani Schaumberg vs Kirkland Ellis), 12-year gap (2005 vs 2017), and different name patterns strongly suggest different people."
+  },
+  "attorney:d923eb61cab1b849": {
+    "confidence": 0.88,
+    "decided_at": "2026-09-25T21:28:24+00:00",
+    "decision": "same",
+    "keys": [
+      "k kevin chu",
+      "kengyeh k chu"
+    ],
+    "kind": "attorney",
+    "model": "claude-haiku-4-5-20251001",
+    "parts": [],
+    "reason": "K. Kevin Chu at Quinn Emanuel (2015-2026, 30 appearances) vs Kengyeh K. Chu at Kilpatrick Townsend (2025). Both share middle initial 'K' and last name 'Chu'. 'Kevin' appears to be a Western name, 'Kengyeh' a Korean name. 'K. Kevin' with 'Kengyeh K.' suggests 'Kengyeh' is the full name with 'Kevin' as a Western alias or first name variant. The 2025 appearance at Kilpatrick Townsend is consistent with someone who worked at Quinn Emanuel. Same person likely."
+  },
+  "attorney:db3bc18a2ab3bdf7": {
+    "confidence": 0.92,
+    "decided_at": "2026-09-25T21:28:24+00:00",
+    "decision": "same",
+    "keys": [
+      "eric huang",
+      "eric j huang"
+    ],
+    "kind": "attorney",
+    "model": "claude-haiku-4-5-20251001",
+    "parts": [],
+    "reason": "Eric Huang at Quinn Emanuel/Fish Neave/Steptoe Johnson (2003-2022, 2026) vs Eric J. Huang at Pepper Hamilton (2012). Same first and last name. The middle initial 'J.' in the second entry is consistent with the same person. Eric Huang appears frequently at Quinn Emanuel and other firms over a long period, with one appearance in 2012 at Pepper Hamilton. This could be a different firm appearance for the same attorney during the same year range. The name match is strong and the 2012 appearance at Pepper Hamilton falls within the broader 2003-2026 period of Eric Huang at other firms."
+  },
+  "attorney:db42255e42177fb1": {
+    "confidence": 0.9,
+    "decided_at": "2026-09-25T21:28:54+00:00",
+    "decision": "same",
+    "keys": [
+      "tara sharp",
+      "tara sheryl guffrey sharp"
+    ],
+    "kind": "attorney",
+    "model": "claude-haiku-4-5-20251001",
+    "parts": [
+      "Tara Sharp",
+      "Tara Sheryl Guffrey Sharp"
+    ],
+    "reason": "Tara Sharp and Tara Sheryl Guffrey Sharp are the same attorney. The full name 'Sheryl Guffrey' explains the S.G. initials seen elsewhere. Both entries from 2011-2013 with overlapping years confirm this is one attorney."
+  },
+  "attorney:db6f46868ad02d3d": {
+    "confidence": 0.35,
+    "decided_at": "2026-09-25T21:27:56+00:00",
+    "decision": "unsure",
+    "keys": [
+      "d jacques smith",
+      "df smith"
+    ],
+    "kind": "attorney",
+    "model": "claude-haiku-4-5-20251001",
+    "parts": [
+      "D. Jacques Smith",
+      "D. F. Smith"
+    ],
+    "reason": "D. Jacques Smith vs D. F. Smith: Both have 'D.' as first initial. 'F.' could potentially stand for 'Jacques' as a middle name (unlikely but possible French naming), but more likely these initials refer to different given names. Different firms and 6-year gap. Too uncertain to decide."
+  },
+  "attorney:dbb14eff588939c0": {
+    "confidence": 0.85,
+    "decided_at": "2026-09-25T21:28:24+00:00",
+    "decision": "different",
+    "keys": [
+      "j helena kim",
+      "jisu kim"
+    ],
+    "kind": "attorney",
+    "model": "claude-haiku-4-5-20251001",
+    "parts": [],
+    "reason": "J. Helena Kim at Bryan Cave (2006) vs Jisu Kim at Milbank Tweed/Paul Weiss (2007, 2008). 'Helena' and 'Jisu' are different Korean/Korean-derived names. Different firms and years suggest different individuals."
+  },
+  "attorney:dc94c09899121f1d": {
+    "confidence": 0.95,
+    "decided_at": "2026-09-25T21:27:56+00:00",
+    "decision": "different",
+    "keys": [
+      "h cindy chen",
+      "hua chen"
+    ],
+    "kind": "attorney",
+    "model": "claude-haiku-4-5-20251001",
+    "parts": [
+      "H. Cindy Chen",
+      "Hua Chen"
+    ],
+    "reason": "H. Cindy Chen and Hua Chen are likely different people. 'Cindy' is typically a Western nickname, while 'Hua' is a common Chinese given name. Different firms (Westerman Hattori Daniels Adrian vs Scienbizip) and years apart (2018 vs 2026) also support this."
+  },
+  "attorney:dc997170fc0af795": {
+    "confidence": 0.85,
+    "decided_at": "2026-09-25T21:27:56+00:00",
+    "decision": "different",
+    "keys": [
+      "j john lee",
+      "jennifer j lee"
+    ],
+    "kind": "attorney",
+    "model": "claude-haiku-4-5-20251001",
+    "parts": [
+      "J. John Lee",
+      "Jennifer J. Lee"
+    ],
+    "reason": "J. John Lee vs Jennifer J. Lee: 'John' and 'Jennifer' are different given names (typically male vs female). While both have 'J.' initial and 'Lee' surname, the primary given names differ. Different firms (Kirkland Ellis vs Adduci Mastriani Schaumberg), years close (2008 vs 2006), but gender/name distinction indicates different people."
+  },
+  "attorney:e1247f09d794b7f5": {
+    "confidence": 0.9,
+    "decided_at": "2026-09-25T21:27:56+00:00",
+    "decision": "different",
+    "keys": [
+      "jennifer chen",
+      "jennifer e chen"
+    ],
+    "kind": "attorney",
+    "model": "claude-haiku-4-5-20251001",
+    "parts": [
+      "jennifer chen",
+      "Jennifer E Chen"
+    ],
+    "reason": "Jennifer Chen vs Jennifer E Chen could be the same person, but the context strongly suggests different individuals: different firms (McDermott Will & Emery in 1999 vs Heller Ehrman/Covington & Burling in 2007-2009), 8-year gap, and different early career profiles. Without additional middle name details, treating as different."
+  },
+  "attorney:e1fa3af4d7b9ee3c": {
+    "confidence": 0.85,
+    "decided_at": "2026-09-25T21:28:54+00:00",
+    "decision": "same",
+    "keys": [
+      "michael j mcmanus",
+      "michael mcmanus"
+    ],
+    "kind": "attorney",
+    "model": "claude-haiku-4-5-20251001",
+    "parts": [
+      "Michael J. McManus",
+      "Michael McManus"
+    ],
+    "reason": "Michael J. McManus and Michael McManus are the same attorney. The middle initial J is a natural variation. Both appear in 2012 (same year) at different firms, which is consistent with one attorney who moved firms or appeared in multiple cases. The name match is clear."
+  },
+  "attorney:e29aa2ddbf4d81ec": {
+    "confidence": 0.9,
+    "decided_at": "2026-09-25T21:28:24+00:00",
+    "decision": "different",
+    "keys": [
+      "s emma lee",
+      "sunwoo lee"
+    ],
+    "kind": "attorney",
+    "model": "claude-haiku-4-5-20251001",
+    "parts": [],
+    "reason": "S. Emma Lee at Kilpatrick Townsend Stockton (2023) vs Sunwoo Lee at Jenkens Gilchrist/Fox Rothschild (2006, 2012). 'Emma' and 'Sunwoo' are completely different first names. Different firms and years suggest different individuals."
+  },
+  "attorney:e404c90f17ccf2ab": {
+    "confidence": 0.9,
+    "decided_at": "2026-09-25T21:28:54+00:00",
+    "decision": "same",
+    "keys": [
+      "bert r reiser",
+      "bert reiser"
+    ],
+    "kind": "attorney",
+    "model": "claude-haiku-4-5-20251001",
+    "parts": [
+      "Bert R. Reiser",
+      "Bert Reiser"
+    ],
+    "reason": "Bert R. Reiser and Bert Reiser are the same attorney. The middle initial 'R' is a common variation. Extensive overlap in years (2006-2011) and the same attorney appears with both Howrey (listed as both 'firm:howrey-simon-arnold-white' and 'firm:howrey'), consistent with firm name changes. Multiple appearances at Latham suggest career progression typical for one attorney."
+  },
+  "attorney:e48095936b55f0bc": {
+    "confidence": 0.5,
+    "decided_at": "2026-09-25T21:28:54+00:00",
+    "decision": "unsure",
+    "keys": [
+      "joseph r reid",
+      "joseph reid"
+    ],
+    "kind": "attorney",
+    "model": "claude-haiku-4-5-20251001",
+    "parts": [
+      "Joseph R. Reid",
+      "Joseph Reid"
+    ],
+    "reason": "Joseph R. Reid and Joseph Reid have the same name but appear at different firms (Sheppard Mullin vs Perkins Coie) with no year data for one entry. The time gap and different firms make identity uncertain without more data."
+  },
   "attorney:e558c23bec62cb71": {
     "confidence": 0.25,
     "decided_at": "2026-09-25T18:02:38+00:00",
@@ -37,6 +1008,112 @@
     "model": "claude-haiku-4-5-20251001",
     "parts": [],
     "reason": "R. Kevin Williams and Rob Williams could potentially be the same attorney (Rob as nickname for Robert/R., Kevin as first name). However, different firms (Clark Hill vs. DLA Piper) and both in 2024 suggests possibly the same person moving firms, but insufficient middle names/dates to confirm. Conservative answer is unsure."
+  },
+  "attorney:e79c4ef4384ee328": {
+    "confidence": 0.55,
+    "decided_at": "2026-09-25T21:28:54+00:00",
+    "decision": "unsure",
+    "keys": [
+      "tara j sharp",
+      "tara sharp"
+    ],
+    "kind": "attorney",
+    "model": "claude-haiku-4-5-20251001",
+    "parts": [
+      "Tara J. Sharp",
+      "Tara Sharp"
+    ],
+    "reason": "Tara J. Sharp and Tara Sharp could be the same attorney, but they appear at different firms (Robins Kaplan 2014 vs Thompson Hine 2012-2013). The 1-2 year overlap in dates is suggestive, but different middle initials cannot be confirmed without additional evidence."
+  },
+  "attorney:f18275c06974541f": {
+    "confidence": 0.85,
+    "decided_at": "2026-09-25T21:28:54+00:00",
+    "decision": "same",
+    "keys": [
+      "samuel drezdzon",
+      "samuel m drezdzon"
+    ],
+    "kind": "attorney",
+    "model": "claude-haiku-4-5-20251001",
+    "parts": [
+      "Samuel Drezdzon",
+      "Samuel M. Drezdzon"
+    ],
+    "reason": "Samuel Drezdzon and Samuel M. Drezdzon are the same attorney. The middle initial M is a standard variation. Both entries from 2011-2014 with close temporal proximity and similar career trajectory suggest one attorney moving between firms."
+  },
+  "attorney:f2d69845692d8a4f": {
+    "confidence": 0.45,
+    "decided_at": "2026-09-25T21:27:56+00:00",
+    "decision": "unsure",
+    "keys": [
+      "michael b smith",
+      "michael smith"
+    ],
+    "kind": "attorney",
+    "model": "claude-haiku-4-5-20251001",
+    "parts": [
+      "Michael B. Smith",
+      "Michael Smith"
+    ],
+    "reason": "Michael B. Smith vs Michael Smith: Middle initial 'B' could indicate the same person, but different firms (Gibson Dunn Crutcher vs Birch Stewart Kolasch Birch) and 4-year gap (2007 vs 2011) create ambiguity. Without additional context, cannot confidently match."
+  },
+  "attorney:f55d60e421e63cfd": {
+    "confidence": 0.9,
+    "decided_at": "2026-09-25T21:27:56+00:00",
+    "decision": "different",
+    "keys": [
+      "e jerome brown",
+      "earl brown"
+    ],
+    "kind": "attorney",
+    "model": "claude-haiku-4-5-20251001",
+    "parts": [
+      "E. Jerome Brown",
+      "Earl Brown"
+    ],
+    "reason": "E. Jerome Brown vs Earl Brown: While both surnames match, 'Jerome' and 'Earl' are different given names, and 'E.' more likely stands for 'Earl' than 'E. Jerome'. Different firms (Pillsbury Winthrop vs Akin Gump Strauss Hauer Feld), different years (2002-2003 vs 2005), and different career tracks support different identities."
+  },
+  "attorney:fac5aeaf0ee60721": {
+    "confidence": 0.55,
+    "decided_at": "2026-09-25T21:28:24+00:00",
+    "decision": "unsure",
+    "keys": [
+      "jae hyun kim",
+      "jae kim"
+    ],
+    "kind": "attorney",
+    "model": "claude-haiku-4-5-20251001",
+    "parts": [],
+    "reason": "Jae Hyun Kim at Kirkland Ellis (2025) vs Jae Kim at Orrick Herrington Sutcliffe (2007). Both share 'Jae' as first name, but firm and year gap are significant (2025 vs 2007, 18 years). 'Jae Hyun' could be the full name of someone known as 'Jae Kim', but the time gap and firm change is substantial. Conservative approach suggests different but not certain."
+  },
+  "attorney:fe5ab6b38a15d85c": {
+    "confidence": 0.85,
+    "decided_at": "2026-09-25T21:28:54+00:00",
+    "decision": "same",
+    "keys": [
+      "mimi lain",
+      "mimi sj lain"
+    ],
+    "kind": "attorney",
+    "model": "claude-haiku-4-5-20251001",
+    "parts": [
+      "Mimi Lain",
+      "Mimi S.J. Lain"
+    ],
+    "reason": "Mimi Lain and Mimi S.J. Lain are the same attorney. The initials S.J. correspond to Sen-Jane/Senjane. Both 2007 dates confirm this is one attorney with different name formatting across records at different firms."
+  },
+  "attorney:ff4c1723e8c0578f": {
+    "confidence": 0.85,
+    "decided_at": "2026-09-25T21:28:24+00:00",
+    "decision": "different",
+    "keys": [
+      "j jason williams",
+      "joseph williams"
+    ],
+    "kind": "attorney",
+    "model": "claude-haiku-4-5-20251001",
+    "parts": [],
+    "reason": "J. Jason Williams at Jones Day (2016, 2019) vs Joseph Williams Jr at Richards Rodriquez Skeith (2019). 'Jason' and 'Joseph' are different names. Although both appear in 2019, they are at different firms, suggesting different individuals."
   },
   "company:0051af96146d92ca": {
     "confidence": 0.9,
@@ -53,6 +1130,19 @@
       "Shenzhen OCIGA Technology Co Ltd"
     ],
     "reason": "Shenzhen Joecig Technology and Shenzhen OCIGA Technology are different companies in different cases. The names are substantially different and suggest different legal entities."
+  },
+  "company:042db19768a7a048": {
+    "confidence": 0.85,
+    "decided_at": "2026-09-25T21:27:21+00:00",
+    "decision": "same",
+    "keys": [
+      "imagination technologies [llc]",
+      "imagination technology [llc]"
+    ],
+    "kind": "company",
+    "model": "claude-haiku-4-5-20251001",
+    "parts": [],
+    "reason": "Imagination Technologies LLC and Imagination Technology LLC differ only in Technologies vs Technology (plural vs singular). This is a minor naming variant of the same company, similar to other technology company naming conventions."
   },
   "company:0490a7bcb9949599": {
     "confidence": 0.85,
@@ -169,6 +1259,19 @@
     "model": "claude-haiku-4-5-20251001",
     "parts": [],
     "reason": "One is 'Corning Optical Communications LLC' and the other is 'Corning Optical Communications RF, LLC'. The addition of 'RF' (Radio Frequency) suggests a different business unit, division, or subsidiary, making them distinct legal entities per the rules."
+  },
+  "company:249ab5691136ff8a": {
+    "confidence": 0.95,
+    "decided_at": "2026-09-25T21:27:21+00:00",
+    "decision": "different",
+    "keys": [
+      "ericsson [inc]",
+      "stericsson [inc]"
+    ],
+    "kind": "company",
+    "model": "claude-haiku-4-5-20251001",
+    "parts": [],
+    "reason": "Ericsson Inc. and ST-Ericsson Inc. are different companies. ST-Ericsson was a joint venture between Sony Ericsson and STMicroelectronics. While related to Ericsson, ST-Ericsson is a distinct legal entity with different ownership/structure."
   },
   "company:5a70643f3af64fd3": {
     "confidence": 0.85,
@@ -315,6 +1418,19 @@
     "parts": [],
     "reason": "These are clearly different companies: 'Ascendis Pharma' vs 'Ascletis Pharma'. While similar sounding, they are distinct legal entities in different cases."
   },
+  "company:842162450dab60d5": {
+    "confidence": 0.85,
+    "decided_at": "2026-09-25T21:27:21+00:00",
+    "decision": "same",
+    "keys": [
+      "global foundries us [inc]",
+      "globalfoundaries us [inc]"
+    ],
+    "kind": "company",
+    "model": "claude-haiku-4-5-20251001",
+    "parts": [],
+    "reason": "Global Foundries U.S. Inc. and GlobalFoundaries US Inc. refer to the same company. The differences are spacing and periods: 'Foundries' vs 'Foundaries' appears to be punctuation/formatting variant. Same core entity with minor notation differences."
+  },
   "company:8589762f1e69ea12": {
     "confidence": 0.92,
     "decided_at": "2026-09-25T18:02:14+00:00",
@@ -327,6 +1443,19 @@
     "model": "claude-haiku-4-5-20251001",
     "parts": [],
     "reason": "'DJI Technology Co., Ltd.' and 'SZ DJI Technology Co., Ltd.' refer to the same company. 'SZ' is a geographical prefix (Shenzhen) that qualifies the same legal entity; per the rules, a name with an extra word naming a place is the same entity when it's plainly just a geographical qualifier."
+  },
+  "company:86f0cc700933677d": {
+    "confidence": 0.85,
+    "decided_at": "2026-09-25T21:27:21+00:00",
+    "decision": "different",
+    "keys": [
+      "causam enterprises [inc]",
+      "causum enterprises [inc]"
+    ],
+    "kind": "company",
+    "model": "claude-haiku-4-5-20251001",
+    "parts": [],
+    "reason": "Causam Enterprises vs Causum Enterprises differ in spelling (Causam vs Causum). While this could be a typo, the different spellings and different case numbers (337-127 vs 337-1277) with different roles suggest these are tracked as separate entities in the database. Without conclusive evidence they are the same, treating as different."
   },
   "company:8830d6da83bf6972": {
     "confidence": 0.99,
@@ -355,6 +1484,45 @@
       "Shenzhen TCL New Technology Co Ltd"
     ],
     "reason": "The difference between 'Technologies' and 'Technology' is a minor variant/typo of the same company name. Both refer to Shenzhen TCL's new technology division, appearing across overlapping case numbers (337-1318 appears in both)."
+  },
+  "company:8e12eb747632e154": {
+    "confidence": 0.99,
+    "decided_at": "2026-09-25T21:27:21+00:00",
+    "decision": "different",
+    "keys": [
+      "arlo technologies [inc]",
+      "faro technologies [inc]"
+    ],
+    "kind": "company",
+    "model": "claude-haiku-4-5-20251001",
+    "parts": [],
+    "reason": "Arlo Technologies Inc. and Faro Technologies Inc. are clearly different companies with completely different names. The keys show 'arlo' vs 'faro'\u2014distinctly different spellings and distinct legal entities."
+  },
+  "company:94240d6a5111fe7b": {
+    "confidence": 0.85,
+    "decided_at": "2026-09-25T21:27:21+00:00",
+    "decision": "same",
+    "keys": [
+      "electrolux home care products [inc]",
+      "electrolux home products [inc]"
+    ],
+    "kind": "company",
+    "model": "claude-haiku-4-5-20251001",
+    "parts": [],
+    "reason": "Electrolux Home Care Products Inc. and Electrolux Home Products Inc. differ only by the word 'Care'. This appears to be a variant spelling or business unit naming of the same legal entity. Minor word variations in product line descriptions typically represent same entity."
+  },
+  "company:9462dd8bb660a81b": {
+    "confidence": 0.8,
+    "decided_at": "2026-09-25T21:27:21+00:00",
+    "decision": "same",
+    "keys": [
+      "flashpoint technologies [inc]",
+      "flashpoint technology [inc]"
+    ],
+    "kind": "company",
+    "model": "claude-haiku-4-5-20251001",
+    "parts": [],
+    "reason": "FlashPoint Technologies Inc. and FlashPoint Technology Inc. differ only in Technologies vs Technology (plural vs singular). This is a minor spelling/naming variant of the same company. Both are commercial entities in similar case roles."
   },
   "company:94b7fda1a3f67d91": {
     "confidence": 0.95,
@@ -625,6 +1793,499 @@
     "parts": [],
     "reason": "'J&E Enterprises, Inc.' vs 'Joe Enterprises, Inc.' are different company names. While J&E could abbreviate something like 'Joe & Someone', they appear in different cases and the full spelling 'Joe' vs the abbreviation 'J&E' suggests distinct entities."
   },
+  "firm:028992b2207ed2a7": {
+    "confidence": 0.82,
+    "decided_at": "2026-09-25T21:25:49+00:00",
+    "decision": "same",
+    "keys": [
+      "adduci mastriani schaumbert",
+      "of adduci mastriani schaumberg"
+    ],
+    "kind": "firm",
+    "model": "claude-haiku-4-5-20251001",
+    "parts": [
+      "Adduci, Mastriani and Schaumberg LLP"
+    ],
+    "reason": "'Schaumbert' in (a) is a typo/misspelling of 'Schaumberg' in (b). Same firm with minor spelling error at end of last partner name."
+  },
+  "firm:04891163b66befe5": {
+    "confidence": 0.87,
+    "decided_at": "2026-09-25T21:25:49+00:00",
+    "decision": "same",
+    "keys": [
+      "gardener lynn burkhardt flory",
+      "gardner linn burkhardt flory"
+    ],
+    "kind": "firm",
+    "model": "claude-haiku-4-5-20251001",
+    "parts": [
+      "Gardner Linn Burkhardt & Flory, LLP"
+    ],
+    "reason": "'Gardener' in (a) is a typo for 'Gardner' in (b). 'Lynn' in (a) vs 'Linn' in (b) may also be a typo. Same attorneys in both entries confirm this is the same firm with minor spelling variations."
+  },
+  "firm:070d5e872ecb6543": {
+    "confidence": 0.8,
+    "decided_at": "2026-09-25T21:26:50+00:00",
+    "decision": "same",
+    "keys": [
+      "kasowitz benson torres",
+      "kasowitz benson torres friedman"
+    ],
+    "kind": "firm",
+    "model": "claude-haiku-4-5-20251001",
+    "parts": [
+      "Kasowitz Benson Torres LLP",
+      "Kasowitz, Benson, Torres & Friedman LLP"
+    ],
+    "reason": "Kasowitz Benson Torres LLP vs Kasowitz, Benson, Torres & Friedman LLP. Jonathan K. Waldrop appears in both. The addition of 'Friedman' represents an expansion or partnership, but the core firm identity remains with overlapping attorney presence."
+  },
+  "firm:08e62a37e558acb2": {
+    "confidence": 0.95,
+    "decided_at": "2026-09-25T21:26:50+00:00",
+    "decision": "same",
+    "keys": [
+      "guy v manning",
+      "guy v manning pe"
+    ],
+    "kind": "firm",
+    "model": "claude-haiku-4-5-20251001",
+    "parts": [
+      "Law Offices of Guy V. Manning",
+      "Law Offices of Guy V. Manning, P.E."
+    ],
+    "reason": "Law Offices of Guy V. Manning vs Law Offices of Guy V. Manning, P.E. The addition of 'P.E.' (Professional Engineer credential) is a descriptor, not a name change. Guy Manning / Guy V. Manning are the same person. Both refer to the same solo practitioner's office."
+  },
+  "firm:0af8d64ffe7b9b0b": {
+    "confidence": 0.96,
+    "decided_at": "2026-09-25T21:25:49+00:00",
+    "decision": "same",
+    "keys": [
+      "alan h ramer",
+      "alan ramer"
+    ],
+    "kind": "firm",
+    "model": "claude-haiku-4-5-20251001",
+    "parts": [
+      "Alan H. Ramer"
+    ],
+    "reason": "Same person listed as attorney in both entries. 'Alan H. Ramer' vs 'Alan Ramer' is just abbreviation of middle initial. These are the same solo practitioner or one-person firm."
+  },
+  "firm:0e9ff0f0f7d89476": {
+    "confidence": 0.85,
+    "decided_at": "2026-09-25T21:25:49+00:00",
+    "decision": "different",
+    "keys": [
+      "carlson caspers vandenburgh lindquist",
+      "carlson caspers vandenburgh lindquist schuman"
+    ],
+    "kind": "firm",
+    "model": "claude-haiku-4-5-20251001",
+    "parts": [],
+    "reason": "(b) includes 'Schuman' as an additional partner name, making it a successor or expanded version of the firm in (a). These are tracked separately as predecessor and successor entities per deduplication rules."
+  },
+  "firm:11d70525254de8c6": {
+    "confidence": 0.7,
+    "decided_at": "2026-09-25T21:26:50+00:00",
+    "decision": "different",
+    "keys": [
+      "duane morris",
+      "duane morris heckscher"
+    ],
+    "kind": "firm",
+    "model": "claude-haiku-4-5-20251001",
+    "parts": [
+      "Duane Morris LLP",
+      "Duane, Morris and Heckscher"
+    ],
+    "reason": "Duane Morris LLP vs Duane, Morris and Heckscher. While Duane Morris is the base, the version with 'Heckscher' added suggests this is a different iteration or merger creating a distinct entity. Only 1 case in b vs 26 in a, and no attorney overlap (different names entirely), suggesting these are distinct periods."
+  },
+  "firm:11d99529dccb0a9a": {
+    "confidence": 0.9,
+    "decided_at": "2026-09-25T21:26:50+00:00",
+    "decision": "same",
+    "keys": [
+      "chao hadidi stark",
+      "chao hadidi stark barker"
+    ],
+    "kind": "firm",
+    "model": "claude-haiku-4-5-20251001",
+    "parts": [
+      "Chao Hadidi Stark",
+      "Chao Hadidi Stark & Barker LLP"
+    ],
+    "reason": "Chao Hadidi Stark vs Chao Hadidi Stark & Barker LLP. Bruce J. Barker (a) / Bruce James Barker (b) appear in both - same person with full name variation. The addition of '& Barker' to the firm name with Barker being an attorney listed suggests he became a named partner. Same core firm."
+  },
+  "firm:11fde76e73f7dfa9": {
+    "confidence": 0.85,
+    "decided_at": "2026-09-25T21:26:50+00:00",
+    "decision": "same",
+    "keys": [
+      "barnes richardson",
+      "barnes richardson colburn"
+    ],
+    "kind": "firm",
+    "model": "claude-haiku-4-5-20251001",
+    "parts": [
+      "Barnes, Richardson",
+      "Barnes, Richardson and Colburn"
+    ],
+    "reason": "Barnes, Richardson vs Barnes, Richardson and Colburn are the same firm at different time periods. Bryan A. Schwartz appears in both a and b. The addition of 'and Colburn' to the firm name reflects an expansion or merger into the firm, but both cases are appearing under the same base firm name with overlapping attorneys."
+  },
+  "firm:15f23f3518b3a0b9": {
+    "confidence": 0.97,
+    "decided_at": "2026-09-25T21:26:18+00:00",
+    "decision": "same",
+    "keys": [
+      "nelse mullins riley scarborough",
+      "nelson mullins riley scarborough"
+    ],
+    "kind": "firm",
+    "model": "claude-haiku-4-5-20251001",
+    "parts": [
+      "Nelson Mullins Riley & Scarborough LLP"
+    ],
+    "reason": "Nelse vs Nelson is a typo ('se' vs 'on'). Likely OCR error. Same firm structure, same partners. Appears to be the same firm with different spellings."
+  },
+  "firm:16aaa318ccbb6c69": {
+    "confidence": 0.95,
+    "decided_at": "2026-09-25T21:26:50+00:00",
+    "decision": "same",
+    "keys": [
+      "kenneth w ralidis",
+      "kenneth w ralidis esq"
+    ],
+    "kind": "firm",
+    "model": "claude-haiku-4-5-20251001",
+    "parts": [
+      "Law Offices of Kenneth W. Ralidis",
+      "Law Offices of Kenneth W. Ralidis, Esq."
+    ],
+    "reason": "Law Offices of Kenneth W. Ralidis vs Law Offices of Kenneth W. Ralidis, Esq. The addition of 'Esq.' is a stylistic variation (abbreviation for Esquire). Both refer to the same solo practitioner. Kenneth W. Ralidis is confirmed in both."
+  },
+  "firm:18f9a4679860ae39": {
+    "confidence": 0.9,
+    "decided_at": "2026-09-25T21:26:50+00:00",
+    "decision": "same",
+    "keys": [
+      "lathrop gage",
+      "lathrop gage lc"
+    ],
+    "kind": "firm",
+    "model": "claude-haiku-4-5-20251001",
+    "parts": [
+      "Lathrop & Gage LLP",
+      "Lathrop & Gage L.C."
+    ],
+    "reason": "Lathrop & Gage LLP vs Lathrop & Gage L.C. These are the same firm with a minor designation change (LLP vs L.C. likely refers to Limited Company vs Limited Partnership structure, or a typo/variation). Timothy Sendek appears in both. The core firm name is identical."
+  },
+  "firm:1dcd30e5aff183d6": {
+    "confidence": 0.95,
+    "decided_at": "2026-09-25T21:25:49+00:00",
+    "decision": "same",
+    "keys": [
+      "kevin b bedell",
+      "kevin bedell"
+    ],
+    "kind": "firm",
+    "model": "claude-haiku-4-5-20251001",
+    "parts": [
+      "Kevin B. Bedell"
+    ],
+    "reason": "Same person: 'Kevin B. Bedell' vs 'Kevin Bedell'. Only difference is middle initial inclusion. Same attorney listed in (b). These are the same solo practitioner."
+  },
+  "firm:1e0369c4f42cb383": {
+    "confidence": 0.85,
+    "decided_at": "2026-09-25T21:25:49+00:00",
+    "decision": "same",
+    "keys": [
+      "convington burling",
+      "covongton burling"
+    ],
+    "kind": "firm",
+    "model": "claude-haiku-4-5-20251001",
+    "parts": [
+      "Covington & Burling LLP"
+    ],
+    "reason": "'Convington' in (a) is a typo for 'Covington' in (b). Both refer to the well-known Covington & Burling LLP law firm. Minor spelling error."
+  },
+  "firm:213afd2e69d69016": {
+    "confidence": 0.95,
+    "decided_at": "2026-09-25T21:26:18+00:00",
+    "decision": "same",
+    "keys": [
+      "wilmer cutler pickering hale dore",
+      "wilmer cutler pickering hale dorr"
+    ],
+    "kind": "firm",
+    "model": "claude-haiku-4-5-20251001",
+    "parts": [
+      "Wilmer Cutler Pickering Hale and Dorr LLP"
+    ],
+    "reason": "Dore vs Dorr is a typo (missing 'r'). The firm names are otherwise identical. Both refer to 'Wilmer Cutler Pickering Hale and [Dore/Dorr]' and the latter has 82 cases and multiple attorneys, while the former has 1 case with the typo."
+  },
+  "firm:21b13465b70c6953": {
+    "confidence": 0.75,
+    "decided_at": "2026-09-25T21:27:21+00:00",
+    "decision": "same",
+    "keys": [
+      "shore chan",
+      "shore chan bragalone"
+    ],
+    "kind": "firm",
+    "model": "claude-haiku-4-5-20251001",
+    "parts": [],
+    "reason": "Shore Chan and Shore Chan Bragalone show name expansion with Bragalone added. Both are law firms with similar case counts (2 each). Shared attorney Alfonso (Chan/Garcia Chan suggests same person with variant name spellings). Likely same firm with partnership addition."
+  },
+  "firm:2751e468764fe40e": {
+    "confidence": 0.93,
+    "decided_at": "2026-09-25T21:25:49+00:00",
+    "decision": "same",
+    "keys": [
+      "alson bird",
+      "alston bird"
+    ],
+    "kind": "firm",
+    "model": "claude-haiku-4-5-20251001",
+    "parts": [
+      "Alston & Bird LLP"
+    ],
+    "reason": "'Alson' in (a) is a typo for 'Alston' in (b). Same large law firm (158 cases in b), with obvious misspelling of first name. Punctuation and capitalization variants are normal."
+  },
+  "firm:2ec48f0d5a5c9d4f": {
+    "confidence": 0.89,
+    "decided_at": "2026-09-25T21:25:49+00:00",
+    "decision": "same",
+    "keys": [
+      "gibbons del deo dolan griffinger vecchione",
+      "gibbons deldeo dolan griffingerand vecchione"
+    ],
+    "kind": "firm",
+    "model": "claude-haiku-4-5-20251001",
+    "parts": [
+      "Gibbons, Del Deo, Dolan Griffinger & Vecchione"
+    ],
+    "reason": "Same underlying firm name with formatting/punctuation differences. (a) has proper spacing ('del deo', 'Griffinger and') vs. (b) has errors ('deldeo', 'griffingerand'). Shared attorney Michael Quinn confirms same firm."
+  },
+  "firm:34332c2ecea93e71": {
+    "confidence": 0.9,
+    "decided_at": "2026-09-25T21:26:18+00:00",
+    "decision": "same",
+    "keys": [
+      "obion spivak mcclelland maier neustadt",
+      "oblon spivak mcclelland maier neustadat"
+    ],
+    "kind": "firm",
+    "model": "claude-haiku-4-5-20251001",
+    "parts": [
+      "Oblon, Spivak, McClelland, Maier & Neustadt LLP"
+    ],
+    "reason": "Obion vs Oblon is a typo ('i' vs 'l'). Neustadt vs Neustadat is a typo (missing 't'). Same firm with OCR or spelling errors. Same attorney (Eric W. Schweibenz) listed in both."
+  },
+  "firm:35868832d5690649": {
+    "confidence": 0.92,
+    "decided_at": "2026-09-25T21:27:21+00:00",
+    "decision": "different",
+    "keys": [
+      "samsung electronics",
+      "samsung electronics america"
+    ],
+    "kind": "firm",
+    "model": "claude-haiku-4-5-20251001",
+    "parts": [],
+    "reason": "Samsung Electronics Co. Ltd and Samsung Electronics America, Inc. are different legal entities. Samsung Electronics is the Korean parent company, while Samsung Electronics America is its US subsidiary. Despite name overlap, different countries and legal status (parent vs subsidiary) make them distinct entities per guidelines."
+  },
+  "firm:3e7d769e2f147b59": {
+    "confidence": 0.92,
+    "decided_at": "2026-09-25T21:25:49+00:00",
+    "decision": "same",
+    "keys": [
+      "christine yang",
+      "sj christine yang"
+    ],
+    "kind": "firm",
+    "model": "claude-haiku-4-5-20251001",
+    "parts": [
+      "Law Offices of S.J. Christine Yang"
+    ],
+    "reason": "Same sole practitioner Christine Yang with shared attorneys in both entries. (b) adds 'S.J.' middle initials to the name, but refers to same person/office. (b) appears to be more formal/complete version of the name."
+  },
+  "firm:484635686a04daa9": {
+    "confidence": 0.92,
+    "decided_at": "2026-09-25T21:27:21+00:00",
+    "decision": "same",
+    "keys": [
+      "sterne kessler",
+      "sterne kessler goldstein fox"
+    ],
+    "kind": "firm",
+    "model": "claude-haiku-4-5-20251001",
+    "parts": [],
+    "reason": "Sterne Kessler and Sterne Kessler Goldstein & Fox show clear progression. Sterne Kessler is short form; Sterne Kessler Goldstein & Fox is full/extended name. 55 cases vs 1 case; overlapping attorney Daniel E. Yonan/Daniel Yonan in both versions. Same underlying firm."
+  },
+  "firm:4cd30b98205e8627": {
+    "confidence": 0.94,
+    "decided_at": "2026-09-25T21:25:49+00:00",
+    "decision": "same",
+    "keys": [
+      "charles ch wu associates",
+      "charles ch wu associates apc"
+    ],
+    "kind": "firm",
+    "model": "claude-haiku-4-5-20251001",
+    "parts": [
+      "Charles C.H. Wu & Associates, APC"
+    ],
+    "reason": "Same law firm with punctuation/capitalization differences. (b) adds 'APC' designation and 'Law Offices of' prefix, but core name 'Charles C.H. Wu & Associates' is identical. Same entity."
+  },
+  "firm:4ef61999e9b498cc": {
+    "confidence": 0.95,
+    "decided_at": "2026-09-25T21:26:50+00:00",
+    "decision": "same",
+    "keys": [
+      "goma law",
+      "goma law plcc"
+    ],
+    "kind": "firm",
+    "model": "claude-haiku-4-5-20251001",
+    "parts": [
+      "Goma Law, PLLC",
+      "Goma Law PLCC"
+    ],
+    "reason": "Goma Law, PLLC vs Goma Law PLCC. These are the same firm. The variation is likely a typo: PLLC (common for limited liability company) vs PLCC (typo for PLLC). Tawfik Goma appears in both. This is clearly the same entity with a punctuation/spelling variant."
+  },
+  "firm:5091e8faee864e90": {
+    "confidence": 0.85,
+    "decided_at": "2026-09-25T21:26:50+00:00",
+    "decision": "same",
+    "keys": [
+      "gray cary ware",
+      "gray cary ware freidenrich"
+    ],
+    "kind": "firm",
+    "model": "claude-haiku-4-5-20251001",
+    "parts": [
+      "Gray Cary Ware",
+      "Gray, Cary, Ware and Freidenrich"
+    ],
+    "reason": "Gray Cary Ware vs Gray, Cary, Ware and Freidenrich. The addition of 'Freidenrich' represents an expansion or partnership, but both are variations of the same core firm. No clear attorney overlap, but this appears to be the same firm entity at different periods."
+  },
+  "firm:51727a9a14bc09cd": {
+    "confidence": 0.8,
+    "decided_at": "2026-09-25T21:27:21+00:00",
+    "decision": "same",
+    "keys": [
+      "wiley rein",
+      "wiley rein fielding"
+    ],
+    "kind": "firm",
+    "model": "claude-haiku-4-5-20251001",
+    "parts": [],
+    "reason": "Wiley Rein and Wiley Rein and Fielding show expansion with Fielding added. Though attorney lists don't overlap directly, the pattern of name expansion from core 'Wiley Rein' with Fielding added as partner/addition is consistent with same firm evolution."
+  },
+  "firm:5220dc4833e1a1f3": {
+    "confidence": 0.9,
+    "decided_at": "2026-09-25T21:26:50+00:00",
+    "decision": "same",
+    "keys": [
+      "ezra sutton",
+      "ezra sutton associates"
+    ],
+    "kind": "firm",
+    "model": "claude-haiku-4-5-20251001",
+    "parts": [
+      "Ezra Sutton, P.A.",
+      "Ezra Sutton & Associates, P.A."
+    ],
+    "reason": "Ezra Sutton, P.A. vs Ezra Sutton & Associates, PA. Both clearly refer to the same solo practitioner's office. The addition of '& Associates' and variation in punctuation/capitalization (P.A. vs PA vs P.A.) are stylistic variations of the same entity."
+  },
+  "firm:5aa068a5801107da": {
+    "confidence": 0.9,
+    "decided_at": "2026-09-25T21:26:18+00:00",
+    "decision": "same",
+    "keys": [
+      "quinn emanual urguhart sullivan",
+      "quinn emmanuel urquhart sullivan"
+    ],
+    "kind": "firm",
+    "model": "claude-haiku-4-5-20251001",
+    "parts": [
+      "Quinn Emanuel Urquhart and Sullivan LLP"
+    ],
+    "reason": "Quinn Emanual vs Quinn Emmanuel (different spellings of first name: 'a' vs 'e'). Urguhart vs Urquhart (variant spelling: 'gu' vs 'qu'). All refer to same firm with spelling variants."
+  },
+  "firm:5d2e44661c004113": {
+    "confidence": 0.85,
+    "decided_at": "2026-09-25T21:26:50+00:00",
+    "decision": "different",
+    "keys": [
+      "fish richardson",
+      "fish richardson associates"
+    ],
+    "kind": "firm",
+    "model": "claude-haiku-4-5-20251001",
+    "parts": [
+      "Fish & Richardson P.C.",
+      "Fish & Richardson Associates PC"
+    ],
+    "reason": "Fish & Richardson P.C. (235 cases) vs Fish & Richardson Associates PC (1 case). While the names are similar, 'Associates' in the second version suggests a different entity\u2014likely an associated or satellite office, not the main firm. This is a different legal entity despite the shared name."
+  },
+  "firm:5e36f97aca021fec": {
+    "confidence": 0.4,
+    "decided_at": "2026-09-25T21:26:18+00:00",
+    "decision": "unsure",
+    "keys": [
+      "adduci mastriani schaumberg",
+      "adduci mastriani schaumberg bragalone conroy"
+    ],
+    "kind": "firm",
+    "model": "claude-haiku-4-5-20251001",
+    "parts": [],
+    "reason": "The note indicates the first name may be a short form of the second or a different firm. The second spelling includes 'and Bragalone Conroy' which could indicate a merger or addition. Other candidates suggest various iterations and mergers. Without definitive information about whether this is a name addition (same firm) or a merger (predecessor/successor), and per the conservative rule, marking as 'unsure'."
+  },
+  "firm:5fce10c18b8e815d": {
+    "confidence": 0.98,
+    "decided_at": "2026-09-25T21:26:18+00:00",
+    "decision": "same",
+    "keys": [
+      "kutack rock",
+      "kutak rock"
+    ],
+    "kind": "firm",
+    "model": "claude-haiku-4-5-20251001",
+    "parts": [
+      "Kutak Rock LLP"
+    ],
+    "reason": "Kutack vs Kutak is a single letter typo ('t' vs 'c'). All other name elements match, and the firm structure (LLP) is the same. The typo is likely an OCR or data entry error."
+  },
+  "firm:6020c78c5ff38347": {
+    "confidence": 0.8,
+    "decided_at": "2026-09-25T21:27:21+00:00",
+    "decision": "same",
+    "keys": [
+      "maschoff brennan",
+      "maschoff brennan gilmore israelsen mauriel"
+    ],
+    "kind": "firm",
+    "model": "claude-haiku-4-5-20251001",
+    "parts": [],
+    "reason": "Maschoff Brennan (10 cases) appears to be the predecessor or short form of Maschoff Brennan Gilmore Israelsen & Mauriel (1 case). Shared attorney Charles S. Barquist appears in both, and the pattern of name expansion with additional partner names is typical for law firm growth over time."
+  },
+  "firm:62b61ff3e20278be": {
+    "confidence": 0.75,
+    "decided_at": "2026-09-25T21:26:50+00:00",
+    "decision": "different",
+    "keys": [
+      "arent fox",
+      "arent fox dykema"
+    ],
+    "kind": "firm",
+    "model": "claude-haiku-4-5-20251001",
+    "parts": [
+      "Arent Fox LLP",
+      "Arent Fox and Dykema PLLC"
+    ],
+    "reason": "Arent Fox and Arent Fox Dykema appear to be related but distinct entities. The second version includes 'Dykema,' suggesting either a merger or partnership. The rule states that a firm and the firm it merged into or was renamed to are 'different.' Only 1 case in b vs 26 in a, and no overlapping attorneys, suggesting these are distinct time periods or entities."
+  },
   "firm:677731d2a667664f": {
     "confidence": 0.5,
     "decided_at": "2026-09-25T18:02:14+00:00",
@@ -638,6 +2299,386 @@
     "parts": [],
     "reason": "The names differ significantly: one includes 'Huber' while the other doesn't. This could indicate a merger, name change, or evolution of the firm over time. Both versions appear in SEC filings but it's unclear if 'Huber' was added/removed to/from the firm name or if these are genuinely different iterations. John Thorne appears in both, supporting they may be the same firm at different times, but the structural difference is substantial enough to warrant caution."
   },
+  "firm:67b9a3f4d72741be": {
+    "confidence": 0.85,
+    "decided_at": "2026-09-25T21:27:21+00:00",
+    "decision": "same",
+    "keys": [
+      "lewis roca",
+      "lewis roca rothberger christie"
+    ],
+    "kind": "firm",
+    "model": "claude-haiku-4-5-20251001",
+    "parts": [],
+    "reason": "Lewis Roca is a well-established abbreviation for Lewis Roca Rothberger Christie. The longer name adds partner names Rothberger and Christie, which is typical for law firm growth. Both have the same core 'Lewis Roca' identifier and the note indicates this is likely an abbreviation or growth rather than merger."
+  },
+  "firm:6db35decfe0010b4": {
+    "confidence": 0.85,
+    "decided_at": "2026-09-25T21:26:50+00:00",
+    "decision": "same",
+    "keys": [
+      "calfee halter",
+      "calfee halter griswold"
+    ],
+    "kind": "firm",
+    "model": "claude-haiku-4-5-20251001",
+    "parts": [
+      "Calfee, Halter",
+      "Calfee, Halter & Griswold LLP"
+    ],
+    "reason": "Calfee, Halter vs Calfee, Halter & Griswold LLP. Bryan A. Schwartz appears in both. The addition of 'Griswold' represents an expansion or partnership, but the core firm identity (Calfee, Halter) remains with overlapping attorneys."
+  },
+  "firm:6e7f1e575240d22d": {
+    "confidence": 0.98,
+    "decided_at": "2026-09-25T21:26:18+00:00",
+    "decision": "same",
+    "keys": [
+      "obion spivak mcclelland maier neustadt",
+      "oblon spivak mcclelland maier neustadt"
+    ],
+    "kind": "firm",
+    "model": "claude-haiku-4-5-20251001",
+    "parts": [
+      "Oblon, Spivak, McClelland, Maier and Neustadt"
+    ],
+    "reason": "Obion vs Oblon is a typo ('i' vs 'l'). Same firm name otherwise. Oblon spelling appears in 'b' with 9 cases and same attorney (Eric W. Schweibenz / Eric Wayne Schweibenz). Clear typo in 'a'."
+  },
+  "firm:6fb600fa357dcb73": {
+    "confidence": 0.92,
+    "decided_at": "2026-09-25T21:26:18+00:00",
+    "decision": "same",
+    "keys": [
+      "pearl cohen zedek latzer baratz",
+      "pearl cohen zekek latzer baratz"
+    ],
+    "kind": "firm",
+    "model": "claude-haiku-4-5-20251001",
+    "parts": [
+      "Pearl Cohen Zedek Latzer Baratz LLP"
+    ],
+    "reason": "Zedek vs Zekek is a transposition/typo ('de' vs 'ke'). Same firm structure, same other partner names. The OCR or spelling variation clearly refers to same firm."
+  },
+  "firm:706544acf311418b": {
+    "confidence": 0.92,
+    "decided_at": "2026-09-25T21:25:49+00:00",
+    "decision": "same",
+    "keys": [
+      "adduci mastraini schaumberg",
+      "of adduci mastriani schaumberg"
+    ],
+    "kind": "firm",
+    "model": "claude-haiku-4-5-20251001",
+    "parts": [
+      "Adduci, Mastriani and Schaumberg LLP"
+    ],
+    "reason": "'Mastraini' in (a) is a typo for 'Mastriani' in (b). Same underlying firm name with a transposition error. Punctuation differences are insignificant."
+  },
+  "firm:794de5ac67a9eac0": {
+    "confidence": 0.7,
+    "decided_at": "2026-09-25T21:27:21+00:00",
+    "decision": "split",
+    "keys": [
+      "t spence chubb",
+      "t spence chubb lewis kohn walker"
+    ],
+    "kind": "firm",
+    "model": "claude-haiku-4-5-20251001",
+    "parts": [
+      "Law Office of T. Spence Chubb",
+      "Lewis Kohn & Walker LLP"
+    ],
+    "reason": "The second entry explicitly states 'the Law Office of T. Spence Chubb and Lewis Kohn & Walker LLP'\u2014this combines two distinct firms. T. Spence Chubb's law office (11 cases) should be tracked separately from Lewis Kohn & Walker LLP (1 case). The note indicates this may be a partnership or joint representation."
+  },
+  "firm:79c9c8e6613b90a2": {
+    "confidence": 0.93,
+    "decided_at": "2026-09-25T21:26:18+00:00",
+    "decision": "same",
+    "keys": [
+      "stradley ronan stevens young",
+      "stradley ronon stevens young"
+    ],
+    "kind": "firm",
+    "model": "claude-haiku-4-5-20251001",
+    "parts": [
+      "Stradley Ronan Stevens & Young LLP"
+    ],
+    "reason": "Ronan vs Ronon is a typo ('a' vs 'o'). Same firm structure, same attorney (Kevin W. Goldstein) in both entries. Clear typo in 'b'."
+  },
+  "firm:7bf5249d629f1186": {
+    "confidence": 0.95,
+    "decided_at": "2026-09-25T21:27:21+00:00",
+    "decision": "same",
+    "keys": [
+      "texas instruments",
+      "texas instruments incorporated"
+    ],
+    "kind": "firm",
+    "model": "claude-haiku-4-5-20251001",
+    "parts": [],
+    "reason": "Texas Instruments Incorporated and Texas Instruments are identical entities. All three spelling variants (Texas Instruments Incorporated, Texas Instruments, Texas Instruments Inc.) refer to the same company. Inc./Incorporated are standard abbreviations, not different entities. Overlapping attorneys and case references confirm same entity."
+  },
+  "firm:7ddc716e811b9375": {
+    "confidence": 0.9,
+    "decided_at": "2026-09-25T21:26:18+00:00",
+    "decision": "same",
+    "keys": [
+      "wilson sonsini goodrich anad rosati",
+      "wilson sosini goodrich rosati"
+    ],
+    "kind": "firm",
+    "model": "claude-haiku-4-5-20251001",
+    "parts": [
+      "Wilson Sonsini Goodrich and Rosati"
+    ],
+    "reason": "Both are Wilson Sonsini Goodrich variants: 'anad' and 'sosini' are typos. 'anad' should be 'and' and 'sosini' should be 'sonsini'. Same firm with OCR/spelling errors. Same attorney appears (Michael A. Ladra in 'b' vs James C. Otteson in 'a', both Wilson Sonsini attorneys)."
+  },
+  "firm:806a313c4bd39f3e": {
+    "confidence": 0.8,
+    "decided_at": "2026-09-25T21:27:21+00:00",
+    "decision": "same",
+    "keys": [
+      "nagashima hashimoto",
+      "nagashima hashimoto yasukuni"
+    ],
+    "kind": "firm",
+    "model": "claude-haiku-4-5-20251001",
+    "parts": [],
+    "reason": "Nagashima & Hashimoto and Nagashima Hashimoto & Yasukuni show the same progression pattern: Yasukuni is added to the partnership. Both are Japanese law firm names with identical core (Nagashima Hashimoto) and expansion by adding Yasukuni as a partner/addition."
+  },
+  "firm:82ce908f41005be1": {
+    "confidence": 0.88,
+    "decided_at": "2026-09-25T21:25:49+00:00",
+    "decision": "same",
+    "keys": [
+      "adduci mastriani schamberg",
+      "of adduci mastriani schaumberg"
+    ],
+    "kind": "firm",
+    "model": "claude-haiku-4-5-20251001",
+    "parts": [
+      "Adduci, Mastriani and Schaumberg LLP"
+    ],
+    "reason": "'Schamberg' in (a) is a typo for 'Schaumberg' in (b) (transposition of letters). Shared attorney V. James Adduci II confirms same firm. Minor spelling error and punctuation differences are insignificant."
+  },
+  "firm:836bae89670054b9": {
+    "confidence": 0.85,
+    "decided_at": "2026-09-25T21:26:50+00:00",
+    "decision": "same",
+    "keys": [
+      "keker van nest",
+      "keker van nest peters"
+    ],
+    "kind": "firm",
+    "model": "claude-haiku-4-5-20251001",
+    "parts": [
+      "Keker & Van Nest LLP",
+      "Keker, Van Nest & Peters LLP"
+    ],
+    "reason": "Keker & Van Nest LLP vs Keker, Van Nest & Peters LLP. Robert A. Van Nest appears in both entries. The addition of 'Peters' represents an expansion or partnership, but the core firm identity (Keker & Van Nest) persists with attorney overlap confirming continuity."
+  },
+  "firm:84d7ed9b6056442a": {
+    "confidence": 0.95,
+    "decided_at": "2026-09-25T21:26:18+00:00",
+    "decision": "same",
+    "keys": [
+      "knobbe martens olson bear",
+      "knoobe martens olson bear"
+    ],
+    "kind": "firm",
+    "model": "claude-haiku-4-5-20251001",
+    "parts": [
+      "Knobbe, Martens, Olson & Bear"
+    ],
+    "reason": "Knobbe vs Knoobe is a simple typo ('bb' vs 'ob'). Same firm otherwise - same name structure and one attorney (Alan G. Laquer / Alan Laquer) appears in both."
+  },
+  "firm:88372425399c9c6b": {
+    "confidence": 0.7,
+    "decided_at": "2026-09-25T21:26:50+00:00",
+    "decision": "different",
+    "keys": [
+      "barcelo harrison",
+      "barcelo harrison walker"
+    ],
+    "kind": "firm",
+    "model": "claude-haiku-4-5-20251001",
+    "parts": [
+      "Barcelo & Harrison LLP",
+      "Barcel\u00f3, Harrison and Walker, LLP"
+    ],
+    "reason": "Barcelo & Harrison LLP vs Barcel\u00f3, Harrison and Walker, LLP. The addition of 'Walker' suggests a merger, acquisition, or name change rather than the same firm. Following the rule that a firm and its successor are 'different,' and only one attorney overlap context is insufficient to confirm identity."
+  },
+  "firm:8862cdb6a982c804": {
+    "confidence": 0.96,
+    "decided_at": "2026-09-25T21:26:18+00:00",
+    "decision": "same",
+    "keys": [
+      "pillsbury winthrop pittman",
+      "pillsbury winthrop shaw pittman"
+    ],
+    "kind": "firm",
+    "model": "claude-haiku-4-5-20251001",
+    "parts": [
+      "Pillsbury Winthrop Shaw Pittman LLP"
+    ],
+    "reason": "Pillsbury Winthrop Pittman vs Pillsbury Winthrop Shaw Pittman. The 'Shaw' is an addition, indicating the firm either added a partner or the full name was not provided in 'a'. However, given the context of law firm naming conventions and that this appears to be a simple evolution of the firm name rather than a different entity, and same attorneys appear in both, this is the same firm."
+  },
+  "firm:88e5bf228c04b33a": {
+    "confidence": 0.45,
+    "decided_at": "2026-09-25T21:26:18+00:00",
+    "decision": "unsure",
+    "keys": [
+      "additional counsel",
+      "additional counsel for haynes boone"
+    ],
+    "kind": "firm",
+    "model": "claude-haiku-4-5-20251001",
+    "parts": [],
+    "reason": "The note indicates uncertainty about whether 'Additional Counsel' is a short form of 'Additional Counsel for Haynes and Boone LLP' or a different firm (predecessor or merged). Without additional context about the relationship or timeline, this cannot be definitively resolved. Applying the rule to be conservative, marking as 'unsure'."
+  },
+  "firm:8c43b348914cad53": {
+    "confidence": 0.96,
+    "decided_at": "2026-09-25T21:25:49+00:00",
+    "decision": "same",
+    "keys": [
+      "dr lakshmi arunachalam",
+      "lakshmi arunachalam"
+    ],
+    "kind": "firm",
+    "model": "claude-haiku-4-5-20251001",
+    "parts": [
+      "Lakshmi Arunachalam"
+    ],
+    "reason": "Same attorney 'Lakshmi Arunachalam' in both entries. (a) adds honorific 'Dr.' title. These refer to the same solo practitioner. Title prefix does not change identity."
+  },
+  "firm:922f95d7b832ddcf": {
+    "confidence": 0.85,
+    "decided_at": "2026-09-25T21:27:21+00:00",
+    "decision": "same",
+    "keys": [
+      "neville peterson",
+      "neville peterson williams"
+    ],
+    "kind": "firm",
+    "model": "claude-haiku-4-5-20251001",
+    "parts": [],
+    "reason": "Neville Peterson and Neville Peterson and Williams show name expansion with Williams added. Both have identical attorneys (George W. Thompson and John M. Peterson) appearing in both versions, strongly indicating same firm with name evolution."
+  },
+  "firm:9522b9d7c77c8d0e": {
+    "confidence": 0.75,
+    "decided_at": "2026-09-25T21:26:50+00:00",
+    "decision": "different",
+    "keys": [
+      "jones day",
+      "jones day adduci mastriani schaumberg"
+    ],
+    "kind": "firm",
+    "model": "claude-haiku-4-5-20251001",
+    "parts": [
+      "Jones Day",
+      "Jones Day and Adduci Mastriani & Schaumberg LLP"
+    ],
+    "reason": "Jones Day (101 cases) vs Jones Day and Adduci Mastriani & Schaumberg LLP (1 case). The addition of the second firm name suggests a joint venture, partnership, or distinct entity rather than the same firm. The massive disparity in case count and the specific partnership notation suggests these are different entities."
+  },
+  "firm:991f2e3d57de69df": {
+    "confidence": 0.9,
+    "decided_at": "2026-09-25T21:27:21+00:00",
+    "decision": "same",
+    "keys": [
+      "lewis roca rothgerber",
+      "lewis roca rothgerber christie"
+    ],
+    "kind": "firm",
+    "model": "claude-haiku-4-5-20251001",
+    "parts": [],
+    "reason": "Lewis Roca Rothgerber and Lewis Roca Rothgerber Christie show clear progression with the addition of Christie to the firm name. Same core firm with surname additions reflecting growth/partnership additions. High case count and attorney overlap support same underlying firm."
+  },
+  "firm:9ca58604ea503364": {
+    "confidence": 0.85,
+    "decided_at": "2026-09-25T21:27:21+00:00",
+    "decision": "same",
+    "keys": [
+      "turner boyd",
+      "turner boyd seraphine"
+    ],
+    "kind": "firm",
+    "model": "claude-haiku-4-5-20251001",
+    "parts": [],
+    "reason": "Turner Boyd and Turner Boyd Seraphine show name progression with Seraphine added. Shared attorneys Megan Whyman Olesek and Megan W. Olesek/Megan Olesek in both versions indicate same firm with partnership expansion."
+  },
+  "firm:9d19bc2a8d6bc325": {
+    "confidence": 0.85,
+    "decided_at": "2026-09-25T21:27:21+00:00",
+    "decision": "same",
+    "keys": [
+      "richard b klar",
+      "richard b klar esq"
+    ],
+    "kind": "firm",
+    "model": "claude-haiku-4-5-20251001",
+    "parts": [],
+    "reason": "Law Office of Richard B. Klar and Richard B. Klar, Esq. are the same person/practice. Both reference the same attorney (Richard B. Klar). The second is simply his name with 'Esq.' suffix without the 'Law Office' prefix\u2014both refer to the same solo practice."
+  },
+  "firm:a07280bd502c2f4a": {
+    "confidence": 0.89,
+    "decided_at": "2026-09-25T21:25:49+00:00",
+    "decision": "same",
+    "keys": [
+      "k l gate",
+      "k l gates"
+    ],
+    "kind": "firm",
+    "model": "claude-haiku-4-5-20251001",
+    "parts": [
+      "K&L Gates LLP"
+    ],
+    "reason": "'K&L Gate' in (a) is a typo for 'K&L Gates' in (b). Same large law firm (79 cases in b). Shared attorneys and obvious spelling error confirm identity."
+  },
+  "firm:a1790ccb976a5a04": {
+    "confidence": 0.95,
+    "decided_at": "2026-09-25T21:25:49+00:00",
+    "decision": "same",
+    "keys": [
+      "adducci mastriani schaumberg",
+      "of adduci mastriani schaumberg"
+    ],
+    "kind": "firm",
+    "model": "claude-haiku-4-5-20251001",
+    "parts": [
+      "Adducci, Mastriani & Schaumberg, LLP"
+    ],
+    "reason": "Minor spelling variation: 'Adducci' vs 'Adduci' (likely a typo), and '&' vs 'and' (punctuation). Same law firm name with variant punctuation and minor spelling differences."
+  },
+  "firm:a530146a9bd9ea83": {
+    "confidence": 0.7,
+    "decided_at": "2026-09-25T21:26:50+00:00",
+    "decision": "different",
+    "keys": [
+      "levi snotherly",
+      "levi snotherly pearl cohen"
+    ],
+    "kind": "firm",
+    "model": "claude-haiku-4-5-20251001",
+    "parts": [
+      "Levi & Snotherly, PLLC",
+      "Levi & Snotherly and Pearl Cohen"
+    ],
+    "reason": "Levi & Snotherly, PLLC (27 cases) vs Levi & Snotherly and Pearl Cohen (1 case). The addition of 'and Pearl Cohen' suggests a joint venture, partnership, or separate entity. The single case in b vs many in a, and no attorney overlap, suggests these are distinct entities or a temporary partnership."
+  },
+  "firm:a801f775e83d7982": {
+    "confidence": 0.96,
+    "decided_at": "2026-09-25T21:26:18+00:00",
+    "decision": "same",
+    "keys": [
+      "venabe",
+      "venable"
+    ],
+    "kind": "firm",
+    "model": "claude-haiku-4-5-20251001",
+    "parts": [
+      "Venable LLP"
+    ],
+    "reason": "Venabe vs Venable is a typo (missing 'l'). Same firm structure (LLP). 'a' has 1 case, 'b' has 44 cases. Clear OCR or spelling error."
+  },
   "firm:a8049a26aa2c43e4": {
     "confidence": 0.45,
     "decided_at": "2026-09-25T18:02:14+00:00",
@@ -650,6 +2691,385 @@
     "model": "claude-haiku-4-5-20251001",
     "parts": [],
     "reason": "Significant name variation: one spells it 'Kellogg, Huber, Hansen, Todd & Evans' and the other adds 'Figel' at the end: 'Kellogg, Huber, Hansen, Todd, Evans & Figel'. This could be a partner addition, a merger, or a name change. John Thorne appears in both versions. Without clearer evidence of whether Figel was added or if this represents a substantive restructuring, conservatism suggests 'unsure'."
+  },
+  "firm:ad8b5b7e142c58e2": {
+    "confidence": 0.93,
+    "decided_at": "2026-09-25T21:26:18+00:00",
+    "decision": "same",
+    "keys": [
+      "nora m tocups",
+      "nora tocups"
+    ],
+    "kind": "firm",
+    "model": "claude-haiku-4-5-20251001",
+    "parts": [
+      "Law Office of Nora M. Tocups"
+    ],
+    "reason": "Both refer to the same person (Nora M. Tocups / Nora Tocups), shown in attorney list with full middle initial. Same firm, just different formality of naming - one with 'Law Office of' prefix and middle initial, one without."
+  },
+  "firm:add5850b7fb6c419": {
+    "confidence": 0.95,
+    "decided_at": "2026-09-25T21:26:50+00:00",
+    "decision": "same",
+    "keys": [
+      "beibei que",
+      "beibei que esq"
+    ],
+    "kind": "firm",
+    "model": "claude-haiku-4-5-20251001",
+    "parts": [
+      "Beibei Que",
+      "The Law Offices of Beibei Que, Esq."
+    ],
+    "reason": "Both versions refer to the same solo practitioner. 'Beibei Que' and 'The Law Offices of Beibei Que, Esq.' are different stylistic presentations of the same person's law office. The presence of 'Esq.' and 'The Law Offices' designation are stylistic variations, not indicating different entities."
+  },
+  "firm:b16900e46268996f": {
+    "confidence": 0.96,
+    "decided_at": "2026-09-25T21:26:18+00:00",
+    "decision": "same",
+    "keys": [
+      "wilson sonsini goodrich anad rosati",
+      "wilson sonsini goodrich rosati"
+    ],
+    "kind": "firm",
+    "model": "claude-haiku-4-5-20251001",
+    "parts": [
+      "Wilson Sonsini Goodrich & Rosati"
+    ],
+    "reason": "Wilson Sonsini Goodrich anad Rosati vs Wilson Sonsini Goodrich [and] Rosati. The 'anad' in 'a' is clearly a typo for 'and'. Same firm with OCR error. Same attorney (James C. Otteson) appears in both."
+  },
+  "firm:b3fc69cec84f1a20": {
+    "confidence": 0.8,
+    "decided_at": "2026-09-25T21:27:21+00:00",
+    "decision": "same",
+    "keys": [
+      "pillsbury winthrop",
+      "pillsbury winthrop pittman"
+    ],
+    "kind": "firm",
+    "model": "claude-haiku-4-5-20251001",
+    "parts": [],
+    "reason": "Pillsbury Winthrop and Pillsbury Winthrop Pittman show expansion with Pittman added. Pillsbury Winthrop has 7 cases with substantial attorney list, Pittman version has 1 case. Pattern consistent with firm growth/reorganization rather than merger."
+  },
+  "firm:b451d3082bcc5241": {
+    "confidence": 0.88,
+    "decided_at": "2026-09-25T21:25:49+00:00",
+    "decision": "same",
+    "keys": [
+      "calfee halter griswold",
+      "calfee hatler griswold"
+    ],
+    "kind": "firm",
+    "model": "claude-haiku-4-5-20251001",
+    "parts": [
+      "Calfee, Halter & Griswold LLP"
+    ],
+    "reason": "'Hatler' in (b) is a typo for 'Halter' in (a). Same law firm with one misspelled partner name. Shared attorneys and consistent name structure confirm this is the same firm."
+  },
+  "firm:b5927ae57c177b11": {
+    "confidence": 0.5,
+    "decided_at": "2026-09-25T21:26:18+00:00",
+    "decision": "unsure",
+    "keys": [
+      "amin talati",
+      "amin talati upadhye"
+    ],
+    "kind": "firm",
+    "model": "claude-haiku-4-5-20251001",
+    "parts": [],
+    "reason": "Amin Talati vs Amin Talati Upadhye. This could be the addition of a new partner (same firm) or a merger. The note indicates uncertainty. Without clear information about whether 'Upadhye' represents a partner addition or a merger event, this cannot be confidently determined. Applying the conservative rule."
+  },
+  "firm:b909f87c7912166d": {
+    "confidence": 0.94,
+    "decided_at": "2026-09-25T21:26:18+00:00",
+    "decision": "same",
+    "keys": [
+      "quinn emanual urguhart sullivan",
+      "quinn emanuel urqhart sullivan"
+    ],
+    "kind": "firm",
+    "model": "claude-haiku-4-5-20251001",
+    "parts": [
+      "Quinn Emanuel Urqhart & Sullivan LLP"
+    ],
+    "reason": "Quinn Emanual vs Quinn Emanuel (typo: 'a' vs 'e'). Urguhart vs Urqhart (variant spelling: 'gu' vs 'q'). Same firm with spelling variations."
+  },
+  "firm:b976061da1dd278c": {
+    "confidence": 0.9,
+    "decided_at": "2026-09-25T21:27:21+00:00",
+    "decision": "same",
+    "keys": [
+      "quinn emanuel",
+      "quinn emanuel trial lawyers"
+    ],
+    "kind": "firm",
+    "model": "claude-haiku-4-5-20251001",
+    "parts": [],
+    "reason": "Quinn Emanuel and Quinn Emanuel Trial Lawyers are the same firm. Quinn Emanuel Trial Lawyers has 19 cases vs 4 for Quinn Emanuel. Overlapping attorneys (Alex Lasher, Eric Huang in both forms). 'Trial Lawyers' is a descriptive addition to firm brand/identity, not a structural change."
+  },
+  "firm:b9853b704f259e15": {
+    "confidence": 0.7,
+    "decided_at": "2026-09-25T21:26:50+00:00",
+    "decision": "different",
+    "keys": [
+      "kirkpatrick lockhart",
+      "kirkpatrick lockhart nicholson graham"
+    ],
+    "kind": "firm",
+    "model": "claude-haiku-4-5-20251001",
+    "parts": [
+      "Kirkpatrick & Lockhart, LLP",
+      "Kirkpatrick & Lockhart Nicholson Graham"
+    ],
+    "reason": "Kirkpatrick & Lockhart, LLP vs Kirkpatrick & Lockhart Nicholson Graham. The addition of 'Nicholson Graham' suggests a significant expansion, merger, or name change to a distinct firm. No attorney overlap between entries. This appears to be a predecessor/successor relationship with different entities."
+  },
+  "firm:b9859827d88ed77f": {
+    "confidence": 0.85,
+    "decided_at": "2026-09-25T21:25:49+00:00",
+    "decision": "same",
+    "keys": [
+      "adduci mastriani schaumbeg",
+      "of adduci mastriani schaumberg"
+    ],
+    "kind": "firm",
+    "model": "claude-haiku-4-5-20251001",
+    "parts": [
+      "Adduci, Mastriani and Schaumberg LLP"
+    ],
+    "reason": "'Schaumbeg' in (a) is a typo for 'Schaumberg' in (b) (letter transposition/omission). Same firm name with minor spelling error. Punctuation and capitalization differences are typical variants."
+  },
+  "firm:ba7a7ad13ec8c31e": {
+    "confidence": 0.91,
+    "decided_at": "2026-09-25T21:25:49+00:00",
+    "decision": "same",
+    "keys": [
+      "hopkins carley",
+      "hopkins carley lc"
+    ],
+    "kind": "firm",
+    "model": "claude-haiku-4-5-20251001",
+    "parts": [
+      "Hopkins & Carley LLP"
+    ],
+    "reason": "Same firm with different entity type designation: 'LLP' in (a) vs 'LC' in (b). Both refer to Hopkins & Carley. Shared attorneys confirm same firm. Entity type variation is a minor designation difference."
+  },
+  "firm:c0851d1cc1d7872c": {
+    "confidence": 0.8,
+    "decided_at": "2026-09-25T21:26:50+00:00",
+    "decision": "same",
+    "keys": [
+      "finnegan henderson",
+      "finnegan henderson farabow garret dunner"
+    ],
+    "kind": "firm",
+    "model": "claude-haiku-4-5-20251001",
+    "parts": [
+      "Finnegan Henderson",
+      "finnegan henderson farabow garret and dunner llp"
+    ],
+    "reason": "Finnegan Henderson vs finnegan henderson farabow garret and dunner llp. These appear to be the same firm at different naming periods. The longer version is the full/formal firm name. The shorter version is a shortened reference to the same firm."
+  },
+  "firm:c11b07068bb39044": {
+    "confidence": 0.75,
+    "decided_at": "2026-09-25T21:26:50+00:00",
+    "decision": "different",
+    "keys": [
+      "husch blackwell",
+      "husch blackwell sanders"
+    ],
+    "kind": "firm",
+    "model": "claude-haiku-4-5-20251001",
+    "parts": [
+      "Husch Blackwell, LLP",
+      "Husch Blackwell Sanders LLP"
+    ],
+    "reason": "Husch Blackwell, LLP (31 cases) vs Husch Blackwell Sanders LLP (3 cases). The addition of 'Sanders' suggests a merger or distinct predecessor/successor relationship. No attorney overlap between the two. This appears to represent different time periods of the firm's history that should be tracked separately."
+  },
+  "firm:ca02dd33290bec29": {
+    "confidence": 0.9,
+    "decided_at": "2026-09-25T21:25:49+00:00",
+    "decision": "same",
+    "keys": [
+      "adduci mastriana schaumberg",
+      "of adduci mastriani schaumberg"
+    ],
+    "kind": "firm",
+    "model": "claude-haiku-4-5-20251001",
+    "parts": [
+      "Adduci, Mastriani and Schaumberg LLP"
+    ],
+    "reason": "'Mastriana' in (a) is likely a typo for 'Mastriani' in (b). Same firm with minor spelling variation and punctuation difference."
+  },
+  "firm:cbd6e8790aaa25cf": {
+    "confidence": 0.85,
+    "decided_at": "2026-09-25T21:27:21+00:00",
+    "decision": "same",
+    "keys": [
+      "pearl cohen zedek latzer",
+      "pearl cohen zedek latzer baratz"
+    ],
+    "kind": "firm",
+    "model": "claude-haiku-4-5-20251001",
+    "parts": [],
+    "reason": "Pearl Cohen Zedek & Latzer and Pearl Cohen Zedek Latzer Baratz show progression with Baratz added to partnership. Shared attorneys David A. Loewenstein and David Loewenstein appear in both versions, indicating same firm with name expansion over time."
+  },
+  "firm:cf6d028d9f78279c": {
+    "confidence": 0.88,
+    "decided_at": "2026-09-25T21:25:49+00:00",
+    "decision": "different",
+    "keys": [
+      "cooper dunham",
+      "copper dunham"
+    ],
+    "kind": "firm",
+    "model": "claude-haiku-4-5-20251001",
+    "parts": [],
+    "reason": "'Cooper & Dunham' is a different firm from 'Copper & Dunham'. Though they share attorney Robert D. Katz, the firm names are substantively different (Cooper vs. Copper). These appear to be different law firms."
+  },
+  "firm:cfe280077d40831b": {
+    "confidence": 0.5,
+    "decided_at": "2026-09-25T21:26:18+00:00",
+    "decision": "unsure",
+    "keys": [
+      "andrews kurth",
+      "andrews kurth kenyon"
+    ],
+    "kind": "firm",
+    "model": "claude-haiku-4-5-20251001",
+    "parts": [],
+    "reason": "Andrews Kurth vs Andrews Kurth Kenyon. This appears to be either the addition of a partner/office (same firm evolution) or a merger. The note indicates this could be either a short form or different firm (predecessor/successor). Without definitive information about the nature of the name change (simple addition vs merger), this cannot be resolved with confidence. Applying the conservative rule."
+  },
+  "firm:d22efc20f607ba72": {
+    "confidence": 0.85,
+    "decided_at": "2026-09-25T21:27:21+00:00",
+    "decision": "same",
+    "keys": [
+      "miller chevalier",
+      "miller chevalier handal associates"
+    ],
+    "kind": "firm",
+    "model": "claude-haiku-4-5-20251001",
+    "parts": [],
+    "reason": "Miller and Chevalier is the established short name for Miller and Chevalier and Handal & Associates. Miller & Chevalier has 31 cases vs 1 for the longer name, suggesting the shorter name is standard usage. Addition of Handal & Associates represents partnership/merger but same core firm identity."
+  },
+  "firm:d33787eeb1820e63": {
+    "confidence": 0.8,
+    "decided_at": "2026-09-25T21:26:50+00:00",
+    "decision": "same",
+    "keys": [
+      "buchanan ingersoll",
+      "buchanan ingersoll rooney"
+    ],
+    "kind": "firm",
+    "model": "claude-haiku-4-5-20251001",
+    "parts": [
+      "Buchanan Ingersoll PC",
+      "Buchanan Ingersoll & Rooney PC"
+    ],
+    "reason": "Buchanan Ingersoll PC vs Buchanan Ingersoll & Rooney PC. S. Lloyd Smith appears in both. The addition of '& Rooney' likely reflects a merger or partnership expansion. However, the core firm name remains 'Buchanan Ingersoll' and there is attorney overlap, suggesting this is the same evolving firm entity."
+  },
+  "firm:d38a50d4970c2ae3": {
+    "confidence": 0.89,
+    "decided_at": "2026-09-25T21:25:49+00:00",
+    "decision": "same",
+    "keys": [
+      "banner 7 witcoff",
+      "banner witcoff"
+    ],
+    "kind": "firm",
+    "model": "claude-haiku-4-5-20251001",
+    "parts": [
+      "Banner and Witcoff"
+    ],
+    "reason": "'Banner 7 Witcoff' in (a) appears to be a variant name or typo for 'Banner and Witcoff' in (b). Both refer to the same law firm with different punctuation/formatting of the name."
+  },
+  "firm:db1324fdeed1304b": {
+    "confidence": 0.98,
+    "decided_at": "2026-09-25T21:26:18+00:00",
+    "decision": "same",
+    "keys": [
+      "latham watkins",
+      "lathan watkins"
+    ],
+    "kind": "firm",
+    "model": "claude-haiku-4-5-20251001",
+    "parts": [
+      "Latham & Watkins LLP"
+    ],
+    "reason": "Latham vs Lathan is a single letter typo ('h' vs missing). Same firm structure and many attorneys in 'a' appear in related cases. Clear typo."
+  },
+  "firm:e1ad9395e7b5a030": {
+    "confidence": 0.8,
+    "decided_at": "2026-09-25T21:26:50+00:00",
+    "decision": "same",
+    "keys": [
+      "dnl zito",
+      "dnl zito castellano"
+    ],
+    "kind": "firm",
+    "model": "claude-haiku-4-5-20251001",
+    "parts": [
+      "DNL Zito",
+      "DNL Zito Castellano"
+    ],
+    "reason": "DNL Zito vs DNL Zito Castellano. Joseph J. Zito / Joseph Zito appear in both. The addition of 'Castellano' represents an expansion or partnership. The core firm identity is DNL Zito with overlapping lead attorney (Zito)."
+  },
+  "firm:e304665819963b97": {
+    "confidence": 0.97,
+    "decided_at": "2026-09-25T21:25:49+00:00",
+    "decision": "same",
+    "keys": [
+      "barry boren",
+      "barry m boren"
+    ],
+    "kind": "firm",
+    "model": "claude-haiku-4-5-20251001",
+    "parts": [
+      "law offices of barry m boren"
+    ],
+    "reason": "Same attorney 'barry m boren' in both entries. Only difference is that (b) has 'barry m boren' spelled out vs. abbreviated 'barry boren' in (a). Same one-person law office."
+  },
+  "firm:e833e5f4652c1ff7": {
+    "confidence": 0.92,
+    "decided_at": "2026-09-25T21:25:49+00:00",
+    "decision": "different",
+    "keys": [
+      "ericsson",
+      "stericsson"
+    ],
+    "kind": "firm",
+    "model": "claude-haiku-4-5-20251001",
+    "parts": [],
+    "reason": "Ericsson Inc. and ST-Ericsson are different legal entities. ST-Ericsson was a joint venture/subsidiary of Sony Ericsson and STMicroelectronics. Same brand but different entities. Per rules, different companies."
+  },
+  "firm:e9390ca088f660b7": {
+    "confidence": 0.85,
+    "decided_at": "2026-09-25T21:26:18+00:00",
+    "decision": "different",
+    "keys": [
+      "wilmer cutler pickering",
+      "wilmer cutler pickering dorr"
+    ],
+    "kind": "firm",
+    "model": "claude-haiku-4-5-20251001",
+    "parts": [],
+    "reason": "Wilmer, Cutler and Pickering vs Wilmer Cutler Pickering and Dorr. The second adds 'and Dorr', indicating either a merger where Hale Dorr joined, or a predecessor/successor relationship. Per the deduplication rules, a firm and the firm it merged into or was renamed to are 'different' - they are tracked as predecessor and successor elsewhere."
+  },
+  "firm:e9a340d00b9007ae": {
+    "confidence": 0.85,
+    "decided_at": "2026-09-25T21:26:50+00:00",
+    "decision": "same",
+    "keys": [
+      "howard howard",
+      "howard howard attorneys"
+    ],
+    "kind": "firm",
+    "model": "claude-haiku-4-5-20251001",
+    "parts": [
+      "Howard & Howard",
+      "Howard & Howard Attorneys PLLC"
+    ],
+    "reason": "Howard & Howard vs Howard & Howard Attorneys PLLC. The addition of 'Attorneys PLLC' is a stylistic/formal designation change, not a different entity. Michelle M. Wezner and Gerald E. McGlynn, III appear in both entries, confirming identity."
   },
   "firm:ea11c0e4f556c9fb": {
     "confidence": 0.95,
@@ -665,5 +3085,120 @@
       "Foster, Murphy, Altman & Nickel, PC"
     ],
     "reason": "Clear typo: 'Nickel' vs 'Nockel' in the firm name. All other spellings are consistent. Same attorneys appear in the main version. Typos in firm names are treated as 'same'."
+  },
+  "firm:eb8b59e9835856a8": {
+    "confidence": 0.92,
+    "decided_at": "2026-09-25T21:26:18+00:00",
+    "decision": "same",
+    "keys": [
+      "merritt blakeslee",
+      "merritt r blakeslee"
+    ],
+    "kind": "firm",
+    "model": "claude-haiku-4-5-20251001",
+    "parts": [
+      "Merritt Blakeslee"
+    ],
+    "reason": "Merritt Blakeslee vs Merritt R. Blakeslee - the second version simply includes the middle initial 'R'. Same person/firm. The attorney list shows this is a solo practitioner or small firm where the name and attorney are the same."
+  },
+  "firm:eceb747daf495c36": {
+    "confidence": 0.75,
+    "decided_at": "2026-09-25T21:27:21+00:00",
+    "decision": "same",
+    "keys": [
+      "wilson sonsini",
+      "wilson sonsini goodrich anad rosati"
+    ],
+    "kind": "firm",
+    "model": "claude-haiku-4-5-20251001",
+    "parts": [],
+    "reason": "Wilson Sonsini and Wilson Sonsini Goodrich Anad Rosati appear to be the same firm with name expansion. Wilson Sonsini is the short/established name (2 cases, possibly more historical). The longer name adds partner surnames, consistent with firm growth pattern."
+  },
+  "firm:ef134753509a1de0": {
+    "confidence": 0.96,
+    "decided_at": "2026-09-25T21:26:18+00:00",
+    "decision": "same",
+    "keys": [
+      "lewis roca rothberger christie",
+      "lewis roca rothgerber christie"
+    ],
+    "kind": "firm",
+    "model": "claude-haiku-4-5-20251001",
+    "parts": [
+      "Lewis Roca Rothberger Christie LLP"
+    ],
+    "reason": "Rothberger vs Rothgerber is a single transposition/typo ('be' vs 'ge'). Same firm otherwise - same structure, same other partner names. Likely OCR or spelling variation."
+  },
+  "firm:f0bf362550f76d9f": {
+    "confidence": 0.98,
+    "decided_at": "2026-09-25T21:25:49+00:00",
+    "decision": "same",
+    "keys": [
+      "adduci mastriani schaumberg",
+      "of adduci mastriani schaumberg"
+    ],
+    "kind": "firm",
+    "model": "claude-haiku-4-5-20251001",
+    "parts": [
+      "Adduci, Mastriani and Schaumberg LLP"
+    ],
+    "reason": "Perfect match. Multiple consistent spellings of 'Adduci, Mastriani and Schaumberg' in (a) with 236 cases and multiple attorneys, vs. the same spelling in (b). This is the canonical entry for this firm."
+  },
+  "firm:fb5131568b026e63": {
+    "confidence": 0.7,
+    "decided_at": "2026-09-25T21:26:50+00:00",
+    "decision": "different",
+    "keys": [
+      "cooley godward",
+      "cooley godward kronish"
+    ],
+    "kind": "firm",
+    "model": "claude-haiku-4-5-20251001",
+    "parts": [
+      "Cooley Godward LLP",
+      "Cooley Godward Kronish LLP"
+    ],
+    "reason": "Cooley Godward LLP vs Cooley Godward Kronish LLP. While both start with 'Cooley Godward,' the addition of 'Kronish' suggests a merger or name change to a different firm. No attorney overlap between the two groups. The Kronish addition is substantial, and the rule indicates that merged entities should be tracked separately."
+  },
+  "firm:fb64f0d212118af9": {
+    "confidence": 0.9,
+    "decided_at": "2026-09-25T21:26:18+00:00",
+    "decision": "same",
+    "keys": [
+      "peter c chen",
+      "peter chen"
+    ],
+    "kind": "firm",
+    "model": "claude-haiku-4-5-20251001",
+    "parts": [
+      "Law Office of Peter C. Chen"
+    ],
+    "reason": "Peter C. Chen vs Peter Chen - same person with full vs abbreviated middle initial. Both refer to a solo law practice by the same attorney."
+  },
+  "firm:fe9159adada86e2f": {
+    "confidence": 0.92,
+    "decided_at": "2026-09-25T21:26:18+00:00",
+    "decision": "different",
+    "keys": [
+      "wilmer cutler pickering dorr",
+      "wilmer cutler pickering hale dorr"
+    ],
+    "kind": "firm",
+    "model": "claude-haiku-4-5-20251001",
+    "parts": [],
+    "reason": "Wilmer Cutler Pickering and Dorr LLP vs Wilmer Cutler Pickering Hale and Dorr LLP. The second adds 'Hale', indicating either a merger or name evolution. Per deduplication rules, a predecessor and successor firm are tracked separately and marked as 'different'."
+  },
+  "firm:ff5ef9a0753d3073": {
+    "confidence": 0.9,
+    "decided_at": "2026-09-25T21:25:49+00:00",
+    "decision": "different",
+    "keys": [
+      "chen lin",
+      "chen malin"
+    ],
+    "kind": "firm",
+    "model": "claude-haiku-4-5-20251001",
+    "parts": [],
+    "reason": "'Chen and Lin' is a different firm name from 'Chen Malin LLP'. These have different partner names (Lin vs. Malin as second name). No shared attorneys. These are different law firms."
   }
 }

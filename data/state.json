@@ -1,10 +1,20 @@
 {
-  "last_run": "2026-09-25T17:14:13.765699+00:00",
+  "last_run": "2026-09-25T21:10:12.569803+00:00",
   "runs": {
+    "backfill": {
+      "documents": 380521,
+      "empty": 12,
+      "failed": 0,
+      "finished_at": "2026-09-25T21:07:13.659944+00:00",
+      "listed": 1185,
+      "of": 1197,
+      "remaining": 0,
+      "stopped": null
+    },
     "counsel": {
-      "cases": 179,
-      "finished_at": "2026-09-25T17:14:13.765699+00:00",
-      "representations": 1058,
+      "cases": 1143,
+      "finished_at": "2026-09-25T21:08:46.627299+00:00",
+      "representations": 8184,
       "rosters_read": 225
     },
     "documents": {
@@ -60,14 +70,14 @@
       "with_attachments": false
     },
     "ingest": {
-      "added": 0,
+      "added": 3,
       "cases": 1382,
-      "changed": 113,
-      "feed_date": "2026-09-21T22:00:01.996+00:00",
-      "finished_at": "2026-09-23T17:42:03.456598+00:00",
-      "snapshot": "2026-09-23",
+      "changed": 4,
+      "feed_date": "2026-09-24T01:57:26.741Z",
+      "finished_at": "2026-09-25T21:10:12.569803+00:00",
+      "snapshot": "2026-09-25",
       "stages": 1680,
-      "withdrawn": 0
+      "withdrawn": 1
     }
   }
 }

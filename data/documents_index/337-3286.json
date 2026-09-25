@@ -1,0 +1,122 @@
+[
+  {
+    "attachments": [],
+    "document_date": "2018-01-31",
+    "document_type": "Voting Sheet",
+    "filed_by": "Lisa R. Barton",
+    "firm_organization": "USITC",
+    "id": "637418",
+    "official_received_date": "2018-02-26T16:00:00",
+    "on_behalf_of": "Office of the Secretary",
+    "security_level": "Public",
+    "title": null
+  },
+  {
+    "attachments": [],
+    "document_date": "2018-02-13",
+    "document_type": "Correspondence",
+    "filed_by": "Mark G. Davis",
+    "firm_organization": "Greenberg Traurig, LLP",
+    "id": "636403",
+    "official_received_date": "2018-02-13T16:31:00",
+    "on_behalf_of": "Code Corporation",
+    "security_level": "Public",
+    "title": "Letter to Secretary Barton Withdrawing Complaint"
+  },
+  {
+    "attachments": [],
+    "document_date": "2018-02-01",
+    "document_type": "Correspondence - USITC",
+    "filed_by": "Lisa R. Barton",
+    "firm_organization": "USITC",
+    "id": "635312",
+    "official_received_date": "2018-02-01T09:38:00",
+    "on_behalf_of": "Office of the Secretary",
+    "security_level": "Public",
+    "title": "Postponement Letter to Mark G. Davis, Esq. of Greenberg Traurig, LLP"
+  },
+  {
+    "attachments": [],
+    "document_date": "2018-01-25",
+    "document_type": "Action Request",
+    "filed_by": "Mark G. Davis",
+    "firm_organization": "Greenberg Traurig, LLP",
+    "id": "634823",
+    "official_received_date": "2018-01-25T14:43:00",
+    "on_behalf_of": "Code Corporation",
+    "security_level": "Public",
+    "title": "Letter to Secretary Barton Requesting Postponement on Commission Determination"
+  },
+  {
+    "attachments": [],
+    "document_date": "2018-01-24",
+    "document_type": "Comments/Response to Comments",
+    "filed_by": "M. Scott Stevens",
+    "firm_organization": "Alston & Bird LLP",
+    "id": "634712",
+    "official_received_date": "2018-01-24T17:05:00",
+    "on_behalf_of": "Honeywell International Inc., Hand Held Products, Inc., Intermec Technologies Corporation, Intermec IP Corp., and Intermec, Inc.",
+    "security_level": "Public",
+    "title": "Proposed Respondents' Comments Relating to the Public Interest"
+  },
+  {
+    "attachments": [],
+    "document_date": "2018-01-16",
+    "document_type": "Notice",
+    "filed_by": "Lisa R. Barton",
+    "firm_organization": "USITC",
+    "id": "634629",
+    "official_received_date": "2018-01-24T12:14:00",
+    "on_behalf_of": "Office of the Secretary",
+    "security_level": "Public",
+    "title": "F.R. Notice of Receipt of Complaint; Solicitation of Comments Relating to the Public Interest"
+  },
+  {
+    "attachments": [],
+    "document_date": "2018-01-23",
+    "document_type": "Action Request",
+    "filed_by": "M. Scott Stevens",
+    "firm_organization": "Alston & Bird LLP",
+    "id": "634523",
+    "official_received_date": "2018-01-23T17:00:00",
+    "on_behalf_of": "Respondents Honeywell International Inc., Hand Held Products, Inc., Intermec Technologies Corporation,  Intermec IP Corp., and  Intermec, Inc.",
+    "security_level": "Public",
+    "title": "Letter to Chairman Honorable Rhonda K. Schmidtlein from Mr. Scott Stevens regarding Institution of Investigation, DN 3286"
+  },
+  {
+    "attachments": [],
+    "document_date": "2018-01-10",
+    "document_type": "Notice",
+    "filed_by": "Lisa R. Barton",
+    "firm_organization": "USITC",
+    "id": "633459",
+    "official_received_date": "2018-01-10T11:43:00",
+    "on_behalf_of": "Office of the Secretary",
+    "security_level": "Public",
+    "title": "Notice of Receipt of Complaint; Solicitation of Comments Relating to the Public Interest"
+  },
+  {
+    "attachments": [],
+    "document_date": "2018-01-09",
+    "document_type": "Complaint",
+    "filed_by": "Mark G. Davis",
+    "firm_organization": "Greenberg Traurig, LLP",
+    "id": "633365",
+    "official_received_date": "2018-01-09T16:46:00",
+    "on_behalf_of": "The Code Corporation",
+    "security_level": "Public",
+    "title": "Public Complaint and Exhibits"
+  },
+  {
+    "attachments": [],
+    "document_date": "2018-01-09",
+    "document_type": "Complaint",
+    "filed_by": "Mark G. Davis",
+    "firm_organization": "Greenberg Traurig, LLP",
+    "id": "633364",
+    "official_received_date": "2018-01-09T16:46:00",
+    "on_behalf_of": "The Code Corporation",
+    "security_level": "Confidential",
+    "title": "Confidential Complaint"
+  }
+]
