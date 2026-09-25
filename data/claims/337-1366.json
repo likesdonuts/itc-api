@@ -1,5 +1,5 @@
 {
-  "built_at": "2026-09-25T00:22:01.982431+00:00",
+  "built_at": "2026-09-25T02:19:28.030464+00:00",
   "corrections": [],
   "cost_usd": 0.0,
   "events": [
@@ -120,15 +120,2858 @@
       "speaker": "tribunal_ruling",
       "stage": "instituted",
       "status": "ok"
+    },
+    {
+      "action": "asserted",
+      "claims": [
+        1,
+        2,
+        3
+      ],
+      "claims_verbatim": "1-3",
+      "context": "The \u2019294 Patent has four independent claims and eight dependent claims.",
+      "date": "2023-05-26",
+      "id": "7bb68d1e81ca",
+      "method": "haiku",
+      "model": "claude-haiku-4-5-20251001",
+      "notes": [],
+      "patent": "8,350,294",
+      "quote": "EPC asserts that at least claims 1-3 are directly infringed by the Accused Products",
+      "respondents": [
+        "ALL"
+      ],
+      "sentence": "EPC asserts that at least claims 1-3 are directly infringed by the Accused Products, either literally or under the doctrine of equivalents.",
+      "source": {
+        "document_type": "Complaint",
+        "files": [
+          "797350_2003047_2003047.pdf",
+          "797350_2003048_2003048.pdf",
+          "797350_2003049_2003049.pdf",
+          "797350_2003050_2003050.pdf",
+          "797350_2003051_2003051.pdf",
+          "797350_2003052_2003052.pdf",
+          "797350_2003053_2003053.pdf",
+          "797350_2003055_2003055.pdf",
+          "797350_2003056_2003056.pdf",
+          "797350_2003057_2003057.pdf",
+          "797350_2003058_2003058.pdf",
+          "797350_2003059_2003059.pdf",
+          "797350_2003060_2003060.pdf",
+          "797350_2003061_2003061.pdf",
+          "797350_2003062_2003062.pdf",
+          "797350_2003063_2003063.pdf",
+          "797350_2003064_2003064.pdf",
+          "797350_2003065_2003065.pdf",
+          "797350_2003066_2003066.pdf",
+          "797350_2003067_2003067.pdf",
+          "797350_2003068_2003068.pdf",
+          "797350_2003069_2003069.pdf",
+          "797350_2003070_2003070.pdf",
+          "797350_2003071_2003071.pdf",
+          "797350_2003072_2003072.pdf",
+          "797350_2003073_2003073.pdf",
+          "797350_2003074_2003074.pdf",
+          "797350_2003075_2003075.pdf",
+          "797350_2003076_2003076.pdf",
+          "797350_2003077_2003077.pdf",
+          "797350_2003078_2003078.pdf",
+          "797350_2003079_2003079.pdf",
+          "797350_2003080_2003080.pdf",
+          "797350_2003081_2003081.pdf",
+          "797350_2003082_2003082.pdf",
+          "797350_2003083_2003083.pdf",
+          "797350_2003084_2003084.pdf",
+          "797350_2003085_2003085.pdf",
+          "797350_2003086_2003086.pdf",
+          "797350_2003087_2003087.pdf",
+          "797350_2003088_2003088.pdf",
+          "797350_2003089_2003089.pdf",
+          "797350_2003090_2003090.pdf",
+          "797350_2003091_2003091.pdf",
+          "797350_2003092_2003092.pdf",
+          "797350_2003093_2003093.pdf",
+          "797350_2003094_2003094.pdf",
+          "797350_2003095_2003095.pdf",
+          "797350_2003096_2003096.pdf",
+          "797350_2003097_2003097.pdf",
+          "797350_2003098_2003098.pdf",
+          "797350_2003099_2003099.pdf",
+          "797350_2003100_2003100.pdf",
+          "797350_2003101_2003101.pdf",
+          "797350_2003102_2003102.pdf",
+          "797350_2003103_2003103.pdf",
+          "797350_2003104_2003104.pdf",
+          "797350_2003105_2003105.pdf",
+          "797350_2003106_2003106.pdf",
+          "797350_2003107_2003107.pdf",
+          "797350_2003108_2003108.pdf",
+          "797350_2003109_2003109.pdf",
+          "797350_2003110_2003110.pdf",
+          "797350_2003111_2003111.pdf",
+          "797350_2003112_2003112.pdf"
+        ],
+        "id": "797350",
+        "kind": "edis",
+        "source_kind": "complaint",
+        "title": "Public Complaint and Exhibits"
+      },
+      "speaker": "party_argument",
+      "stage": "asserted",
+      "status": "ok"
+    },
+    {
+      "action": "asserted",
+      "claims": [
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "claims_verbatim": "1-5",
+      "context": "The \u2019508 Patent has three independent claims and two dependent claims.",
+      "date": "2023-05-26",
+      "id": "ac5c4bd0f63d",
+      "method": "haiku",
+      "model": "claude-haiku-4-5-20251001",
+      "notes": [],
+      "patent": "8,404,508",
+      "quote": "EPC asserts that claims 1-5 are directly infringed by the Accused Products",
+      "respondents": [
+        "ALL"
+      ],
+      "sentence": "EPC asserts that claims 1-5 are directly infringed by the Accused Products, either literally or under the doctrine of equivalents.",
+      "source": {
+        "document_type": "Complaint",
+        "files": [
+          "797350_2003047_2003047.pdf",
+          "797350_2003048_2003048.pdf",
+          "797350_2003049_2003049.pdf",
+          "797350_2003050_2003050.pdf",
+          "797350_2003051_2003051.pdf",
+          "797350_2003052_2003052.pdf",
+          "797350_2003053_2003053.pdf",
+          "797350_2003055_2003055.pdf",
+          "797350_2003056_2003056.pdf",
+          "797350_2003057_2003057.pdf",
+          "797350_2003058_2003058.pdf",
+          "797350_2003059_2003059.pdf",
+          "797350_2003060_2003060.pdf",
+          "797350_2003061_2003061.pdf",
+          "797350_2003062_2003062.pdf",
+          "797350_2003063_2003063.pdf",
+          "797350_2003064_2003064.pdf",
+          "797350_2003065_2003065.pdf",
+          "797350_2003066_2003066.pdf",
+          "797350_2003067_2003067.pdf",
+          "797350_2003068_2003068.pdf",
+          "797350_2003069_2003069.pdf",
+          "797350_2003070_2003070.pdf",
+          "797350_2003071_2003071.pdf",
+          "797350_2003072_2003072.pdf",
+          "797350_2003073_2003073.pdf",
+          "797350_2003074_2003074.pdf",
+          "797350_2003075_2003075.pdf",
+          "797350_2003076_2003076.pdf",
+          "797350_2003077_2003077.pdf",
+          "797350_2003078_2003078.pdf",
+          "797350_2003079_2003079.pdf",
+          "797350_2003080_2003080.pdf",
+          "797350_2003081_2003081.pdf",
+          "797350_2003082_2003082.pdf",
+          "797350_2003083_2003083.pdf",
+          "797350_2003084_2003084.pdf",
+          "797350_2003085_2003085.pdf",
+          "797350_2003086_2003086.pdf",
+          "797350_2003087_2003087.pdf",
+          "797350_2003088_2003088.pdf",
+          "797350_2003089_2003089.pdf",
+          "797350_2003090_2003090.pdf",
+          "797350_2003091_2003091.pdf",
+          "797350_2003092_2003092.pdf",
+          "797350_2003093_2003093.pdf",
+          "797350_2003094_2003094.pdf",
+          "797350_2003095_2003095.pdf",
+          "797350_2003096_2003096.pdf",
+          "797350_2003097_2003097.pdf",
+          "797350_2003098_2003098.pdf",
+          "797350_2003099_2003099.pdf",
+          "797350_2003100_2003100.pdf",
+          "797350_2003101_2003101.pdf",
+          "797350_2003102_2003102.pdf",
+          "797350_2003103_2003103.pdf",
+          "797350_2003104_2003104.pdf",
+          "797350_2003105_2003105.pdf",
+          "797350_2003106_2003106.pdf",
+          "797350_2003107_2003107.pdf",
+          "797350_2003108_2003108.pdf",
+          "797350_2003109_2003109.pdf",
+          "797350_2003110_2003110.pdf",
+          "797350_2003111_2003111.pdf",
+          "797350_2003112_2003112.pdf"
+        ],
+        "id": "797350",
+        "kind": "edis",
+        "source_kind": "complaint",
+        "title": "Public Complaint and Exhibits"
+      },
+      "speaker": "party_argument",
+      "stage": "asserted",
+      "status": "ok"
+    },
+    {
+      "action": "asserted",
+      "claims": [
+        1,
+        2,
+        3
+      ],
+      "claims_verbatim": "1-3",
+      "context": "The \u2019347 Patent has one independent claim and two dependent claims.",
+      "date": "2023-05-26",
+      "id": "82eafe6d5fe5",
+      "method": "haiku",
+      "model": "claude-haiku-4-5-20251001",
+      "notes": [],
+      "patent": "9,748,347",
+      "quote": "EPC asserts that claims 1-3 are directly infringed by the Accused Products",
+      "respondents": [
+        "ALL"
+      ],
+      "sentence": "EPC asserts that claims 1-3 are directly infringed by the Accused Products, either literally or under the doctrine of equivalents.",
+      "source": {
+        "document_type": "Complaint",
+        "files": [
+          "797350_2003047_2003047.pdf",
+          "797350_2003048_2003048.pdf",
+          "797350_2003049_2003049.pdf",
+          "797350_2003050_2003050.pdf",
+          "797350_2003051_2003051.pdf",
+          "797350_2003052_2003052.pdf",
+          "797350_2003053_2003053.pdf",
+          "797350_2003055_2003055.pdf",
+          "797350_2003056_2003056.pdf",
+          "797350_2003057_2003057.pdf",
+          "797350_2003058_2003058.pdf",
+          "797350_2003059_2003059.pdf",
+          "797350_2003060_2003060.pdf",
+          "797350_2003061_2003061.pdf",
+          "797350_2003062_2003062.pdf",
+          "797350_2003063_2003063.pdf",
+          "797350_2003064_2003064.pdf",
+          "797350_2003065_2003065.pdf",
+          "797350_2003066_2003066.pdf",
+          "797350_2003067_2003067.pdf",
+          "797350_2003068_2003068.pdf",
+          "797350_2003069_2003069.pdf",
+          "797350_2003070_2003070.pdf",
+          "797350_2003071_2003071.pdf",
+          "797350_2003072_2003072.pdf",
+          "797350_2003073_2003073.pdf",
+          "797350_2003074_2003074.pdf",
+          "797350_2003075_2003075.pdf",
+          "797350_2003076_2003076.pdf",
+          "797350_2003077_2003077.pdf",
+          "797350_2003078_2003078.pdf",
+          "797350_2003079_2003079.pdf",
+          "797350_2003080_2003080.pdf",
+          "797350_2003081_2003081.pdf",
+          "797350_2003082_2003082.pdf",
+          "797350_2003083_2003083.pdf",
+          "797350_2003084_2003084.pdf",
+          "797350_2003085_2003085.pdf",
+          "797350_2003086_2003086.pdf",
+          "797350_2003087_2003087.pdf",
+          "797350_2003088_2003088.pdf",
+          "797350_2003089_2003089.pdf",
+          "797350_2003090_2003090.pdf",
+          "797350_2003091_2003091.pdf",
+          "797350_2003092_2003092.pdf",
+          "797350_2003093_2003093.pdf",
+          "797350_2003094_2003094.pdf",
+          "797350_2003095_2003095.pdf",
+          "797350_2003096_2003096.pdf",
+          "797350_2003097_2003097.pdf",
+          "797350_2003098_2003098.pdf",
+          "797350_2003099_2003099.pdf",
+          "797350_2003100_2003100.pdf",
+          "797350_2003101_2003101.pdf",
+          "797350_2003102_2003102.pdf",
+          "797350_2003103_2003103.pdf",
+          "797350_2003104_2003104.pdf",
+          "797350_2003105_2003105.pdf",
+          "797350_2003106_2003106.pdf",
+          "797350_2003107_2003107.pdf",
+          "797350_2003108_2003108.pdf",
+          "797350_2003109_2003109.pdf",
+          "797350_2003110_2003110.pdf",
+          "797350_2003111_2003111.pdf",
+          "797350_2003112_2003112.pdf"
+        ],
+        "id": "797350",
+        "kind": "edis",
+        "source_kind": "complaint",
+        "title": "Public Complaint and Exhibits"
+      },
+      "speaker": "party_argument",
+      "stage": "asserted",
+      "status": "ok"
+    },
+    {
+      "action": "asserted",
+      "claims": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7
+      ],
+      "claims_verbatim": "1-7",
+      "context": "The \u2019335 Patent has two independent claims and five dependent claims.",
+      "date": "2023-05-26",
+      "id": "e78cbf600e12",
+      "method": "haiku",
+      "model": "claude-haiku-4-5-20251001",
+      "notes": [],
+      "patent": "10,312,335",
+      "quote": "EPC asserts that claims 1-7 are directly infringed by the Asserted Products",
+      "respondents": [
+        "ALL"
+      ],
+      "sentence": "EPC asserts that claims 1-7 are directly infringed by the Asserted Products, either literally or under the doctrine of equivalents.",
+      "source": {
+        "document_type": "Complaint",
+        "files": [
+          "797350_2003047_2003047.pdf",
+          "797350_2003048_2003048.pdf",
+          "797350_2003049_2003049.pdf",
+          "797350_2003050_2003050.pdf",
+          "797350_2003051_2003051.pdf",
+          "797350_2003052_2003052.pdf",
+          "797350_2003053_2003053.pdf",
+          "797350_2003055_2003055.pdf",
+          "797350_2003056_2003056.pdf",
+          "797350_2003057_2003057.pdf",
+          "797350_2003058_2003058.pdf",
+          "797350_2003059_2003059.pdf",
+          "797350_2003060_2003060.pdf",
+          "797350_2003061_2003061.pdf",
+          "797350_2003062_2003062.pdf",
+          "797350_2003063_2003063.pdf",
+          "797350_2003064_2003064.pdf",
+          "797350_2003065_2003065.pdf",
+          "797350_2003066_2003066.pdf",
+          "797350_2003067_2003067.pdf",
+          "797350_2003068_2003068.pdf",
+          "797350_2003069_2003069.pdf",
+          "797350_2003070_2003070.pdf",
+          "797350_2003071_2003071.pdf",
+          "797350_2003072_2003072.pdf",
+          "797350_2003073_2003073.pdf",
+          "797350_2003074_2003074.pdf",
+          "797350_2003075_2003075.pdf",
+          "797350_2003076_2003076.pdf",
+          "797350_2003077_2003077.pdf",
+          "797350_2003078_2003078.pdf",
+          "797350_2003079_2003079.pdf",
+          "797350_2003080_2003080.pdf",
+          "797350_2003081_2003081.pdf",
+          "797350_2003082_2003082.pdf",
+          "797350_2003083_2003083.pdf",
+          "797350_2003084_2003084.pdf",
+          "797350_2003085_2003085.pdf",
+          "797350_2003086_2003086.pdf",
+          "797350_2003087_2003087.pdf",
+          "797350_2003088_2003088.pdf",
+          "797350_2003089_2003089.pdf",
+          "797350_2003090_2003090.pdf",
+          "797350_2003091_2003091.pdf",
+          "797350_2003092_2003092.pdf",
+          "797350_2003093_2003093.pdf",
+          "797350_2003094_2003094.pdf",
+          "797350_2003095_2003095.pdf",
+          "797350_2003096_2003096.pdf",
+          "797350_2003097_2003097.pdf",
+          "797350_2003098_2003098.pdf",
+          "797350_2003099_2003099.pdf",
+          "797350_2003100_2003100.pdf",
+          "797350_2003101_2003101.pdf",
+          "797350_2003102_2003102.pdf",
+          "797350_2003103_2003103.pdf",
+          "797350_2003104_2003104.pdf",
+          "797350_2003105_2003105.pdf",
+          "797350_2003106_2003106.pdf",
+          "797350_2003107_2003107.pdf",
+          "797350_2003108_2003108.pdf",
+          "797350_2003109_2003109.pdf",
+          "797350_2003110_2003110.pdf",
+          "797350_2003111_2003111.pdf",
+          "797350_2003112_2003112.pdf"
+        ],
+        "id": "797350",
+        "kind": "edis",
+        "source_kind": "complaint",
+        "title": "Public Complaint and Exhibits"
+      },
+      "speaker": "party_argument",
+      "stage": "asserted",
+      "status": "ok"
+    },
+    {
+      "action": "technical_prong",
+      "claims": [
+        2,
+        3
+      ],
+      "claims_verbatim": "2 and 3",
+      "context": "30 82.",
+      "date": "2023-05-26",
+      "id": "94ba3b30a653",
+      "method": "haiku",
+      "model": "claude-haiku-4-5-20251001",
+      "notes": [],
+      "patent": "8,350,294",
+      "quote": "claim 2 and 3 of the '294 Patent is practiced by EPC2016C and EPC2215C",
+      "respondents": [
+        "ALL"
+      ],
+      "sentence": "As exemplarily shown in Confidential Exhibits 16C-23C, claim 2 and 3 of the \u2019294 Patent is practiced by EPC2016C and EPC2215C; claim 1 of the \u2019347 Patent is practiced by the method to manufacture EPC2016C and EPC2215C; claim 1 of the \u2019335 Patent is practiced by EPC2016C and EPC2215C; and claim 1 of the \u2019508 Patent is practiced by the method to manufacture EPC2016C and EPC2215C.",
+      "source": {
+        "document_type": "Complaint",
+        "files": [
+          "797350_2003047_2003047.pdf",
+          "797350_2003048_2003048.pdf",
+          "797350_2003049_2003049.pdf",
+          "797350_2003050_2003050.pdf",
+          "797350_2003051_2003051.pdf",
+          "797350_2003052_2003052.pdf",
+          "797350_2003053_2003053.pdf",
+          "797350_2003055_2003055.pdf",
+          "797350_2003056_2003056.pdf",
+          "797350_2003057_2003057.pdf",
+          "797350_2003058_2003058.pdf",
+          "797350_2003059_2003059.pdf",
+          "797350_2003060_2003060.pdf",
+          "797350_2003061_2003061.pdf",
+          "797350_2003062_2003062.pdf",
+          "797350_2003063_2003063.pdf",
+          "797350_2003064_2003064.pdf",
+          "797350_2003065_2003065.pdf",
+          "797350_2003066_2003066.pdf",
+          "797350_2003067_2003067.pdf",
+          "797350_2003068_2003068.pdf",
+          "797350_2003069_2003069.pdf",
+          "797350_2003070_2003070.pdf",
+          "797350_2003071_2003071.pdf",
+          "797350_2003072_2003072.pdf",
+          "797350_2003073_2003073.pdf",
+          "797350_2003074_2003074.pdf",
+          "797350_2003075_2003075.pdf",
+          "797350_2003076_2003076.pdf",
+          "797350_2003077_2003077.pdf",
+          "797350_2003078_2003078.pdf",
+          "797350_2003079_2003079.pdf",
+          "797350_2003080_2003080.pdf",
+          "797350_2003081_2003081.pdf",
+          "797350_2003082_2003082.pdf",
+          "797350_2003083_2003083.pdf",
+          "797350_2003084_2003084.pdf",
+          "797350_2003085_2003085.pdf",
+          "797350_2003086_2003086.pdf",
+          "797350_2003087_2003087.pdf",
+          "797350_2003088_2003088.pdf",
+          "797350_2003089_2003089.pdf",
+          "797350_2003090_2003090.pdf",
+          "797350_2003091_2003091.pdf",
+          "797350_2003092_2003092.pdf",
+          "797350_2003093_2003093.pdf",
+          "797350_2003094_2003094.pdf",
+          "797350_2003095_2003095.pdf",
+          "797350_2003096_2003096.pdf",
+          "797350_2003097_2003097.pdf",
+          "797350_2003098_2003098.pdf",
+          "797350_2003099_2003099.pdf",
+          "797350_2003100_2003100.pdf",
+          "797350_2003101_2003101.pdf",
+          "797350_2003102_2003102.pdf",
+          "797350_2003103_2003103.pdf",
+          "797350_2003104_2003104.pdf",
+          "797350_2003105_2003105.pdf",
+          "797350_2003106_2003106.pdf",
+          "797350_2003107_2003107.pdf",
+          "797350_2003108_2003108.pdf",
+          "797350_2003109_2003109.pdf",
+          "797350_2003110_2003110.pdf",
+          "797350_2003111_2003111.pdf",
+          "797350_2003112_2003112.pdf"
+        ],
+        "id": "797350",
+        "kind": "edis",
+        "source_kind": "complaint",
+        "title": "Public Complaint and Exhibits"
+      },
+      "speaker": "party_argument",
+      "stage": "asserted",
+      "status": "ok"
+    },
+    {
+      "action": "technical_prong",
+      "claims": [
+        1
+      ],
+      "claims_verbatim": "1",
+      "context": "30 82.",
+      "date": "2023-05-26",
+      "id": "5396c6a81270",
+      "method": "haiku",
+      "model": "claude-haiku-4-5-20251001",
+      "notes": [],
+      "patent": "9,748,347",
+      "quote": "claim 1 of the '347 Patent is practiced by the method to manufacture EPC2016C and EPC2215C",
+      "respondents": [
+        "ALL"
+      ],
+      "sentence": "As exemplarily shown in Confidential Exhibits 16C-23C, claim 2 and 3 of the \u2019294 Patent is practiced by EPC2016C and EPC2215C; claim 1 of the \u2019347 Patent is practiced by the method to manufacture EPC2016C and EPC2215C; claim 1 of the \u2019335 Patent is practiced by EPC2016C and EPC2215C; and claim 1 of the \u2019508 Patent is practiced by the method to manufacture EPC2016C and EPC2215C.",
+      "source": {
+        "document_type": "Complaint",
+        "files": [
+          "797350_2003047_2003047.pdf",
+          "797350_2003048_2003048.pdf",
+          "797350_2003049_2003049.pdf",
+          "797350_2003050_2003050.pdf",
+          "797350_2003051_2003051.pdf",
+          "797350_2003052_2003052.pdf",
+          "797350_2003053_2003053.pdf",
+          "797350_2003055_2003055.pdf",
+          "797350_2003056_2003056.pdf",
+          "797350_2003057_2003057.pdf",
+          "797350_2003058_2003058.pdf",
+          "797350_2003059_2003059.pdf",
+          "797350_2003060_2003060.pdf",
+          "797350_2003061_2003061.pdf",
+          "797350_2003062_2003062.pdf",
+          "797350_2003063_2003063.pdf",
+          "797350_2003064_2003064.pdf",
+          "797350_2003065_2003065.pdf",
+          "797350_2003066_2003066.pdf",
+          "797350_2003067_2003067.pdf",
+          "797350_2003068_2003068.pdf",
+          "797350_2003069_2003069.pdf",
+          "797350_2003070_2003070.pdf",
+          "797350_2003071_2003071.pdf",
+          "797350_2003072_2003072.pdf",
+          "797350_2003073_2003073.pdf",
+          "797350_2003074_2003074.pdf",
+          "797350_2003075_2003075.pdf",
+          "797350_2003076_2003076.pdf",
+          "797350_2003077_2003077.pdf",
+          "797350_2003078_2003078.pdf",
+          "797350_2003079_2003079.pdf",
+          "797350_2003080_2003080.pdf",
+          "797350_2003081_2003081.pdf",
+          "797350_2003082_2003082.pdf",
+          "797350_2003083_2003083.pdf",
+          "797350_2003084_2003084.pdf",
+          "797350_2003085_2003085.pdf",
+          "797350_2003086_2003086.pdf",
+          "797350_2003087_2003087.pdf",
+          "797350_2003088_2003088.pdf",
+          "797350_2003089_2003089.pdf",
+          "797350_2003090_2003090.pdf",
+          "797350_2003091_2003091.pdf",
+          "797350_2003092_2003092.pdf",
+          "797350_2003093_2003093.pdf",
+          "797350_2003094_2003094.pdf",
+          "797350_2003095_2003095.pdf",
+          "797350_2003096_2003096.pdf",
+          "797350_2003097_2003097.pdf",
+          "797350_2003098_2003098.pdf",
+          "797350_2003099_2003099.pdf",
+          "797350_2003100_2003100.pdf",
+          "797350_2003101_2003101.pdf",
+          "797350_2003102_2003102.pdf",
+          "797350_2003103_2003103.pdf",
+          "797350_2003104_2003104.pdf",
+          "797350_2003105_2003105.pdf",
+          "797350_2003106_2003106.pdf",
+          "797350_2003107_2003107.pdf",
+          "797350_2003108_2003108.pdf",
+          "797350_2003109_2003109.pdf",
+          "797350_2003110_2003110.pdf",
+          "797350_2003111_2003111.pdf",
+          "797350_2003112_2003112.pdf"
+        ],
+        "id": "797350",
+        "kind": "edis",
+        "source_kind": "complaint",
+        "title": "Public Complaint and Exhibits"
+      },
+      "speaker": "party_argument",
+      "stage": "asserted",
+      "status": "ok"
+    },
+    {
+      "action": "technical_prong",
+      "claims": [
+        1
+      ],
+      "claims_verbatim": "1",
+      "context": "30 82.",
+      "date": "2023-05-26",
+      "id": "2978407425e8",
+      "method": "haiku",
+      "model": "claude-haiku-4-5-20251001",
+      "notes": [],
+      "patent": "10,312,335",
+      "quote": "claim 1 of the '335 Patent is practiced by EPC2016C and EPC2215C",
+      "respondents": [
+        "ALL"
+      ],
+      "sentence": "As exemplarily shown in Confidential Exhibits 16C-23C, claim 2 and 3 of the \u2019294 Patent is practiced by EPC2016C and EPC2215C; claim 1 of the \u2019347 Patent is practiced by the method to manufacture EPC2016C and EPC2215C; claim 1 of the \u2019335 Patent is practiced by EPC2016C and EPC2215C; and claim 1 of the \u2019508 Patent is practiced by the method to manufacture EPC2016C and EPC2215C.",
+      "source": {
+        "document_type": "Complaint",
+        "files": [
+          "797350_2003047_2003047.pdf",
+          "797350_2003048_2003048.pdf",
+          "797350_2003049_2003049.pdf",
+          "797350_2003050_2003050.pdf",
+          "797350_2003051_2003051.pdf",
+          "797350_2003052_2003052.pdf",
+          "797350_2003053_2003053.pdf",
+          "797350_2003055_2003055.pdf",
+          "797350_2003056_2003056.pdf",
+          "797350_2003057_2003057.pdf",
+          "797350_2003058_2003058.pdf",
+          "797350_2003059_2003059.pdf",
+          "797350_2003060_2003060.pdf",
+          "797350_2003061_2003061.pdf",
+          "797350_2003062_2003062.pdf",
+          "797350_2003063_2003063.pdf",
+          "797350_2003064_2003064.pdf",
+          "797350_2003065_2003065.pdf",
+          "797350_2003066_2003066.pdf",
+          "797350_2003067_2003067.pdf",
+          "797350_2003068_2003068.pdf",
+          "797350_2003069_2003069.pdf",
+          "797350_2003070_2003070.pdf",
+          "797350_2003071_2003071.pdf",
+          "797350_2003072_2003072.pdf",
+          "797350_2003073_2003073.pdf",
+          "797350_2003074_2003074.pdf",
+          "797350_2003075_2003075.pdf",
+          "797350_2003076_2003076.pdf",
+          "797350_2003077_2003077.pdf",
+          "797350_2003078_2003078.pdf",
+          "797350_2003079_2003079.pdf",
+          "797350_2003080_2003080.pdf",
+          "797350_2003081_2003081.pdf",
+          "797350_2003082_2003082.pdf",
+          "797350_2003083_2003083.pdf",
+          "797350_2003084_2003084.pdf",
+          "797350_2003085_2003085.pdf",
+          "797350_2003086_2003086.pdf",
+          "797350_2003087_2003087.pdf",
+          "797350_2003088_2003088.pdf",
+          "797350_2003089_2003089.pdf",
+          "797350_2003090_2003090.pdf",
+          "797350_2003091_2003091.pdf",
+          "797350_2003092_2003092.pdf",
+          "797350_2003093_2003093.pdf",
+          "797350_2003094_2003094.pdf",
+          "797350_2003095_2003095.pdf",
+          "797350_2003096_2003096.pdf",
+          "797350_2003097_2003097.pdf",
+          "797350_2003098_2003098.pdf",
+          "797350_2003099_2003099.pdf",
+          "797350_2003100_2003100.pdf",
+          "797350_2003101_2003101.pdf",
+          "797350_2003102_2003102.pdf",
+          "797350_2003103_2003103.pdf",
+          "797350_2003104_2003104.pdf",
+          "797350_2003105_2003105.pdf",
+          "797350_2003106_2003106.pdf",
+          "797350_2003107_2003107.pdf",
+          "797350_2003108_2003108.pdf",
+          "797350_2003109_2003109.pdf",
+          "797350_2003110_2003110.pdf",
+          "797350_2003111_2003111.pdf",
+          "797350_2003112_2003112.pdf"
+        ],
+        "id": "797350",
+        "kind": "edis",
+        "source_kind": "complaint",
+        "title": "Public Complaint and Exhibits"
+      },
+      "speaker": "party_argument",
+      "stage": "asserted",
+      "status": "ok"
+    },
+    {
+      "action": "technical_prong",
+      "claims": [
+        1
+      ],
+      "claims_verbatim": "1",
+      "context": "30 82.",
+      "date": "2023-05-26",
+      "id": "67d81e7d59e3",
+      "method": "haiku",
+      "model": "claude-haiku-4-5-20251001",
+      "notes": [],
+      "patent": "8,404,508",
+      "quote": "claim 1 of the '508 Patent is practiced by the method to manufacture EPC2016C and EPC2215C",
+      "respondents": [
+        "ALL"
+      ],
+      "sentence": "As exemplarily shown in Confidential Exhibits 16C-23C, claim 2 and 3 of the \u2019294 Patent is practiced by EPC2016C and EPC2215C; claim 1 of the \u2019347 Patent is practiced by the method to manufacture EPC2016C and EPC2215C; claim 1 of the \u2019335 Patent is practiced by EPC2016C and EPC2215C; and claim 1 of the \u2019508 Patent is practiced by the method to manufacture EPC2016C and EPC2215C.",
+      "source": {
+        "document_type": "Complaint",
+        "files": [
+          "797350_2003047_2003047.pdf",
+          "797350_2003048_2003048.pdf",
+          "797350_2003049_2003049.pdf",
+          "797350_2003050_2003050.pdf",
+          "797350_2003051_2003051.pdf",
+          "797350_2003052_2003052.pdf",
+          "797350_2003053_2003053.pdf",
+          "797350_2003055_2003055.pdf",
+          "797350_2003056_2003056.pdf",
+          "797350_2003057_2003057.pdf",
+          "797350_2003058_2003058.pdf",
+          "797350_2003059_2003059.pdf",
+          "797350_2003060_2003060.pdf",
+          "797350_2003061_2003061.pdf",
+          "797350_2003062_2003062.pdf",
+          "797350_2003063_2003063.pdf",
+          "797350_2003064_2003064.pdf",
+          "797350_2003065_2003065.pdf",
+          "797350_2003066_2003066.pdf",
+          "797350_2003067_2003067.pdf",
+          "797350_2003068_2003068.pdf",
+          "797350_2003069_2003069.pdf",
+          "797350_2003070_2003070.pdf",
+          "797350_2003071_2003071.pdf",
+          "797350_2003072_2003072.pdf",
+          "797350_2003073_2003073.pdf",
+          "797350_2003074_2003074.pdf",
+          "797350_2003075_2003075.pdf",
+          "797350_2003076_2003076.pdf",
+          "797350_2003077_2003077.pdf",
+          "797350_2003078_2003078.pdf",
+          "797350_2003079_2003079.pdf",
+          "797350_2003080_2003080.pdf",
+          "797350_2003081_2003081.pdf",
+          "797350_2003082_2003082.pdf",
+          "797350_2003083_2003083.pdf",
+          "797350_2003084_2003084.pdf",
+          "797350_2003085_2003085.pdf",
+          "797350_2003086_2003086.pdf",
+          "797350_2003087_2003087.pdf",
+          "797350_2003088_2003088.pdf",
+          "797350_2003089_2003089.pdf",
+          "797350_2003090_2003090.pdf",
+          "797350_2003091_2003091.pdf",
+          "797350_2003092_2003092.pdf",
+          "797350_2003093_2003093.pdf",
+          "797350_2003094_2003094.pdf",
+          "797350_2003095_2003095.pdf",
+          "797350_2003096_2003096.pdf",
+          "797350_2003097_2003097.pdf",
+          "797350_2003098_2003098.pdf",
+          "797350_2003099_2003099.pdf",
+          "797350_2003100_2003100.pdf",
+          "797350_2003101_2003101.pdf",
+          "797350_2003102_2003102.pdf",
+          "797350_2003103_2003103.pdf",
+          "797350_2003104_2003104.pdf",
+          "797350_2003105_2003105.pdf",
+          "797350_2003106_2003106.pdf",
+          "797350_2003107_2003107.pdf",
+          "797350_2003108_2003108.pdf",
+          "797350_2003109_2003109.pdf",
+          "797350_2003110_2003110.pdf",
+          "797350_2003111_2003111.pdf",
+          "797350_2003112_2003112.pdf"
+        ],
+        "id": "797350",
+        "kind": "edis",
+        "source_kind": "complaint",
+        "title": "Public Complaint and Exhibits"
+      },
+      "speaker": "party_argument",
+      "stage": "asserted",
+      "status": "ok"
+    },
+    {
+      "action": "asserted",
+      "claims": [
+        1
+      ],
+      "claims_verbatim": "1",
+      "context": "The \u2019508 Patent has three independent claims and two dependent claims.",
+      "date": "2023-06-14",
+      "id": "b7d809a72356",
+      "method": "haiku",
+      "model": "claude-haiku-4-5-20251001",
+      "notes": [],
+      "patent": "8,404,508",
+      "quote": "EPC asserts that claim 1 is directly infringed by the Accused Products",
+      "respondents": [
+        "ALL"
+      ],
+      "sentence": "EPC asserts that claim 1 is directly infringed by the Accused Products, either literally or under the doctrine of equivalents. \u2022 Paragraph 35 of the Complaint should be replaced with the following, which corrects that only claim 1 of the \u2019508 patent is asserted: June 14, 2023 Page 4 The \u2019508 Patent has three independent claims and two dependent claims.",
+      "source": {
+        "document_type": "Complaint",
+        "files": [
+          "798596_2009593_2009593.pdf",
+          "798596_2009594_2009594.pdf",
+          "798596_2009595_2009595.pdf",
+          "798596_2009596_2009596.pdf",
+          "798596_2009597_2009597.pdf",
+          "798596_2009598_2009598.pdf",
+          "798596_2009599_2009599.pdf",
+          "798596_2009600_2009600.pdf",
+          "798596_2009601_2009601.pdf",
+          "798596_2009602_2009602.pdf",
+          "798596_2009603_2009603.pdf",
+          "798596_2009604_2009604.pdf",
+          "798596_2009605_2009605.pdf",
+          "798596_2009606_2009606.pdf"
+        ],
+        "id": "798596",
+        "kind": "edis",
+        "source_kind": "complaint",
+        "title": "First Public Supplement to the Complaint and Public Exhibits"
+      },
+      "speaker": "party_argument",
+      "stage": "asserted",
+      "status": "ok"
+    },
+    {
+      "action": "asserted",
+      "claims": [
+        1
+      ],
+      "claims_verbatim": "1",
+      "context": "EPC asserts that claim 1 is directly infringed by the Accused Products, either literally or under the doctrine of equivalents. \u2022 Paragraph 35 of the Complaint should be replaced with the following, which corrects that only claim 1 of the \u2019508 patent is asserted: June 14, 2023 Page 4 The \u2019508 Patent has three independent claims and two dependent claims.",
+      "date": "2023-06-14",
+      "id": "d8cc49736323",
+      "method": "haiku",
+      "model": "claude-haiku-4-5-20251001",
+      "notes": [],
+      "patent": "8,404,508",
+      "quote": "EPC asserts that claim 1 is directly infringed by the Accused Products",
+      "respondents": [
+        "ALL"
+      ],
+      "sentence": "EPC asserts that claim 1 is directly infringed by the Accused Products, either literally or under the doctrine of equivalents. \u2022 Paragraph 47 of the Complaint should be replaced with the following, which corrects a typographical error in one of the application numbers: On June 4, 2019, the USPTO issued the \u2019335 Patent, entitled Gate with Self-Aligned Ledge for Enhancement Mode GaN Transistors.",
+      "source": {
+        "document_type": "Complaint",
+        "files": [
+          "798596_2009593_2009593.pdf",
+          "798596_2009594_2009594.pdf",
+          "798596_2009595_2009595.pdf",
+          "798596_2009596_2009596.pdf",
+          "798596_2009597_2009597.pdf",
+          "798596_2009598_2009598.pdf",
+          "798596_2009599_2009599.pdf",
+          "798596_2009600_2009600.pdf",
+          "798596_2009601_2009601.pdf",
+          "798596_2009602_2009602.pdf",
+          "798596_2009603_2009603.pdf",
+          "798596_2009604_2009604.pdf",
+          "798596_2009605_2009605.pdf",
+          "798596_2009606_2009606.pdf"
+        ],
+        "id": "798596",
+        "kind": "edis",
+        "source_kind": "complaint",
+        "title": "First Public Supplement to the Complaint and Public Exhibits"
+      },
+      "speaker": "party_argument",
+      "stage": "asserted",
+      "status": "ok"
+    },
+    {
+      "action": "asserted",
+      "claims": [
+        1,
+        2,
+        3
+      ],
+      "claims_verbatim": "1-3",
+      "context": "88 FR 42756-77 (Jul. 3, 2023).",
+      "date": "2024-01-11",
+      "id": "a873290ee0a3",
+      "method": "haiku",
+      "model": "claude-haiku-4-5-20251001",
+      "notes": [],
+      "patent": "8,350,294",
+      "quote": "claims 1-3 of U.S. Patent No. 8,350,294",
+      "respondents": [
+        "ALL"
+      ],
+      "sentence": "The complaint alleges violations of section 337 of the Tariff Act of 1930, as amended, 19 U.S.C. 1337 based on the importation into the United States, the sale for importation, or sale within the United States after importation of certain semiconductor devices, and methods of manufacturing same and products containing the same by reason of the infringement of one or more of claims 1-3 of U.S. Patent No. 8,350,294; claim 1 of U.S. Patent No. 8,404,508; claims 1-3 of the \u2019347 patent; and claims 1-7 of U.S. Patent No. 10,312,335.",
+      "source": {
+        "document_type": "Notice",
+        "files": [
+          "811836_2098404_2098404.pdf",
+          "811836_2098419_2098419.pdf"
+        ],
+        "id": "811836",
+        "kind": "edis",
+        "source_kind": "commission_notice",
+        "title": "Commission Determination Not to Review an Initial Determination Terminating the Investigation as U.S. Patent No. 9,748,347"
+      },
+      "speaker": "party_argument",
+      "stage": "commission",
+      "status": "ok"
+    },
+    {
+      "action": "asserted",
+      "claims": [
+        1
+      ],
+      "claims_verbatim": "1",
+      "context": "88 FR 42756-77 (Jul. 3, 2023).",
+      "date": "2024-01-11",
+      "id": "71e05da00425",
+      "method": "haiku",
+      "model": "claude-haiku-4-5-20251001",
+      "notes": [],
+      "patent": "8,404,508",
+      "quote": "claim 1 of U.S. Patent No. 8,404,508",
+      "respondents": [
+        "ALL"
+      ],
+      "sentence": "The complaint alleges violations of section 337 of the Tariff Act of 1930, as amended, 19 U.S.C. 1337 based on the importation into the United States, the sale for importation, or sale within the United States after importation of certain semiconductor devices, and methods of manufacturing same and products containing the same by reason of the infringement of one or more of claims 1-3 of U.S. Patent No. 8,350,294; claim 1 of U.S. Patent No. 8,404,508; claims 1-3 of the \u2019347 patent; and claims 1-7 of U.S. Patent No. 10,312,335.",
+      "source": {
+        "document_type": "Notice",
+        "files": [
+          "811836_2098404_2098404.pdf",
+          "811836_2098419_2098419.pdf"
+        ],
+        "id": "811836",
+        "kind": "edis",
+        "source_kind": "commission_notice",
+        "title": "Commission Determination Not to Review an Initial Determination Terminating the Investigation as U.S. Patent No. 9,748,347"
+      },
+      "speaker": "party_argument",
+      "stage": "commission",
+      "status": "ok"
+    },
+    {
+      "action": "asserted",
+      "claims": [
+        1,
+        2,
+        3
+      ],
+      "claims_verbatim": "1-3",
+      "context": "88 FR 42756-77 (Jul. 3, 2023).",
+      "date": "2024-01-11",
+      "id": "20f7aa97b545",
+      "method": "haiku",
+      "model": "claude-haiku-4-5-20251001",
+      "notes": [],
+      "patent": "9,748,347",
+      "quote": "claims 1-3 of the '347 patent",
+      "respondents": [
+        "ALL"
+      ],
+      "sentence": "The complaint alleges violations of section 337 of the Tariff Act of 1930, as amended, 19 U.S.C. 1337 based on the importation into the United States, the sale for importation, or sale within the United States after importation of certain semiconductor devices, and methods of manufacturing same and products containing the same by reason of the infringement of one or more of claims 1-3 of U.S. Patent No. 8,350,294; claim 1 of U.S. Patent No. 8,404,508; claims 1-3 of the \u2019347 patent; and claims 1-7 of U.S. Patent No. 10,312,335.",
+      "source": {
+        "document_type": "Notice",
+        "files": [
+          "811836_2098404_2098404.pdf",
+          "811836_2098419_2098419.pdf"
+        ],
+        "id": "811836",
+        "kind": "edis",
+        "source_kind": "commission_notice",
+        "title": "Commission Determination Not to Review an Initial Determination Terminating the Investigation as U.S. Patent No. 9,748,347"
+      },
+      "speaker": "party_argument",
+      "stage": "commission",
+      "status": "ok"
+    },
+    {
+      "action": "asserted",
+      "claims": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7
+      ],
+      "claims_verbatim": "1-7",
+      "context": "88 FR 42756-77 (Jul. 3, 2023).",
+      "date": "2024-01-11",
+      "id": "8d44936d48f7",
+      "method": "haiku",
+      "model": "claude-haiku-4-5-20251001",
+      "notes": [],
+      "patent": "10,312,335",
+      "quote": "claims 1-7 of U.S. Patent No. 10,312,335",
+      "respondents": [
+        "ALL"
+      ],
+      "sentence": "The complaint alleges violations of section 337 of the Tariff Act of 1930, as amended, 19 U.S.C. 1337 based on the importation into the United States, the sale for importation, or sale within the United States after importation of certain semiconductor devices, and methods of manufacturing same and products containing the same by reason of the infringement of one or more of claims 1-3 of U.S. Patent No. 8,350,294; claim 1 of U.S. Patent No. 8,404,508; claims 1-3 of the \u2019347 patent; and claims 1-7 of U.S. Patent No. 10,312,335.",
+      "source": {
+        "document_type": "Notice",
+        "files": [
+          "811836_2098404_2098404.pdf",
+          "811836_2098419_2098419.pdf"
+        ],
+        "id": "811836",
+        "kind": "edis",
+        "source_kind": "commission_notice",
+        "title": "Commission Determination Not to Review an Initial Determination Terminating the Investigation as U.S. Patent No. 9,748,347"
+      },
+      "speaker": "party_argument",
+      "stage": "commission",
+      "status": "ok"
+    },
+    {
+      "action": "withdrawn",
+      "claims": [
+        1,
+        2,
+        3
+      ],
+      "claims_verbatim": "1-3",
+      "context": "The Commission has determined not to review the subject ID.",
+      "date": "2024-01-11",
+      "id": "fdc6b194641e",
+      "method": "haiku",
+      "model": "claude-haiku-4-5-20251001",
+      "notes": [],
+      "patent": "9,748,347",
+      "quote": "All of the asserted claims (i.e., claims 1-3) of the '347 patent are terminated from the investigation",
+      "respondents": [
+        "ALL"
+      ],
+      "sentence": "All of the asserted claims (i.e., claims 1-3) of the \u2019347 patent are terminated from the investigation.",
+      "source": {
+        "document_type": "Notice",
+        "files": [
+          "811836_2098404_2098404.pdf",
+          "811836_2098419_2098419.pdf"
+        ],
+        "id": "811836",
+        "kind": "edis",
+        "source_kind": "commission_notice",
+        "title": "Commission Determination Not to Review an Initial Determination Terminating the Investigation as U.S. Patent No. 9,748,347"
+      },
+      "speaker": "tribunal_ruling",
+      "stage": "hearing",
+      "status": "ok"
+    },
+    {
+      "action": "not_reviewed",
+      "claims": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7
+      ],
+      "claims_verbatim": "1\u20137",
+      "context": "The Commission has determined not to review the subject ID.",
+      "date": "2024-03-12",
+      "id": "1e272b3d6580",
+      "method": "haiku",
+      "model": "claude-haiku-4-5-20251001",
+      "notes": [],
+      "patent": "10,312,335",
+      "quote": "All of the asserted claims (i.e., claims 1\u20137) of the '335 patent are terminated from this investigation",
+      "respondents": [
+        "ALL"
+      ],
+      "sentence": "All of the asserted claims (i.e., claims 1\u20137) of the \u2019335 patent are terminated from this investigation.",
+      "source": {
+        "document_type": "Notice",
+        "files": [
+          "815954_2135106_2135106.pdf",
+          "815954_2135119_2135119.pdf"
+        ],
+        "id": "815954",
+        "kind": "edis",
+        "source_kind": "commission_notice",
+        "title": "Commission Determination Not to Review an Initial Determination Terminating the Investigation as to U.S. Patent No. 10,312,335"
+      },
+      "speaker": "tribunal_ruling",
+      "stage": "commission",
+      "status": "ok"
+    },
+    {
+      "action": "instituted",
+      "claims": [
+        1,
+        2,
+        3
+      ],
+      "claims_verbatim": "1 -3",
+      "context": "337-TA-1366 ORDER NO.",
+      "date": "2024-03-25",
+      "id": "20fbd6d7ccfa",
+      "method": "haiku",
+      "model": "claude-haiku-4-5-20251001",
+      "notes": [],
+      "patent": "8,350,294",
+      "quote": "infringement of\" claims 1 -3 of U.S. Patent No. 8,350,294",
+      "respondents": [
+        "ALL"
+      ],
+      "sentence": "17: REGARDING IPR INSTITUTIONS (March 25, 2024) The Commission instituted this investigation to determine, among other things, whether there is a violation of section 337 \u201c in the importation into the United States, the sale for importation, or the sale within the United States after importation of certain products . . . by reason of infringement of\u201d claims 1 -3 of U.S. Patent No. 8,350,294 (\u201cthe \u2019294 patent\u201d) and claim 1 of U.S. Patent No. 8,404,508 (\u201cthe \u2019508 patent\u201d).",
+      "source": {
+        "document_type": "Order",
+        "files": [
+          "816679_2144519_2144519.pdf",
+          "816679_2144551_2144551.pdf"
+        ],
+        "id": "816679",
+        "kind": "edis",
+        "source_kind": "alj_order",
+        "title": "Regarding IPR Institutions"
+      },
+      "speaker": "tribunal_recital",
+      "stage": "instituted",
+      "status": "ok"
+    },
+    {
+      "action": "instituted",
+      "claims": [
+        1
+      ],
+      "claims_verbatim": "1",
+      "context": "337-TA-1366 ORDER NO.",
+      "date": "2024-03-25",
+      "id": "0f0a34ecc5a1",
+      "method": "haiku",
+      "model": "claude-haiku-4-5-20251001",
+      "notes": [],
+      "patent": "8,404,508",
+      "quote": "claim 1 of U.S. Patent No. 8,404,508",
+      "respondents": [
+        "ALL"
+      ],
+      "sentence": "17: REGARDING IPR INSTITUTIONS (March 25, 2024) The Commission instituted this investigation to determine, among other things, whether there is a violation of section 337 \u201c in the importation into the United States, the sale for importation, or the sale within the United States after importation of certain products . . . by reason of infringement of\u201d claims 1 -3 of U.S. Patent No. 8,350,294 (\u201cthe \u2019294 patent\u201d) and claim 1 of U.S. Patent No. 8,404,508 (\u201cthe \u2019508 patent\u201d).",
+      "source": {
+        "document_type": "Order",
+        "files": [
+          "816679_2144519_2144519.pdf",
+          "816679_2144551_2144551.pdf"
+        ],
+        "id": "816679",
+        "kind": "edis",
+        "source_kind": "alj_order",
+        "title": "Regarding IPR Institutions"
+      },
+      "speaker": "tribunal_recital",
+      "stage": "instituted",
+      "status": "ok"
+    },
+    {
+      "action": "found_invalid",
+      "claims": [
+        1
+      ],
+      "claims_verbatim": "1",
+      "context": "Beach189 published July 6, 2006, and it is undisputed that Beach189 is prior art to the '294 patent under pre-AIA 35 U.S.C. s 102(b).",
+      "date": "2024-08-05",
+      "id": "91b944866775",
+      "method": "haiku",
+      "model": "claude-haiku-4-5-20251001",
+      "notes": [],
+      "patent": "8,350,294",
+      "quote": "I find Beach189 anticipates the invention in claim 1 of the '294 patent, rendering that claim invalid under 35 U.S.C. s 102",
+      "respondents": [
+        "ALL"
+      ],
+      "sentence": "As discussed in further detail below, I find Beach189 anticipates the invention in claim 1 of the '294 patent, rendering that claim invalid under 35 U.S.C. s 102.",
+      "source": {
+        "document_type": "ID/RD - Final on Violation",
+        "files": [
+          "828317_2214474_2214474.pdf",
+          "828317_2214479_2214479.pdf"
+        ],
+        "id": "828317",
+        "kind": "edis",
+        "source_kind": "initial_determination",
+        "title": "Initial Determination on Violation of Section 337 and Recommended Determination on Remedy and Bond"
+      },
+      "speaker": "tribunal_ruling",
+      "stage": "final_id",
+      "status": "ok"
+    },
+    {
+      "action": "found_invalid",
+      "claims": [
+        1
+      ],
+      "claims_verbatim": "1",
+      "context": "I find Beach189 discloses limitation [1f].",
+      "date": "2024-08-05",
+      "id": "4f1c9651d8aa",
+      "method": "haiku",
+      "model": "claude-haiku-4-5-20251001",
+      "notes": [],
+      "patent": "8,350,294",
+      "quote": "I determine Innoscience has shown by clear and convincing evidence that claim 1 of the 294 patent is invalid under 35 U.S.C. s 102 due to anticipation by Beach189",
+      "respondents": [
+        "ALL"
+      ],
+      "sentence": "Claim 1 Conclusion I determine Innoscience has shown by clear and convincing evidence that claim 1 of the 294 patent is invalid under 35 U.S.C. s 102 due to anticipation by Beach189.",
+      "source": {
+        "document_type": "ID/RD - Final on Violation",
+        "files": [
+          "828317_2214474_2214474.pdf",
+          "828317_2214479_2214479.pdf"
+        ],
+        "id": "828317",
+        "kind": "edis",
+        "source_kind": "initial_determination",
+        "title": "Initial Determination on Violation of Section 337 and Recommended Determination on Remedy and Bond"
+      },
+      "speaker": "tribunal_ruling",
+      "stage": "final_id",
+      "status": "ok"
+    },
+    {
+      "action": "found_not_infringed",
+      "claims": [
+        1
+      ],
+      "claims_verbatim": "1",
+      "context": "Wrigley Jr. Co., 683 F.3d at 1361.",
+      "date": "2024-08-05",
+      "id": "28fb58caa906",
+      "method": "haiku",
+      "model": "claude-haiku-4-5-20251001",
+      "notes": [],
+      "patent": "8,350,294",
+      "quote": "there is no violation of section 337 based on alleged infringement of claim 1",
+      "respondents": [
+        "ALL"
+      ],
+      "sentence": "Accordingly, there is no violation of section 337 based on alleged infringement of claim 1.",
+      "source": {
+        "document_type": "ID/RD - Final on Violation",
+        "files": [
+          "828317_2214474_2214474.pdf",
+          "828317_2214479_2214479.pdf"
+        ],
+        "id": "828317",
+        "kind": "edis",
+        "source_kind": "initial_determination",
+        "title": "Initial Determination on Violation of Section 337 and Recommended Determination on Remedy and Bond"
+      },
+      "speaker": "tribunal_ruling",
+      "stage": "final_id",
+      "status": "ok"
+    },
+    {
+      "action": "found_not_invalid",
+      "claims": [
+        2
+      ],
+      "claims_verbatim": "2",
+      "context": "For all of the reasons noted above, and after considering the objective indicia of non obviousness discussed later, I find no reason, absent hindsight, that a person of skill in the art would be motivated to combine the teachings of Beach189 and Kigami to arive at the invention of claim 2.",
+      "date": "2024-08-05",
+      "id": "82746f55e98c",
+      "method": "haiku",
+      "model": "claude-haiku-4-5-20251001",
+      "notes": [],
+      "patent": "8,350,294",
+      "quote": "I find Innoscience has failed to present an affirmative defense that claim 2 of the '294 patent is invalid under 35 U.S.C. s 103 as obvious",
+      "respondents": [
+        "ALL"
+      ],
+      "sentence": "Accordingly, I find Innoscience has failed to present an affirmative defense that claim 2 of the '294 patent is invalid under 35 U.S.C. s 103 as obvious.",
+      "source": {
+        "document_type": "ID/RD - Final on Violation",
+        "files": [
+          "828317_2214474_2214474.pdf",
+          "828317_2214479_2214479.pdf"
+        ],
+        "id": "828317",
+        "kind": "edis",
+        "source_kind": "initial_determination",
+        "title": "Initial Determination on Violation of Section 337 and Recommended Determination on Remedy and Bond"
+      },
+      "speaker": "tribunal_ruling",
+      "stage": "final_id",
+      "status": "ok"
+    },
+    {
+      "action": "found_not_invalid",
+      "claims": [
+        3
+      ],
+      "claims_verbatim": "3",
+      "context": "Accordingly, I find Innoscience has failed to present an affirmative defense that claim 2 of the '294 patent is invalid under 35 U.S.C. s 103 as obvious.",
+      "date": "2024-08-05",
+      "id": "379a66af4048",
+      "method": "haiku",
+      "model": "claude-haiku-4-5-20251001",
+      "notes": [],
+      "patent": "8,350,294",
+      "quote": "Innoscience also fails to prove claim 3 is invalid as obvious over the prior art",
+      "respondents": [
+        "ALL"
+      ],
+      "sentence": "Claim 3 Because Innoscience relies on the same combination of Beach189 and Kigami with respect to claim 3 of the '294 patent, Innoscience also fails to prove claim 3 is invalid as obvious over the prior art as there is not motivation to combine Beach189 and Kigami references as discussed in the analysis of claim 2.",
+      "source": {
+        "document_type": "ID/RD - Final on Violation",
+        "files": [
+          "828317_2214474_2214474.pdf",
+          "828317_2214479_2214479.pdf"
+        ],
+        "id": "828317",
+        "kind": "edis",
+        "source_kind": "initial_determination",
+        "title": "Initial Determination on Violation of Section 337 and Recommended Determination on Remedy and Bond"
+      },
+      "speaker": "tribunal_ruling",
+      "stage": "final_id",
+      "status": "ok"
+    },
+    {
+      "action": "found_not_invalid",
+      "claims": [
+        1
+      ],
+      "claims_verbatim": "1",
+      "context": "I do not find EPC's evidence of copying to have any material effect on the obviousness analysis.",
+      "date": "2024-08-05",
+      "id": "d8df6df99c03",
+      "method": "haiku",
+      "model": "claude-haiku-4-5-20251001",
+      "notes": [],
+      "patent": "8,404,508",
+      "quote": "I find Innoscience has failed to demonstrate claim 1 of the '508 patent is invalid under 35 U.S.C. s 103 as obvious in view of Hikita, Sheppard, and Beach624",
+      "respondents": [
+        "ALL"
+      ],
+      "sentence": "116 PUBLICVERSION Conclusion On the present record, after considering the prior and the objective indicia of non-obviousness, I find Innoscience has failed to demonstrate claim 1 of the '508 patent is invalid under 35 U.S.C. s 103 as obvious in view of Hikita, Sheppard, and Beach624.",
+      "source": {
+        "document_type": "ID/RD - Final on Violation",
+        "files": [
+          "828317_2214474_2214474.pdf",
+          "828317_2214479_2214479.pdf"
+        ],
+        "id": "828317",
+        "kind": "edis",
+        "source_kind": "initial_determination",
+        "title": "Initial Determination on Violation of Section 337 and Recommended Determination on Remedy and Bond"
+      },
+      "speaker": "tribunal_ruling",
+      "stage": "final_id",
+      "status": "ok"
+    },
+    {
+      "action": "technical_prong",
+      "claims": [
+        1
+      ],
+      "claims_verbatim": "1",
+      "context": "I find that the domestic industry products satisfy limitation [1f].",
+      "date": "2024-08-05",
+      "id": "d23cdbc14c5e",
+      "method": "haiku",
+      "model": "claude-haiku-4-5-20251001",
+      "notes": [],
+      "patent": "8,350,294",
+      "quote": "I find EPC has shown that the domestic industry products practice every limitation of claim 1 of the '294 patent",
+      "respondents": [
+        "ALL"
+      ],
+      "sentence": "Conclusion I find EPC has shown that the domestic industry products practice every limitation of claim 1 of the '294 patent.",
+      "source": {
+        "document_type": "ID/RD - Final on Violation",
+        "files": [
+          "828317_2214474_2214474.pdf",
+          "828317_2214479_2214479.pdf"
+        ],
+        "id": "828317",
+        "kind": "edis",
+        "source_kind": "initial_determination",
+        "title": "Initial Determination on Violation of Section 337 and Recommended Determination on Remedy and Bond"
+      },
+      "speaker": "tribunal_ruling",
+      "stage": "final_id",
+      "status": "ok"
+    },
+    {
+      "action": "technical_prong",
+      "claims": [
+        1
+      ],
+      "claims_verbatim": "1",
+      "context": "I find EPC has demonstrated the method to produce the domestic industry products meets limitation [1r] of the '508 patent.",
+      "date": "2024-08-05",
+      "id": "d4e3ab87c4b5",
+      "method": "haiku",
+      "model": "claude-haiku-4-5-20251001",
+      "notes": [],
+      "patent": "8,404,508",
+      "quote": "I find EPC has not shown that the domestic industry products are made by a method that practices every limitation of claim 1 of the '508 patent",
+      "respondents": [
+        "ALL"
+      ],
+      "sentence": "Conclusion I find EPC has not shown that the domestic industry products are made by a method that practices every limitation of claim 1 of the '508 patent because EPC's method lacks step [1e], \"depositing a gate contact layer on the doped GaN layer.\"",
+      "source": {
+        "document_type": "ID/RD - Final on Violation",
+        "files": [
+          "828317_2214474_2214474.pdf",
+          "828317_2214479_2214479.pdf"
+        ],
+        "id": "828317",
+        "kind": "edis",
+        "source_kind": "initial_determination",
+        "title": "Initial Determination on Violation of Section 337 and Recommended Determination on Remedy and Bond"
+      },
+      "speaker": "tribunal_ruling",
+      "stage": "final_id",
+      "status": "ok"
+    },
+    {
+      "action": "found_infringed",
+      "claims": [
+        1,
+        2,
+        3
+      ],
+      "claims_verbatim": "1, 2, and 3",
+      "context": "4.",
+      "date": "2024-08-05",
+      "id": "719aef2a9106",
+      "method": "haiku",
+      "model": "claude-haiku-4-5-20251001",
+      "notes": [],
+      "patent": "8,350,294",
+      "quote": "The Accused Products infringe claims 1, 2, and 3 of the '294 patent",
+      "respondents": [
+        "ALL"
+      ],
+      "sentence": "The Accused Products infringe claims 1, 2, and 3 of the '294 patent.",
+      "source": {
+        "document_type": "ID/RD - Final on Violation",
+        "files": [
+          "828317_2214474_2214474.pdf",
+          "828317_2214479_2214479.pdf"
+        ],
+        "id": "828317",
+        "kind": "edis",
+        "source_kind": "initial_determination",
+        "title": "Initial Determination on Violation of Section 337 and Recommended Determination on Remedy and Bond"
+      },
+      "speaker": "tribunal_ruling",
+      "stage": "final_id",
+      "status": "ok"
+    },
+    {
+      "action": "found_not_infringed",
+      "claims": [
+        1
+      ],
+      "claims_verbatim": "1",
+      "context": "5.",
+      "date": "2024-08-05",
+      "id": "da14387af20f",
+      "method": "haiku",
+      "model": "claude-haiku-4-5-20251001",
+      "notes": [],
+      "patent": "8,404,508",
+      "quote": "The Accused Products do not infringe claim 1 of the '508 patent",
+      "respondents": [
+        "ALL"
+      ],
+      "sentence": "The Accused Products do not infringe claim 1 of the '508 patent.",
+      "source": {
+        "document_type": "ID/RD - Final on Violation",
+        "files": [
+          "828317_2214474_2214474.pdf",
+          "828317_2214479_2214479.pdf"
+        ],
+        "id": "828317",
+        "kind": "edis",
+        "source_kind": "initial_determination",
+        "title": "Initial Determination on Violation of Section 337 and Recommended Determination on Remedy and Bond"
+      },
+      "speaker": "tribunal_ruling",
+      "stage": "final_id",
+      "status": "ok"
+    },
+    {
+      "action": "found_invalid",
+      "claims": [
+        1
+      ],
+      "claims_verbatim": "1",
+      "context": "6.",
+      "date": "2024-08-05",
+      "id": "fa6580a5fe84",
+      "method": "haiku",
+      "model": "claude-haiku-4-5-20251001",
+      "notes": [],
+      "patent": "8,350,294",
+      "quote": "Claim 1 of the '294 patent has been shown invalid as anticipated in view of the prior art under 35 U.S.C. s 102",
+      "respondents": [
+        "ALL"
+      ],
+      "sentence": "Claim 1 of the '294 patent has been shown invalid as anticipated in view of the prior art under 35 U.S.C. s 102.",
+      "source": {
+        "document_type": "ID/RD - Final on Violation",
+        "files": [
+          "828317_2214474_2214474.pdf",
+          "828317_2214479_2214479.pdf"
+        ],
+        "id": "828317",
+        "kind": "edis",
+        "source_kind": "initial_determination",
+        "title": "Initial Determination on Violation of Section 337 and Recommended Determination on Remedy and Bond"
+      },
+      "speaker": "tribunal_ruling",
+      "stage": "final_id",
+      "status": "ok"
+    },
+    {
+      "action": "found_not_invalid",
+      "claims": [
+        2,
+        3
+      ],
+      "claims_verbatim": "2 and 3",
+      "context": "7.",
+      "date": "2024-08-05",
+      "id": "d3933398a996",
+      "method": "haiku",
+      "model": "claude-haiku-4-5-20251001",
+      "notes": [],
+      "patent": "8,350,294",
+      "quote": "Claims 2 and 3 of the '294 patent have not been shown invalid as anticipated in view of the prior art under 35 U.S.C. s 102",
+      "respondents": [
+        "ALL"
+      ],
+      "sentence": "Claims 2 and 3 of the '294 patent have not been shown invalid as anticipated in view of the prior art under 35 U.S.C. s 102.",
+      "source": {
+        "document_type": "ID/RD - Final on Violation",
+        "files": [
+          "828317_2214474_2214474.pdf",
+          "828317_2214479_2214479.pdf"
+        ],
+        "id": "828317",
+        "kind": "edis",
+        "source_kind": "initial_determination",
+        "title": "Initial Determination on Violation of Section 337 and Recommended Determination on Remedy and Bond"
+      },
+      "speaker": "tribunal_ruling",
+      "stage": "final_id",
+      "status": "ok"
+    },
+    {
+      "action": "found_not_invalid",
+      "claims": [
+        2,
+        3
+      ],
+      "claims_verbatim": "2 and 3",
+      "context": "8.",
+      "date": "2024-08-05",
+      "id": "ff966a7b1bb8",
+      "method": "haiku",
+      "model": "claude-haiku-4-5-20251001",
+      "notes": [],
+      "patent": "8,350,294",
+      "quote": "Claims 2 and 3 of the '294 patent have not been shown invalid as obvious in view of the prior art under 35 U.S.C. s 103",
+      "respondents": [
+        "ALL"
+      ],
+      "sentence": "Claims 2 and 3 of the '294 patent have not been shown invalid as obvious in view of the prior art under 35 U.S.C. s 103.",
+      "source": {
+        "document_type": "ID/RD - Final on Violation",
+        "files": [
+          "828317_2214474_2214474.pdf",
+          "828317_2214479_2214479.pdf"
+        ],
+        "id": "828317",
+        "kind": "edis",
+        "source_kind": "initial_determination",
+        "title": "Initial Determination on Violation of Section 337 and Recommended Determination on Remedy and Bond"
+      },
+      "speaker": "tribunal_ruling",
+      "stage": "final_id",
+      "status": "ok"
+    },
+    {
+      "action": "found_not_invalid",
+      "claims": [
+        1
+      ],
+      "claims_verbatim": "1",
+      "context": "9.",
+      "date": "2024-08-05",
+      "id": "118d0bef6107",
+      "method": "haiku",
+      "model": "claude-haiku-4-5-20251001",
+      "notes": [],
+      "patent": "8,404,508",
+      "quote": "Claim 1 of the '508 patent has not been shown invalid as obvious in view of the prior art under 35 U.S.C. s 103",
+      "respondents": [
+        "ALL"
+      ],
+      "sentence": "Claim 1 of the '508 patent has not been shown invalid as obvious in view of the prior art under 35 U.S.C. s 103.",
+      "source": {
+        "document_type": "ID/RD - Final on Violation",
+        "files": [
+          "828317_2214474_2214474.pdf",
+          "828317_2214479_2214479.pdf"
+        ],
+        "id": "828317",
+        "kind": "edis",
+        "source_kind": "initial_determination",
+        "title": "Initial Determination on Violation of Section 337 and Recommended Determination on Remedy and Bond"
+      },
+      "speaker": "tribunal_ruling",
+      "stage": "final_id",
+      "status": "ok"
+    },
+    {
+      "action": "found_infringed",
+      "claims": [
+        2,
+        3
+      ],
+      "claims_verbatim": "2 and 3",
+      "context": "A violation of 19 U.S.C. s 1337 has been shown by the importation and sale of IX.",
+      "date": "2024-08-05",
+      "id": "10e92c01d3dc",
+      "method": "haiku",
+      "model": "claude-haiku-4-5-20251001",
+      "notes": [],
+      "patent": "8,350,294",
+      "quote": "infringe claims 2 and 3 of U.S. Patent No. 8,350,294",
+      "respondents": [
+        "ALL"
+      ],
+      "sentence": "INITIAL DETERMINATION For the reasons set forth above, it is my initial determination that a violation of section 337 of the Tariff Act of 1930, as amended, has occurred in the importation into the United States and 153 PUBLICVERSION the sale within the United States after importation of certain semiconductor devices and methods of manufacturing same and products containing the same that infringe claims 2 and 3 of U.S. Patent No. 8,350,294.",
+      "source": {
+        "document_type": "ID/RD - Final on Violation",
+        "files": [
+          "828317_2214474_2214474.pdf",
+          "828317_2214479_2214479.pdf"
+        ],
+        "id": "828317",
+        "kind": "edis",
+        "source_kind": "initial_determination",
+        "title": "Initial Determination on Violation of Section 337 and Recommended Determination on Remedy and Bond"
+      },
+      "speaker": "tribunal_ruling",
+      "stage": "final_id",
+      "status": "ok"
+    },
+    {
+      "action": "found_infringed",
+      "claims": [
+        2,
+        3
+      ],
+      "claims_verbatim": "2 and 3",
+      "context": "The CALJ held an evidentiary hearing from February 26, 2024 to March 1, 2024, and received post-hearing briefs thereafter.",
+      "date": "2024-09-05",
+      "id": "07825808279b",
+      "method": "haiku",
+      "model": "claude-haiku-4-5-20251001",
+      "notes": [],
+      "patent": "8,350,294",
+      "quote": "final ID finding a violation of section 337 as to claims 2 and 3 of the '294 patent",
+      "respondents": [
+        "ALL"
+      ],
+      "sentence": "On July 5, 2024, the CALJ issued the final ID finding a violation of section 337 as to claims 2 and 3 of the \u2019294 patent and no violation of section 337 as to claim 1 of the \u2019294 patent.",
+      "source": {
+        "document_type": "Notice",
+        "files": [
+          "831538_2235388_2235388.pdf",
+          "831538_2235615_2235615.pdf"
+        ],
+        "id": "831538",
+        "kind": "edis",
+        "source_kind": "commission_notice",
+        "title": "Commission Determination to Review a Final Initial Determination Finding a Violation of Section 337; Request for Written Submissions on the Issues under Review and on Remedy, the Public Interest, and Bonding"
+      },
+      "speaker": "tribunal_recital",
+      "stage": "commission",
+      "status": "ok"
+    },
+    {
+      "action": "found_not_infringed",
+      "claims": [
+        1
+      ],
+      "claims_verbatim": "1",
+      "context": "The CALJ held an evidentiary hearing from February 26, 2024 to March 1, 2024, and received post-hearing briefs thereafter.",
+      "date": "2024-09-05",
+      "id": "048cfd8741f9",
+      "method": "haiku",
+      "model": "claude-haiku-4-5-20251001",
+      "notes": [],
+      "patent": "8,350,294",
+      "quote": "no violation of section 337 as to claim 1 of the '294 patent",
+      "respondents": [
+        "ALL"
+      ],
+      "sentence": "On July 5, 2024, the CALJ issued the final ID finding a violation of section 337 as to claims 2 and 3 of the \u2019294 patent and no violation of section 337 as to claim 1 of the \u2019294 patent.",
+      "source": {
+        "document_type": "Notice",
+        "files": [
+          "831538_2235388_2235388.pdf",
+          "831538_2235615_2235615.pdf"
+        ],
+        "id": "831538",
+        "kind": "edis",
+        "source_kind": "commission_notice",
+        "title": "Commission Determination to Review a Final Initial Determination Finding a Violation of Section 337; Request for Written Submissions on the Issues under Review and on Remedy, the Public Interest, and Bonding"
+      },
+      "speaker": "tribunal_recital",
+      "stage": "commission",
+      "status": "ok"
+    },
+    {
+      "action": "found_not_infringed",
+      "claims": [
+        1
+      ],
+      "claims_verbatim": "1",
+      "context": "On July 5, 2024, the CALJ issued the final ID finding a violation of section 337 as to claims 2 and 3 of the \u2019294 patent and no violation of section 337 as to claim 1 of the \u2019294 patent.",
+      "date": "2024-09-05",
+      "id": "ebb1772e679f",
+      "method": "haiku",
+      "model": "claude-haiku-4-5-20251001",
+      "notes": [],
+      "patent": "8,404,508",
+      "quote": "found no violation of section 337 as to the only asserted claim of the '508 patent, claim 1",
+      "respondents": [
+        "ALL"
+      ],
+      "sentence": "The CALJ also found no violation of section 337 as to the only asserted claim of the \u2019508 patent, claim 1.",
+      "source": {
+        "document_type": "Notice",
+        "files": [
+          "831538_2235388_2235388.pdf",
+          "831538_2235615_2235615.pdf"
+        ],
+        "id": "831538",
+        "kind": "edis",
+        "source_kind": "commission_notice",
+        "title": "Commission Determination to Review a Final Initial Determination Finding a Violation of Section 337; Request for Written Submissions on the Issues under Review and on Remedy, the Public Interest, and Bonding"
+      },
+      "speaker": "tribunal_recital",
+      "stage": "commission",
+      "status": "ok"
+    },
+    {
+      "action": "found_invalid",
+      "claims": [
+        1
+      ],
+      "claims_verbatim": "1",
+      "context": "The ID found that EPC owns the patents and thus has standing to assert the patents in this investigation.",
+      "date": "2024-09-05",
+      "id": "7a5e73eb3f1a",
+      "method": "haiku",
+      "model": "claude-haiku-4-5-20251001",
+      "notes": [],
+      "patent": "8,350,294",
+      "quote": "unlike claims 2 and 3, claim 1 has been shown to be invalid for obviousness",
+      "respondents": [
+        "ALL"
+      ],
+      "sentence": "Id. The ID found that EPC successfully proved that the accused products infringe the asserted claims of the \u2019294 patent (claims 1-3) but that unlike claims 2 and 3, claim 1 has been shown to be invalid for obviousness.",
+      "source": {
+        "document_type": "Notice",
+        "files": [
+          "831538_2235388_2235388.pdf",
+          "831538_2235615_2235615.pdf"
+        ],
+        "id": "831538",
+        "kind": "edis",
+        "source_kind": "commission_notice",
+        "title": "Commission Determination to Review a Final Initial Determination Finding a Violation of Section 337; Request for Written Submissions on the Issues under Review and on Remedy, the Public Interest, and Bonding"
+      },
+      "speaker": "tribunal_recital",
+      "stage": "commission",
+      "status": "ok"
+    },
+    {
+      "action": "found_infringed",
+      "claims": [
+        2,
+        3
+      ],
+      "claims_verbatim": "2 and 3",
+      "context": "The CALJ held an evidentiary hearing from February 26, 2024 to March 1, 2024, and received post-hearing briefs thereafter.",
+      "date": "2024-11-05",
+      "id": "0ec38eae1f16",
+      "method": "haiku",
+      "model": "claude-haiku-4-5-20251001",
+      "notes": [],
+      "patent": "8,350,294",
+      "quote": "finding a violation of section 337 as to claims 2 and 3 of the '294 patent",
+      "respondents": [
+        "ALL"
+      ],
+      "sentence": "On July 5, 2024, the CALJ issued the final Initial Determination (\u201cID\u201d) finding a violation of section 337 as to claims 2 and 3 of the \u2019294 patent and no violation of section 337 as to claim 1 of the \u2019294 patent.",
+      "source": {
+        "document_type": "Notice",
+        "files": [
+          "836430_2267031_2267031.pdf",
+          "836430_2267039_2267039.pdf"
+        ],
+        "id": "836430",
+        "kind": "edis",
+        "source_kind": "commission_notice",
+        "title": "Commission Determination to Extend the Target Date for Completion of This Investigation"
+      },
+      "speaker": "tribunal_recital",
+      "stage": "commission",
+      "status": "ok"
+    },
+    {
+      "action": "found_not_infringed",
+      "claims": [
+        1
+      ],
+      "claims_verbatim": "1",
+      "context": "The CALJ held an evidentiary hearing from February 26, 2024 to March 1, 2024, and received post-hearing briefs thereafter.",
+      "date": "2024-11-05",
+      "id": "ee16fedfbd94",
+      "method": "haiku",
+      "model": "claude-haiku-4-5-20251001",
+      "notes": [],
+      "patent": "8,350,294",
+      "quote": "no violation of section 337 as to claim 1 of the '294 patent",
+      "respondents": [
+        "ALL"
+      ],
+      "sentence": "On July 5, 2024, the CALJ issued the final Initial Determination (\u201cID\u201d) finding a violation of section 337 as to claims 2 and 3 of the \u2019294 patent and no violation of section 337 as to claim 1 of the \u2019294 patent.",
+      "source": {
+        "document_type": "Notice",
+        "files": [
+          "836430_2267031_2267031.pdf",
+          "836430_2267039_2267039.pdf"
+        ],
+        "id": "836430",
+        "kind": "edis",
+        "source_kind": "commission_notice",
+        "title": "Commission Determination to Extend the Target Date for Completion of This Investigation"
+      },
+      "speaker": "tribunal_recital",
+      "stage": "commission",
+      "status": "ok"
+    },
+    {
+      "action": "found_not_infringed",
+      "claims": [
+        1
+      ],
+      "claims_verbatim": "1",
+      "context": "On July 5, 2024, the CALJ issued the final Initial Determination (\u201cID\u201d) finding a violation of section 337 as to claims 2 and 3 of the \u2019294 patent and no violation of section 337 as to claim 1 of the \u2019294 patent.",
+      "date": "2024-11-05",
+      "id": "e0601920c4d6",
+      "method": "haiku",
+      "model": "claude-haiku-4-5-20251001",
+      "notes": [],
+      "patent": "8,404,508",
+      "quote": "found no violation of section 337 as to the only asserted claim of the '508 patent, claim 1",
+      "respondents": [
+        "ALL"
+      ],
+      "sentence": "The CALJ also found no violation of section 337 as to the only asserted claim of the \u2019508 patent, claim 1.",
+      "source": {
+        "document_type": "Notice",
+        "files": [
+          "836430_2267031_2267031.pdf",
+          "836430_2267039_2267039.pdf"
+        ],
+        "id": "836430",
+        "kind": "edis",
+        "source_kind": "commission_notice",
+        "title": "Commission Determination to Extend the Target Date for Completion of This Investigation"
+      },
+      "speaker": "tribunal_recital",
+      "stage": "commission",
+      "status": "ok"
+    },
+    {
+      "action": "found_infringed",
+      "claims": [
+        2,
+        3
+      ],
+      "claims_verbatim": "2 and 3",
+      "context": "",
+      "date": "2024-11-07",
+      "id": "340f78272283",
+      "method": "haiku",
+      "model": "claude-haiku-4-5-20251001",
+      "notes": [],
+      "patent": "8,350,294",
+      "quote": "infringe one or more of claims 2 and 3 of U.S. Patent No. 8,350,294 (\"the '294 patent\") in violation of section 337",
+      "respondents": [
+        "Innoscience (Zhuhai) Technology Company, Ltd."
+      ],
+      "sentence": "UNITED STATES INTERNATIONAL TRADE COMMISSION Washington, D.C. In the Matter of CERTAIN SEMICONDUCTOR DEVICES AND METHODS OF MANUFACTURING SAME AND PRODUCTS CONTAINING THE SAME Investigation No. 337-TA-1366 CEASE AND DESIST ORDER IT IS HEREBY ORDERED THAT Innoscience (Zhuhai) Technology Company, Ltd. cease and desist from conducting any of the following activities in the United States: importing, selling, marketing, advertising, distributing, transferring (except for exportation), soliciting United States agents or distributors, and aiding or abetting other entities in the importation, sale for importation, sale after importation, transfer (except for exportation), or distribution of semiconductor devices and methods of manufacturing same and products containing the same that infringe one or more of claims 2 and 3 of U.S. Patent No. 8,350,294 (\u201cthe \u2019294 patent\u201d) in violation of section 337 of the Tariff Act of 1930, as amended (19 U.S.C. \u00a7 1337).",
+      "source": {
+        "document_type": "Order, Commission",
+        "files": [
+          "836708_2270114_2270114.pdf",
+          "836708_2270193_2270193.pdf"
+        ],
+        "id": "836708",
+        "kind": "edis",
+        "source_kind": "final_determination",
+        "title": "Cease and Desist Order for Innoscience (Zhuhai) Technology Company, Ltd."
+      },
+      "speaker": "tribunal_ruling",
+      "stage": "commission",
+      "status": "ok"
+    },
+    {
+      "action": "found_infringed",
+      "claims": [
+        2,
+        3
+      ],
+      "claims_verbatim": "2 and 3",
+      "context": "",
+      "date": "2024-11-07",
+      "id": "fd66ba125b19",
+      "method": "haiku",
+      "model": "claude-haiku-4-5-20251001",
+      "notes": [],
+      "patent": "8,350,294",
+      "quote": "infringe one or more of claims 2 and 3 of U.S. Patent No. 8,350,294 (\"the '294 patent\") in violation of section 337",
+      "respondents": [
+        "Innoscience America, Inc."
+      ],
+      "sentence": "UNITED STATES INTERNATIONAL TRADE COMMISSION Washington, D.C. In the Matter of CERTAIN SEMICONDUCTOR DEVICES AND METHODS OF MANUFACTURING SAME AND PRODUCTS CONTAINING THE SAME Investigation No. 337-TA-1366 CEASE AND DESIST ORDER IT IS HEREBY ORDERED THAT Innoscience America, Inc. cease and desist from conducting any of the following activities in the United States: importing, selling, marketing, advertising, distributing, transferring (except for exportation), soliciting United States agents or distributors, and aiding or abetting other entities in the importation, sale for importation, sale after importation, transfer (except for exportation), or distribution of semiconductor devices and methods of manufacturing same and products containing the same that infringe one or more of claims 2 and 3 of U.S. Patent No. 8,350,294 (\u201cthe \u2019294 patent\u201d) in violation of section 337 of the Tariff Act of 1930, as amended (19 U.S.C. \u00a7 1337).",
+      "source": {
+        "document_type": "Order, Commission",
+        "files": [
+          "836706_2270111_2270111.pdf",
+          "836706_2270190_2270190.pdf"
+        ],
+        "id": "836706",
+        "kind": "edis",
+        "source_kind": "final_determination",
+        "title": "Cease and Desist Order for Innoscience America, Inc."
+      },
+      "speaker": "tribunal_ruling",
+      "stage": "commission",
+      "status": "ok"
+    },
+    {
+      "action": "found_infringed",
+      "claims": [
+        2,
+        3
+      ],
+      "claims_verbatim": "2 and 3",
+      "context": "",
+      "date": "2024-11-07",
+      "id": "16963bb8512c",
+      "method": "haiku",
+      "model": "claude-haiku-4-5-20251001",
+      "notes": [],
+      "patent": "8,350,294",
+      "quote": "infringe one or more of claims 2 and 3 of U.S. Patent No. 8,350,294",
+      "respondents": [
+        "Innoscience (Zhuhai) Technology Company, Ltd.",
+        "Innoscience America, Inc."
+      ],
+      "sentence": "UNITED STATES INTERNATIONAL TRADE COMMISSION Washington, D.C. In the Matter of CERTAIN SEMICONDUCTOR DEVICES AND METHODS OF MANUFACTURING SAME AND PRODUCTS CONTAINING THE SAME Investigation No. 337-TA-1366 LIMITED EXCLUSION ORDER The United States International Trade Commission (\u201cCommission\u201d) has determined that there is a violation of section 337 of the Tariff Act of 1930, as amended, 19 U.S.C. \u00a7 1337, in the unlawful importation, sale for importation, or sale within the United States after importation by Innoscience (Zhuhai) Technology Company, Ltd. and Innoscience America, Inc. (collectively, \u201cInnoscience\u201d or \u201cRespondents\u201d) of certain semiconductor devices and methods of manufacturing same and products containing the same that infringe one or more of claims 2 and 3 of U.S. Patent No. 8,350,294 (\u201cthe \u2019294 patent\u201d).",
+      "source": {
+        "document_type": "Order, Commission",
+        "files": [
+          "836701_2270102_2270102.pdf",
+          "836701_2270171_2270171.pdf"
+        ],
+        "id": "836701",
+        "kind": "edis",
+        "source_kind": "final_determination",
+        "title": "Limited Exclusion Order for Innoscience (Zhuhai) Technology Company, Ltd. and Innoscience America, Inc."
+      },
+      "speaker": "tribunal_ruling",
+      "stage": "commission",
+      "status": "ok"
+    },
+    {
+      "action": "found_infringed",
+      "claims": [
+        2,
+        3
+      ],
+      "claims_verbatim": "2 and 3",
+      "context": "The CALJ held an evidentiary hearing from February 26, 2024 to March 1, 2024, and received post-hearing briefs thereafter.",
+      "date": "2024-11-07",
+      "id": "be79a3243714",
+      "method": "haiku",
+      "model": "claude-haiku-4-5-20251001",
+      "notes": [],
+      "patent": "8,350,294",
+      "quote": "finding a violation of section 337 as to claims 2 and 3 of the '294 patent",
+      "respondents": [
+        "ALL"
+      ],
+      "sentence": "On July 5, 2024, the CALJ issued the final ID finding a violation of section 337 as to claims 2 and 3 of the \u2019294 patent and no violation of section 337 as to claim 1 of the \u2019294 patent.",
+      "source": {
+        "document_type": "Notice",
+        "files": [
+          "836688_2269992_2269992.pdf",
+          "836688_2270131_2270131.pdf"
+        ],
+        "id": "836688",
+        "kind": "edis",
+        "source_kind": "final_determination",
+        "title": "Commission\u2019s Final Determination Finding a Violation of Section 337; Issuance of a Limited Exclusion Order and Cease and Desist Orders; Denial of Motion for Sanctions; Termination of the Investigation"
+      },
+      "speaker": "tribunal_recital",
+      "stage": "commission",
+      "status": "ok"
+    },
+    {
+      "action": "found_not_infringed",
+      "claims": [
+        1
+      ],
+      "claims_verbatim": "1",
+      "context": "The CALJ held an evidentiary hearing from February 26, 2024 to March 1, 2024, and received post-hearing briefs thereafter.",
+      "date": "2024-11-07",
+      "id": "87c63d2dddac",
+      "method": "haiku",
+      "model": "claude-haiku-4-5-20251001",
+      "notes": [],
+      "patent": "8,350,294",
+      "quote": "no violation of section 337 as to claim 1 of the '294 patent",
+      "respondents": [
+        "ALL"
+      ],
+      "sentence": "On July 5, 2024, the CALJ issued the final ID finding a violation of section 337 as to claims 2 and 3 of the \u2019294 patent and no violation of section 337 as to claim 1 of the \u2019294 patent.",
+      "source": {
+        "document_type": "Notice",
+        "files": [
+          "836688_2269992_2269992.pdf",
+          "836688_2270131_2270131.pdf"
+        ],
+        "id": "836688",
+        "kind": "edis",
+        "source_kind": "final_determination",
+        "title": "Commission\u2019s Final Determination Finding a Violation of Section 337; Issuance of a Limited Exclusion Order and Cease and Desist Orders; Denial of Motion for Sanctions; Termination of the Investigation"
+      },
+      "speaker": "tribunal_recital",
+      "stage": "commission",
+      "status": "ok"
+    },
+    {
+      "action": "found_not_infringed",
+      "claims": [
+        1
+      ],
+      "claims_verbatim": "1",
+      "context": "On July 5, 2024, the CALJ issued the final ID finding a violation of section 337 as to claims 2 and 3 of the \u2019294 patent and no violation of section 337 as to claim 1 of the \u2019294 patent.",
+      "date": "2024-11-07",
+      "id": "a958f656d52f",
+      "method": "haiku",
+      "model": "claude-haiku-4-5-20251001",
+      "notes": [],
+      "patent": "8,404,508",
+      "quote": "found no violation of section 337 as to the only asserted claim of the '508 patent, claim 1",
+      "respondents": [
+        "ALL"
+      ],
+      "sentence": "The CALJ also found no violation of section 337 as to the only asserted claim of the \u2019508 patent, claim 1.",
+      "source": {
+        "document_type": "Notice",
+        "files": [
+          "836688_2269992_2269992.pdf",
+          "836688_2270131_2270131.pdf"
+        ],
+        "id": "836688",
+        "kind": "edis",
+        "source_kind": "final_determination",
+        "title": "Commission\u2019s Final Determination Finding a Violation of Section 337; Issuance of a Limited Exclusion Order and Cease and Desist Orders; Denial of Motion for Sanctions; Termination of the Investigation"
+      },
+      "speaker": "tribunal_recital",
+      "stage": "commission",
+      "status": "ok"
+    },
+    {
+      "action": "found_infringed",
+      "claims": [
+        1,
+        2,
+        3
+      ],
+      "claims_verbatim": "1-3",
+      "context": "The ID found that EPC owns the patents and thus has standing to assert the patents in this investigation.",
+      "date": "2024-11-07",
+      "id": "0ac2150353ab",
+      "method": "haiku",
+      "model": "claude-haiku-4-5-20251001",
+      "notes": [],
+      "patent": "8,350,294",
+      "quote": "accused products infringe the asserted claims of the '294 patent (claims 1-3)",
+      "respondents": [
+        "ALL"
+      ],
+      "sentence": "Id. The ID found that EPC successfully proved that the accused products infringe the asserted claims of the \u2019294 patent (claims 1-3) but that unlike claims 2 and 3, claim 1 has been shown to be invalid for obviousness.",
+      "source": {
+        "document_type": "Notice",
+        "files": [
+          "836688_2269992_2269992.pdf",
+          "836688_2270131_2270131.pdf"
+        ],
+        "id": "836688",
+        "kind": "edis",
+        "source_kind": "final_determination",
+        "title": "Commission\u2019s Final Determination Finding a Violation of Section 337; Issuance of a Limited Exclusion Order and Cease and Desist Orders; Denial of Motion for Sanctions; Termination of the Investigation"
+      },
+      "speaker": "tribunal_recital",
+      "stage": "commission",
+      "status": "ok"
+    },
+    {
+      "action": "found_invalid",
+      "claims": [
+        1
+      ],
+      "claims_verbatim": "1",
+      "context": "The ID found that EPC owns the patents and thus has standing to assert the patents in this investigation.",
+      "date": "2024-11-07",
+      "id": "a9a7ed8fd79a",
+      "method": "haiku",
+      "model": "claude-haiku-4-5-20251001",
+      "notes": [],
+      "patent": "8,350,294",
+      "quote": "claim 1 has been shown to be invalid for obviousness",
+      "respondents": [
+        "ALL"
+      ],
+      "sentence": "Id. The ID found that EPC successfully proved that the accused products infringe the asserted claims of the \u2019294 patent (claims 1-3) but that unlike claims 2 and 3, claim 1 has been shown to be invalid for obviousness.",
+      "source": {
+        "document_type": "Notice",
+        "files": [
+          "836688_2269992_2269992.pdf",
+          "836688_2270131_2270131.pdf"
+        ],
+        "id": "836688",
+        "kind": "edis",
+        "source_kind": "final_determination",
+        "title": "Commission\u2019s Final Determination Finding a Violation of Section 337; Issuance of a Limited Exclusion Order and Cease and Desist Orders; Denial of Motion for Sanctions; Termination of the Investigation"
+      },
+      "speaker": "tribunal_recital",
+      "stage": "commission",
+      "status": "ok"
+    },
+    {
+      "action": "found_not_infringed",
+      "claims": [
+        1
+      ],
+      "claims_verbatim": "1",
+      "context": "ID at 30-51, 85-100.",
+      "date": "2024-11-07",
+      "id": "30e833b669c3",
+      "method": "haiku",
+      "model": "claude-haiku-4-5-20251001",
+      "notes": [],
+      "patent": "8,404,508",
+      "quote": "EPC failed to prove that the accused products infringe claim 1 of the '508 patent",
+      "respondents": [
+        "ALL"
+      ],
+      "sentence": "The ID found that EPC failed to prove that the accused products infringe claim 1 of the \u2019508 patent and that Respondents failed to prove the claim invalid for obviousness.",
+      "source": {
+        "document_type": "Notice",
+        "files": [
+          "836688_2269992_2269992.pdf",
+          "836688_2270131_2270131.pdf"
+        ],
+        "id": "836688",
+        "kind": "edis",
+        "source_kind": "final_determination",
+        "title": "Commission\u2019s Final Determination Finding a Violation of Section 337; Issuance of a Limited Exclusion Order and Cease and Desist Orders; Denial of Motion for Sanctions; Termination of the Investigation"
+      },
+      "speaker": "tribunal_recital",
+      "stage": "commission",
+      "status": "ok"
+    },
+    {
+      "action": "found_infringed",
+      "claims": [
+        2,
+        3
+      ],
+      "claims_verbatim": "2 and 3",
+      "context": "On September 30, 2023, the parties filed reply submissions.",
+      "date": "2024-11-07",
+      "id": "4dd0e8ac7e9f",
+      "method": "haiku",
+      "model": "claude-haiku-4-5-20251001",
+      "notes": [],
+      "patent": "8,350,294",
+      "quote": "Respondents violated section 337 by reason of importation and sale of articles that infringe asserted claims 2 and 3 of the '294 patent",
+      "respondents": [
+        "ALL"
+      ],
+      "sentence": "Upon review of the parties\u2019 submissions, the ID, the RD, evidence of record, and public interest filings, the Commission has determined that Respondents violated section 337 by reason of importation and sale of articles that infringe asserted claims 2 and 3 of the \u2019294 patent and to 4 issue remedial orders.",
+      "source": {
+        "document_type": "Notice",
+        "files": [
+          "836688_2269992_2269992.pdf",
+          "836688_2270131_2270131.pdf"
+        ],
+        "id": "836688",
+        "kind": "edis",
+        "source_kind": "final_determination",
+        "title": "Commission\u2019s Final Determination Finding a Violation of Section 337; Issuance of a Limited Exclusion Order and Cease and Desist Orders; Denial of Motion for Sanctions; Termination of the Investigation"
+      },
+      "speaker": "tribunal_ruling",
+      "stage": "commission",
+      "status": "ok"
+    },
+    {
+      "action": "found_not_invalid",
+      "claims": [
+        1
+      ],
+      "claims_verbatim": "1",
+      "context": "The Commission has determined to clarify the ID\u2019s statements on jurisdiction and standing as noted in the accompanying Commission Opinion.",
+      "date": "2024-11-07",
+      "id": "46ba5fa02eac",
+      "method": "haiku",
+      "model": "claude-haiku-4-5-20251001",
+      "notes": [
+        "the quote is not in the sentence"
+      ],
+      "patent": "8,350,294",
+      "quote": "affirms... the ID's findings on infringement, invalidity, and technical prong of domestic industry",
+      "respondents": [
+        "ALL"
+      ],
+      "sentence": "The Commission has determined to adopt OUII\u2019s construction of the claim term \u201ccompensated GaN layer\u201d recited in claim 1 of the \u2019294 patent as its plain and ordinary meaning and, as explained in the Commission opinion, finds that adoption of OUII\u2019s construction does not alter the ID\u2019s findings on infringement, invalidity, and technical prong of domestic industry, which the Commission affirms.",
+      "source": {
+        "document_type": "Notice",
+        "files": [
+          "836688_2269992_2269992.pdf",
+          "836688_2270131_2270131.pdf"
+        ],
+        "id": "836688",
+        "kind": "edis",
+        "source_kind": "final_determination",
+        "title": "Commission\u2019s Final Determination Finding a Violation of Section 337; Issuance of a Limited Exclusion Order and Cease and Desist Orders; Denial of Motion for Sanctions; Termination of the Investigation"
+      },
+      "speaker": "tribunal_ruling",
+      "stage": "commission",
+      "status": "needs_review"
+    },
+    {
+      "action": "asserted",
+      "claims": [
+        1,
+        2,
+        3
+      ],
+      "claims_verbatim": "1-3",
+      "context": "88 Fed. Reg. 42756\u201377 (Jul. 3, 2023).",
+      "date": "2024-12-05",
+      "id": "cbd6bc67ad74",
+      "method": "haiku",
+      "model": "claude-haiku-4-5-20251001",
+      "notes": [],
+      "patent": "8,350,294",
+      "quote": "infringement of one or more of claims 1-3 of U.S. Patent No. 8,350,294",
+      "respondents": [
+        "ALL"
+      ],
+      "sentence": "The complaint alleged violations of section 337, based on the importation into the United States, the sale for importation, or sale within the United States after importation of certain semiconductor devices, and methods of manufacturing same, and products containing the same by reason of infringement of one or more of claims 1-3 of U.S. Patent No. 8,350,294 (\u201cthe \u2019294 patent\u201d); claim 1 of U.S. Patent No. 8,404,508 (\u201cthe \u2019508 patent\u201d); claims 1-3 of U.S. Patent No. 9,748,347 (\u201cthe \u2019347 patent\u201d); and claims 1-7 of U.S. Patent No. PUBLIC VERSION 4 10,312,335 (\u201cthe \u2019335 patent\u201d).",
+      "source": {
+        "document_type": "Opinion, Commission",
+        "files": [
+          "838650_2282556_2282556.pdf",
+          "838650_2282661_2282661.pdf"
+        ],
+        "id": "838650",
+        "kind": "edis",
+        "source_kind": "commission_opinion",
+        "title": "Commission Opinion"
+      },
+      "speaker": "tribunal_recital",
+      "stage": "commission",
+      "status": "ok"
+    },
+    {
+      "action": "asserted",
+      "claims": [
+        1
+      ],
+      "claims_verbatim": "1",
+      "context": "88 Fed. Reg. 42756\u201377 (Jul. 3, 2023).",
+      "date": "2024-12-05",
+      "id": "cd32116175b1",
+      "method": "haiku",
+      "model": "claude-haiku-4-5-20251001",
+      "notes": [],
+      "patent": "8,404,508",
+      "quote": "claim 1 of U.S. Patent No. 8,404,508",
+      "respondents": [
+        "ALL"
+      ],
+      "sentence": "The complaint alleged violations of section 337, based on the importation into the United States, the sale for importation, or sale within the United States after importation of certain semiconductor devices, and methods of manufacturing same, and products containing the same by reason of infringement of one or more of claims 1-3 of U.S. Patent No. 8,350,294 (\u201cthe \u2019294 patent\u201d); claim 1 of U.S. Patent No. 8,404,508 (\u201cthe \u2019508 patent\u201d); claims 1-3 of U.S. Patent No. 9,748,347 (\u201cthe \u2019347 patent\u201d); and claims 1-7 of U.S. Patent No. PUBLIC VERSION 4 10,312,335 (\u201cthe \u2019335 patent\u201d).",
+      "source": {
+        "document_type": "Opinion, Commission",
+        "files": [
+          "838650_2282556_2282556.pdf",
+          "838650_2282661_2282661.pdf"
+        ],
+        "id": "838650",
+        "kind": "edis",
+        "source_kind": "commission_opinion",
+        "title": "Commission Opinion"
+      },
+      "speaker": "tribunal_recital",
+      "stage": "commission",
+      "status": "ok"
+    },
+    {
+      "action": "asserted",
+      "claims": [
+        1,
+        2,
+        3
+      ],
+      "claims_verbatim": "1-3",
+      "context": "88 Fed. Reg. 42756\u201377 (Jul. 3, 2023).",
+      "date": "2024-12-05",
+      "id": "f786c2ebb581",
+      "method": "haiku",
+      "model": "claude-haiku-4-5-20251001",
+      "notes": [],
+      "patent": "9,748,347",
+      "quote": "claims 1-3 of U.S. Patent No. 9,748,347",
+      "respondents": [
+        "ALL"
+      ],
+      "sentence": "The complaint alleged violations of section 337, based on the importation into the United States, the sale for importation, or sale within the United States after importation of certain semiconductor devices, and methods of manufacturing same, and products containing the same by reason of infringement of one or more of claims 1-3 of U.S. Patent No. 8,350,294 (\u201cthe \u2019294 patent\u201d); claim 1 of U.S. Patent No. 8,404,508 (\u201cthe \u2019508 patent\u201d); claims 1-3 of U.S. Patent No. 9,748,347 (\u201cthe \u2019347 patent\u201d); and claims 1-7 of U.S. Patent No. PUBLIC VERSION 4 10,312,335 (\u201cthe \u2019335 patent\u201d).",
+      "source": {
+        "document_type": "Opinion, Commission",
+        "files": [
+          "838650_2282556_2282556.pdf",
+          "838650_2282661_2282661.pdf"
+        ],
+        "id": "838650",
+        "kind": "edis",
+        "source_kind": "commission_opinion",
+        "title": "Commission Opinion"
+      },
+      "speaker": "tribunal_recital",
+      "stage": "commission",
+      "status": "ok"
+    },
+    {
+      "action": "asserted",
+      "claims": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7
+      ],
+      "claims_verbatim": "1-7",
+      "context": "88 Fed. Reg. 42756\u201377 (Jul. 3, 2023).",
+      "date": "2024-12-05",
+      "id": "d2e52700c85a",
+      "method": "haiku",
+      "model": "claude-haiku-4-5-20251001",
+      "notes": [
+        "the quote is not in the sentence"
+      ],
+      "patent": "10,312,335",
+      "quote": "claims 1-7 of U.S. Patent No. 10,312,335",
+      "respondents": [
+        "ALL"
+      ],
+      "sentence": "The complaint alleged violations of section 337, based on the importation into the United States, the sale for importation, or sale within the United States after importation of certain semiconductor devices, and methods of manufacturing same, and products containing the same by reason of infringement of one or more of claims 1-3 of U.S. Patent No. 8,350,294 (\u201cthe \u2019294 patent\u201d); claim 1 of U.S. Patent No. 8,404,508 (\u201cthe \u2019508 patent\u201d); claims 1-3 of U.S. Patent No. 9,748,347 (\u201cthe \u2019347 patent\u201d); and claims 1-7 of U.S. Patent No. PUBLIC VERSION 4 10,312,335 (\u201cthe \u2019335 patent\u201d).",
+      "source": {
+        "document_type": "Opinion, Commission",
+        "files": [
+          "838650_2282556_2282556.pdf",
+          "838650_2282661_2282661.pdf"
+        ],
+        "id": "838650",
+        "kind": "edis",
+        "source_kind": "commission_opinion",
+        "title": "Commission Opinion"
+      },
+      "speaker": "tribunal_recital",
+      "stage": "commission",
+      "status": "needs_review"
+    },
+    {
+      "action": "found_infringed",
+      "claims": [
+        2,
+        3
+      ],
+      "claims_verbatim": "2 and 3",
+      "context": "Id. On October 13, 2023, the CALJ held a Markman hearing.1 The CALJ held an evidentiary hearing from February 26, 2024 to March 1, 2024, and received post-hearing briefs thereafter.",
+      "date": "2024-12-05",
+      "id": "0edc0dd9664a",
+      "method": "haiku",
+      "model": "claude-haiku-4-5-20251001",
+      "notes": [],
+      "patent": "8,350,294",
+      "quote": "issued the final ID finding a violation of section 337 as to claims 2 and 3 of the '294 patent",
+      "respondents": [
+        "ALL"
+      ],
+      "sentence": "On July 5, 2024, the CALJ issued the final ID finding a violation of section 337 as to claims 2 and 3 of the \u2019294 patent but no violation as to claim 1 of the \u2019294 patent and claim 1 of the \u2019508 patent.",
+      "source": {
+        "document_type": "Opinion, Commission",
+        "files": [
+          "838650_2282556_2282556.pdf",
+          "838650_2282661_2282661.pdf"
+        ],
+        "id": "838650",
+        "kind": "edis",
+        "source_kind": "commission_opinion",
+        "title": "Commission Opinion"
+      },
+      "speaker": "tribunal_recital",
+      "stage": "commission",
+      "status": "ok"
+    },
+    {
+      "action": "found_not_infringed",
+      "claims": [
+        1
+      ],
+      "claims_verbatim": "1",
+      "context": "Id. On October 13, 2023, the CALJ held a Markman hearing.1 The CALJ held an evidentiary hearing from February 26, 2024 to March 1, 2024, and received post-hearing briefs thereafter.",
+      "date": "2024-12-05",
+      "id": "999c107647a2",
+      "method": "haiku",
+      "model": "claude-haiku-4-5-20251001",
+      "notes": [],
+      "patent": "8,350,294",
+      "quote": "no violation as to claim 1 of the '294 patent",
+      "respondents": [
+        "ALL"
+      ],
+      "sentence": "On July 5, 2024, the CALJ issued the final ID finding a violation of section 337 as to claims 2 and 3 of the \u2019294 patent but no violation as to claim 1 of the \u2019294 patent and claim 1 of the \u2019508 patent.",
+      "source": {
+        "document_type": "Opinion, Commission",
+        "files": [
+          "838650_2282556_2282556.pdf",
+          "838650_2282661_2282661.pdf"
+        ],
+        "id": "838650",
+        "kind": "edis",
+        "source_kind": "commission_opinion",
+        "title": "Commission Opinion"
+      },
+      "speaker": "tribunal_recital",
+      "stage": "commission",
+      "status": "ok"
+    },
+    {
+      "action": "found_not_infringed",
+      "claims": [
+        1
+      ],
+      "claims_verbatim": "1",
+      "context": "Id. On October 13, 2023, the CALJ held a Markman hearing.1 The CALJ held an evidentiary hearing from February 26, 2024 to March 1, 2024, and received post-hearing briefs thereafter.",
+      "date": "2024-12-05",
+      "id": "0779e23bb156",
+      "method": "haiku",
+      "model": "claude-haiku-4-5-20251001",
+      "notes": [],
+      "patent": "8,404,508",
+      "quote": "no violation as to claim 1 of the '294 patent and claim 1 of the '508 patent",
+      "respondents": [
+        "ALL"
+      ],
+      "sentence": "On July 5, 2024, the CALJ issued the final ID finding a violation of section 337 as to claims 2 and 3 of the \u2019294 patent but no violation as to claim 1 of the \u2019294 patent and claim 1 of the \u2019508 patent.",
+      "source": {
+        "document_type": "Opinion, Commission",
+        "files": [
+          "838650_2282556_2282556.pdf",
+          "838650_2282661_2282661.pdf"
+        ],
+        "id": "838650",
+        "kind": "edis",
+        "source_kind": "commission_opinion",
+        "title": "Commission Opinion"
+      },
+      "speaker": "tribunal_recital",
+      "stage": "commission",
+      "status": "ok"
+    },
+    {
+      "action": "found_infringed",
+      "claims": [
+        1,
+        2,
+        3
+      ],
+      "claims_verbatim": "1-3",
+      "context": "Id. at 11-12.",
+      "date": "2024-12-05",
+      "id": "8cba2434f9d3",
+      "method": "haiku",
+      "model": "claude-haiku-4-5-20251001",
+      "notes": [],
+      "patent": "8,350,294",
+      "quote": "EPC successfully proved that the accused products infringe the asserted claims of the '294 patent (claims 1-3)",
+      "respondents": [
+        "ALL"
+      ],
+      "sentence": "The ID further found that EPC successfully proved that the accused products infringe the asserted claims of the \u2019294 patent (claims 1-3) but that unlike claims 2 and 3, claim 1 has been shown to be invalid for anticipation.",
+      "source": {
+        "document_type": "Opinion, Commission",
+        "files": [
+          "838650_2282556_2282556.pdf",
+          "838650_2282661_2282661.pdf"
+        ],
+        "id": "838650",
+        "kind": "edis",
+        "source_kind": "commission_opinion",
+        "title": "Commission Opinion"
+      },
+      "speaker": "tribunal_recital",
+      "stage": "commission",
+      "status": "ok"
+    },
+    {
+      "action": "found_invalid",
+      "claims": [
+        1
+      ],
+      "claims_verbatim": "1",
+      "context": "Id. at 11-12.",
+      "date": "2024-12-05",
+      "id": "02db1c55c064",
+      "method": "haiku",
+      "model": "claude-haiku-4-5-20251001",
+      "notes": [],
+      "patent": "8,350,294",
+      "quote": "claim 1 has been shown to be invalid for anticipation",
+      "respondents": [
+        "ALL"
+      ],
+      "sentence": "The ID further found that EPC successfully proved that the accused products infringe the asserted claims of the \u2019294 patent (claims 1-3) but that unlike claims 2 and 3, claim 1 has been shown to be invalid for anticipation.",
+      "source": {
+        "document_type": "Opinion, Commission",
+        "files": [
+          "838650_2282556_2282556.pdf",
+          "838650_2282661_2282661.pdf"
+        ],
+        "id": "838650",
+        "kind": "edis",
+        "source_kind": "commission_opinion",
+        "title": "Commission Opinion"
+      },
+      "speaker": "tribunal_recital",
+      "stage": "commission",
+      "status": "ok"
+    },
+    {
+      "action": "found_not_infringed",
+      "claims": [
+        1
+      ],
+      "claims_verbatim": "1",
+      "context": "ID at 30-51, 85-100.",
+      "date": "2024-12-05",
+      "id": "04691e511e10",
+      "method": "haiku",
+      "model": "claude-haiku-4-5-20251001",
+      "notes": [],
+      "patent": "8,404,508",
+      "quote": "EPC failed to prove that the accused products infringe claim 1 of the '508 patent",
+      "respondents": [
+        "ALL"
+      ],
+      "sentence": "The ID found that EPC failed to prove that the accused products infringe claim 1 of the \u2019508 patent and that Respondents failed to prove the claim invalid for obviousness.",
+      "source": {
+        "document_type": "Opinion, Commission",
+        "files": [
+          "838650_2282556_2282556.pdf",
+          "838650_2282661_2282661.pdf"
+        ],
+        "id": "838650",
+        "kind": "edis",
+        "source_kind": "commission_opinion",
+        "title": "Commission Opinion"
+      },
+      "speaker": "tribunal_recital",
+      "stage": "commission",
+      "status": "ok"
+    },
+    {
+      "action": "found_not_invalid",
+      "claims": [
+        1
+      ],
+      "claims_verbatim": "1",
+      "context": "The Commission has determined to clarify the ID\u2019s statement on jurisdiction as noted herein.",
+      "date": "2024-12-05",
+      "id": "aba1a7a4c9b6",
+      "method": "haiku",
+      "model": "claude-haiku-4-5-20251001",
+      "notes": [],
+      "patent": "8,350,294",
+      "quote": "adoption of OUII's construction does not alter the ID's findings on infringement, invalidity, and technical prong of domestic industry",
+      "respondents": [
+        "ALL"
+      ],
+      "sentence": "Regarding the \u2019294 patent, the Commission has determined to adopt OUII\u2019s construction of the claim term \u201ccompensated GaN layer\u201d recited in claim 1 of the \u2019294 patent as its plain and ordinary meaning and find that adoption of OUII\u2019s construction does not alter the ID\u2019s findings on infringement, invalidity, and technical prong of domestic industry.",
+      "source": {
+        "document_type": "Opinion, Commission",
+        "files": [
+          "838650_2282556_2282556.pdf",
+          "838650_2282661_2282661.pdf"
+        ],
+        "id": "838650",
+        "kind": "edis",
+        "source_kind": "commission_opinion",
+        "title": "Commission Opinion"
+      },
+      "speaker": "tribunal_ruling",
+      "stage": "commission",
+      "status": "ok"
+    },
+    {
+      "action": "found_infringed",
+      "claims": [
+        2,
+        3
+      ],
+      "claims_verbatim": "2 and 3",
+      "context": "The Commission has determined to deny Respondents\u2019 motion for a sanction of non-enforcement of the \u2019294 patent for an alleged breach of the APO and notes that Respondents\u2019 allegation of a breach of the APO has been referred to the Commission\u2019s Office of the Secretary for further proceedings according to the Commission\u2019s normal procedures.",
+      "date": "2024-12-05",
+      "id": "f003ed6fc64f",
+      "method": "haiku",
+      "model": "claude-haiku-4-5-20251001",
+      "notes": [],
+      "patent": "8,350,294",
+      "quote": "issue a limited exclusion order prohibiting the unlicensed importation of semiconductor devices and methods of manufacturing same and products containing the same that infringe one or more of claims 2 and 3 the '294",
+      "respondents": [
+        "ALL"
+      ],
+      "sentence": "For remedy, the Commission has determined to: (1) issue a limited exclusion order prohibiting the unlicensed importation of semiconductor devices and methods of manufacturing same and products containing the same that infringe one or more of claims 2 and 3 the \u2019294 that are manufactured abroad by or on behalf of, or imported by or on behalf of, Respondents or any of their affiliated companies, parents, subsidiaries, or other related business entities, or their successors or assigns, i.e., such articles are excluded from entry for consumption into the United States, entry for consumption from a foreign trade zone, or withdrawal from a warehouse for PUBLIC VERSION 55 consumption, for the remaining terms of the patents, except under license of, or with the permission of, the patent owner or as provided by law and; (2) issue cease and desist orders directing that Respondents cease and desist from conducting any of the following activities in the United States: importing, selling, offering for sale, marketing, advertising, distributing, transferring (except for exportation), soliciting United States agents or distributors, and aiding or abetting other entities in the importation, sale for importation, sale after importation, transfer (except for exportation), or distribution of semiconductor devices and methods of manufacturing same and products containing the same that infringe one or more of claims 2 and 3 of the \u2019294; (3) find that the public interest factors do not preclude the issuance of the proposed remedial orders; and (4) set a bond in the amount of five percent (5%) of entered value for infringing products imported during the period of Presidential review.",
+      "source": {
+        "document_type": "Opinion, Commission",
+        "files": [
+          "838650_2282556_2282556.pdf",
+          "838650_2282661_2282661.pdf"
+        ],
+        "id": "838650",
+        "kind": "edis",
+        "source_kind": "commission_opinion",
+        "title": "Commission Opinion"
+      },
+      "speaker": "tribunal_ruling",
+      "stage": "commission",
+      "status": "ok"
+    },
+    {
+      "action": "found_infringed",
+      "claims": [
+        2,
+        3
+      ],
+      "claims_verbatim": "2 and 3",
+      "context": "Order No. 9 (Dec. 13, 2023), unreviewed by Comm\u2019n Notice (Jan. 11, 2024); Order No. 12 (Feb. 12, 2024), unreviewed by Comm\u2019n Notice (Mar. 12, 2024).",
+      "date": "2025-05-12",
+      "id": "f8259652480e",
+      "method": "haiku",
+      "model": "claude-haiku-4-5-20251001",
+      "notes": [],
+      "patent": "8,350,294",
+      "quote": "finding a violation of section 337 as to claims 2 and 3 of the '294 patent",
+      "respondents": [
+        "ALL"
+      ],
+      "sentence": "On July 5, 2024, the Chief Administrative Law Judge (\u201cCALJ\u201d) issued the final Initial Determination (\u201cID\u201d) finding a violation of section 337 as to claims 2 and 3 of the \u2019294 patent and no violation of section 337 as to claim 1 of the \u2019294 patent.",
+      "source": {
+        "document_type": "Notice",
+        "files": [
+          "850893_2378467_2378467.pdf"
+        ],
+        "id": "850893",
+        "kind": "edis",
+        "source_kind": "commission_notice",
+        "title": "Commission Determination Denying Respondents\u2019 Petition to Modify or Temporarily Rescind Remedial Orders"
+      },
+      "speaker": "tribunal_recital",
+      "stage": "commission",
+      "status": "ok"
+    },
+    {
+      "action": "found_not_infringed",
+      "claims": [
+        1
+      ],
+      "claims_verbatim": "1",
+      "context": "Order No. 9 (Dec. 13, 2023), unreviewed by Comm\u2019n Notice (Jan. 11, 2024); Order No. 12 (Feb. 12, 2024), unreviewed by Comm\u2019n Notice (Mar. 12, 2024).",
+      "date": "2025-05-12",
+      "id": "655d3f17d0c4",
+      "method": "haiku",
+      "model": "claude-haiku-4-5-20251001",
+      "notes": [],
+      "patent": "8,350,294",
+      "quote": "no violation of section 337 as to claim 1 of the '294 patent",
+      "respondents": [
+        "ALL"
+      ],
+      "sentence": "On July 5, 2024, the Chief Administrative Law Judge (\u201cCALJ\u201d) issued the final Initial Determination (\u201cID\u201d) finding a violation of section 337 as to claims 2 and 3 of the \u2019294 patent and no violation of section 337 as to claim 1 of the \u2019294 patent.",
+      "source": {
+        "document_type": "Notice",
+        "files": [
+          "850893_2378467_2378467.pdf"
+        ],
+        "id": "850893",
+        "kind": "edis",
+        "source_kind": "commission_notice",
+        "title": "Commission Determination Denying Respondents\u2019 Petition to Modify or Temporarily Rescind Remedial Orders"
+      },
+      "speaker": "tribunal_recital",
+      "stage": "commission",
+      "status": "ok"
+    },
+    {
+      "action": "found_not_infringed",
+      "claims": [
+        1
+      ],
+      "claims_verbatim": "1",
+      "context": "On July 5, 2024, the Chief Administrative Law Judge (\u201cCALJ\u201d) issued the final Initial Determination (\u201cID\u201d) finding a violation of section 337 as to claims 2 and 3 of the \u2019294 patent and no violation of section 337 as to claim 1 of the \u2019294 patent.",
+      "date": "2025-05-12",
+      "id": "071c7a57d830",
+      "method": "haiku",
+      "model": "claude-haiku-4-5-20251001",
+      "notes": [],
+      "patent": "8,404,508",
+      "quote": "found no violation of section 337 as to the only asserted claim of the '508 patent, claim 1",
+      "respondents": [
+        "ALL"
+      ],
+      "sentence": "The CALJ also found no violation of section 337 as to the only asserted claim of the \u2019508 patent, claim 1.",
+      "source": {
+        "document_type": "Notice",
+        "files": [
+          "850893_2378467_2378467.pdf"
+        ],
+        "id": "850893",
+        "kind": "edis",
+        "source_kind": "commission_notice",
+        "title": "Commission Determination Denying Respondents\u2019 Petition to Modify or Temporarily Rescind Remedial Orders"
+      },
+      "speaker": "tribunal_recital",
+      "stage": "commission",
+      "status": "ok"
+    },
+    {
+      "action": "found_infringed",
+      "claims": [
+        2,
+        3
+      ],
+      "claims_verbatim": "2 and 3",
+      "context": "89 FR 73719-21 (Sept. 11, 2024).",
+      "date": "2025-05-12",
+      "id": "9938d7f215c8",
+      "method": "haiku",
+      "model": "claude-haiku-4-5-20251001",
+      "notes": [],
+      "patent": "8,350,294",
+      "quote": "the Commission affirmed the CALJ's finding of a violation of section 337 as to claims 2 and 3 of the '294 patent",
+      "respondents": [
+        "ALL"
+      ],
+      "sentence": "On review, the Commission affirmed the CALJ\u2019s finding of a violation of section 337 as to claims 2 and 3 of the \u2019294 patent and issued a limited exclusion order and cease and desist orders against Innoscience.",
+      "source": {
+        "document_type": "Notice",
+        "files": [
+          "850893_2378467_2378467.pdf"
+        ],
+        "id": "850893",
+        "kind": "edis",
+        "source_kind": "commission_notice",
+        "title": "Commission Determination Denying Respondents\u2019 Petition to Modify or Temporarily Rescind Remedial Orders"
+      },
+      "speaker": "tribunal_ruling",
+      "stage": "commission",
+      "status": "ok"
+    },
+    {
+      "action": "violation",
+      "case_wide": true,
+      "claims": [],
+      "claims_verbatim": "",
+      "date": "2024-12-05",
+      "id": "c84f3da9f870",
+      "method": "derived",
+      "notes": [
+        "applies to every claim still in the case after the Final ID"
+      ],
+      "patent": "ALL",
+      "quote": "Commission finds a violation of section 337",
+      "respondents": [
+        "ALL"
+      ],
+      "sentence": "The CALJ recommended that, in the event the Commission finds a violation of section 337, \u201cthe parties agree that a limited exclusion order (\u2018LEO\u2019) is appropriate.\u201d",
+      "source": {
+        "document_type": "Opinion, Commission",
+        "files": [
+          "838650_2282556_2282556.pdf",
+          "838650_2282661_2282661.pdf"
+        ],
+        "id": "838650",
+        "kind": "edis",
+        "source_kind": "commission_opinion",
+        "title": "Commission Opinion"
+      },
+      "speaker": "tribunal_ruling",
+      "stage": "commission",
+      "status": "ok"
     }
   ],
+  "extraction": {
+    "candidates": 0,
+    "mention_only": 0,
+    "needs_review": 0
+  },
   "ids_hash": "6f5f17c7aef6a8137a5e9e86b4761072aa5e88cd638772715b034d62be33eb70",
   "investigation_number": "337-TA-1366",
   "key": "337-1366",
   "last_attempt": {
-    "at": "2026-09-25T00:22:01.982731+00:00",
+    "at": "2026-09-25T02:19:28.030877+00:00",
     "error": null
   },
+  "model_calls": 0,
   "outcome": "ok",
   "patents": [
     "10,312,335",
@@ -136,9 +2979,55 @@
     "8,404,508",
     "9,748,347"
   ],
+  "pending_sources": [],
   "phase": "Violation",
-  "pipeline_version": "1.0",
+  "pipeline_version": "2.0",
   "processed_sources": [
+    "797332",
+    "797350",
+    "797381",
+    "798596",
+    "799499",
+    "799579",
+    "799720",
+    "799721",
+    "799722",
+    "799723",
+    "800533",
+    "800962",
+    "801893",
+    "805642",
+    "810281",
+    "811465",
+    "811836",
+    "813587",
+    "813901",
+    "814004",
+    "815497",
+    "815498",
+    "815639",
+    "815954",
+    "816679",
+    "819243",
+    "819505",
+    "822721",
+    "824517",
+    "824825",
+    "825001",
+    "825227",
+    "825519",
+    "825927",
+    "827146",
+    "828263",
+    "828317",
+    "831538",
+    "836430",
+    "836688",
+    "836701",
+    "836706",
+    "836708",
+    "838650",
+    "850893",
     "FR:2023-14091"
   ],
   "respondents": [
@@ -388,20 +3277,6 @@
       "title": "Commission Opinion"
     },
     {
-      "date": "2024-11-14",
-      "document_type": "Notice",
-      "id": "837747",
-      "kind": "commission_notice",
-      "title": "F.R. Notice of Commission's Final Determination Finding a Violation of Section 337; Issuance of a Limited Exclusion Order and Cease and Desist Orders; Denial of Motion for Sanctions; Termination of the Investigation"
-    },
-    {
-      "date": "2024-11-07",
-      "document_type": "Correspondence - USITC",
-      "id": "837607",
-      "kind": "final_determination",
-      "title": "Letter from Chair Amy A. Karpel to the President of the United States, Janet L. Yellen, Secretary of the Treasury and Katherine Tai, United States Trade Representative Transmitting a Limited Exclusion Order and Cease and Desist Orders"
-    },
-    {
       "date": "2024-11-07",
       "document_type": "Order, Commission",
       "id": "836708",
@@ -424,16 +3299,9 @@
     },
     {
       "date": "2024-11-07",
-      "document_type": "Correspondence - USITC",
-      "id": "836690",
-      "kind": "final_determination",
-      "title": "Letter to Chief Dax Terrill of U.S. Customs and Border Protection about the Issuance of a Limited Exclusion Order"
-    },
-    {
-      "date": "2024-11-07",
       "document_type": "Notice",
       "id": "836688",
-      "kind": "commission_notice",
+      "kind": "final_determination",
       "title": "Commission\u2019s Final Determination Finding a Violation of Section 337; Issuance of a Limited Exclusion Order and Cease and Desist Orders; Denial of Motion for Sanctions; Termination of the Investigation"
     },
     {
@@ -444,32 +3312,11 @@
       "title": "Commission Determination to Extend the Target Date for Completion of This Investigation"
     },
     {
-      "date": "2024-10-04",
-      "document_type": "Brief on Review/Remedy",
-      "id": "834137",
-      "kind": "initial_determination",
-      "title": "Complainant\u2019s Opening Response to the Commission\u2019s Notice to Review the Final Initial Determination and Request for Written Submissions on the Issues under Review and on Remedy, the Public Interest, and Bonding"
-    },
-    {
-      "date": "2024-09-11",
-      "document_type": "Notice",
-      "id": "831972",
-      "kind": "initial_determination",
-      "title": "F.R. Notice of Commission Determination to Review a Final Initial Determination Finding a Violation of Section 337; Request for Written Submissions on the Issues under Review and on Remedy, the Public Interest, and Bonding"
-    },
-    {
       "date": "2024-09-05",
       "document_type": "Notice",
       "id": "831538",
-      "kind": "initial_determination",
+      "kind": "commission_notice",
       "title": "Commission Determination to Review a Final Initial Determination Finding a Violation of Section 337; Request for Written Submissions on the Issues under Review and on Remedy, the Public Interest, and Bonding"
-    },
-    {
-      "date": "2024-08-08",
-      "document_type": "Petition for Review; and Response to",
-      "id": "829015",
-      "kind": "initial_determination",
-      "title": "Complainant Efficient Power Conversion Corporation's Response to Respondents' Petition for Review of the Initial Determination on Violation of Section 337"
     },
     {
       "date": "2024-08-05",
@@ -482,36 +3329,15 @@
       "date": "2024-08-02",
       "document_type": "Notice",
       "id": "828263",
-      "kind": "initial_determination",
+      "kind": "commission_notice",
       "title": "Notice of Errata to Initial Determination on Violation of Section 337 and Recommended Determination on Remedy and Bond"
-    },
-    {
-      "date": "2024-08-01",
-      "document_type": "Petition for Review; and Response to",
-      "id": "828044",
-      "kind": "initial_determination",
-      "title": "Petition of Complainant Efficient Power Conversion Corporation for Review-in-Part of the Initial Determination on Violation of Section 337"
-    },
-    {
-      "date": "2024-07-31",
-      "document_type": "Petition for Review; and Response to",
-      "id": "827938",
-      "kind": "initial_determination",
-      "title": "Respondents' Petition for Review of the Final Initial Determination"
     },
     {
       "date": "2024-07-25",
       "document_type": "Notice",
       "id": "827146",
-      "kind": "initial_determination",
-      "title": "Commission Determination Not to Review an Initial Determination Extending the Target Date"
-    },
-    {
-      "date": "2024-07-15",
-      "document_type": "Notice",
-      "id": "826006",
       "kind": "commission_notice",
-      "title": "F.R. Notice of Request for Submissions on the Public Interest"
+      "title": "Commission Determination Not to Review an Initial Determination Extending the Target Date"
     },
     {
       "date": "2024-07-15",
@@ -545,7 +3371,7 @@
       "date": "2024-07-01",
       "document_type": "Notice",
       "id": "824825",
-      "kind": "initial_determination",
+      "kind": "commission_notice",
       "title": "Commission Determination Not to Review an Initial Determination Extending the Target Date"
     },
     {
@@ -587,7 +3413,7 @@
       "date": "2024-03-12",
       "document_type": "Notice",
       "id": "815954",
-      "kind": "initial_determination",
+      "kind": "commission_notice",
       "title": "Commission Determination Not to Review an Initial Determination Terminating the Investigation as to U.S. Patent No. 10,312,335"
     },
     {
@@ -636,7 +3462,7 @@
       "date": "2024-01-11",
       "document_type": "Notice",
       "id": "811836",
-      "kind": "initial_determination",
+      "kind": "commission_notice",
       "title": "Commission Determination Not to Review an Initial Determination Terminating the Investigation as U.S. Patent No. 9,748,347"
     },
     {
@@ -680,13 +3506,6 @@
       "id": "800533",
       "kind": "alj_order",
       "title": "(1) Setting 15-Month Target Date (2) Setting Preliminary Conference"
-    },
-    {
-      "date": "2023-07-03",
-      "document_type": "Notice",
-      "id": "799724",
-      "kind": "notice_of_institution",
-      "title": "F.R. Notice of Institution of Investigation"
     },
     {
       "date": "2023-07-03",
@@ -745,13 +3564,6 @@
       "title": "First Public Supplement to the Complaint and Public Exhibits"
     },
     {
-      "date": "2023-06-02",
-      "document_type": "Notice",
-      "id": "797895",
-      "kind": "commission_notice",
-      "title": "F.R. Notice of Receipt of Complaint; Solicitation of Comments Relating to the Public Interest"
-    },
-    {
       "date": "2023-05-30",
       "document_type": "Notice",
       "id": "797381",
@@ -773,5 +3585,12 @@
       "title": "Appendices A-H"
     }
   ],
-  "title": "Certain Semiconductor Devices and Products Containing the Same"
+  "title": "Certain Semiconductor Devices and Products Containing the Same",
+  "usage": {
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0,
+    "input_tokens": 0,
+    "output_tokens": 0
+  },
+  "warnings": []
 }

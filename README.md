@@ -339,7 +339,45 @@ python cli.py claims 337-1366 337-TA-1384 --render
 Tracks every asserted claim of an investigation through six stages --
 complaint, institution, hearing, Final ID, Commission, Federal Circuit -- per
 patent and per respondent. The design is in `claim-narrowing-handoff.md`; it
-is being built in phases, and this is phase 1, which uses no model:
+is being built in phases. A build runs:
+
+1. **By rule, free:** the instituted claims, from the notice of institution.
+2. **By rule, free:** the source documents' PDFs are downloaded from EDIS if
+   missing (with the EDIS token), their text read -- scanned pages, common in
+   public Final IDs, with local OCR -- and candidate sentences picked: ones
+   that name claims and use ruling language (in the complaint, assertion
+   language). Claim charts and exhibits, and sections on the parties'
+   positions, are skipped. The keyword lists are in `claims_config.json`.
+3. **By model:** 15-25 candidate sentences at a time go to Claude Haiku 4.5,
+   forced to answer with a tool listing each event: sentence, patent, claim
+   list as written, action, speaker, respondents, and a supporting quote. The
+   system prompt (definitions and worked examples) is cached.
+4. **By code:** every event is checked -- quote in the sentence, claim list
+   in the sentence and expandable, patent and respondents on the record's
+   lists -- and one that fails is kept as `needs_review`, changing nothing.
+   Only rulings change a claim's status.
+
+5. **By rule, free:** rulings that name no claims -- the Commission's
+   case-wide "no violation" / "a violation", terminations "as to" named
+   respondents (settlement or withdrawal), findings of default, and relief
+   against defaulting respondents under section 337(g)(1) -- are read from the
+   documents and applied to every claim still in the case, for those
+   respondents ("Derived from event history").
+
+An update reads only source documents it has not read before, keeping the
+earlier events (and any corrections) without paying for them again, and
+re-runs every rule and check over all the events. `--reread` reads every
+source document again (and pays for it again) when the way documents are read
+has changed.
+
+On the Claims tab, **Respondent** switches between all respondents and each
+one: a settlement or default takes that respondent's claims out as of its
+date, and where respondents part ways the all-respondents view says "Varies
+by respondent". **Hide withdrawn claims** does what it says. A Commission
+notice declining to review an ID dates that ID's terminations, per the spec's
+effective-date rule.
+
+Phase 1 laid the foundations:
 
 - **Instituted claims** are read by rule from the Commission's notice of
   institution, fetched from federalregister.gov (no token). A notice is only
@@ -354,6 +392,7 @@ is being built in phases, and this is phase 1, which uses no model:
 - **Source documents** -- complaint, notice of institution, ALJ orders and
   IDs, Commission notices, opinions and determinations -- are defined in
   `claims_config.json` by document type and title pattern, public only.
+  Parties' filings are never sources, whatever their titles say.
 
 An analysis is stored in `data/claims/<number>.json` with its build time, every
 public document ID it saw, a fingerprint of the IDS record, and the pipeline
@@ -365,9 +404,15 @@ matrix and, for each status, the event behind it with its source and quote.
 
 Every build appends a row to `data/claims_costs.csv`
 (`investigation_number,build_datetime,cost_usd`), failed ones too, under a
-file lock; phase 1 costs nothing, so its rows read `0.000000`. The file's
-location, and the $20 budget later phases stop at, are in
-`claims_config.json`.
+file lock. The cost is computed from each model response's `usage` --
+uncached input, cache writes, cache reads and output, each at its own rate
+from the price table in `claims_config.json` (with a multiplier for Batch API
+requests) -- not estimated. Before each model call, the most that call could
+cost is checked against `budget_usd` less everything already in the log, and
+the build stops, keeping what it has, rather than go over.
+
+Model calls need `ANTHROPIC_API_KEY` in `.env`, and
+`ANTHROPIC_WORKSPACE_ID` too if the key is not scoped to a workspace.
 
 ### The field mapping (`ui_schema.json`)
 

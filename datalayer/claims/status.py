@@ -68,6 +68,10 @@ def state(
         reasons.append("the IDS record changed")
     if method_changed:
         reasons.append("the analysis method was updated")
+    pending = analysis.get("pending_sources") or []
+    if pending:
+        # Not read last time: no public PDF yet, or the build stopped early.
+        reasons.append(f"{len(pending)} source document{'s' if len(pending) != 1 else ''} not read yet")
     return {
         "state": "new_activity" if reasons else "up_to_date",
         "built_at": built_at,

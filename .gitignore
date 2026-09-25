@@ -16,6 +16,9 @@ data/counsel.json
 data/claims/fr/
 data/claims_costs.csv.lock
 
+# Text extracted (and OCR'd) from the source PDFs, which are not in git either.
+data/claims/text/
+
 # Downloaded PDFs stay on this machine: gigabytes of them, and EDIS can serve
 # them again ('python cli.py docs --existing'). The documents index that lists
 # them is still tracked.

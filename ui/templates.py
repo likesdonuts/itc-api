@@ -363,6 +363,33 @@ time.stamp.today { color: var(--green-fg); font-weight: 600; }
   white-space: nowrap;
 }
 .chip-neutral { background: var(--gray-bg); color: var(--gray-fg); }
+/* The spec's palette: navy, pale blue and orange also differ in lightness,
+   and the outlines are distinguishable without color. */
+.chip-withdrawn { background: transparent; color: var(--muted); border: 1px dashed var(--muted); }
+.chip-settled { background: transparent; color: var(--ink); border: 1px solid var(--ink); }
+.chip-infringed { background: #1F4E8C; color: #ffffff; }
+.chip-not-infringed { background: #DCE8F7; color: #1F4E8C; }
+.chip-invalid { background: #B8541A; color: #ffffff; }
+.chip-appeal { background: transparent; color: #1F4E8C; border: 1px solid #1F4E8C; }
+@media (prefers-color-scheme: dark) {
+  .chip-appeal { color: #9db0f5; border-color: #9db0f5; }
+}
+.chip-default { background: var(--amber-bg); color: var(--amber-fg); border: 1px solid var(--amber-fg); }
+.chip-varies { background: transparent; color: var(--muted); border: 1px dotted var(--muted); font-weight: 500; }
+.claims-controls { display: flex; flex-wrap: wrap; gap: 0.5rem 1.5rem; align-items: center; margin-bottom: 0.75rem; font-size: 0.88rem; }
+.claims-controls select {
+  font: inherit;
+  margin-left: 0.4rem;
+  padding: 0.35rem 0.6rem;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  background: var(--surface);
+  color: var(--ink);
+  max-width: 28rem;
+}
+.claims-view.hide-withdrawn tr[data-withdrawn] { display: none; }
+details.other-events { margin-top: 0.75rem; }
+details.other-events > summary { cursor: pointer; color: var(--muted); font-size: 0.85rem; margin-bottom: 0.5rem; }
 .review-dot {
   display: inline-block;
   width: 0.5rem;
@@ -866,6 +893,22 @@ _DETAIL_SCRIPT = """
   window.addEventListener('hashchange', show);
   show();
 })();
+
+(function () {
+  // The Claims tab's respondent filter and "Hide withdrawn claims".
+  const pick = document.getElementById('claims-respondent');
+  const hide = document.getElementById('claims-hide-withdrawn');
+  const views = Array.from(document.querySelectorAll('.claims-view'));
+  function update() {
+    views.forEach(function (v) {
+      v.hidden = pick ? v.dataset.view !== pick.value : v.dataset.view !== '0';
+      v.classList.toggle('hide-withdrawn', !!(hide && hide.checked));
+    });
+  }
+  if (pick) pick.addEventListener('change', update);
+  if (hide) hide.addEventListener('change', update);
+  update();
+})();
 """
 
 
@@ -1351,18 +1394,90 @@ def _documents_section(
 </div>"""
 
 
-# Chip text and style per claim status. Later phases add the outcome statuses
-# (withdrawn, settled, infringed, ...) from the spec's palette.
+# Chip text and style per claim status, in the spec's palette: statuses
+# differ in lightness, not only hue.
 _CHIPS = {
     "asserted": ("Asserted", "chip-neutral"),
     "instituted": ("Instituted", "chip-neutral"),
     "in_case": ("In case", "chip-neutral"),
+    "withdrawn": ("Withdrawn", "chip-withdrawn"),
+    "settled": ("Settled", "chip-settled"),
+    "infringed": ("Infringed", "chip-infringed"),
+    "violation": ("Violation", "chip-infringed"),
+    "not_infringed": ("Not infringed", "chip-not-infringed"),
+    "no_violation": ("No violation", "chip-not-infringed"),
+    "invalid": ("Invalid", "chip-invalid"),
+    "on_appeal": ("On appeal", "chip-appeal"),
+    "default": ("Default", "chip-default"),
+    "by_respondent": ("Varies by respondent", "chip-varies"),
 }
+_ACTIONS = {
+    "asserted": "Asserted",
+    "instituted": "Instituted",
+    "added": "Added",
+    "withdrawn": "Withdrawn",
+    "terminated_settlement": "Terminated on settlement",
+    "found_infringed": "Found infringed",
+    "found_not_infringed": "Found not infringed",
+    "found_invalid": "Found invalid",
+    "found_not_invalid": "Found not invalid",
+    "technical_prong": "Technical-prong ruling on",
+    "not_reviewed": "Commission declined review of",
+    "no_violation": "Commission found no violation",
+    "violation": "Commission found a violation",
+}
+_SPEAKERS = {
+    "tribunal_ruling": "ruling",
+    "tribunal_recital": "recital of an earlier ruling",
+    "party_argument": "party's position",
+    "other": "other",
+}
+_METHODS = {"rule": "Parsed by rule", "haiku": "Extracted by Haiku", "derived": "Derived from event history"}
 
 
 def _short_patent(patent: str) -> str:
     digits = re.sub(r"\D", "", str(patent or ""))
     return f"&rsquo;{digits[-3:]}" if len(digits) >= 3 else _e(patent)
+
+
+def _event_row(event: dict[str, Any], number: str, stage_titles: dict[str, str]) -> str:
+    source = event.get("source") or {}
+    files = source.get("files") or []
+    if source.get("url"):
+        link = f'<a href="{_e(source["url"])}" target="_blank" rel="noopener">{_e(source.get("title"))}</a>'
+    elif files:
+        href = f"../../data/documents/{slug_for(number)}/{files[0]}"
+        link = f'<a href="{_e(href)}" target="_blank" rel="noopener">{_e(source.get("title"))}</a>'
+    else:
+        link = _e(source.get("title"))
+    source_id = str(source.get("id") or "")
+    source_label = source_id if source_id.startswith("FR:") else f"EDIS {source_id}"
+    if event.get("status") == "needs_review":
+        how = f'<span class="pill pill-amber">Needs review</span> {_e("; ".join(event.get("notes") or []))}'
+    else:
+        how = _METHODS.get(event.get("method"), _e(event.get("method")))
+        extra = [n for n in event.get("notes") or [] if n]
+        if extra:
+            how += f'<div class="case-sub">{_e("; ".join(extra))}</div>'
+    who = event.get("respondents") or ["ALL"]
+    scope = "" if who == ["ALL"] else f' <span class="case-sub">({_e(", ".join(who))} only)</span>'
+    action = _ACTIONS.get(event.get("action"), str(event.get("action") or "").replace("_", " ").capitalize())
+    speaker = event.get("speaker")
+    said = ""
+    if speaker not in ("tribunal_ruling", None) and event.get("action") != "asserted":
+        said = f' <span class="case-sub">&middot; {_e(_SPEAKERS.get(speaker, speaker))}</span>'
+    if event.get("case_wide"):
+        what = f"{_e(action)}, for every claim still in the case"
+    else:
+        what = f"{_e(action)} claims {_e(event.get('claims_verbatim'))} of the {_short_patent(event.get('patent'))} patent"
+    return f"""<tr>
+  <td class="mono">{_date(event.get("date"))}</td>
+  <td>{_e(stage_titles.get(event.get("stage"), event.get("stage")))}</td>
+  <td>{what}{scope}{said}
+      <div class="case-sub">&ldquo;{_e(event.get("quote"))}&rdquo;</div></td>
+  <td>{link}<div class="case-sub">{_e(source_label)}</div></td>
+  <td>{how}</td>
+</tr>"""
 
 
 def _claims_section(claims: dict[str, Any]) -> str:
@@ -1374,82 +1489,112 @@ def _claims_section(claims: dict[str, Any]) -> str:
             "documents.</div>"
         )
 
-    built = claims_matrix.build(claims)
+    number = str(claims.get("key") or "")
     events = {event["id"]: event for event in claims.get("events") or []}
-    stages = built["stages"]
-    header = "".join(
-        f'<th>{_e(title)}<div class="stage-count">{built["counts"][key]} {_e(meaning)}</div></th>'
-        for key, title, meaning in stages
-    )
+    stages = claims_matrix.STAGES
 
-    body = []
-    for group in built["patents"]:
-        rows = group["rows"]
-        summary = f'{group["counts"]["instituted"]} of {len(rows)} instituted' if rows else "no claims recorded"
-        body.append(
-            f'<tr class="patent-row"><th colspan="{len(stages) + 1}">'
-            f'{_short_patent(group["patent"])} patent <span class="case-sub">U.S. Patent No. '
-            f'{_e(group["patent"])} &middot; {summary}</span></th></tr>'
+    def table(built: dict[str, Any]) -> str:
+        header = "".join(
+            f'<th>{_e(title)}<div class="stage-count">{built["counts"][key]} {_e(meaning)}</div></th>'
+            for key, title, meaning in stages
         )
-        for row in rows:
-            cells = []
-            for key, _, _ in stages:
-                cell = row["cells"].get(key)
-                chip = ""
-                if cell:
-                    text, css = _CHIPS.get(cell["status"], (cell["status"], "chip-neutral"))
-                    event = events.get(cell["event"]) or {}
-                    tip = f'{event.get("quote", "")} ({(event.get("source") or {}).get("id", "")})'
-                    chip = f'<span class="chip {css}" title="{_e(tip)}">{_e(text)}</span>'
-                cells.append(f"<td>{chip}</td>")
-            review = '<span class="review-dot" title="An event for this claim needs review"></span>' if row["needs_review"] else ""
-            body.append(f'<tr><td class="claim-no">Claim {row["claim"]}{review}</td>{"".join(cells)}</tr>')
-
-    stage_titles = {key: title for key, title, _ in stages}
-    event_rows = []
-    for event in sorted(events.values(), key=lambda e: (str(e.get("date") or ""), e.get("patent") or "")):
-        source = event.get("source") or {}
-        link = (
-            f'<a href="{_e(source["url"])}" target="_blank" rel="noopener">{_e(source.get("title"))}</a>'
-            if source.get("url")
-            else _e(source.get("title"))
-        )
-        if event.get("status") == "needs_review":
-            how = f'<span class="pill pill-amber">Needs review</span> {_e("; ".join(event.get("notes") or []))}'
-        else:
-            how = {"rule": "Parsed by rule"}.get(event.get("method"), _e(event.get("method")))
-        event_rows.append(
-            f"""<tr>
-  <td class="mono">{_date(event.get("date"))}</td>
-  <td>{_e(stage_titles.get(event.get("stage"), event.get("stage")))}</td>
-  <td>{_e(str(event.get("action", "")).replace("_", " ").capitalize())} claims {_e(event.get("claims_verbatim"))}
-      of the {_short_patent(event.get("patent"))} patent
-      <div class="case-sub">&ldquo;{_e(event.get("quote"))}&rdquo;</div></td>
-  <td>{link}<div class="case-sub">{_e(source.get("id"))}</div></td>
-  <td>{how}</td>
-</tr>"""
-        )
-
-    return f"""<div class="section-block">
-  <h2>Claims by stage</h2>
-  <div class="card"><div class="table-wrap">
-    <table class="list claims-matrix">
+        body = []
+        for group in built["patents"]:
+            rows = group["rows"]
+            counts = group["counts"]
+            if rows:
+                summary = (
+                    f'{counts["instituted"]} instituted &middot; {counts["hearing"]} to hearing '
+                    f'&middot; {counts["final_id"]} infringed at Final ID'
+                )
+            else:
+                summary = "no claims recorded"
+            body.append(
+                f'<tr class="patent-row"><th colspan="{len(stages) + 1}">'
+                f'{_short_patent(group["patent"])} patent <span class="case-sub">U.S. Patent No. '
+                f'{_e(group["patent"])} &middot; {summary}</span></th></tr>'
+            )
+            for row in rows:
+                cells = []
+                for key, _, _ in stages:
+                    cell = row["cells"].get(key)
+                    chip = ""
+                    if cell:
+                        text, css = _CHIPS.get(cell["status"], (cell["status"], "chip-neutral"))
+                        event = events.get(cell["event"]) or {}
+                        tip = f'{event.get("quote", "")} ({(event.get("source") or {}).get("id", "")})'
+                        chip = f'<span class="chip {css}" title="{_e(tip)}">{_e(text)}</span>'
+                    cells.append(f"<td>{chip}</td>")
+                review = (
+                    '<span class="review-dot" title="An event for this claim needs review"></span>'
+                    if row["needs_review"]
+                    else ""
+                )
+                withdrawn = any(c.get("status") == "withdrawn" for c in row["cells"].values())
+                mark = ' data-withdrawn="1"' if withdrawn else ""
+                body.append(f'<tr{mark}><td class="claim-no">Claim {row["claim"]}{review}</td>{"".join(cells)}</tr>')
+        return f"""<table class="list claims-matrix">
       <thead><tr><th>Claim</th>{header}</tr></thead>
       <tbody>{''.join(body)}</tbody>
-    </table>
-  </div></div>
-  <p class="case-sub">So far the analysis reads the Commission&rsquo;s notice of institution,
-  so only the Institution column is filled in. The other stages are read from the complaint
-  and the ALJ and Commission decisions as the analysis is extended.</p>
+    </table>"""
+
+    # One matrix per view -- every respondent, then each one -- switched on
+    # the page, since terminations and defaults are often respondent-specific.
+    respondents = list(claims.get("respondents") or [])
+    views = [("All respondents", claims_matrix.build(claims))] + [
+        (name, claims_matrix.build(claims, respondent=name)) for name in respondents
+    ]
+    matrices = "".join(
+        f'<div class="claims-view" data-view="{i}"{"" if i == 0 else " hidden"}>{table(built)}</div>'
+        for i, (_, built) in enumerate(views)
+    )
+    options = "".join(f'<option value="{i}">{_e(label)}</option>' for i, (label, _) in enumerate(views))
+    controls = f"""<div class="claims-controls">
+    <label>Respondent <select id="claims-respondent">{options}</select></label>
+    <label><input type="checkbox" id="claims-hide-withdrawn"> Hide withdrawn claims</label>
+  </div>"""
+
+    stage_titles = {key: title for key, title, _ in stages}
+    ordered = sorted(events.values(), key=lambda e: (str(e.get("date") or ""), e.get("patent") or ""))
+    deciding = [e for e in ordered if claims_matrix.changes_status(e) or e.get("status") == "needs_review"]
+    other = [e for e in ordered if e not in deciding]
+    deciding_rows = "".join(_event_row(e, number, stage_titles) for e in deciding)
+    other_rows = "".join(_event_row(e, number, stage_titles) for e in other)
+    head = "<thead><tr><th>Effective</th><th>Stage</th><th>Event</th><th>Source</th><th>Method</th></tr></thead>"
+    others = ""
+    if other:
+        others = f"""<details class="other-events"><summary>Recitals and party positions ({len(other)}) &mdash;
+  shown for context; they do not change a claim&rsquo;s status</summary>
+  <div class="card"><div class="table-wrap"><table class="list">{head}<tbody>{other_rows}</tbody></table></div></div>
+</details>"""
+
+    pending = claims.get("pending_sources") or []
+    notes = [_e(warning) for warning in claims.get("warnings") or []]
+    if pending:
+        notes.append(
+            f"{len(pending)} source document{'s' if len(pending) != 1 else ''} not read yet "
+            "(no public PDF on disk, or the build stopped early); Update claims analysis reads them."
+        )
+    notice = f'<div class="notice">{"<br>".join(notes)}</div>' if notes else ""
+    cost = float(claims.get("cost_usd") or 0)
+    calls = int(claims.get("model_calls") or 0)
+    spent = f" This build made {calls} model call{'s' if calls != 1 else ''} costing ${cost:.4f}." if calls else ""
+
+    return f"""{notice}<div class="section-block">
+  <h2>Claims by stage</h2>
+  {controls if len(views) > 1 else ""}
+  <div class="card"><div class="table-wrap">{matrices}</div></div>
+  <p class="case-sub">Instituted claims are parsed by rule from the notice of institution; the
+  complaint and the ALJ and Commission decisions are read by Claude Haiku, and every event is
+  checked in code. Only rulings change a claim&rsquo;s status. An orange dot marks a claim with an
+  event that needs review. The Federal Circuit column is filled in by a later phase.{spent}</p>
 </div>
 <div class="section-block">
-  <h2>How each status was determined ({len(event_rows)})</h2>
+  <h2>How each status was determined ({len(deciding)})</h2>
   <div class="card"><div class="table-wrap">
-    <table class="list">
-      <thead><tr><th>Effective</th><th>Stage</th><th>Event</th><th>Source</th><th>Method</th></tr></thead>
-      <tbody>{''.join(event_rows)}</tbody>
-    </table>
+    <table class="list">{head}<tbody>{deciding_rows}</tbody></table>
   </div></div>
+  {others}
 </div>"""
 
 

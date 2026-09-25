@@ -1,0 +1,1062 @@
+{
+  "built_at": "2026-09-25T02:19:22.386215+00:00",
+  "corrections": [],
+  "cost_usd": 0.0,
+  "events": [
+    {
+      "action": "instituted",
+      "claims": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20
+      ],
+      "claims_verbatim": "1-5 and 7-20",
+      "date": "2024-09-09",
+      "id": "5b9889c266e9",
+      "method": "rule",
+      "notes": [],
+      "patent": "11,446,477",
+      "quote": "claims 1-5 and 7-20 of the '477 patent",
+      "respondents": [
+        "ALL"
+      ],
+      "sentence": "Scope of Investigation: Having considered the complaint, the U.S. International Trade Commission, on September 9, 2024, ordered that-- (1) Pursuant to subsection (b) of section 337 of the Tariff Act of 1930, as amended, an investigation be instituted to determine whether there is a violation of subsection (a)(1)(B) of section 337 in the importation into the United States, the sale for importation, or the sale within the United States after importation of certain products identified in paragraph (2) by reason of infringement of one or more of claims 1-5 and 7-20 of the '477 patent, and whether an industry in the United States exists as required by subsection (a)(2) of section 337; (2) Pursuant to section 210.10(b)(1) of the Commission's Rules of Practice and Procedure, 19 CFR 210.10(b)(1), the plain language description of the accused products or category of accused products, which defines the scope of the investigation, is ``systems and subassemblies for skin treatment through mechanical and/or fluid-based abrasion or exfoliation''; (3) For the purpose of the investigation so instituted, the following are hereby named as parties upon which this notice of investigation shall be served: (a) The complainant is/are: HydraFacial LLC f/k/a Edge Systems LLC, 2165 E. Spring St., Long Beach, California 90806. (b) The respondents are the following entities alleged to be in violation of section 337, and are the parties upon which the complaint is to be served: Luvo Medical Technologies Inc., 125 Fleming Drive, Cambridge, Ontario, N1T 2B8, Canada Clarion Medical Technologies, Inc., 125 Fleming Drive, Cambridge, Ontario, N1T 2B8, Canada Healthcare Markets, Inc. d/b/a Powered by MRP, 2720 Rasmussen Rd.",
+      "source": {
+        "id": "FR:2024-20789",
+        "kind": "federal_register",
+        "published": "2024-09-13",
+        "title": "Certain Hydrodermabrasion Systems and Components Thereof III; Notice of Institution of Investigation",
+        "url": "https://www.federalregister.gov/documents/2024/09/13/2024-20789/certain-hydrodermabrasion-systems-and-components-thereof-iii-notice-of-institution-of-investigation"
+      },
+      "speaker": "tribunal_ruling",
+      "stage": "instituted",
+      "status": "ok"
+    },
+    {
+      "action": "asserted",
+      "claims": [
+        2,
+        3,
+        4,
+        5
+      ],
+      "claims_verbatim": "2-5",
+      "context": "3.",
+      "date": "2024-08-23",
+      "id": "24fe7120a6a5",
+      "method": "haiku",
+      "model": "claude-haiku-4-5-20251001",
+      "notes": [],
+      "patent": "11,446,477",
+      "quote": "at least the following claims (collectively, \"the Asse1ted Claims\") of the Asse1ted Patents via the Accused Products: U.S. Patent Asserted Claims 1 '477 Patent L 2-5",
+      "respondents": [
+        "ALL"
+      ],
+      "sentence": "Respondents directly infringe, literally or under the doctrine of equivalents, and/or induce or contribute to the infringement of, at least the following claims (collectively, \"the Asse1ted Claims\") of the Asse1ted Patents via the Accused Products: U.S. Patent Asserted Claims 1 '477 Patent L 2-5.",
+      "source": {
+        "document_type": "Complaint",
+        "files": [
+          "830480_2225570_2225570.pdf",
+          "830480_2225571_2225571.pdf",
+          "830480_2225572_2225572.pdf",
+          "830480_2225573_2225573.pdf",
+          "830480_2225574_2225574.pdf",
+          "830480_2225575_2225575.pdf",
+          "830480_2225576_2225576.pdf",
+          "830480_2225577_2225577.pdf",
+          "830480_2225578_2225578.pdf",
+          "830480_2225579_2225579.pdf",
+          "830480_2225580_2225580.pdf"
+        ],
+        "id": "830480",
+        "kind": "edis",
+        "source_kind": "complaint",
+        "title": "First Public Supplement to the Complaint"
+      },
+      "speaker": "party_argument",
+      "stage": "asserted",
+      "status": "ok"
+    },
+    {
+      "action": "found_infringed",
+      "claims": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20
+      ],
+      "claims_verbatim": "1-5, 7-20",
+      "context": "",
+      "date": "2025-05-27",
+      "id": "81d3200ac73c",
+      "method": "haiku",
+      "model": "claude-haiku-4-5-20251001",
+      "notes": [],
+      "patent": "11,446,477",
+      "quote": "infringe one or more of claims 1-5, 7-20 of U.S. Patent No. 11,446,477 (\"the '477 patent\") in violation of section 337",
+      "respondents": [
+        "Medical Purchasing Resource, LLC"
+      ],
+      "sentence": "UNITED STATES INTERNATIONAL TRADE COMMISSION Washington, D.C. In the Matter of CERTAIN HYDRODERMABRASION SYSTEMS AND COMPONENTS THEREOF III Investigation No. 337-TA-1417 CEASE AND DESIST ORDER IT IS HEREBY ORDERED THAT Medical Purchasing Resource, LLC, 5026 Cardinal Court, Little Elm, TX 75068, cease and desist from conducting any of the following activities in the United States: importing, selling, offering for sale, marketing, advertising, distributing, transferring (except for exportation), soliciting United States agents or distributors, and aiding or abetting other entities in the importation, sale for importation, sale after importation, transfer (except for exportation), or distribution of hydrodermabrasion systems and components thereof that infringe one or more of claims 1-5, 7-20 of U.S. Patent No. 11,446,477 (\u201cthe \u2019477 patent\u201d) in violation of section 337 of the Tariff Act of 1930, as amended (19 U.S.C. \u00a7 1337).",
+      "source": {
+        "document_type": "Order, Commission",
+        "files": [
+          "852077_2384900_2384900.pdf",
+          "852077_2384933_2384933.pdf"
+        ],
+        "id": "852077",
+        "kind": "edis",
+        "source_kind": "final_determination",
+        "title": "Cease and Desist Order for Medical Purchasing Resource, LLC"
+      },
+      "speaker": "tribunal_ruling",
+      "stage": "commission",
+      "status": "ok"
+    },
+    {
+      "action": "found_infringed",
+      "claims": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20
+      ],
+      "claims_verbatim": "1-5, 7-20",
+      "context": "",
+      "date": "2025-05-27",
+      "id": "86146e3325dd",
+      "method": "haiku",
+      "model": "claude-haiku-4-5-20251001",
+      "notes": [],
+      "patent": "11,446,477",
+      "quote": "infringe one or more of claims 1-5, 7-20 of U.S. Patent No. 11,446,477 (\"the '477 patent\") in violation of section 337",
+      "respondents": [
+        "eMIRAmed USA, LLC"
+      ],
+      "sentence": "UNITED STATES INTERNATIONAL TRADE COMMISSION Washington, D.C. In the Matter of CERTAIN HYDRODERMABRASION SYSTEMS AND COMPONENTS THEREOF III Investigation No. 337-TA-1417 CEASE AND DESIST ORDER IT IS HEREBY ORDERED THAT eMIRAmed USA, LLC, 38 Tesla, Irvine, CA 92618, cease and desist from conducting any of the following activities in the United States: importing, selling, offering for sale, marketing, advertising, distributing, transferring (except for exportation), soliciting United States agents or distributors, and aiding or abetting other entities in the importation, sale for importation, sale after importation, transfer (except for exportation), or distribution of hydrodermabrasion systems and components thereof that infringe one or more of claims 1-5, 7-20 of U.S. Patent No. 11,446,477 (\u201cthe \u2019477 patent\u201d) in violation of section 337 of the Tariff Act of 1930, as amended (19 U.S.C. \u00a7 1337).",
+      "source": {
+        "document_type": "Order, Commission",
+        "files": [
+          "852076_2384899_2384899.pdf",
+          "852076_2384932_2384932.pdf"
+        ],
+        "id": "852076",
+        "kind": "edis",
+        "source_kind": "final_determination",
+        "title": "Cease and Desist Order for eMIRAmed USA, LLC"
+      },
+      "speaker": "tribunal_ruling",
+      "stage": "commission",
+      "status": "ok"
+    },
+    {
+      "action": "found_infringed",
+      "claims": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20
+      ],
+      "claims_verbatim": "1-5, 7-20",
+      "context": "",
+      "date": "2025-05-27",
+      "id": "31128f124da1",
+      "method": "haiku",
+      "model": "claude-haiku-4-5-20251001",
+      "notes": [],
+      "patent": "11,446,477",
+      "quote": "infringe one or more of claims 1-5, 7-20 of U.S. Patent No. 11,446,477 (\"the '477 patent\") in violation of section 337",
+      "respondents": [
+        "Bio-Infusions USA Inc."
+      ],
+      "sentence": "UNITED STATES INTERNATIONAL TRADE COMMISSION Washington, D.C. In the Matter of CERTAIN HYDRODERMABRASION SYSTEMS AND COMPONENTS THEREOF III Investigation No. 337-TA-1417 CEASE AND DESIST ORDER IT IS HEREBY ORDERED THAT Bio-Infusions USA, Inc., 9190 Oakhurst Rd., Suite 2, Seminole, FL 33776, cease and desist from conducting any of the following activities in the United States: importing, selling, offering for sale, marketing, advertising, distributing, transferring (except for exportation), soliciting United States agents or distributors, and aiding or abetting other entities in the importation, sale for importation, sale after importation, transfer (except for exportation), or distribution of hydrodermabrasion systems and components thereof that infringe one or more of claims 1-5, 7-20 of U.S. Patent No. 11,446,477 (\u201cthe \u2019477 patent\u201d) in violation of section 337 of the Tariff Act of 1930, as amended (19 U.S.C. \u00a7 1337).",
+      "source": {
+        "document_type": "Order, Commission",
+        "files": [
+          "852075_2384898_2384898.pdf",
+          "852075_2384931_2384931.pdf"
+        ],
+        "id": "852075",
+        "kind": "edis",
+        "source_kind": "final_determination",
+        "title": "Cease and Desist Order for Bio-Infusions USA, Inc."
+      },
+      "speaker": "tribunal_ruling",
+      "stage": "commission",
+      "status": "ok"
+    },
+    {
+      "action": "found_infringed",
+      "claims": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20
+      ],
+      "claims_verbatim": "1-5, 7-20",
+      "context": "",
+      "date": "2025-05-27",
+      "id": "47fee1261450",
+      "method": "haiku",
+      "model": "claude-haiku-4-5-20251001",
+      "notes": [],
+      "patent": "11,446,477",
+      "quote": "infringe one or more of claims 1-5, 7-20 of U.S. Patent No. 11,446,477 (\"the '477 patent\") in violation of section 337",
+      "respondents": [
+        "MIRAmedtech SP. Z.O.O."
+      ],
+      "sentence": "UNITED STATES INTERNATIONAL TRADE COMMISSION Washington, D.C. In the Matter of CERTAIN HYDRODERMABRASION SYSTEMS AND COMPONENTS THEREOF III Investigation No. 337-TA-1417 CEASE AND DESIST ORDER IT IS HEREBY ORDERED THAT MIRAmedtech SP. Z.O.O., Powsta\u0144c\u00f3w \u015al\u0105skic 89A/235, 01-355 Warsaw, Poland, cease and desist from conducting any of the following activities in the United States: importing, selling, offering for sale, marketing, advertising, distributing, transferring (except for exportation), soliciting United States agents or distributors, and aiding or abetting other entities in the importation, sale for importation, sale after importation, transfer (except for exportation), or distribution of hydrodermabrasion systems and components thereof that infringe one or more of claims 1-5, 7-20 of U.S. Patent No. 11,446,477 (\u201cthe \u2019477 patent\u201d) in violation of section 337 of the Tariff Act of 1930, as amended (19 U.S.C. \u00a7 1337).",
+      "source": {
+        "document_type": "Order, Commission",
+        "files": [
+          "852074_2384897_2384897.pdf",
+          "852074_2384930_2384930.pdf"
+        ],
+        "id": "852074",
+        "kind": "edis",
+        "source_kind": "final_determination",
+        "title": "Cease and Desist Order for MIRAmedtech SP. Z.O.O."
+      },
+      "speaker": "tribunal_ruling",
+      "stage": "commission",
+      "status": "ok"
+    },
+    {
+      "action": "found_infringed",
+      "claims": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20
+      ],
+      "claims_verbatim": "1-5, 7-20",
+      "context": "",
+      "date": "2025-05-27",
+      "id": "f95a29cdc5fd",
+      "method": "haiku",
+      "model": "claude-haiku-4-5-20251001",
+      "notes": [],
+      "patent": "11,446,477",
+      "quote": "infringe one or more of claims 1-5, 7-20 of U.S. Patent No. 11,446,477 (\"the '477 patent\") in violation of section 337",
+      "respondents": [
+        "MIRAmedtech UG"
+      ],
+      "sentence": "UNITED STATES INTERNATIONAL TRADE COMMISSION Washington, D.C. In the Matter of CERTAIN HYDRODERMABRASION SYSTEMS AND COMPONENTS THEREOF III Investigation No. 337-TA-1417 CEASE AND DESIST ORDER IT IS HEREBY ORDERED THAT MIRAmedtech UG, Habightweg 3-5, 75245 Neulingen, Germany, cease and desist from conducting any of the following activities in the United States: importing, selling, offering for sale, marketing, advertising, distributing, transferring (except for exportation), soliciting United States agents or distributors, and aiding or abetting other entities in the importation, sale for importation, sale after importation, transfer (except for exportation), or distribution of hydrodermabrasion systems and components thereof that infringe one or more of claims 1-5, 7-20 of U.S. Patent No. 11,446,477 (\u201cthe \u2019477 patent\u201d) in violation of section 337 of the Tariff Act of 1930, as amended (19 U.S.C. \u00a7 1337).",
+      "source": {
+        "document_type": "Order, Commission",
+        "files": [
+          "852072_2384895_2384895.pdf",
+          "852072_2384929_2384929.pdf"
+        ],
+        "id": "852072",
+        "kind": "edis",
+        "source_kind": "final_determination",
+        "title": "Cease and Desist Order for MIRAmedtech UG"
+      },
+      "speaker": "tribunal_ruling",
+      "stage": "commission",
+      "status": "ok"
+    },
+    {
+      "action": "asserted",
+      "claims": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20
+      ],
+      "claims_verbatim": "1-5, 7-20",
+      "context": "See 90 Fed. Reg. 17259-61 (April 24, 2025).",
+      "date": "2025-05-27",
+      "id": "3b82d6225297",
+      "method": "haiku",
+      "model": "claude-haiku-4-5-20251001",
+      "notes": [],
+      "patent": "11,446,477",
+      "quote": "infringement of one or more of claims 1-5, 7-20 of U.S. Patent No. 11,446,477",
+      "respondents": [
+        "ALL"
+      ],
+      "sentence": "The complaint, as supplemented, filed by HydraFacial LLC f/k/a Edge Systems LLC of Long Beach, California (\u201cHydraFacial\u201d) alleged a violation of section 337 of the Tariff Act of 1930, as amended, 19 U.S.C. \u00a7 1337 (\u201csection 337\u201d), in the unlawful importation, sale for importation, and sale within the United States after importation of certain hydrodermabrasion systems and components thereof by reason of infringement of one or more of claims 1-5, 7-20 of U.S. Patent No. 11,446,477 (\u201cthe \u2019477 patent\u201d).",
+      "source": {
+        "document_type": "Order, Commission",
+        "files": [
+          "852071_2384894_2384894.pdf",
+          "852071_2384928_2384928.pdf"
+        ],
+        "id": "852071",
+        "kind": "edis",
+        "source_kind": "final_determination",
+        "title": "Limited Exclusion Order"
+      },
+      "speaker": "party_argument",
+      "stage": "commission",
+      "status": "ok"
+    },
+    {
+      "action": "found_infringed",
+      "claims": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20
+      ],
+      "claims_verbatim": "1-5, 7-20",
+      "context": "2 Accordingly, the Commission hereby ORDERS that: 1.",
+      "date": "2025-05-27",
+      "id": "315167d444ec",
+      "method": "haiku",
+      "model": "claude-haiku-4-5-20251001",
+      "notes": [],
+      "patent": "11,446,477",
+      "quote": "infringe one or more of. claims 1-5, 7-20 of the '477 patent",
+      "respondents": [
+        "ALL"
+      ],
+      "sentence": "Hydrodermabrasion systems and components thereof that infringe one or more of. claims 1-5, 7-20 of the \u2019477 patent and are manufactured abroad by, or on behalf of, or imported by or on behalf of the Defaulting Respondents or any of their affiliated companies, parents, subsidiaries, agents, or other related business entities, or their successors or assigns, are excluded from entry for consumption into the United States, entry for consumption from a foreign-trade zone, or withdrawal from a warehouse for consumption, for the remaining term of the \u2019477 patent, except under license from, or with the permission of, the patent owner or as provided by law.",
+      "source": {
+        "document_type": "Order, Commission",
+        "files": [
+          "852071_2384894_2384894.pdf",
+          "852071_2384928_2384928.pdf"
+        ],
+        "id": "852071",
+        "kind": "edis",
+        "source_kind": "final_determination",
+        "title": "Limited Exclusion Order"
+      },
+      "speaker": "tribunal_ruling",
+      "stage": "commission",
+      "status": "ok"
+    },
+    {
+      "action": "violation",
+      "case_wide": true,
+      "claims": [],
+      "claims_verbatim": "",
+      "date": "2025-05-27",
+      "id": "22803be317c0",
+      "method": "derived",
+      "notes": [
+        "relief against defaulting respondents under 19 U.S.C. 1337(g)(1); the complaint's allegations are presumed true"
+      ],
+      "patent": "ALL",
+      "quote": "presumed to be true as to the Defaulting Respondents",
+      "respondents": [
+        "Bio-Infusions USA Inc.",
+        "MIRAmedtech SP. Z.O.O.",
+        "MIRAmedtech UG",
+        "Medical Purchasing Resource, LLC",
+        "eMIRAmed USA, LLC"
+      ],
+      "sentence": "Because the conditions in 19 U.S.C. \u00a7 1337(g)(1)(A)\u2013(E) have been satisfied, the Commission, upon the request of HydraFacial, issues a limited exclusion order, based on the allegations regarding a violation of section 337 in the complaint that are presumed to be true as to the Defaulting Respondents.",
+      "source": {
+        "document_type": "Order, Commission",
+        "files": [
+          "852071_2384894_2384894.pdf",
+          "852071_2384928_2384928.pdf"
+        ],
+        "id": "852071",
+        "kind": "edis",
+        "source_kind": "final_determination",
+        "title": "Limited Exclusion Order"
+      },
+      "speaker": "tribunal_ruling",
+      "stage": "commission",
+      "status": "ok"
+    },
+    {
+      "action": "default",
+      "case_wide": true,
+      "claims": [],
+      "claims_verbatim": "",
+      "date": "2025-01-02",
+      "id": "2e23b1fc9fcd",
+      "method": "derived",
+      "notes": [
+        "found in default: no hearing on these respondents' claims"
+      ],
+      "patent": "ALL",
+      "quote": "Medical Purchasing Resource, LLC is hereby found in default",
+      "respondents": [
+        "Medical Purchasing Resource, LLC"
+      ],
+      "sentence": "Medical Purchasing Resource, LLC is hereby found in default.",
+      "source": {
+        "document_type": "Notice",
+        "files": [
+          "840335_2299525_2299525.pdf",
+          "840335_2299616_2299616.pdf"
+        ],
+        "id": "840335",
+        "kind": "edis",
+        "source_kind": "commission_notice",
+        "title": "Commission Determination Not to Review an Initial Determination Finding a Respondent in Default"
+      },
+      "speaker": "tribunal_ruling",
+      "stage": "hearing",
+      "status": "ok"
+    },
+    {
+      "action": "default",
+      "case_wide": true,
+      "claims": [],
+      "claims_verbatim": "",
+      "date": "2025-01-17",
+      "id": "e060196cc7bc",
+      "method": "derived",
+      "notes": [
+        "found in default: no hearing on these respondents' claims"
+      ],
+      "patent": "ALL",
+      "quote": "It is my initial determination that Bio-Infusions USA Inc., MIRAmedtech UG, eMIRAmed USA, LLC, and MIRAmedtech SP. Z.O.O. are in default",
+      "respondents": [
+        "MIRAmedtech SP. Z.O.O.",
+        "eMIRAmed USA, LLC",
+        "MIRAmedtech UG",
+        "Bio-Infusions USA Inc."
+      ],
+      "sentence": "It is my initial determination that Bio-Infusions USA Inc., MIRAmedtech UG, eMIRAmed USA, LLC, and MIRAmedtech SP. Z.O.O. are in default under 19 C.F.R. \u00a7 210.16.",
+      "source": {
+        "document_type": "ID/RD - Other Than Final on Violation",
+        "files": [
+          "841330_2305544_2305544.pdf",
+          "841330_2305652_2305652.pdf"
+        ],
+        "id": "841330",
+        "kind": "edis",
+        "source_kind": "initial_determination",
+        "title": "Initial Determination Finding Bio-Infusions USA Inc., MIRAmedtech UG, eMIRAmed USA, LLC, and MIRAmedtech SP. Z.O.O. in Default"
+      },
+      "speaker": "tribunal_ruling",
+      "stage": "hearing",
+      "status": "ok"
+    },
+    {
+      "action": "terminated_settlement",
+      "case_wide": true,
+      "claims": [],
+      "claims_verbatim": "",
+      "date": "2025-04-21",
+      "id": "41fbad8d23d6",
+      "method": "derived",
+      "notes": [
+        "a termination as to these respondents: all their claims leave the case"
+      ],
+      "patent": "ALL",
+      "quote": "investigation is terminated as to Clarion Medical Technologies, Inc., Luvo Medical Technologies, Inc., and Healthcare Markets, Inc. d/b/a Powered by MRP.",
+      "respondents": [
+        "Clarion Medical Technologies, Inc.",
+        "Luvo Medical Technologies Inc.",
+        "Healthcare Markets, Inc. d/b/a Powered by MRP"
+      ],
+      "sentence": "The investigation is terminated as to Clarion Medical Technologies, Inc., Luvo Medical Technologies, Inc., and Healthcare Markets, Inc. d/b/a Powered by MRP.",
+      "source": {
+        "document_type": "Notice",
+        "files": [
+          "849165_2362338_2362338.pdf",
+          "849165_2362344_2362344.pdf"
+        ],
+        "id": "849165",
+        "kind": "edis",
+        "source_kind": "commission_notice",
+        "title": "Commission Determination Not to Review an Initial Determination Terminating the Investigation as to the Remaining Active Respondents Based on Settlement; Request for Written Submissions on Remedy, the Public Interest, and Bonding"
+      },
+      "speaker": "tribunal_ruling",
+      "stage": "hearing",
+      "status": "ok"
+    }
+  ],
+  "extraction": {
+    "candidates": 0,
+    "mention_only": 0,
+    "needs_review": 0
+  },
+  "ids_hash": "7aababde884f427804a3a25afeafcae9c06e5ea8d0a3eb2659531688f42eae4a",
+  "investigation_number": "337-TA-1417",
+  "key": "337-1417",
+  "last_attempt": {
+    "at": "2026-09-25T02:19:22.386429+00:00",
+    "error": null
+  },
+  "model_calls": 0,
+  "outcome": "ok",
+  "patents": [
+    "12,053,607",
+    "11,446,477"
+  ],
+  "pending_sources": [],
+  "phase": "Violation",
+  "pipeline_version": "2.0",
+  "processed_sources": [
+    "828898",
+    "828920",
+    "829133",
+    "830480",
+    "830811",
+    "831792",
+    "832235",
+    "832237",
+    "832240",
+    "833044",
+    "834219",
+    "834590",
+    "836247",
+    "838826",
+    "839455",
+    "839457",
+    "839516",
+    "840241",
+    "840335",
+    "840728",
+    "841330",
+    "842796",
+    "844804",
+    "846082",
+    "847847",
+    "847848",
+    "848050",
+    "849165",
+    "852070",
+    "852071",
+    "852072",
+    "852074",
+    "852075",
+    "852076",
+    "852077",
+    "FR:2024-20789"
+  ],
+  "respondents": [
+    "MIRAmedtech SP. Z.O.O.",
+    "eMIRAmed USA, LLC",
+    "MIRAmedtech UG",
+    "Clarion Medical Technologies, Inc.",
+    "Luvo Medical Technologies Inc.",
+    "Healthcare Markets, Inc. d/b/a Powered by MRP",
+    "Bio-Infusions USA Inc.",
+    "Medical Purchasing Resource, LLC"
+  ],
+  "seen_documents": [
+    "828898",
+    "828920",
+    "829133",
+    "829503",
+    "830350",
+    "830353",
+    "830480",
+    "830811",
+    "830818",
+    "830990",
+    "831790",
+    "831792",
+    "832235",
+    "832237",
+    "832240",
+    "832308",
+    "832457",
+    "832511",
+    "832604",
+    "832824",
+    "833044",
+    "833413",
+    "833563",
+    "834101",
+    "834103",
+    "834120",
+    "834192",
+    "834219",
+    "834305",
+    "834356",
+    "834482",
+    "834590",
+    "835054",
+    "835315",
+    "835317",
+    "835319",
+    "835857",
+    "836159",
+    "836247",
+    "836756",
+    "837905",
+    "838007",
+    "838028",
+    "838045",
+    "838199",
+    "838443",
+    "838521",
+    "838537",
+    "838814",
+    "838826",
+    "838879",
+    "838971",
+    "839263",
+    "839309",
+    "839333",
+    "839418",
+    "839455",
+    "839457",
+    "839516",
+    "839760",
+    "839788",
+    "839967",
+    "839979",
+    "840055",
+    "840195",
+    "840241",
+    "840335",
+    "840378",
+    "840401",
+    "840599",
+    "840728",
+    "840785",
+    "840840",
+    "840995",
+    "841330",
+    "841574",
+    "841576",
+    "841577",
+    "841983",
+    "842012",
+    "842101",
+    "842145",
+    "842156",
+    "842791",
+    "842796",
+    "842820",
+    "842851",
+    "843027",
+    "843039",
+    "843406",
+    "843489",
+    "843498",
+    "843910",
+    "843929",
+    "844209",
+    "844648",
+    "844692",
+    "844712",
+    "844804",
+    "844860",
+    "844894",
+    "844906",
+    "844911",
+    "845365",
+    "845925",
+    "846073",
+    "846082",
+    "847337",
+    "847847",
+    "847848",
+    "848050",
+    "848085",
+    "848364",
+    "849165",
+    "849174",
+    "849556",
+    "850454",
+    "850817",
+    "850951",
+    "852070",
+    "852071",
+    "852072",
+    "852074",
+    "852075",
+    "852076",
+    "852077",
+    "852094",
+    "852242",
+    "852513",
+    "852588",
+    "856550",
+    "856551",
+    "856558",
+    "856559",
+    "856560",
+    "856561",
+    "856562",
+    "870428"
+  ],
+  "source_documents": [
+    {
+      "date": "2025-05-27",
+      "document_type": "Order, Commission",
+      "id": "852077",
+      "kind": "final_determination",
+      "title": "Cease and Desist Order for Medical Purchasing Resource, LLC"
+    },
+    {
+      "date": "2025-05-27",
+      "document_type": "Order, Commission",
+      "id": "852076",
+      "kind": "final_determination",
+      "title": "Cease and Desist Order for eMIRAmed USA, LLC"
+    },
+    {
+      "date": "2025-05-27",
+      "document_type": "Order, Commission",
+      "id": "852075",
+      "kind": "final_determination",
+      "title": "Cease and Desist Order for Bio-Infusions USA, Inc."
+    },
+    {
+      "date": "2025-05-27",
+      "document_type": "Order, Commission",
+      "id": "852074",
+      "kind": "final_determination",
+      "title": "Cease and Desist Order for MIRAmedtech SP. Z.O.O."
+    },
+    {
+      "date": "2025-05-27",
+      "document_type": "Order, Commission",
+      "id": "852072",
+      "kind": "final_determination",
+      "title": "Cease and Desist Order for MIRAmedtech UG"
+    },
+    {
+      "date": "2025-05-27",
+      "document_type": "Order, Commission",
+      "id": "852071",
+      "kind": "final_determination",
+      "title": "Limited Exclusion Order"
+    },
+    {
+      "date": "2025-05-27",
+      "document_type": "Notice",
+      "id": "852070",
+      "kind": "commission_notice",
+      "title": "Commission Determination to Issue a Limited Exclusion Order and Cease and Desist Orders; Termination of Investigation"
+    },
+    {
+      "date": "2025-04-21",
+      "document_type": "Notice",
+      "id": "849165",
+      "kind": "commission_notice",
+      "title": "Commission Determination Not to Review an Initial Determination Terminating the Investigation as to the Remaining Active Respondents Based on Settlement; Request for Written Submissions on Remedy, the Public Interest, and Bonding"
+    },
+    {
+      "date": "2025-04-07",
+      "document_type": "Order",
+      "id": "848050",
+      "kind": "alj_order",
+      "title": "Resolving All Remaining Issues and Certifying the Record to the Commission"
+    },
+    {
+      "date": "2025-04-04",
+      "document_type": "Order",
+      "id": "847848",
+      "kind": "alj_order",
+      "title": "Scheduling Case Management Conference"
+    },
+    {
+      "date": "2025-04-04",
+      "document_type": "ID/RD - Other Than Final on Violation",
+      "id": "847847",
+      "kind": "initial_determination",
+      "title": "Initial Determination Granting Joint Motion for Termination of the Investigation as to Certain Respondents Based on Settlement"
+    },
+    {
+      "date": "2025-03-18",
+      "document_type": "Order",
+      "id": "846082",
+      "kind": "alj_order",
+      "title": "Granting Joint Motion to Stay the Procedural Schedule"
+    },
+    {
+      "date": "2025-03-03",
+      "document_type": "Order",
+      "id": "844804",
+      "kind": "alj_order",
+      "title": "Granting Joint Motion for Extension of Various Dates and Revised Procedural Schedule"
+    },
+    {
+      "date": "2025-02-06",
+      "document_type": "Notice",
+      "id": "842796",
+      "kind": "commission_notice",
+      "title": "Commission Determination Not to Review an Initial Determination Finding Respondents in Default"
+    },
+    {
+      "date": "2025-01-17",
+      "document_type": "ID/RD - Other Than Final on Violation",
+      "id": "841330",
+      "kind": "initial_determination",
+      "title": "Initial Determination Finding Bio-Infusions USA Inc., MIRAmedtech UG, eMIRAmed USA, LLC, and MIRAmedtech SP. Z.O.O. in Default"
+    },
+    {
+      "date": "2025-01-08",
+      "document_type": "Order",
+      "id": "840728",
+      "kind": "alj_order",
+      "title": "Amending Procedural Schedule"
+    },
+    {
+      "date": "2025-01-02",
+      "document_type": "Notice",
+      "id": "840335",
+      "kind": "commission_notice",
+      "title": "Commission Determination Not to Review an Initial Determination Finding a Respondent in Default"
+    },
+    {
+      "date": "2024-12-31",
+      "document_type": "Order",
+      "id": "840241",
+      "kind": "alj_order",
+      "title": "Regarding Procedural Schedule"
+    },
+    {
+      "date": "2024-12-18",
+      "document_type": "Order",
+      "id": "839516",
+      "kind": "alj_order",
+      "title": "Amending Procedural Schedule"
+    },
+    {
+      "date": "2024-12-17",
+      "document_type": "Order",
+      "id": "839457",
+      "kind": "alj_order",
+      "title": "Order to Show Cause"
+    },
+    {
+      "date": "2024-12-17",
+      "document_type": "Order",
+      "id": "839455",
+      "kind": "alj_order",
+      "title": "Granting HydraFacial\u2019s Motion for Leave to File out of Time Two Exhibits in Support of Its Opening Claim Construction Brief"
+    },
+    {
+      "date": "2024-12-09",
+      "document_type": "ID/RD - Other Than Final on Violation",
+      "id": "838826",
+      "kind": "initial_determination",
+      "title": "Initial Determination Finding Respondent Medical Purchasing Resource, LLC in Default"
+    },
+    {
+      "date": "2024-11-01",
+      "document_type": "Notice",
+      "id": "836247",
+      "kind": "commission_notice",
+      "title": "Notice"
+    },
+    {
+      "date": "2024-10-10",
+      "document_type": "Order",
+      "id": "834590",
+      "kind": "alj_order",
+      "title": "Procedural Schedule"
+    },
+    {
+      "date": "2024-10-07",
+      "document_type": "Order",
+      "id": "834219",
+      "kind": "alj_order",
+      "title": "Granting Respondent MRP's Motion for Extension"
+    },
+    {
+      "date": "2024-09-24",
+      "document_type": "Order",
+      "id": "833044",
+      "kind": "alj_order",
+      "title": "(1) Setting 15-Month Target Date (2) Setting Preliminary Conference"
+    },
+    {
+      "date": "2024-09-13",
+      "document_type": "Order",
+      "id": "832240",
+      "kind": "alj_order",
+      "title": "Seeking Joint Statement on Target Date"
+    },
+    {
+      "date": "2024-09-13",
+      "document_type": "Order",
+      "id": "832237",
+      "kind": "alj_order",
+      "title": "Ground Rules"
+    },
+    {
+      "date": "2024-09-13",
+      "document_type": "Order",
+      "id": "832235",
+      "kind": "alj_order",
+      "title": "Protective Order"
+    },
+    {
+      "date": "2024-09-09",
+      "document_type": "Notice",
+      "id": "831792",
+      "kind": "commission_notice",
+      "title": "Assignment of ALJ Johnson Hines"
+    },
+    {
+      "date": "2024-09-09",
+      "document_type": "Notice",
+      "id": "831790",
+      "kind": "notice_of_institution",
+      "title": "Institution of Investigation"
+    },
+    {
+      "date": "2024-08-28",
+      "document_type": "Complaint",
+      "id": "830811",
+      "kind": "complaint",
+      "title": "Second Supplement to Complaint"
+    },
+    {
+      "date": "2024-08-23",
+      "document_type": "Complaint",
+      "id": "830480",
+      "kind": "complaint",
+      "title": "First Public Supplement to the Complaint"
+    },
+    {
+      "date": "2024-08-09",
+      "document_type": "Notice",
+      "id": "829133",
+      "kind": "commission_notice",
+      "title": "Receipt of Complaint; Solicitation of Comments Relating to the Public Interest"
+    },
+    {
+      "date": "2024-08-07",
+      "document_type": "Complaint",
+      "id": "828920",
+      "kind": "complaint",
+      "title": "Appendices A-C"
+    },
+    {
+      "date": "2024-08-07",
+      "document_type": "Complaint",
+      "id": "828898",
+      "kind": "complaint",
+      "title": "Public Complaint and Exhibits"
+    }
+  ],
+  "title": "Certain Hydrodermabrasion Systems and Components Thereof III",
+  "usage": {
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0,
+    "input_tokens": 0,
+    "output_tokens": 0
+  },
+  "warnings": []
+}
