@@ -16,6 +16,11 @@ data/counsel.json
 data/claims/fr/
 data/claims_costs.csv.lock
 
+# Rebuilt in full by 'python cli.py analytics'. The model's review decisions
+# are kept: each was paid for.
+data/analytics/*
+!data/analytics/review_decisions.json
+
 # Text extracted (and OCR'd) from the source PDFs, which are not in git either.
 data/claims/text/
 data/counsel_text/

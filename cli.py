@@ -27,6 +27,7 @@ Examples:
     python cli.py docs --existing --appearances   # just the Notice of Appearance PDFs
     python cli.py backfill                  # document lists (no PDFs) for every case; resumable
     python cli.py counsel                   # rebuild who-represents-whom, offline
+    python cli.py analytics                 # firms, attorneys, companies as entities
     python cli.py claims 337-1366 --render  # build a claims analysis
     python cli.py render                    # rebuild the site, offline
     python cli.py serve                     # open the app (what ITC Tracker.bat runs)
@@ -149,6 +150,18 @@ def build_parser() -> argparse.ArgumentParser:
         "--force", action="store_true", help=argparse.SUPPRESS  # run even with the app open
     )
     _add_render_flag(p_backfill)
+
+    p_analytics = sub.add_parser(
+        "analytics",
+        help="rebuild the representation analytics: firms, attorneys and companies as entities (offline, "
+        "plus a few model calls for pairs the rules cannot settle)",
+    )
+    p_analytics.add_argument(
+        "--no-review", action="store_true", help="make no model calls; borderline pairs stay unmerged"
+    )
+    p_analytics.add_argument(
+        "--max-review", type=int, default=None, help="ask the model about at most this many pairs (default 300)"
+    )
 
     p_claims = sub.add_parser(
         "claims",
@@ -321,6 +334,14 @@ def cmd_backfill(args: argparse.Namespace, store: Store) -> int:
     if args.render:
         _render(args, store)
     return 1 if report.stopped else 0
+
+
+def cmd_analytics(args: argparse.Namespace, store: Store) -> int:
+    from datalayer.analytics import build as analytics_build
+
+    options = {"max_review_items": args.max_review} if args.max_review is not None else {}
+    report = analytics_build.run(store, review=not args.no_review, **options)
+    return 1 if report.review.stopped else 0
 
 
 def cmd_claims(args: argparse.Namespace, store: Store) -> int:
@@ -518,6 +539,7 @@ COMMANDS = {
     "docs": cmd_docs,
     "backfill": cmd_backfill,
     "counsel": cmd_counsel,
+    "analytics": cmd_analytics,
     "claims": cmd_claims,
     "render": cmd_render,
     "fields": cmd_fields,

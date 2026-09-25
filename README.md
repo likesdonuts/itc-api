@@ -35,6 +35,7 @@ datalayer/            DATA LAYER - talks to IDS and EDIS, owns data/
   docs.py               process 2: EDIS documents for named cases only
   backfill.py           process 2, once: document lists for every case, resumable
   counsel.py            process 3: who represents whom, from the filings
+  analytics/            representation analytics: firms, attorneys, companies as entities
   client.py             HTTP client for the EDIS API and the IDS file
   store.py              reads/writes data/*.json, resolves case numbers
   config.py             paths, feed URLs, .env token loading
@@ -48,6 +49,7 @@ data/                 the handoff between the layers
   documents_index/      one <number>.json per case: its documents  <- written by docs
   documents_state.json  when each case was last fetched, and which were backfilled
   counsel.json          firms and attorneys per case  <- written by counsel
+  analytics/            firm, attorney and company entities  <- written by analytics
   sync_log.csv          one row per sync, for watching the daily download
   documents/<number>/   downloaded PDFs (gitignored)
 site/                 generated output
@@ -139,6 +141,7 @@ own from the command line.
 | `python cli.py backfill` | EDIS | Lists the documents (no PDFs) of every case that has no list yet, newest first; resumable. Refuses while the app is open (use its button). |
 | `python cli.py claims 337-1366` | Federal Register | Builds or updates the claims analysis for the investigations you name (also the **Create / Update claims analysis** button on a case page). |
 | `python cli.py counsel` | none | Process 3. Rebuilds who represents whom from the documents on disk. Runs by itself after `sync`, `parse`, `docs` and `refresh`. |
+| `python cli.py analytics` | Anthropic (a few cents) | Rebuilds the representation analytics entities in `data/analytics/`. Only ever run by hand (or, later, by the analytics app); `--no-review` makes no model calls. |
 | `python cli.py render` | none | UI layer. Rebuilds `site/` from `data/` and `ui_schema.json`. |
 | `python cli.py serve` | localhost | Opens the app (what `ITC Tracker.bat` runs): the site plus its buttons. |
 | `python cli.py fields` | none | Lists every field name `ui_schema.json` can use, with samples. |
@@ -401,6 +404,86 @@ search also finds cases by firm or attorney.
 The IDS participant ID (the same for one company in every case) is kept on
 each party, for matching across cases later.
 
+### Representation analytics (phase 1: entities)
+
+```
+python cli.py analytics                # rebuild data/analytics/, asking the model about borderline pairs
+python cli.py analytics --no-review    # rules only; no model calls
+```
+
+The aggregate views (firm and attorney leaderboards, who opposed whom,
+co-counsel, company litigation histories) need every spelling of a firm,
+attorney or company to count as one. Phase 1 builds those entities; the
+separate analytics app (phase 2) will show them. **Nothing else runs it**:
+not the daily sync, not document fetches, not counsel. It reads
+`counsel.json`, the case records and the document lists, and writes only
+`data/analytics/`:
+
+| File | What |
+| --- | --- |
+| `firms.json` | each firm: display name, `kind`, every spelling with its filing count, cases, predecessor/successor links |
+| `attorneys.json` | each attorney: spellings, the firms they were at with first/last dates and cases, cases as lead |
+| `companies.json` | each company: spellings, former names, trade names, IDS participant ids, family, cases with roles |
+| `representations.json` | per case and representation: firm ids, attorney ids, the companies acted for with their roles, dates |
+| `needs_review.json` | pairs neither the rules nor the model settled, with the model's answer if any |
+| `report.md` | the match-quality report: counts, merges by rule with examples, the largest entities with what was folded in, non-law-firm filers, what still needs a person |
+| `meta.json` | when it was built, and the counts (its own record: it never writes `state.json`, which the tracker rewrites while its jobs run) |
+| `review_decisions.json` | the model's answers (tracked in git: each was paid for) |
+
+Ids are the display name's normalized key (`firm:kirkland-ellis`,
+`atty:s-alex-lasher`, `co:apple-inc`), so they read well and stay put.
+
+How names become entities (`datalayer/analytics/`), deterministic first:
+
+- **Split before anything else** (`names.split_firm_field`). `;` and ` / `
+  always separate firms. A legal suffix followed by more text ends one firm
+  where the rest is itself a firm ("Winston Taylor LLP, DLA Piper LLP (US),
+  ..., and WilmerHale"), so commas inside one name ("Finnegan, Henderson,
+  Farabow, Garrett & Dunner, LLP") never split it. Old filings that run
+  firms together with no separator ("fenwick and west finnegan henderson ...
+  morrison and foerster") are split only when every word is covered by firms
+  seen elsewhere. Anything else that looks like several firms ("et al", two
+  suffixes) goes to review instead of being guessed.
+- **Normalize** (`names.firm_core`, `company_form`, `parse_person`): case,
+  accents, punctuation, "&"/"and", "The"/"Law Offices of", "(DC)", legal
+  forms. Companies keep their corporate form as part of the key: a company's
+  "Inc." and "LLC" are different legal entities.
+- **Merge, with a recorded reason** (`cluster.py`, a union-find): typos
+  (rapidfuzz ratio >= 90 *and* every differing word >= 85 similar to its
+  counterpart, so "Shenzhen Carku Technology" never merges with "Shenzhen
+  Yark Technology"; a differing place or number never merges); firm short
+  forms ("Pillsbury Winthrop"), only when two or more words shorter and one
+  firm has that start; wrapped-signature fragments ("Nickel, PC" alongside
+  Foster, Murphy, Altman & Nickel in every case); company former names
+  (f/k/a, n/k/a -- but not d/b/a, which Sam's East and Sam's West share);
+  a company name with no form when only one form exists; attorneys with
+  compatible names at one firm, or across firms when no clashing name exists.
+- **Reference list** (`analytics_reference.json`, tracked, edit by hand):
+  firm aliases, predecessor firms (linked, never merged -- Troutman Pepper
+  Hamilton Sanders -> Troutman Pepper Locke), forced kinds, and merge /
+  keep-apart pairs for firms, companies and attorneys. It wins over every
+  rule and over the model.
+- **Kind** (`firms._kind`): law firm, self-represented (a company or person
+  filing for itself, or its in-house counsel), organization, government, or
+  company. Only law firms belong on the law-firm leaderboards.
+- **Review** (`review.py`): pairs the rules put in between -- borderline
+  similarity, a word added, a short form several firms share, a firm field
+  that cannot be split cleanly, a compatible attorney pair while a clashing
+  name exists -- are sent to Claude Haiku in batches of 25 with context
+  (spellings, cases, years, attorneys, roles). An answer is applied only when
+  the model is sure (0.85; 0.95 for "same" on companies whose names differ
+  by a word, which is more often a subsidiary than a typo), cached by the
+  pair's id so it is never paid for twice, and anything else is left
+  unmerged and listed in `needs_review.json` for a person to settle in the
+  reference file. Changing the prompt (`PROMPT_VERSION`) asks again. Costs
+  go to `data/claims_costs.csv` as `analytics-review` rows and count against
+  the same `budget_usd` as the claims analysis. The first full review of
+  the 185 cases then on file was 47 pairs for $0.034.
+
+Coverage follows `counsel.json`: firms and attorneys exist only for cases
+with a document list, which is what the backfill is for; companies come
+from the IDS records of every case.
+
 ### Claims analysis
 
 ```
@@ -604,7 +687,9 @@ rewrites them in place without any API calls.
 `data/ids/` (the snapshots) and `data/investigations.json` are both rebuilt
 from the public feed by one offline-friendly command, and both are large and
 change every day, so they are not tracked. Nor is `data/counsel.json`, which
-`sync` rebuilds from those and the documents. `site/` is generated too.
+`sync` rebuilds from those and the documents, nor `data/analytics/` (rebuilt
+by `analytics`) except its `review_decisions.json`, which was paid for.
+`site/` is generated too.
 
 The PDFs under `data/documents/` are not tracked either: they run to
 gigabytes, and EDIS will serve them again. They live only on the machine that
@@ -634,8 +719,10 @@ python -m unittest discover -s tests
 They need neither a token nor a network connection: the IDS feed is replaced
 with rows shaped like the real thing and EDIS with a fake client. They cover
 the snapshot store, flattening, stage grouping, the field mapping, the sync
-log, rendering, the local server, reading counsel from filings, and that
-fetching documents leaves case information alone.
+log, rendering, the local server, reading counsel from filings, the
+analytics name matching (on spellings taken from the real filings, with the
+model replaced by a fake client), and that fetching documents leaves case
+information alone.
 
 ## Poking at the raw API
 

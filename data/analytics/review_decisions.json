@@ -1,0 +1,669 @@
+{
+  "attorney:589064aa391b20ba": {
+    "confidence": 0.3,
+    "decided_at": "2026-09-25T18:02:38+00:00",
+    "decision": "unsure",
+    "keys": [
+      "s lloyd smith",
+      "stephen smith"
+    ],
+    "kind": "attorney",
+    "model": "claude-haiku-4-5-20251001",
+    "parts": [],
+    "reason": "S. Lloyd Smith and Stephen Smith could be the same person (Stephen could shorten to S., Lloyd could be a middle name). However, different firms (Buchanan-Insersoll-Rooney vs. Cooley) and different years (2026 vs. 2023) are inconsistent. Not enough information to confirm identity. Conservatively marking unsure."
+  },
+  "attorney:77c903908eb89ac8": {
+    "confidence": 0.2,
+    "decided_at": "2026-09-25T18:02:38+00:00",
+    "decision": "unsure",
+    "keys": [
+      "r kevin williams",
+      "robert williams"
+    ],
+    "kind": "attorney",
+    "model": "claude-haiku-4-5-20251001",
+    "parts": [],
+    "reason": "R. Kevin Williams and Robert Williams could be the same attorney (R. could indicate Robert), but different firms (Clark Hill vs. DLA Piper) and consecutive years (2024 vs. 2025) create uncertainty. Without middle names or more context, cannot confirm if this is the same person who moved firms or different people."
+  },
+  "attorney:e558c23bec62cb71": {
+    "confidence": 0.25,
+    "decided_at": "2026-09-25T18:02:38+00:00",
+    "decision": "unsure",
+    "keys": [
+      "r kevin williams",
+      "rob williams"
+    ],
+    "kind": "attorney",
+    "model": "claude-haiku-4-5-20251001",
+    "parts": [],
+    "reason": "R. Kevin Williams and Rob Williams could potentially be the same attorney (Rob as nickname for Robert/R., Kevin as first name). However, different firms (Clark Hill vs. DLA Piper) and both in 2024 suggests possibly the same person moving firms, but insufficient middle names/dates to confirm. Conservative answer is unsure."
+  },
+  "company:0051af96146d92ca": {
+    "confidence": 0.9,
+    "decided_at": "2026-09-25T18:02:38+00:00",
+    "decision": "different",
+    "keys": [
+      "shenzhen joecig technology [co ltd]",
+      "shenzhen ociga technology [co ltd]"
+    ],
+    "kind": "company",
+    "model": "claude-haiku-4-5-20251001",
+    "parts": [
+      "Shenzhen Joecig Technology Co Ltd",
+      "Shenzhen OCIGA Technology Co Ltd"
+    ],
+    "reason": "Shenzhen Joecig Technology and Shenzhen OCIGA Technology are different companies in different cases. The names are substantially different and suggest different legal entities."
+  },
+  "company:0490a7bcb9949599": {
+    "confidence": 0.85,
+    "decided_at": "2026-09-25T18:02:38+00:00",
+    "decision": "different",
+    "keys": [
+      "select comfort [corp]",
+      "select comfort sc [corp]"
+    ],
+    "kind": "company",
+    "model": "claude-haiku-4-5-20251001",
+    "parts": [
+      "Select Comfort Corporation",
+      "Select Comfort SC Corporation"
+    ],
+    "reason": "Select Comfort SC Corporation appears to distinguish a specific division (SC) from Select Comfort Corporation. The 'SC' is a business unit identifier making this a different entity."
+  },
+  "company:0ca2c5bfeeda1ede": {
+    "confidence": 0.98,
+    "decided_at": "2026-09-25T18:02:14+00:00",
+    "decision": "different",
+    "keys": [
+      "altronic [llc]",
+      "lutronic [llc]"
+    ],
+    "kind": "company",
+    "model": "claude-haiku-4-5-20251001",
+    "parts": [],
+    "reason": "These are clearly different companies: 'Altronic, LLC' vs 'Lutronic, LLC'. The names differ substantially in spelling and appear in different cases with different roles (Complainant vs Respondent)."
+  },
+  "company:0cf2515c36956a35": {
+    "confidence": 0.78,
+    "decided_at": "2026-09-25T18:02:14+00:00",
+    "decision": "different",
+    "keys": [
+      "kapsch trafficcom holding [corp]",
+      "kapsch trafficcom ivhs holding [corp]"
+    ],
+    "kind": "company",
+    "model": "claude-haiku-4-5-20251001",
+    "parts": [],
+    "reason": "'Kapsch TrafficCom Holding Corp.' vs 'Kapsch TrafficCom IVHS Holding Corp.' - the addition of 'IVHS' (Intelligent Vehicle Highway Systems) indicates a distinct business unit or subsidiary, not merely a variant of the same entity."
+  },
+  "company:0f446acdb7a5f30a": {
+    "confidence": 0.85,
+    "decided_at": "2026-09-25T18:02:38+00:00",
+    "decision": "different",
+    "keys": [
+      "shenzhen yingmu technology [co ltd]",
+      "shenzhen yingxue technology [co ltd]"
+    ],
+    "kind": "company",
+    "model": "claude-haiku-4-5-20251001",
+    "parts": [
+      "Shenzhen Yingmu Technology Co Ltd",
+      "Shenzhen Yingxue Technology Co Ltd"
+    ],
+    "reason": "Shenzhen Yingmu Technology and Shenzhen Yingxue Technology are different companies in different cases. The names are substantially different (Mu vs. Xue)."
+  },
+  "company:12c4dbb2f1c58e7c": {
+    "confidence": 0.88,
+    "decided_at": "2026-09-25T18:02:14+00:00",
+    "decision": "same",
+    "keys": [
+      "ecoolmart [co]",
+      "ecoolsmart [co]"
+    ],
+    "kind": "company",
+    "model": "claude-haiku-4-5-20251001",
+    "parts": [],
+    "reason": "In the same case (337-1174), 'Ecoolmart Co.' vs 'Ecoolsmart Co.' appear as respondents. The difference is 'mart' vs 'smart' - likely a typo or transliteration variant of the same company name."
+  },
+  "company:1fe20acd80ee7006": {
+    "confidence": 0.85,
+    "decided_at": "2026-09-25T18:02:38+00:00",
+    "decision": "different",
+    "keys": [
+      "philips north america [llc]",
+      "philips rs north america [llc]"
+    ],
+    "kind": "company",
+    "model": "claude-haiku-4-5-20251001",
+    "parts": [
+      "Philips North America LLC",
+      "Philips RS North America LLC"
+    ],
+    "reason": "Philips RS North America LLC appears to be a distinct business unit or subsidiary of Philips North America LLC. The 'RS' (likely referring to a specific division) makes this a different legal entity."
+  },
+  "company:22dcde7a44be594f": {
+    "confidence": 0.9,
+    "decided_at": "2026-09-25T18:02:38+00:00",
+    "decision": "same",
+    "keys": [
+      "rohm haas electronic materials [llc]",
+      "rohm haas electronic materials cmp [llc]"
+    ],
+    "kind": "company",
+    "model": "claude-haiku-4-5-20251001",
+    "parts": [
+      "Rohm and Haas Electronic Materials LLC",
+      "Rohm and Haas Electronic Materials CMP LLC"
+    ],
+    "reason": "The only difference is 'CMP' in the second name, which appears to be a filler word or division identifier. Same case (337-1204) and same role (Respondent) indicate this is the same company with a variant name."
+  },
+  "company:23e366fc3d522f67": {
+    "confidence": 0.75,
+    "decided_at": "2026-09-25T18:02:14+00:00",
+    "decision": "different",
+    "keys": [
+      "corning optical communications [llc]",
+      "corning optical communications rf [llc]"
+    ],
+    "kind": "company",
+    "model": "claude-haiku-4-5-20251001",
+    "parts": [],
+    "reason": "One is 'Corning Optical Communications LLC' and the other is 'Corning Optical Communications RF, LLC'. The addition of 'RF' (Radio Frequency) suggests a different business unit, division, or subsidiary, making them distinct legal entities per the rules."
+  },
+  "company:5a70643f3af64fd3": {
+    "confidence": 0.85,
+    "decided_at": "2026-09-25T18:02:38+00:00",
+    "decision": "different",
+    "keys": [
+      "shenzhen dingjiang technology [co ltd]",
+      "shenzhenshi dianjia technology [co ltd]"
+    ],
+    "kind": "company",
+    "model": "claude-haiku-4-5-20251001",
+    "parts": [
+      "Shenzhen Dingjiang Technology Co Ltd",
+      "Shenzhenshi Dianjia Technology Co Ltd"
+    ],
+    "reason": "Shenzhen Dingjiang Technology and Shenzhenshi Dianjia Technology are different companies in different cases with distinctly different names. These are separate legal entities."
+  },
+  "company:5aa6c2a5f02453f3": {
+    "confidence": 0.8,
+    "decided_at": "2026-09-25T18:02:14+00:00",
+    "decision": "different",
+    "keys": [
+      "chens international [inc]",
+      "ta chen international [inc]"
+    ],
+    "kind": "company",
+    "model": "claude-haiku-4-5-20251001",
+    "parts": [],
+    "reason": "'Chens International' vs 'Ta Chen International' are meaningfully different names. 'Ta Chen' suggests a different legal entity, possibly a predecessor or related but distinct company. Different cases and years support they are different entities."
+  },
+  "company:6781d54e82dad39a": {
+    "confidence": 0.75,
+    "decided_at": "2026-09-25T18:02:14+00:00",
+    "decision": "different",
+    "keys": [
+      "ijs [inc]",
+      "ijss [inc]"
+    ],
+    "kind": "company",
+    "model": "claude-haiku-4-5-20251001",
+    "parts": [],
+    "reason": "'I.J.S. Inc.' vs 'IJSS Inc.' appear to be different entities. The first is an acronym with periods (I.J.S.) while the second is IJSS - suggesting either different companies or significant name evolution. They appear in different cases and time periods."
+  },
+  "company:681d11742012b121": {
+    "confidence": 0.95,
+    "decided_at": "2026-09-25T18:02:38+00:00",
+    "decision": "different",
+    "keys": [
+      "samsung electromechanics [co ltd]",
+      "samsung electronics [co ltd]"
+    ],
+    "kind": "company",
+    "model": "claude-haiku-4-5-20251001",
+    "parts": [
+      "Samsung Electro-Mechanics Co Ltd",
+      "Samsung Electronics Co Ltd"
+    ],
+    "reason": "Samsung Electro-Mechanics Co., Ltd. and Samsung Electronics Co., Ltd. are distinct Samsung subsidiaries serving different functions (mechanics vs. general electronics)."
+  },
+  "company:73aa7a482231423c": {
+    "confidence": 0.95,
+    "decided_at": "2026-09-25T18:02:14+00:00",
+    "decision": "different",
+    "keys": [
+      "ning zhang",
+      "wenqing zhang"
+    ],
+    "kind": "company",
+    "model": "claude-haiku-4-5-20251001",
+    "parts": [],
+    "reason": "'Ning Zhang' vs 'Wenqing Zhang' are clearly different individuals, not the same company/person. These are distinct names in different cases."
+  },
+  "company:741e370d649c9a5b": {
+    "confidence": 0.85,
+    "decided_at": "2026-09-25T18:02:38+00:00",
+    "decision": "different",
+    "keys": [
+      "shenzhen yanyang technology [co ltd]",
+      "shenzhen yanyin technology [co ltd]"
+    ],
+    "kind": "company",
+    "model": "claude-haiku-4-5-20251001",
+    "parts": [
+      "Shenzhen Yanyang Technology Co Ltd",
+      "Shenzhen Yanyin Technology Co Ltd"
+    ],
+    "reason": "Shenzhen Yanyang Technology and Shenzhen Yanyin Technology are different companies in different cases. The names differ significantly (Yang vs. Yin) suggesting distinct entities."
+  },
+  "company:792532ce19b24411": {
+    "confidence": 0.95,
+    "decided_at": "2026-09-25T18:02:38+00:00",
+    "decision": "different",
+    "keys": [
+      "samsung electromechanics america [inc]",
+      "samsung electronics america [inc]"
+    ],
+    "kind": "company",
+    "model": "claude-haiku-4-5-20251001",
+    "parts": [
+      "Samsung Electro-Mechanics America Inc",
+      "Samsung Electronics America Inc"
+    ],
+    "reason": "Samsung Electro-Mechanics America, Inc. and Samsung Electronics America, Inc. are different subsidiaries. One is the U.S. arm of the mechanics division, the other of the main electronics division."
+  },
+  "company:7960b1fb0dde3afe": {
+    "confidence": 0.85,
+    "decided_at": "2026-09-25T18:02:38+00:00",
+    "decision": "different",
+    "keys": [
+      "shenzhen konghui trading [co ltd]",
+      "shenzhenshi julonghui trading [co ltd]"
+    ],
+    "kind": "company",
+    "model": "claude-haiku-4-5-20251001",
+    "parts": [
+      "Shenzhen Konghui Trading Co Ltd",
+      "ShenzhenShi Julonghui Trading Co Ltd"
+    ],
+    "reason": "Shenzhen Konghui Trading and ShenzhenShi Julonghui Trading are different companies in different cases. The names are substantially different."
+  },
+  "company:7a970a217cca77fd": {
+    "confidence": 0.8,
+    "decided_at": "2026-09-25T18:02:14+00:00",
+    "decision": "different",
+    "keys": [
+      "advanced silicon group technologies [llc]",
+      "advanced silicon technologies [llc]"
+    ],
+    "kind": "company",
+    "model": "claude-haiku-4-5-20251001",
+    "parts": [],
+    "reason": "These are likely different companies. One is 'Advanced Silicon Group Technologies' and the other is 'Advanced Silicon Technologies' - the inclusion of 'Group' suggests they are distinct legal entities, possibly parent/subsidiary or separate companies with similar names."
+  },
+  "company:82f992612d0be880": {
+    "confidence": 0.95,
+    "decided_at": "2026-09-25T18:02:14+00:00",
+    "decision": "different",
+    "keys": [
+      "ascendis pharma [inc]",
+      "ascletis pharma [inc]"
+    ],
+    "kind": "company",
+    "model": "claude-haiku-4-5-20251001",
+    "parts": [],
+    "reason": "These are clearly different companies: 'Ascendis Pharma' vs 'Ascletis Pharma'. While similar sounding, they are distinct legal entities in different cases."
+  },
+  "company:8589762f1e69ea12": {
+    "confidence": 0.92,
+    "decided_at": "2026-09-25T18:02:14+00:00",
+    "decision": "same",
+    "keys": [
+      "dji technology [co ltd]",
+      "sz dji technology [co ltd]"
+    ],
+    "kind": "company",
+    "model": "claude-haiku-4-5-20251001",
+    "parts": [],
+    "reason": "'DJI Technology Co., Ltd.' and 'SZ DJI Technology Co., Ltd.' refer to the same company. 'SZ' is a geographical prefix (Shenzhen) that qualifies the same legal entity; per the rules, a name with an extra word naming a place is the same entity when it's plainly just a geographical qualifier."
+  },
+  "company:8830d6da83bf6972": {
+    "confidence": 0.99,
+    "decided_at": "2026-09-25T18:02:14+00:00",
+    "decision": "different",
+    "keys": [
+      "entropic communications [inc]",
+      "metropcs communications [inc]"
+    ],
+    "kind": "company",
+    "model": "claude-haiku-4-5-20251001",
+    "parts": [],
+    "reason": "These are clearly different companies in different cases: 'Entropic Communications, Inc.' vs 'MetroPCS Communications, Inc.' are distinct telecommunications companies."
+  },
+  "company:8d044f0299bd2564": {
+    "confidence": 0.92,
+    "decided_at": "2026-09-25T18:02:38+00:00",
+    "decision": "same",
+    "keys": [
+      "shenzhen tcl new technologies [co ltd]",
+      "shenzhen tcl new technology [co ltd]"
+    ],
+    "kind": "company",
+    "model": "claude-haiku-4-5-20251001",
+    "parts": [
+      "Shenzhen TCL New Technology Co Ltd"
+    ],
+    "reason": "The difference between 'Technologies' and 'Technology' is a minor variant/typo of the same company name. Both refer to Shenzhen TCL's new technology division, appearing across overlapping case numbers (337-1318 appears in both)."
+  },
+  "company:94b7fda1a3f67d91": {
+    "confidence": 0.95,
+    "decided_at": "2026-09-25T18:02:38+00:00",
+    "decision": "different",
+    "keys": [
+      "samsung electromechanics america [inc]",
+      "samsung optoelectronics america [inc]"
+    ],
+    "kind": "company",
+    "model": "claude-haiku-4-5-20251001",
+    "parts": [
+      "Samsung Electro-Mechanics America Inc",
+      "Samsung Opto-Electronics America Inc"
+    ],
+    "reason": "Samsung Electro-Mechanics America and Samsung Opto-Electronics America are different Samsung subsidiaries operating different product divisions."
+  },
+  "company:952839d1cbe7d28e": {
+    "confidence": 0.95,
+    "decided_at": "2026-09-25T18:02:38+00:00",
+    "decision": "same",
+    "keys": [
+      "wo ma te tianjin international trade [co ltd]",
+      "womart tianjin international trade [co ltd]"
+    ],
+    "kind": "company",
+    "model": "claude-haiku-4-5-20251001",
+    "parts": [
+      "Womart Tianjin International Trade Co Ltd"
+    ],
+    "reason": "Per the rules, 'Wo Ma Te' and 'Womart' are spelling/transliteration variants of the same company name. Same case and role confirm identity. This is the same legal entity written differently."
+  },
+  "company:9ff47b98d38922ce": {
+    "confidence": 0.85,
+    "decided_at": "2026-09-25T18:02:14+00:00",
+    "decision": "same",
+    "keys": [
+      "huawei technologies [co ltd]",
+      "huawei technology [co ltd]"
+    ],
+    "kind": "company",
+    "model": "claude-haiku-4-5-20251001",
+    "parts": [],
+    "reason": "'Huawei Technologies Co., Ltd.' vs 'Huawei Technology Company, Ltd.' are the same company with slight name variation. The difference is 'Technologies' vs 'Technology Company' - both refer to the same Chinese multinational and are stylistic/transliteration variants of the same legal entity."
+  },
+  "company:a6d0339e97416fe7": {
+    "confidence": 0.9,
+    "decided_at": "2026-09-25T18:02:38+00:00",
+    "decision": "different",
+    "keys": [
+      "shenzhenshi lishian keji youxiangongsi",
+      "shenzhenshi shoudiankejiyouxiangongsi"
+    ],
+    "kind": "company",
+    "model": "claude-haiku-4-5-20251001",
+    "parts": [
+      "Shenzhenshi Lishian Keji Youxiangongsi",
+      "Shenzhenshi Shoudiankejiyouxiangongsi"
+    ],
+    "reason": "Shenzhenshi Lishian Keji Youxiangongsi and Shenzhenshi Shoudiankejiyouxiangongsi are different companies in different cases with substantially different Chinese names."
+  },
+  "company:a85908c88eda888b": {
+    "confidence": 0.95,
+    "decided_at": "2026-09-25T18:02:38+00:00",
+    "decision": "same",
+    "keys": [
+      "shenzhen city yaxin general machinery [co ltd]",
+      "shenzhen yaxin general machinery [co ltd]"
+    ],
+    "kind": "company",
+    "model": "claude-haiku-4-5-20251001",
+    "parts": [
+      "Shenzhen Yaxin General Machinery Co Ltd"
+    ],
+    "reason": "Per the rules, 'City' in 'Shenzhen City Yaxin General Machinery Co., Ltd.' is a plainly filler word and should be treated as a typo/variant of the same company. Same case and role confirm identity."
+  },
+  "company:afa9452babb4da90": {
+    "confidence": 0.99,
+    "decided_at": "2026-09-25T18:02:14+00:00",
+    "decision": "different",
+    "keys": [
+      "dlink systems [inc]",
+      "tplink systems [inc]"
+    ],
+    "kind": "company",
+    "model": "claude-haiku-4-5-20251001",
+    "parts": [],
+    "reason": "These are clearly different companies: 'D-Link Systems Inc.' vs 'TP-Link Systems Inc.'. These are distinct international networking equipment manufacturers."
+  },
+  "company:b6fc7316b4eea1b8": {
+    "confidence": 0.95,
+    "decided_at": "2026-09-25T18:02:38+00:00",
+    "decision": "different",
+    "keys": [
+      "samsung electronics america [inc]",
+      "samsung optoelectronics america [inc]"
+    ],
+    "kind": "company",
+    "model": "claude-haiku-4-5-20251001",
+    "parts": [
+      "Samsung Electronics America Inc",
+      "Samsung Opto-Electronics America Inc"
+    ],
+    "reason": "Samsung Electronics America and Samsung Opto-Electronics America are different subsidiaries. Despite similar names, they represent distinct business units."
+  },
+  "company:c3df917049895a52": {
+    "confidence": 0.9,
+    "decided_at": "2026-09-25T18:02:14+00:00",
+    "decision": "different",
+    "keys": [
+      "menard [inc]",
+      "menards [inc]"
+    ],
+    "kind": "company",
+    "model": "claude-haiku-4-5-20251001",
+    "parts": [],
+    "reason": "'Menard, Inc.' vs 'Menards, Inc.' - while very similar, these are different legal entities. The singular 'Menard' vs the plural 'Menards' represents distinct company registrations in different cases."
+  },
+  "company:c5aad76dc2d9eebc": {
+    "confidence": 0.85,
+    "decided_at": "2026-09-25T18:02:14+00:00",
+    "decision": "same",
+    "keys": [
+      "olympus surgical technologies europe",
+      "olympus surgical technologies europe cardiff"
+    ],
+    "kind": "company",
+    "model": "claude-haiku-4-5-20251001",
+    "parts": [],
+    "reason": "In the same case (337-1182), 'Olympus Surgical Technologies Europe' and 'Olympus Surgical Technologies Europe|Cardiff' refer to the same entity. 'Cardiff' is a geographical qualifier (city in Wales) added to clarify location, not a distinct legal entity per the rules."
+  },
+  "company:c6e05a481aac1e5b": {
+    "confidence": 0.9,
+    "decided_at": "2026-09-25T18:02:14+00:00",
+    "decision": "same",
+    "keys": [
+      "beijing zjlg amorphous technology [co ltd]",
+      "beijing zljg amorphous technology [co ltd]"
+    ],
+    "kind": "company",
+    "model": "claude-haiku-4-5-20251001",
+    "parts": [],
+    "reason": "In the same case (337-1078), 'ZJLG' vs 'ZLJG' appears to be a typo or variant transliteration of the same Chinese company 'Beijing [Z]JLG Amorphous Technology Co., Ltd.'. The only difference is the order of letters J and L, which is likely a data entry or OCR error."
+  },
+  "company:cfadc91dc8a8cccc": {
+    "confidence": 0.85,
+    "decided_at": "2026-09-25T18:02:14+00:00",
+    "decision": "same",
+    "keys": [
+      "ahcunilever united states [inc]",
+      "unilever united states [inc]"
+    ],
+    "kind": "company",
+    "model": "claude-haiku-4-5-20251001",
+    "parts": [],
+    "reason": "In the same case (337-1407), 'AHC-Unilever United States, Inc.' and 'Unilever United States, Inc.' appear as respondents. 'AHC-' is likely an abbreviation or prefix (possibly 'All Hands Care' or similar). This is a variant spelling/naming of the same legal entity."
+  },
+  "company:d4ef56e8a086fefe": {
+    "confidence": 0.88,
+    "decided_at": "2026-09-25T18:02:14+00:00",
+    "decision": "same",
+    "keys": [
+      "pajunk medizintechnik [gmbh]",
+      "pajunk medizintechnologie [gmbh]"
+    ],
+    "kind": "company",
+    "model": "claude-haiku-4-5-20251001",
+    "parts": [],
+    "reason": "'Pajunk Medizintechnik GmbH' vs 'Pajunk Medizintechnologie GmbH' in the same case (337-865) refer to the same company. The difference is 'Technik' (technique/technology) vs 'Technologie' (technology) - these are German language variants of the same concept and refer to the same legal entity."
+  },
+  "company:d97f47ec3baf5090": {
+    "confidence": 0.95,
+    "decided_at": "2026-09-25T18:02:38+00:00",
+    "decision": "different",
+    "keys": [
+      "samsung eectronics america [inc]",
+      "samsung optoelectronics america [inc]"
+    ],
+    "kind": "company",
+    "model": "claude-haiku-4-5-20251001",
+    "parts": [
+      "Samsung Electronics America Inc",
+      "Samsung Opto-Electronics America Inc"
+    ],
+    "reason": "Samsung Opto-Electronics America and Samsung Electronics America are different Samsung subsidiaries. Despite the typo 'Eectronics' in one spelling, these represent different business units."
+  },
+  "company:e0f41b6f74295b65": {
+    "confidence": 0.88,
+    "decided_at": "2026-09-25T18:02:14+00:00",
+    "decision": "same",
+    "keys": [
+      "jiangsu yueda [co ltd]",
+      "jingsa yueda [co ltd]"
+    ],
+    "kind": "company",
+    "model": "claude-haiku-4-5-20251001",
+    "parts": [],
+    "reason": "In the same case (337-487), 'Jiangsu Yueda' vs 'Jingsa Yueda' appear as respondents. The difference in the first character ('Jiangsu' vs 'Jingsa') appears to be a typo or transliteration error of the same Chinese company. Same case and identical role support this."
+  },
+  "company:ef3c4168ca5a3163": {
+    "confidence": 0.9,
+    "decided_at": "2026-09-25T18:02:38+00:00",
+    "decision": "different",
+    "keys": [
+      "shenzhen dingjiang technology [co ltd]",
+      "shenzhen jiahongjing technology [co ltd]"
+    ],
+    "kind": "company",
+    "model": "claude-haiku-4-5-20251001",
+    "parts": [
+      "Shenzhen Dingjiang Technology Co Ltd",
+      "Shenzhen Jiahongjing Technology Co Ltd"
+    ],
+    "reason": "Shenzhen Dingjiang Technology and Shenzhen Jiahongjing Technology are distinctly named companies. Despite both being in case 337-1256, the names are substantially different and likely represent different legal entities."
+  },
+  "company:f00b7fa9b9e1843a": {
+    "confidence": 0.95,
+    "decided_at": "2026-09-25T18:02:14+00:00",
+    "decision": "different",
+    "keys": [
+      "opticon [inc]",
+      "option [inc]"
+    ],
+    "kind": "company",
+    "model": "claude-haiku-4-5-20251001",
+    "parts": [],
+    "reason": "'Opticon, Inc.' vs 'Option, Inc.' are different companies. These are distinct names appearing in different cases with only one letter difference, but they are separate legal entities."
+  },
+  "company:f5c539c33d9b262e": {
+    "confidence": 0.8,
+    "decided_at": "2026-09-25T18:02:14+00:00",
+    "decision": "different",
+    "keys": [
+      "interdigital holdings [inc]",
+      "interdigital vc holdings [inc]"
+    ],
+    "kind": "company",
+    "model": "claude-haiku-4-5-20251001",
+    "parts": [],
+    "reason": "'InterDigital Holdings, Inc.' vs 'InterDigital VC Holdings, Inc.' are likely different legal entities. The addition of 'VC' (Venture Capital) indicates a distinct subsidiary or business division, not merely a stylistic variant."
+  },
+  "company:f706391545eeb410": {
+    "confidence": 0.95,
+    "decided_at": "2026-09-25T18:02:38+00:00",
+    "decision": "different",
+    "keys": [
+      "samsung eectronics america [inc]",
+      "samsung electromechanics america [inc]"
+    ],
+    "kind": "company",
+    "model": "claude-haiku-4-5-20251001",
+    "parts": [
+      "Samsung Electronics America Inc",
+      "Samsung Electro-Mechanics America Inc"
+    ],
+    "reason": "Samsung Electromechanics America and Samsung Electronics America are different Samsung subsidiaries serving different product lines. These are distinct legal entities."
+  },
+  "company:fb6acd31af052d2d": {
+    "confidence": 0.85,
+    "decided_at": "2026-09-25T18:02:14+00:00",
+    "decision": "different",
+    "keys": [
+      "j e enterprises [inc]",
+      "joe enterprises [inc]"
+    ],
+    "kind": "company",
+    "model": "claude-haiku-4-5-20251001",
+    "parts": [],
+    "reason": "'J&E Enterprises, Inc.' vs 'Joe Enterprises, Inc.' are different company names. While J&E could abbreviate something like 'Joe & Someone', they appear in different cases and the full spelling 'Joe' vs the abbreviation 'J&E' suggests distinct entities."
+  },
+  "firm:677731d2a667664f": {
+    "confidence": 0.5,
+    "decided_at": "2026-09-25T18:02:14+00:00",
+    "decision": "unsure",
+    "keys": [
+      "kellogg hansen todd figel frederick",
+      "kellogg huber hansen todd figel frederick"
+    ],
+    "kind": "firm",
+    "model": "claude-haiku-4-5-20251001",
+    "parts": [],
+    "reason": "The names differ significantly: one includes 'Huber' while the other doesn't. This could indicate a merger, name change, or evolution of the firm over time. Both versions appear in SEC filings but it's unclear if 'Huber' was added/removed to/from the firm name or if these are genuinely different iterations. John Thorne appears in both, supporting they may be the same firm at different times, but the structural difference is substantial enough to warrant caution."
+  },
+  "firm:a8049a26aa2c43e4": {
+    "confidence": 0.45,
+    "decided_at": "2026-09-25T18:02:14+00:00",
+    "decision": "unsure",
+    "keys": [
+      "kellogg huber hansen todd evans",
+      "kellogg huber hansen todd evans figel"
+    ],
+    "kind": "firm",
+    "model": "claude-haiku-4-5-20251001",
+    "parts": [],
+    "reason": "Significant name variation: one spells it 'Kellogg, Huber, Hansen, Todd & Evans' and the other adds 'Figel' at the end: 'Kellogg, Huber, Hansen, Todd, Evans & Figel'. This could be a partner addition, a merger, or a name change. John Thorne appears in both versions. Without clearer evidence of whether Figel was added or if this represents a substantive restructuring, conservatism suggests 'unsure'."
+  },
+  "firm:ea11c0e4f556c9fb": {
+    "confidence": 0.95,
+    "decided_at": "2026-09-25T18:02:14+00:00",
+    "decision": "same",
+    "keys": [
+      "foster murphy altman nickel",
+      "foster murphy altman nockel"
+    ],
+    "kind": "firm",
+    "model": "claude-haiku-4-5-20251001",
+    "parts": [
+      "Foster, Murphy, Altman & Nickel, PC"
+    ],
+    "reason": "Clear typo: 'Nickel' vs 'Nockel' in the firm name. All other spellings are consistent. Same attorneys appear in the main version. Typos in firm names are treated as 'same'."
+  }
+}
