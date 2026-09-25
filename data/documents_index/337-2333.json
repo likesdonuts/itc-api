@@ -1,0 +1,38 @@
+[
+  {
+    "attachments": [],
+    "document_date": "2003-11-05",
+    "document_type": "Other",
+    "filed_by": "Cecilia H. Gonzalez",
+    "firm_organization": "Howrey, Simon, Arnold, and White",
+    "id": "195114",
+    "official_received_date": "2003-11-05",
+    "on_behalf_of": "Cecilia H. Gonzalez",
+    "security_level": "Public",
+    "title": "Letter withdrawing complaint"
+  },
+  {
+    "attachments": [],
+    "document_date": "2003-10-27",
+    "document_type": "Complaint",
+    "filed_by": "Cecilia H. Gonzalez",
+    "firm_organization": "Howrey, Simon, Arnold, and White",
+    "id": "194623",
+    "official_received_date": "2003-10-27",
+    "on_behalf_of": "Merck & Co., Inc.",
+    "security_level": "Public",
+    "title": "Complaint and Public Exhibits"
+  },
+  {
+    "attachments": [],
+    "document_date": "2003-10-27",
+    "document_type": "Complaint",
+    "filed_by": "Cecilia H. Gonzalez",
+    "firm_organization": "Howrey, Simon, Arnold, and White",
+    "id": "194624",
+    "official_received_date": "2003-10-27",
+    "on_behalf_of": "Merck & Co., Inc.",
+    "security_level": "Confidential",
+    "title": "Confidential Exhibits to Complaint"
+  }
+]

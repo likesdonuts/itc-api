@@ -33,7 +33,7 @@ It refreshes itself once a day when opened, or on demand.
 | Source | What it provides | How often |
 | --- | --- | --- |
 | USITC Investigations Data System (IDS) | Every investigation: number, title, status, dates, parties | One public download a day |
-| USITC Electronic Document Information System (EDIS) | Each case's docket: every filing, who filed it, for whom, and the PDFs | On demand for chosen cases, and daily for cases already tracked (needs a free EDIS access token) |
+| USITC Electronic Document Information System (EDIS) | Each case's docket: every filing, who filed it, for whom, and the PDFs | Listed once for every case (the backfill), then daily for open cases and cases being followed; PDFs on demand (needs a free EDIS access token) |
 | Federal Register | Commission notices cited by the claims analysis | On demand |
 | AI model (Claude Haiku) | Reads rulings in the PDFs to find which patent claims were dropped, found invalid or found infringed | On demand per case, with a $20 spending cap |
 
@@ -42,24 +42,33 @@ from a known file, and every sync is logged to help spot bad data days.
 
 ## The data today
 
-- **1,382 investigations**, dating back to 1987:
+- **1,383 investigations**, dating back to 1987:
   - 125 active
-  - 55 pending before a judge
-  - 15 pending before the Commission
-  - 823 terminated
+  - 59 pending before a judge
+  - 14 pending before the Commission
+  - 824 terminated
   - the rest inactive, withdrawn or not instituted
-- **185 cases with full dockets:** 39,379 filings listed, and 5,619 PDFs
-  (about 20 GB) on disk.
-- **Counsel:** 1,058 firm-to-client relationships across 179 cases,
-  covering 322 law firms and 1,409 attorneys. The backfill will extend this
-  to the rest of the ~1,200 cases.
-- **Non-parties:** 200 companies and people pulled into 73 cases by subpoena
-  or intervention.
-- **Name matching (for analytics):** 314 firm spellings resolve to 287
-  filers, 270 of them law firms. 1,395 attorney spellings resolve to 1,310
-  people, and 6,687 company names to 6,610 companies, with 28 former names
-  linked (for example Philips Lighting → Signify). Borderline cases were
-  checked by AI for about $0.03, and 14 are left for a person to decide.
+- **Dockets for every case with filings on record:** 1,370 cases,
+  419,900 filings listed. 12 older cases have nothing in the USITC's
+  electronic filing system. 6,187 PDFs (about 20 GB) have been downloaded
+  for the cases followed most closely.
+- **Counsel:** 8,184 firm-to-client relationships across 1,143 cases,
+  covering 1,282 law firms and 10,130 attorneys. The oldest cases' filings
+  don't name firms, so they have no counsel. The most active firms are
+  Adduci, Mastriani & Schaumberg (236 investigations), Fish & Richardson
+  (235) and Finnegan (177).
+- **Non-parties:** 1,730 companies and people pulled into 425 cases by
+  subpoena or intervention.
+- **Name matching (for analytics):**
+  - 2,851 firm spellings resolve to 1,434 filers, 1,282 of them law firms.
+    The rest are companies or people representing themselves, trade groups
+    and government bodies.
+  - 11,816 attorney name forms resolve to 10,130 people, 1,391 of whom
+    appear at more than one firm over time.
+  - 7,322 company names resolve to 7,225 companies. 25 companies are
+    linked to their former names (for example Philips Lighting → Signify).
+  - Borderline cases were checked by AI for about $0.21 in total, and 64
+    are left for a person to decide.
 - **Claims analysis:** 3 pilot cases analyzed for about $0.15 in total AI
   cost.
 
@@ -72,7 +81,7 @@ from a known file, and every sync is logged to help spot bad data days.
 | Companies subpoenaed into a case never appear in the official party list. | The app finds them from their own filings. It shows why they are involved, such as "responding to a subpoena served by Respondents", read from their notices, including scanned documents. |
 | It was hard to know whether a case's data is current. | Each case shows when its documents were last fetched, plus how many documents it has and how many have PDFs on disk. |
 | Following how patent claims narrow means reading hundreds of pages of rulings. | An AI-assisted claims timeline shows, for each respondent, which claims were withdrawn, dismissed or found invalid, and when. Every finding links back to its source sentence and is checked before it is shown. Cost is tracked against a hard budget. |
-| Firm and attorney information only existed for the ~185 cases someone had chosen to fetch, too few for firm-level trends. | A one-click backfill lists the filings of every case (no PDFs), newest first. It can be stopped and resumed, and it lays the groundwork for the upcoming representation analytics (firm and attorney leaderboards, who-opposed-whom). |
+| Firm and attorney information only existed for the ~185 cases someone had chosen to fetch, too few for firm-level trends. | A one-click backfill lists the filings of every case (no PDFs), newest first, and can be stopped and resumed. It has now run: counsel covers 1,143 investigations instead of 179, which is what the firm and attorney analytics are built on. |
 | The same firm, lawyer or company appears under many spellings: typos, "LLP" vs "L.L.P.", short forms, former company names, and several firms run together in one field. Any count or ranking would be wrong. | Automatic name matching turns spellings into single firms, attorneys and companies. It uses clear rules first, then AI review for borderline cases, and leaves the rest for a person. The person settles each one with a single command (same, different, or renamed firm), and the answer is kept for every future rebuild. It keeps predecessor firms linked rather than merged, keeps companies representing themselves out of the law-firm lists, and follows attorneys who move between firms. A match-quality report shows every merge and why it was made. |
 | Questions like "which firms do the most ITC work for respondents?", "who has Apple faced, and with which lawyers?" or "whom has this attorney opposed?" meant reading dockets case by case. | The ITC Analytics app offers leaderboards for firms and attorneys and a page for every firm, attorney and company. Each page shows clients, opponents, attorneys and cases. Search works across all names, and filters cover side and years. |
 | Business-development and competitive questions ("which firms is this firm growing with?", "who gets sued most?", "which rivals keep suing each other?") had no answer short of manual research. | Caseload timelines and co-counsel lists on each firm's page. Frequent-flier rankings of the most-sued and most-suing companies. A list of companies that have sued each other in both directions. All of it can be grouped by corporate family and filtered by years. |
@@ -84,11 +93,12 @@ from a known file, and every sync is logged to help spot bad data days.
 - The app is single-user and runs on one PC.
 - The EDIS access token expires and has to be renewed by hand.
 - The claims analysis has only been run on three pilot cases so far.
-- The full backfill takes a few hours of requests to the USITC. The oldest
-  cases (before the USITC's electronic filing system) have no filings to list.
-- Until the backfill finishes, firm and attorney rankings cover only the
-  investigations with filings on file (179 of 1,382 today). Company
-  histories already cover every investigation.
+- Firm and attorney rankings cover the 1,143 investigations whose filings
+  name counsel. The oldest cases predate electronic filing or don't record
+  firms, so they are missing. Company histories cover every investigation.
+- 64 name pairs are waiting for a person to decide. Until then each stays
+  as two entries, which can undercount a firm, attorney or company but
+  never merges two different ones.
 
 ## On hold
 

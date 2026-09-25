@@ -1,0 +1,98 @@
+[
+  {
+    "attachments": [],
+    "document_date": "2014-01-28",
+    "document_type": "Voting Sheet",
+    "filed_by": "Lisa R. Barton",
+    "firm_organization": "USITC",
+    "id": "526826",
+    "official_received_date": "2014-01-30T09:44:00",
+    "on_behalf_of": "Office of the Secretary",
+    "security_level": "Public",
+    "title": null
+  },
+  {
+    "attachments": [],
+    "document_date": "2014-01-28",
+    "document_type": "Correspondence - USITC",
+    "filed_by": "Lisa R. Barton",
+    "firm_organization": "USITC",
+    "id": "526696",
+    "official_received_date": "2014-01-29T10:36:00",
+    "on_behalf_of": "Office of the Secretary",
+    "security_level": "Public",
+    "title": "Non-Institution of Investigation"
+  },
+  {
+    "attachments": [],
+    "document_date": "2014-01-16",
+    "document_type": "Complaint",
+    "filed_by": "Monisha Deka",
+    "firm_organization": "USITC",
+    "id": "525809",
+    "official_received_date": "2014-01-16T09:38:00",
+    "on_behalf_of": "Office of Unfair Import Investigations",
+    "security_level": "Public",
+    "title": "OUII Letter to L. Jew"
+  },
+  {
+    "attachments": [],
+    "document_date": "2014-01-06",
+    "document_type": "Notice",
+    "filed_by": "Lisa R. Barton",
+    "firm_organization": "USITC",
+    "id": "525514",
+    "official_received_date": "2014-01-10T13:26:00",
+    "on_behalf_of": "Office of the Secretary",
+    "security_level": "Public",
+    "title": "F.R. Notice of Receipt of Complaint; Solicitation of Comments Relating to the Public Interest"
+  },
+  {
+    "attachments": [],
+    "document_date": "2013-12-31",
+    "document_type": "Memorandum",
+    "filed_by": "Shara L. Aranoff",
+    "firm_organization": "USITC",
+    "id": "525034",
+    "official_received_date": "2014-01-02T12:15:00",
+    "on_behalf_of": "Commissioner",
+    "security_level": "Public",
+    "title": "Recusal"
+  },
+  {
+    "attachments": [],
+    "document_date": "2013-12-30",
+    "document_type": "Notice",
+    "filed_by": "William R. Bishop",
+    "firm_organization": "USITC",
+    "id": "524975",
+    "official_received_date": "2013-12-31T11:09:00",
+    "on_behalf_of": "Office of the Secretary",
+    "security_level": "Public",
+    "title": "Notice of Receipt of Complaint; Solicitation of Comments Relating to the Public Interest"
+  },
+  {
+    "attachments": [],
+    "document_date": "2013-12-21",
+    "document_type": "Complaint",
+    "filed_by": "LEON JEW",
+    "firm_organization": "Jew & Associates",
+    "id": "524662",
+    "official_received_date": "2013-12-30T14:00:00",
+    "on_behalf_of": "Prospera Corporation",
+    "security_level": "Public",
+    "title": "Complaint, Public Exhibits, and Appendix"
+  },
+  {
+    "attachments": [],
+    "document_date": "2013-12-21",
+    "document_type": "Complaint",
+    "filed_by": "Leon Jew",
+    "firm_organization": "Jew & Associates",
+    "id": "524663",
+    "official_received_date": "2013-12-30T14:00:00",
+    "on_behalf_of": "Prospera Corporation",
+    "security_level": "Confidential",
+    "title": "Confidential Exhibits"
+  }
+]

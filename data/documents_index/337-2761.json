@@ -1,0 +1,62 @@
+[
+  {
+    "attachments": [],
+    "document_date": "2010-11-09",
+    "document_type": "Answer to Complaint",
+    "filed_by": "Christopher Fok",
+    "firm_organization": "DJ Tech Limited",
+    "id": "437725",
+    "official_received_date": "2010-11-12T10:46:00",
+    "on_behalf_of": "DJ Tech Limited",
+    "security_level": "Public",
+    "title": null
+  },
+  {
+    "attachments": [],
+    "document_date": "2010-11-04",
+    "document_type": "Complaint",
+    "filed_by": "Rachelle Renfro Green",
+    "firm_organization": "Duffy & Sweeney Ltd.",
+    "id": "437183",
+    "official_received_date": "2010-11-05T13:49:00",
+    "on_behalf_of": "Numark Industries, L.P.",
+    "security_level": "Public",
+    "title": "Letter to Abbott Regarding Notice of Withdrawal of Verified Complaint"
+  },
+  {
+    "attachments": [],
+    "document_date": "2010-10-22",
+    "document_type": "Notice",
+    "filed_by": "Marilyn R. Abbott",
+    "firm_organization": "USITC",
+    "id": "436236",
+    "official_received_date": "2010-10-22T15:48:00",
+    "on_behalf_of": "Office of the Secretary",
+    "security_level": "Public",
+    "title": null
+  },
+  {
+    "attachments": [],
+    "document_date": "2010-10-18",
+    "document_type": "Notice",
+    "filed_by": "Marilyn R. Abbott",
+    "firm_organization": "USITC",
+    "id": "435851",
+    "official_received_date": "2010-10-18T16:43:00",
+    "on_behalf_of": "Office of the Secretary",
+    "security_level": "Public",
+    "title": "Solicitation of Comments Relating to the Public Interest"
+  },
+  {
+    "attachments": [],
+    "document_date": "2010-10-15",
+    "document_type": "Complaint",
+    "filed_by": "Rachelle Renfro Green",
+    "firm_organization": "Duffy & Sweeney, Ltd.",
+    "id": "435637",
+    "official_received_date": "2010-10-18T15:09:00",
+    "on_behalf_of": "Numark Industries, L.P.",
+    "security_level": "Public",
+    "title": null
+  }
+]

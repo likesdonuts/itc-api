@@ -1,0 +1,50 @@
+[
+  {
+    "attachments": [],
+    "document_date": "2019-03-05",
+    "document_type": "Correspondence",
+    "filed_by": "Kecia Reynolds",
+    "firm_organization": "Pillsbury Winthrop Shaw Pittman LLP",
+    "id": "669034",
+    "official_received_date": "2019-03-05T09:46:00",
+    "on_behalf_of": "bObsweep USA LLC and bObsweep Inc.",
+    "security_level": "Confidential",
+    "title": "Letter to Secretary Barton regarding Enforcement Complaint with Confidential Exhibits"
+  },
+  {
+    "attachments": [],
+    "document_date": "2019-03-05",
+    "document_type": "Correspondence",
+    "filed_by": "Kecia Reynolds",
+    "firm_organization": "Pillsbury Winthrop Shaw Pittman LLP",
+    "id": "669033",
+    "official_received_date": "2019-03-05T09:41:00",
+    "on_behalf_of": "bObsweep USA LLC and bObsweep Inc.",
+    "security_level": "Public",
+    "title": "Letter to Secretary Barton regarding Enforcement Complaint"
+  },
+  {
+    "attachments": [],
+    "document_date": "2019-02-21",
+    "document_type": "Complaint",
+    "filed_by": "Aaron Wainscoat",
+    "firm_organization": "DLA Piper LLP (US)",
+    "id": "667772",
+    "official_received_date": "2019-02-21T15:56:00",
+    "on_behalf_of": "iRobot Corporation",
+    "security_level": "Confidential",
+    "title": "Enforcement Complaint and Exhibits"
+  },
+  {
+    "attachments": [],
+    "document_date": "2019-02-21",
+    "document_type": "Complaint",
+    "filed_by": "Aaron Wainscoat",
+    "firm_organization": "DLA Piper LLP (US)",
+    "id": "667769",
+    "official_received_date": "2019-02-21T15:45:00",
+    "on_behalf_of": "iRobot Corporation",
+    "security_level": "Public",
+    "title": "Enforcement Complaint and Exhibits"
+  }
+]
