@@ -5,12 +5,24 @@ address saying what is shown, so a view can be bookmarked or reloaded:
 
     #/                      leaderboards: firms and attorneys by cases
     #/firms  #/attorneys  #/companies     every one, searchable
-    #/firm/<id>  #/attorney/<id>  #/company/<id>
+    #/firm/<id>  #/attorney/<id>  #/company/<id>  #/family/<name>
+    #/cocounsel             firms on the same side of the same case, by pair
+    #/disputes              companies that have sued each other both ways
     #/search/<text>         everything whose name matches
     #/review                the name pairs waiting for a person
 
-The filters (which side, which years, law firms only) apply to every count
-on every view and are remembered in this browser.
+The filters (which side, which years, law firms only, companies grouped by
+family) apply to every count on every view and are remembered in this
+browser.
+
+Definitions the views share:
+- a firm's (or attorney's) caseload in a year: the cases it was working on,
+  from its first filing in a case to its last (else the case's own start and
+  end), split by whether the case is open today
+- co-counsel: two firms acting for the same side of the same case
+- sued: complainant -> respondent in a case; two-way: both directions exist
+- a family: companies whose names lead with the same brand word (a
+  grouping by name, not ownership)
 """
 
 from __future__ import annotations
@@ -99,6 +111,11 @@ tr:last-child td { border-bottom: none; }
   overflow: auto; font-size: 0.78rem; white-space: pre-wrap; }
 code { background: var(--gray-bg); padding: 0.05rem 0.3rem; border-radius: 4px; font-size: 0.85em; }
 .empty { color: var(--muted); padding: 0.4rem 0; }
+.chart { overflow-x: auto; }
+.chart svg { display: block; max-width: none; }
+.chart text { font-size: 10px; fill: var(--muted); }
+.legend { display: flex; gap: 1rem; flex-wrap: wrap; font-size: 0.8rem; color: var(--muted); margin-top: 0.3rem; }
+.legend i { display: inline-block; width: 0.7rem; height: 0.7rem; border-radius: 2px; margin-right: 0.35rem; vertical-align: -1px; }
 @media (max-width: 640px) { .grid { grid-template-columns: 1fr; } .search { max-width: none; } }
 """
 
@@ -158,7 +175,7 @@ SCRIPT = r"""
   const OTHER = {C: 'R', R: 'C'};
 
   // ---- filters -------------------------------------------------------------
-  const F = {side: 'all', from: '', to: '', law: true};
+  const F = {side: 'all', from: '', to: '', law: true, family: false};
   try { Object.assign(F, JSON.parse(localStorage.getItem('analytics-filters') || '{}')); } catch (e) {}
   const saveFilters = () => { try { localStorage.setItem('analytics-filters', JSON.stringify(F)); } catch (e) {} };
   const inYears = (k) => {
@@ -172,13 +189,14 @@ SCRIPT = r"""
     return (F.side === 'all' || r[4] === F.side) && inYears(r[0]);
   };
   const lawOk = (f) => !F.law || D.firms[f].kind === 'law_firm';
-  function filterBar(withLaw, withSide = true) {
+  function filterBar(withLaw, withSide = true, withFamily = false) {
     return `<div class="filters">
       ${withSide ? `<label>Acting for <select id="f-side">
         <option value="all">any side</option><option value="C">complainants</option><option value="R">respondents</option><option value="N">non-parties</option></select></label>` : ''}
       <label>Cases started <input type="number" id="f-from" placeholder="from" value="${esc(F.from)}"> to
         <input type="number" id="f-to" placeholder="to" value="${esc(F.to)}"></label>
       ${withLaw ? '<label><input type="checkbox" id="f-law"> Law firms only</label>' : ''}
+      ${withFamily ? '<label><input type="checkbox" id="f-family"> Group companies by family</label>' : ''}
     </div>`;
   }
   function wireFilters() {
@@ -187,11 +205,14 @@ SCRIPT = r"""
     if (side) side.value = F.side;
     const law = document.getElementById('f-law');
     if (law) law.checked = F.law;
+    const family = document.getElementById('f-family');
+    if (family) family.checked = F.family;
     const apply = () => {
       if (side) F.side = side.value;
       F.from = document.getElementById('f-from').value;
       F.to = document.getElementById('f-to').value;
       if (law) F.law = law.checked;
+      if (family) F.family = family.checked;
       saveFilters();
       route();
     };
@@ -239,6 +260,175 @@ SCRIPT = r"""
       return row;
     }).sort((a, b) => b[withRoles ? 2 : 1] - a[withRoles ? 2 : 1]);
   }
+
+  // ---- over time -----------------------------------------------------------
+  const THIS_YEAR = new Date().getFullYear();
+  // The years a set of representations was working on each case: from its
+  // first filing to its last, else the case's own start and end (a closed
+  // case with no end date counts for its start year; an open one runs to now).
+  function activeSpans(reps) {
+    const spans = new Map();
+    reps.forEach((i) => {
+      if (!repOk(i)) return;
+      const r = D.reps[i], c = D.cases[r[0]];
+      const from = r[5] || c[2];
+      if (!from) return;
+      const to = Math.max(from, r[6] || c[5] || (c[4] ? THIS_YEAR : from));
+      const s = spans.get(r[0]);
+      spans.set(r[0], s ? [Math.min(s[0], from), Math.max(s[1], to)] : [from, to]);
+    });
+    return spans;
+  }
+  // Cases a firm or attorney was working on in each year, split by whether
+  // the case is still open today.
+  function caseload(reps) {
+    const byYear = new Map();
+    activeSpans(reps).forEach(([from, to], k) => {
+      for (let y = from; y <= Math.min(to, THIS_YEAR); y++) {
+        const e = byYear.get(y) || {open: 0, closed: 0};
+        e[D.cases[k][4] ? 'open' : 'closed']++;
+        byYear.set(y, e);
+      }
+    });
+    return byYear;
+  }
+  // A company's cases by the year each started, as complainant and respondent.
+  function litigationByYear(cases) {
+    const byYear = new Map();
+    cases.forEach(([k, roles]) => {
+      const y = D.cases[k][2];
+      if (!y) return;
+      const e = byYear.get(y) || {C: 0, R: 0, N: 0};
+      roles.split('').forEach((r) => { if (r in e) e[r]++; });
+      byYear.set(y, e);
+    });
+    return byYear;
+  }
+  const CASELOAD = [{key: 'closed', label: 'cases since closed', color: 'var(--muted)'}, {key: 'open', label: 'cases still open', color: 'var(--accent)'}];
+  const ROLES = [{key: 'C', label: 'as complainant', color: 'var(--accent)'}, {key: 'R', label: 'as respondent', color: 'var(--amber-fg)'},
+    {key: 'N', label: 'as non-party', color: 'var(--muted)'}];
+  function barChart(byYear, series) {
+    if (!byYear.size) return '<div class="empty">No dated cases.</div>';
+    const years = [...byYear.keys()];
+    const lo = Math.min(...years), hi = Math.max(...years);
+    const all = [];
+    for (let y = lo; y <= hi; y++) all.push(y);
+    const total = (y) => series.reduce((s, x) => s + ((byYear.get(y) || {})[x.key] || 0), 0);
+    const max = Math.max(1, ...all.map(total));
+    const bw = Math.max(10, Math.min(28, 720 / all.length)), W = all.length * bw, H = 140;
+    let bars = '';
+    all.forEach((y, i) => {
+      const e = byYear.get(y) || {};
+      const tip = `${y}: ` + series.map((x) => `${e[x.key] || 0} ${x.label}`).join(', ');
+      let top = H;
+      series.forEach((x) => {
+        const h = ((e[x.key] || 0) / max) * (H - 12);
+        if (!h) return;
+        top -= h;
+        bars += `<rect x="${i * bw + 1}" y="${top.toFixed(1)}" width="${bw - 2}" height="${h.toFixed(1)}" fill="${x.color}"><title>${esc(tip)}</title></rect>`;
+      });
+    });
+    const step = Math.ceil(all.length / Math.max(1, Math.floor(W / 44)));
+    const labels = all.map((y, i) => i % step ? '' : `<text x="${i * bw + bw / 2}" y="${H + 13}" text-anchor="middle">${y}</text>`).join('');
+    const legend = series.map((x) => `<span><i style="background:${x.color}"></i>${esc(x.label)}</span>`).join('');
+    return `<div class="chart"><svg viewBox="0 0 ${W} ${H + 16}" width="${W}" height="${H + 16}" role="img"
+      aria-label="By year">${bars}${labels}<text x="2" y="10">peak ${max}</text></svg></div><div class="legend">${legend}</div>`;
+  }
+
+  // ---- co-counsel ------------------------------------------------------------
+  // Firms on the same side of the same case: each (case, side) with the firms
+  // acting on it, law firms only when that filter is on.
+  function teams() {
+    const groups = new Map();
+    D.reps.forEach((r, i) => {
+      if (!repOk(i)) return;
+      const key = r[0] + '|' + r[4];
+      const g = groups.get(key) || new Set();
+      r[1].forEach((f) => { if (lawOk(f)) g.add(f); });
+      groups.set(key, g);
+    });
+    return groups;
+  }
+  function coCounselOf(f) {
+    const out = new Map();
+    teams().forEach((firms, key) => {
+      if (!firms.has(f)) return;
+      const k = +key.split('|')[0];
+      firms.forEach((o) => { if (o !== f) (out.get(o) || out.set(o, new Set()).get(o)).add(k); });
+    });
+    return out;
+  }
+  function coCounselPairs() {
+    const pairs = new Map();
+    teams().forEach((firms, key) => {
+      const k = +key.split('|')[0], list = [...firms].sort((a, b) => a - b);
+      list.forEach((a, x) => list.slice(x + 1).forEach((b) => (pairs.get(a + '|' + b) || pairs.set(a + '|' + b, new Set()).get(a + '|' + b)).add(k)));
+    });
+    return pairs;
+  }
+
+  // ---- companies, one by one or by family -------------------------------------
+  const families = new Map();
+  D.companies.forEach((c, i) => { if (c.family) (families.get(c.family) || families.set(c.family, []).get(c.family)).push(i); });
+  const unitOf = (i) => (F.family && D.companies[i].family) ? 'f:' + D.companies[i].family : 'c:' + i;
+  const unitLink = (u) => u.startsWith('f:')
+    ? `<a href="#/family/${encodeURIComponent(u.slice(2))}">${esc(u.slice(2))} family</a> <span class="muted">(${families.get(u.slice(2)).length})</span>`
+    : link('company', D.companies[+u.slice(2)]);
+  // Each company (or family) -> case -> roles, within the year filter.
+  function unitCases() {
+    const out = new Map();
+    D.companies.forEach((c, i) => {
+      const u = unitOf(i);
+      c.cases.forEach(([k, roles]) => {
+        if (!inYears(k)) return;
+        const m = out.get(u) || out.set(u, new Map()).get(u);
+        m.set(k, (m.get(k) || '') + roles);
+      });
+    });
+    return out;
+  }
+  function frequentBoard(role, limit) {
+    const rows = [];
+    unitCases().forEach((cases, u) => {
+      const n = [...cases.values()].filter((r) => r.includes(role)).length;
+      if (n) rows.push([unitLink(u), n, cases.size]);
+    });
+    rows.sort((a, b) => b[1] - a[1]);
+    rows.forEach((r, i) => r.unshift(i + 1));
+    return table([{label: '#'}, {label: F.family ? 'Company or family' : 'Company'},
+      {label: role === 'R' ? 'Times sued' : 'Times suing', num: 1}, {label: 'All cases', num: 1}], rows, limit);
+  }
+  // Who sued whom: complainant -> respondent, for every case in the years.
+  function suits() {
+    const sued = new Map();
+    D.cases.forEach((c, k) => {
+      if (!inYears(k)) return;
+      const P = caseParties[k];
+      const from = new Set(P.C.map(unitOf)), to = new Set(P.R.map(unitOf));
+      from.forEach((a) => to.forEach((b) => { if (a !== b) (sued.get(a + '>' + b) || sued.set(a + '>' + b, new Set()).get(a + '>' + b)).add(k); }));
+    });
+    return sued;
+  }
+  // Pairs that have sued each other both ways.
+  function twoWay(only) {
+    const sued = suits(), rows = [];
+    sued.forEach((ab, key) => {
+      const [a, b] = key.split('>');
+      if (a > b && !only) return;
+      if (only && a !== only) return;
+      const ba = sued.get(b + '>' + a);
+      if (ba) rows.push([unitLink(a), unitLink(b), ab.size, ba.size, `<span class="muted">${casesCell(new Set([...ab, ...ba]))}</span>`]);
+    });
+    return rows.sort((x, y) => (y[2] + y[3]) - (x[2] + x[3]));
+  }
+  function twoWayOf(i) {
+    const saved = F.family;
+    F.family = false;
+    const rows = twoWay('c:' + i).map((r) => r.slice(1));
+    F.family = saved;
+    return table(TWO_WAY_HEAD.slice(1), rows, 15);
+  }
+  const TWO_WAY_HEAD = [{label: 'Company'}, {label: 'and'}, {label: 'Sued them', num: 1}, {label: 'Sued by them', num: 1}, {label: 'Cases'}];
 
   // ---- views ---------------------------------------------------------------
   function firmBoard(limit) {
@@ -288,7 +478,46 @@ SCRIPT = r"""
   const viewAttorneys = () => `<h1>Attorneys</h1>${filterBar(true)}<div class="card">${attorneyBoard(200)}</div>`;
   const viewCompanies = () => `<h1>Companies</h1>
     <div class="sub">Every party in every investigation, including the ones without counsel on file.</div>
-    ${filterBar(false, false)}<div class="card">${companyBoard(200)}</div>`;
+    ${filterBar(false, false, true)}
+    <div class="grid">
+      <div class="card"><h2>Most often sued <small>repeat respondents</small></h2>${frequentBoard('R', 20)}</div>
+      <div class="card"><h2>Most often suing <small>repeat complainants</small></h2>${frequentBoard('C', 20)}</div>
+    </div>
+    <div class="card" style="margin-top:1rem"><h2>Every company</h2>${companyBoard(200)}</div>`;
+  function viewCoCounsel() {
+    const rows = [...coCounselPairs().entries()].map(([key, cases]) => {
+      const [a, b] = key.split('|').map(Number);
+      return [link('firm', D.firms[a]), link('firm', D.firms[b]), cases.size, `<span class="muted">${casesCell(cases)}</span>`];
+    }).sort((x, y) => y[2] - x[2]);
+    return `<h1>Co-counsel</h1>
+      <div class="sub">Firms that appeared on the same side of the same investigation, by how often.</div>
+      ${filterBar(true)}<div class="card">${table([{label: 'Firm'}, {label: 'with'}, {label: 'Cases together', num: 1}, {label: 'Cases'}], rows, 100)}</div>`;
+  }
+  const viewDisputes = () => `<h1>Two-way disputes</h1>
+    <div class="sub">Companies that have sued each other in both directions: each was the complainant against the other at least once.</div>
+    ${filterBar(false, false, true)}<div class="card">${table(TWO_WAY_HEAD, twoWay(), 100)}</div>`;
+  function viewFamily(name) {
+    const members = families.get(name) || [];
+    const cases = new Map();
+    members.forEach((i) => D.companies[i].cases.forEach(([k, roles]) => { if (inYears(k)) cases.set(k, (cases.get(k) || '') + roles); }));
+    const list = [...cases.entries()];
+    const as = (code) => list.filter(([, r]) => r.includes(code)).length;
+    const rows = members.map((i) => {
+      const own = D.companies[i].cases.filter(([k]) => inYears(k));
+      return [link('company', D.companies[i]), own.length, own.filter(([, r]) => r.includes('C')).length, own.filter(([, r]) => r.includes('R')).length];
+    }).sort((a, b) => b[1] - a[1]);
+    const saved = F.family;
+    F.family = true;
+    const disputes = twoWay('f:' + name).map((r) => r.slice(1));
+    F.family = saved;
+    return `<h1>${esc(name)} family</h1>
+      <div class="sub">Companies whose names lead with “${esc(name)}”: a grouping by name, not a statement of who owns whom.</div>
+      ${filterBar(false, false)}
+      ${stats([[list.length, 'cases'], [as('C'), 'as complainant'], [as('R'), 'as respondent'], [members.length, 'companies']])}
+      <div class="card"><h2>By year <small>cases started</small></h2>${barChart(litigationByYear(list), ROLES)}</div>
+      <div class="card"><h2>Companies in the family</h2>${table([{label: 'Company'}, {label: 'Cases', num: 1}, {label: 'As complainant', num: 1}, {label: 'As respondent', num: 1}], rows, 30)}</div>
+      <div class="card"><h2>Two-way disputes</h2>${table(TWO_WAY_HEAD.slice(1), disputes, 20)}</div>`;
+  }
 
   function stats(items) {
     return '<div class="stats">' + items.map(([n, label]) => `<div class="stat"><b>${n}</b><span>${esc(label)}</span></div>`).join('') + '</div>';
@@ -325,7 +554,10 @@ SCRIPT = r"""
         <div class="card"><h2>Clients <small>companies it represented</small></h2>${table([{label: 'Company'}, {label: 'Role'}, {label: 'Cases', num: 1}, {label: ''}], companyRows(clients, true), 15)}</div>
         <div class="card"><h2>Opposed <small>companies on the other side</small></h2>${table([{label: 'Company'}, {label: 'Cases', num: 1}, {label: ''}], companyRows(opponents, false), 15)}</div>
       </div>
-      <div class="card" style="margin-top:1rem"><h2>Attorneys</h2>${table([{label: 'Attorney'}, {label: 'Cases here', num: 1}],
+      <div class="card" style="margin-top:1rem"><h2>Caseload over time <small>cases it was working on each year, from its first filing to its last</small></h2>${barChart(caseload(reps), CASELOAD)}</div>
+      <div class="card"><h2>Co-counsel <small>firms on the same side of its cases</small></h2>${table([{label: 'Firm'}, {label: 'Cases together', num: 1}, {label: ''}],
+        [...coCounselOf(i).entries()].map(([o, s]) => [link('firm', D.firms[o]), s.size, `<span class="muted">${casesCell(s)}</span>`]).sort((x, y) => y[1] - x[1]), 15)}</div>
+      <div class="card"><h2>Attorneys</h2>${table([{label: 'Attorney'}, {label: 'Cases here', num: 1}],
         [...attorneys.entries()].map(([a, s]) => [link('attorney', D.attorneys[a]), s.size]).sort((x, y) => y[1] - x[1]), 15)}</div>
       <div class="card"><h2>Cases</h2>${table([{label: 'Case'}, {label: 'Acting for'}, {label: 'Clients'}],
         casesTable(reps, (r) => r[3].map((p) => link('company', D.companies[p[0]]))), 25)}</div>`;
@@ -343,6 +575,7 @@ SCRIPT = r"""
       ${filterBar(false)}
       ${stats([[c.all.size, 'cases'], [c.C.size, 'for complainants'], [c.R.size, 'for respondents'], ...(c.N.size ? [[c.N.size, 'for non-parties']] : []), [c.open.size, 'open']])}
       <div class="card"><h2>Firms</h2>${table([{label: 'Firm'}, {label: 'First filing'}, {label: 'Last filing'}], stints)}</div>
+      <div class="card"><h2>Caseload over time</h2>${barChart(caseload(reps), CASELOAD)}</div>
       <div class="grid">
         <div class="card"><h2>Clients</h2>${table([{label: 'Company'}, {label: 'Role'}, {label: 'Cases', num: 1}, {label: ''}], companyRows(clients, true), 15)}</div>
         <div class="card"><h2>Opposed</h2>${table([{label: 'Company'}, {label: 'Cases', num: 1}, {label: ''}], companyRows(opponents, false), 15)}</div>
@@ -384,7 +617,9 @@ SCRIPT = r"""
         <div class="card"><h2>Attorneys <small>that represented it</small></h2>${table([{label: 'Attorney'}, {label: 'Cases', num: 1}],
           [...attorneys.entries()].map(([a, s]) => [link('attorney', D.attorneys[a]), s.size]).sort((a, b) => b[1] - a[1]), 15)}</div>
       </div>
-      <div class="card" style="margin-top:1rem"><h2>Opposed <small>parties on the other side of its cases</small></h2>${table([{label: 'Company'},
+      <div class="card" style="margin-top:1rem"><h2>Litigation history <small>cases by the year they started</small></h2>${barChart(litigationByYear(cases), ROLES)}</div>
+      <div class="card"><h2>Two-way disputes <small>companies it has both sued and been sued by</small></h2>${twoWayOf(i)}</div>
+      <div class="card"><h2>Opposed <small>parties on the other side of its cases</small></h2>${table([{label: 'Company'},
         {label: 'Direction'}, {label: 'Cases', num: 1}, {label: ''}], oppRows, 20)}</div>
       <div class="card"><h2>Cases</h2>${table([{label: 'Case'}, {label: 'Role'}],
         cases.slice().sort((a, b) => (D.cases[b[0]][2] || 0) - (D.cases[a[0]][2] || 0)).map(([k, r]) => [caseText(k), r.split('').map(pill).join(' ')]), 25)}</div>`;
@@ -435,6 +670,9 @@ SCRIPT = r"""
     else if (kind === 'attorneys') html = viewAttorneys();
     else if (kind === 'companies') html = viewCompanies();
     else if (kind === 'review') html = viewReview();
+    else if (kind === 'cocounsel') html = viewCoCounsel();
+    else if (kind === 'disputes') html = viewDisputes();
+    else if (kind === 'family') html = viewFamily(id);
     else if (kind === 'search') html = viewSearch(id);
     else if (index[kind] && index[kind].has(id)) {
       const i = index[kind].get(id);
@@ -528,7 +766,7 @@ def html() -> str:
   <span class="brand">{TITLE}</span>
   <nav>
     <a href="#/">Leaderboards</a><a href="#/firms">Firms</a><a href="#/attorneys">Attorneys</a>
-    <a href="#/companies">Companies</a><a href="#/review">Review<span class="badge" id="review-count" hidden></span></a>
+    <a href="#/companies">Companies</a><a href="#/cocounsel">Co-counsel</a><a href="#/disputes">Two-way disputes</a><a href="#/review">Review<span class="badge" id="review-count" hidden></span></a>
   </nav>
   <div class="search"><input id="q" type="search" placeholder="Search firms, attorneys, companies" autocomplete="off">
     <div class="results" id="results" hidden></div></div>

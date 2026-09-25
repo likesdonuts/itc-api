@@ -142,12 +142,29 @@ separate app from the tracker (its own window, on <http://127.0.0.1:8766>):
   it opposed, its attorneys and its cases; an attorney's page adds the firms
   they were at and when; a company's page lists the firms and attorneys that
   represented it and every party it faced, in which direction.
+- **Caseload over time** on each firm's and attorney's page: bars for each
+  year, counting the cases it was working on then (from its first filing in
+  a case to its last), split into cases since closed and cases still open.
+- **Co-counsel**: on a firm's page, the firms that appeared on the same side
+  of its cases; the Co-counsel page ranks every pair.
+- **Companies** leads with the frequent fliers: the companies most often sued
+  (repeat respondents) and most often suing (repeat complainants). A
+  company's page adds its litigation history by year, as complainant and as
+  respondent, including cases filed under former names.
+- **Two-way disputes**: pairs of companies where each has been the
+  complainant against the other; the same list for one company on its page.
+- **Families**: tick "Group companies by family" to count related companies
+  together ("samsung" for Samsung Electronics, Samsung Display, ...). Each
+  family has a page. It is a grouping by the name's leading brand word, not
+  a statement of ownership; `analytics_reference.json` `companies.families`
+  can pin a company to a family by hand.
 - **Search** (top right) finds firms, attorneys and companies by any spelling,
   former name or trade name.
 - **Filters** on every view: which side (complainants, respondents,
-  non-parties), which years (by the year the investigation started), and law
+  non-parties), which years (by the year the investigation started), law
   firms only (leaving out companies filing for themselves, pro se
-  individuals and the like). They are remembered in the browser.
+  individuals and the like), and grouping by family. They are remembered in
+  the browser.
 - **Review** lists the name pairs waiting for you (`python cli.py decide`).
 
 It rebuilds its data the first time it is opened each day, and when its
@@ -740,14 +757,21 @@ reads the tracker's files, which are always replaced whole, and writes only
 does.
 
 The page is one HTML file drawing every view in the browser from `data.js`
-(`analytics_ui/bundle.py`): cases, firms, attorneys and companies as lists,
-and representations as `[case, [firms], [attorneys], [[company, role]],
-side]` referring to them by position -- about 1.3 MB for 179 cases with
+(`analytics_ui/bundle.py`): cases (`[number, title, year started, status,
+open, year ended]`), firms, attorneys and companies as lists, and
+representations as `[case, [firms], [attorneys], [[company, role]], side,
+first filing year, last filing year]` referring to them by position -- about 1.3 MB for 179 cases with
 counsel. `data.js` sets `window.ANALYTICS` rather than being fetched, so the
 page also reads when opened from disk (without Rebuild). Views are addressed
 by the hash (`#/firm/firm:kirkland-ellis`), so they can be bookmarked. Who a
 firm or attorney *opposed* is read off each case: the companies on the other
-side (intervenors count with respondents; non-parties oppose no one).
+side (intervenors count with respondents; non-parties oppose no one). The
+timelines, co-counsel pairs, frequent fliers and two-way disputes are all
+computed in the page from the same data, so every filter applies to them;
+the definitions are at the top of `analytics_ui/page.py`. The charts are
+inline SVG, with no charting library. A closed case with no end date in the
+IDS feed (about a quarter of them) counts in a caseload for the years its
+firms filed in it, or its start year when that is all there is.
 
 ## Dates
 

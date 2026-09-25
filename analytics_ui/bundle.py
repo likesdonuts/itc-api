@@ -3,11 +3,16 @@
 Entities are lists and refer to each other by position, so a browser loads
 a few megabytes rather than tens and builds its own indexes once:
 
-    cases       [number, title, year, status, open]
+    cases       [number, title, year started, status, open, year ended]
     firms       {id, name, kind, spellings, predecessors, successors}
     attorneys   {id, name, spellings, firms: [[firm, first, last]]}
     companies   {id, name, former, trade, family, cases: [[case, roles]]}
-    reps        [case, [firm], [attorney], [[company, role]], side]
+    reps        [case, [firm], [attorney], [[company, role]], side,
+                 year of first filing, year of last filing]
+
+The filing years say when a firm was actually working on a case, which is
+what a firm's caseload over time is drawn from; many closed cases have no
+end date in the IDS feed.
 
 Roles and sides are one letter: C complainant, R respondent (intervenors
 count with respondents: they join a case to defend the accused products),
@@ -88,6 +93,7 @@ def build(data_dir: Path) -> dict[str, Any]:
             _year(record.get("date_initiated")),
             record.get("status") or "",
             1 if record.get("status") in OPEN_STATUSES and not record.get("withdrawn") else 0,
+            _year(record.get("date_ended")),
         ])
 
     firm_ix = {f["id"]: i for i, f in enumerate(firms)}
@@ -136,6 +142,8 @@ def build(data_dir: Path) -> dict[str, Any]:
             [atty_ix[a] for a in r.get("attorneys") or [] if a in atty_ix],
             [[company_ix[p["company"]], role_code(p.get("role"))] for p in r.get("parties") or [] if p["company"] in company_ix],
             side_of(r.get("roles") or [p.get("role") for p in r.get("parties") or []]),
+            _year(r.get("first_filed")),
+            _year(r.get("last_filed")),
         ]
         for r in reps
         if r["case"] in case_ix

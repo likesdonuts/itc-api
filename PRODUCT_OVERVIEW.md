@@ -19,6 +19,12 @@ as a whole:
 - every company's full record as complainant and respondent, including under
   former names
 - the firms and lawyers each company has used
+- each firm's caseload over time (still-open vs. closed cases) and the firms
+  it most often works alongside (co-counsel)
+- the "frequent fliers": the companies most often sued and most often suing
+- pairs of companies that have sued each other in both directions
+- all of the above for a whole corporate family ("Samsung") as well as for
+  single companies
 
 It refreshes itself once a day when opened, or on demand.
 
@@ -69,6 +75,7 @@ from a known file, and every sync is logged to help spot bad data days.
 | Firm and attorney information only existed for the ~185 cases someone had chosen to fetch, too few for firm-level trends. | A one-click backfill lists the filings of every case (no PDFs), newest first. It can be stopped and resumed, and it lays the groundwork for the upcoming representation analytics (firm and attorney leaderboards, who-opposed-whom). |
 | The same firm, lawyer or company appears under many spellings: typos, "LLP" vs "L.L.P.", short forms, former company names, and several firms run together in one field. Any count or ranking would be wrong. | Automatic name matching turns spellings into single firms, attorneys and companies. It uses clear rules first, then AI review for borderline cases, and leaves the rest for a person. The person settles each one with a single command (same, different, or renamed firm), and the answer is kept for every future rebuild. It keeps predecessor firms linked rather than merged, keeps companies representing themselves out of the law-firm lists, and follows attorneys who move between firms. A match-quality report shows every merge and why it was made. |
 | Questions like "which firms do the most ITC work for respondents?", "who has Apple faced, and with which lawyers?" or "whom has this attorney opposed?" meant reading dockets case by case. | The ITC Analytics app offers leaderboards for firms and attorneys and a page for every firm, attorney and company. Each page shows clients, opponents, attorneys and cases. Search works across all names, and filters cover side and years. |
+| Business-development and competitive questions ("which firms is this firm growing with?", "who gets sued most?", "which rivals keep suing each other?") had no answer short of manual research. | Caseload timelines and co-counsel lists on each firm's page. Frequent-flier rankings of the most-sued and most-suing companies. A list of companies that have sued each other in both directions. All of it can be grouped by corporate family and filtered by years. |
 | The USITC's daily data file sometimes fails to download. | The download retries automatically. If it still fails, the rest of the daily update runs anyway and the failure is logged. |
 | Gigabytes of PDFs slowed down version control. | Documents stay on the local machine only, and can be downloaded again from the USITC at any time. |
 
@@ -83,9 +90,7 @@ from a known file, and every sync is logged to help spot bad data days.
   investigations with filings on file (179 of 1,382 today). Company
   histories already cover every investigation.
 
-## In progress
+## On hold
 
-- **More analytics:** firm caseloads over time (active vs. closed),
-  co-counsel pairings, the companies most often sued and suing ("frequent
-  fliers"), and pairs of companies that have sued each other in both
-  directions.
+- **Claims analysis, phase 4.** Paused by choice. The first three phases work
+  on the pilot cases.
