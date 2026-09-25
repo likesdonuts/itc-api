@@ -5,3 +5,5 @@ pypdf
 anthropic
 rapidocr-onnxruntime
 pypdfium2
+# Representation analytics: fuzzy matching of firm, company and attorney names.
+rapidfuzz

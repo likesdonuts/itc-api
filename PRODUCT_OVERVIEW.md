@@ -38,6 +38,11 @@ from a known file, and every sync is logged to help spot bad data days.
   to the rest of the ~1,200 cases.
 - **Non-parties:** 200 companies and people pulled into 73 cases by subpoena
   or intervention.
+- **Name matching (for analytics):** 314 firm spellings resolve to 287
+  filers, 270 of them law firms. 1,395 attorney spellings resolve to 1,310
+  people, and 6,687 company names to 6,610 companies, with 28 former names
+  linked (for example Philips Lighting → Signify). Borderline cases were
+  checked by AI for about $0.03, and 14 are left for a person to decide.
 - **Claims analysis:** 3 pilot cases analyzed for about $0.15 in total AI
   cost.
 
@@ -51,6 +56,7 @@ from a known file, and every sync is logged to help spot bad data days.
 | It was hard to know whether a case's data is current. | Each case shows when its documents were last fetched, plus how many documents it has and how many have PDFs on disk. |
 | Following how patent claims narrow means reading hundreds of pages of rulings. | An AI-assisted claims timeline shows, for each respondent, which claims were withdrawn, dismissed or found invalid, and when. Every finding links back to its source sentence and is checked before it is shown. Cost is tracked against a hard budget. |
 | Firm and attorney information only existed for the ~185 cases someone had chosen to fetch, too few for firm-level trends. | A one-click backfill lists the filings of every case (no PDFs), newest first. It can be stopped and resumed, and it lays the groundwork for the upcoming representation analytics (firm and attorney leaderboards, who-opposed-whom). |
+| The same firm, lawyer or company appears under many spellings: typos, "LLP" vs "L.L.P.", short forms, former company names, and several firms run together in one field. Any count or ranking would be wrong. | Automatic name matching turns spellings into single firms, attorneys and companies. It uses clear rules first, then AI review for borderline cases, and leaves the rest for a person. It keeps predecessor firms linked rather than merged, keeps companies representing themselves out of the law-firm lists, and follows attorneys who move between firms. A match-quality report shows every merge and why it was made. |
 | The USITC's daily data file sometimes fails to download. | The download retries automatically. If it still fails, the rest of the daily update runs anyway and the failure is logged. |
 | Gigabytes of PDFs slowed down version control. | Documents stay on the local machine only, and can be downloaded again from the USITC at any time. |
 
@@ -67,4 +73,5 @@ from a known file, and every sync is logged to help spot bad data days.
 - **Representation analytics**, a separate app: which law firms and attorneys
   appear most, who each firm represented and opposed, co-counsel pairings,
   firm caseloads over time, and company litigation histories, including
-  former company names.
+  former company names. The name matching underneath it is built. The app
+  itself comes next.

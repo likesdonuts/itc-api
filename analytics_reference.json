@@ -1,0 +1,41 @@
+{
+  "_about": [
+    "Hand-kept facts the analytics name matching cannot work out itself. Every entry wins over the automatic rules and over the model's review decisions.",
+    "Names are matched by their normalized form, so punctuation, 'LLP' and capitalization do not matter.",
+    "firms.aliases: each list is one firm; the first name is the one shown.",
+    "firms.predecessors: firms that merged into or were renamed to the key. They stay separate firms, linked to the successor, so a leaderboard can choose whether to count them.",
+    "firms.kinds: force a filer's kind: law_firm, self_represented, organization, government or company.",
+    "*.merge / *.keep_apart: pairs to treat as one, or never as one."
+  ],
+  "firms": {
+    "aliases": [
+      ["WilmerHale", "Wilmer Cutler Pickering Hale and Dorr LLP"]
+    ],
+    "predecessors": {
+      "Troutman Pepper Hamilton Sanders LLP": ["Troutman Sanders LLP", "Pepper Hamilton LLP"],
+      "Troutman Pepper Locke LLP": ["Troutman Pepper Hamilton Sanders LLP", "Locke Lord LLP"],
+      "McDermott Will & Schulte LLP": ["McDermott Will & Emery LLP", "Schulte Roth & Zabel LLP"],
+      "ArentFox Schiff LLP": ["Arent Fox LLP", "Schiff Hardin LLP"],
+      "Maynard Nexsen PC": ["Maynard Cooper & Gale PC", "Nexsen Pruet LLC"],
+      "Kellogg, Hansen, Todd, Figel & Frederick, P.L.L.C.": [
+        "Kellogg, Huber, Hansen, Todd, Evans & Figel, P.L.L.C.",
+        "Kellogg, Huber, Hansen, Todd & Evans, P.L.L.C."
+      ],
+      "Dentons US LLP": ["Sonnenschein Nath & Rosenthal LLP", "SNR Denton US LLP"],
+      "Hogan Lovells Cadwalader US LLP": ["Hogan Lovells US LLP", "Cadwalader, Wickersham & Taft LLP"],
+      "Ashurst Perkins Coie LLP": ["Perkins Coie LLP"]
+    },
+    "kinds": {},
+    "merge": [],
+    "keep_apart": []
+  },
+  "companies": {
+    "merge": [],
+    "keep_apart": [],
+    "families": {}
+  },
+  "attorneys": {
+    "merge": [],
+    "keep_apart": []
+  }
+}
