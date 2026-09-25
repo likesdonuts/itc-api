@@ -53,6 +53,9 @@ data/                 the handoff between the layers
   sync_log.csv          one row per sync, for watching the daily download
   documents/<number>/   downloaded PDFs (gitignored)
 site/                 generated output
+analytics_ui/         THE ANALYTICS APP'S UI - data/analytics/ -> site_analytics/ (bundle, page, render)
+analytics_server.py   the analytics app's server (port 8766): Rebuild button, daily rebuild on opening
+site_analytics/       generated analytics app
 tests/                offline tests; no token, no network
 ```
 
@@ -126,6 +129,33 @@ and the page reloads onto the new data when it finishes. The token is read
 when a job starts, so after pasting a new one into `.env` there is nothing to
 restart.
 
+### The analytics app
+
+Double-click **`ITC Analytics.bat`** for the representation analytics, a
+separate app from the tracker (its own window, on <http://127.0.0.1:8766>):
+
+- **Leaderboards**: law firms and attorneys by the number of investigations
+  they appeared in, with how many for complainants, for respondents, and
+  still open.
+- **Firms, Attorneys, Companies**: every one, and a page for each. A firm's
+  page lists the companies it represented (with their role), the companies
+  it opposed, its attorneys and its cases; an attorney's page adds the firms
+  they were at and when; a company's page lists the firms and attorneys that
+  represented it and every party it faced, in which direction.
+- **Search** (top right) finds firms, attorneys and companies by any spelling,
+  former name or trade name.
+- **Filters** on every view: which side (complainants, respondents,
+  non-parties), which years (by the year the investigation started), and law
+  firms only (leaving out companies filing for themselves, pro se
+  individuals and the like). They are remembered in the browser.
+- **Review** lists the name pairs waiting for you (`python cli.py decide`).
+
+It rebuilds its data the first time it is opened each day, and when its
+**Rebuild** button is pressed -- never because the tracker synced or fetched
+something. The status line says when it was built and whether the tracker's
+counsel data has changed since. Case numbers are shown, not linked: the two
+apps stay separate.
+
 Everything below is what those buttons run, for when you want a step on its
 own from the command line.
 
@@ -141,7 +171,9 @@ own from the command line.
 | `python cli.py backfill` | EDIS | Lists the documents (no PDFs) of every case that has no list yet, newest first; resumable. Refuses while the app is open (use its button). |
 | `python cli.py claims 337-1366` | Federal Register | Builds or updates the claims analysis for the investigations you name (also the **Create / Update claims analysis** button on a case page). |
 | `python cli.py counsel` | none | Process 3. Rebuilds who represents whom from the documents on disk. Runs by itself after `sync`, `parse`, `docs` and `refresh`. |
-| `python cli.py analytics` | Anthropic (a few cents) | Rebuilds the representation analytics entities in `data/analytics/`. Only ever run by hand (or, later, by the analytics app); `--no-review` makes no model calls. |
+| `python cli.py analytics` | Anthropic (a few cents) | Rebuilds the representation analytics entities in `data/analytics/` and the analytics app's data. Only ever run by hand or by the analytics app; `--no-review` makes no model calls. |
+| `python cli.py analytics-serve` | localhost | Opens the analytics app (what `ITC Analytics.bat` runs) on port 8766. |
+| `python cli.py decide` | none | Lists the analytics name pairs that need a person; `decide 3 same` records an answer in `analytics_reference.json` and rebuilds. |
 | `python cli.py render` | none | UI layer. Rebuilds `site/` from `data/` and `ui_schema.json`. |
 | `python cli.py serve` | localhost | Opens the app (what `ITC Tracker.bat` runs): the site plus its buttons. |
 | `python cli.py fields` | none | Lists every field name `ui_schema.json` can use, with samples. |
@@ -149,7 +181,7 @@ own from the command line.
 | `python cli.py normalize` | none | Rewrites stored document dates to ISO 8601 in place. |
 | `python cli.py refresh` | IDS + EDIS | The daily job: sync, re-fetch documents already on disk, render. A failed IDS download does not stop the documents; the command then exits with 1. |
 
-Besides `ITC Tracker.bat`, Windows users can double-click `sync.bat`,
+Besides `ITC Tracker.bat` and `ITC Analytics.bat`, Windows users can double-click `sync.bat`,
 `docs.bat` (it prompts for numbers), `render.bat`, `serve.bat`, or `run.bat`
 (full refresh). `discover` and `update` still work as the old names for `sync`
 and `docs`.
@@ -480,6 +512,32 @@ How names become entities (`datalayer/analytics/`), deterministic first:
   the same `budget_usd` as the claims analysis. The first full review of
   the 185 cases then on file was 47 pairs for $0.034.
 
+#### Settling the pairs that need a person (`python cli.py decide`)
+
+```
+python cli.py decide              # the pairs waiting, numbered, with the model's view
+python cli.py decide 3            # one pair in full: spellings, cases, roles, firms, years, the model's reasoning
+python cli.py decide 3 same       # record the answer and rebuild (about two seconds, no model calls)
+```
+
+Until a pair is decided its two names stay separate, which can only
+undercount, never merge two real entities. The answers
+(`datalayer/analytics/decide.py`) are written into `analytics_reference.json`,
+where they can be read, edited or undone by hand:
+
+| Answer | For | Written to | Effect |
+| --- | --- | --- | --- |
+| `same` | any pair | `<kind>.merge` | one entity |
+| `different` | any pair | `<kind>.keep_apart` | two entities, and the pair leaves the list |
+| `a-became-b` / `b-became-a` | firms | `firms.predecessors` (keyed by the newer name) | two firms, linked as predecessor and successor |
+| `split "A LLP" "B PC"` | a firm field | `firms.splits` | the field counts as those firms |
+| `one` | a firm field | `firms.splits` | the field is a single firm |
+
+Names are written as filed (the pair's first spelling), and normalize to the
+same key the pair was found by. A rebuild renumbers the list, so run
+`decide` again after each answer. Commit `analytics_reference.json` with the
+next PR so the answers are kept.
+
 Coverage follows `counsel.json`: firms and attorneys exist only for cases
 with a document list, which is what the backfill is for; companies come
 from the IDS records of every case.
@@ -662,6 +720,34 @@ listening.
 Only `site/`, `data/documents/` and `/api/` are reachable over HTTP; the
 document root has to be the directory above them so the PDF links resolve, and
 `.env` lives there.
+
+### The analytics app (`analytics_server.py`, `analytics_ui/`)
+
+`ITC Analytics.bat` runs `python cli.py analytics-serve`, a second server on
+<http://127.0.0.1:8766> that serves only `site_analytics/`:
+
+| Endpoint | What it does |
+| --- | --- |
+| `POST /api/rebuild` | the analytics build (with the model review of new borderline pairs), then the page's data; one at a time (409 otherwise) |
+| `GET /api/jobs/current` | the running or last rebuild, with its log |
+| `GET /api/status` | when the analytics were built, whether `counsel.json` changed since (`meta.json` records the counsel file's timestamp it was built from), how many pairs need review |
+
+On opening, `analytics_server.start` rebuilds when the last build was not
+today (local time); otherwise it only makes sure the page exists. Without an
+Anthropic key the rebuild runs without the review and ends as a warning. It
+reads the tracker's files, which are always replaced whole, and writes only
+`data/analytics/` and `site_analytics/`, so it can run while the tracker
+does.
+
+The page is one HTML file drawing every view in the browser from `data.js`
+(`analytics_ui/bundle.py`): cases, firms, attorneys and companies as lists,
+and representations as `[case, [firms], [attorneys], [[company, role]],
+side]` referring to them by position -- about 1.3 MB for 179 cases with
+counsel. `data.js` sets `window.ANALYTICS` rather than being fetched, so the
+page also reads when opened from disk (without Rebuild). Views are addressed
+by the hash (`#/firm/firm:kirkland-ellis`), so they can be bookmarked. Who a
+firm or attorney *opposed* is read off each case: the companies on the other
+side (intervenors count with respondents; non-parties oppose no one).
 
 ## Dates
 

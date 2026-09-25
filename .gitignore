@@ -16,6 +16,9 @@ data/counsel.json
 data/claims/fr/
 data/claims_costs.csv.lock
 
+# The analytics app's page and data, rebuilt with the analytics.
+site_analytics/
+
 # Rebuilt in full by 'python cli.py analytics'. The model's review decisions
 # are kept: each was paid for.
 data/analytics/*

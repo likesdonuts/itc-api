@@ -11,6 +11,17 @@ and the filed documents. For selected cases it also shows how the asserted
 patent claims narrowed over the life of the case. It runs on one PC and opens
 in a browser; one button refreshes it each day.
 
+A companion **ITC Analytics** app answers questions about the Section 337 bar
+as a whole:
+- which law firms and attorneys appear in the most investigations, and on
+  which side
+- whom each firm and attorney has represented and opposed
+- every company's full record as complainant and respondent, including under
+  former names
+- the firms and lawyers each company has used
+
+It refreshes itself once a day when opened, or on demand.
+
 ## How the data is retrieved
 
 | Source | What it provides | How often |
@@ -56,7 +67,8 @@ from a known file, and every sync is logged to help spot bad data days.
 | It was hard to know whether a case's data is current. | Each case shows when its documents were last fetched, plus how many documents it has and how many have PDFs on disk. |
 | Following how patent claims narrow means reading hundreds of pages of rulings. | An AI-assisted claims timeline shows, for each respondent, which claims were withdrawn, dismissed or found invalid, and when. Every finding links back to its source sentence and is checked before it is shown. Cost is tracked against a hard budget. |
 | Firm and attorney information only existed for the ~185 cases someone had chosen to fetch, too few for firm-level trends. | A one-click backfill lists the filings of every case (no PDFs), newest first. It can be stopped and resumed, and it lays the groundwork for the upcoming representation analytics (firm and attorney leaderboards, who-opposed-whom). |
-| The same firm, lawyer or company appears under many spellings: typos, "LLP" vs "L.L.P.", short forms, former company names, and several firms run together in one field. Any count or ranking would be wrong. | Automatic name matching turns spellings into single firms, attorneys and companies. It uses clear rules first, then AI review for borderline cases, and leaves the rest for a person. It keeps predecessor firms linked rather than merged, keeps companies representing themselves out of the law-firm lists, and follows attorneys who move between firms. A match-quality report shows every merge and why it was made. |
+| The same firm, lawyer or company appears under many spellings: typos, "LLP" vs "L.L.P.", short forms, former company names, and several firms run together in one field. Any count or ranking would be wrong. | Automatic name matching turns spellings into single firms, attorneys and companies. It uses clear rules first, then AI review for borderline cases, and leaves the rest for a person. The person settles each one with a single command (same, different, or renamed firm), and the answer is kept for every future rebuild. It keeps predecessor firms linked rather than merged, keeps companies representing themselves out of the law-firm lists, and follows attorneys who move between firms. A match-quality report shows every merge and why it was made. |
+| Questions like "which firms do the most ITC work for respondents?", "who has Apple faced, and with which lawyers?" or "whom has this attorney opposed?" meant reading dockets case by case. | The ITC Analytics app offers leaderboards for firms and attorneys and a page for every firm, attorney and company. Each page shows clients, opponents, attorneys and cases. Search works across all names, and filters cover side and years. |
 | The USITC's daily data file sometimes fails to download. | The download retries automatically. If it still fails, the rest of the daily update runs anyway and the failure is logged. |
 | Gigabytes of PDFs slowed down version control. | Documents stay on the local machine only, and can be downloaded again from the USITC at any time. |
 
@@ -67,11 +79,13 @@ from a known file, and every sync is logged to help spot bad data days.
 - The claims analysis has only been run on three pilot cases so far.
 - The full backfill takes a few hours of requests to the USITC. The oldest
   cases (before the USITC's electronic filing system) have no filings to list.
+- Until the backfill finishes, firm and attorney rankings cover only the
+  investigations with filings on file (179 of 1,382 today). Company
+  histories already cover every investigation.
 
 ## In progress
 
-- **Representation analytics**, a separate app: which law firms and attorneys
-  appear most, who each firm represented and opposed, co-counsel pairings,
-  firm caseloads over time, and company litigation histories, including
-  former company names. The name matching underneath it is built. The app
-  itself comes next.
+- **More analytics:** firm caseloads over time (active vs. closed),
+  co-counsel pairings, the companies most often sued and suing ("frequent
+  fliers"), and pairs of companies that have sued each other in both
+  directions.

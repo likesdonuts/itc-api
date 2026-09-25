@@ -23,7 +23,7 @@ from datetime import datetime, timezone
 from pathlib import Path
 from typing import Any, Callable
 
-from ..store import Store, save_json
+from ..store import COUNSEL_FILE, Store, save_json
 from . import attorneys, companies, firms, report
 from .reference import Decisions, analytics_dir, load_reference
 from .review import ReviewItem, ReviewRun, ask
@@ -96,6 +96,10 @@ def run(
     log: Logger = print,
 ) -> AnalyticsReport:
     started = time.monotonic()
+    # Which counsel.json this was built from, so the app can say when the
+    # tracker has rebuilt counsel since.
+    counsel_file = Path(store.data_dir) / COUNSEL_FILE
+    counsel_mtime = counsel_file.stat().st_mtime if counsel_file.exists() else None
     reference = load_reference()
     decisions = Decisions.load(store.data_dir)
     out = analytics_dir(store.data_dir)
@@ -141,6 +145,7 @@ def run(
         "needs_review": result.needs_review,
         "review_cost_usd": round(result.review.cost, 6),
         "seconds": result.seconds,
+        "counsel_mtime": counsel_mtime,
     })
     log(
         f"Analytics: {result.firms} firms, {result.attorneys} attorneys, {result.companies} companies "
