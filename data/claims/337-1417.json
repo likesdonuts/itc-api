@@ -1,5 +1,10 @@
 {
-  "built_at": "2026-09-25T02:19:22.386215+00:00",
+  "built_at": "2026-09-25T15:36:38.363346+00:00",
+  "checks": {
+    "corroborated": 0,
+    "disputed": 0,
+    "replay_flags": 0
+  },
   "corrections": [],
   "cost_usd": 0.0,
   "events": [
@@ -28,6 +33,7 @@
       ],
       "claims_verbatim": "1-5 and 7-20",
       "date": "2024-09-09",
+      "effective_date": "2024-09-09",
       "id": "5b9889c266e9",
       "method": "rule",
       "notes": [],
@@ -59,6 +65,7 @@
       "claims_verbatim": "2-5",
       "context": "3.",
       "date": "2024-08-23",
+      "effective_date": "2024-08-23",
       "id": "24fe7120a6a5",
       "method": "haiku",
       "model": "claude-haiku-4-5-20251001",
@@ -119,6 +126,7 @@
       "claims_verbatim": "1-5, 7-20",
       "context": "",
       "date": "2025-05-27",
+      "effective_date": "2025-05-27",
       "id": "81d3200ac73c",
       "method": "haiku",
       "model": "claude-haiku-4-5-20251001",
@@ -170,6 +178,7 @@
       "claims_verbatim": "1-5, 7-20",
       "context": "",
       "date": "2025-05-27",
+      "effective_date": "2025-05-27",
       "id": "86146e3325dd",
       "method": "haiku",
       "model": "claude-haiku-4-5-20251001",
@@ -221,6 +230,7 @@
       "claims_verbatim": "1-5, 7-20",
       "context": "",
       "date": "2025-05-27",
+      "effective_date": "2025-05-27",
       "id": "31128f124da1",
       "method": "haiku",
       "model": "claude-haiku-4-5-20251001",
@@ -272,6 +282,7 @@
       "claims_verbatim": "1-5, 7-20",
       "context": "",
       "date": "2025-05-27",
+      "effective_date": "2025-05-27",
       "id": "47fee1261450",
       "method": "haiku",
       "model": "claude-haiku-4-5-20251001",
@@ -323,6 +334,7 @@
       "claims_verbatim": "1-5, 7-20",
       "context": "",
       "date": "2025-05-27",
+      "effective_date": "2025-05-27",
       "id": "f95a29cdc5fd",
       "method": "haiku",
       "model": "claude-haiku-4-5-20251001",
@@ -374,6 +386,7 @@
       "claims_verbatim": "1-5, 7-20",
       "context": "See 90 Fed. Reg. 17259-61 (April 24, 2025).",
       "date": "2025-05-27",
+      "effective_date": "2025-05-27",
       "id": "3b82d6225297",
       "method": "haiku",
       "model": "claude-haiku-4-5-20251001",
@@ -425,6 +438,7 @@
       "claims_verbatim": "1-5, 7-20",
       "context": "2 Accordingly, the Commission hereby ORDERS that: 1.",
       "date": "2025-05-27",
+      "effective_date": "2025-05-27",
       "id": "315167d444ec",
       "method": "haiku",
       "model": "claude-haiku-4-5-20251001",
@@ -456,6 +470,7 @@
       "claims": [],
       "claims_verbatim": "",
       "date": "2025-05-27",
+      "effective_date": "2025-05-27",
       "id": "22803be317c0",
       "method": "derived",
       "notes": [
@@ -492,6 +507,7 @@
       "claims": [],
       "claims_verbatim": "",
       "date": "2025-01-02",
+      "effective_date": "2025-01-02",
       "id": "2e23b1fc9fcd",
       "method": "derived",
       "notes": [
@@ -524,6 +540,8 @@
       "claims": [],
       "claims_verbatim": "",
       "date": "2025-01-17",
+      "effective_date": "2025-02-06",
+      "effective_note": "Order No. 13 took effect when the Commission declined review (notice 842796, 2025-02-06)",
       "id": "e060196cc7bc",
       "method": "derived",
       "notes": [
@@ -559,6 +577,7 @@
       "claims": [],
       "claims_verbatim": "",
       "date": "2025-04-21",
+      "effective_date": "2025-04-21",
       "id": "41fbad8d23d6",
       "method": "derived",
       "notes": [
@@ -593,11 +612,12 @@
     "mention_only": 0,
     "needs_review": 0
   },
+  "final_id_issued": null,
   "ids_hash": "7aababde884f427804a3a25afeafcae9c06e5ea8d0a3eb2659531688f42eae4a",
   "investigation_number": "337-TA-1417",
   "key": "337-1417",
   "last_attempt": {
-    "at": "2026-09-25T02:19:22.386429+00:00",
+    "at": "2026-09-25T15:36:38.363615+00:00",
     "error": null
   },
   "model_calls": 0,

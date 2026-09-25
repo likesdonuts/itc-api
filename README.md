@@ -364,6 +364,26 @@ is being built in phases. A build runs:
    documents and applied to every claim still in the case, for those
    respondents ("Derived from event history").
 
+6. **By rule, free: effective dates.** An ALJ's initial determination takes
+   effect when the Commission declines to review it, so its events are dated
+   by that notice: the ID opens "ORDER NO. 12: ...", and the Commission's
+   notice says it "has determined not to review an initial determination
+   ... (Order No. 12)". A Final ID's findings are dated by its issue -- the
+   earliest of its versions in the documents index, confidential ones
+   included -- not by its public version, often filed weeks later.
+7. **By code, free: checks across all the events.** The *replay validator*
+   replays each claim's rulings in effective-date order and flags a finding
+   after the claim was terminated, a finding for a claim never instituted,
+   and a claim coming back without an `added` event. *Corroboration* matches
+   the Final ID's findings with the Commission notices that restate them:
+   agreement marks both "Corroborated"; a violation against no violation
+   sends both to review. A flagged event changes nothing until a person
+   looks at it.
+8. **Optional, paid: a second pass.** With `"second_pass": true` in
+   `claims_config.json` (off by default), events that failed an output check
+   go to Claude Sonnet 5 with the same sentence, and its reading replaces
+   them only if it passes the same checks. Each is tried once.
+
 An update reads only source documents it has not read before, keeping the
 earlier events (and any corrections) without paying for them again, and
 re-runs every rule and check over all the events. `--reread` reads every

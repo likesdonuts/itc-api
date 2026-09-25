@@ -1432,7 +1432,8 @@ _SPEAKERS = {
     "party_argument": "party's position",
     "other": "other",
 }
-_METHODS = {"rule": "Parsed by rule", "haiku": "Extracted by Haiku", "derived": "Derived from event history"}
+_METHODS = {"rule": "Parsed by rule", "haiku": "Extracted by Haiku", "derived": "Derived from event history",
+            "second_pass": "Re-read by Sonnet"}
 
 
 def _short_patent(patent: str) -> str:
@@ -1452,13 +1453,20 @@ def _event_row(event: dict[str, Any], number: str, stage_titles: dict[str, str])
         link = _e(source.get("title"))
     source_id = str(source.get("id") or "")
     source_label = source_id if source_id.startswith("FR:") else f"EDIS {source_id}"
+    method = _METHODS.get(event.get("method"), _e(event.get("method")))
     if event.get("status") == "needs_review":
-        how = f'<span class="pill pill-amber">Needs review</span> {_e("; ".join(event.get("notes") or []))}'
+        reasons = [*(event.get("case_notes") or []), *(event.get("notes") or [])]
+        how = f'<span class="pill pill-amber">Needs review</span> {_e("; ".join(reasons))}<div class="case-sub">{method}</div>'
     else:
-        how = _METHODS.get(event.get("method"), _e(event.get("method")))
+        how = method
         extra = [n for n in event.get("notes") or [] if n]
         if extra:
             how += f'<div class="case-sub">{_e("; ".join(extra))}</div>'
+    if event.get("corroborated_by"):
+        how += (
+            f' <span class="pill pill-green" title="Agrees with {len(event["corroborated_by"])} statement(s) '
+            f'in other documents">Corroborated</span>'
+        )
     who = event.get("respondents") or ["ALL"]
     scope = "" if who == ["ALL"] else f' <span class="case-sub">({_e(", ".join(who))} only)</span>'
     action = _ACTIONS.get(event.get("action"), str(event.get("action") or "").replace("_", " ").capitalize())
@@ -1470,8 +1478,11 @@ def _event_row(event: dict[str, Any], number: str, stage_titles: dict[str, str])
         what = f"{_e(action)}, for every claim still in the case"
     else:
         what = f"{_e(action)} claims {_e(event.get('claims_verbatim'))} of the {_short_patent(event.get('patent'))} patent"
+    when = ""
+    if event.get("effective_note"):
+        when = f'<div class="case-sub" title="{_e(event["effective_note"])}">filed {_date(event.get("date"))}</div>'
     return f"""<tr>
-  <td class="mono">{_date(event.get("date"))}</td>
+  <td class="mono">{_date(event.get("effective_date") or event.get("date"))}{when}</td>
   <td>{_e(stage_titles.get(event.get("stage"), event.get("stage")))}</td>
   <td>{what}{scope}{said}
       <div class="case-sub">&ldquo;{_e(event.get("quote"))}&rdquo;</div></td>
@@ -1555,7 +1566,7 @@ def _claims_section(claims: dict[str, Any]) -> str:
   </div>"""
 
     stage_titles = {key: title for key, title, _ in stages}
-    ordered = sorted(events.values(), key=lambda e: (str(e.get("date") or ""), e.get("patent") or ""))
+    ordered = sorted(events.values(), key=lambda e: (str(e.get("effective_date") or e.get("date") or ""), e.get("patent") or ""))
     deciding = [e for e in ordered if claims_matrix.changes_status(e) or e.get("status") == "needs_review"]
     other = [e for e in ordered if e not in deciding]
     deciding_rows = "".join(_event_row(e, number, stage_titles) for e in deciding)

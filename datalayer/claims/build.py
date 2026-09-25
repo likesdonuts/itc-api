@@ -41,7 +41,7 @@ from pathlib import Path
 from typing import Any, Callable
 
 from ..store import Store, load_json, save_json
-from . import candidates, costs, derive, extract, fedreg, status, validate
+from . import candidates, checks, costs, derive, extract, fedreg, secondpass, status, timeline, validate
 from . import config as claims_config
 
 Logger = Callable[[str], None]
@@ -335,6 +335,22 @@ def _build(
         log(f"    case-wide: {event['action'].replace('_', ' ')}{who} ({event['source']['id']}, {event['date']})")
 
     events = rule_events + kept_events + new_events + list(derived.values()) + list(exits.values())
+
+    # The optional second pass (off by default), then effective dates, then
+    # the checks over all events together: the replay validator and
+    # cross-document corroboration (checks.py).
+    if cfg.second_pass:
+        secondpass.run(events, extractor, cfg, investigation=number, title=title, patents=patents,
+                       respondents=respondents, documents=documents, log=log)
+    dated = timeline.apply(events, sources=sources, documents=store.documents.get(key) or [], texts=texts)
+    linked = sum(1 for e in events if "declined review" in str(e.get("effective_note") or ""))
+    issued = f"Final ID issued {dated['final_id_issued']}; " if dated["final_id_issued"] else ""
+    log(f"  {issued}{linked} event(s) dated by a Commission non-review notice")
+    checked = checks.run(events)
+    log(
+        f"  Checks: {checked['replay_flags']} replay contradiction(s), "
+        f"{checked['corroborated']} event(s) corroborated, {checked['disputed']} disputed"
+    )
     return {
         "key": key,
         "investigation_number": number,
@@ -353,6 +369,8 @@ def _build(
         "corrections": previous.get("corrections") or [],
         "outcome": "ok" if events else "no_claims",
         "warnings": warnings,
+        "checks": checked,
+        "final_id_issued": dated["final_id_issued"],
         "cost_usd": round(extractor.cost, 6),
         "model_calls": extractor.calls,
         "usage": dict(extractor.usage),

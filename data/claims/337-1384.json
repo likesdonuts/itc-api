@@ -1,5 +1,10 @@
 {
-  "built_at": "2026-09-25T02:19:32.115446+00:00",
+  "built_at": "2026-09-25T15:36:27.926793+00:00",
+  "checks": {
+    "corroborated": 8,
+    "disputed": 0,
+    "replay_flags": 0
+  },
   "corrections": [],
   "cost_usd": 0.0,
   "events": [
@@ -13,6 +18,7 @@
       ],
       "claims_verbatim": "1 and 12-14",
       "date": "2023-12-26",
+      "effective_date": "2023-12-26",
       "id": "fffccaea8b48",
       "method": "rule",
       "notes": [],
@@ -41,6 +47,7 @@
       ],
       "claims_verbatim": "1 and 3",
       "date": "2023-12-26",
+      "effective_date": "2023-12-26",
       "id": "34b5c5420761",
       "method": "rule",
       "notes": [],
@@ -69,6 +76,7 @@
       ],
       "claims_verbatim": "1 and 3",
       "date": "2023-11-13",
+      "effective_date": "2023-11-13",
       "id": "e05687c6c535",
       "method": "haiku",
       "model": "claude-haiku-4-5-20251001",
@@ -107,6 +115,7 @@
       ],
       "claims_verbatim": "1 and 12-14",
       "date": "2023-11-13",
+      "effective_date": "2023-11-13",
       "id": "99c7f42c8a54",
       "method": "haiku",
       "model": "claude-haiku-4-5-20251001",
@@ -143,6 +152,7 @@
       ],
       "claims_verbatim": "1 and 3",
       "date": "2023-11-21",
+      "effective_date": "2023-11-21",
       "id": "77d5db8b4203",
       "method": "haiku",
       "model": "claude-haiku-4-5-20251001",
@@ -178,6 +188,7 @@
       ],
       "claims_verbatim": "1 and 12-14",
       "date": "2023-11-21",
+      "effective_date": "2023-11-21",
       "id": "1c0cecadc60a",
       "method": "haiku",
       "model": "claude-haiku-4-5-20251001",
@@ -212,7 +223,13 @@
         14
       ],
       "claims_verbatim": "1 and 12\u201314",
+      "corroborated_by": [
+        "48453bfbf31e",
+        "cd080c0666c9",
+        "b29058c233c3"
+      ],
       "date": "2024-12-19",
+      "effective_date": "2024-12-19",
       "id": "94fd27b0397d",
       "method": "haiku",
       "model": "claude-haiku-4-5-20251001",
@@ -245,7 +262,11 @@
         3
       ],
       "claims_verbatim": "1 and 3",
+      "corroborated_by": [
+        "77ae4c5b7af3"
+      ],
       "date": "2024-12-19",
+      "effective_date": "2024-12-19",
       "id": "7c74997d9b58",
       "method": "haiku",
       "model": "claude-haiku-4-5-20251001",
@@ -281,6 +302,7 @@
       ],
       "claims_verbatim": "1 and 12\u201314",
       "date": "2024-12-19",
+      "effective_date": "2024-12-19",
       "id": "71eb2f10f3a3",
       "method": "haiku",
       "model": "claude-haiku-4-5-20251001",
@@ -314,6 +336,7 @@
       ],
       "claims_verbatim": "1 and 3",
       "date": "2024-12-19",
+      "effective_date": "2024-12-19",
       "id": "6bf74027f4dc",
       "method": "haiku",
       "model": "claude-haiku-4-5-20251001",
@@ -349,6 +372,7 @@
       ],
       "claims_verbatim": "1 and 12\u201314",
       "date": "2025-01-08",
+      "effective_date": "2025-01-08",
       "id": "df091c581f8a",
       "method": "haiku",
       "model": "claude-haiku-4-5-20251001",
@@ -382,6 +406,7 @@
       ],
       "claims_verbatim": "1 and 3",
       "date": "2025-01-08",
+      "effective_date": "2025-01-08",
       "id": "8264e7716911",
       "method": "haiku",
       "model": "claude-haiku-4-5-20251001",
@@ -417,6 +442,8 @@
       ],
       "claims_verbatim": "1 and 12-14",
       "date": "2025-01-08",
+      "effective_date": "2024-12-19",
+      "effective_note": "the Final ID issued 2024-12-19; this public version was filed 2025-01-08",
       "id": "e9eeee917637",
       "method": "haiku",
       "model": "claude-haiku-4-5-20251001",
@@ -450,6 +477,8 @@
       ],
       "claims_verbatim": "1 and 3",
       "date": "2025-01-08",
+      "effective_date": "2024-12-19",
+      "effective_note": "the Final ID issued 2024-12-19; this public version was filed 2025-01-08",
       "id": "f5de53591289",
       "method": "haiku",
       "model": "claude-haiku-4-5-20251001",
@@ -484,7 +513,14 @@
         14
       ],
       "claims_verbatim": "1 and 12-14",
+      "corroborated_by": [
+        "48453bfbf31e",
+        "cd080c0666c9",
+        "b29058c233c3"
+      ],
       "date": "2025-01-08",
+      "effective_date": "2024-12-19",
+      "effective_note": "the Final ID issued 2024-12-19; this public version was filed 2025-01-08",
       "id": "da6db63a19bf",
       "method": "haiku",
       "model": "claude-haiku-4-5-20251001",
@@ -517,7 +553,12 @@
         3
       ],
       "claims_verbatim": "1 and 3",
+      "corroborated_by": [
+        "77ae4c5b7af3"
+      ],
       "date": "2025-01-08",
+      "effective_date": "2024-12-19",
+      "effective_note": "the Final ID issued 2024-12-19; this public version was filed 2025-01-08",
       "id": "6f88f7fc1477",
       "method": "haiku",
       "model": "claude-haiku-4-5-20251001",
@@ -553,6 +594,8 @@
       ],
       "claims_verbatim": "1 and 12-14",
       "date": "2025-01-08",
+      "effective_date": "2024-12-19",
+      "effective_note": "the Final ID issued 2024-12-19; this public version was filed 2025-01-08",
       "id": "d0884cdf190c",
       "method": "haiku",
       "model": "claude-haiku-4-5-20251001",
@@ -586,6 +629,8 @@
       ],
       "claims_verbatim": "1 and 3",
       "date": "2025-01-08",
+      "effective_date": "2024-12-19",
+      "effective_note": "the Final ID issued 2024-12-19; this public version was filed 2025-01-08",
       "id": "be2694b0c094",
       "method": "haiku",
       "model": "claude-haiku-4-5-20251001",
@@ -620,7 +665,12 @@
         14
       ],
       "claims_verbatim": "1 and 12-14",
+      "corroborated_by": [
+        "94fd27b0397d",
+        "da6db63a19bf"
+      ],
       "date": "2025-02-12",
+      "effective_date": "2025-02-12",
       "id": "48453bfbf31e",
       "method": "haiku",
       "model": "claude-haiku-4-5-20251001",
@@ -653,7 +703,12 @@
         3
       ],
       "claims_verbatim": "1 and 3",
+      "corroborated_by": [
+        "7c74997d9b58",
+        "6f88f7fc1477"
+      ],
       "date": "2025-02-12",
+      "effective_date": "2025-02-12",
       "id": "77ae4c5b7af3",
       "method": "haiku",
       "model": "claude-haiku-4-5-20251001",
@@ -688,7 +743,12 @@
         14
       ],
       "claims_verbatim": "1 and 12-14",
+      "corroborated_by": [
+        "94fd27b0397d",
+        "da6db63a19bf"
+      ],
       "date": "2025-03-11",
+      "effective_date": "2025-03-11",
       "id": "cd080c0666c9",
       "method": "haiku",
       "model": "claude-haiku-4-5-20251001",
@@ -722,6 +782,7 @@
       ],
       "claims_verbatim": "1 and 3",
       "date": "2025-03-11",
+      "effective_date": "2025-03-11",
       "id": "a8aa8c706912",
       "method": "haiku",
       "model": "claude-haiku-4-5-20251001",
@@ -758,7 +819,12 @@
         14
       ],
       "claims_verbatim": "1 and 12-14",
+      "corroborated_by": [
+        "94fd27b0397d",
+        "da6db63a19bf"
+      ],
       "date": "2025-04-25",
+      "effective_date": "2025-04-25",
       "id": "b29058c233c3",
       "method": "haiku",
       "model": "claude-haiku-4-5-20251001",
@@ -791,6 +857,7 @@
       ],
       "claims_verbatim": "1 and 3",
       "date": "2025-04-25",
+      "effective_date": "2025-04-25",
       "id": "cad499ec145d",
       "method": "haiku",
       "model": "claude-haiku-4-5-20251001",
@@ -823,6 +890,7 @@
       "claims": [],
       "claims_verbatim": "",
       "date": "2025-04-25",
+      "effective_date": "2025-04-25",
       "id": "3327743d8273",
       "method": "derived",
       "notes": [
@@ -854,11 +922,12 @@
     "mention_only": 0,
     "needs_review": 0
   },
+  "final_id_issued": "2024-12-19",
   "ids_hash": "3f571a3c3ef00141daeb97333ca3d68addb69118b0afd8d7b70d6b84d3e6133b",
   "investigation_number": "337-TA-1384",
   "key": "337-1384",
   "last_attempt": {
-    "at": "2026-09-25T02:19:32.115831+00:00",
+    "at": "2026-09-25T15:36:27.927072+00:00",
     "error": null
   },
   "model_calls": 0,

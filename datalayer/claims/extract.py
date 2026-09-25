@@ -79,15 +79,16 @@ class Extractor:
     def remaining(self) -> float:
         return self.cfg.budget_usd - self.spent_before - self.cost
 
-    def _worst_case(self, user: str) -> float:
+    def _worst_case(self, user: str, model: str) -> float:
         prompt_tokens = int((len(prompts.SYSTEM) + len(user) + 3000) / CHARS_PER_TOKEN)
         return self.cfg.cost(
-            self.cfg.model,
+            model,
             {"input_tokens": 0, "cache_creation_input_tokens": prompt_tokens, "output_tokens": self.cfg.max_output_tokens},
         )
 
-    def _call(self, user: str) -> Any:
-        worst = self._worst_case(user)
+    def _call(self, user: str, model: str | None = None) -> Any:
+        model = model or self.cfg.model
+        worst = self._worst_case(user, model)
         if worst > self.remaining:
             raise BudgetExceeded(
                 f"the next model call could cost up to ${worst:.4f} and only ${max(self.remaining, 0):.4f} of "
@@ -96,7 +97,7 @@ class Extractor:
         if self.client is None:
             self.client = api_client()  # only once there is something to send
         response = self.client.messages.create(
-            model=self.cfg.model,
+            model=model,
             max_tokens=self.cfg.max_output_tokens,
             system=[{"type": "text", "text": prompts.SYSTEM, "cache_control": {"type": "ephemeral"}}],
             tools=[prompts.TOOL],
@@ -104,7 +105,7 @@ class Extractor:
             messages=[{"role": "user", "content": user}],
         )
         self.calls += 1
-        self.cost += self.cfg.cost(self.cfg.model, response.usage)
+        self.cost += self.cfg.cost(model, response.usage)
         for name in self.usage:
             self.usage[name] += int(getattr(response.usage, name, 0) or 0)
         return response
@@ -118,8 +119,10 @@ class Extractor:
         respondents: list[str],
         document: dict[str, Any],
         candidates: list[Candidate],
+        model: str | None = None,
     ) -> list[dict[str, Any]]:
-        """Raw events for one document's candidates, as the model gave them.
+        """Raw events for one document's candidates, as the model gave them
+        (Haiku unless `model` says otherwise -- the second pass uses Sonnet).
         A reply cut off at the output limit is retried in halves.
         """
         events: list[dict[str, Any]] = []
@@ -134,7 +137,7 @@ class Extractor:
                 document=document,
                 candidates=batch,
             )
-            response = self._call(user)
+            response = self._call(user, model)
             if response.stop_reason == "max_tokens" and len(batch) > 1:
                 half = len(batch) // 2
                 self.log(f"    reply cut off at the output limit; retrying {len(batch)} sentences in halves")
