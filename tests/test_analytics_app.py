@@ -47,7 +47,8 @@ class TestBundle(AppTestCase):
 
         names = [c[0] for c in data["cases"]]
         self.assertEqual(names, ["337-1", "337-2"])
-        self.assertEqual(data["cases"][0][1:], ["Certain Widgets", 2024, "Active", 1])
+        self.assertEqual(data["cases"][0][1:], ["Certain Widgets", 2024, "Active", 1, None])
+        self.assertEqual(data["reps"][0][5:], [2024, 2024])  # the years of the representation's filings
         self.assertEqual(data["cases"][1][4], 0)
 
         firm = {f["name"]: i for i, f in enumerate(data["firms"])}
@@ -72,7 +73,13 @@ class TestBundle(AppTestCase):
         render.render(self.data_dir, self.root / "site_analytics", log=self.quiet)
         data_js = (self.root / "site_analytics" / "data.js").read_text(encoding="utf-8")
         self.assertTrue(data_js.startswith("window.ANALYTICS = {"))
-        self.assertIn('<script src="data.js">', (self.root / "site_analytics" / "index.html").read_text(encoding="utf-8"))
+        page = (self.root / "site_analytics" / "index.html").read_text(encoding="utf-8")
+        self.assertIn('<script src="data.js">', page)
+        # Every view the menu offers is one the page can draw.
+        for route in ("#/firms", "#/attorneys", "#/companies", "#/cocounsel", "#/disputes", "#/review"):
+            self.assertIn(f'href="{route}"', page)
+            self.assertIn(f"kind === '{route[2:]}'", page)
+        self.assertIn("kind === 'family'", page)
 
 
 class TestServer(AppTestCase):
