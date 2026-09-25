@@ -152,8 +152,10 @@ def build(analysis: dict[str, Any], *, respondent: str | None = None) -> dict[st
     patents: dict[str, dict[int, dict[str, Any]]] = {p: {} for p in analysis.get("patents") or []}
 
     def order(e: dict[str, Any]) -> tuple[str, int, int]:
+        # By when each event took effect (timeline.py), not when its document
+        # was filed: an ID's terminations count from the Commission's notice.
         stage = STAGE_KEYS.index(e.get("stage")) if e.get("stage") in STAGE_KEYS else 9
-        return (str(e.get("date") or ""), stage, 1 if e.get("case_wide") else 0)
+        return (str(e.get("effective_date") or e.get("date") or ""), stage, 1 if e.get("case_wide") else 0)
 
     def varies(rows: list[dict[str, Any]], event: dict[str, Any]) -> None:
         """In the all-respondents view, an event for only some respondents

@@ -877,6 +877,196 @@ class TestRespondentScope(unittest.TestCase):
         self.assertIn('id="claims-hide-withdrawn"', html)
 
 
+def ev(eid, action, stage, claims, date, **kw):
+    base = {"id": eid, "action": action, "stage": stage, "patent": "8,350,294", "claims": claims,
+            "claims_verbatim": "-", "respondents": ["ALL"], "status": "ok", "speaker": "tribunal_ruling",
+            "date": date, "method": "haiku", "source": {"id": f"doc-{eid}"}}
+    return {**base, **kw}
+
+
+class TestEffectiveDates(unittest.TestCase):
+    """What the pilots' documents say about when things took hold."""
+
+    def test_an_ids_events_count_from_the_commissions_non_review_notice(self):
+        from datalayer.claims import timeline
+
+        sources = [{"id": "813901", "kind": "initial_determination", "date": "2024-02-12"},
+                   {"id": "815954", "kind": "commission_notice", "date": "2024-03-12"}]
+        texts = {
+            "813901": "UNITED STATES INTERNATIONAL TRADE COMMISSION ... ORDER NO. 12: INITIAL DETERMINATION "
+                      "TERMINATING THE INVESTIGATION IN PART AS TO U.S. PATENT NO. 10,312,335",
+            "815954": "the Commission has determined not to review an initial determination (“ID”) "
+                      "(Order No. 12) of the presiding administrative law judge. On December 13, 2023, the ALJ "
+                      "issued Order No. 9.",
+        }
+        event = ev("w", "withdrawn", "hearing", [1], "2024-02-12",
+                   source={"id": "813901", "source_kind": "initial_determination"})
+        timeline.apply([event], sources=sources, documents=[], texts=texts)
+        self.assertEqual(event["effective_date"], "2024-03-12")
+        self.assertIn("Order No. 12", event["effective_note"])
+
+    def test_a_final_id_counts_from_its_issue_not_its_public_version(self):
+        from datalayer.claims import timeline
+
+        documents = [
+            {"id": "825222", "document_type": "ID/RD - Final on Violation", "document_date": "2024-07-05"},
+            {"id": "828317", "document_type": "ID/RD - Final on Violation", "document_date": "2024-08-05"},
+            {"id": "832646", "document_type": "ID/RD - Other Than Final on Violation", "document_date": "2024-09-19",
+             "title": "Initial Determination Granting Staff's Motion to Declassify Certain Portions of Its Brief on "
+                      "Violation, Remedy, and Bonding"},
+        ]
+        self.assertEqual(timeline.final_id_issued(documents), "2024-07-05")
+        event = ev("f", "found_infringed", "final_id", [2], "2024-08-05")
+        timeline.apply([event], sources=[], documents=documents, texts={})
+        self.assertEqual(event["effective_date"], "2024-07-05")
+
+
+class TestReplay(unittest.TestCase):
+    def run_checks(self, events):
+        from datalayer.claims import checks
+
+        return checks.run(events), {e["id"]: e for e in events}
+
+    def test_a_finding_after_a_termination_is_flagged(self):
+        result, by_id = self.run_checks([
+            ev("i", "instituted", "instituted", [1], "2023-06-27", method="rule"),
+            ev("w", "withdrawn", "hearing", [1], "2024-01-11"),
+            ev("f", "found_infringed", "final_id", [1], "2024-07-05"),
+        ])
+        self.assertEqual(result["replay_flags"], 1)
+        self.assertEqual(by_id["f"]["status"], "needs_review")
+        self.assertIn("terminated earlier", by_id["f"]["case_notes"][0])
+        self.assertEqual(by_id["w"]["status"], "ok")
+
+    def test_a_finding_for_a_claim_never_instituted_is_flagged(self):
+        result, by_id = self.run_checks([
+            ev("a", "asserted", "asserted", [4], "2023-05-26", speaker="party_argument"),
+            ev("f", "found_not_infringed", "final_id", [4], "2024-07-05"),
+        ])
+        self.assertEqual(by_id["f"]["status"], "needs_review")
+        self.assertIn("never instituted", by_id["f"]["case_notes"][0])
+
+    def test_an_added_claim_may_come_back_and_a_settled_respondent_does_not_block_others(self):
+        result, by_id = self.run_checks([
+            ev("i", "instituted", "instituted", [1], "2023-06-27", method="rule"),
+            ev("w", "withdrawn", "hearing", [1], "2023-09-01"),
+            ev("a", "added", "instituted", [1], "2023-10-01"),
+            ev("s", "terminated_settlement", "hearing", [1], "2024-01-01", respondents=["Acme"]),
+            ev("f", "found_infringed", "final_id", [1], "2024-07-05"),
+        ])
+        self.assertEqual(result["replay_flags"], 0)
+        self.assertEqual(by_id["f"]["status"], "ok")
+
+    def test_flags_from_the_last_build_are_not_carried_over(self):
+        from datalayer.claims import checks
+
+        event = ev("f", "found_infringed", "final_id", [1], "2024-07-05",
+                   case_notes=["an old contradiction"], corroborated_by=["x"])
+        checks.run([ev("i", "instituted", "instituted", [1], "2023-06-27", method="rule"), event])
+        self.assertNotIn("case_notes", event)
+        self.assertNotIn("corroborated_by", event)
+
+
+class TestCorroboration(unittest.TestCase):
+    def run_checks(self, events):
+        from datalayer.claims import checks
+
+        return checks.run(events), {e["id"]: e for e in events}
+
+    def test_a_commission_restatement_that_agrees_corroborates_both(self):
+        result, by_id = self.run_checks([
+            ev("i", "instituted", "instituted", [1, 3], "2023-06-27", method="rule"),
+            ev("f", "found_not_infringed", "final_id", [1, 3], "2024-12-19"),
+            ev("r", "found_not_infringed", "commission", [1, 3], "2025-03-11", speaker="tribunal_recital"),
+        ])
+        self.assertEqual(result["corroborated"], 2)
+        self.assertEqual(by_id["f"]["corroborated_by"], ["r"])
+
+    def test_invalid_and_no_violation_agree_but_infringed_and_not_do_not(self):
+        result, by_id = self.run_checks([
+            ev("i", "instituted", "instituted", [1, 2], "2023-06-27", method="rule"),
+            ev("f1", "found_invalid", "final_id", [1], "2024-07-05"),
+            ev("r1", "found_not_infringed", "commission", [1], "2024-09-05", speaker="tribunal_recital"),
+            ev("f2", "found_infringed", "final_id", [2], "2024-07-05"),
+            ev("r2", "found_not_infringed", "commission", [2], "2024-09-05", speaker="tribunal_recital"),
+        ])
+        self.assertIn("r1", by_id["f1"]["corroborated_by"])
+        self.assertEqual(result["disputed"], 2)
+        self.assertEqual(by_id["f2"]["status"], "needs_review")
+        self.assertIn("disagree", by_id["r2"]["case_notes"][0])
+
+
+class TestClaimsTabPhase3(unittest.TestCase):
+    def test_effective_dates_corroboration_and_replay_flags_are_shown(self):
+        from ui import templates
+
+        events = [
+            ev("i", "instituted", "instituted", [2], "2023-06-27", method="rule", claims_verbatim="2",
+               quote="claim 2", source={"id": "FR:1", "title": "Institution"}),
+            ev("f", "found_infringed", "final_id", [2], "2024-08-05", claims_verbatim="2", quote="claim 2 infringed",
+               effective_date="2024-07-05", effective_note="the Final ID issued 2024-07-05; this public version was filed 2024-08-05",
+               corroborated_by=["r"], source={"id": "828317", "title": "Final ID"}),
+            ev("x", "found_invalid", "commission", [2], "2024-09-05", claims_verbatim="2", quote="claim 2 invalid",
+               status="needs_review", case_notes=["claim 2 was terminated earlier (doc-w, 2024-01-11)"],
+               source={"id": "831538", "title": "Notice"}),
+        ]
+        html = templates._claims_section({"built_at": "2026-09-25T00:00:00+00:00", "outcome": "ok", "key": "337-1366",
+                                          "patents": ["8,350,294"], "respondents": [], "events": events})
+        self.assertIn("05 Jul 2024", html)
+        self.assertIn("filed 05 Aug 2024", html)
+        self.assertIn(">Corroborated</span>", html)
+        self.assertIn("claim 2 was terminated earlier", html)
+
+
+class TestSecondPass(BuildTestCase):
+    def test_off_by_default(self):
+        self.assertFalse(claims_config.load().second_pass)
+
+    def test_a_flagged_event_is_re_read_by_sonnet_and_replaced_if_it_passes(self):
+        from dataclasses import replace
+
+        def haiku_splices(user):
+            sid = re_sid(user, "is GRANTED")
+            return [{"sentence_id": sid, "patent_number": "9,748,347", "claims_verbatim": "1-3",
+                     "action": "withdrawn", "speaker": "tribunal_ruling", "respondents": ["ALL"],
+                     "quote": "terminate ... claims 1-3 of the '347 patent is GRANTED"}] if sid else []
+
+        model = FakeModel(lambda user: answer_textbook(user) if "claude-sonnet" in model.requests[-1]["model"] else haiku_splices(user))
+        self.cfg = replace(self.cfg, second_pass=True)
+        analysis = self.build(model_client=model)
+
+        self.assertIn("claude-sonnet-5", [r["model"] for r in model.requests])
+        withdrawn = [e for e in analysis["events"] if e["action"] == "withdrawn"]
+        self.assertEqual([(e["method"], e["status"]) for e in withdrawn], [("second_pass", "ok")])
+        # Priced at Sonnet's rates: 1,000 in + 4,500 cached + 200 out.
+        self.assertGreater(analysis["cost_usd"], 0.0049)
+
+        again = self.build(model_client=model)
+        calls = len(model.requests)
+        self.build(model_client=model)
+        self.assertEqual(len(model.requests), calls)  # nothing re-sent on later updates
+        self.assertEqual([e["method"] for e in again["events"] if e["action"] == "withdrawn"], ["second_pass"])
+
+    def test_an_event_sonnet_cannot_fix_is_tried_once(self):
+        from dataclasses import replace
+
+        def always_splices(user):
+            sid = re_sid(user, "is GRANTED")
+            return [{"sentence_id": sid, "patent_number": "9,748,347", "claims_verbatim": "1-3",
+                     "action": "withdrawn", "speaker": "tribunal_ruling", "respondents": ["ALL"],
+                     "quote": "a quote from nowhere"}] if sid else []
+
+        model = FakeModel(always_splices)
+        self.cfg = replace(self.cfg, second_pass=True)
+        first = self.build(model_client=model)
+        sonnet_calls = sum(1 for r in model.requests if r["model"] == "claude-sonnet-5")
+        self.build(model_client=model)
+        self.assertEqual(sum(1 for r in model.requests if r["model"] == "claude-sonnet-5"), sonnet_calls)
+        flagged = [e for e in first["events"] if e["action"] == "withdrawn"][0]
+        self.assertTrue(flagged["second_pass_tried"])
+        self.assertEqual(flagged["status"], "needs_review")
+
+
 class TestPrompt(unittest.TestCase):
     def test_the_system_prompt_is_long_enough_to_cache_on_haiku(self):
         from datalayer.claims import prompts

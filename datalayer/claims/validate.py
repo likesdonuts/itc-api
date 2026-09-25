@@ -45,7 +45,11 @@ def contains(sentence: Any, part: Any) -> bool:
 def is_final_id(document_type: str | None, title: str | None) -> bool:
     """The Final ID itself, or the ALJ's notice announcing it (a "Notice"
     titled "Initial Determination on Violation of Section 337 ...")."""
-    return document_type == "ID/RD - Final on Violation" or "on violation" in str(title or "").lower()
+    # The title has to open with it: "Initial Determination Granting Staff's
+    # Motion to Declassify ... Its Brief on Violation" is not the Final ID.
+    return document_type == "ID/RD - Final on Violation" or bool(
+        re.match(r"^\W*(?:\[[^\]]*\]\s*)?initial\s+determination\s+on\s+violation\b", str(title or ""), re.I)
+    )
 
 
 def stage_for(kind: str, document_type: str | None, action: str, title: str | None = None) -> str:
@@ -226,7 +230,9 @@ def recheck(
     for name in event.get("respondents") or ["ALL"]:
         if name != "ALL" and name.lower() not in known:
             notes.append(f"respondent {name!r} is not on the record's list")
-    kept = [n for n in event.get("notes") or [] if n.startswith("patent resolved")]
+    # Notes about how the event was made, as opposed to checks that failed.
+    kept = [n for n in event.get("notes") or [] if n.startswith(("patent resolved", "re-read by"))
+            or "could not resolve" in n]
     return {
         **event,
         "stage": stage_for(kind, document.get("document_type"), event.get("action") or "", document.get("title")),
