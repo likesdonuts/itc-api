@@ -10,6 +10,12 @@ data/investigations.json
 # Rebuilt from the cases and the documents by 'python cli.py counsel'.
 data/counsel.json
 
+# Federal Register notices the claims analysis read; fetched again on demand.
+# The analyses themselves (data/claims/*.json) and data/claims_costs.csv are
+# tracked: later phases pay for them.
+data/claims/fr/
+data/claims_costs.csv.lock
+
 # Downloaded PDFs stay on this machine: gigabytes of them, and EDIS can serve
 # them again ('python cli.py docs --existing'). The documents index that lists
 # them is still tracked.

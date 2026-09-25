@@ -1,0 +1,556 @@
+{
+  "built_at": "2026-09-25T00:22:02.613621+00:00",
+  "corrections": [],
+  "cost_usd": 0.0,
+  "events": [
+    {
+      "action": "instituted",
+      "claims": [
+        1,
+        12,
+        13,
+        14
+      ],
+      "claims_verbatim": "1 and 12-14",
+      "date": "2023-12-26",
+      "id": "fffccaea8b48",
+      "method": "rule",
+      "notes": [],
+      "patent": "7,333,511",
+      "quote": "claims 1 and 12-14 of the '511 patent",
+      "respondents": [
+        "ALL"
+      ],
+      "sentence": "Scope of Investigation: Having considered the complaint, the U.S. International Trade Commission, on December 22, 2023, Ordered that-- (1) Pursuant to subsection (b) of section 337 of the Tariff Act of 1930, as amended, an investigation be instituted to determine whether there is a violation of subsection (a)(1)(B) of section 337 in the importation into the United States, the sale for importation, or the sale within the United States after importation of certain products identified in paragraph (2) by reason of infringement of one or more of claims 1 and 12-14 of the '511 patent and claims 1 and 3 of the '260 patent, and whether an industry in the United States exists as required by subsection (a)(2) of section 337; (2) Pursuant to section 210.10(b)(1) of the Commission's Rules of Practice and Procedure, 19 CFR 210.10(b)(1), the plain language description of the accused products or category of accused products, which defines the scope of the investigation, is ``optical line termination (OLT) and optical network unit/terminal (ONU/ONT) equipment that conform to passive optical network standards of ITU-T Recommendation series G.984.x for Gigabit-capable Passive Optical Network (G-PON) and its successor standards, including 10GPON/XGS-PON (ITU-T Rec.",
+      "source": {
+        "id": "FR:2023-28784",
+        "kind": "federal_register",
+        "published": "2023-12-29",
+        "title": "Certain Passive Optical Network Equipment; Notice of Institution of Investigation",
+        "url": "https://www.federalregister.gov/documents/2023/12/29/2023-28784/certain-passive-optical-network-equipment-notice-of-institution-of-investigation"
+      },
+      "speaker": "tribunal_ruling",
+      "stage": "instituted",
+      "status": "ok"
+    },
+    {
+      "action": "instituted",
+      "claims": [
+        1,
+        3
+      ],
+      "claims_verbatim": "1 and 3",
+      "date": "2023-12-26",
+      "id": "34b5c5420761",
+      "method": "rule",
+      "notes": [],
+      "patent": "7,558,260",
+      "quote": "claims 1 and 3 of the '260 patent",
+      "respondents": [
+        "ALL"
+      ],
+      "sentence": "Scope of Investigation: Having considered the complaint, the U.S. International Trade Commission, on December 22, 2023, Ordered that-- (1) Pursuant to subsection (b) of section 337 of the Tariff Act of 1930, as amended, an investigation be instituted to determine whether there is a violation of subsection (a)(1)(B) of section 337 in the importation into the United States, the sale for importation, or the sale within the United States after importation of certain products identified in paragraph (2) by reason of infringement of one or more of claims 1 and 12-14 of the '511 patent and claims 1 and 3 of the '260 patent, and whether an industry in the United States exists as required by subsection (a)(2) of section 337; (2) Pursuant to section 210.10(b)(1) of the Commission's Rules of Practice and Procedure, 19 CFR 210.10(b)(1), the plain language description of the accused products or category of accused products, which defines the scope of the investigation, is ``optical line termination (OLT) and optical network unit/terminal (ONU/ONT) equipment that conform to passive optical network standards of ITU-T Recommendation series G.984.x for Gigabit-capable Passive Optical Network (G-PON) and its successor standards, including 10GPON/XGS-PON (ITU-T Rec.",
+      "source": {
+        "id": "FR:2023-28784",
+        "kind": "federal_register",
+        "published": "2023-12-29",
+        "title": "Certain Passive Optical Network Equipment; Notice of Institution of Investigation",
+        "url": "https://www.federalregister.gov/documents/2023/12/29/2023-28784/certain-passive-optical-network-equipment-notice-of-institution-of-investigation"
+      },
+      "speaker": "tribunal_ruling",
+      "stage": "instituted",
+      "status": "ok"
+    }
+  ],
+  "ids_hash": "3f571a3c3ef00141daeb97333ca3d68addb69118b0afd8d7b70d6b84d3e6133b",
+  "investigation_number": "337-TA-1384",
+  "key": "337-1384",
+  "last_attempt": {
+    "at": "2026-09-25T00:22:02.613861+00:00",
+    "error": null
+  },
+  "outcome": "ok",
+  "patents": [
+    "7,558,260",
+    "7,333,511"
+  ],
+  "phase": "Violation",
+  "pipeline_version": "1.0",
+  "processed_sources": [
+    "FR:2023-28784"
+  ],
+  "respondents": [
+    "Hangzhou Fullwell Optoelectronic Equipment Co., Ltd.",
+    "Hangzhou DAYTAI Network Technologies Co., Ltd.",
+    "Hangzhou Softel Optic Co., Ltd.",
+    "Hangzhou Sumlo Industrial Co., Ltd."
+  ],
+  "seen_documents": [
+    "808458",
+    "808550",
+    "809148",
+    "809172",
+    "809192",
+    "809255",
+    "809370",
+    "809564",
+    "809841",
+    "809865",
+    "810188",
+    "810449",
+    "810976",
+    "810977",
+    "810987",
+    "811046",
+    "811123",
+    "811124",
+    "811173",
+    "811175",
+    "811177",
+    "811341",
+    "811678",
+    "811767",
+    "811812",
+    "811918",
+    "811972",
+    "812091",
+    "812176",
+    "812305",
+    "813273",
+    "813758",
+    "814041",
+    "814133",
+    "814134",
+    "814207",
+    "814266",
+    "815205",
+    "815233",
+    "815235",
+    "815311",
+    "815447",
+    "815504",
+    "815597",
+    "815606",
+    "815767",
+    "815853",
+    "815965",
+    "816106",
+    "816108",
+    "816184",
+    "816301",
+    "816302",
+    "816304",
+    "816473",
+    "816822",
+    "817176",
+    "817622",
+    "818209",
+    "819065",
+    "819829",
+    "821041",
+    "821098",
+    "822134",
+    "824250",
+    "824261",
+    "824263",
+    "824273",
+    "824396",
+    "824820",
+    "825536",
+    "825556",
+    "826492",
+    "826618",
+    "826620",
+    "826903",
+    "826904",
+    "828905",
+    "828984",
+    "829197",
+    "829221",
+    "829739",
+    "829998",
+    "830345",
+    "830527",
+    "830678",
+    "831135",
+    "831342",
+    "831367",
+    "832646",
+    "834388",
+    "835172",
+    "835298",
+    "836142",
+    "836343",
+    "836365",
+    "836642",
+    "837055",
+    "837767",
+    "839644",
+    "840035",
+    "840240",
+    "840328",
+    "840703",
+    "841073",
+    "841869",
+    "842828",
+    "843093",
+    "843223",
+    "843350",
+    "843846",
+    "843851",
+    "845588",
+    "846325",
+    "846435",
+    "847788",
+    "849739",
+    "850007",
+    "850444",
+    "851654"
+  ],
+  "source_documents": [
+    {
+      "date": "2025-05-01",
+      "document_type": "Notice",
+      "id": "851654",
+      "kind": "commission_notice",
+      "title": "F.R. Notice of Commission\u2019s Final Determination Finding No Violation of Section 337; Termination of the Investigation"
+    },
+    {
+      "date": "2025-05-01",
+      "document_type": "Notice",
+      "id": "850444",
+      "kind": "commission_notice",
+      "title": "F.R. Notice of the Commission\u2019s Final Determination Finding No Violation of Section 337; Termination of the Investigation"
+    },
+    {
+      "date": "2025-04-25",
+      "document_type": "Notice",
+      "id": "849739",
+      "kind": "commission_notice",
+      "title": "Commission\u2019s Final Determination Finding No Violation of Section 337; Termination of the Investigation"
+    },
+    {
+      "date": "2025-03-17",
+      "document_type": "Notice",
+      "id": "846325",
+      "kind": "initial_determination",
+      "title": "F.R. Notice of a Commission Determination to Review a Final Initial Determination Finding No Violation of Section 337"
+    },
+    {
+      "date": "2025-03-11",
+      "document_type": "Notice",
+      "id": "845588",
+      "kind": "initial_determination",
+      "title": "Commission Determination to Review a Final Initial Determination Finding No Violation of Section 337"
+    },
+    {
+      "date": "2025-02-12",
+      "document_type": "Notice",
+      "id": "843350",
+      "kind": "initial_determination",
+      "title": "Commission Determination to Extend the Deadline for Determining Whether to Review a Final Initial Determination Finding No Violation"
+    },
+    {
+      "date": "2025-02-06",
+      "document_type": "Petition for Review; and Response to",
+      "id": "842828",
+      "kind": "initial_determination",
+      "title": "Response of the Office of Unfair Import Investigations to Complainant Optimum Communications Services, Inc.'s Petition for Review of the Initial Determination on Violation of Section 337"
+    },
+    {
+      "date": "2025-01-21",
+      "document_type": "Notice",
+      "id": "841869",
+      "kind": "commission_notice",
+      "title": "F.R. Notice of Request for Submissions on the Public Interest"
+    },
+    {
+      "date": "2025-01-14",
+      "document_type": "Notice",
+      "id": "841073",
+      "kind": "commission_notice",
+      "title": "Request for Submissions on the Public Interest"
+    },
+    {
+      "date": "2025-01-08",
+      "document_type": "ID/RD - Final on Violation",
+      "id": "840703",
+      "kind": "initial_determination",
+      "title": "Initial Determination on Violation of Section 337 and Recommended Determination on Remedy and Bond"
+    },
+    {
+      "date": "2024-12-31",
+      "document_type": "Correspondence",
+      "id": "840240",
+      "kind": "initial_determination",
+      "title": "Commission Investigative Staff's Letter Requesting Extension to File Response to Complainant's Petition for Review of Final Initial Determination"
+    },
+    {
+      "date": "2024-12-19",
+      "document_type": "Notice",
+      "id": "839644",
+      "kind": "initial_determination",
+      "title": "Initial Determination on Violation of Section 337 and Recommended Determination on Remedy and Bond"
+    },
+    {
+      "date": "2024-11-04",
+      "document_type": "Notice",
+      "id": "836365",
+      "kind": "initial_determination",
+      "title": "Commission Determination Not to Review an Initial Determination Granting Staff\u2019s Motion to Declassify Certain Portions of Its Brief on Violation, Remedy, and Bonding"
+    },
+    {
+      "date": "2024-11-04",
+      "document_type": "Order",
+      "id": "836343",
+      "kind": "alj_order",
+      "title": "Extending the Target Date"
+    },
+    {
+      "date": "2024-10-31",
+      "document_type": "Order",
+      "id": "836142",
+      "kind": "alj_order",
+      "title": "Denying Complainant\u2019s Motion to Admit Additional Exhibits"
+    },
+    {
+      "date": "2024-09-19",
+      "document_type": "ID/RD - Other Than Final on Violation",
+      "id": "832646",
+      "kind": "initial_determination",
+      "title": "Initial Determination Granting Staff's Motion to Declassify Certain Portions of Its Brief on Violation, Remedy, and Bonding"
+    },
+    {
+      "date": "2024-08-26",
+      "document_type": "Order",
+      "id": "830527",
+      "kind": "alj_order",
+      "title": "Regarding Motion to Intervene"
+    },
+    {
+      "date": "2024-08-08",
+      "document_type": "Order",
+      "id": "828984",
+      "kind": "alj_order",
+      "title": "Authorizing Staff to File Motion to Declassify Its Brief on the Issues of Violation of Section 337, Remedy, and Bonding"
+    },
+    {
+      "date": "2024-07-10",
+      "document_type": "Order",
+      "id": "825556",
+      "kind": "alj_order",
+      "title": "Granting Motion to Admit Additional Exhibit"
+    },
+    {
+      "date": "2024-07-09",
+      "document_type": "Order",
+      "id": "825536",
+      "kind": "alj_order",
+      "title": "Granting Joint Motion to Admit Final Exhibits"
+    },
+    {
+      "date": "2024-06-25",
+      "document_type": "Order",
+      "id": "824396",
+      "kind": "alj_order",
+      "title": "Setting Case Management Conference"
+    },
+    {
+      "date": "2024-05-09",
+      "document_type": "Notice",
+      "id": "821098",
+      "kind": "initial_determination",
+      "title": "Commission Determination Not to Review an Initial Determination Finding All Respondents in Default"
+    },
+    {
+      "date": "2024-05-09",
+      "document_type": "Order",
+      "id": "821041",
+      "kind": "alj_order",
+      "title": "Granting Joint Proposal for a Hearing on the Written Record and Amending the Procedural Schedule"
+    },
+    {
+      "date": "2024-04-10",
+      "document_type": "ID/RD - Other Than Final on Violation",
+      "id": "818209",
+      "kind": "initial_determination",
+      "title": "Initial Determination Finding All Respondents in Default"
+    },
+    {
+      "date": "2024-03-26",
+      "document_type": "Order",
+      "id": "816822",
+      "kind": "alj_order",
+      "title": "Scheduling Case Management Conference"
+    },
+    {
+      "date": "2024-03-18",
+      "document_type": "Order",
+      "id": "816301",
+      "kind": "alj_order",
+      "title": "Denying Electric Power Board of Chattanooga's Motion to Quash"
+    },
+    {
+      "date": "2024-03-15",
+      "document_type": "Order",
+      "id": "816184",
+      "kind": "alj_order",
+      "title": "Order to Show Cause"
+    },
+    {
+      "date": "2024-03-08",
+      "document_type": "Order",
+      "id": "815767",
+      "kind": "alj_order",
+      "title": "Rescheduling Case Management Conference"
+    },
+    {
+      "date": "2024-03-05",
+      "document_type": "Order",
+      "id": "815504",
+      "kind": "alj_order",
+      "title": "Rescheduling Case Management Conference"
+    },
+    {
+      "date": "2024-01-18",
+      "document_type": "Order",
+      "id": "812176",
+      "kind": "alj_order",
+      "title": "Procedural Schedule"
+    },
+    {
+      "date": "2024-01-10",
+      "document_type": "Order",
+      "id": "811812",
+      "kind": "alj_order",
+      "title": "Ordering Complainant to File Proof of Service of Order No. 4"
+    },
+    {
+      "date": "2024-01-10",
+      "document_type": "Order",
+      "id": "811767",
+      "kind": "alj_order",
+      "title": "(1) Setting Approximately 14-Month Target Date (2) Setting Preliminary Conference"
+    },
+    {
+      "date": "2024-01-02",
+      "document_type": "Order",
+      "id": "811177",
+      "kind": "alj_order",
+      "title": "Seeking Submission on Target Date"
+    },
+    {
+      "date": "2024-01-02",
+      "document_type": "Order",
+      "id": "811175",
+      "kind": "alj_order",
+      "title": "Notice of Ground Rules"
+    },
+    {
+      "date": "2024-01-02",
+      "document_type": "Order",
+      "id": "811173",
+      "kind": "alj_order",
+      "title": "Protective Order"
+    },
+    {
+      "date": "2023-12-29",
+      "document_type": "Notice",
+      "id": "811124",
+      "kind": "notice_of_institution",
+      "title": "F.R. Notice of Institution of Investigation"
+    },
+    {
+      "date": "2023-12-26",
+      "document_type": "Notice",
+      "id": "810987",
+      "kind": "commission_notice",
+      "title": "Assignment of ALJ Johnson Hines"
+    },
+    {
+      "date": "2023-12-26",
+      "document_type": "Order, Commission",
+      "id": "810977",
+      "kind": "final_determination",
+      "title": "Order Denying Request for Entry into Early Disposition Program"
+    },
+    {
+      "date": "2023-12-26",
+      "document_type": "Notice",
+      "id": "810976",
+      "kind": "notice_of_institution",
+      "title": "Institution of Investigation"
+    },
+    {
+      "date": "2023-12-15",
+      "document_type": "Correspondence",
+      "id": "810449",
+      "kind": "complaint",
+      "title": "Second Public Supplement to Complaint"
+    },
+    {
+      "date": "2023-12-11",
+      "document_type": "Correspondence",
+      "id": "810188",
+      "kind": "complaint",
+      "title": "First Public Supplement to Complaint"
+    },
+    {
+      "date": "2023-11-30",
+      "document_type": "Complaint",
+      "id": "809564",
+      "kind": "complaint",
+      "title": "Second Supplement to Complaint"
+    },
+    {
+      "date": "2023-11-28",
+      "document_type": "Notice",
+      "id": "809370",
+      "kind": "complaint",
+      "title": "F.R.  Notice of Receipt of Amended Complaint; Solicitation of Comments Relating to the Public Interest"
+    },
+    {
+      "date": "2023-11-20",
+      "document_type": "Notice",
+      "id": "809255",
+      "kind": "commission_notice",
+      "title": "F.R.  Notice of Receipt of Complaint; Solicitation of Comments Relating to the Public Interest"
+    },
+    {
+      "date": "2023-11-22",
+      "document_type": "Notice",
+      "id": "809192",
+      "kind": "complaint",
+      "title": "Receipt of Amended Complaint; Solicitation of Comments Relating to the Public Interest"
+    },
+    {
+      "date": "2023-11-22",
+      "document_type": "Complaint",
+      "id": "809172",
+      "kind": "complaint",
+      "title": "First Supplement to Complaint"
+    },
+    {
+      "date": "2023-11-21",
+      "document_type": "Complaint",
+      "id": "809148",
+      "kind": "complaint",
+      "title": "Amended Complaint"
+    },
+    {
+      "date": "2023-11-14",
+      "document_type": "Notice",
+      "id": "808550",
+      "kind": "commission_notice",
+      "title": "Receipt of Complaint; Solicitation of Comments Relating to the Public Interest"
+    },
+    {
+      "date": "2023-11-13",
+      "document_type": "Complaint",
+      "id": "808458",
+      "kind": "complaint",
+      "title": "Public Complaint"
+    }
+  ],
+  "title": "Certain Passive Optical Network Equipment"
+}

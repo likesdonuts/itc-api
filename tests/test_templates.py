@@ -382,6 +382,56 @@ class TestDetailPage(unittest.TestCase):
         self.assertIn('data-fetched-at=""', never)
         self.assertNotIn("last fetched <time", never)
 
+    def test_the_claims_button_follows_the_analysis_state(self):
+        create = self.page()
+        self.assertIn('data-job="claims">Create claims analysis</button>', create)
+        self.assertNotIn('class="tabs"', create)
+
+        stamp = "2026-09-24T15:42:10+00:00"
+        current = templates.render_detail(case(), [], SCHEMA, claims_state={"state": "up_to_date", "built_at": stamp})
+        self.assertIn('data-job="claims" data-current="1">Update claims analysis</button>', current)
+        self.assertIn("Up to date as of", current)
+
+        stale = templates.render_detail(
+            case(), [], SCHEMA,
+            claims_state={"state": "new_activity", "built_at": stamp, "reasons": ["2 new documents"]},
+        )
+        self.assertIn('data-job="claims">Update claims analysis</button>', stale)
+        self.assertIn("New activity since", stale)
+        self.assertIn("2 new documents", stale)
+
+        failed = templates.render_detail(
+            case(), [], SCHEMA, claims_state={"state": "failed", "error": "FedRegError: HTTP 503"}
+        )
+        self.assertIn(">Retry claims analysis</button>", failed)
+        self.assertIn("The last attempt failed: FedRegError: HTTP 503", failed)
+
+    def test_an_analysis_adds_a_claims_tab_with_its_matrix_and_provenance(self):
+        analysis = {
+            "built_at": "2026-09-24T15:42:10+00:00",
+            "outcome": "ok",
+            "patents": ["8,350,294"],
+            "events": [{
+                "id": "e1", "stage": "instituted", "action": "instituted", "speaker": "tribunal_ruling",
+                "patent": "8,350,294", "claims_verbatim": "1-3", "claims": [1, 2, 3], "respondents": ["ALL"],
+                "status": "ok", "date": "2023-06-27", "method": "rule",
+                "quote": "claims 1-3 of the '294 patent",
+                "source": {"id": "FR:2023-14091", "title": "Institution of Investigation",
+                           "url": "https://www.federalregister.gov/d/2023-14091"},
+            }],
+        }
+        html = templates.render_detail(case(), [], SCHEMA, claims=analysis)
+        self.assertIn('<a href="#claims" data-tab="claims">Claims</a>', html)
+        claims_tab = html[html.index('id="tab-claims"') :]
+        self.assertIn("3 instituted", claims_tab)
+        self.assertEqual(claims_tab.count('class="chip chip-neutral"'), 3)
+        self.assertIn("Parsed by rule", claims_tab)
+        self.assertIn("27 Jun 2023", claims_tab)
+        self.assertIn('href="https://www.federalregister.gov/d/2023-14091"', claims_tab)
+
+        empty = templates.render_detail(case(), [], SCHEMA, claims={**analysis, "outcome": "no_claims", "events": []})
+        self.assertIn("No claim information found in the available documents", empty)
+
     def test_a_case_with_no_documents_says_how_to_fetch_them(self):
         html = self.page()
         self.assertIn("Documents (0)", html)

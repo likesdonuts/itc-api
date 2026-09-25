@@ -13,6 +13,9 @@ from typing import Any, Callable
 
 import schema as ui_schema
 from datalayer.cases import is_case_record
+from datalayer.claims import build as claims_build
+from datalayer.claims import config as claims_config
+from datalayer.claims import status as claims_status
 from datalayer.config import DATA_DIR, SCHEMA_PATH, SITE_DIR
 from datalayer.store import Store, write_text_atomic
 
@@ -106,14 +109,27 @@ def render_site(
     )
 
     written: set[Path] = set()
+    # Claims analyses, and whether each needs building -- all from disk, so
+    # rendering still makes no network call.
+    analyses = claims_build.load_all(store.data_dir)
+    try:
+        pipeline_version = claims_config.load().pipeline_version
+    except claims_config.ClaimsConfigError:
+        pipeline_version = None
+
     for number, case in cases.items():
         page = detail_dir / f"{templates.slug_for(number)}.html"
+        analysis = analyses.get(number)
         write_text_atomic(
             page,
             templates.render_detail(
                 case,
                 store.documents.get(number, []),
                 schema,
+                claims=analysis,
+                claims_state=claims_status.state(
+                    case, store.documents.get(number, []), analysis, pipeline_version=pipeline_version
+                ),
                 counsel=store.counsel.get(number),
                 fetched_at=fetched_at.get(number),
             ),

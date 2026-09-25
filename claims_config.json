@@ -1,0 +1,52 @@
+{
+  "version": 1,
+  "$comment": [
+    "Settings for the claims analysis (datalayer/claims/). Edit and rebuild; no code changes.",
+    "",
+    "source_documents: which EDIS documents an analysis reads. A document is a source if its",
+    "  document_type is listed under a kind, or its title matches one of that kind's patterns",
+    "  (case-insensitive regular expressions). Only public documents are ever read.",
+    "ruling_keywords / argument_keywords: the candidate-sentence prefilter (phase 2).",
+    "costs_csv: where every create/update/retry run's model cost is appended, relative to the",
+    "  project folder unless absolute.",
+    "budget_usd: builds stop before a model call that would take the total in costs_csv past this.",
+    "second_pass: send flagged events to a second model before human review (phase 3). Off.",
+    "The model price table is added in phase 2, from Anthropic's pricing page."
+  ],
+  "pipeline_version": "1.0",
+  "source_documents": {
+    "complaint": {
+      "document_types": ["Complaint"],
+      "title_patterns": ["\\bamended complaint\\b", "\\bsupplement(al)? to (the )?complaint\\b"]
+    },
+    "notice_of_institution": {
+      "document_types": [],
+      "title_patterns": ["notice of institution", "institution of investigation"]
+    },
+    "alj_order": {
+      "document_types": ["Order"],
+      "title_patterns": []
+    },
+    "initial_determination": {
+      "document_types": ["ID/RD - Final on Violation", "ID/RD - Other Than Final on Violation"],
+      "title_patterns": ["\\binitial determination\\b"]
+    },
+    "commission_notice": {
+      "document_types": ["Notice"],
+      "title_patterns": ["\\bcommission determination\\b", "\\bdetermination not to review\\b"]
+    },
+    "commission_opinion": {
+      "document_types": ["Opinion, Commission"],
+      "title_patterns": []
+    },
+    "final_determination": {
+      "document_types": ["Order, Commission"],
+      "title_patterns": ["\\bfinal determination\\b", "\\blimited exclusion order\\b", "\\bcease and desist\\b"]
+    }
+  },
+  "ruling_keywords": ["GRANTED", "is terminated", "are terminated", "finds", "determines", "ORDERED", "hereby"],
+  "argument_keywords": ["argues", "contends", "submits", "asserts that", "alleges"],
+  "costs_csv": "data/claims_costs.csv",
+  "budget_usd": 20.0,
+  "second_pass": false
+}

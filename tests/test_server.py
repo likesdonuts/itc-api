@@ -282,6 +282,38 @@ class TestDailyJob(ServerTestCase):
         self.assertEqual(running["state"], "running")
 
 
+class TestClaimsJob(ServerTestCase):
+    def test_it_builds_one_record_and_rebuilds_its_page(self):
+        calls = []
+
+        def fake_build(store, key, **kwargs):
+            calls.append(key)
+            return {"events": [{"id": "e1"}], "outcome": "ok"}
+
+        with mock.patch("datalayer.claims.build.run", fake_build):
+            job = self.run_job({"kind": "claims", "number": "337-TA-1478"})
+
+        self.assertEqual(calls, ["337-1478"])
+        self.assertEqual(job["label"], "Claims analysis: 337-1478")
+        self.assertEqual(job["level"], "ok")
+        self.assertIn("1 claim event", job["message"])
+
+    def test_a_failed_build_is_reported_and_the_page_still_rebuilt(self):
+        def failing(store, key, **kwargs):
+            raise RuntimeError("federalregister.gov returned HTTP 503")
+
+        before = (self.site_dir / "index.html").stat().st_mtime_ns
+        with mock.patch("datalayer.claims.build.run", failing):
+            job = self.run_job({"kind": "claims", "number": "337-1478"})
+        self.assertEqual(job["level"], "error")
+        self.assertIn("HTTP 503", job["message"])
+        self.assertGreaterEqual((self.site_dir / "index.html").stat().st_mtime_ns, before)
+
+    def test_an_unknown_record_is_refused(self):
+        status, body = self.post({"kind": "claims", "number": "337-9999"})
+        self.assertEqual(status, 404)
+
+
 class TestStatus(ServerTestCase):
     def test_it_reports_the_last_sync_and_the_token_expiry(self):
         store = Store.load(self.data_dir)

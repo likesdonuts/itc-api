@@ -26,6 +26,7 @@ Examples:
     python cli.py docs 337-1478 --no-attachments
     python cli.py docs --existing --appearances   # just the Notice of Appearance PDFs
     python cli.py counsel                   # rebuild who-represents-whom, offline
+    python cli.py claims 337-1366 --render  # build a claims analysis
     python cli.py render                    # rebuild the site, offline
     python cli.py serve                     # open the app (what ITC Tracker.bat runs)
     python cli.py fields                    # what ui_schema.json can name
@@ -131,6 +132,13 @@ def build_parser() -> argparse.ArgumentParser:
         help="refuse numbers that aren't on disk instead of asking EDIS about them",
     )
     _add_render_flag(p_docs)
+
+    p_claims = sub.add_parser(
+        "claims",
+        help="build or update the claims analysis for the investigations you name",
+    )
+    p_claims.add_argument("numbers", nargs="+", help="investigation numbers, e.g. 337-1366 337-TA-1384")
+    _add_render_flag(p_claims)
 
     p_counsel = sub.add_parser(
         "counsel",
@@ -258,6 +266,26 @@ def cmd_docs(args: argparse.Namespace, store: Store) -> int:
     if args.render:
         _render(args, store)
     return 0 if report.fetched or not report.failed else 1
+
+
+def cmd_claims(args: argparse.Namespace, store: Store) -> int:
+    from datalayer.claims import build as claims_build
+
+    failed = 0
+    for number in args.numbers:
+        key = store.find_key(number)
+        if key is None:
+            print(f"{number} is not on disk; run 'python cli.py sync' first.")
+            failed += 1
+            continue
+        try:
+            claims_build.run(store, key)
+        except Exception as exc:  # recorded on the analysis; keep going with the rest
+            print(f"  ! {number}: {type(exc).__name__}: {exc}")
+            failed += 1
+    if args.render:
+        _render(args, store)
+    return 1 if failed else 0
 
 
 def cmd_counsel(args: argparse.Namespace, store: Store) -> int:
@@ -422,6 +450,7 @@ COMMANDS = {
     "parse": cmd_parse,
     "docs": cmd_docs,
     "counsel": cmd_counsel,
+    "claims": cmd_claims,
     "render": cmd_render,
     "fields": cmd_fields,
     "serve": cmd_serve,
