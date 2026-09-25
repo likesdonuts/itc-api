@@ -4,8 +4,8 @@ The generated pages are static, so their buttons need something to call.
 This serves the repository over localhost and runs the data layer on the
 page's behalf:
 
-    POST /api/jobs          start a job: the daily sync, or documents for the
-                            cases picked on the page
+    POST /api/jobs          start a job: the daily sync, documents for the
+                            cases picked on the page, or one claims analysis
     GET  /api/jobs/current  the running (or last) job, with its progress
     GET  /api/status        when the last sync and fetch ran, the token's expiry
 
@@ -190,6 +190,16 @@ class Controller:
             "documents", label, lambda job: self._run_documents(job, token, keys, download)
         )
 
+    def start_claims(self, number: str) -> Job:
+        """Create, update or retry one investigation's claims analysis. One
+        job runs at a time across the app, so a record never has two.
+        """
+        store = Store.load(self.data_dir)
+        key = store.find_key(str(number or ""))
+        if key is None:
+            raise JobRefused(HTTPStatus.NOT_FOUND, f"{number} is not on disk. Run the daily sync first.")
+        return self._start("claims", f"Claims analysis: {key}", lambda job: self._run_claims(job, key))
+
     def _start(self, kind: str, label: str, work: Callable[[Job], None]) -> Job:
         if not self._lock.acquire(blocking=False):
             raise JobRefused(HTTPStatus.CONFLICT, "Another job is still running; wait for it to finish")
@@ -284,6 +294,24 @@ class Controller:
         self._rebuild(store, log)
         job.finish(message, level)
 
+    def _run_claims(self, job: Job, key: str) -> None:
+        from datalayer.claims import build as claims_build
+
+        log = self._logger(job)
+        store = Store.load(self.data_dir)
+        try:
+            analysis = claims_build.run(store, key, log=log)
+        finally:
+            # A failure is recorded on the analysis, so the page shows it too.
+            render_site(
+                store, data_dir=self.data_dir, site_dir=self.site_dir, schema_path=self.schema_path, log=log
+            )
+        events = len(analysis.get("events") or [])
+        if analysis.get("outcome") == "no_claims":
+            job.finish("Built. No claim information found in the available documents.", "ok")
+        else:
+            job.finish(f"Built from {events} claim event(s).", "ok")
+
     def _run_documents(self, job: Job, token: str, keys: list[str], download: bool) -> None:
         log = self._logger(job)
         store = Store.load(self.data_dir)
@@ -370,6 +398,8 @@ class Handler(SimpleHTTPRequestHandler):
                 if not isinstance(numbers, list):
                     raise JobRefused(HTTPStatus.BAD_REQUEST, "numbers must be a list")
                 job = self.controller.start_documents(numbers, download=bool(payload.get("download")))
+            elif kind == "claims":
+                job = self.controller.start_claims(str(payload.get("number") or ""))
             else:
                 raise JobRefused(HTTPStatus.BAD_REQUEST, f"unknown job kind {kind!r}")
         except JobRefused as exc:

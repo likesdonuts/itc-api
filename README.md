@@ -127,6 +127,7 @@ own from the command line.
 | `python cli.py docs 337-1478` | EDIS | Process 2. Fetches document lists and PDFs for the numbers you name. |
 | `python cli.py docs --existing` | EDIS | Process 2 over every case you have already fetched documents for. |
 | `python cli.py docs 337-1478 --appearances` | EDIS | Lists every document but downloads only the Notice of Appearance PDFs. |
+| `python cli.py claims 337-1366` | Federal Register | Builds or updates the claims analysis for the investigations you name (also the **Create / Update claims analysis** button on a case page). |
 | `python cli.py counsel` | none | Process 3. Rebuilds who represents whom from the documents on disk. Runs by itself after `sync`, `parse`, `docs` and `refresh`. |
 | `python cli.py render` | none | UI layer. Rebuilds `site/` from `data/` and `ui_schema.json`. |
 | `python cli.py serve` | localhost | Opens the app (what `ITC Tracker.bat` runs): the site plus its buttons. |
@@ -328,6 +329,45 @@ search also finds cases by firm or attorney.
 
 The IDS participant ID (the same for one company in every case) is kept on
 each party, for matching across cases later.
+
+### Claims analysis
+
+```
+python cli.py claims 337-1366 337-TA-1384 --render
+```
+
+Tracks every asserted claim of an investigation through six stages --
+complaint, institution, hearing, Final ID, Commission, Federal Circuit -- per
+patent and per respondent. The design is in `claim-narrowing-handoff.md`; it
+is being built in phases, and this is phase 1, which uses no model:
+
+- **Instituted claims** are read by rule from the Commission's notice of
+  institution, fetched from federalregister.gov (no token). A notice is only
+  used when its text names this investigation's number and its title shares
+  its subject, since IDS's numbering fields can disagree.
+- **The text tools** later phases build on: sentence splitting that keeps
+  "U.S.", "No.", "Inv.", "Fed. Cir." and "Dec. 1" intact; claim references
+  ("claims 1-5, 8, and 12", "1 through 4", en and em dashes); patents, full
+  ("U.S. Patent No. 8,350,294") or short ("the ’294 patent"), mapped to the
+  record's IDS patent list. Claim numbers only ever come from code, which
+  refuses ranges that run backward or span more than 150 claims.
+- **Source documents** -- complaint, notice of institution, ALJ orders and
+  IDs, Commission notices, opinions and determinations -- are defined in
+  `claims_config.json` by document type and title pattern, public only.
+
+An analysis is stored in `data/claims/<number>.json` with its build time, every
+public document ID it saw, a fingerprint of the IDS record, and the pipeline
+version. The case page compares those with what is on disk to show **Create**,
+**Update** (new documents or an IDS change since the build), **Up to date as
+of ...** (disabled), or **Retry** after a failure, which keeps the last good
+analysis. Once built, the page gains a **Claims** tab: the claims-by-stage
+matrix and, for each status, the event behind it with its source and quote.
+
+Every build appends a row to `data/claims_costs.csv`
+(`investigation_number,build_datetime,cost_usd`), failed ones too, under a
+file lock; phase 1 costs nothing, so its rows read `0.000000`. The file's
+location, and the $20 budget later phases stop at, are in
+`claims_config.json`.
 
 ### The field mapping (`ui_schema.json`)
 

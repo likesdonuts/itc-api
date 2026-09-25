@@ -10,11 +10,13 @@ that drives the local server (server.py).
 from __future__ import annotations
 
 import html
+import re
 from collections import Counter
 from typing import Any
 
 import dates
 import schema as ui_schema
+from datalayer.claims import matrix as claims_matrix
 
 APP_STYLE = """
 :root {
@@ -327,6 +329,49 @@ th.pick, td.pick { width: 2.2rem; padding-right: 0; }
 table.list td.pick + td { min-width: 230px; }
 input.pick-case, #pick-all { width: 1rem; height: 1rem; cursor: pointer; }
 time.stamp.today { color: var(--green-fg); font-weight: 600; }
+.claims-actions { border-top: 1px solid var(--border); padding-top: 0.75rem; }
+.claims-label { font-size: 0.78rem; font-weight: 600; color: var(--muted); text-transform: uppercase; letter-spacing: 0.05em; }
+.claims-help { font-size: 0.82rem; color: var(--muted); }
+.claims-help.failed { color: var(--amber-fg); font-weight: 600; }
+.tabs { display: flex; gap: 0.25rem; margin-top: 1.5rem; border-bottom: 1px solid var(--border); }
+.tabs a {
+  padding: 0.55rem 1rem;
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--muted);
+  border-bottom: 2px solid transparent;
+  margin-bottom: -1px;
+}
+.tabs a:hover { color: var(--ink); text-decoration: none; }
+.tabs a.active { color: var(--accent); border-bottom-color: var(--accent); }
+.claims-matrix th .stage-count { font-weight: 400; text-transform: none; letter-spacing: 0; margin-top: 0.15rem; }
+.claims-matrix tr.patent-row th {
+  background: var(--surface-2);
+  font-size: 0.85rem;
+  text-transform: none;
+  letter-spacing: 0;
+  color: var(--ink);
+}
+.claims-matrix td.claim-no { white-space: nowrap; font-weight: 600; min-width: 0; }
+.chip {
+  display: inline-block;
+  font-size: 0.74rem;
+  font-weight: 600;
+  padding: 0.18rem 0.55rem;
+  border-radius: 999px;
+  border: 1px solid transparent;
+  white-space: nowrap;
+}
+.chip-neutral { background: var(--gray-bg); color: var(--gray-fg); }
+.review-dot {
+  display: inline-block;
+  width: 0.5rem;
+  height: 0.5rem;
+  margin-left: 0.35rem;
+  border-radius: 50%;
+  background: #B8541A;
+  vertical-align: 0.1em;
+}
 .picked-count.fresh { color: var(--amber-fg); }
 .heading-note { font-weight: 400; text-transform: none; letter-spacing: 0; }
 """
@@ -564,7 +609,8 @@ _CONTROL_SCRIPT = """
   function refresh() {
     const n = selected().length;
     buttons.forEach(function (b) {
-      b.disabled = offline || running || (b.dataset.job === 'documents' && n === 0);
+      b.disabled = offline || running || (b.dataset.job === 'documents' && n === 0)
+        || b.dataset.current === '1';  // a claims analysis already up to date
     });
     if (count) {
       const fresh = ticked().filter(function (p) { return isToday(p.dataset.fetched); }).length;
@@ -696,6 +742,7 @@ _CONTROL_SCRIPT = """
   buttons.forEach(function (b) {
     b.addEventListener('click', function () {
       if (b.dataset.job === 'daily') start({ kind: 'daily' });
+      else if (b.dataset.job === 'claims') start({ kind: 'claims', number: panel.dataset.number });
       else start({ kind: 'documents', numbers: selected(), download: b.dataset.download === '1' });
     });
   });
@@ -720,11 +767,44 @@ _CONTROL_SCRIPT = """
 """
 
 
-def _control_panel(number: str | None = None, fetched_at: str | None = None) -> str:
+def _claims_actions(claims_state: dict[str, Any] | None) -> str:
+    """The claims-analysis button, per the build's state (see
+    datalayer/claims/status.py): create, update, up to date, or retry.
+    """
+    state = (claims_state or {}).get("state") or "create"
+    built = (claims_state or {}).get("built_at")
+    current = ""
+    help_class = "claims-help"
+    if state == "create":
+        label, helper = "Create claims analysis", "Tracks how the asserted claims narrow, stage by stage"
+    elif state == "up_to_date":
+        label, helper = "Update claims analysis", f"Up to date as of {dates.format_ui_time(built)}"
+        current = ' data-current="1"'
+    elif state == "new_activity":
+        reasons = "; ".join((claims_state or {}).get("reasons") or [])
+        label, helper = "Update claims analysis", f"New activity since {dates.format_ui_time(built)}: {reasons}"
+    else:
+        label = "Retry claims analysis"
+        helper = f"The last attempt failed: {(claims_state or {}).get('error') or 'unknown error'}"
+        help_class += " failed"
+    return f"""
+  <div class="panel-actions claims-actions">
+    <span class="claims-label">Claims analysis</span>
+    <button class="btn" data-job="claims"{current}>{_e(label)}</button>
+    <span class="{help_class}">{_e(helper)}</span>
+  </div>"""
+
+
+def _control_panel(
+    number: str | None = None,
+    fetched_at: str | None = None,
+    claims_state: dict[str, Any] | None = None,
+) -> str:
     """The panel of buttons and status that drives the data layer.
 
     On the list page it runs the daily sync and fetches documents for the
-    ticked rows; on a case page (`number`) it fetches for that case alone.
+    ticked rows; on a case page (`number`) it fetches for that case alone and
+    builds its claims analysis.
     """
     if number:
         actions = f"""
@@ -750,7 +830,7 @@ def _control_panel(number: str | None = None, fetched_at: str | None = None) -> 
 <div class="card panel" id="control-panel"{data_number}>
   <div class="panel-status" id="panel-status"><span>Checking status&hellip;</span></div>
   <div class="panel-actions">{actions}
-  </div>
+  </div>{_claims_actions(claims_state) if number else ""}
   <div class="job" id="job" hidden>
     <div class="job-head"><span id="job-title"></span><span id="job-state"></span></div>
     <div class="job-message" id="job-message"></div>
@@ -769,6 +849,22 @@ _DETAIL_SCRIPT = """
   }
   window.addEventListener('hashchange', openTarget);
   openTarget();
+})();
+
+(function () {
+  // Overview and Claims tabs, when the case has a claims analysis. The tab is
+  // in the address (#claims), so a reload or a shared link keeps it.
+  const tabs = Array.from(document.querySelectorAll('.tabs a[data-tab]'));
+  if (!tabs.length) return;
+  function show() {
+    const wanted = location.hash === '#claims' ? 'claims' : 'overview';
+    tabs.forEach(function (t) { t.classList.toggle('active', t.dataset.tab === wanted); });
+    document.querySelectorAll('.tab-panel').forEach(function (p) {
+      p.hidden = p.id !== 'tab-' + wanted;
+    });
+  }
+  window.addEventListener('hashchange', show);
+  show();
 })();
 """
 
@@ -1255,6 +1351,121 @@ def _documents_section(
 </div>"""
 
 
+# Chip text and style per claim status. Later phases add the outcome statuses
+# (withdrawn, settled, infringed, ...) from the spec's palette.
+_CHIPS = {
+    "asserted": ("Asserted", "chip-neutral"),
+    "instituted": ("Instituted", "chip-neutral"),
+    "in_case": ("In case", "chip-neutral"),
+}
+
+
+def _short_patent(patent: str) -> str:
+    digits = re.sub(r"\D", "", str(patent or ""))
+    return f"&rsquo;{digits[-3:]}" if len(digits) >= 3 else _e(patent)
+
+
+def _claims_section(claims: dict[str, Any]) -> str:
+    """The Claims tab: one row per claim, one column per stage, and how each
+    status was determined."""
+    if claims.get("outcome") == "no_claims":
+        return (
+            '<div class="card empty-state">No claim information found in the available '
+            "documents.</div>"
+        )
+
+    built = claims_matrix.build(claims)
+    events = {event["id"]: event for event in claims.get("events") or []}
+    stages = built["stages"]
+    header = "".join(
+        f'<th>{_e(title)}<div class="stage-count">{built["counts"][key]} {_e(meaning)}</div></th>'
+        for key, title, meaning in stages
+    )
+
+    body = []
+    for group in built["patents"]:
+        rows = group["rows"]
+        summary = f'{group["counts"]["instituted"]} of {len(rows)} instituted' if rows else "no claims recorded"
+        body.append(
+            f'<tr class="patent-row"><th colspan="{len(stages) + 1}">'
+            f'{_short_patent(group["patent"])} patent <span class="case-sub">U.S. Patent No. '
+            f'{_e(group["patent"])} &middot; {summary}</span></th></tr>'
+        )
+        for row in rows:
+            cells = []
+            for key, _, _ in stages:
+                cell = row["cells"].get(key)
+                chip = ""
+                if cell:
+                    text, css = _CHIPS.get(cell["status"], (cell["status"], "chip-neutral"))
+                    event = events.get(cell["event"]) or {}
+                    tip = f'{event.get("quote", "")} ({(event.get("source") or {}).get("id", "")})'
+                    chip = f'<span class="chip {css}" title="{_e(tip)}">{_e(text)}</span>'
+                cells.append(f"<td>{chip}</td>")
+            review = '<span class="review-dot" title="An event for this claim needs review"></span>' if row["needs_review"] else ""
+            body.append(f'<tr><td class="claim-no">Claim {row["claim"]}{review}</td>{"".join(cells)}</tr>')
+
+    stage_titles = {key: title for key, title, _ in stages}
+    event_rows = []
+    for event in sorted(events.values(), key=lambda e: (str(e.get("date") or ""), e.get("patent") or "")):
+        source = event.get("source") or {}
+        link = (
+            f'<a href="{_e(source["url"])}" target="_blank" rel="noopener">{_e(source.get("title"))}</a>'
+            if source.get("url")
+            else _e(source.get("title"))
+        )
+        if event.get("status") == "needs_review":
+            how = f'<span class="pill pill-amber">Needs review</span> {_e("; ".join(event.get("notes") or []))}'
+        else:
+            how = {"rule": "Parsed by rule"}.get(event.get("method"), _e(event.get("method")))
+        event_rows.append(
+            f"""<tr>
+  <td class="mono">{_date(event.get("date"))}</td>
+  <td>{_e(stage_titles.get(event.get("stage"), event.get("stage")))}</td>
+  <td>{_e(str(event.get("action", "")).replace("_", " ").capitalize())} claims {_e(event.get("claims_verbatim"))}
+      of the {_short_patent(event.get("patent"))} patent
+      <div class="case-sub">&ldquo;{_e(event.get("quote"))}&rdquo;</div></td>
+  <td>{link}<div class="case-sub">{_e(source.get("id"))}</div></td>
+  <td>{how}</td>
+</tr>"""
+        )
+
+    return f"""<div class="section-block">
+  <h2>Claims by stage</h2>
+  <div class="card"><div class="table-wrap">
+    <table class="list claims-matrix">
+      <thead><tr><th>Claim</th>{header}</tr></thead>
+      <tbody>{''.join(body)}</tbody>
+    </table>
+  </div></div>
+  <p class="case-sub">So far the analysis reads the Commission&rsquo;s notice of institution,
+  so only the Institution column is filled in. The other stages are read from the complaint
+  and the ALJ and Commission decisions as the analysis is extended.</p>
+</div>
+<div class="section-block">
+  <h2>How each status was determined ({len(event_rows)})</h2>
+  <div class="card"><div class="table-wrap">
+    <table class="list">
+      <thead><tr><th>Effective</th><th>Stage</th><th>Event</th><th>Source</th><th>Method</th></tr></thead>
+      <tbody>{''.join(event_rows)}</tbody>
+    </table>
+  </div></div>
+</div>"""
+
+
+def _with_claims_tab(overview: str, claims: dict[str, Any] | None) -> str:
+    """The page body, split into Overview and Claims tabs once the case has a
+    claims analysis; unchanged otherwise."""
+    if not claims or not claims.get("built_at"):
+        return overview
+    return f"""<nav class="tabs">
+  <a href="#overview" data-tab="overview" class="active">Overview</a>
+  <a href="#claims" data-tab="claims">Claims</a>
+</nav>
+<div class="tab-panel" id="tab-overview">{overview}</div>
+<div class="tab-panel" id="tab-claims" hidden>{_claims_section(claims)}</div>"""
+
+
 def render_detail(
     case: dict[str, Any],
     documents: list[dict[str, Any]],
@@ -1262,8 +1473,13 @@ def render_detail(
     *,
     counsel: dict[str, Any] | None = None,
     fetched_at: str | None = None,
+    claims: dict[str, Any] | None = None,
+    claims_state: dict[str, Any] | None = None,
 ) -> str:
-    """`fetched_at` is when this case's documents were last fetched."""
+    """`fetched_at` is when this case's documents were last fetched;
+    `claims` is its stored claims analysis and `claims_state` whether that
+    needs building (datalayer/claims/status.py).
+    """
     number = case.get("investigation_number")
     # What a stage block compares against the primary stage: the field
     # sections, and the parties section as its bare name lists.
@@ -1312,8 +1528,8 @@ def render_detail(
   </div>
 </div>
 {withdrawn_notice}
-{_control_panel(str(number or ""), fetched_at)}
-{''.join(block for block in blocks if block)}
+{_control_panel(str(number or ""), fetched_at, claims_state)}
+{_with_claims_tab(''.join(block for block in blocks if block), claims)}
 <p class="footer-note">
   Investigation {_e(number)} &middot; case information from the IDS investigations
   feed &middot; IDS snapshot {_date(case.get('ids_snapshot'))}

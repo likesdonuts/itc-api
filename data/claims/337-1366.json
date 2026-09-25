@@ -1,0 +1,777 @@
+{
+  "built_at": "2026-09-25T00:22:01.982431+00:00",
+  "corrections": [],
+  "cost_usd": 0.0,
+  "events": [
+    {
+      "action": "instituted",
+      "claims": [
+        1,
+        2,
+        3
+      ],
+      "claims_verbatim": "1-3",
+      "date": "2023-06-28",
+      "id": "626ddb29dbc5",
+      "method": "rule",
+      "notes": [],
+      "patent": "8,350,294",
+      "quote": "claims 1-3 of the '294 patent",
+      "respondents": [
+        "ALL"
+      ],
+      "sentence": "Scope of Investigation: Having considered the complaint, the U.S. International Trade Commission, on June 28, 2023, ordered that-- (1) Pursuant to subsection (b) of section 337 of the Tariff Act of 1930, as amended, an investigation be instituted to determine whether there is a violation of subsection (a)(1)(B) of section 337 in the importation into the United States, the sale for importation, or the sale within the United States after importation of certain products identified in paragraph (2) by reason of infringement of one or more of claims 1-3 of the '294 patent; claim 1 of the '508 patent; claims 1-3 of the '347 patent; and claims 1-7 of the '335 patent, and whether an industry in the United States exists as required by subsection (a)(2) of section 337; (2) Pursuant to section 210.10(b)(1) of the Commission's Rules of Practice and Procedure, 19 CFR 210.10(b)(1), the plain language description of the accused products or category of accused products, which defines the scope of the investigation, is ``GaN-on-Si semiconductor devices, GaN FETs, GaN high electron mobility transistors, and products incorporating such transistors, which are bidirectional transistors, multichip modules, and demo boards''; (3) For the purpose of the investigation so instituted, the following are hereby named as parties upon which this notice of investigation shall be served: (a) The complainant is: [[Page 42757]] Efficient Power Conversion Corporation, 909 N Pacific Coast Highway, Suite 230, El Segundo, CA 90245 (b) The respondents are the following entities alleged to be in violation of section 337, and are the parties upon which the complaint is to be served: Innoscience (Zhuhai) Technology, Company, Ltd., No. 39, Jinyuan 2nd Road, High-Tech Zone, Zhuhai, Guangdong, 519099 China Innoscience America, Inc., 5451 Great America Pkwy., Suite 125, Santa Clara, CA 95054 (c) The Office of Unfair Import Investigations, U.S. International Trade Commission, 500 E Street SW, Suite 401, Washington, DC 20436; and (4) For the investigation so instituted, the Chief Administrative Law Judge, U.S. International Trade Commission, shall designate the presiding Administrative Law Judge.",
+      "source": {
+        "id": "FR:2023-14091",
+        "kind": "federal_register",
+        "published": "2023-07-03",
+        "title": "Certain Semiconductor Devices, and Methods of Manufacturing Same and Products Containing the Same; Institution of Investigation",
+        "url": "https://www.federalregister.gov/documents/2023/07/03/2023-14091/certain-semiconductor-devices-and-methods-of-manufacturing-same-and-products-containing-the-same"
+      },
+      "speaker": "tribunal_ruling",
+      "stage": "instituted",
+      "status": "ok"
+    },
+    {
+      "action": "instituted",
+      "claims": [
+        1
+      ],
+      "claims_verbatim": "1",
+      "date": "2023-06-28",
+      "id": "4558c2f3f8ce",
+      "method": "rule",
+      "notes": [],
+      "patent": "8,404,508",
+      "quote": "claim 1 of the '508 patent",
+      "respondents": [
+        "ALL"
+      ],
+      "sentence": "Scope of Investigation: Having considered the complaint, the U.S. International Trade Commission, on June 28, 2023, ordered that-- (1) Pursuant to subsection (b) of section 337 of the Tariff Act of 1930, as amended, an investigation be instituted to determine whether there is a violation of subsection (a)(1)(B) of section 337 in the importation into the United States, the sale for importation, or the sale within the United States after importation of certain products identified in paragraph (2) by reason of infringement of one or more of claims 1-3 of the '294 patent; claim 1 of the '508 patent; claims 1-3 of the '347 patent; and claims 1-7 of the '335 patent, and whether an industry in the United States exists as required by subsection (a)(2) of section 337; (2) Pursuant to section 210.10(b)(1) of the Commission's Rules of Practice and Procedure, 19 CFR 210.10(b)(1), the plain language description of the accused products or category of accused products, which defines the scope of the investigation, is ``GaN-on-Si semiconductor devices, GaN FETs, GaN high electron mobility transistors, and products incorporating such transistors, which are bidirectional transistors, multichip modules, and demo boards''; (3) For the purpose of the investigation so instituted, the following are hereby named as parties upon which this notice of investigation shall be served: (a) The complainant is: [[Page 42757]] Efficient Power Conversion Corporation, 909 N Pacific Coast Highway, Suite 230, El Segundo, CA 90245 (b) The respondents are the following entities alleged to be in violation of section 337, and are the parties upon which the complaint is to be served: Innoscience (Zhuhai) Technology, Company, Ltd., No. 39, Jinyuan 2nd Road, High-Tech Zone, Zhuhai, Guangdong, 519099 China Innoscience America, Inc., 5451 Great America Pkwy., Suite 125, Santa Clara, CA 95054 (c) The Office of Unfair Import Investigations, U.S. International Trade Commission, 500 E Street SW, Suite 401, Washington, DC 20436; and (4) For the investigation so instituted, the Chief Administrative Law Judge, U.S. International Trade Commission, shall designate the presiding Administrative Law Judge.",
+      "source": {
+        "id": "FR:2023-14091",
+        "kind": "federal_register",
+        "published": "2023-07-03",
+        "title": "Certain Semiconductor Devices, and Methods of Manufacturing Same and Products Containing the Same; Institution of Investigation",
+        "url": "https://www.federalregister.gov/documents/2023/07/03/2023-14091/certain-semiconductor-devices-and-methods-of-manufacturing-same-and-products-containing-the-same"
+      },
+      "speaker": "tribunal_ruling",
+      "stage": "instituted",
+      "status": "ok"
+    },
+    {
+      "action": "instituted",
+      "claims": [
+        1,
+        2,
+        3
+      ],
+      "claims_verbatim": "1-3",
+      "date": "2023-06-28",
+      "id": "188dda7792fc",
+      "method": "rule",
+      "notes": [],
+      "patent": "9,748,347",
+      "quote": "claims 1-3 of the '347 patent",
+      "respondents": [
+        "ALL"
+      ],
+      "sentence": "Scope of Investigation: Having considered the complaint, the U.S. International Trade Commission, on June 28, 2023, ordered that-- (1) Pursuant to subsection (b) of section 337 of the Tariff Act of 1930, as amended, an investigation be instituted to determine whether there is a violation of subsection (a)(1)(B) of section 337 in the importation into the United States, the sale for importation, or the sale within the United States after importation of certain products identified in paragraph (2) by reason of infringement of one or more of claims 1-3 of the '294 patent; claim 1 of the '508 patent; claims 1-3 of the '347 patent; and claims 1-7 of the '335 patent, and whether an industry in the United States exists as required by subsection (a)(2) of section 337; (2) Pursuant to section 210.10(b)(1) of the Commission's Rules of Practice and Procedure, 19 CFR 210.10(b)(1), the plain language description of the accused products or category of accused products, which defines the scope of the investigation, is ``GaN-on-Si semiconductor devices, GaN FETs, GaN high electron mobility transistors, and products incorporating such transistors, which are bidirectional transistors, multichip modules, and demo boards''; (3) For the purpose of the investigation so instituted, the following are hereby named as parties upon which this notice of investigation shall be served: (a) The complainant is: [[Page 42757]] Efficient Power Conversion Corporation, 909 N Pacific Coast Highway, Suite 230, El Segundo, CA 90245 (b) The respondents are the following entities alleged to be in violation of section 337, and are the parties upon which the complaint is to be served: Innoscience (Zhuhai) Technology, Company, Ltd., No. 39, Jinyuan 2nd Road, High-Tech Zone, Zhuhai, Guangdong, 519099 China Innoscience America, Inc., 5451 Great America Pkwy., Suite 125, Santa Clara, CA 95054 (c) The Office of Unfair Import Investigations, U.S. International Trade Commission, 500 E Street SW, Suite 401, Washington, DC 20436; and (4) For the investigation so instituted, the Chief Administrative Law Judge, U.S. International Trade Commission, shall designate the presiding Administrative Law Judge.",
+      "source": {
+        "id": "FR:2023-14091",
+        "kind": "federal_register",
+        "published": "2023-07-03",
+        "title": "Certain Semiconductor Devices, and Methods of Manufacturing Same and Products Containing the Same; Institution of Investigation",
+        "url": "https://www.federalregister.gov/documents/2023/07/03/2023-14091/certain-semiconductor-devices-and-methods-of-manufacturing-same-and-products-containing-the-same"
+      },
+      "speaker": "tribunal_ruling",
+      "stage": "instituted",
+      "status": "ok"
+    },
+    {
+      "action": "instituted",
+      "claims": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7
+      ],
+      "claims_verbatim": "1-7",
+      "date": "2023-06-28",
+      "id": "49d66bc862bb",
+      "method": "rule",
+      "notes": [],
+      "patent": "10,312,335",
+      "quote": "claims 1-7 of the '335 patent",
+      "respondents": [
+        "ALL"
+      ],
+      "sentence": "Scope of Investigation: Having considered the complaint, the U.S. International Trade Commission, on June 28, 2023, ordered that-- (1) Pursuant to subsection (b) of section 337 of the Tariff Act of 1930, as amended, an investigation be instituted to determine whether there is a violation of subsection (a)(1)(B) of section 337 in the importation into the United States, the sale for importation, or the sale within the United States after importation of certain products identified in paragraph (2) by reason of infringement of one or more of claims 1-3 of the '294 patent; claim 1 of the '508 patent; claims 1-3 of the '347 patent; and claims 1-7 of the '335 patent, and whether an industry in the United States exists as required by subsection (a)(2) of section 337; (2) Pursuant to section 210.10(b)(1) of the Commission's Rules of Practice and Procedure, 19 CFR 210.10(b)(1), the plain language description of the accused products or category of accused products, which defines the scope of the investigation, is ``GaN-on-Si semiconductor devices, GaN FETs, GaN high electron mobility transistors, and products incorporating such transistors, which are bidirectional transistors, multichip modules, and demo boards''; (3) For the purpose of the investigation so instituted, the following are hereby named as parties upon which this notice of investigation shall be served: (a) The complainant is: [[Page 42757]] Efficient Power Conversion Corporation, 909 N Pacific Coast Highway, Suite 230, El Segundo, CA 90245 (b) The respondents are the following entities alleged to be in violation of section 337, and are the parties upon which the complaint is to be served: Innoscience (Zhuhai) Technology, Company, Ltd., No. 39, Jinyuan 2nd Road, High-Tech Zone, Zhuhai, Guangdong, 519099 China Innoscience America, Inc., 5451 Great America Pkwy., Suite 125, Santa Clara, CA 95054 (c) The Office of Unfair Import Investigations, U.S. International Trade Commission, 500 E Street SW, Suite 401, Washington, DC 20436; and (4) For the investigation so instituted, the Chief Administrative Law Judge, U.S. International Trade Commission, shall designate the presiding Administrative Law Judge.",
+      "source": {
+        "id": "FR:2023-14091",
+        "kind": "federal_register",
+        "published": "2023-07-03",
+        "title": "Certain Semiconductor Devices, and Methods of Manufacturing Same and Products Containing the Same; Institution of Investigation",
+        "url": "https://www.federalregister.gov/documents/2023/07/03/2023-14091/certain-semiconductor-devices-and-methods-of-manufacturing-same-and-products-containing-the-same"
+      },
+      "speaker": "tribunal_ruling",
+      "stage": "instituted",
+      "status": "ok"
+    }
+  ],
+  "ids_hash": "6f5f17c7aef6a8137a5e9e86b4761072aa5e88cd638772715b034d62be33eb70",
+  "investigation_number": "337-TA-1366",
+  "key": "337-1366",
+  "last_attempt": {
+    "at": "2026-09-25T00:22:01.982731+00:00",
+    "error": null
+  },
+  "outcome": "ok",
+  "patents": [
+    "10,312,335",
+    "8,350,294",
+    "8,404,508",
+    "9,748,347"
+  ],
+  "phase": "Violation",
+  "pipeline_version": "1.0",
+  "processed_sources": [
+    "FR:2023-14091"
+  ],
+  "respondents": [
+    "Innoscience, Inc",
+    "Innoscience (Zhuhai) Technology Company, Ltd.",
+    "Innoscience America, Inc."
+  ],
+  "seen_documents": [
+    "797332",
+    "797350",
+    "797381",
+    "797895",
+    "798596",
+    "799478",
+    "799499",
+    "799518",
+    "799579",
+    "799598",
+    "799623",
+    "799720",
+    "799721",
+    "799722",
+    "799723",
+    "799724",
+    "799755",
+    "799759",
+    "799837",
+    "799839",
+    "799841",
+    "800335",
+    "800433",
+    "800533",
+    "800575",
+    "800962",
+    "801038",
+    "801536",
+    "801747",
+    "801893",
+    "801930",
+    "801971",
+    "802514",
+    "802516",
+    "803490",
+    "803708",
+    "803713",
+    "804365",
+    "804653",
+    "804737",
+    "804739",
+    "804785",
+    "805170",
+    "805191",
+    "805539",
+    "805559",
+    "805612",
+    "805642",
+    "805860",
+    "806492",
+    "806600",
+    "806601",
+    "806602",
+    "806603",
+    "806715",
+    "806736",
+    "806833",
+    "806914",
+    "806944",
+    "807011",
+    "807039",
+    "807225",
+    "807508",
+    "807729",
+    "807871",
+    "807891",
+    "807905",
+    "808271",
+    "808278",
+    "808540",
+    "808734",
+    "809238",
+    "809276",
+    "809499",
+    "809900",
+    "809929",
+    "810204",
+    "810265",
+    "810281",
+    "811068",
+    "811235",
+    "811465",
+    "811630",
+    "811836",
+    "811897",
+    "811952",
+    "812191",
+    "812580",
+    "812633",
+    "812634",
+    "812741",
+    "813006",
+    "813141",
+    "813183",
+    "813259",
+    "813272",
+    "813441",
+    "813587",
+    "813777",
+    "813779",
+    "813850",
+    "813885",
+    "813886",
+    "813901",
+    "814004",
+    "814050",
+    "814148",
+    "814248",
+    "814257",
+    "814269",
+    "814354",
+    "814355",
+    "814356",
+    "814360",
+    "814362",
+    "814365",
+    "814488",
+    "814794",
+    "814804",
+    "814807",
+    "814829",
+    "814888",
+    "814979",
+    "814981",
+    "815087",
+    "815251",
+    "815336",
+    "815445",
+    "815497",
+    "815498",
+    "815555",
+    "815639",
+    "815729",
+    "815954",
+    "816238",
+    "816466",
+    "816621",
+    "816679",
+    "817188",
+    "817443",
+    "817682",
+    "817795",
+    "817817",
+    "818082",
+    "818112",
+    "818216",
+    "818679",
+    "819116",
+    "819243",
+    "819505",
+    "821137",
+    "821138",
+    "821799",
+    "822117",
+    "822118",
+    "822119",
+    "822144",
+    "822721",
+    "824517",
+    "824750",
+    "824825",
+    "825001",
+    "825117",
+    "825227",
+    "825519",
+    "825927",
+    "826006",
+    "826210",
+    "827146",
+    "827163",
+    "827938",
+    "828044",
+    "828263",
+    "828266",
+    "828317",
+    "828909",
+    "829015",
+    "829068",
+    "829130",
+    "829374",
+    "829980",
+    "831538",
+    "831810",
+    "831959",
+    "831972",
+    "832072",
+    "832190",
+    "834075",
+    "834137",
+    "834514",
+    "834535",
+    "835073",
+    "835074",
+    "836430",
+    "836688",
+    "836690",
+    "836701",
+    "836706",
+    "836708",
+    "837045",
+    "837057",
+    "837258",
+    "837607",
+    "837747",
+    "838650",
+    "841083",
+    "841896",
+    "842529",
+    "843837",
+    "845699",
+    "848577",
+    "849510",
+    "849682",
+    "849735",
+    "849908",
+    "849979",
+    "850291",
+    "850893",
+    "851532",
+    "854478",
+    "856778",
+    "857029",
+    "861437",
+    "883871"
+  ],
+  "source_documents": [
+    {
+      "date": "2025-05-12",
+      "document_type": "Notice",
+      "id": "850893",
+      "kind": "commission_notice",
+      "title": "Commission Determination Denying Respondents\u2019 Petition to Modify or Temporarily Rescind Remedial Orders"
+    },
+    {
+      "date": "2024-12-05",
+      "document_type": "Opinion, Commission",
+      "id": "838650",
+      "kind": "commission_opinion",
+      "title": "Commission Opinion"
+    },
+    {
+      "date": "2024-11-14",
+      "document_type": "Notice",
+      "id": "837747",
+      "kind": "commission_notice",
+      "title": "F.R. Notice of Commission's Final Determination Finding a Violation of Section 337; Issuance of a Limited Exclusion Order and Cease and Desist Orders; Denial of Motion for Sanctions; Termination of the Investigation"
+    },
+    {
+      "date": "2024-11-07",
+      "document_type": "Correspondence - USITC",
+      "id": "837607",
+      "kind": "final_determination",
+      "title": "Letter from Chair Amy A. Karpel to the President of the United States, Janet L. Yellen, Secretary of the Treasury and Katherine Tai, United States Trade Representative Transmitting a Limited Exclusion Order and Cease and Desist Orders"
+    },
+    {
+      "date": "2024-11-07",
+      "document_type": "Order, Commission",
+      "id": "836708",
+      "kind": "final_determination",
+      "title": "Cease and Desist Order for Innoscience (Zhuhai) Technology Company, Ltd."
+    },
+    {
+      "date": "2024-11-07",
+      "document_type": "Order, Commission",
+      "id": "836706",
+      "kind": "final_determination",
+      "title": "Cease and Desist Order for Innoscience America, Inc."
+    },
+    {
+      "date": "2024-11-07",
+      "document_type": "Order, Commission",
+      "id": "836701",
+      "kind": "final_determination",
+      "title": "Limited Exclusion Order for Innoscience (Zhuhai) Technology Company, Ltd. and Innoscience America, Inc."
+    },
+    {
+      "date": "2024-11-07",
+      "document_type": "Correspondence - USITC",
+      "id": "836690",
+      "kind": "final_determination",
+      "title": "Letter to Chief Dax Terrill of U.S. Customs and Border Protection about the Issuance of a Limited Exclusion Order"
+    },
+    {
+      "date": "2024-11-07",
+      "document_type": "Notice",
+      "id": "836688",
+      "kind": "commission_notice",
+      "title": "Commission\u2019s Final Determination Finding a Violation of Section 337; Issuance of a Limited Exclusion Order and Cease and Desist Orders; Denial of Motion for Sanctions; Termination of the Investigation"
+    },
+    {
+      "date": "2024-11-05",
+      "document_type": "Notice",
+      "id": "836430",
+      "kind": "commission_notice",
+      "title": "Commission Determination to Extend the Target Date for Completion of This Investigation"
+    },
+    {
+      "date": "2024-10-04",
+      "document_type": "Brief on Review/Remedy",
+      "id": "834137",
+      "kind": "initial_determination",
+      "title": "Complainant\u2019s Opening Response to the Commission\u2019s Notice to Review the Final Initial Determination and Request for Written Submissions on the Issues under Review and on Remedy, the Public Interest, and Bonding"
+    },
+    {
+      "date": "2024-09-11",
+      "document_type": "Notice",
+      "id": "831972",
+      "kind": "initial_determination",
+      "title": "F.R. Notice of Commission Determination to Review a Final Initial Determination Finding a Violation of Section 337; Request for Written Submissions on the Issues under Review and on Remedy, the Public Interest, and Bonding"
+    },
+    {
+      "date": "2024-09-05",
+      "document_type": "Notice",
+      "id": "831538",
+      "kind": "initial_determination",
+      "title": "Commission Determination to Review a Final Initial Determination Finding a Violation of Section 337; Request for Written Submissions on the Issues under Review and on Remedy, the Public Interest, and Bonding"
+    },
+    {
+      "date": "2024-08-08",
+      "document_type": "Petition for Review; and Response to",
+      "id": "829015",
+      "kind": "initial_determination",
+      "title": "Complainant Efficient Power Conversion Corporation's Response to Respondents' Petition for Review of the Initial Determination on Violation of Section 337"
+    },
+    {
+      "date": "2024-08-05",
+      "document_type": "ID/RD - Final on Violation",
+      "id": "828317",
+      "kind": "initial_determination",
+      "title": "Initial Determination on Violation of Section 337 and Recommended Determination on Remedy and Bond"
+    },
+    {
+      "date": "2024-08-02",
+      "document_type": "Notice",
+      "id": "828263",
+      "kind": "initial_determination",
+      "title": "Notice of Errata to Initial Determination on Violation of Section 337 and Recommended Determination on Remedy and Bond"
+    },
+    {
+      "date": "2024-08-01",
+      "document_type": "Petition for Review; and Response to",
+      "id": "828044",
+      "kind": "initial_determination",
+      "title": "Petition of Complainant Efficient Power Conversion Corporation for Review-in-Part of the Initial Determination on Violation of Section 337"
+    },
+    {
+      "date": "2024-07-31",
+      "document_type": "Petition for Review; and Response to",
+      "id": "827938",
+      "kind": "initial_determination",
+      "title": "Respondents' Petition for Review of the Final Initial Determination"
+    },
+    {
+      "date": "2024-07-25",
+      "document_type": "Notice",
+      "id": "827146",
+      "kind": "initial_determination",
+      "title": "Commission Determination Not to Review an Initial Determination Extending the Target Date"
+    },
+    {
+      "date": "2024-07-15",
+      "document_type": "Notice",
+      "id": "826006",
+      "kind": "commission_notice",
+      "title": "F.R. Notice of Request for Submissions on the Public Interest"
+    },
+    {
+      "date": "2024-07-15",
+      "document_type": "ID/RD - Other Than Final on Violation",
+      "id": "825927",
+      "kind": "initial_determination",
+      "title": "[Corrected] Initial Determination Extending the Target Date"
+    },
+    {
+      "date": "2024-07-09",
+      "document_type": "Notice",
+      "id": "825519",
+      "kind": "commission_notice",
+      "title": "Request for Submissions on the Public Interest"
+    },
+    {
+      "date": "2024-07-05",
+      "document_type": "Notice",
+      "id": "825227",
+      "kind": "initial_determination",
+      "title": "Initial Determination on Violation of Section 337"
+    },
+    {
+      "date": "2024-07-02",
+      "document_type": "ID/RD - Other Than Final on Violation",
+      "id": "825001",
+      "kind": "initial_determination",
+      "title": "Initial Determination Extending the Target Date"
+    },
+    {
+      "date": "2024-07-01",
+      "document_type": "Notice",
+      "id": "824825",
+      "kind": "initial_determination",
+      "title": "Commission Determination Not to Review an Initial Determination Extending the Target Date"
+    },
+    {
+      "date": "2024-06-26",
+      "document_type": "Order",
+      "id": "824517",
+      "kind": "alj_order",
+      "title": "Requesting Joint Submission on Accused Product Model Numbers"
+    },
+    {
+      "date": "2024-05-31",
+      "document_type": "ID/RD - Other Than Final on Violation",
+      "id": "822721",
+      "kind": "initial_determination",
+      "title": "Initial Determination Extending the Target Date"
+    },
+    {
+      "date": "2024-04-24",
+      "document_type": "Order",
+      "id": "819505",
+      "kind": "alj_order",
+      "title": "Granting Joint Motion to Correct the Evidentiary Hearing Transcript"
+    },
+    {
+      "date": "2024-04-22",
+      "document_type": "Order",
+      "id": "819243",
+      "kind": "alj_order",
+      "title": "Granting Unopposed Motion to Reopen the Record"
+    },
+    {
+      "date": "2024-03-25",
+      "document_type": "Order",
+      "id": "816679",
+      "kind": "alj_order",
+      "title": "Regarding IPR Institutions"
+    },
+    {
+      "date": "2024-03-12",
+      "document_type": "Notice",
+      "id": "815954",
+      "kind": "initial_determination",
+      "title": "Commission Determination Not to Review an Initial Determination Terminating the Investigation as to U.S. Patent No. 10,312,335"
+    },
+    {
+      "date": "2024-03-07",
+      "document_type": "Order",
+      "id": "815639",
+      "kind": "alj_order",
+      "title": "Regarding the Parties' Motions in Limine"
+    },
+    {
+      "date": "2024-03-05",
+      "document_type": "Order",
+      "id": "815498",
+      "kind": "alj_order",
+      "title": "Denying Complainant's Motion for Summary Determination That the Economic Prong of the Domestic Industry Requirement Is Satisfied"
+    },
+    {
+      "date": "2024-03-05",
+      "document_type": "Order",
+      "id": "815497",
+      "kind": "alj_order",
+      "title": "Granting Joint Unopposed Motion to Admit Exhibits into the Evidentiary Hearing Record"
+    },
+    {
+      "date": "2024-02-13",
+      "document_type": "Order",
+      "id": "814004",
+      "kind": "alj_order",
+      "title": "Restoring Commission Venue for Evidentiary Hearing"
+    },
+    {
+      "date": "2024-02-12",
+      "document_type": "ID/RD - Other Than Final on Violation",
+      "id": "813901",
+      "kind": "initial_determination",
+      "title": "Initial Determination Terminating the Investigation in Part as to U.S. Patent No. 10,312,335"
+    },
+    {
+      "date": "2024-02-07",
+      "document_type": "Order",
+      "id": "813587",
+      "kind": "alj_order",
+      "title": "Changing Venue for Evidentiary Hearing"
+    },
+    {
+      "date": "2024-01-11",
+      "document_type": "Notice",
+      "id": "811836",
+      "kind": "initial_determination",
+      "title": "Commission Determination Not to Review an Initial Determination Terminating the Investigation as U.S. Patent No. 9,748,347"
+    },
+    {
+      "date": "2024-01-04",
+      "document_type": "Order",
+      "id": "811465",
+      "kind": "alj_order",
+      "title": "Granting Private Parties' Joint Unopposed Motion for an Extension of Time to Respond to Motions for Summary Determination"
+    },
+    {
+      "date": "2023-12-13",
+      "document_type": "ID/RD - Other Than Final on Violation",
+      "id": "810281",
+      "kind": "initial_determination",
+      "title": "Initial Determination Terminating the Investigation in Part as to U.S. Patent No. 9,748,347"
+    },
+    {
+      "date": "2023-10-10",
+      "document_type": "Order",
+      "id": "805642",
+      "kind": "alj_order",
+      "title": "Granting EPC's Motion for Leave to File Responsive Claim Construction Brief out of Time"
+    },
+    {
+      "date": "2023-08-08",
+      "document_type": "Order",
+      "id": "801893",
+      "kind": "alj_order",
+      "title": "Procedural Schedule"
+    },
+    {
+      "date": "2023-07-27",
+      "document_type": "Order",
+      "id": "800962",
+      "kind": "alj_order",
+      "title": "Granting Motion to Extend Discovery Deadline"
+    },
+    {
+      "date": "2023-07-19",
+      "document_type": "Order",
+      "id": "800533",
+      "kind": "alj_order",
+      "title": "(1) Setting 15-Month Target Date (2) Setting Preliminary Conference"
+    },
+    {
+      "date": "2023-07-03",
+      "document_type": "Notice",
+      "id": "799724",
+      "kind": "notice_of_institution",
+      "title": "F.R. Notice of Institution of Investigation"
+    },
+    {
+      "date": "2023-07-03",
+      "document_type": "Order",
+      "id": "799723",
+      "kind": "alj_order",
+      "title": "Granting Respondents' Motion for Extension of Time to Respond to the Complaint and Notice of Investigation"
+    },
+    {
+      "date": "2023-07-03",
+      "document_type": "Order",
+      "id": "799722",
+      "kind": "alj_order",
+      "title": "Seeking Submission on Target Date"
+    },
+    {
+      "date": "2023-07-03",
+      "document_type": "Order",
+      "id": "799721",
+      "kind": "alj_order",
+      "title": "Notice of Ground Rules"
+    },
+    {
+      "date": "2023-07-03",
+      "document_type": "Order",
+      "id": "799720",
+      "kind": "alj_order",
+      "title": "Protective Order"
+    },
+    {
+      "date": "2023-06-29",
+      "document_type": "Notice",
+      "id": "799579",
+      "kind": "commission_notice",
+      "title": "Reassignment to CALJ Cheney"
+    },
+    {
+      "date": "2023-06-28",
+      "document_type": "Notice",
+      "id": "799499",
+      "kind": "commission_notice",
+      "title": "Assignment of ALJ Johnson Hines"
+    },
+    {
+      "date": "2023-06-28",
+      "document_type": "Notice",
+      "id": "799478",
+      "kind": "notice_of_institution",
+      "title": "Institution of Investigation"
+    },
+    {
+      "date": "2023-06-14",
+      "document_type": "Complaint",
+      "id": "798596",
+      "kind": "complaint",
+      "title": "First Public Supplement to the Complaint and Public Exhibits"
+    },
+    {
+      "date": "2023-06-02",
+      "document_type": "Notice",
+      "id": "797895",
+      "kind": "commission_notice",
+      "title": "F.R. Notice of Receipt of Complaint; Solicitation of Comments Relating to the Public Interest"
+    },
+    {
+      "date": "2023-05-30",
+      "document_type": "Notice",
+      "id": "797381",
+      "kind": "commission_notice",
+      "title": "Receipt of Complaint; Solicitation of Comments Relating to the Public Interest"
+    },
+    {
+      "date": "2023-05-26",
+      "document_type": "Complaint",
+      "id": "797350",
+      "kind": "complaint",
+      "title": "Public Complaint and Exhibits"
+    },
+    {
+      "date": "2023-05-26",
+      "document_type": "Complaint",
+      "id": "797332",
+      "kind": "complaint",
+      "title": "Appendices A-H"
+    }
+  ],
+  "title": "Certain Semiconductor Devices and Products Containing the Same"
+}
