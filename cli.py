@@ -138,6 +138,11 @@ def build_parser() -> argparse.ArgumentParser:
         help="build or update the claims analysis for the investigations you name",
     )
     p_claims.add_argument("numbers", nargs="+", help="investigation numbers, e.g. 337-1366 337-TA-1384")
+    p_claims.add_argument(
+        "--reread",
+        action="store_true",
+        help="read every source document again (paid again), e.g. after the reading rules change",
+    )
     _add_render_flag(p_claims)
 
     p_counsel = sub.add_parser(
@@ -279,7 +284,9 @@ def cmd_claims(args: argparse.Namespace, store: Store) -> int:
             failed += 1
             continue
         try:
-            claims_build.run(store, key)
+            claims_build.run(
+                store, key, fetch_pdfs=claims_build.edis_pdf_fetcher(load_token), reread=args.reread
+            )
         except Exception as exc:  # recorded on the analysis; keep going with the rest
             print(f"  ! {number}: {type(exc).__name__}: {exc}")
             failed += 1

@@ -300,17 +300,23 @@ class Controller:
         log = self._logger(job)
         store = Store.load(self.data_dir)
         try:
-            analysis = claims_build.run(store, key, log=log)
+            analysis = claims_build.run(
+                store, key, fetch_pdfs=claims_build.edis_pdf_fetcher(self.token_loader, log), log=log
+            )
         finally:
             # A failure is recorded on the analysis, so the page shows it too.
             render_site(
                 store, data_dir=self.data_dir, site_dir=self.site_dir, schema_path=self.schema_path, log=log
             )
         events = len(analysis.get("events") or [])
+        cost = f" Model cost ${float(analysis.get('cost_usd') or 0):.4f}."
+        warnings = analysis.get("warnings") or []
         if analysis.get("outcome") == "no_claims":
-            job.finish("Built. No claim information found in the available documents.", "ok")
+            job.finish("Built. No claim information found in the available documents." + cost, "ok")
+        elif warnings:
+            job.finish(f"Built from {events} claim event(s), with warnings: {'; '.join(warnings)}.{cost}", "warn")
         else:
-            job.finish(f"Built from {events} claim event(s).", "ok")
+            job.finish(f"Built from {events} claim event(s).{cost}", "ok")
 
     def _run_documents(self, job: Job, token: str, keys: list[str], download: bool) -> None:
         log = self._logger(job)

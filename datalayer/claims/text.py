@@ -42,6 +42,8 @@ ABBREVIATIONS = {
     # "Order No. 32 (Dec. 1, 2023) granted ..."
     "jan", "feb", "mar", "apr", "jun", "jul", "aug", "sep", "sept", "oct", "nov", "dec",
 }
+# Company forms, often written in capitals, that end a name, not a sentence.
+COMPANY_FORMS = {"sp", "inc", "co", "corp", "ltd", "llc", "plc", "gmbh", "bv", "nv", "sa", "srl", "spa", "ag", "kk"}
 _BOUNDARY = re.compile(r"([.!?])([\"'”’)\]]*)\s+(?=[\"'“‘(\[]?[A-Z0-9])")
 _DOTTED_CAPS = re.compile(r"^(?:[A-Z]\.)+[A-Z]?$")
 
@@ -55,6 +57,8 @@ def _ends_with_abbreviation(text: str) -> bool:
     if len(bare) == 1 and bare.isupper():  # an initial: "John A. Smith"
         return True
     if _DOTTED_CAPS.match(word):  # "U.S.", "L.L.C."
+        return True
+    if bare.lower() in COMPANY_FORMS:  # "MIRAmedtech SP. Z.O.O.", "ACME INC."
         return True
     if len(bare) > 1 and bare.isupper() and "." not in bare:
         # "the ID." (initial determination), "the ALJ." -- acronyms end
@@ -142,7 +146,9 @@ _FULL_NUMBER_RE = re.compile(
     r"\b(?:U\.\s?S\.\s+)?Pat(?:ent)?\.?\s+Nos?\.?\s*(?P<number>RE\s?\d{2},?\d{3}|D\s?\d{3},?\d{3}|\d{1,2},?\d{3},?\d{3})",
     re.I,
 )
-_SHORT_FORM_RE = re.compile(r"[‘'’`](?P<tail>\d{3})\s+[Pp]atent")
+# "the '294 patent", curly or straight; OCR sometimes drops the apostrophe,
+# so "the 294 patent" is accepted too (only after "the", to stay specific).
+_SHORT_FORM_RE = re.compile(r"(?:[‘'’`]|\b[Tt]he\s+)(?P<tail>\d{3})\s+[Pp]atent")
 
 
 def patent_digits(number: str) -> str:

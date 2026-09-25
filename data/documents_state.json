@@ -10,14 +10,19 @@
     "fetched_at": "2026-09-25T00:16:19.374259+00:00"
   },
   "337-1366": {
-    "attachments_downloaded": 0,
+    "attachments_downloaded": 173,
     "documents": 294,
-    "fetched_at": "2026-09-25T00:07:19.018999+00:00"
+    "fetched_at": "2026-09-25T00:56:55.509223+00:00"
   },
   "337-1384": {
-    "attachments_downloaded": 5,
+    "attachments_downloaded": 89,
     "documents": 141,
-    "fetched_at": "2026-09-25T00:16:32.984947+00:00"
+    "fetched_at": "2026-09-25T00:50:55.516074+00:00"
+  },
+  "337-1417": {
+    "attachments_downloaded": 220,
+    "documents": 158,
+    "fetched_at": "2026-09-25T01:56:37.381170+00:00"
   },
   "337-1424": {
     "attachments_downloaded": 0,

@@ -1,3 +1,7 @@
 httpx
 truststore
 pypdf
+# The claims analysis: model extraction, and OCR for scanned PDF pages.
+anthropic
+rapidocr-onnxruntime
+pypdfium2

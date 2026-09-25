@@ -175,6 +175,7 @@ def _edis_documents(
     *,
     download: bool,
     only_types: frozenset[str] | None = None,
+    only_ids: frozenset[str] | None = None,
     previous: list[dict[str, Any]] | None = None,
     log: Logger,
 ) -> tuple[list[dict[str, Any]], int]:
@@ -188,7 +189,11 @@ def _edis_documents(
         doc_id = row.get("id")
         attachments: list[dict[str, str]] = []
         downloaded = 0
-        wanted = download and (only_types is None or row.get("documentType") in only_types)
+        wanted = (
+            download
+            and (only_types is None or row.get("documentType") in only_types)
+            and (only_ids is None or str(doc_id) in only_ids)
+        )
         if doc_id and wanted:
             attachments, downloaded = download_document_attachments(
                 client, docs_dir, key, str(doc_id), row.get("securityLevel"), log
@@ -223,6 +228,7 @@ def fetch_case(
     *,
     download: bool = True,
     only_types: frozenset[str] | None = None,
+    only_ids: frozenset[str] | None = None,
     log: Logger = print,
 ) -> DocsResult:
     """Refresh one case's documents. Touches nothing else about the case."""
@@ -237,6 +243,7 @@ def fetch_case(
         rows,
         download=download,
         only_types=only_types,
+        only_ids=only_ids,
         previous=store.documents.get(key),
         log=log,
     )
@@ -251,6 +258,7 @@ def fetch_many(
     *,
     download: bool = True,
     only_types: frozenset[str] | None = None,
+    only_ids: frozenset[str] | None = None,
     log: Logger = print,
 ) -> list[DocsResult]:
     """One case failing is not the run failing; a rejected token is."""
@@ -259,7 +267,7 @@ def fetch_many(
         log(f"{key}...")
         try:
             result = fetch_case(
-                client, store, key, download=download, only_types=only_types, log=log
+                client, store, key, download=download, only_types=only_types, only_ids=only_ids, log=log
             )
         except EdisAuthError:
             raise
@@ -312,11 +320,13 @@ def run(
     *,
     download: bool = True,
     only_types: frozenset[str] | None = None,
+    only_ids: frozenset[str] | None = None,
     known_only: bool = False,
     log: Logger = print,
 ) -> DocsReport:
-    """`only_types` limits downloads to those document types; every
-    document is still listed.
+    """`only_types` limits downloads to those document types and `only_ids`
+    to those documents (a claims analysis's sources); every document is
+    still listed.
     """
     targets, unknown = resolve_targets(store, numbers)
     report = DocsReport(requested=targets)
@@ -335,7 +345,7 @@ def run(
 
     with edis_session(token) as client:
         report.results = fetch_many(
-            client, store, targets, download=download, only_types=only_types, log=log
+            client, store, targets, download=download, only_types=only_types, only_ids=only_ids, log=log
         )
 
     store.save_documents()

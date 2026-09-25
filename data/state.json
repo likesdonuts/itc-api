@@ -1,39 +1,19 @@
 {
-  "last_run": "2026-09-25T00:24:27.957648+00:00",
+  "last_run": "2026-09-25T01:56:37.718061+00:00",
   "runs": {
     "counsel": {
-      "cases": 110,
-      "finished_at": "2026-09-25T00:24:27.957648+00:00",
-      "representations": 616,
+      "cases": 111,
+      "finished_at": "2026-09-25T01:39:11.679915+00:00",
+      "representations": 620,
       "rosters_read": 225
     },
     "documents": {
-      "attachment_types": [
-        "Notice of Appearance"
-      ],
-      "attachments_downloaded": 149,
-      "fetched": 19,
-      "finished_at": "2026-09-25T00:21:01.644976+00:00",
+      "attachment_types": null,
+      "attachments_downloaded": 220,
+      "fetched": 1,
+      "finished_at": "2026-09-25T01:56:37.718061+00:00",
       "numbers": [
-        "337-1352",
-        "337-1353",
-        "337-1384",
-        "337-1429",
-        "337-1431",
-        "337-1432",
-        "337-1433",
-        "337-1436",
-        "337-1438",
-        "337-1441",
-        "337-1442",
-        "337-1443",
-        "337-1444",
-        "337-1445",
-        "337-1446",
-        "337-1447",
-        "337-1448",
-        "337-1449",
-        "337-1450"
+        "337-1417"
       ],
       "with_attachments": true
     },
