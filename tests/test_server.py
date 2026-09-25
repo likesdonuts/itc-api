@@ -253,14 +253,24 @@ class TestDailyJob(ServerTestCase):
         self.assertEqual(job["level"], "warn")
         self.assertIn("401", job["message"])
 
-    def test_a_bad_snapshot_fails_the_job_with_the_reason(self):
+    def test_a_failed_case_download_still_fetches_the_appearances(self):
         from datalayer.ids import IdsError
 
-        with mock.patch("datalayer.ingest.run", self.fake_ingest(fail=IdsError("snapshot looks incomplete"))):
+        store = Store.load(self.data_dir)
+        store.put_documents("337-1478", [{"id": "1", "title": "Complaint"}])
+        store.save_documents()
+
+        with mock.patch(
+            "datalayer.ingest.run", self.fake_ingest(fail=IdsError("IDS download failed: 502"))
+        ), mock.patch("datalayer.docs.run", self.fake_docs()):
             job = self.run_job({"kind": "daily"})
 
-        self.assertEqual(job["level"], "error")
-        self.assertIn("snapshot looks incomplete", job["message"])
+        self.assertEqual(job["level"], "warn")
+        self.assertIn("Case data not updated", job["message"])
+        self.assertIn("IDS download failed: 502", job["message"])
+        docs_calls = [call for call in self.calls if "numbers" in call]
+        self.assertEqual(len(docs_calls), 1)
+        self.assertEqual(docs_calls[0]["only_types"], {"Notice of Appearance"})
 
     def test_one_job_at_a_time(self):
         release = threading.Event()

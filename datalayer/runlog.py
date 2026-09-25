@@ -8,7 +8,8 @@ from one day to the next, `feed_date` should advance, and `cases_changed`
 should be a handful rather than everything or nothing.
 
 Refused snapshots are written too, with `outcome` set to "refused" and the
-reason in `note`, so a day the guard stopped is visible rather than missing.
+reason in `note`, so a day the guard stopped is visible rather than missing;
+so is a download that failed (after its retries), with `outcome` "failed".
 """
 
 from __future__ import annotations

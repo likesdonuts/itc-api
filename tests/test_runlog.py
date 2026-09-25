@@ -162,6 +162,22 @@ class TestARefusedSnapshot(RunLogTestCase):
         self.assertEqual(row["note"].count("\n"), 0)
 
 
+class TestAFailedDownload(RunLogTestCase):
+    def test_it_is_logged_with_the_reason(self):
+        failure = ids.IdsError("IDS download failed: 502 Bad Gateway")
+        with mock.patch.object(ids, "RETRY_WAITS", ()), mock.patch.object(
+            ids, "download", side_effect=failure
+        ):
+            with self.assertRaises(ids.IdsError):
+                ingest.run(self.store(), ids_dir=self.ids_dir, now=NOON, log=self.quiet)
+
+        row = self.last()
+        self.assertEqual(row["outcome"], "failed")
+        self.assertEqual(row["mode"], "download")
+        self.assertEqual(row["snapshot"], "")
+        self.assertIn("502 Bad Gateway", row["note"])
+
+
 class TestTheFileItself(RunLogTestCase):
     def test_the_header_is_written_once_and_the_rows_pile_up(self):
         store, _ = self.sync([ids_row()])

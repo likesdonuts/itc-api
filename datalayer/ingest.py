@@ -267,7 +267,15 @@ def run(
         log(f"Parsing stored snapshot {snapshot.path.name} (offline).")
         report = parse_snapshot(store, snapshot, mode="offline", **parse)
     else:
-        sync = ids.sync(ids_dir=ids_dir, force=force, keep=keep, now=now, log=log)
+        try:
+            sync = ids.sync(ids_dir=ids_dir, force=force, keep=keep, now=now, log=log)
+        except ids.IdsError as exc:
+            # A day the download failed is logged too, not left as a gap.
+            runlog.append(
+                store.data_dir,
+                IngestReport(mode="download", outcome="failed", started=started, note=str(exc)),
+            )
+            raise
         mode = "download" if sync.downloaded else "cached"
         report = parse_snapshot(store, sync.snapshot, mode=mode, **parse)
         report.downloaded = sync.downloaded

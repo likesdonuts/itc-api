@@ -120,6 +120,20 @@ def _similar(a: str, b: str) -> float:
     return SequenceMatcher(None, a, b).ratio() if a and b else 0.0
 
 
+_PRESIDENT_AND_FELLOWS_RE = re.compile(r"\bPresident\s+and\s+Fellows\b", re.I)
+
+
+def company_key(text: Any) -> str:
+    """A company's name without its corporate form, so "Google Inc." and
+    "Google LLC" agree -- but "MediaTek USA Inc." stays apart from "MediaTek
+    Inc.", which firm_key would not keep apart.
+    """
+    words = [word for word in _words(text) if word != "and"]
+    while len(words) > 1 and words[-1] in _ENTITY_WORDS - {"us", "usa"}:
+        words.pop()
+    return "".join(words)
+
+
 def split_parties(text: Any) -> list[str]:
     """A party list as EDIS writes it, one name per item.
 
@@ -127,7 +141,9 @@ def split_parties(text: Any) -> list[str]:
     Oura Health Oy" -> three names: split at commas and "and", then put the
     "Ltd." and "Inc." pieces back on the name they end.
     """
-    pieces = [p.strip() for p in re.split(r",\s*(?:and\s+)?|\s+and\s+", str(text or "")) if p.strip()]
+    # Harvard's corporate name has an "and" in it that is not a list.
+    text = _PRESIDENT_AND_FELLOWS_RE.sub("President\0Fellows", str(text or ""))
+    pieces = [p.strip().replace("\0", " and ") for p in re.split(r",\s*(?:and\s+)?|\s+and\s+", text) if p.strip()]
     names: list[str] = []
     for piece in pieces:
         words = _words(piece)
@@ -163,6 +179,18 @@ def match_parties(text: Any, participants: Iterable[dict[str, Any]]) -> list[dic
         if best >= PARTY_MATCH:
             found.append(party)
     return found
+
+
+def _match_with_non_parties(text: Any, participants: Iterable[dict[str, Any]]) -> list[dict[str, Any]]:
+    """match_parties, plus a non-party named under another corporate form
+    ("Google Inc." for "Google LLC"), which is how they were merged.
+    """
+    participants = list(participants)
+    found = match_parties(text, participants)
+    if found:
+        return found
+    key = company_key(_clean_party_name(str(text or "")))
+    return [p for p in participants if p.get("role") == NON_PARTY_ROLE and key and company_key(p["name"]) == key][:1]
 
 
 def _is_commission(doc: dict[str, Any]) -> bool:
@@ -268,8 +296,47 @@ _LIMITED_PURPOSE_RE = re.compile(
 _LIMITED_PURPOSE_SENTENCE_RE = re.compile(
     r"for the limited purposes? of (?P<purpose>.+?)(?-i:\.\s+[A-Z][a-z])", re.I
 )
-_SERVED_BY_RE = re.compile(r"\bserved\b.*?\bby\s+(?:the\s+)?(?P<by>Complainants?|Respondents?|Commission Investigative Staff|OUII)\b", re.I)
+_SERVED_BY_RE = re.compile(
+    r"\b(?:served|issued)\b.*?\b(?:by|on behalf of)\s+(?:the\s+)?"
+    r"(?P<by>Complainants?|Respondents?|Commission Investigative Staff|OUII)\b",
+    re.I,
+)
+# Notices that give their reason without the "limited purposes" formula:
+# "... counsel for Non-Party Terns ... who has been served with a Subpoena
+# Duces Tecum ...", "... to address issues related to a 'Subpoena Duces
+# Tecum ...' issued on behalf of Respondents ...".
+_SENTENCE_END_RE = re.compile(r"(?<=[a-z0-9)”\"])\.\s+(?=[A-Z])")
+_SUBPOENA_CLAUSE_RE = re.compile(
+    r"\b(?:(?:has|have|had) been served with|to address (?:issues|matters) related to|"
+    r"in (?:response|connection) (?:to|with)|with respect to|regarding|concerning|"
+    r"respond(?:ing)? to|comply(?:ing)? with)\s+(?P<purpose>.*\bsubpoena.*)",
+    re.I,
+)
+_INTERVENOR_RE = re.compile(r"\bcounsel (?:for|to) (?P<proposed>Proposed )?Intervenor\b", re.I)
 _SERVED_ON_RE = re.compile(r"\bserved\s+on\s+(?P<date>[A-Z][a-z]+\.?\s+\d{1,2},\s+\d{4})")
+
+
+# Labels EDIS sometimes leaves on the front of a name: "Non-Party Rakuten
+# Symphony USA LLC", "Dr. William Wilcox".
+_NAME_LABEL_RE = re.compile(r"^(?:(?:Interested\s+)?Non-?Part(?:y|ies)\s+|(?:Dr|Mr|Mrs|Ms|Prof)\.?\s+)+", re.I)
+
+
+def _clean_party_name(name: str) -> str:
+    return _NAME_LABEL_RE.sub("", " ".join(name.split())).strip(" ,;")
+
+
+def _is_redacted(name: str) -> bool:
+    """ "[ ]" -- a confidential filer whose name EDIS blanks out."""
+    return "[" in name or not re.search(r"[A-Za-z]{2}", name)
+
+
+def _looks_whole(name: str) -> bool:
+    """Whether a piece of a split list is a name on its own: a company ending
+    in its corporate form ("Google LLC") or a person ("Mobashar Yazdani").
+    "Alliance of U.S. Startups" and "Hickman" are not.
+    """
+    words = _words(name)
+    return bool(words) and (words[-1] in _ENTITY_WORDS or is_person_name(name))
 
 
 def non_party_names(doc: dict[str, Any]) -> list[str]:
@@ -277,14 +344,20 @@ def non_party_names(doc: dict[str, Any]) -> list[str]:
 
     The name comes from EDIS's own "on behalf of" field ("Apple Inc."),
     since commas inside a name ("Hickman, Williams & Company") make the
-    title's wording unsafe to split; "Non-Parties X and Y" is split like any
-    party list.
+    title's wording unsafe to split. "Non-Parties X and Y" is split like any
+    party list; a joint filing under "Non-Party" ("MediaTek Inc. and MediaTek
+    USA Inc.") only when every piece is a whole name by itself, so "Alliance
+    of U.S. Startups and Inventors for Jobs" stays one.
     """
     title = " ".join(str(doc.get("title") or "").split())
-    who = str(doc.get("on_behalf_of") or "").strip()
+    who = _clean_party_name(str(doc.get("on_behalf_of") or ""))
     if not who or _is_commission(doc) or not _NON_PARTY_FILER_RE.search(title):
         return []
-    return split_parties(who) if re.search(r"\bNon-?Parties\b", title, re.I) else [who]
+    pieces = [_clean_party_name(piece) for piece in split_parties(who)]
+    joint = re.search(r"\bNon-?Parties\b", title, re.I) or (
+        len(pieces) > 1 and all(_looks_whole(piece) for piece in pieces)
+    )
+    return [name for name in (pieces if joint else [who]) if name and not _is_redacted(name)]
 
 
 def _served_on(text: str) -> str | None:
@@ -310,9 +383,15 @@ def limited_purpose(text: str) -> dict[str, Any] | None:
     """
     body = " ".join(text.split())
     match = _LIMITED_PURPOSE_RE.search(body) or _LIMITED_PURPOSE_SENTENCE_RE.search(body)
-    if not match:
+    if match:
+        purpose = match.group("purpose").strip(" ,")
+    else:
+        purpose = _subpoena_purpose(body)
+    if not purpose:
+        intervenor = _INTERVENOR_RE.search(body)
+        if intervenor:
+            return {"purpose": "proposed intervenor" if intervenor.group("proposed") else "intervenor", "intervenor": True}
         return None
-    purpose = match.group("purpose").strip(" ,")
     reason: dict[str, Any] = {"purpose": purpose}
     served_by = _SERVED_BY_RE.search(purpose)
     if served_by:
@@ -326,14 +405,45 @@ def limited_purpose(text: str) -> dict[str, Any] | None:
     return reason
 
 
+def _subpoena_purpose(body: str) -> str | None:
+    """The subpoena a notice says it is about, from the first sentence of the
+    notice that mentions one, when it does not use the "limited purposes"
+    formula.
+    """
+    start = re.search(r"notice is hereby given|please (?:take )?note|enter(?:s)? (?:their|an?) appearance", body, re.I)
+    for sentence in _SENTENCE_END_RE.split(body[start.start() if start else 0 :])[:4]:
+        clause = _SUBPOENA_CLAUSE_RE.search(sentence)
+        if clause:
+            return clause.group("purpose").strip(" ,.")
+    return None
+
+
+def non_party_status(party: dict[str, Any]) -> str:
+    """Where a non-party's reason for being in the case stands:
+
+    "read"            its notice says why
+    "no_reason"       its notice was read and does not say
+    "not_downloaded"  it filed a notice whose PDF is not on disk yet
+    "no_notice"       it never filed one; its own filings say what it did
+    """
+    if party.get("purpose"):
+        return "read"
+    notice = party.get("notice")
+    if notice:
+        return "no_reason" if notice.get("files") else "not_downloaded"
+    return "no_notice"
+
+
 def _non_party_summary(reason: dict[str, Any], filings: list[dict[str, Any]]) -> str:
     """One line on why a non-party is in the case, for the case page.
 
     From its notice when that was read ("Responding to subpoenas served by
     Respondents"; the page adds the date served, `served_on`, in its own
-    format); otherwise from what its own filings are about; otherwise, that
-    its notice has not been downloaded.
+    format); otherwise from what its own filings are about; otherwise, what
+    is known about its notice.
     """
+    if reason.get("intervenor"):
+        return "Proposed intervenor" if reason.get("purpose") == "proposed intervenor" else "Intervenor"
     if reason.get("purpose"):
         if reason.get("subpoena"):
             summary = "Responding to subpoenas"
@@ -348,8 +458,11 @@ def _non_party_summary(reason: dict[str, Any], filings: list[dict[str, Any]]) ->
         return "Responding to a subpoena"
     if "public interest" in titles:
         return "Filed comments on the public interest"
-    if reason.get("notice"):
+    status = non_party_status(reason)
+    if status == "not_downloaded":
         return "Limited appearance; the notice's PDF has not been downloaded yet"
+    if status == "no_reason":
+        return "Appeared through counsel; the notice does not say why"
     return "Appears through its own filings"
 
 
@@ -476,6 +589,37 @@ def pdf_text(path: Path) -> str:
     from pypdf import PdfReader  # only this process needs it
 
     return "\n".join(page.extract_text() or "" for page in PdfReader(str(path)).pages)
+
+
+# A notice is a page or two plus a certificate of service; its reason and
+# signature block are near the front.
+NOTICE_OCR_PAGES = 4
+OCR_CACHE_DIR = "counsel_text"
+
+
+def notice_reader(cache_dir: Path, *, log: Logger = print) -> Callable[[Path], str]:
+    """A PDF reader that OCRs a scanned notice (one with next to no text
+    layer), using the claims analysis's local OCR, and keeps the result in
+    `cache_dir` so each scanned notice is read once rather than on every
+    rebuild. Without OCR installed a scanned notice reads as empty, as before.
+    """
+    from .claims import ocr
+
+    def read(path: Path) -> str:
+        text = pdf_text(path)
+        if len(text.strip()) >= ocr.MIN_TEXT_CHARS:
+            return text
+        cached = Path(cache_dir) / f"{path.name}.ocr.txt"
+        if cached.exists():
+            return cached.read_text(encoding="utf-8")
+        if not ocr.available():
+            return text
+        text = ocr.pdf_text(path, max_pages=NOTICE_OCR_PAGES, log=log)
+        cached.parent.mkdir(parents=True, exist_ok=True)
+        cached.write_text(text, encoding="utf-8")
+        return text
+
+    return read
 
 
 # --------------------------------------------------------------------------
@@ -629,14 +773,19 @@ def build_case_counsel(
     # Each non-party's own filings, which are the reason it is in the case
     # when it never filed a notice saying so.
     own_filings: dict[str, list[dict[str, Any]]] = {}
+    # Every spelling each was filed under; the commonest is the one shown.
+    spellings: dict[str, Counter] = {}
     for doc in ordered:
         for name in non_party_names(doc):
             if match_parties(name, participants):
                 continue
-            known = match_parties(name, non_parties)
+            # "Google Inc." and "Google LLC" in one case are the same company
+            # under an old and a new corporate form.
+            known = _match_with_non_parties(name, non_parties)
             if not known:
                 known = [{"name": name, "role": NON_PARTY_ROLE}]
                 non_parties.extend(known)
+            spellings.setdefault(known[0]["name"], Counter())[name] += 1
             own_filings.setdefault(known[0]["name"], []).append(
                 {"id": str(doc.get("id") or ""), "date": _day(doc), "title": doc.get("title")}
             )
@@ -648,7 +797,7 @@ def build_case_counsel(
     for doc in ordered:
         if _is_commission(doc) or not doc.get("firm_organization"):
             continue
-        parties = match_parties(doc.get("on_behalf_of"), participants)
+        parties = _match_with_non_parties(doc.get("on_behalf_of"), participants)
         roles = {p.get("role") for p in parties}
         if len(roles) > 1:  # filed jointly by both sides
             continue
@@ -697,7 +846,7 @@ def build_case_counsel(
         if facts.lead:
             rep.attorney(facts.lead, doc_id).lead = True
 
-        appearing_for = match_parties(doc.get("on_behalf_of"), non_parties)
+        appearing_for = _match_with_non_parties(doc.get("on_behalf_of"), non_parties)
         for party in appearing_for:
             # The notice is recorded even before its PDF is downloaded, so the
             # page can say where the reason will come from.
@@ -734,6 +883,12 @@ def build_case_counsel(
                     rep.emails.append(email)
 
     kept = [rep for rep in reps.values() if (rep.attorneys or rep.parties()) and not _is_alias(rep, reps.values())]
+    # Renamed in place, so the representations that list a non-party show
+    # the same spelling as the non-party list does.
+    first_seen = [party["name"] for party in non_parties]
+    for party in non_parties:
+        party["name"] = spellings[party["name"]].most_common(1)[0][0]
+
     representations = [rep.to_dict() for rep in kept]
     representations.sort(key=lambda r: (r["first_filed"] or "9999", r["firm"]))
     return {
@@ -741,11 +896,11 @@ def build_case_counsel(
         "non_parties": [
             {
                 **party,
-                **reasons.get(party["name"], {}),
-                "summary": _non_party_summary(reasons.get(party["name"], {}), own_filings.get(party["name"], [])),
-                "filings": own_filings.get(party["name"], []),
+                **reasons.get(key, {}),
+                "summary": _non_party_summary(reasons.get(key, {}), own_filings.get(key, [])),
+                "filings": own_filings.get(key, []),
             }
-            for party in non_parties
+            for key, party in zip(first_seen, non_parties)
         ],
         "rosters_read": rosters,
     }
@@ -761,18 +916,60 @@ class CounselReport:
     representations: int = 0
     rosters_read: int = 0
     non_parties: int = 0
+    non_party_cases: int = 0
+    non_party_status: Counter = field(default_factory=Counter)
     unmatched: list[str] = field(default_factory=list)
 
 
-def run(store: Store, *, log: Logger = print) -> CounselReport:
-    """Rebuild data/counsel.json from the documents and cases on disk."""
+_STATUS_WORDS = {
+    "read": "reason read from its notice",
+    "no_reason": "notice read, gives no reason",
+    "not_downloaded": "notice PDF not downloaded yet",
+    "no_notice": "no notice filed; described from its own filings",
+}
+
+
+def _non_party_lines(report: CounselReport) -> list[str]:
+    """The non-parties in one line, plus a line saying what would fill in
+    the reasons still missing.
+    """
+    if not report.non_parties:
+        return []
+    counts = report.non_party_status
+    parts = [
+        f"{counts['read']} with the reason read from their notice",
+        f"{counts['not_downloaded']} whose notice PDF is not downloaded yet",
+        f"{counts['no_reason']} whose notice gives no reason",
+        f"{counts['no_notice']} that filed no notice (described from their own filings)",
+    ]
+    lines = [
+        f"Non-parties: {report.non_parties} in {report.non_party_cases} case(s): "
+        + "; ".join(part for part in parts if not part.startswith("0 ")) + "."
+    ]
+    if counts["not_downloaded"]:
+        lines.append(
+            "  To read the missing notices: Run daily sync on the dashboard, or "
+            "'python cli.py docs --existing --appearances', then rebuild counsel."
+        )
+    return lines
+
+
+def run(store: Store, *, verbose: bool = False, log: Logger = print) -> CounselReport:
+    """Rebuild data/counsel.json from the documents and cases on disk.
+
+    Non-parties are summed up in one line; `verbose` lists each one.
+    """
     report = CounselReport()
     counsel: dict[str, Any] = {}
     for key, documents in sorted(store.documents.items()):
         if not documents:
             continue
         built = build_case_counsel(
-            store.investigations.get(key), documents, docs_dir=store.docs_dir / key, log=log
+            store.investigations.get(key),
+            documents,
+            docs_dir=store.docs_dir / key,
+            read_pdf=notice_reader(store.data_dir / OCR_CACHE_DIR / key, log=log),
+            log=log,
         )
         if not built["representations"]:
             continue
@@ -780,10 +977,14 @@ def run(store: Store, *, log: Logger = print) -> CounselReport:
         report.cases += 1
         report.representations += len(built["representations"])
         report.rosters_read += built["rosters_read"]
+        if built["non_parties"]:
+            report.non_party_cases += 1
         for party in built["non_parties"]:
+            status = non_party_status(party)
             report.non_parties += 1
-            why = "reason read" if party.get("purpose") else "no notice PDF read yet"
-            log(f"  {key}: non-party {party['name']} ({why})")
+            report.non_party_status[status] += 1
+            if verbose:
+                log(f"  {key}: non-party {party['name']} ({_STATUS_WORDS[status]})")
         for rep in built["representations"]:
             if not rep["parties"]:
                 report.unmatched.append(f"{key}: {rep['firm']} for {'; '.join(rep.get('on_behalf_of') or [])}")
@@ -801,6 +1002,10 @@ def run(store: Store, *, log: Logger = print) -> CounselReport:
         f"Counsel: {report.representations} representation(s) across {report.cases} case(s), "
         f"{report.rosters_read} appearance roster(s) read from PDFs."
     )
+    for line in _non_party_lines(report):
+        log(line)
+    if report.non_parties and not verbose:
+        log("  ('python cli.py counsel --verbose' lists each non-party.)")
     for line in report.unmatched:
         log(f"  ? no IDS party matched {line}")
     return report
