@@ -51,10 +51,44 @@ TOPICS = {
         "other_defenses": "other affirmative defenses",
         "relief": "arguments against the relief asked for (public interest, bond, scope of an order)",
     },
+    "ruling": {
+        "motion": "who moved, for what, and against whom",
+        "issue": "the question the ruling decides, in plain words",
+        "outcome": "granted, denied or granted in part; which claims, patents or respondents it affects",
+        "reasoning": "why: the judge's main reasons",
+        "effect": "what follows: issues left for the hearing, claims or respondents out of the case",
+    },
+    "final_id": {
+        "result": "the overall result: a violation of Section 337 or not, and as to whom",
+        "infringement": "findings on infringement, by patent and claim",
+        "validity": "findings on validity (anticipation, obviousness, section 112, section 101) and enforceability",
+        "domestic_industry": "findings on the domestic industry, technical and economic prongs",
+        "importation": "findings on importation and jurisdiction",
+        "claim_construction": "how key claim terms were construed, where that decided the case",
+        "remedy": "the recommended remedy (limited or general exclusion order, cease and desist orders) and bond",
+    },
+    "commission_notice": {
+        "decision": "what the Commission decided: to review (which issues) or not, and its final determination",
+        "findings": "its findings on violation, infringement, validity or domestic industry",
+        "remedy": "the orders it issued or is considering, and the bond",
+        "public_interest": "public interest findings or requests for submissions",
+        "next_steps": "what comes next: submissions due, the target date, Presidential review",
+    },
+    "commission_opinion": {
+        "holdings": "the Commission's conclusions, issue by issue",
+        "reasoning": "its main reasons, especially where it departed from the ALJ",
+        "remedy": "the remedy ordered, its scope and the bond",
+        "public_interest": "its public interest analysis",
+        "separate_views": "any dissent or separate views",
+    },
 }
 ALL_TOPICS = sorted({t for topics in TOPICS.values() for t in topics})
 KIND_NAMES = {"complaint": "complaint", "notice_of_institution": "notice of institution",
-              "answer": "response (answer) to the complaint"}
+              "answer": "response (answer) to the complaint",
+              "ruling": "ruling by the Administrative Law Judge on a motion for summary determination",
+              "final_id": "final initial determination of the Administrative Law Judge (with the recommended determination on remedy)",
+              "commission_notice": "notice of a Commission determination",
+              "commission_opinion": "Commission opinion"}
 
 SYSTEM = """You take notes on one filing from a U.S. International Trade Commission Section 337 investigation. A writer will turn your notes into a plain-English summary for lawyers who are new to intellectual property law and to Section 337, so the notes must be accurate, specific and easy to follow.
 
@@ -62,7 +96,7 @@ The filing is given page by page as <page n="12">...</page>; n is the page numbe
 
 For each point:
 - topic: one of the topics listed for this kind of filing.
-- point: one or two plain sentences stating what the filing says, specifically (names, patent numbers, claim numbers, products, amounts, dates). Attribute it: "The complainant alleges ...", "Respondents deny ...". Never state an allegation or a defense as fact, and never assess its merits.
+- point: one or two plain sentences stating what the filing says, specifically (names, patent numbers, claim numbers, products, amounts, dates). Attribute it: "The complainant alleges ...", "Respondents deny ...", "The ALJ found ...", "The Commission determined ...". Never state a party's allegation or defense as fact, and never assess its merits. For a ruling or decision, say plainly what was decided and by whom; a party's argument that a decision recounts is attributed to that party.
 - page: the n of the page where it is stated.
 - quote: 8 to 25 consecutive words copied exactly from that page's text, character for character, including any OCR errors. Copy them from the page as given; never retype, shorten, reorder or tidy them. Choose the words that best support the point.
 

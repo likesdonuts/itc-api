@@ -1,0 +1,66 @@
+{
+  "cost_usd": 0.007006,
+  "date": "2022-07-15",
+  "doc_id": "777367",
+  "file": "777367_1879292_1879292.pdf",
+  "kind": "ruling",
+  "model": "claude-haiku-4-5-20251001",
+  "notes_version": 2,
+  "overview": "This is an Administrative Law Judge's order dated July 15, 2022, in ITC Investigation 337-TA-1270 concerning Certain Casual Footwear and Packaging Thereof. The order denies respondent Quanzhou ZhengDe Network Corp. (d/b/a Amoji)'s motion for partial summary determination of non-infringement for its alternative footwear designs.",
+  "pages_read": [
+    1,
+    2,
+    3
+  ],
+  "points": [
+    {
+      "page": 1,
+      "point": "Respondent Quanzhou ZhengDe Network Corp., d/b/a Amoji filed a motion on June 10, 2022 for partial summary determination of non-infringement with respect to certain ZhengDe alternative footwear designs.",
+      "quote": "On June 10, 2022, Respondent Quanzhou ZhengDe Network Corp., d/b/a Amoji (\"ZhengDe\") filed a motion (Mot. 1270-057) for partial summary determination of noninfringement",
+      "topic": "motion"
+    },
+    {
+      "page": 2,
+      "point": "The motion raised whether ZhengDe's alternative footwear designs were ripe for adjudication and, if so, whether they infringed the asserted patents.",
+      "quote": "In determining whether there is a genuine issue of material fact, \"the evidence must be viewed in the light most favorable to the party opposing the motion\"",
+      "topic": "issue"
+    },
+    {
+      "page": 3,
+      "point": "The Administrative Law Judge denied ZhengDe's motion for partial summary determination.",
+      "quote": "For this reason, Motion Docket No. 1270-057 for partial summary determination is DENIED.",
+      "topic": "outcome"
+    },
+    {
+      "page": 2,
+      "point": "The ALJ found there were genuine issues of material fact as to whether the alternative footwear designs met the four-factor test for ripeness for adjudication established in the Oligosaccharides case.",
+      "quote": "There are genuine issues of material fact as to whether the alternative footwear designs are ripe for adjudication.",
+      "topic": "reasoning"
+    },
+    {
+      "page": 2,
+      "point": "The ALJ identified that Crocs disputed three of the four ripeness factors: whether the alternative designs had been imported, whether they were sufficiently fixed in design, and whether they were sufficiently disclosed during discovery.",
+      "quote": "Crocs disputes three of the four factors \u2013 namely, whether the alternative footwear designs have been imported, whether they are sufficiently fixed in design, and whether they were sufficiently disclosed",
+      "topic": "reasoning"
+    },
+    {
+      "page": 2,
+      "point": "Under the applicable test from Certain Human Milk Oligosaccharides and Methods of Producing the Same, Inv. No. 337-TA-1120, a respondent must show: (1) whether the product is within the scope of the investigation; (2) whether it has been imported; (3) whether it is sufficiently fixed in design; and (4) whether it has been sufficiently disclosed by respondent during discovery.",
+      "quote": "The test for determining whether a respondent has met its burden for adjudication of a redesigned or alternative product includes four factors: \"(1) whether the product is within the scope of the investigation; (2) whether it has been imported",
+      "topic": "reasoning"
+    }
+  ],
+  "rejected": [
+    {
+      "page": 3,
+      "point": "The alternative footwear designs remain subject to adjudication on the merits; the disputes over ripeness factors proceed to the hearing.",
+      "quote": "SO ORDERED.",
+      "rejected": "quote too short to check",
+      "topic": "effect"
+    }
+  ],
+  "taken_at": "2026-09-26T21:09:26+00:00",
+  "title": "Denying Respondent Quanzhou ZhengDe Network Corp., d/b/a Amoji's Motion for Partial Summary Determination of Non-Infringement for Alternative Designs",
+  "truncated": false,
+  "who": ""
+}

@@ -1,0 +1,77 @@
+{
+  "cost_usd": 0.008496,
+  "date": "2024-03-05",
+  "doc_id": "815498",
+  "file": "815498_2127854_2127854.pdf",
+  "kind": "ruling",
+  "model": "claude-haiku-4-5-20251001",
+  "notes_version": 2,
+  "overview": "This is an Administrative Law Judge's ruling from February 12, 2024, in a Section 337 investigation concerning semiconductor devices. The ruling denies complainant Efficient Power Conversion Corporation's (EPC) motion for summary determination that it satisfies the economic prong of the domestic industry requirement for three asserted patents.",
+  "pages_read": [
+    1,
+    2,
+    3,
+    4
+  ],
+  "points": [
+    {
+      "page": 1,
+      "point": "The complainant is Efficient Power Conversion Corporation (EPC), and the respondents are Innoscience (Zhuhai) Technology Company, Ltd., and Innoscience America, Inc. (collectively 'Innoscience').",
+      "quote": "complainant Efficient Power Conversion Corporation ('EPC') filed a motion ('Mot.'), supporting memorandum ('Memo'), and chart of material facts seeking a finding on summary determination",
+      "topic": "parties"
+    },
+    {
+      "page": 1,
+      "point": "The asserted patents are U.S. Patent Nos. 8,350,294 (the '294 patent), 8,404,508 (the '508 patent), and 10,312,335 (the '335 patent), though the '335 patent has been terminated from the investigation.",
+      "quote": "U.S. Patent Nos. 8,350,294 ('the '294 patent'), 8,404,508 ('the '508 patent'), and 10,312,335 ('the '335 patent')",
+      "topic": "ip_asserted"
+    },
+    {
+      "page": 1,
+      "point": "On December 28, 2023, EPC filed a motion seeking summary determination that it satisfies the economic prong of the domestic industry requirement for the asserted patents; Innoscience and the Commission Investigative Staff filed oppositions on January 10, 2024.",
+      "quote": "On December 28, 2023, complainant Efficient Power Conversion Corporation ('EPC') filed a motion ('Mot.'), supporting memorandum ('Memo'), and chart of material facts",
+      "topic": "motion"
+    },
+    {
+      "page": 2,
+      "point": "The issue is whether EPC satisfies the economic prong of the domestic industry requirement under Section 337(a)(3) as a matter of law, without need for further hearing.",
+      "quote": "the economic prong of the domestic industry requirement of section 337(a)(3) are satisfied",
+      "topic": "issue"
+    },
+    {
+      "page": 2,
+      "point": "The statute permits satisfaction of the economic prong through any one of three disjunctive grounds: significant investment in plant and equipment; significant employment of labor or capital; or substantial investment in exploitation including engineering, research and development, or licensing.",
+      "quote": "(A) significant investment in plant and equipment; (B) significant employment of labor or capital; or (C) substantial investment in its exploitation, including engineering,",
+      "topic": "claim_construction"
+    },
+    {
+      "page": 2,
+      "point": "EPC contended it satisfied the economic prong through employing significant domestic labor and plant dedicated to research and development, asserting that all its products are designed in the United States.",
+      "quote": "EPC contends that it has satisfied the economic prong by employing significant domestic labor and plant dedicated to research and development activities",
+      "topic": "reasoning"
+    },
+    {
+      "page": 3,
+      "point": "Innoscience disputed EPC's assertion that all products are designed in the United States, citing testimony from EPC's corporate witness Marabotti that design occurred at multiple foreign EPC locations, including a design center established in Italy in 2022 and possible participation from Taiwan.",
+      "quote": "EPC established a center in Italy in 2022 that focuses on the design and development of integrated circuits, and he also testified that 'it could be someone from Taiwan participated'",
+      "topic": "reasoning"
+    },
+    {
+      "page": 3,
+      "point": "The ALJ found that genuine issues of material fact exist regarding whether all of EPC's alleged domestic industry products are designed in the United States and whether EPC's domestic expenditures on labor and plant related to research and design are significant, to be resolved in favor of the non-moving party.",
+      "quote": "genuine issues of material fact exist as to whether all of EPC's alleged domestic industry products are designed in the United States",
+      "topic": "reasoning"
+    },
+    {
+      "page": 3,
+      "point": "The ALJ denied EPC's motion for summary determination, finding that summary determination is not appropriate because material factual disputes remain.",
+      "quote": "I find that summary determination is not appropriate in this circumstance. EPC's Motion No. 1366-006 for summary determination is denied.",
+      "topic": "outcome"
+    }
+  ],
+  "rejected": [],
+  "taken_at": "2026-09-26T20:58:54+00:00",
+  "title": "Denying Complainant's Motion for Summary Determination That the Economic Prong of the Domestic Industry Requirement Is Satisfied",
+  "truncated": false,
+  "who": ""
+}

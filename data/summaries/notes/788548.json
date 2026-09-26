@@ -1,0 +1,207 @@
+{
+  "cost_usd": 0.036522,
+  "date": "2023-01-09",
+  "doc_id": "788548",
+  "file": "788548_1944270_1944270.pdf",
+  "kind": "final_id",
+  "model": "claude-haiku-4-5-20251001",
+  "notes_version": 2,
+  "overview": "This is the Administrative Law Judge's Initial Determination in Investigation 337-TA-1270 concerning alleged infringement of Crocs' trademarks by casual footwear imported and sold in the United States. The ALJ found that respondents Orly Shoe Corp., Hobby Lobby Stores, Inc., and Quanzhou ZhengDe Network Corp. (Amoji) did not violate Section 337, determining that the accused products do not infringe Crocs' trademark registrations and that Crocs' 3D trade dress marks are invalid for lack of acquired distinctiveness.",
+  "pages_read": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10,
+    11,
+    12,
+    13,
+    14,
+    15,
+    16,
+    17,
+    18,
+    19,
+    20,
+    153,
+    154,
+    155,
+    156,
+    157,
+    158,
+    159,
+    160,
+    161,
+    162,
+    163,
+    164,
+    165,
+    166,
+    167
+  ],
+  "points": [
+    {
+      "page": 12,
+      "point": "Crocs, Inc. is the complainant, a Delaware corporation headquartered in Broomfield, Colorado, founded in 2002. The remaining respondents are Orly Shoe Corp., a New York corporation; Hobby Lobby Stores, Inc., an Oklahoma corporation with over 900 retail store locations; and Quanzhou ZhengDe Network Corp. d/b/a Amoji, a Chinese corporation founded around 2016.",
+      "quote": "Crocs is a Delaware corporation with its headquarters and principal place of business in Broomfield, Colorado.",
+      "topic": "parties"
+    },
+    {
+      "page": 14,
+      "point": "Crocs asserted three trademark registrations: U.S. Trademark Registration No. 5,149,328 (the '328 Registration), U.S. Trademark Registration No. 5,273,875 (the '875 Registration), and U.S. Trademark Registration No. 3,836,415 (the '415 Registration). The '328 and '875 Registrations are 3D marks covering trade dress designs, and the '415 Registration is a word mark for CROCS.",
+      "quote": "Crocs asserts three trademarks: (1) U.S. Trademark Registration No. 5,149,328 (\\\"the '328 Registration\\\"); (2) U.S. Trademark Registration No. 5,273,875 (\\\"the '875 Registration\\\"); and (3) U.S. Trademark Registration No. 3,836,415 (\\\"the '415 Registration\\\").",
+      "topic": "ip_asserted"
+    },
+    {
+      "page": 17,
+      "point": "Crocs accused Orly Gator shoes and an Orly Redesign supplied to Hobby Lobby, and Amoji Garden Clogs and five Amoji Redesigns. The products at issue are casual footwear with holes in the upper and such footwear's packaging.",
+      "quote": "The products at issue in this investigation are \\\"casual footwear with holes in the upper and such footwear's packaging.\\\"",
+      "topic": "products"
+    },
+    {
+      "page": 10,
+      "point": "The Commission investigated whether casual footwear and packaging thereof violated Section 337 by reason of infringement of U.S. Trademark Registration Nos. 3,836,415; 5,149,328; and 5,273,875, and whether a domestic industry existed as required by Section 337(a)(2).",
+      "quote": "[W]hether there is a violation of subsection (a)(1)(C) of section 337 in the importation into the United States, the sale for importation , or the sale within the United States after importation of certain products . . . by reason of infringement of one or more [U.S. Trademark Registration Nos. 3,836,415; 5,149,328; and 5,273,875]",
+      "topic": "scope"
+    },
+    {
+      "page": 15,
+      "point": "The '328 Registration claims a three-dimensional configuration of the upper of a shoe comprising a pattern of 13 round holes on the horizontal portion and a textured strip on the vertical portion with 7 trapezoidal openings. The '875 Registration includes these elements plus a textured strip on the heel and a decorative band along the heel strap.",
+      "quote": "The mark consists of a three dimensional configuration of the outside design of an upper for a shoe comprising a pattern of 13 round holes on the horizontal portion of the upper of the shoe and a textured strip along the vertical portion of the upper having a pattern of 7 trapezoidal openings.",
+      "topic": "claim_construction"
+    },
+    {
+      "page": 158,
+      "point": "The ALJ found that U.S. Trademark Registration Nos. 5,149,328 and 5,273,875 (the 3D marks) are invalid because they have not acquired secondary meaning, though they are not functional and not generic.",
+      "quote": "14. U.S. Trademark Registration Nos. 5,149,328 and 5,273,875 are invalid. 15. U.S. Trademark No. 3,836,415 is valid.",
+      "topic": "validity"
+    },
+    {
+      "page": 14,
+      "point": "The Trademark Office initially rejected Crocs' applications to register the overall look of the Classic Clog as generic, finding that the elements are commonly present in waterproof strap clogs and that applicant cannot exclude competitors from using such ubiquitous design elements. Crocs then narrowed its claimed design elements to specific ventilation holes.",
+      "quote": "These features are nondistinctive and do not function as a mark because such elements are so common in the industry for such products and are the same or substantially similar to the designs of competitors' products such that consumers are accustomed to seeing such elements on similar products.",
+      "topic": "validity"
+    },
+    {
+      "page": 158,
+      "point": "The ALJ found that U.S. Trademark Registrations 5,149,328 and 5,273,875 are not functional under the four-factor Morton-Norwich test, which examines utility patents, advertising, manufacturing, and availability of alternative designs.",
+      "quote": "12. U.S. Trademark Registration Nos. 5,149,328 and 5,273,875 are not functional.",
+      "topic": "validity"
+    },
+    {
+      "page": 158,
+      "point": "The ALJ found that the 3D marks and word mark are not generic, meaning they do not refer to a genus of goods or services rather than indicating a particular source.",
+      "quote": "13. The Asserted Trademarks are not generic.",
+      "topic": "validity"
+    },
+    {
+      "page": 157,
+      "point": "The ALJ concluded that the Orly Gator and Orly Redesign products do not infringe the Asserted Trademarks, based on analysis of the DuPont factors for likelihood of confusion.",
+      "quote": "4. The Orly Accused Products do not infringe the Asserted Trademarks.",
+      "topic": "infringement"
+    },
+    {
+      "page": 157,
+      "point": "The ALJ concluded that the Hobby Lobby Accused Products do not infringe the Asserted Trademarks.",
+      "quote": "5. The Hobby Lobby Accused Products do not infringe the Asserted Trademarks.",
+      "topic": "infringement"
+    },
+    {
+      "page": 158,
+      "point": "The ALJ concluded that the Orly, Hobby Lobby, and Amoji accused products do not falsely designate their source or cause unfair competition.",
+      "quote": "8. The Orly Accused Products do not falsely designate their source or cause unfair competition.",
+      "topic": "other_unfair_acts"
+    },
+    {
+      "page": 158,
+      "point": "The ALJ concluded that respondents do not dilute the Asserted Trademarks, including findings on dilution by blurring and dilution by tarnishment.",
+      "quote": "11. Respondents do not dilute the Asserted Trademarks.",
+      "topic": "other_unfair_acts"
+    },
+    {
+      "page": 158,
+      "point": "The ALJ found that the technical prong of the domestic industry requirement has been satisfied for the Asserted Trademarks, meaning Crocs' domestic activities satisfy the requirement that the products be covered by the asserted intellectual property rights.",
+      "quote": "17. The technical prong of the domestic industry requirement has been satisfied for the Asserted Trademarks.",
+      "topic": "domestic_industry"
+    },
+    {
+      "page": 156,
+      "point": "From 2018 to 2021, Crocs' domestic investments in plant and equipment and labor and capital totaled a substantial amount. The ALJ found these investments quantitatively large in absolute terms and qualitatively significant, as the Classic Clog is critical to Crocs' business and its U.S.-based design and development employees are essential to the company's success.",
+      "quote": "From 2018-2021, Crocs' domestic industry investments in plant and equipment and labor and capital totaled [amount]. These domestic investments are quantitatively large in absolute terms, and on that basis satisfy the economic prong of the domestic industry requirement.",
+      "topic": "domestic_industry"
+    },
+    {
+      "page": 158,
+      "point": "The ALJ found that the economic prong of the domestic industry requirement is satisfied under 19 U.S.C. \u00a7 1337(a)(3)(A) and (B) based on Crocs' significant plant and equipment investments and labor and capital expenditures related to its unlined Classic Clog product in the United States.",
+      "quote": "18. The economic prong of the domestic industry requirement has been satisfied with respect to the Asserted Patents.",
+      "topic": "domestic_industry"
+    },
+    {
+      "page": 9,
+      "point": "The ALJ determined that no violation of Section 337 of the Tariff Act of 1930 has occurred based on infringement of the asserted trademarks and that there is no violation under 19 U.S.C. \u00a7 1337(a)(1)(A).",
+      "quote": "For the reasons stated herein, I have determined that no violation of section 337 of the Tariff Act of 1930, as amended, has occurred in the importation into the United States, the sale for importation, or the sale within the United States after importation of certain casual footwear and packaging thereof alleged to infringe U.S. Trademark Registration Nos. 3,836,415; 5,149,328; and 5,273,875.",
+      "topic": "result"
+    },
+    {
+      "page": 159,
+      "point": "Because no violation of Section 337 was found, the ALJ recommends against a general exclusion order, limited exclusion orders, and cease and desist orders. However, the ALJ provided conditional recommendations regarding the form of relief should the Commission on review find a violation.",
+      "quote": "Because no violation of section 337 has occurred, I recommend against a GEO. Should the Commission disagree, however, the record demonstrates that a GEO is necessary to prevent circumvention of a limited exclusion order and there is a widespread pattern of infringement.",
+      "topic": "remedy"
+    },
+    {
+      "page": 161,
+      "point": "Should the Commission determine that a violation has occurred, the ALJ recommends that limited exclusion orders issue against the Accused Products found to infringe, with a carve-out for respondents' footwear affirmatively found not to infringe the Asserted Trademarks.",
+      "quote": "Should the Commission determine that a violation has occurred, I recommend entry of a limited exclusion order against the Accused Products found to infringe.",
+      "topic": "relief"
+    },
+    {
+      "page": 163,
+      "point": "The ALJ recommends cease and desist orders against Orly, Hobby Lobby, and Amoji if the Commission determines a violation has occurred, based on their commercially significant inventories or significant domestic operations that could undercut the remedy provided by an exclusion order.",
+      "quote": "Based on these facts, I recommend that a cease and desist order issue as to Orly if the Commission determines that a violation of section 337 has occurred.",
+      "topic": "relief"
+    },
+    {
+      "page": 166,
+      "point": "If an exclusion order issues, the ALJ recommends that bond be set at a specified amount per shoe during the 60-day Presidential review period to protect Crocs from injury, based on a price differential calculation between the Accused Products and the domestic industry products.",
+      "quote": "It is therefore my recommendation that the Commission set bond at [amount] per shoe during the Presidential review period.",
+      "topic": "remedy"
+    },
+    {
+      "page": 17,
+      "point": "The ALJ found that Crocs' word mark CROCS (Registration No. 3,836,415) is valid and has reached incontestable status as of August 25, 2010, meaning the registration is conclusive evidence of the validity of the registered mark.",
+      "quote": "The Word Mark has reached incontestable status. JX-0003 at 152-158, 169, 182-188, 192 (declarations of incontestability and use); JX-0004 at CROCS_ITC045682; 15 U.S.C. \u00a7 1065; 15 U.S.C. \u00a7 1115(b)",
+      "topic": "decision"
+    },
+    {
+      "page": 157,
+      "point": "The Commission has subject matter, personal, and in rem jurisdiction in this investigation, and the importation or sale requirement of Section 337 has been satisfied.",
+      "quote": "1. The Commission has subject matter, personal, and in rem jurisdiction in this investigation. 2. The importation or sale requirement of section 337 has been satisfied.",
+      "topic": "importation"
+    }
+  ],
+  "rejected": [
+    {
+      "page": 157,
+      "point": "The ALJ concluded that the Amoji Garden Clogs and Amoji Redesigns do not infringe U.S. Trademark Registration Nos. 5,149,328 and 5,273,875 (the 3D marks).",
+      "quote": "6. The Amoji Accused Products do not infringe U.S. Trademark Registration Nos. 5,149,328 and 5,273,875. 7. The Amoji Redesigns do not infringe U.S. Trademark Registration Nos. 5,149,328 and 5,273,875.",
+      "rejected": "quote not found in the filing",
+      "topic": "infringement"
+    },
+    {
+      "page": 15,
+      "point": "The ALJ analyzed infringement under the DuPont test, which applies to trademark infringement and false designation of source, examining factors such as similarity of marks, similarity of goods, trade channels, conditions of sale, fame of mark, and likelihood of confusion.",
+      "quote": "Legal Standard [for trademark infringement analysis]",
+      "rejected": "quote not found in the filing",
+      "topic": "findings"
+    }
+  ],
+  "taken_at": "2026-09-26T21:10:08+00:00",
+  "title": "Initial Determination on Violation of Section 337 and Recommended Determination on Remedy and Bond",
+  "truncated": false,
+  "who": ""
+}

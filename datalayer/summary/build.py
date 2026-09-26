@@ -2,15 +2,18 @@
 
     python cli.py summary 337-1366
 
-Phase 2 covers what the case is about and the answers to it: the complaint,
-the notice of institution and up to five answer groups (select.py). For each:
+It reads what select.py picks: the complaint, the notice of institution, up
+to five answer groups, the ALJ's summary determination rulings, the final ID,
+and the Commission's notices and opinions. For each:
 
 1. download the one file that is read, if it is not on disk (fetch.py);
 2. read its pages -- first and last, per read_pages -- page by page (text.py);
 3. Claude Haiku takes notes, each point with its page and a quote, and code
    checks every quote against its page (notes.py). Cached per document;
-4. Claude Sonnet 5 writes the summary from the notes, citing them, and code
-   checks every citation (write.py). Rewritten only when the notes change.
+4. Claude Sonnet 5 writes the summary from the notes -- and from the facts
+   that need no reading (facts.py): orders' and notices' titles, and the
+   claims analysis's findings -- citing them, and code checks every citation
+   (write.py). Rewritten only when what it draws on changes.
 
 Before every model call, the most it could cost is checked against the
 summary budget (summary_config.json); a run that would pass it stops, keeping
@@ -32,12 +35,14 @@ from typing import Any, Callable
 from ..claims import costs
 from ..store import Store, load_json, save_json
 from . import config as summary_config
-from . import fetch, notes, text, write
+from . import facts, fetch, notes, text, write
 from .select import Item, select
 
 Logger = Callable[[str], None]
 
-PHASE_KINDS = ("complaint", "notice_of_institution", "answer")
+PHASE_KINDS = ("complaint", "notice_of_institution", "answer", "ruling", "final_id", "commission_notice",
+               "commission_opinion")
+PHASE = 3  # a summary written by an earlier phase is due for rewriting
 CHARS_PER_TOKEN = 3.0  # on the low side, so the pre-call estimate errs high
 MAX_PROMPT_CHARS = 180_000
 
@@ -110,9 +115,31 @@ def _now() -> str:
     return datetime.now(timezone.utc).isoformat(timespec="seconds")
 
 
+def _selection(store: Store, key: str, cfg: summary_config.SummaryConfig):
+    return select(store.documents.get(key) or [], max_answer_groups=cfg.max_answer_groups, max_rulings=cfg.max_rulings)
+
+
 def phase_items(store: Store, key: str, cfg: summary_config.SummaryConfig) -> list[Item]:
-    sel = select(store.documents.get(key) or [], max_answer_groups=cfg.max_answer_groups, max_rulings=cfg.max_rulings)
-    return [item for item in sel.read if item.kind in PHASE_KINDS]
+    return [item for item in _selection(store, key, cfg).read if item.kind in PHASE_KINDS]
+
+
+def _facts(store: Store, key: str, cfg: summary_config.SummaryConfig) -> tuple[dict[str, dict[str, Any]], str]:
+    """The title and claims facts, numbered, and a fingerprint of what they
+    were drawn from, so a new order or a rebuilt claims analysis makes the
+    summary due for rewriting."""
+    from ..claims import build as claims_build
+
+    titles = facts.title_facts(_selection(store, key, cfg))
+    analysis = claims_build.load(store.data_dir, key)
+    claims = facts.claims_facts(analysis)
+    basis = ",".join(f["doc_id"] for f in titles) + "|" + str((analysis or {}).get("built_at") or "")
+    return write.number_facts(titles, claims), basis
+
+
+def _stage(store: Store, key: str) -> str:
+    from ..nextactions import build as nextactions_build
+
+    return str(((nextactions_build.load(store.data_dir).get("cases") or {}).get(key) or {}).get("stage_label") or "")
 
 
 def _take_notes(store: Store, key: str, case: dict[str, Any], item: Item, cfg: summary_config.SummaryConfig,
@@ -195,19 +222,23 @@ def _build(store: Store, key: str, case: dict[str, Any], cfg: summary_config.Sum
 
     sources = sorted(r["doc_id"] for r in records)
     numbered, groups = write.number_notes(records)
+    known, facts_basis = _facts(store, key, cfg)
     reuse = (previous and previous.get("summary") and previous.get("sources") == sources
-             and previous.get("notes_version") == cfg.notes_version)
+             and previous.get("notes_version") == cfg.notes_version
+             and previous.get("facts_basis") == facts_basis and previous.get("phase") == PHASE
+             and not previous.get("writer_cut_off"))
     warnings: list[str] = []
+    cut_off = False
     if reuse:
         summary = previous["summary"]
         warnings = list(previous.get("warnings") or [])
         log("  The notes have not changed: the summary is kept as written.")
     else:
         user = write.user_message(key=key, title=str(case.get("title") or ""), status=str(case.get("status") or ""),
-                                  numbered=numbered, groups=groups)
-        log(f"  Writing the summary: {cfg.writer_model}, from {len(numbered)} note(s)")
+                                  numbered=numbered, groups=groups, facts=known, stage=_stage(store, key))
+        log(f"  Writing the summary: {cfg.writer_model}, from {len(numbered)} note(s) and {len(known)} fact(s)")
         answer, cost, cut_off = caller.call(cfg.writer_model, write.SYSTEM, write.TOOL, user, cfg.writer_max_output_tokens)
-        summary, warnings = write.check(answer, numbered, groups)
+        summary, warnings = write.check(answer, numbered, groups, known)
         if cut_off:
             warnings.append("the writer reached its output limit; the summary may end early")
         log(f"    {sum(len(summary[s]) for s in write.SECTIONS) + len(summary['answers'])} paragraph(s)  ${cost:.4f}")
@@ -215,9 +246,13 @@ def _build(store: Store, key: str, case: dict[str, Any], cfg: summary_config.Sum
     return {
         "key": key,
         "title": case.get("title"),
-        "phase": 2,
+        "phase": PHASE,
         "built_at": _now(),
         "sources": sources,
+        "facts_basis": facts_basis,
+        "writer_cut_off": cut_off,  # written again next time, not kept
+        "facts": {fid: {k: f.get(k) for k in ("type", "doc_id", "date", "label", "title", "text", "quote", "files")}
+                  for fid, f in known.items()},
         "notes_version": cfg.notes_version,
         "writer_model": cfg.writer_model if not reuse else previous.get("writer_model"),
         "notes_model": cfg.notes_model,
@@ -299,6 +334,8 @@ def state(store: Store, key: str, record: dict[str, Any] | None, cfg: summary_co
         return {"state": "create"}
     wanted = sorted(i.id for i in phase_items(store, key, cfg))
     new = [d for d in wanted if d not in set(record.get("sources") or [])]
-    if new or record.get("notes_version") != cfg.notes_version:
+    _, basis = _facts(store, key, cfg)
+    if (new or record.get("notes_version") != cfg.notes_version or record.get("phase") != PHASE
+            or record.get("facts_basis") != basis):
         return {"state": "new_documents", "new": len(new), "built_at": record.get("built_at")}
     return {"state": "up_to_date", "built_at": record.get("built_at")}

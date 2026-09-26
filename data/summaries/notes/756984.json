@@ -1,0 +1,186 @@
+{
+  "cost_usd": 0.023887,
+  "date": "2021-11-19",
+  "doc_id": "756984",
+  "file": "756984_1729472_1729472.pdf",
+  "kind": "answer",
+  "model": "claude-haiku-4-5-20251001",
+  "notes_version": 2,
+  "overview": "This is respondent Quanzhou ZhengDe Network Corp., d/b/a Amoji's response to Crocs, Inc.'s First Amended Complaint in ITC Investigation 337-TA-1270 concerning alleged trademark infringement of casual footwear and packaging. ZhengDe denies all allegations of Section 337 violations, trademark infringement, and the existence of a domestic industry, and asserts 21 affirmative defenses challenging the validity and enforceability of Crocs' trademarks.",
+  "pages_read": [
+    1,
+    2,
+    3,
+    4,
+    24,
+    25,
+    26,
+    27,
+    28,
+    29,
+    30,
+    31,
+    32,
+    33,
+    34,
+    35,
+    36,
+    37,
+    38,
+    39,
+    40,
+    41,
+    42,
+    43
+  ],
+  "points": [
+    {
+      "page": 29,
+      "point": "ZhengDe asserts the affirmative defense of non-infringement, denying that it has infringed any valid and enforceable trademarks and that it committed any acts in violation of Section 337.",
+      "quote": "ZhengDe has not and does not infringe any valid and enforceable Asserted Trademarks. ZhengDe also has not otherwise committed any acts in violation of 19 U.S.C. \u00a7 1337.",
+      "topic": "non_infringement"
+    },
+    {
+      "page": 24,
+      "point": "ZhengDe denies there is likelihood of confusion or dilution between its products and the Asserted Trademarks and denies that ZhengDe's products cause substantial injury to Crocs.",
+      "quote": "ZhengDe denies that there is a likelihood of confusion between ZhengDe's products and the Asserted Trademarks. ZhengDe further denies that there is a likelihood of dilution between ZhengDe's products and the Asserted Trademarks.",
+      "topic": "non_infringement"
+    },
+    {
+      "page": 31,
+      "point": "ZhengDe asserts that the Asserted Trademarks are functional and therefore invalid and unprotectable, that they are merely ornamental and not inherently distinctive, and that they lack secondary meaning.",
+      "quote": "The Asserted Trademarks are functional, and are therefore invalid and unprotectable and the underlying federal registration should be cancelled. The Asserted Trademarks are merely ornamental, and are therefore in valid and unprotectable.",
+      "topic": "invalidity"
+    },
+    {
+      "page": 31,
+      "point": "ZhengDe contends that the Asserted Trademarks lack distinctiveness and secondary meaning because the design elements are part of a genre of shoes not limited to a single source or manufacturer.",
+      "quote": "the design elements claimed by Crocs are part of a genre of shoe that is not limited to a single source or manufacturer and therefore, cannot convey trademark rights.",
+      "topic": "invalidity"
+    },
+    {
+      "page": 32,
+      "point": "ZhengDe asserts that the Asserted Trademarks are comprised of ornamental elements that are not source-identifying and therefore Crocs cannot assert exclusive trademark rights in them.",
+      "quote": "The Asserted Trademarks are comprised of various ornamental elements that are not source identifying. Accordingly, Crocs cannot assert exclusive trademark rights in them.",
+      "topic": "invalidity"
+    },
+    {
+      "page": 30,
+      "point": "ZhengDe asserts the affirmative defense that Complainant does not have valid, protectable marks in which it enjoys any rights that may be asserted against ZhengDe.",
+      "quote": "Complainant has not valid, protectable marks in which it enjoys any rights that may be asserted against ZhengDe.",
+      "topic": "validity"
+    },
+    {
+      "page": 29,
+      "point": "ZhengDe asserts the affirmative defense of fair use, claiming the claims are barred by the doctrines of descriptive and/or nominative fair use.",
+      "quote": "The claims made in the Complaint are barred, in whole or in part, by the doctrine of descriptive and/or nominative fair use.",
+      "topic": "other_defenses"
+    },
+    {
+      "page": 30,
+      "point": "ZhengDe asserts the affirmative defense of functionality, claiming the claims are barred because the alleged marks and their use are functional.",
+      "quote": "The claims made in the Complaint and the relief sought therein are barred, in whole or in part, on the basis that the alleged marks at issue and the use of said marks are functional.",
+      "topic": "other_defenses"
+    },
+    {
+      "page": 30,
+      "point": "ZhengDe asserts the affirmative defense that the marks at issue lack distinctiveness, including secondary meaning.",
+      "quote": "The claims made in the Complaint and the relief sought therein are barred, in whole or in part, on the basis that the marks at issue lack distinctiveness, in cluding, without limitation, secondary meaning.",
+      "topic": "other_defenses"
+    },
+    {
+      "page": 31,
+      "point": "ZhengDe asserts the affirmative defense that the marks at issue are generic.",
+      "quote": "The claims made in the Complaint and the relief sought therein are barred, in whole or in part, on the basis that the marks at issue are generic.",
+      "topic": "other_defenses"
+    },
+    {
+      "page": 31,
+      "point": "ZhengDe asserts the affirmative defense of waiver, estoppel, acquiescence, and/or laches barring the claims in the Complaint.",
+      "quote": "The claims made in the Complaint and the relief sought therein are barred, in whole or in part, by the doctrines of waiver, estoppel, acquiescence, and/or laches.",
+      "topic": "other_defenses"
+    },
+    {
+      "page": 31,
+      "point": "ZhengDe asserts the affirmative defense of unclean hands barring Crocs' claims.",
+      "quote": "The claims made in the Complaint are barred, in whole or in part, by the doctrine of unclean hands.",
+      "topic": "other_defenses"
+    },
+    {
+      "page": 32,
+      "point": "ZhengDe asserts that there is no likelihood of confusion, deception or misleading of the public and that Complainant has failed to establish that the asserted trademarks are distinctive or exclusively associated with Complainant.",
+      "quote": "There exists no likelihood of confusion, deception or misleading of the public. Complainant has also failed to establish that the a sserted trademarks are distinctive or exclusively associated with Complainant.",
+      "topic": "other_defenses"
+    },
+    {
+      "page": 32,
+      "point": "ZhengDe asserts the affirmative defense that Complainant's Asserted Trademarks are not famous as defined by federal trademark laws.",
+      "quote": "Complainant's Asserted Trademarks are not famous as defined by the federal trademark laws.",
+      "topic": "other_defenses"
+    },
+    {
+      "page": 33,
+      "point": "ZhengDe asserts the affirmative defense that it has not diluted the distinctive quality of any alleged famous trademarks of Complainant.",
+      "quote": "Amoji does not and has not diluted the distinctive quality of any alleged famous trademarks of Complainant. The Asserted Trademarks lack distinctiveness and are not famous.",
+      "topic": "other_defenses"
+    },
+    {
+      "page": 33,
+      "point": "ZhengDe asserts the affirmative defense of trademark misuse, alleging that Crocs is seeking an improper and unconstitutional monopoly on the design, which harms competition by controlling consumer prices and eliminating alternative design choices.",
+      "quote": "Complainant has been using and is attempting to further use the Asserted Trademarks in violation of antitrust laws, inter alia, by seeking an improper and unconstitutional monopoly on the design at issue.",
+      "topic": "other_defenses"
+    },
+    {
+      "page": 30,
+      "point": "ZhengDe asserts the affirmative defense that Complainant has not adequately alleged and cannot prove the existence of a domestic industry or that a domestic industry is in the process of being established as required by Section 337.",
+      "quote": "Complainant has not adequately allege d and cannot prove th e existence of a domestic industry or that a domesti c industry is in the process of being established, as required by Section 337(a).",
+      "topic": "domestic_industry"
+    },
+    {
+      "page": 30,
+      "point": "ZhengDe asserts the affirmative defense that the remedies Complainant seeks would be contrary to the public interest and will adversely affect competitive conditions and harm consumers by limiting competition and reducing choice.",
+      "quote": "The remedies that Complainant seeks in this Investigation would be contrary to the public interest and therefore are unwarrant ed under 19 U.S.C. \u00a7 1337(d)-(f). Specifically, Complainant's requested relief will adversely affect competitive conditions in the U.S. economy and harm U.S. consumers by limiting competition and reducing consumer choice.",
+      "topic": "relief"
+    },
+    {
+      "page": 32,
+      "point": "ZhengDe asserts the affirmative defense that Complainant cannot prove the existence of substantial injury in connection with the asserted trademarks as required by Section 337.",
+      "quote": "Complainant cannot prove the existence of a substantial injury, pursuant to Section 337(a)(1)(A) in connection with the asserted trademarks.",
+      "topic": "relief"
+    }
+  ],
+  "rejected": [
+    {
+      "page": 28,
+      "point": "Respondent Quanzhou ZhengDe Network Corp., d/b/a Amoji, is a company that has imported certain footwear products into the United States and does not manufacture these products.",
+      "quote": "ZhengDe has imported certain footwear products into the United States. As ZhengDe does not manufacture these products, it has no capacity to produce such produc ts.",
+      "rejected": "quote not found in the filing",
+      "topic": "respondents"
+    },
+    {
+      "page": 2,
+      "point": "ZhengDe denies that it engaged in unfair acts or violated Section 337, denies the validity or enforceability of any trademarks at issue, denies that Complainant can prove infringement, denies the existence of a domestic industry, and denies that Complainant is entitled to relief.",
+      "quote": "ZhengDe denies that it has engaged in any unfair acts or violated Section 337. ZhengDe denies that any trademarks at issue are valid or enforceable.",
+      "rejected": "quote not found in the filing",
+      "topic": "general_response"
+    },
+    {
+      "page": 33,
+      "point": "ZhengDe contends that Crocs or its affiliates have abandoned the Asserted Trademarks through acts or omissions, rendering them invalid or unenforceable and subject to cancellation.",
+      "quote": "Complainant or its affiliates or predecessors-in-interest, has, through acts or omissions, abandoned at least the Asserted Trademarks alleged as against Amoji rendering it invalid or unenforceable.",
+      "rejected": "quote not found in the filing",
+      "topic": "invalidity"
+    },
+    {
+      "page": 28,
+      "point": "ZhengDe states it is presently unaware of the Harmonized Tariff Schedule item numbers for the Accused Products and that the United States is a significant market for its operations.",
+      "quote": "ZhengDe is presently unaware of the Harmonized Tariff Schedule item number(s) for the Accused Products. ZhengDe believes that the United States is a significant market for its operations.",
+      "rejected": "quote not found in the filing",
+      "topic": "importation"
+    }
+  ],
+  "taken_at": "2026-09-26T21:07:40+00:00",
+  "title": "Quanzhou ZhengDe Network Corp., d/b/a Amoji's Response to the First Amended Complaint and the Notice of Investigation",
+  "truncated": false,
+  "who": "Quanzhou ZhengDe Network Corp., d/b/a Amoji"
+}

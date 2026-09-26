@@ -1,0 +1,136 @@
+{
+  "cost_usd": 0.012851,
+  "date": "2025-03-11",
+  "doc_id": "845588",
+  "file": "845588_2338990_2338990.pdf",
+  "kind": "commission_notice",
+  "model": "claude-haiku-4-5-20251001",
+  "notes_version": 2,
+  "overview": "This is a notice of the Commission's determination to review a Final Initial Determination (FID) issued by an Administrative Law Judge on December 19, 2024 that found no violation of Section 337 in Investigation 337-TA-1384 concerning certain passive optical network equipment. On March 11, 2025, the Commission determined to review the FID in its entirety.",
+  "pages_read": [
+    1,
+    2,
+    3
+  ],
+  "points": [
+    {
+      "page": 1,
+      "point": "Optimum Communications Services, Inc. of Jersey City, New Jersey is the complainant; the respondents are Hangzhou Softel Optic Co., Ltd., Hangzhou DAYTAI Network Technologies Co., Ltd., and Hangzhou Sumlo Industrial Co., Ltd., all of Hangzhou, China; and the Office of Unfair Import Investigations is also a party.",
+      "quote": "Optimum Communications Services, Inc. of Jersey City, New Jersey (\"Optimum\"). 88 FR 90200-01 (Dec. 29, 2023). The complaint, as supplemented, alleges violations of section 337 of the Tariff Act of 1930",
+      "topic": "parties"
+    },
+    {
+      "page": 1,
+      "point": "The complaint alleges violations of Section 337 based on infringement of claims 1 and 12-14 of U.S. Patent No. 7,333,511 ('511 patent) and claims 1 and 3 of U.S. Patent No. 7,558,260 ('260 patent) by certain passive optical network equipment.",
+      "quote": "based upon the importation into the United States, the sale for importation, and the sale in the United States after importation of certain passive optical network equipment by reason of the infringement of certain claims of U.S. Patent Nos. 7,333,511",
+      "topic": "issue"
+    },
+    {
+      "page": 1,
+      "point": "The complaint alleges that a domestic industry exists in the asserted patents.",
+      "quote": "The complaint further alleges that a domestic industry exists.",
+      "topic": "domestic_industry"
+    },
+    {
+      "page": 1,
+      "point": "All respondents were found in default on May 9, 2024.",
+      "quote": "On May 9, 2024, the Commission found all Respondents in default.",
+      "topic": "respondents"
+    },
+    {
+      "page": 2,
+      "point": "The ALJ's Final Initial Determination issued December 19, 2024 found no violation of Section 337 with respect to claims 1 and 12-14 of the '511 patent and claims 1 and 3 of the '260 patent.",
+      "quote": "On December 19, 2024, the ALJ issued the FID finding no violation of section 337 with respect to claims 1 and 12-14 of the '511 patent and claims 1 and 3 of the '260 patent.",
+      "topic": "findings"
+    },
+    {
+      "page": 2,
+      "point": "The ALJ found that termination is proper because, due to post-institution assignments of the asserted patents, Optimum is no longer a proper complainant.",
+      "quote": "Specifically, the FID finds: (1) termination is proper because, due to post-institution assignments of the asserted patents, Optimum is no longer a proper complainant",
+      "topic": "findings"
+    },
+    {
+      "page": 2,
+      "point": "The ALJ found that the importation requirement has not been satisfied.",
+      "quote": "the importation requirement has not been satisfied",
+      "topic": "importation"
+    },
+    {
+      "page": 2,
+      "point": "The ALJ found that Optimum has not shown that either claims 1 and 12-14 of the '511 patent or claims 1 and 3 of the '260 patent are infringed.",
+      "quote": "Optimum has not shown that either claims 1 and 12-14 of the '511 patent or claims 1 and 3 of the '260 patent are infringed",
+      "topic": "infringement"
+    },
+    {
+      "page": 2,
+      "point": "The ALJ found that Optimum has not satisfied the technical prong of the domestic industry requirement for the '511 patent or the '260 patent.",
+      "quote": "Optimum has not satisfied the technical prong of the domestic industry requirement for the '511 patent or the '260 patent",
+      "topic": "domestic_industry"
+    },
+    {
+      "page": 2,
+      "point": "The ALJ found that Optimum has not satisfied the economic prong of the domestic industry requirement for the '511 patent or the '260 patent.",
+      "quote": "Optimum has not satisfied the economic prong of the domestic industry requirement for the '511 patent or the '260 patent",
+      "topic": "domestic_industry"
+    },
+    {
+      "page": 2,
+      "point": "The ALJ's recommended determination recommends, if the Commission finds a violation, issuing a general exclusion order under Section 337(d)(2)(A).",
+      "quote": "the RD recommends, if the Commission finds a violation, issuing a general exclusion order (\"GEO\") under section 337(d)(2)(A)",
+      "topic": "remedy"
+    },
+    {
+      "page": 2,
+      "point": "The ALJ recommended that the evidence does not support that there is a widespread pattern of circumvention and, thus, does not support issuance of a GEO under Section 337(d)(2)(B).",
+      "quote": "the evidence does not support that there is a widespread pattern of circumvention and, thus, does not support issuance of a GEO under section 337(d)(2)(B)",
+      "topic": "remedy"
+    },
+    {
+      "page": 2,
+      "point": "The ALJ recommended that because Optimum failed to show a violation of Section 337 by substantial, reliable, and probative evidence, a GEO should not be issued under Section 337(g)(2).",
+      "quote": "because Optimum failed to show a violation of section 337 by substantial, reliable, and probative evidence, the RD does not recommend issuing a GEO under section 337(g)(2)",
+      "topic": "remedy"
+    },
+    {
+      "page": 2,
+      "point": "The ALJ recommended that no cease and desist orders be issued.",
+      "quote": "The RD does not recommend issuing any cease and desist orders.",
+      "topic": "remedy"
+    },
+    {
+      "page": 2,
+      "point": "The ALJ recommended that, because Optimum failed to demonstrate the necessity of a bond, the Commission should issue a zero percent bond for any infringing products imported during the period of Presidential review.",
+      "quote": "the Commission should issue a zero percent (0%) bond for any infringing products imported during the period of Presidential review",
+      "topic": "remedy"
+    },
+    {
+      "page": 3,
+      "point": "On March 11, 2025, the Commission determined to review the Final Initial Determination in its entirety.",
+      "quote": "the Commission has determined to review the FID in its entirety.",
+      "topic": "decision"
+    },
+    {
+      "page": 2,
+      "point": "On January 21, 2025, the Commission published a post-RD Federal Register notice seeking submissions on public interest issues raised by the relief recommended by the ALJ.",
+      "quote": "On January 21, 2025, the Commission published its post-RD Federal Register notice seeking submissions on public interest issues",
+      "topic": "next_steps"
+    },
+    {
+      "page": 2,
+      "point": "On February 10, 2025, Antony Hernandez filed a submission supporting Optimum's request for a general exclusion order.",
+      "quote": "On February 10, 2025, Antony Hernandez filed a submission supporting Optimum's request for a GEO.",
+      "topic": "public_interest"
+    },
+    {
+      "page": 2,
+      "point": "On February 11, 2025, Xenogenic filed a submission arguing against issuance of a general exclusion order.",
+      "quote": "On February 11, 2025, Xenogenic filed a submission arguing against issuance of a GEO.",
+      "topic": "public_interest"
+    }
+  ],
+  "rejected": [],
+  "taken_at": "2026-09-26T21:06:09+00:00",
+  "title": "Commission Determination to Review a Final Initial Determination Finding No Violation of Section 337",
+  "truncated": false,
+  "who": ""
+}

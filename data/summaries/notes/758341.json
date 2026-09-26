@@ -1,0 +1,177 @@
+{
+  "cost_usd": 0.026207,
+  "date": "2021-12-10",
+  "doc_id": "758341",
+  "file": "758341_1742281_1742281.pdf",
+  "kind": "answer",
+  "model": "claude-haiku-4-5-20251001",
+  "notes_version": 2,
+  "overview": "This is a respondent's answer to Crocs Inc.'s amended complaint in ITC Investigation 337-TA-1270 alleging that Fujian Wanjiaxin Industrial Developing, Inc. and other respondents imported and sold casual footwear that infringes three Crocs trademarks (Registration Nos. 3,836,415; 5,149,328; and 5,273,875). Wanjiaxin generally denies the allegations and asserts eleven affirmative defenses including non-infringement, invalidity, lack of domestic industry, and public interest considerations.",
+  "pages_read": [
+    1,
+    2,
+    3,
+    4,
+    114,
+    115,
+    116,
+    117,
+    118,
+    119,
+    120,
+    121,
+    122,
+    123,
+    124,
+    125,
+    126,
+    127,
+    128,
+    129,
+    130,
+    131,
+    132,
+    133
+  ],
+  "points": [
+    {
+      "page": 1,
+      "point": "Fujian Wanjiaxin Industrial Developing, Inc., also known as Fujian Wanjiaxin Light Industrial Developing, Inc., is a respondent in this Section 337 investigation. Maxhouse Rise Ltd. is also named as a respondent.",
+      "quote": "Respondent Fujian Wanjiaxin Industrial Developing, Inc. a/k/a Fujian Wanjiaxin Light Industrial Developing, Inc. (\"Wanjiaxin\") hereby responds to the First Amended Complaint filed under Section 337",
+      "topic": "respondents"
+    },
+    {
+      "page": 1,
+      "point": "Crocs, Inc. filed the First Amended Complaint against Wanjiaxin on October 22, 2021, and the Commission issued a Notice of Investigation on July 6, 2021.",
+      "quote": "First Amended Complaint filed under Section 337 of the Tariff Act of 1930 (\"Section 337\") by Crocs, Inc. (\"Crocs\" or \"Complainant\") on October 22, 2021",
+      "topic": "parties"
+    },
+    {
+      "page": 2,
+      "point": "The complaint asserts infringement of three Crocs trademarks: U.S. Trademark Registration No. 3,836,415 (the '415 mark), U.S. Trademark Registration No. 5,149,328 (the '328 mark), and U.S. Trademark Registration No. 5,273,875 (the '875 mark).",
+      "quote": "infringement of certain trademarks rights held by Complainant, including but not limited to U.S. Trademark Registration No. 3,836,415 (\"the '415 mark\"); U.S. Trademark Registration No. 5,149,328 (\"the '328 mark\"); and U.S. Trademark Registration No. 5,273,875 (\"the '875 mark\")",
+      "topic": "ip_asserted"
+    },
+    {
+      "page": 1,
+      "point": "Wanjiaxin denies that it has violated Section 337 by engaging in unfair competition or importing, selling for importation, or selling casual footwear products that infringe Crocs's asserted trademarks, except as specifically admitted in the response.",
+      "quote": "Wanjiaxin denies that it has violated Section 337 by engaging in unfair competition or by importing into the United States, selling for importation, or selling within the United States after importation any product that infringes Complainant's asserted trademarks.",
+      "topic": "general_response"
+    },
+    {
+      "page": 2,
+      "point": "Crocs seeks a general exclusion order or, in the alternative, a limited exclusion order, and cease and desist orders. Wanjiaxin denies that Crocs is entitled to any such relief.",
+      "quote": "Complainant requests that the Commission institute an investigation and, after the investigation, issue a general exclusion order, or, in the alternative, a limited exclusion order, and cease and desist orders.",
+      "topic": "relief"
+    },
+    {
+      "page": 121,
+      "point": "Wanjiaxin asserts that the Accused Products do not infringe the 3D Marks because they are not substantially similar to the marks, were intended to compete as generic foam clogs, and there is no likelihood of confusion given differences in appearance, price, commercial impression, channels of trade, and buyer bases.",
+      "quote": "The Accused Products do not infringe the 3D Marks because, among other reasons: (1) the Accused Products are not substantially similar to the 3D Marks; (2) the Accused Products were intended to compete in the market for foam clogs with a generic or basic design",
+      "topic": "non_infringement"
+    },
+    {
+      "page": 121,
+      "point": "Wanjiaxin argues that the 3D Marks have not acquired fame, there are multiple coexisting uses similar to the marks in connection with similar goods, and there are no incidents of actual confusion.",
+      "quote": "(vi) the 3D Marks have not acquired fame; (vii) there are multiple coexisting uses similar to the 3D Marks in connection with similar goods; (viii) there are no incidents of actual confusion",
+      "topic": "non_infringement"
+    },
+    {
+      "page": 122,
+      "point": "Wanjiaxin argues that the 3D Marks are invalid and unprotectable because they are functional (Crocs has touted utilitarian advantages such as ventilation ports), comprised of non-source-identifying ornamental elements, and generic as they represent a genre or style of shoe rather than identifying a single source.",
+      "quote": "the 3D Marks and their use are functional\u2014for example, Complainant has repeatedly touted utilitarian advantages of its putative mark features, such as the shoes' \"ventilation ports\"",
+      "topic": "invalidity"
+    },
+    {
+      "page": 122,
+      "point": "Wanjiaxin contends that the 3D Marks lack secondary meaning because consumers do not understand the design elements as indicating Crocs as the source, and numerous third parties use the same or substantially similar designs to identify themselves or indicate a generic clog-shaped casual shoe without reference to source.",
+      "quote": "consumers do not understand the primary significance of the claimed mark and/or trade dress to indicate Crocs as the source because, among other reasons, Crocs is not the substantially exclusive user of the claimed designs.",
+      "topic": "invalidity"
+    },
+    {
+      "page": 122,
+      "point": "Wanjiaxin asserts as a separate defense that Crocs's Asserted Trademarks are not famous as defined by federal trademark laws and there is no evidence they are universally recognized by the general consuming public as a designation of source.",
+      "quote": "there is no evidence that the 3D Marks are universally recognized by the general consuming public of the United States as a designation of source of Complainant's products.",
+      "topic": "invalidity"
+    },
+    {
+      "page": 122,
+      "point": "Wanjiaxin asserts that Crocs's trademarks do not dilute any distinctive quality of famous marks because the marks lack distinctiveness, are not famous, and the Accused Products are not similar to the Asserted Trademarks.",
+      "quote": "Wanjiaxin does not dilute and has not diluted the distinctive quality of any alleged famous trademarks of Complainant.",
+      "topic": "other_defenses"
+    },
+    {
+      "page": 123,
+      "point": "Wanjiaxin argues that Crocs has failed to adequately allege and cannot establish a domestic industry as required by Section 337(a)(2) and (a)(3), including failure to establish the economic prong requiring significant investment in plant and equipment or significant employment of labor or capital relating to articles protected by the marks.",
+      "quote": "Complainant has not adequately alleged and cannot establish the existence of a domestic industry for the Asserted Trademarks as required by Section 337(a)(2), and as defined, in part, by Section 337(a)(3).",
+      "topic": "domestic_industry"
+    },
+    {
+      "page": 123,
+      "point": "Wanjiaxin contends that Crocs also has failed to satisfy the technical prong of the domestic industry requirement in this case.",
+      "quote": "Complainant also has failed to satisfy the technical prong of the domestic industry requirement in this case.",
+      "topic": "domestic_industry"
+    },
+    {
+      "page": 123,
+      "point": "Wanjiaxin argues that it has not infringed and does not induce or contribute to infringement by any other party, and that Complainant has failed to state a claim upon which relief can be granted.",
+      "quote": "Complainant fails to state a claim upon which relief can be granted.",
+      "topic": "other_defenses"
+    },
+    {
+      "page": 124,
+      "point": "Wanjiaxin asserts that Complainant cannot prove the existence of a substantial injury pursuant to Section 337(a)(1)(A).",
+      "quote": "Complainant cannot prove the existence of a substantial injury, pursuant to Section 337(a)(1)(A).",
+      "topic": "other_defenses"
+    },
+    {
+      "page": 124,
+      "point": "Wanjiaxin argues that requested relief should not issue because of its potential adverse effects upon public health and welfare, competitive conditions in the United States economy, production of like articles in the United States, and United States consumers.",
+      "quote": "the requested relief should not issue because of its potential adverse effects upon the public health and welfare, competitive conditions in the United States economy, the production of like or directly competitive articles in the United States",
+      "topic": "relief"
+    },
+    {
+      "page": 124,
+      "point": "Wanjiaxin asserts that any use of the Asserted Trademarks by Wanjiaxin would be protected by the fair use doctrine, being descriptive or generic and used fairly and in good faith only to describe the Accused Products.",
+      "quote": "the use of any aspect of the Asserted Trademarks would be descriptive or generic of, and used fairly and in good faith only to describe, the Accused Products.",
+      "topic": "other_defenses"
+    },
+    {
+      "page": 125,
+      "point": "Wanjiaxin contends that Crocs has waited an unreasonable amount of time to assert its claims, causing substantial prejudice to Wanjiaxin under the doctrine of laches.",
+      "quote": "Complainant waited an unreasonable amount of time to assert its claims, causing substantial prejudice to Wanjiaxin.",
+      "topic": "other_defenses"
+    },
+    {
+      "page": 125,
+      "point": "Wanjiaxin asserts an unclean hands defense, alleging that Crocs is attempting to improperly extend its expired design rights through the Asserted Trademarks to maintain an unconstitutional monopoly in the relevant market.",
+      "quote": "Complainant is attempting to improperly extend its expired design rights through the Asserted Trademarks to maintain an unconstitutional monopoly in the relevant market",
+      "topic": "unenforceability"
+    },
+    {
+      "page": 126,
+      "point": "Wanjiaxin requests that the Commission determine that Wanjiaxin has not imported or sold footwear covered by valid and enforceable trademark claims and that Complainant has failed to establish a domestic industry and substantial injury.",
+      "quote": "Determine that Wanjiaxin has not imported, sold for importation, or sold within the United States after importation Certain Casual Footwear and Packaging Thereof that are covered by a valid and enforceable asserted claim of the Asserted Trademarks",
+      "topic": "relief"
+    },
+    {
+      "page": 126,
+      "point": "Wanjiaxin requests that the Commission find no violation of Section 337 and deny Crocs's request for a general exclusion order, limited exclusion order, cease and desist orders, and any other relief.",
+      "quote": "Find that no violation of Section 337 of the Tariff Act of 1930, as amended, exists by reason of any manufacture, importation, offer for sale, or sale by Wanjiaxin",
+      "topic": "relief"
+    }
+  ],
+  "rejected": [
+    {
+      "page": 124,
+      "point": "Wanjiaxin argues that Crocs's requests for relief are barred by the doctrines of waiver, estoppel, and laches because Crocs has intentionally and unequivocally relinquished its right to enforce the marks and Wanjiaxin relied on Crocs's conduct.",
+      "quote": "Complainant, through its conduct, has intentionally and unequivocally relinquished its right to enforce the Asserted Trademarks.",
+      "rejected": "quote not found in the filing",
+      "topic": "other_defenses"
+    }
+  ],
+  "taken_at": "2026-09-26T21:08:51+00:00",
+  "title": "Response of Fujian Wanjiaxin Industrial Developing, Inc. to the First Amended Complaint and Notice of Investigation",
+  "truncated": false,
+  "who": "Fujian Wanjiaxin Industrial Developing, Inc., a/k/a Fujian Wanjiaxin Light Industrial Developing, Inc.; Maxhouse Rise Ltd."
+}

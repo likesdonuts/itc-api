@@ -1,0 +1,212 @@
+{
+  "cost_usd": 0.032649,
+  "date": "2024-08-05",
+  "doc_id": "828317",
+  "file": "828317_2214474_2214474.pdf",
+  "kind": "final_id",
+  "model": "claude-haiku-4-5-20251001",
+  "notes_version": 2,
+  "overview": "This is the Administrative Law Judge's final initial determination in ITC Investigation 337-TA-1366 concerning alleged infringement of patents relating to gallium nitride (GaN) semiconductor devices. The ALJ found that certain Innoscience products infringe claims 2 and 3 of U.S. Patent No. 8,350,294 (the '294 patent), establishing a violation of Section 337, but found no infringement of U.S. Patent No. 8,404,508 (the '508 patent). The ALJ also recommended a limited exclusion order, cease and desist orders, and a 5% bond during Presidential review.",
+  "pages_read": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10,
+    11,
+    12,
+    13,
+    14,
+    15,
+    16,
+    17,
+    18,
+    19,
+    20,
+    152,
+    153,
+    154,
+    155,
+    156,
+    157,
+    158,
+    159,
+    160,
+    161,
+    162,
+    163,
+    164,
+    165,
+    166
+  ],
+  "points": [
+    {
+      "page": 12,
+      "point": "The complainant is Efficient Power Conversion Corporation (EPC), a Delaware corporation headquartered in El Segundo, California, founded in 2007 and engaged in gallium nitride-based semiconductor devices.",
+      "quote": "Founded in 20o7, complainant Efficient Power Conversion Corporation (\u00b0EPC' or \"Complainant') is a Delaware corporation having a principal place of business in El Segunda, California.",
+      "topic": "parties"
+    },
+    {
+      "page": 12,
+      "point": "The respondents are Innoscience (Zhuhai) Technology Company, Ltd., headquartered in Zhuhai, Guangdong, China, and Innoscience America, Inc., a California corporation with a principal place of business in Santa Clara, California.",
+      "quote": "Innoscience (Zhuhai) Technology, Ltd., has a principal place of business and headquarters at No. 39, Jinyuan 2nd Road, High-Tech Zone, Zhuhai, Guangdong, 519099 China.",
+      "topic": "parties"
+    },
+    {
+      "page": 12,
+      "point": "The asserted patents are U.S. Patent No. 8,350,294 (the '294 patent'), which issued on January 8, 2013, and U.S. Patent No. 8,404,508 (the '508 patent'), which issued on March 26, 2013; both name the same five inventors: Alexander Lidow, Robert Beach, Alana Nakata, Jianjun Cao, and Guang Yuan Zhao.",
+      "quote": "issued on January 8, 2013, and names Alexander Lidow, Robert Beach, Jianjun Cao, Alana Nakata, and Guang Yuan Zhao as inventors.",
+      "topic": "ip_asserted"
+    },
+    {
+      "page": 13,
+      "point": "EPC asserts claims 1 through 3 of the '294 patent and claim 1 of the '508 patent in this investigation.",
+      "quote": "EPC asserts claims 1 through 3 of the '294 patent in this investigation.",
+      "topic": "ip_asserted"
+    },
+    {
+      "page": 15,
+      "point": "The accused products are GaN enhancement mode transistors manufactured and/or sold by Innoscience, classified as low voltage and high voltage products, consisting of model numbers such as INN040W048A, INN650D140A, and others.",
+      "quote": "The accused products are gallium nitride (GaN) enhancement mode transistors manufactured and/or sold by Innoscience.",
+      "topic": "products"
+    },
+    {
+      "page": 15,
+      "point": "The technology relates to enhancement-mode gallium nitride (GaN) transistors and integrated circuits, including the structure and manufacturing methods for GaN-based semiconductor devices.",
+      "quote": "EPC manufactures and sells enhancement-mode gallium nitride (GaN) transistors and integrated circuits.",
+      "topic": "technology"
+    },
+    {
+      "page": 18,
+      "point": "The ALJ found that Innoscience imported the accused products into the United States through multiple methods, including direct importation from Zhuhai, China and shipment to customers in the United States, and that Innoscience does not dispute this allegation.",
+      "quote": "Innoscience does not dispute EPC's allegation that Innoscience has imported the Accused Products into the United States.",
+      "topic": "importation"
+    },
+    {
+      "page": 152,
+      "point": "The ALJ construed 'etching away the doped GaN layer except a portion of the doped layer beneath the gate contact' in the '508 patent; for element [1e], the ALJ determined that 'depositing a gate contact layer on the doped GaN layer' requires direct contact between the deposited gate contact layer and the doped GaN layer.",
+      "quote": "Even if there is some other context where \"on\" does not require \"direct contact,\" EPC never contends that an ordinary artisan would understand that the step of \"depositing\" a layer on an existing layer can be accomplished without direct contact between the two layers.",
+      "topic": "claim_construction"
+    },
+    {
+      "page": 160,
+      "point": "The ALJ found that the accused Innoscience products infringe claims 1, 2, and 3 of the '294 patent.",
+      "quote": "The Accused Products infringe claims 1, 2, and 3 of the '294 patent.",
+      "topic": "infringement"
+    },
+    {
+      "page": 160,
+      "point": "The ALJ found that the accused Innoscience products do not infringe claim 1 of the '508 patent.",
+      "quote": "The Accused Products do not infringe claim 1 of the '508 patent.",
+      "topic": "non_infringement"
+    },
+    {
+      "page": 160,
+      "point": "The ALJ found that claim 1 of the '294 patent has been shown invalid as anticipated under 35 U.S.C. \u00a7 102 by the prior art.",
+      "quote": "Claim 1 of the '294 patent has been shown invalid as anticipated in view of the prior art under 35 U.S.C. s 102.",
+      "topic": "invalidity"
+    },
+    {
+      "page": 160,
+      "point": "The ALJ found that claims 2 and 3 of the '294 patent have not been shown invalid as anticipated under 35 U.S.C. \u00a7 102.",
+      "quote": "Claims 2 and 3 of the '294 patent have not been shown invalid as anticipated in view of the prior art under 35 U.S.C. s 102.",
+      "topic": "validity"
+    },
+    {
+      "page": 160,
+      "point": "The ALJ found that claims 2 and 3 of the '294 patent have not been shown invalid as obvious under 35 U.S.C. \u00a7 103.",
+      "quote": "Claims 2 and 3 of the '294 patent have not been shown invalid as obvious in view of the prior art under 35 U.S.C. s 103.",
+      "topic": "validity"
+    },
+    {
+      "page": 160,
+      "point": "The ALJ found that claim 1 of the '508 patent has not been shown invalid as obvious under 35 U.S.C. \u00a7 103.",
+      "quote": "Claim 1 of the '508 patent has not been shown invalid as obvious in view of the prior art under 35 U.S.C. s 103.",
+      "topic": "validity"
+    },
+    {
+      "page": 160,
+      "point": "The ALJ found that the technical prong of the domestic industry requirement has been satisfied with respect to the '294 patent.",
+      "quote": "The technical prong of the domestic industry requirement has been satisfied with respect to the '294 patent.",
+      "topic": "domestic_industry"
+    },
+    {
+      "page": 159,
+      "point": "The ALJ found that the technical prong of the domestic industry requirement has not been satisfied with respect to the '508 patent because EPC's domestic industry products are made by a method that lacks step [1e], 'depositing a gate contact layer on the doped GaN layer,' because the gate contact is deposited on a doped AlGaN layer, not the doped GaN layer.",
+      "quote": "I find EPC has not shown that the domestic industry products are made by a method that practices every limitation of claim 1 of the '508 patent because EPC's method lacks step [1e], \"depositing a gate contact layer on the doped GaN layer.\"",
+      "topic": "domestic_industry"
+    },
+    {
+      "page": 160,
+      "point": "The ALJ found that the economic prong of the domestic industry requirement has been satisfied with respect to the '294 and '508 patents.",
+      "quote": "The economic prong of the domestic industry requirement has been satisfied with respect to the '294 and'508 patents.",
+      "topic": "domestic_industry"
+    },
+    {
+      "page": 8,
+      "point": "The ALJ determined that a violation of Section 337 has occurred based on infringement of claims 2 and 3 of U.S. Patent No. 8,350,294, but no violation based on infringement of U.S. Patent No. 8,404,508.",
+      "quote": "I have determined that no violation of section 337 of the Tariff Act of 1930, as amended, has occurred in the importation into the United States, the sale for importation, or the sale within the United States affer importation of certain semiconductor devices, and methods of manufacturing same and products containing the same, based on the alleged infringement of U.S. Patent No. 8,404,508.",
+      "topic": "result"
+    },
+    {
+      "page": 162,
+      "point": "The ALJ recommended that the Commission issue a limited exclusion order barring entry of products that infringe the '294 patent, rejecting Innoscience's proposals to limit the order to specific product models or delay its effective date.",
+      "quote": "If the Commission determines that a violation of section 337 has occurred, I recommend that the Commission follow its general practice of issuing limited exclusion orders barring entry of products that infringe the Asserted Patents.",
+      "topic": "remedy"
+    },
+    {
+      "page": 164,
+      "point": "The ALJ recommended cease and desist orders directed to the Innoscience respondents based on evidence that Innoscience has commercial inventory in the United States and maintains domestic operations that could undercut an exclusion order remedy.",
+      "quote": "If Innoscience's domestic operations are allowed to continue to offer and trade in its domestic inventory of of infringing goods, a limited exclusion order remedy will be undermined.",
+      "topic": "remedy"
+    },
+    {
+      "page": 166,
+      "point": "The ALJ recommended a bond rate of 5% during the 60-day Presidential review period to protect EPC from injury, based on license offers EPC had made to other parties for the '294 patent.",
+      "quote": "It is my recommendation that if the Commission determines that a violation of section 337 has occurred, the Commission set a bond rate of 5%.",
+      "topic": "remedy"
+    },
+    {
+      "page": 164,
+      "point": "The ALJ declined to suspend remedial orders based on pending Patent Trial and Appeal Board (PTAB) proceedings, noting that the PTAB has not issued a final written decision finding any asserted claims unpatentable.",
+      "quote": "The present record provides no basis to suspend remedial orders. The PTAB has not issued a final written decision finding any claims asserted in this investigation to be unpatentable, and it is possible that such a decision will never issue.",
+      "topic": "related_proceedings"
+    },
+    {
+      "page": 15,
+      "point": "EPC asserts that 250 of its products practice the asserted claims, including both low-voltage and high-voltage products classified as domestic industry products.",
+      "quote": "EPC asserts 250 of its products practice the asserted claims, including both low-voltage and high-voltage domestic industry products.",
+      "topic": "domestic_industry"
+    },
+    {
+      "page": 159,
+      "point": "The Commission has personal jurisdiction over all parties and in rem jurisdiction over the accused products; EPC has standing to assert the '294 and '508 patents; and the importation requirement of Section 337 is satisfied.",
+      "quote": "The Commission has personal jurisdiction over all parties and in rem jurisdiction over the accused products in this investigation.",
+      "topic": "holdings"
+    },
+    {
+      "page": 160,
+      "point": "The ALJ's initial determination establishes a violation of Section 337 based on infringement of claims 2 and 3 of the '294 patent only, with no violation for the '508 patent.",
+      "quote": "A violation of 19 U.S.C. s 1337 has been shown by the importation and sale of",
+      "topic": "outcome"
+    }
+  ],
+  "rejected": [
+    {
+      "page": 10,
+      "point": "The ALJ construed the term 'a compensated GaN layer' in claim 1 of the '294 patent; the parties and the ALJ relied on Markman v. Westview Instruments, Inc., 517 U.S. 370 (1996) for claim construction analysis.",
+      "quote": "Pursuant to Markman v. Westview Instruments, Inc., 517 U.S. 370 (1996), a claim construction hearing was convened on October 13, 2023.",
+      "rejected": "quote not found in the filing",
+      "topic": "claim_construction"
+    }
+  ],
+  "taken_at": "2026-09-26T21:01:27+00:00",
+  "title": "Initial Determination on Violation of Section 337 and Recommended Determination on Remedy and Bond",
+  "truncated": false,
+  "who": ""
+}

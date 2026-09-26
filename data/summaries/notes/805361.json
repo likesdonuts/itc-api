@@ -1,0 +1,256 @@
+{
+  "cost_usd": 0.043788,
+  "date": "2023-10-04",
+  "doc_id": "805361",
+  "file": "805361_2049567_2049567.pdf",
+  "kind": "commission_opinion",
+  "model": "claude-haiku-4-5-20251001",
+  "notes_version": 2,
+  "overview": "This is the Commission's October 2023 final opinion in Investigation 337-TA-1270 concerning alleged infringement of Crocs's 3D trademark designs and word mark \"CROCS\" by casual footwear products sold by Orly, Hobby Lobby, and Amoji. The Commission determined there was no violation of Section 337 because Crocs failed to prove likelihood of confusion, infringement, false designation of origin, or dilution.",
+  "pages_read": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10,
+    11,
+    12,
+    13,
+    14,
+    15,
+    16,
+    17,
+    18,
+    19,
+    20,
+    21,
+    22,
+    23,
+    24,
+    25,
+    26,
+    27,
+    28,
+    29,
+    30,
+    31,
+    32,
+    33,
+    34,
+    35,
+    87,
+    88,
+    89,
+    90,
+    91
+  ],
+  "points": [
+    {
+      "page": 3,
+      "point": "The Commission determined that Crocs failed to prove a violation of Section 337 by participating respondents Orly, Hobby Lobby, and Amoji with respect to three trademark registrations: the \u02bc328 Mark and \u02bc875 Mark (3D marks) and the \u02bc415 Registration (word mark 'CROCS') because Crocs failed to prove likelihood of confusion, infringement, false designation of origin, or dilution by tarnishment or blurring.",
+      "quote": "the Commission has determined that there has been no violation of section 337 of the Tariff Act of 1930",
+      "topic": "holdings"
+    },
+    {
+      "page": 3,
+      "point": "The Commission issued a limited exclusion order (LEO) against the four respondents found in default (La Modish, Star Bay, Huizhou, and Anao) and cease and desist orders (CDOs) against certain of the respondents found in default, but took no position on secondary meaning or the presumption of validity that would affect those remedies against the participating respondents.",
+      "quote": "The Commission has determined to issue a limited exclusion order ('LEO') against the respondents previously found in default and cease and desist orders ('CDO') against certain of the respondents found in default.",
+      "topic": "remedy"
+    },
+    {
+      "page": 3,
+      "point": "The Commission set the bond amount at 100 percent of the entered value of infringing goods imported during the period of Presidential review.",
+      "quote": "The Commission has also determined to set a bond in the amount of one hundred (100) percent of the entered value of infringing goods imported during the period of Presidential review.",
+      "topic": "remedy"
+    },
+    {
+      "page": 3,
+      "point": "The Commission found that public interest factors do not preclude entry of the LEO and CDO relief.",
+      "quote": "The Commission finds that the public interest factors do not preclude entry of such relief.",
+      "topic": "public_interest"
+    },
+    {
+      "page": 3,
+      "point": "Commissioner Kearns joined Parts I, II, III, IV, and V.A. of the Commission's opinion but otherwise dissented, filing a separate opinion explaining his views on the remaining issues.",
+      "quote": "Commissioner Kearns joins Parts I, II, III, IV, and V.A. of this Opinion but otherwise respectfully dissents from the Commission's decision",
+      "topic": "separate_views"
+    },
+    {
+      "page": 8,
+      "point": "The asserted 3D marks consist of specific design elements of a shoe upper: the \u02bc328 Mark claims a pattern of 13 round holes in the horizontal portion and 7 trapezoidal holes in the vertical portion; the \u02bc875 Mark includes those same elements plus a textured strip on the heel and a decorative band along the heel strap.",
+      "quote": "The mark consists of a three dimensional configuration of the outside design of an upper for a shoe comprising a pattern of 13 round holes",
+      "topic": "technology"
+    },
+    {
+      "page": 11,
+      "point": "The accused products are the Orly Gator, Orly Redesign, and Amoji Garden Clogs (including Revised Garden Clogs), all casual footwear with holes in the upper; Orly also used the mark 'GATOR' and Hobby Lobby used the mark 'CROC,' both accused of infringing the word mark 'CROCS'.",
+      "quote": "Crocs accuses the 'Orly Gator' and 'Orly Redesign,' below, of infringing the 3D Marks.",
+      "topic": "products"
+    },
+    {
+      "page": 14,
+      "point": "Crocs asserted the lined and unlined versions of its Classic Clog include the 3D Marks and take the Commission's position on whether Crocs satisfied the domestic industry requirement, neither confirming nor denying Crocs's satisfaction of the technical and economic prongs.",
+      "quote": "Crocs asserts the lined and unlined versions of its Classic Clog include the 3D Marks.",
+      "topic": "domestic_industry"
+    },
+    {
+      "page": 7,
+      "point": "The ALJ found that the 3D Marks do not cover the entirety of the shoe or its overall look because the overall look of a clog is a common or generic design element not entitled to trademark protection.",
+      "quote": "do not cover the entirety of the shoe or its overall look.' Id. at 5 (emphasis in ID).",
+      "topic": "findings"
+    },
+    {
+      "page": 8,
+      "point": "During prosecution of the \u02bc328 Mark, the trademark examiner stated that the overall clog shape, defined midsole, and topline collar represent generic elements commonly present in waterproof strap clogs that are nondistinctive and do not function as marks, and only the specific shape and placement of ventilation/draining holes are potentially capable of distinguishing Crocs's goods.",
+      "quote": "The remaining elements of the proposed configuration which appear potentially capable of distinguishing applicant's goods comprise the specific shape and placement of ventilation/draining holes.",
+      "topic": "claim_construction"
+    },
+    {
+      "page": 21,
+      "point": "The Commission affirmed the ALJ's finding that Crocs failed to prove that Orly, Hobby Lobby, or Amoji infringe the 3D Marks or Word Mark, finding that the Orly/Hobby Lobby Gator has a similar overall commercial appearance to the 3D Marks but the Orly/Hobby Lobby Redesign and Amoji Garden Clog do not.",
+      "quote": "the Commission affirms the ID's findings that Orly, Hobby Lobby, and Amoji do not infringe the 3D Marks or Word Mark",
+      "topic": "infringement"
+    },
+    {
+      "page": 22,
+      "point": "With respect to DuPont factor 2 (similarity and nature of goods), the Commission adopted the ALJ's finding that this factor favors likelihood of confusion because the products are all EVA clogs or molded clog-type footwear, but declines to elevate this factor and assigns it lesser weight because the trademark examiner found the clog to be a common generic feature.",
+      "quote": "the Commission affirms the ID's finding that this factor favors finding a likelihood of confusion because the Orly Gator, Orly Redesign, Amoji Garden Clog, and Classic Clog are all EVA clogs",
+      "topic": "infringement"
+    },
+    {
+      "page": 22,
+      "point": "With respect to DuPont factor 4 (conditions of sale), the Commission affirmed that this factor weighs against likelihood of confusion because accused shoes have different tags and price points than Crocs Classic Clogs, with Orly Gators retailing for $6-10 at Hobby Lobby versus $40 or more for Classic Clogs.",
+      "quote": "retail price of $6-10 for Orly Gators at Hobby Lobby vs. $40 or more for Classic Clogs",
+      "topic": "infringement"
+    },
+    {
+      "page": 23,
+      "point": "With respect to DuPont factor 5 (fame of mark), the Commission modified the ALJ's finding to determine this factor is neutral rather than weighing against likelihood of confusion, but agreed that Crocs's evidence of fame for the 3D Marks is weak, as distinguished from general recognition of the common clog design.",
+      "quote": "the Commission modifies the ID to find this factor is neutral; it does not weigh against the likelihood of confusion.",
+      "topic": "infringement"
+    },
+    {
+      "page": 24,
+      "point": "With respect to DuPont factors 7, 8, and 12 (actual confusion), the Commission found that Crocs's alleged evidence of actual confusion is ambiguous and weak, consisting only of two social media posts referring to purchasing 'crocs' at Hobby Lobby which may have used the term generically rather than as a trademark, and testimony from Orly's former Chief Operating Officer that was corrected upon closer review and provided little evidence of real-life consumer confusion.",
+      "quote": "These two posts refer to purchasing 'crocs' at Hobby Lobby, which suggests they were using the term generically, although this is not clear.",
+      "topic": "infringement"
+    },
+    {
+      "page": 26,
+      "point": "The Commission found that Dr. Pittaoulis's consumer survey was unreliable because her control image (a black mesh slide) bore little resemblance to the non-trademarked elements of the test stimuli, such as the overall clog shape and heel strap, rendering it impossible to determine whether survey respondents were reacting to the absence of the 3D Marks or to the absence of many other unclaimed features.",
+      "quote": "the ID correctly finds that Dr. Pittaoulis's control shoe did not share many of the non-trademarked design elements of the test shoe, which rendered her survey unreliable and non-probative.",
+      "topic": "infringement"
+    },
+    {
+      "page": 29,
+      "point": "The Commission rejected Crocs's argument that gross association rates (65-75%) alone can establish likelihood of confusion, finding that gross association rates lack a control to filter out unwanted influences and that over half of Dr. Pittaoulis's survey respondents erroneously associated even a black mesh slide with Crocs despite its substantial differences from the 3D Marks or Classic Clog.",
+      "quote": "The Commission disagrees. Gross association rates alone, which by definition lack a control to filter out unwanted influences, make it very difficult, if not impossible, to determine",
+      "topic": "infringement"
+    },
+    {
+      "page": 34,
+      "point": "With respect to DuPont factor 9 (variety of goods), the Commission modified the ALJ's finding to determine this factor is neutral rather than weighing against likelihood of confusion, noting that where a trademark is not used on a variety of goods or services, the TTAB has held this factor should be viewed as neutral.",
+      "quote": "the Commission finds this factor is neutral. Not even Crocs, however, argues that this factor should weigh in favor of likelihood of confusion.",
+      "topic": "infringement"
+    },
+    {
+      "page": 1,
+      "point": "The Commission affirmed the ALJ's finding that Crocs failed to prove that respondents falsely designated the source or origin of the accused products, which is an unfair act under Section 337(a)(1)(A).",
+      "quote": "Crocs Failed to Show False Designation of Origin",
+      "topic": "other_unfair_acts"
+    },
+    {
+      "page": 3,
+      "point": "The Commission took no position on the ALJ's findings regarding secondary meaning and the presumption of validity for the 3D Marks, as well as findings that respondents failed to prove the 3D Marks are functional or that the Word Mark is generic.",
+      "quote": "The Commission takes no position on Orly's alleged first sale, the presumption of validity, secondary meaning, fair use, injury, and the technical and economic prongs of domestic industry.",
+      "topic": "invalidity"
+    },
+    {
+      "page": 5,
+      "point": "The ALJ found that respondents failed to prove the 3D Marks are invalid as functional, and the Commission took no position on this finding or on respondents' fair use defense.",
+      "quote": "The ID also finds that Respondents failed to prove that the 3D Marks are invalid as functional or the Word Mark is invalid as generic.",
+      "topic": "other_defenses"
+    },
+    {
+      "page": 19,
+      "point": "The Commission reversed the ALJ's finding that Crocs waived its infringement contentions with respect to the lined versions of the Orly Gator, finding that Crocs's pre-hearing brief expressly referenced both lined and unlined versions of the Orly Gators and alleged they were substantially similar to the 3D Marks.",
+      "quote": "The Commission has determined to reverse the ID's finding of waiver with respect to the lined Orly Gators",
+      "topic": "infringement"
+    },
+    {
+      "page": 35,
+      "point": "The Commission reversed the ALJ's finding that Crocs waived its infringement contentions against the four defaulting respondents (La Modish, Star Bay, Huizhou, and Anao), finding that this waiver doctrine does not apply to issuance of an LEO or CDO against a party found in default pursuant to 19 U.S.C. \u00a7 1337(g)(1).",
+      "quote": "the Commission has determined to set aside the ID's findings with respect to waiver as they do not apply to issuance of an LEO or CDO against a party found in default",
+      "topic": "decision"
+    },
+    {
+      "page": 91,
+      "point": "Commissioner Kearns stated in his dissent that he would find the 3D Marks acquired secondary meaning long before 2016 based on the Converse factors, including 20 years of consistent use, substantial exclusivity from 2011-2020, and billions of dollars in sales, and would remand to the ALJ for further proceedings on the domestic industry requirement before addressing remedy.",
+      "quote": "I therefore find that Crocs established that the 3D Marks acquired secondary meaning long before 2016.",
+      "topic": "separate_views"
+    },
+    {
+      "page": 89,
+      "point": "Crocs had been granted a general exclusion order based on a design patent in Investigation No. 337-TA-567 from 2011 to 2020, which contributed to Crocs's substantial exclusivity over the 3D Marks during that period.",
+      "quote": "owing in large part to the Commission's issuance of a general exclusion order based on Croc's design patent in Inv. No. 337-TA-567",
+      "topic": "related_proceedings"
+    },
+    {
+      "page": 3,
+      "point": "The ALJ found that Crocs satisfied both the technical and economic prongs of the domestic industry requirement, but the Commission took no position on whether Crocs satisfied the economic prong or on Crocs's injury or threat of injury.",
+      "quote": "The Commission takes no position on Orly's alleged first sale, the presumption of validity, secondary meaning, fair use, injury, and the technical and economic prongs of domestic industry.",
+      "topic": "findings"
+    },
+    {
+      "page": 4,
+      "point": "Crocs alleged violations of Section 337(a)(1)(A) by diluting the Asserted Marks and falsely designating the origin of accused footwear, and violations of Section 337(a)(1)(C) by importing, selling for importation, or selling after importation casual footwear and packaging that infringe the Asserted Marks.",
+      "quote": "Crocs accused respondents of violating section 337(a)(1)(A) (19 U.S.C. \u00a7 1337(a)(1)(A)) by diluting its Asserted Marks and falsely designating the origin",
+      "topic": "issue"
+    },
+    {
+      "page": 3,
+      "point": "The Commission determined there is no violation of Section 337 as to the participating respondents (Orly, Hobby Lobby, and Amoji) with respect to the 3D Marks and Word Mark, but issued an LEO and CDOs against the defaulting respondents and set a 100 percent bond.",
+      "quote": "the Commission has determined that there has been no violation of section 337 of the Tariff Act of 1930, as amended, 19 U.S.C. \u00a7 1337 ('section 337'), by the participating respondents",
+      "topic": "outcome"
+    }
+  ],
+  "rejected": [
+    {
+      "page": 4,
+      "point": "Crocs, Inc. of Broomfield, Colorado filed the complaint; participating respondents are Orly Shoe Corp., Hobby Lobby Stores, Inc., and Amoji (Quanzhou ZhengDe Network Corp.); four other respondents (La Modish, Star Bay, Huizhou, and Anao) were found in default.",
+      "quote": "Crocs, Inc. of Broomfield, Colorado ('Crocs'). Crocs accused respondents of violating section 337(a)(1)(A)",
+      "rejected": "quote not found in the filing",
+      "topic": "parties"
+    },
+    {
+      "page": 19,
+      "point": "With respect to DuPont factor 1 (similarity of marks), the Commission modified the ALJ's finding to determine that the Amoji Garden Clog has noticeable differences from the 3D Marks, including a wide raised tread on the sole and larger hexagonal holes arranged in a spread-out pattern, giving it a more rugged and heavier appearance than the 3D Marks, so this factor is either neutral or leans only weakly in favor of likelihood of confusion.",
+      "quote": "The Commission thus modifies the ID to find that this factor is either neutral or leans only weakly in favor of likelihood of confusion for the Amoji Garden Clog.",
+      "rejected": "quote not found in the filing",
+      "topic": "infringement"
+    },
+    {
+      "page": 29,
+      "point": "The Commission found that Mr. Wallace's consumer surveys were reliable because he properly removed features relevant to the 3D Marks while keeping other non-trademarked elements constant, but these surveys still weighed against finding a likelihood of confusion because they do not determine whether high gross association rates (73-79.5%) were due to similarities to the 3D Marks or to other non-trademarked influences such as the overall clog design.",
+      "quote": "Mr. Wallace's consumer surveys were reliable because he properly removed the features relevant to the 3D Marks, while keeping other, non-trademarked elements constant.",
+      "rejected": "quote not found in the filing",
+      "topic": "infringement"
+    },
+    {
+      "page": 31,
+      "point": "The Commission found that neither the Pittaoulis survey nor the Wallace survey provides reliable, affirmative evidence of a likelihood of confusion for the accused products, and the overall weight of the DuPont factors leans against finding a likelihood of confusion even when factors 5 and 9 are changed from negative to neutral.",
+      "quote": "the Commission adopts the ID's finding that the overall weight of the DuPont factors leans against finding a likelihood of confusion.",
+      "rejected": "quote not found in the filing",
+      "topic": "effect"
+    }
+  ],
+  "taken_at": "2026-09-26T21:11:15+00:00",
+  "title": "Commission Opinion",
+  "truncated": false,
+  "who": ""
+}

@@ -1,0 +1,59 @@
+{
+  "cost_usd": 0.008162,
+  "date": "2026-04-28",
+  "doc_id": "880429",
+  "file": "880429_2538884_2538884.pdf",
+  "kind": "notice_of_institution",
+  "model": "claude-haiku-4-5-20251001",
+  "notes_version": 2,
+  "overview": "This is a Notice of Institution of Investigation dated April 28, 2026, in ITC Section 337 Investigation 337-TA-1500 concerning semiconductor devices. GlobalFoundries U.S. Inc. filed a complaint alleging that Tower Semiconductor entities and related companies infringe six U.S. patents through importation and sale of certain semiconductor devices. The Commission has instituted the investigation and named the respondents.",
+  "pages_read": [
+    1,
+    2,
+    3,
+    4
+  ],
+  "points": [
+    {
+      "page": 1,
+      "point": "The complainant is GlobalFoundries U.S. Inc., located at 400 Stonebreak Road Extension, Malta, New York.",
+      "quote": "the complaint was filed with the U.S. International Trade Commission on March 26, 2026, under section 337 of the Tariff Act of 1930, as amended, on behalf of GlobalFoundries U.S. Inc. of Malta, New York.",
+      "topic": "parties"
+    },
+    {
+      "page": 2,
+      "point": "The respondents named are Tower Semiconductor Ltd. (Israel), Tower Partners Semiconductor Co., Ltd. (Japan), Tower Semiconductor Italy S.R.L., Tower US Holdings, Inc., Tower Semiconductor San Antonio, Inc., Tower NPB Holdings, Inc., Tower Semiconductor Newport Beach, Inc., and Newport Fab LLC.",
+      "quote": "The respondents are the following entities alleged to be in violation of section 337",
+      "topic": "parties"
+    },
+    {
+      "page": 2,
+      "point": "The investigation covers infringement of claims 1, 5-12, and 15-19 of U.S. Patent No. 8,330,235; claims 1-7, 13-18, and 20 of U.S. Patent No. 8,507,983; claims 1-9 of U.S. Patent No. 9,093,425; claims 1-14 of U.S. Patent No. 9,865,546; claims 1-12, 14, and 16-18 of U.S. Patent No. 10,062,748; and claims 1-6 of U.S. Patent No. 10,707,167.",
+      "quote": "infringement of one or more of claims 1, 5-12, and 15-19 of the '235 patent; claims 1-7, 13-18, and 20 of the '983 patent; claims 1-9 of the '425 patent; claims 1-14 of the '546 patent; claims 1-12, 14, and 16-18 of the '748 patent; and claims 1-6 of the '167 patent",
+      "topic": "scope"
+    },
+    {
+      "page": 2,
+      "point": "The accused products are described as 'certain semiconductor devices manufactured using Tower's RF, power management, BCD, logic, SiGe, and BiCMOS processes, including wafers and chips, and components thereof.'",
+      "quote": "the plain language description of the accused products or category of accused products, which defines the scope of the investigation, is \"certain semiconductor devices manufactured using Tower's RF, power management, BCD, logic, SiGe, and BiCMOS processes, including wafers and chips, and components thereof\"",
+      "topic": "products"
+    },
+    {
+      "page": 3,
+      "point": "The Office of Unfair Import Investigations will not participate as a party in this investigation.",
+      "quote": "The Office of Unfair Import Investigations will not participate as a party in this investigation.",
+      "topic": "staff"
+    },
+    {
+      "page": 1,
+      "point": "GlobalFoundries alleges violations of section 337 based on importation into the United States, sale for importation, and sale within the United States after importation of the accused semiconductor devices by reason of infringement of the specified patent claims.",
+      "quote": "The complaint, as supplemented, alleges violations of section 337 based upon the importation into the United States, the sale for importation, and the sale within the United States after importation",
+      "topic": "infringement"
+    }
+  ],
+  "rejected": [],
+  "taken_at": "2026-09-26T20:37:19+00:00",
+  "title": "Institution of Investigation",
+  "truncated": false,
+  "who": ""
+}

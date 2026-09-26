@@ -1,6 +1,6 @@
 {
-  "built_at": "2026-09-26T20:11:23+00:00",
-  "cost_usd": 0.121376,
+  "built_at": "2026-09-26T21:07:17+00:00",
+  "cost_usd": 0.048319,
   "documents": [
     {
       "date": "2024-08-07",
@@ -107,9 +107,232 @@
       "who": "Luvo Medical Technologies, Inc.; Clarion Medical Technologies, Inc.; Healthcare Markets, Inc. d/b/a Powered by MRP"
     }
   ],
+  "facts": {
+    "c1": {
+      "date": "2025-01-02",
+      "doc_id": "840335",
+      "files": [
+        "840335_2299525_2299525.pdf",
+        "840335_2299616_2299616.pdf"
+      ],
+      "label": null,
+      "quote": "Medical Purchasing Resource, LLC is hereby found in default",
+      "text": "respondent found in default (as to Medical Purchasing Resource, LLC), per a Commission notice",
+      "title": null,
+      "type": "claims"
+    },
+    "c10": {
+      "date": "2025-05-27",
+      "doc_id": "852071",
+      "files": [
+        "852071_2384894_2384894.pdf",
+        "852071_2384928_2384928.pdf"
+      ],
+      "label": null,
+      "quote": "presumed to be true as to the Defaulting Respondents",
+      "text": "violation of Section 337 found (as to Bio-Infusions USA Inc., MIRAmedtech SP. Z.O.O., MIRAmedtech UG, Medical Purchasing Resource, LLC, eMIRAmed USA, LLC), per a Commission order",
+      "title": null,
+      "type": "claims"
+    },
+    "c2": {
+      "date": "2025-02-06",
+      "doc_id": "841330",
+      "files": [
+        "841330_2305544_2305544.pdf",
+        "841330_2305652_2305652.pdf"
+      ],
+      "label": null,
+      "quote": "It is my initial determination that Bio-Infusions USA Inc., MIRAmedtech UG, eMIRAmed USA, LLC, and MIRAmedtech SP. Z.O.O. are in default",
+      "text": "respondent found in default (as to Bio-Infusions USA Inc., MIRAmedtech SP. Z.O.O., MIRAmedtech UG, eMIRAmed USA, LLC), per an initial determination",
+      "title": null,
+      "type": "claims"
+    },
+    "c3": {
+      "date": "2025-04-21",
+      "doc_id": "849165",
+      "files": [
+        "849165_2362338_2362338.pdf",
+        "849165_2362344_2362344.pdf"
+      ],
+      "label": null,
+      "quote": "investigation is terminated as to Clarion Medical Technologies, Inc., Luvo Medical Technologies, Inc., and Healthcare Markets, Inc. d/b/a Powered by MRP.",
+      "text": "terminated on settlement (as to Clarion Medical Technologies, Inc., Healthcare Markets, Inc. d/b/a Powered by MRP, Luvo Medical Technologies Inc.), per a Commission notice",
+      "title": null,
+      "type": "claims"
+    },
+    "c4": {
+      "date": "2025-05-27",
+      "doc_id": "852077",
+      "files": [
+        "852077_2384900_2384900.pdf",
+        "852077_2384933_2384933.pdf"
+      ],
+      "label": null,
+      "quote": "infringe one or more of claims 1-5, 7-20 of U.S. Patent No. 11,446,477 (\"the '477 patent\") in violation of section 337",
+      "text": "claims 1-5, 7-20 of the '477 patent: found infringed (as to Medical Purchasing Resource, LLC), per a Commission order",
+      "title": null,
+      "type": "claims"
+    },
+    "c5": {
+      "date": "2025-05-27",
+      "doc_id": "852076",
+      "files": [
+        "852076_2384899_2384899.pdf",
+        "852076_2384932_2384932.pdf"
+      ],
+      "label": null,
+      "quote": "infringe one or more of claims 1-5, 7-20 of U.S. Patent No. 11,446,477 (\"the '477 patent\") in violation of section 337",
+      "text": "claims 1-5, 7-20 of the '477 patent: found infringed (as to eMIRAmed USA, LLC), per a Commission order",
+      "title": null,
+      "type": "claims"
+    },
+    "c6": {
+      "date": "2025-05-27",
+      "doc_id": "852075",
+      "files": [
+        "852075_2384898_2384898.pdf",
+        "852075_2384931_2384931.pdf"
+      ],
+      "label": null,
+      "quote": "infringe one or more of claims 1-5, 7-20 of U.S. Patent No. 11,446,477 (\"the '477 patent\") in violation of section 337",
+      "text": "claims 1-5, 7-20 of the '477 patent: found infringed (as to Bio-Infusions USA Inc.), per a Commission order",
+      "title": null,
+      "type": "claims"
+    },
+    "c7": {
+      "date": "2025-05-27",
+      "doc_id": "852074",
+      "files": [
+        "852074_2384897_2384897.pdf",
+        "852074_2384930_2384930.pdf"
+      ],
+      "label": null,
+      "quote": "infringe one or more of claims 1-5, 7-20 of U.S. Patent No. 11,446,477 (\"the '477 patent\") in violation of section 337",
+      "text": "claims 1-5, 7-20 of the '477 patent: found infringed (as to MIRAmedtech SP. Z.O.O.), per a Commission order",
+      "title": null,
+      "type": "claims"
+    },
+    "c8": {
+      "date": "2025-05-27",
+      "doc_id": "852072",
+      "files": [
+        "852072_2384895_2384895.pdf",
+        "852072_2384929_2384929.pdf"
+      ],
+      "label": null,
+      "quote": "infringe one or more of claims 1-5, 7-20 of U.S. Patent No. 11,446,477 (\"the '477 patent\") in violation of section 337",
+      "text": "claims 1-5, 7-20 of the '477 patent: found infringed (as to MIRAmedtech UG), per a Commission order",
+      "title": null,
+      "type": "claims"
+    },
+    "c9": {
+      "date": "2025-05-27",
+      "doc_id": "852071",
+      "files": [
+        "852071_2384894_2384894.pdf",
+        "852071_2384928_2384928.pdf"
+      ],
+      "label": null,
+      "quote": "infringe one or more of. claims 1-5, 7-20 of the '477 patent",
+      "text": "claims 1-5, 7-20 of the '477 patent: found infringed, per a Commission order",
+      "title": null,
+      "type": "claims"
+    },
+    "t1": {
+      "date": "2024-12-09",
+      "doc_id": "838826",
+      "files": null,
+      "label": "Default",
+      "quote": null,
+      "text": null,
+      "title": "Initial Determination Finding Respondent Medical Purchasing Resource, LLC in Default",
+      "type": "title"
+    },
+    "t2": {
+      "date": "2025-01-17",
+      "doc_id": "841330",
+      "files": null,
+      "label": "Default",
+      "quote": null,
+      "text": null,
+      "title": "Initial Determination Finding Bio-Infusions USA Inc., MIRAmedtech UG, eMIRAmed USA, LLC, and MIRAmedtech SP. Z.O.O. in Default",
+      "type": "title"
+    },
+    "t3": {
+      "date": "2025-04-04",
+      "doc_id": "847847",
+      "files": null,
+      "label": "Termination",
+      "quote": null,
+      "text": null,
+      "title": "Initial Determination Granting Joint Motion for Termination of the Investigation as to Certain Respondents Based on Settlement",
+      "type": "title"
+    },
+    "t4": {
+      "date": "2025-05-27",
+      "doc_id": "852071",
+      "files": null,
+      "label": "Remedial order",
+      "quote": null,
+      "text": null,
+      "title": "Limited Exclusion Order",
+      "type": "title"
+    },
+    "t5": {
+      "date": "2025-05-27",
+      "doc_id": "852072",
+      "files": null,
+      "label": "Remedial order",
+      "quote": null,
+      "text": null,
+      "title": "Cease and Desist Order for MIRAmedtech UG",
+      "type": "title"
+    },
+    "t6": {
+      "date": "2025-05-27",
+      "doc_id": "852074",
+      "files": null,
+      "label": "Remedial order",
+      "quote": null,
+      "text": null,
+      "title": "Cease and Desist Order for MIRAmedtech SP. Z.O.O.",
+      "type": "title"
+    },
+    "t7": {
+      "date": "2025-05-27",
+      "doc_id": "852075",
+      "files": null,
+      "label": "Remedial order",
+      "quote": null,
+      "text": null,
+      "title": "Cease and Desist Order for Bio-Infusions USA, Inc.",
+      "type": "title"
+    },
+    "t8": {
+      "date": "2025-05-27",
+      "doc_id": "852076",
+      "files": null,
+      "label": "Remedial order",
+      "quote": null,
+      "text": null,
+      "title": "Cease and Desist Order for eMIRAmed USA, LLC",
+      "type": "title"
+    },
+    "t9": {
+      "date": "2025-05-27",
+      "doc_id": "852077",
+      "files": null,
+      "label": "Remedial order",
+      "quote": null,
+      "text": null,
+      "title": "Cease and Desist Order for Medical Purchasing Resource, LLC",
+      "type": "title"
+    }
+  },
+  "facts_basis": "838826,841330,847847,852071,852072,852074,852075,852076,852077|2026-09-25T15:36:38.363346+00:00",
   "key": "337-1417",
   "last_attempt": {
-    "at": "2026-09-26T20:11:23+00:00",
+    "at": "2026-09-26T21:07:17+00:00",
     "error": null
   },
   "notes": {
@@ -613,7 +836,7 @@
   "notes_model": "claude-haiku-4-5-20251001",
   "notes_version": 2,
   "pending": [],
-  "phase": 2,
+  "phase": 3,
   "sources": [
     "828898",
     "831790",
@@ -624,50 +847,40 @@
       {
         "cites": [
           "n1",
-          "n2",
-          "n3",
-          "n4",
-          "n5",
-          "n6",
-          "n7",
-          "n8",
-          "n9",
-          "n30",
-          "n31"
+          "n10",
+          "n11",
+          "n34",
+          "n33"
         ],
-        "text": "Complainant HydraFacial LLC (formerly Edge Systems LLC), based in Long Beach, California, designs, develops, manufactures, and sells hydrodermabrasion systems, including its HydraFacial Syndeo, Elite, and Allegro systems. The named respondents are a group of companies that manufacture or distribute competing hydrodermabrasion products in the United States: Luvo Medical Technologies Inc. and Clarion Medical Technologies, Inc. (both of Ontario, Canada), Healthcare Markets, Inc. d/b/a Powered by MRP (Utah), Medical Purchasing Resource, LLC (Texas), Bio-Infusions USA Inc. (Florida), MIRAmedtech UG (Germany) and MIRAmedtech SP. Z.O.O. (Poland), and eMIRAmed USA, LLC (California)."
+        "text": "Complainant HydraFacial LLC (formerly Edge Systems LLC), of Long Beach, California, designs, develops, manufactures, and sells hydrodermabrasion systems, including the HydraFacial Syndeo, Elite, and Allegro systems, along with tips, accessories, liquid solutions, and boosters. Hydrodermabrasion systems treat skin by delivering liquid solutions (containing alpha and beta hydroxy acids, antioxidants, and moisturizers) through a handpiece tip that contacts the patient's skin, using a vacuum to draw the solution from a container, across the skin, and then away for disposal. The Commission instituted this investigation based on a complaint alleging violation of Section 337 (a law barring unfair imports, including patent-infringing goods) through the importation and sale of accused hydrodermabrasion systems and subassemblies."
       },
       {
         "cites": [
-          "n10",
-          "n11",
+          "n30",
+          "n31",
+          "n32",
           "n12",
           "n13",
-          "n14",
-          "n32",
-          "n33",
-          "n34",
           "n41"
         ],
-        "text": "Hydrodermabrasion systems are devices used for skin treatment that deliver liquid solutions, such as acids, antioxidants, and moisturizers, through a handpiece tip that contacts the patient's skin, using a vacuum to draw the fluid from a container to the skin and then away for disposal. HydraFacial asserts two patents covering such devices and methods for treating skin: U.S. Patent No. 11,446,477 (the '477 patent), which issued in 2022, and U.S. Patent No. 12,053,607 (the '607 patent), which issued in 2024; both claim priority to 2005-2006 provisional applications and are owned by HydraFacial. The accused products are the Bela MD, Cleopatra, and MIRApeel hydrodermabrasion systems. The Commission's notice of institution states the investigation covers claims 1-5 and 7-20 of the '477 patent and addresses whether there is a violation of Section 337 (the trade statute barring unfair importation practices) based on importation, sale for importation, or sale after importation of the accused products; the '607 patent was later withdrawn from the investigation according to one respondent's answer."
+        "text": "The respondents named in the notice of institution were Luvo Medical Technologies Inc. and Clarion Medical Technologies, Inc. (both Ontario, Canada distributors), Healthcare Markets, Inc. d/b/a Powered by MRP (Utah) and Medical Purchasing Resource, LLC (Texas), Bio-Infusions USA Inc. (Florida), MIRAmedtech UG (Germany) and MIRAmedtech SP. Z.O.O. (Poland), which manufacture and distribute the accused products, and eMIRAmed USA, LLC (California), which develops and distributes them. The investigation as instituted covered claims 1-5 and 7-20 of U.S. Patent No. 11,446,477 ('the '477 patent'), titled for devices and methods for treating skin, which issued September 20, 2022 and is owned by HydraFacial. The complaint also originally asserted U.S. Patent No. 12,053,607 ('the '607 patent'), covering related claims, but that patent was later withdrawn from the investigation."
       }
     ],
     "allegations": [
-      {
-        "cites": [
-          "n17",
-          "n18",
-          "n19"
-        ],
-        "text": "HydraFacial alleges that respondents violate Section 337 by importing into the United States, selling for importation, and/or selling after importation the Bela MD, Cleopatra, and MIRApeel systems. It alleges the Cleopatra and MIRApeel systems are manufactured in Germany and/or Poland by the MIRAmedtech entities and then imported and sold in the United States by respondents including Bio-Infusions, Medical Purchasing Resource, and eMIRAmed."
-      },
       {
         "cites": [
           "n15",
           "n16",
           "n17"
         ],
-        "text": "HydraFacial alleges that the accused products directly infringe, literally or under the doctrine of equivalents, the asserted claims of the '477 and '607 patents (a patent claim defines the boundaries of the invention that others may not use without permission). It also alleges induced infringement, contending respondents encouraged and instructed customers to use the products in an infringing manner, with knowledge of the patents from pre-filing cease-and-desist letters, and that the products are non-staple components especially made for infringing use."
+        "text": "HydraFacial alleges that the accused Bela MD, Cleopatra, and MIRApeel hydrodermabrasion systems directly infringe the '477 and '607 patents, either literally or under the doctrine of equivalents. It further alleges that respondents induce infringement by recommending, encouraging, and instructing customers to use the accused products in an infringing manner, with knowledge of the patents from cease-and-desist letters sent before the complaint was filed, and that respondents supply components that are material parts of the invention, not staple articles of commerce, known to be especially made or adapted for infringing use."
+      },
+      {
+        "cites": [
+          "n18",
+          "n19"
+        ],
+        "text": "On importation, HydraFacial alleges the Cleopatra system is assembled and manufactured in Germany and/or Poland by the MIRAmedtech entities and then imported into the United States and sold by Bio-Infusions and Medical Purchasing Resource, while the MIRApeel system is likewise made in Germany and/or Poland and imported and sold by eMIRAmed, MIRAmedtech Germany, and Medical Purchasing Resource."
       },
       {
         "cites": [
@@ -677,41 +890,123 @@
           "n23",
           "n24"
         ],
-        "text": "To satisfy the domestic industry requirement (the complainant's U.S.-based activity tied to the patented technology that Section 337 requires), HydraFacial alleges it performs all research, development, and manufacturing in the United States at facilities in Long Beach, California, has invested millions of dollars annually in domestic research and development, employs a substantial domestic workforce devoted to the technology, and holds numerous patents. It alleges that its own HydraFacial Syndeo, Elite, and Allegro systems practice at least one claim of each asserted patent."
+        "text": "For domestic industry (the complainant's U.S.-based investment or activity tied to the patented technology that Section 337 requires), HydraFacial alleges it performs all research, development, and manufacturing in the United States, holds a headquarters and a roughly 105,000-square-foot manufacturing and distribution facility in Long Beach, California, employs substantial personnel devoted to research, development, manufacturing, testing, engineering, and customer service, and has invested approximately $8.2 million, $8.4 million, and $10.1 million in U.S. research and development in 2021, 2022, and 2023 respectively. It alleges its HydraFacial Syndeo, Elite, and Allegro systems practice at least one claim of each asserted patent."
       },
       {
         "cites": [
           "n28",
           "n29"
         ],
-        "text": "HydraFacial asks the Commission to issue a limited exclusion order (an order barring importation of infringing products from named respondents) under Section 337(d) barring entry of the Bela MD, Cleopatra, and MIRApeel systems and infringing components, and requests that a bond be imposed during the 60-day Presidential review period that follows any exclusion order."
+        "text": "HydraFacial seeks a permanent limited exclusion order (an order barring the named respondents' infringing products from U.S. entry) under Section 337(d) covering the Bela MD, Cleopatra, and MIRApeel systems and their components, and asks that the Commission require a bond during the 60-day Presidential review period under Section 337(j) for any such imports."
       }
     ],
     "answers": [
       {
-        "cites": [
-          "n38",
-          "n39",
-          "n40",
-          "n41",
-          "n42",
-          "n43",
-          "n44",
-          "n45"
-        ],
         "doc_id": "835319",
         "group": "A1",
-        "text": "Respondents Luvo, Clarion, and Healthcare Markets deny violating Section 337 and deny that the asserted claims of the '477 patent are valid and enforceable, noting that the '607 patent has since been withdrawn from the investigation. Luvo admits selling the Bela MD for importation but denies importing it itself or selling it after importation, and denies infringement, arguing the Bela MD does not meet claim limitations such as the 'manifold system' and related fluid-communication requirements, and that indirect infringement is not shown absent direct infringement.",
+        "paragraphs": [
+          {
+            "cites": [
+              "n36",
+              "n37",
+              "n38",
+              "n39",
+              "n40",
+              "n42",
+              "n43",
+              "n44",
+              "n45",
+              "n46",
+              "n47",
+              "n48",
+              "n49",
+              "n50",
+              "n51",
+              "n52",
+              "n53",
+              "n54",
+              "n55",
+              "n56",
+              "n57",
+              "n58",
+              "n59",
+              "n60",
+              "n61",
+              "n62"
+            ],
+            "text": "Luvo Medical Technologies, joined by Clarion Medical Technologies and Healthcare Markets d/b/a Powered by MRP, denied violating Section 337 and denied that the '477 patent's asserted claims are valid and enforceable. Luvo admitted selling the Bela MD for importation but denied importing it or selling it after importation, and denied selling or importing the Cleopatra or MIRApeel systems, arguing the Bela MD does not meet claim limitations such as the 'manifold system' and 'supply conduit' requirements and that indirect infringement was not shown absent direct infringement. Luvo asserted invalidity under 35 U.S.C. \u00a7\u00a7 102, 103, and 112 based on prior art references including the Karasiuk, Shadduck, Burdorff, and Coleman patents and other publications, and also raised a prosecution laches defense, contending HydraFacial used a serial filing strategy with placeholder claims over roughly seventeen years between the patent family's priority filings and the '477 patent's issuance, prejudicing Luvo and other market participants. Luvo also argued HydraFacial failed to adequately allege a domestic industry and failed to state a claim, and asked the Commission to deny all relief."
+          }
+        ],
         "who": "Luvo Medical Technologies, Inc.; Clarion Medical Technologies, Inc.; Healthcare Markets, Inc. d/b/a Powered by MRP"
       }
     ],
-    "headline": "HydraFacial LLC accuses Luvo Medical Technologies and other distributors of importing and selling Bela MD, Cleopatra, and MIRApeel hydrodermabrasion skin-treatment systems that infringe its patents on handpiece-and-vacuum skin treatment devices."
+    "decisions": [
+      {
+        "cites": [
+          "t1",
+          "t2",
+          "c1",
+          "c2"
+        ],
+        "text": "Before the case reached a full hearing on the merits as to all respondents, the ALJ issued initial determinations finding several respondents in default for failing to respond: Medical Purchasing Resource, LLC in December 2024, and Bio-Infusions USA Inc., MIRAmedtech UG, eMIRAmed USA, LLC, and MIRAmedtech SP. Z.O.O. in January 2025."
+      },
+      {
+        "cites": [
+          "t3",
+          "c3"
+        ],
+        "text": "Separately, the ALJ granted a joint motion terminating the investigation as to Clarion Medical Technologies, Inc., Healthcare Markets, Inc. d/b/a Powered by MRP, and Luvo Medical Technologies Inc. based on a settlement."
+      },
+      {
+        "cites": [
+          "c4",
+          "c5",
+          "c6",
+          "c7",
+          "c8",
+          "c9",
+          "c10"
+        ],
+        "text": "The Commission then found that claims 1-5 and 7-20 of the '477 patent were infringed by the products of the defaulting respondents (Medical Purchasing Resource, LLC, eMIRAmed USA, LLC, Bio-Infusions USA Inc., MIRAmedtech SP. Z.O.O., and MIRAmedtech UG), and found a violation of Section 337 as to those respondents."
+      },
+      {
+        "cites": [
+          "t4",
+          "t5",
+          "t6",
+          "t7",
+          "t8",
+          "t9"
+        ],
+        "text": "As a remedy, the Commission issued a limited exclusion order barring entry of infringing hydrodermabrasion systems and components, and issued cease and desist orders (orders barring further U.S. sale or distribution of infringing inventory) against MIRAmedtech UG, MIRAmedtech SP. Z.O.O., Bio-Infusions USA, Inc., eMIRAmed USA, LLC, and Medical Purchasing Resource, LLC."
+      }
+    ],
+    "headline": "HydraFacial LLC accused several distributors and manufacturers of hydrodermabrasion skin-treatment systems of importing and selling products (Bela MD, Cleopatra, and MIRApeel systems) that infringe its patents on skin-treatment devices, and the Commission found a violation of Section 337 and issued a limited exclusion order and cease and desist orders against the defaulting respondents after the remaining answering respondents settled.",
+    "rulings": [],
+    "standing": [
+      {
+        "cites": [
+          "t3",
+          "c3",
+          "t1",
+          "t2",
+          "c1",
+          "c2",
+          "c10",
+          "c9",
+          "t4",
+          "t5",
+          "t6",
+          "t7",
+          "t8",
+          "t9"
+        ],
+        "text": "The investigation has been terminated. Clarion Medical Technologies, Inc., Healthcare Markets, Inc. d/b/a Powered by MRP, and Luvo Medical Technologies Inc. left the case through a settlement. Medical Purchasing Resource, LLC, Bio-Infusions USA Inc., MIRAmedtech UG, eMIRAmed USA, LLC, and MIRAmedtech SP. Z.O.O. were found in default, and the Commission found them to have violated Section 337 by infringing claims 1-5 and 7-20 of the '477 patent. The remedy in force is a limited exclusion order against infringing hydrodermabrasion systems and components, together with cease and desist orders against each of the five defaulting respondents."
+      }
+    ]
   },
   "title": "Certain Hydrodermabrasion Systems and Components Thereof III",
-  "total_cost_usd": 0.121376,
-  "warnings": [
-    "answers: dropped a paragraph for unknown or repeated group 'A1'",
-    "answers: dropped a paragraph for unknown or repeated group 'A1'"
-  ],
+  "total_cost_usd": 0.169695,
+  "warnings": [],
   "writer_model": "claude-sonnet-5"
 }

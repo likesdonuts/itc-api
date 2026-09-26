@@ -1,10 +1,2980 @@
 {
+  "built_at": "2026-09-26T21:26:30+00:00",
+  "cost_usd": 0.107401,
+  "documents": [
+    {
+      "date": "2021-07-06",
+      "doc_id": "746084",
+      "file": "746084_1653330_1653330.pdf",
+      "kind": "notice_of_institution",
+      "pages_read": [
+        1,
+        2,
+        3,
+        4
+      ],
+      "points": 6,
+      "rejected": 2,
+      "title": "Institution of Investigation",
+      "truncated": false,
+      "who": ""
+    },
+    {
+      "date": "2021-10-22",
+      "doc_id": "754941",
+      "file": "754941_1716064_1716064.pdf",
+      "kind": "complaint",
+      "pages_read": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20,
+        21,
+        22,
+        23,
+        24,
+        25,
+        26,
+        27,
+        28,
+        29,
+        30,
+        31,
+        32,
+        33,
+        34,
+        35,
+        36,
+        37,
+        38,
+        39,
+        40,
+        41,
+        42,
+        43,
+        44,
+        45,
+        46,
+        47,
+        48,
+        49,
+        50,
+        51,
+        52,
+        53,
+        54,
+        55,
+        56,
+        57,
+        58,
+        59,
+        60
+      ],
+      "points": 26,
+      "rejected": 2,
+      "title": "First Amended Complaint under Section 337 of the Tariff Act of 1930, as Amended",
+      "truncated": false,
+      "who": ""
+    },
+    {
+      "date": "2021-09-14",
+      "doc_id": "751637",
+      "file": "751637_1690084_1690084.pdf",
+      "kind": "answer",
+      "pages_read": [
+        1,
+        2,
+        3,
+        4,
+        130,
+        131,
+        132,
+        133,
+        134,
+        135,
+        136,
+        137,
+        138,
+        139,
+        140,
+        141,
+        142,
+        143,
+        144,
+        145,
+        146,
+        147,
+        148,
+        149
+      ],
+      "points": 18,
+      "rejected": 0,
+      "title": "PW Shoes Response to the Corrected and Supplemental Complaint and Notice of Investigation",
+      "truncated": false,
+      "who": "PW Shoes, Inc."
+    },
+    {
+      "date": "2021-11-15",
+      "doc_id": "756616",
+      "file": "756616_1727107_1727107.pdf",
+      "kind": "answer",
+      "pages_read": [
+        1,
+        2,
+        3,
+        4,
+        86,
+        87,
+        88,
+        89,
+        90,
+        91,
+        92,
+        93,
+        94,
+        95,
+        96,
+        97,
+        98,
+        99,
+        100,
+        101,
+        102,
+        103,
+        104,
+        105
+      ],
+      "points": 23,
+      "rejected": 0,
+      "title": "Orly Shoe Corporation's Response to the First Amended Complaint and Notice of Investigation",
+      "truncated": false,
+      "who": "Orly Shoe Corporation; Hobby Lobby Stores, Inc."
+    },
+    {
+      "date": "2021-11-19",
+      "doc_id": "756984",
+      "file": "756984_1729472_1729472.pdf",
+      "kind": "answer",
+      "pages_read": [
+        1,
+        2,
+        3,
+        4,
+        24,
+        25,
+        26,
+        27,
+        28,
+        29,
+        30,
+        31,
+        32,
+        33,
+        34,
+        35,
+        36,
+        37,
+        38,
+        39,
+        40,
+        41,
+        42,
+        43
+      ],
+      "points": 19,
+      "rejected": 4,
+      "title": "Quanzhou ZhengDe Network Corp., d/b/a Amoji's Response to the First Amended Complaint and the Notice of Investigation",
+      "truncated": false,
+      "who": "Quanzhou ZhengDe Network Corp., d/b/a Amoji"
+    },
+    {
+      "date": "2021-11-26",
+      "doc_id": "757304",
+      "file": "757304_1731223_1731223.pdf",
+      "kind": "answer",
+      "pages_read": [
+        1,
+        2,
+        3,
+        4,
+        118,
+        119,
+        120,
+        121,
+        122,
+        123,
+        124,
+        125,
+        126,
+        127,
+        128,
+        129,
+        130,
+        131,
+        132,
+        133,
+        134,
+        135,
+        136,
+        137
+      ],
+      "points": 28,
+      "rejected": 0,
+      "title": "Response of Walmart Inc. to the First Amended Complaint and Notice of Investigation",
+      "truncated": false,
+      "who": "Walmart Inc.; Loeffler Randall Inc."
+    },
+    {
+      "date": "2021-12-10",
+      "doc_id": "758341",
+      "file": "758341_1742281_1742281.pdf",
+      "kind": "answer",
+      "pages_read": [
+        1,
+        2,
+        3,
+        4,
+        114,
+        115,
+        116,
+        117,
+        118,
+        119,
+        120,
+        121,
+        122,
+        123,
+        124,
+        125,
+        126,
+        127,
+        128,
+        129,
+        130,
+        131,
+        132,
+        133
+      ],
+      "points": 21,
+      "rejected": 1,
+      "title": "Response of Fujian Wanjiaxin Industrial Developing, Inc. to the First Amended Complaint and Notice of Investigation",
+      "truncated": false,
+      "who": "Fujian Wanjiaxin Industrial Developing, Inc., a/k/a Fujian Wanjiaxin Light Industrial Developing, Inc.; Maxhouse Rise Ltd."
+    },
+    {
+      "date": "2021-10-08",
+      "doc_id": "753796",
+      "file": "753796_1709482_1709482.pdf",
+      "kind": "ruling",
+      "pages_read": [
+        1
+      ],
+      "points": 6,
+      "rejected": 0,
+      "title": "Denying Loeffler Randall Inc.\u2019s Motion for Summary Determination of Non-Infringement Due to Lack of Substantial Similarity",
+      "truncated": false,
+      "who": ""
+    },
+    {
+      "date": "2022-07-15",
+      "doc_id": "776777",
+      "file": "776777_1876210_1876210.pdf",
+      "kind": "ruling",
+      "pages_read": [
+        1,
+        2,
+        3
+      ],
+      "points": 7,
+      "rejected": 1,
+      "title": "Denying Certain Respondents' Motion for Summary Determination of Invalidity Due to Functionality",
+      "truncated": false,
+      "who": ""
+    },
+    {
+      "date": "2022-07-15",
+      "doc_id": "777367",
+      "file": "777367_1879292_1879292.pdf",
+      "kind": "ruling",
+      "pages_read": [
+        1,
+        2,
+        3
+      ],
+      "points": 6,
+      "rejected": 1,
+      "title": "Denying Respondent Quanzhou ZhengDe Network Corp., d/b/a Amoji's Motion for Partial Summary Determination of Non-Infringement for Alternative Designs",
+      "truncated": false,
+      "who": ""
+    },
+    {
+      "date": "2023-01-09",
+      "doc_id": "788548",
+      "file": "788548_1944270_1944270.pdf",
+      "kind": "final_id",
+      "pages_read": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20,
+        153,
+        154,
+        155,
+        156,
+        157,
+        158,
+        159,
+        160,
+        161,
+        162,
+        163,
+        164,
+        165,
+        166,
+        167
+      ],
+      "points": 23,
+      "rejected": 2,
+      "title": "Initial Determination on Violation of Section 337 and Recommended Determination on Remedy and Bond",
+      "truncated": false,
+      "who": ""
+    },
+    {
+      "date": "2023-04-05",
+      "doc_id": "793866",
+      "file": "793866_1973438_1973438.pdf",
+      "kind": "commission_notice",
+      "pages_read": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6
+      ],
+      "points": 16,
+      "rejected": 2,
+      "title": "Commission Determination to Review in Part a Final Initial Determination Finding No Violation; Request for Written Submissions on the Issues under Review, Remedy, Bonding, and the Public Interest",
+      "truncated": false,
+      "who": ""
+    },
+    {
+      "date": "2023-10-04",
+      "doc_id": "805361",
+      "file": "805361_2049567_2049567.pdf",
+      "kind": "commission_opinion",
+      "pages_read": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20,
+        21,
+        22,
+        23,
+        24,
+        25,
+        26,
+        27,
+        28,
+        29,
+        30,
+        31,
+        32,
+        33,
+        34,
+        35,
+        87,
+        88,
+        89,
+        90,
+        91
+      ],
+      "points": 28,
+      "rejected": 4,
+      "title": "Commission Opinion",
+      "truncated": false,
+      "who": ""
+    }
+  ],
+  "facts": {
+    "t1": {
+      "date": "2021-08-11",
+      "doc_id": "749316",
+      "files": null,
+      "label": "Termination",
+      "quote": null,
+      "text": null,
+      "title": "Initial Determination Granting Crocs, Inc\u2019s and Skechers USA, Inc.\u2019s Joint Motion to Terminate the Investigation as to Skechers USA, Inc. Based upon Settlement",
+      "type": "title"
+    },
+    "t10": {
+      "date": "2021-09-24",
+      "doc_id": "752613",
+      "files": null,
+      "label": "Remedial order",
+      "quote": null,
+      "text": null,
+      "title": "Consent Order for Cape Robbin",
+      "type": "title"
+    },
+    "t11": {
+      "date": "2021-09-28",
+      "doc_id": "752797",
+      "files": null,
+      "label": "Termination",
+      "quote": null,
+      "text": null,
+      "title": "Initial Determination Granting Crocs, Inc.\u2019s and Bijora, Inc.\u2019s Joint Motion to Terminate the Investigation as to Bijora, Inc. Based upon a Consent Order",
+      "type": "title"
+    },
+    "t12": {
+      "date": "2021-09-29",
+      "doc_id": "752965",
+      "files": null,
+      "label": "Remedial order",
+      "quote": null,
+      "text": null,
+      "title": "Consent Order for Dr. Leonard's Healthcare d/b/a Carol Wright",
+      "type": "title"
+    },
+    "t13": {
+      "date": "2021-10-06",
+      "doc_id": "753544",
+      "files": null,
+      "label": "Termination",
+      "quote": null,
+      "text": null,
+      "title": "Initial Determination Granting Crocs, Inc.\u2019s and Hawkins Footwear, Sports, Military & Dixie Store\u2019s Joint Motion to Terminate the Investigation as to Hawkins Footwear, Sports, Military & Dixie Store Based upon a Consent Order",
+      "type": "title"
+    },
+    "t14": {
+      "date": "2021-10-07",
+      "doc_id": "753684",
+      "files": null,
+      "label": "Remedial order",
+      "quote": null,
+      "text": null,
+      "title": "Consent Order for Fujian Huayan Well Import and Export Trade Co., Ltd.",
+      "type": "title"
+    },
+    "t15": {
+      "date": "2021-10-07",
+      "doc_id": "753724",
+      "files": null,
+      "label": "Remedial order",
+      "quote": null,
+      "text": null,
+      "title": "Consent Order for Fullbeauty Brands Inc.",
+      "type": "title"
+    },
+    "t16": {
+      "date": "2021-10-07",
+      "doc_id": "753725",
+      "files": null,
+      "label": "Remedial order",
+      "quote": null,
+      "text": null,
+      "title": "Consent Order for Legend Footwear, Inc. d/b/a Wild Diva",
+      "type": "title"
+    },
+    "t17": {
+      "date": "2021-10-07",
+      "doc_id": "753748",
+      "files": null,
+      "label": "Remedial order",
+      "quote": null,
+      "text": null,
+      "title": "Consent Order for Yoki Fashion International LLC",
+      "type": "title"
+    },
+    "t18": {
+      "date": "2021-10-27",
+      "doc_id": "755224",
+      "files": null,
+      "label": "Remedial order",
+      "quote": null,
+      "text": null,
+      "title": "Consent Order for Bijora, Inc. d/b/a Akira",
+      "type": "title"
+    },
+    "t19": {
+      "date": "2021-10-29",
+      "doc_id": "755420",
+      "files": null,
+      "label": "Remedial order",
+      "quote": null,
+      "text": null,
+      "title": "Consent Order for Hawkins Footwear, Sports, Military & Dixie Store",
+      "type": "title"
+    },
+    "t2": {
+      "date": "2021-08-26",
+      "doc_id": "750344",
+      "files": null,
+      "label": "Termination",
+      "quote": null,
+      "text": null,
+      "title": "Initial Determination Granting Crocs, Inc.\u2019s and SG Footwear Meser Grp., Inc\u2019s Joint Motion to Terminate the Investigation as to SG Footwear Meser Grp. Inc. Based upon a Consent Order",
+      "type": "title"
+    },
+    "t20": {
+      "date": "2021-11-01",
+      "doc_id": "755568",
+      "files": null,
+      "label": "Termination",
+      "quote": null,
+      "text": null,
+      "title": "Initial Determination Granting Crocs, Inc.\u2019s and Shoe-Nami, Inc.\u2019s Joint Motion to Terminate the Investigation as to Shoe-Nami, Inc. Based upon a Consent Order",
+      "type": "title"
+    },
+    "t21": {
+      "date": "2021-11-01",
+      "doc_id": "755570",
+      "files": null,
+      "label": "Termination",
+      "quote": null,
+      "text": null,
+      "title": "Initial Determination Granting Crocs, Inc.\u2019s and PW Shoes, Inc.\u2019s Joint Motion to Terminate the Investigation as to PW Shoes, Inc. Based upon a Consent Order",
+      "type": "title"
+    },
+    "t22": {
+      "date": "2021-11-05",
+      "doc_id": "756002",
+      "files": null,
+      "label": "Termination",
+      "quote": null,
+      "text": null,
+      "title": "Initial Determination Granting-In-Part Complainant Crocs, Inc.'s Motion to Amend the Complaint and Notice of Investigation, and for Partial Termination of the Investigation",
+      "type": "title"
+    },
+    "t23": {
+      "date": "2021-11-10",
+      "doc_id": "756291",
+      "files": null,
+      "label": "Termination",
+      "quote": null,
+      "text": null,
+      "title": "Initial Determination Granting Crocs, Inc.\u2019s and 718Closeouts\u2019 Joint Motion to Terminate the Investigation as to 718Closeouts Based upon a Consent Order",
+      "type": "title"
+    },
+    "t24": {
+      "date": "2021-12-06",
+      "doc_id": "757978",
+      "files": null,
+      "label": "Remedial order",
+      "quote": null,
+      "text": null,
+      "title": "Consent Order for 718Closeout",
+      "type": "title"
+    },
+    "t25": {
+      "date": "2022-01-11",
+      "doc_id": "760227",
+      "files": null,
+      "label": "Termination",
+      "quote": null,
+      "text": null,
+      "title": "Initial Determination Granting a Joint Motion by Crocs, Inc., and Dongguan Eastar Footwear Enterprises Co., Ltd., to Terminate the Investigation as to Dongguan Eastar Footwear Enterprises Co., Ltd., Based upon a Consent Order",
+      "type": "title"
+    },
+    "t26": {
+      "date": "2022-02-01",
+      "doc_id": "762079",
+      "files": null,
+      "label": "Termination",
+      "quote": null,
+      "text": null,
+      "title": "Initial Determination Granting Joint Motion to Terminate KGS Sourcing Ltd. for Good Cause",
+      "type": "title"
+    },
+    "t27": {
+      "date": "2022-02-04",
+      "doc_id": "762492",
+      "files": null,
+      "label": "Remedial order",
+      "quote": null,
+      "text": null,
+      "title": "Consent Order for Dongguan Eastar Footwear Co., Ltd.",
+      "type": "title"
+    },
+    "t28": {
+      "date": "2022-03-03",
+      "doc_id": "764484",
+      "files": null,
+      "label": "Termination",
+      "quote": null,
+      "text": null,
+      "title": "Initial Determination Granting-in-Part Respondents Maxhouse and Wanjiaxin\u2019s Motion to Terminate on the Basis of Consent Order Stipulation and Proposed Consent Order",
+      "type": "title"
+    },
+    "t29": {
+      "date": "2022-03-15",
+      "doc_id": "765450",
+      "files": null,
+      "label": "Termination",
+      "quote": null,
+      "text": null,
+      "title": "Initial Determination Granting Respondent Mould Industria de Matrizes Ltda.'s Motion for Termination on the Basis of Consent Order Stipulation and Proposed Consent Order",
+      "type": "title"
+    },
+    "t3": {
+      "date": "2021-08-26",
+      "doc_id": "750346",
+      "files": null,
+      "label": "Termination",
+      "quote": null,
+      "text": null,
+      "title": "Initial Determination Granting Crocs, Inc.\u2019s and Cape Robbin Inc.\u2019s Joint Motion to Terminate the Investigation as to Cape Robbin Inc. Based upon a Consent Order",
+      "type": "title"
+    },
+    "t30": {
+      "date": "2022-03-18",
+      "doc_id": "765846",
+      "files": null,
+      "label": "Remedial order",
+      "quote": null,
+      "text": null,
+      "title": "Consent Order for Maxhouse Rise Ltd.",
+      "type": "title"
+    },
+    "t31": {
+      "date": "2022-03-18",
+      "doc_id": "765847",
+      "files": null,
+      "label": "Remedial order",
+      "quote": null,
+      "text": null,
+      "title": "Consent Order for Fujian Wanjiaxin Industrial Developing, Inc. a/k/a Fujian Wanjiaxin Light Industrial Developing, Inc.",
+      "type": "title"
+    },
+    "t32": {
+      "date": "2022-04-01",
+      "doc_id": "767172",
+      "files": null,
+      "label": "Remedial order",
+      "quote": null,
+      "text": null,
+      "title": "Consent Order for Mould Industria de Matrizes Ltda. d/b/a/ Boaonda",
+      "type": "title"
+    },
+    "t33": {
+      "date": "2022-04-22",
+      "doc_id": "768931",
+      "files": null,
+      "label": "Termination",
+      "quote": null,
+      "text": null,
+      "title": "Initial Determination Granting Crocs, Inc.\u2019s and Royal Deluxe Accessories, LLC\u2019s Joint Motion to Terminate the Investigation as to Royal Deluxe Accessories, LLC Based upon a Consent Order",
+      "type": "title"
+    },
+    "t34": {
+      "date": "2022-05-06",
+      "doc_id": "770024",
+      "files": null,
+      "label": "Termination",
+      "quote": null,
+      "text": null,
+      "title": "Initial Determination Granting Crocs, Inc.\u2019s and Loeffler Randall Inc.\u2019s Joint Motion to Terminate the Investigation as to Loeffler Randall Based upon a Consent Order",
+      "type": "title"
+    },
+    "t35": {
+      "date": "2022-05-17",
+      "doc_id": "770946",
+      "files": null,
+      "label": "Remedial order",
+      "quote": null,
+      "text": null,
+      "title": "Consent Order for Royal Deluxe Accessories, LLC",
+      "type": "title"
+    },
+    "t36": {
+      "date": "2022-05-20",
+      "doc_id": "771228",
+      "files": null,
+      "label": "Default",
+      "quote": null,
+      "text": null,
+      "title": "Initial Determination Finding Respondents LA Modish Boutique, Star Bay Group, Inc., Huizhou Xinshunzu Shoes Co., Ltd., and Jinjiang Anao Footwear Co., Ltd. in Default",
+      "type": "title"
+    },
+    "t37": {
+      "date": "2022-05-27",
+      "doc_id": "771816",
+      "files": null,
+      "label": "Remedial order",
+      "quote": null,
+      "text": null,
+      "title": "Consent Order for Loeffler Randall Inc.",
+      "type": "title"
+    },
+    "t38": {
+      "date": "2022-09-28",
+      "doc_id": "781198",
+      "files": null,
+      "label": "Termination",
+      "quote": null,
+      "text": null,
+      "title": "Initial Determination Granting Joint Motion to Terminate the Investigation as to Respondent Walmart Inc. Due to Settlement",
+      "type": "title"
+    },
+    "t39": {
+      "date": "2023-09-14",
+      "doc_id": "804298",
+      "files": null,
+      "label": "Remedial order",
+      "quote": null,
+      "text": null,
+      "title": "Limited Exclusion Order",
+      "type": "title"
+    },
+    "t4": {
+      "date": "2021-09-01",
+      "doc_id": "750682",
+      "files": null,
+      "label": "Termination",
+      "quote": null,
+      "text": null,
+      "title": "Initial Determination Granting Crocs, Inc.\u2019s and Dr. Leonard\u2019s Healthcare Corp.\u2019s Joint Motion to Terminate the Investigation as to Dr. Leonard\u2019s Healthcare Corp. Based upon a Consent Order",
+      "type": "title"
+    },
+    "t40": {
+      "date": "2023-09-14",
+      "doc_id": "804299",
+      "files": null,
+      "label": "Remedial order",
+      "quote": null,
+      "text": null,
+      "title": "Cease and Desist Order for La Modish Boutique",
+      "type": "title"
+    },
+    "t41": {
+      "date": "2023-09-14",
+      "doc_id": "804300",
+      "files": null,
+      "label": "Remedial order",
+      "quote": null,
+      "text": null,
+      "title": "Cease and Desist Order for Star Bay Group Inc.",
+      "type": "title"
+    },
+    "t5": {
+      "date": "2021-09-09",
+      "doc_id": "751285",
+      "files": null,
+      "label": "Termination",
+      "quote": null,
+      "text": null,
+      "title": "Initial Determination Granting Crocs, Inc.\u2019s and Fullbeauty Brand Inc.\u2019s Joint Motion to Terminate the Investigation as to Fullbeauty Brand Inc. Based upon a Consent Order",
+      "type": "title"
+    },
+    "t6": {
+      "date": "2021-09-09",
+      "doc_id": "751288",
+      "files": null,
+      "label": "Termination",
+      "quote": null,
+      "text": null,
+      "title": "Initial Determination Granting Crocs, Inc.\u2019s and Legend Footwear, Inc.\u2019s Joint Motion to Terminate the Investigation as to Legend Footwear, Inc. Based upon a Consent Order",
+      "type": "title"
+    },
+    "t7": {
+      "date": "2021-09-17",
+      "doc_id": "752024",
+      "files": null,
+      "label": "Termination",
+      "quote": null,
+      "text": null,
+      "title": "Initial Determination Granting Crocs, Inc.\u2019s and Fujian Huayuan Well Import and Export Trade Co., Ltd.'s Joint Motion's to Terminate the Investigation as to Fujian Huayuan Well Import and Export Trade Co., Ltd. Based upon a Consent Order",
+      "type": "title"
+    },
+    "t8": {
+      "date": "2021-09-22",
+      "doc_id": "752426",
+      "files": null,
+      "label": "Termination",
+      "quote": null,
+      "text": null,
+      "title": "Initial Determination Granting Crocs, Inc.\u2019s and Yoki Fashion International LLC\u2019s Joint Motion to Terminate the Investigation as to Yoki Fashion International LLC Based upon a Consent Order",
+      "type": "title"
+    },
+    "t9": {
+      "date": "2021-09-24",
+      "doc_id": "752612",
+      "files": null,
+      "label": "Remedial order",
+      "quote": null,
+      "text": null,
+      "title": "Consent Order for SG Footwear",
+      "type": "title"
+    }
+  },
+  "facts_basis": "749316,750344,750346,750682,751285,751288,752024,752426,752612,752613,752797,752965,753544,753684,753724,753725,753748,755224,755420,755568,755570,756002,756291,757978,760227,762079,762492,764484,765450,765846,765847,767172,768931,770024,770946,771228,771816,781198,804298,804299,804300|",
   "key": "337-1270",
   "last_attempt": {
-    "at": "2026-09-26T20:13:47+00:00",
-    "budget": false,
-    "error": "the Anthropic account is out of credit: add credits at console.anthropic.com, Settings > Billing, then try again (the notes already taken are kept)"
+    "at": "2026-09-26T21:26:30+00:00",
+    "error": null
+  },
+  "notes": {
+    "n1": {
+      "doc_id": "746084",
+      "kind": "notice_of_institution",
+      "page": 1,
+      "point": "The investigation covers alleged infringement of U.S. Trademark Registration No. 3,836,415, U.S. Trademark Registration No. 5,149,328, and U.S. Trademark Registration No. 5,273,875.",
+      "quote": "infringement of one or more of U.S. Trademark Registration No. 3,836,415 (\"the '415 mark\"); U.S. Trademark Registration No. 5,149,328 (\"the '328 mark\"); and U.S. Trademark Registration No. 5,273,875 (\"the '875 mark\")",
+      "topic": "scope"
+    },
+    "n10": {
+      "doc_id": "754941",
+      "kind": "complaint",
+      "page": 28,
+      "point": "The Crocs 3D Marks consist of a three-dimensional shoe design featuring round holes placed across the horizontal portion of the upper and a textured strip along the vertical portion with trapezoidal openings. The '875 Registration also includes a textured strip on the heel and a decorative band along the heel strap.",
+      "quote": "The Crocs 3D Marks both consist of a three-dimensional configuration of the outside of an upper for a shoe, featuring round holes placed across the horizontal portion of the upper, and a textured strip along the vertical portion of the upper having trapezoidal openings.",
+      "topic": "technology"
+    },
+    "n100": {
+      "doc_id": "757304",
+      "kind": "answer",
+      "page": 122,
+      "point": "Walmart argues the Accused Products do not infringe the 3D Marks because: (1) they are not substantially similar; (2) they were designed as generic or basic foam clogs, not to cause confusion or copy the marks; and (3) there is no likelihood of confusion based on multiple factors including dissimilarity, different prices and channels of trade, lack of fame, and multiple coexisting similar uses.",
+      "quote": "The Accused Products do not infringe the 3D Marks because, among other reasons: (1) the Accused Products are not substantially similar",
+      "topic": "non_infringement"
+    },
+    "n101": {
+      "doc_id": "757304",
+      "kind": "answer",
+      "page": 123,
+      "point": "Walmart asserts a Second Defense that the 3D Marks are invalid and unprotectable because they are functional, comprised of non-source-identifying ornamental elements, generic as a shoe style rather than a single source, and lack secondary meaning.",
+      "quote": "Complainant's 3D Marks are invalid and unprotectable because, among other reasons: (1) the 3D Marks and their use are functional",
+      "topic": "invalidity"
+    },
+    "n102": {
+      "doc_id": "757304",
+      "kind": "answer",
+      "page": 123,
+      "point": "Walmart argues the 3D Marks lack secondary meaning because consumers do not understand the marks as indicating Crocs as the source, and because numerous third parties use substantially similar designs without reference to Crocs as a source.",
+      "quote": "the 3D Marks lack secondary meaning because consumers do not understand the primary significance of the claimed mark",
+      "topic": "invalidity"
+    },
+    "n103": {
+      "doc_id": "757304",
+      "kind": "answer",
+      "page": 123,
+      "point": "Walmart contends the 3D Marks are comprised of ornamental elements that are not source-identifying and represent a genre or style of shoe rather than a single manufacturer.",
+      "quote": "the 3D Marks are comprised of various ornamental elements that are not source identifying; (3) the 3D Marks are generic",
+      "topic": "invalidity"
+    },
+    "n104": {
+      "doc_id": "757304",
+      "kind": "answer",
+      "page": 124,
+      "point": "Walmart asserts a Third Defense that the Asserted Trademarks are not famous as defined by federal trademark laws and there is no evidence they are universally recognized by the general consuming public as designating Crocs as the source.",
+      "quote": "Complainant's Asserted Trademarks are not famous as defined by the federal trademark laws",
+      "topic": "other_defenses"
+    },
+    "n105": {
+      "doc_id": "757304",
+      "kind": "answer",
+      "page": 124,
+      "point": "Walmart asserts a Fourth Defense of no dilution, arguing it does not dilute or has not diluted the distinctive quality of any alleged famous trademarks, as the marks lack distinctiveness and are not famous, and the Accused Products are not similar.",
+      "quote": "Walmart does not dilute and has not diluted the distinctive quality of any alleged famous trademarks of Complainant",
+      "topic": "other_defenses"
+    },
+    "n106": {
+      "doc_id": "757304",
+      "kind": "answer",
+      "page": 124,
+      "point": "Walmart asserts a Fifth Defense of failure to state a claim upon which relief can be granted.",
+      "quote": "FIFTH DEFENSE: FAILURE TO STATE A CLAIM Complainant fails to state a claim upon which relief can be granted",
+      "topic": "other_defenses"
+    },
+    "n107": {
+      "doc_id": "757304",
+      "kind": "answer",
+      "page": 124,
+      "point": "Walmart asserts a Sixth Defense that Crocs has not adequately alleged and cannot establish the existence of a domestic industry for the Asserted Trademarks as required by Section 337(a)(2) and Section 337(a)(3).",
+      "quote": "Complainant has not adequately alleged and cannot establish the existence of a domestic industry for the Asserted Trademarks",
+      "topic": "domestic_industry"
+    },
+    "n108": {
+      "doc_id": "757304",
+      "kind": "answer",
+      "page": 125,
+      "point": "Walmart argues Crocs has not satisfied the economic prong of the domestic industry requirement because Crocs failed to establish significant investment in plant and equipment, significant employment of labor or capital, or substantial investment in licensing, research and development, or other qualifying activities relating to the Asserted Trademarks.",
+      "quote": "Complainant has not and cannot satisfy the economic prong of the domestic industry requirement",
+      "topic": "domestic_industry"
+    },
+    "n109": {
+      "doc_id": "757304",
+      "kind": "answer",
+      "page": 125,
+      "point": "Walmart asserts that Crocs also has failed to satisfy the technical prong of the domestic industry requirement.",
+      "quote": "Complainant also has failed to satisfy the technical prong of the domestic industry requirement in this case",
+      "topic": "domestic_industry"
+    },
+    "n11": {
+      "doc_id": "754941",
+      "kind": "complaint",
+      "page": 27,
+      "point": "Complainant asserts U.S. Trademark Registration No. 5,149,328 (3D Mark), U.S. Trademark Registration No. 5,273,875 (3D Mark with textured heel and decorative band), and U.S. Trademark Registration No. 3,836,415 (CROCS word mark). The 3D Marks were first used in commerce in June 2003 and federally registered on February 28, 2017 and August 29, 2017. The word mark was first used in November 2002 and registered August 24, 2010.",
+      "quote": "Crocs' registered trademarks at issue in the proposed investigation are collectively referred to as the \"Asserted Trademarks.\" Pursuant to Commission Rules 210.10(b)(1) and 210.12(a)(12), Complainant states that a plain English description of the category of Accused Products is casual footwear with holes in the upper and such footwear's packaging.",
+      "topic": "ip_asserted"
+    },
+    "n110": {
+      "doc_id": "757304",
+      "kind": "answer",
+      "page": 125,
+      "point": "Walmart asserts a Seventh Defense that Crocs cannot prove the existence of a substantial injury pursuant to Section 337(a)(1)(A).",
+      "quote": "Complainant cannot prove the existence of a substantial injury, pursuant to Section 337(a)(1)(A)",
+      "topic": "other_defenses"
+    },
+    "n111": {
+      "doc_id": "757304",
+      "kind": "answer",
+      "page": 125,
+      "point": "Walmart asserts an Eighth Defense regarding public interest, arguing that the requested relief should not issue because of potential adverse effects on public health and welfare, competitive conditions, domestic production of like or directly competitive articles, and United States consumers.",
+      "quote": "the requested relief should not issue because of its potential adverse effects upon the public health and welfare",
+      "topic": "relief"
+    },
+    "n112": {
+      "doc_id": "757304",
+      "kind": "answer",
+      "page": 126,
+      "point": "Walmart asserts a Ninth Defense of fair use, arguing that even if it used any aspect of the Asserted Trademarks, such use would be descriptive or generic and used fairly and in good faith only to describe the Accused Products.",
+      "quote": "the use of any aspect of the Asserted Trademarks would be descriptive or generic of, and used fairly and in good faith only to describe",
+      "topic": "other_defenses"
+    },
+    "n113": {
+      "doc_id": "757304",
+      "kind": "answer",
+      "page": 126,
+      "point": "Walmart asserts a Tenth Defense that Crocs' requests for relief are barred by waiver, estoppel, and laches because Crocs intentionally relinquished its right to enforce the Asserted Trademarks, led Walmart to believe enforcement was not intended, and waited an unreasonable time to assert its claims.",
+      "quote": "Complainant's requests for relief are barred, in whole or in part, by the doctrines of waiver, estoppel, and laches",
+      "topic": "other_defenses"
+    },
+    "n114": {
+      "doc_id": "757304",
+      "kind": "answer",
+      "page": 126,
+      "point": "Walmart asserts an Eleventh Defense of unclean hands, arguing Crocs is improperly attempting to extend its expired design rights through the Asserted Trademarks to maintain an unconstitutional monopoly in the relevant market.",
+      "quote": "Complainant is attempting to improperly extend its expired design rights through the Asserted Trademarks to maintain an unconstitutional monopoly",
+      "topic": "other_defenses"
+    },
+    "n115": {
+      "doc_id": "757304",
+      "kind": "answer",
+      "page": 119,
+      "point": "Walmart admits Crocs filed an action in United States District Court for the District of Colorado, Case No. 1:21-cv-1890, on July 12, 2021.",
+      "quote": "Walmart admits that Complainant filed an action in the United States District Court for the District of Colorado, Case No. 1:21-cv-1890",
+      "topic": "related_proceedings"
+    },
+    "n116": {
+      "doc_id": "757304",
+      "kind": "answer",
+      "page": 120,
+      "point": "Walmart denies that Crocs is entitled to the relief requested, including a general exclusion order, limited exclusion order, or cease and desist orders.",
+      "quote": "Walmart admits that Complainant seeks a general exclusion order (\"GEO\"), but Walmart denies that Complainant is entitled to the relief requested",
+      "topic": "relief"
+    },
+    "n117": {
+      "doc_id": "757304",
+      "kind": "answer",
+      "page": 127,
+      "point": "Walmart requests that the Commission determine it has not imported, sold for importation, or sold within the United States casual footwear and packaging covered by a valid and enforceable trademark claim, find that Crocs has failed to establish a domestic industry or substantial injury, deny all requested relief, and terminate the investigation with a finding of no violation.",
+      "quote": "Determine that Walmart has not imported, sold for importation, or sold within the United States after importation Certain Casual Footwear",
+      "topic": "relief"
+    },
+    "n118": {
+      "doc_id": "757304",
+      "kind": "answer",
+      "page": 127,
+      "point": "Walmart requests that the Commission award it attorneys' fees and costs and grant such further relief as deemed proper.",
+      "quote": "award Walmart its attorneys' fees and costs, and grant such further relief as the Commission deems proper",
+      "topic": "outcome"
+    },
+    "n119": {
+      "doc_id": "757304",
+      "kind": "answer",
+      "page": 127,
+      "point": "Walmart reserves the right to assert additional defenses and to supplement or amend the defenses asserted, and incorporates by reference any additional defenses which may be asserted by other respondents to the investigation.",
+      "quote": "Walmart reserves the right to assert additional defenses, and to supplement or amend the defenses asserted above, based on further discovery and investigation",
+      "topic": "other_defenses"
+    },
+    "n12": {
+      "doc_id": "754941",
+      "kind": "complaint",
+      "page": 38,
+      "point": "The accused products are casual footwear with holes in the upper and packaging thereof. Crocs Shoes are footwear products manufactured and designed by Crocs in the United States, including the Classic Clog and numerous variations thereof sold through major retailers and online platforms, featuring the Asserted Trademarks.",
+      "quote": "Today, Crocs footwear can be found in hundreds of forms and color patterns, ranging from khaki canvas loafers to tie-dyed sandals. Among this wide variety of options, the Classic Clog that features the Crocs 3D Marks, as well as the Crocs Word Mark, remains the company's flagship shoe.",
+      "topic": "products"
+    },
+    "n120": {
+      "doc_id": "757304",
+      "kind": "answer",
+      "page": 4,
+      "point": "Walmart denies that it has unlawfully imported or sold casual footwear and packaging by reason of unfair methods of competition, false designation of source, or trademark dilution with the threat or effect of destroying or substantially injuring an industry in the United States.",
+      "quote": "unlawfully imported or sold casual footwear and packaging thereof by reason of unfair methods of competition, false designation of source, or trademark dilution",
+      "topic": "importation"
+    },
+    "n121": {
+      "doc_id": "758341",
+      "kind": "answer",
+      "page": 1,
+      "point": "Fujian Wanjiaxin Industrial Developing, Inc., also known as Fujian Wanjiaxin Light Industrial Developing, Inc., is a respondent in this Section 337 investigation. Maxhouse Rise Ltd. is also named as a respondent.",
+      "quote": "Respondent Fujian Wanjiaxin Industrial Developing, Inc. a/k/a Fujian Wanjiaxin Light Industrial Developing, Inc. (\"Wanjiaxin\") hereby responds to the First Amended Complaint filed under Section 337",
+      "topic": "respondents"
+    },
+    "n122": {
+      "doc_id": "758341",
+      "kind": "answer",
+      "page": 1,
+      "point": "Crocs, Inc. filed the First Amended Complaint against Wanjiaxin on October 22, 2021, and the Commission issued a Notice of Investigation on July 6, 2021.",
+      "quote": "First Amended Complaint filed under Section 337 of the Tariff Act of 1930 (\"Section 337\") by Crocs, Inc. (\"Crocs\" or \"Complainant\") on October 22, 2021",
+      "topic": "parties"
+    },
+    "n123": {
+      "doc_id": "758341",
+      "kind": "answer",
+      "page": 2,
+      "point": "The complaint asserts infringement of three Crocs trademarks: U.S. Trademark Registration No. 3,836,415 (the '415 mark), U.S. Trademark Registration No. 5,149,328 (the '328 mark), and U.S. Trademark Registration No. 5,273,875 (the '875 mark).",
+      "quote": "infringement of certain trademarks rights held by Complainant, including but not limited to U.S. Trademark Registration No. 3,836,415 (\"the '415 mark\"); U.S. Trademark Registration No. 5,149,328 (\"the '328 mark\"); and U.S. Trademark Registration No. 5,273,875 (\"the '875 mark\")",
+      "topic": "ip_asserted"
+    },
+    "n124": {
+      "doc_id": "758341",
+      "kind": "answer",
+      "page": 1,
+      "point": "Wanjiaxin denies that it has violated Section 337 by engaging in unfair competition or importing, selling for importation, or selling casual footwear products that infringe Crocs's asserted trademarks, except as specifically admitted in the response.",
+      "quote": "Wanjiaxin denies that it has violated Section 337 by engaging in unfair competition or by importing into the United States, selling for importation, or selling within the United States after importation any product that infringes Complainant's asserted trademarks.",
+      "topic": "general_response"
+    },
+    "n125": {
+      "doc_id": "758341",
+      "kind": "answer",
+      "page": 2,
+      "point": "Crocs seeks a general exclusion order or, in the alternative, a limited exclusion order, and cease and desist orders. Wanjiaxin denies that Crocs is entitled to any such relief.",
+      "quote": "Complainant requests that the Commission institute an investigation and, after the investigation, issue a general exclusion order, or, in the alternative, a limited exclusion order, and cease and desist orders.",
+      "topic": "relief"
+    },
+    "n126": {
+      "doc_id": "758341",
+      "kind": "answer",
+      "page": 121,
+      "point": "Wanjiaxin asserts that the Accused Products do not infringe the 3D Marks because they are not substantially similar to the marks, were intended to compete as generic foam clogs, and there is no likelihood of confusion given differences in appearance, price, commercial impression, channels of trade, and buyer bases.",
+      "quote": "The Accused Products do not infringe the 3D Marks because, among other reasons: (1) the Accused Products are not substantially similar to the 3D Marks; (2) the Accused Products were intended to compete in the market for foam clogs with a generic or basic design",
+      "topic": "non_infringement"
+    },
+    "n127": {
+      "doc_id": "758341",
+      "kind": "answer",
+      "page": 121,
+      "point": "Wanjiaxin argues that the 3D Marks have not acquired fame, there are multiple coexisting uses similar to the marks in connection with similar goods, and there are no incidents of actual confusion.",
+      "quote": "(vi) the 3D Marks have not acquired fame; (vii) there are multiple coexisting uses similar to the 3D Marks in connection with similar goods; (viii) there are no incidents of actual confusion",
+      "topic": "non_infringement"
+    },
+    "n128": {
+      "doc_id": "758341",
+      "kind": "answer",
+      "page": 122,
+      "point": "Wanjiaxin argues that the 3D Marks are invalid and unprotectable because they are functional (Crocs has touted utilitarian advantages such as ventilation ports), comprised of non-source-identifying ornamental elements, and generic as they represent a genre or style of shoe rather than identifying a single source.",
+      "quote": "the 3D Marks and their use are functional\u2014for example, Complainant has repeatedly touted utilitarian advantages of its putative mark features, such as the shoes' \"ventilation ports\"",
+      "topic": "invalidity"
+    },
+    "n129": {
+      "doc_id": "758341",
+      "kind": "answer",
+      "page": 122,
+      "point": "Wanjiaxin contends that the 3D Marks lack secondary meaning because consumers do not understand the design elements as indicating Crocs as the source, and numerous third parties use the same or substantially similar designs to identify themselves or indicate a generic clog-shaped casual shoe without reference to source.",
+      "quote": "consumers do not understand the primary significance of the claimed mark and/or trade dress to indicate Crocs as the source because, among other reasons, Crocs is not the substantially exclusive user of the claimed designs.",
+      "topic": "invalidity"
+    },
+    "n13": {
+      "doc_id": "754941",
+      "kind": "complaint",
+      "page": 46,
+      "point": "Representative accused products include Cape Robbin's 'Vigilante' and 'Gardener' footwear; Akira's 'Cape Robbin Electric Soul Flatform Clogs'; La Modish's 'Brandy Slides' and 'Lindsey Crocs'; Dr. Leonard's 'Casual Slingback Clog'; Fullbeauty's 'Kingsize Wide Width Clogs'; and similar clog-style shoes sold by other respondents.",
+      "quote": "Cape Robbin and use a variety of lengthy, descriptive names to market and sell their Accused Products. For example, one type of Accused Product, the \"Vigilante\" footwear product is sold at least under the following names: \"Vigilante-3 Ankle Strap Cut Out Hole Sandal with Pins-Sage\", \"Vigilante-6 Ankle Strap Cut Out Hole Sandal with Gems-Black\"",
+      "topic": "products"
+    },
+    "n130": {
+      "doc_id": "758341",
+      "kind": "answer",
+      "page": 122,
+      "point": "Wanjiaxin asserts as a separate defense that Crocs's Asserted Trademarks are not famous as defined by federal trademark laws and there is no evidence they are universally recognized by the general consuming public as a designation of source.",
+      "quote": "there is no evidence that the 3D Marks are universally recognized by the general consuming public of the United States as a designation of source of Complainant's products.",
+      "topic": "invalidity"
+    },
+    "n131": {
+      "doc_id": "758341",
+      "kind": "answer",
+      "page": 122,
+      "point": "Wanjiaxin asserts that Crocs's trademarks do not dilute any distinctive quality of famous marks because the marks lack distinctiveness, are not famous, and the Accused Products are not similar to the Asserted Trademarks.",
+      "quote": "Wanjiaxin does not dilute and has not diluted the distinctive quality of any alleged famous trademarks of Complainant.",
+      "topic": "other_defenses"
+    },
+    "n132": {
+      "doc_id": "758341",
+      "kind": "answer",
+      "page": 123,
+      "point": "Wanjiaxin argues that Crocs has failed to adequately allege and cannot establish a domestic industry as required by Section 337(a)(2) and (a)(3), including failure to establish the economic prong requiring significant investment in plant and equipment or significant employment of labor or capital relating to articles protected by the marks.",
+      "quote": "Complainant has not adequately alleged and cannot establish the existence of a domestic industry for the Asserted Trademarks as required by Section 337(a)(2), and as defined, in part, by Section 337(a)(3).",
+      "topic": "domestic_industry"
+    },
+    "n133": {
+      "doc_id": "758341",
+      "kind": "answer",
+      "page": 123,
+      "point": "Wanjiaxin contends that Crocs also has failed to satisfy the technical prong of the domestic industry requirement in this case.",
+      "quote": "Complainant also has failed to satisfy the technical prong of the domestic industry requirement in this case.",
+      "topic": "domestic_industry"
+    },
+    "n134": {
+      "doc_id": "758341",
+      "kind": "answer",
+      "page": 123,
+      "point": "Wanjiaxin argues that it has not infringed and does not induce or contribute to infringement by any other party, and that Complainant has failed to state a claim upon which relief can be granted.",
+      "quote": "Complainant fails to state a claim upon which relief can be granted.",
+      "topic": "other_defenses"
+    },
+    "n135": {
+      "doc_id": "758341",
+      "kind": "answer",
+      "page": 124,
+      "point": "Wanjiaxin asserts that Complainant cannot prove the existence of a substantial injury pursuant to Section 337(a)(1)(A).",
+      "quote": "Complainant cannot prove the existence of a substantial injury, pursuant to Section 337(a)(1)(A).",
+      "topic": "other_defenses"
+    },
+    "n136": {
+      "doc_id": "758341",
+      "kind": "answer",
+      "page": 124,
+      "point": "Wanjiaxin argues that requested relief should not issue because of its potential adverse effects upon public health and welfare, competitive conditions in the United States economy, production of like articles in the United States, and United States consumers.",
+      "quote": "the requested relief should not issue because of its potential adverse effects upon the public health and welfare, competitive conditions in the United States economy, the production of like or directly competitive articles in the United States",
+      "topic": "relief"
+    },
+    "n137": {
+      "doc_id": "758341",
+      "kind": "answer",
+      "page": 124,
+      "point": "Wanjiaxin asserts that any use of the Asserted Trademarks by Wanjiaxin would be protected by the fair use doctrine, being descriptive or generic and used fairly and in good faith only to describe the Accused Products.",
+      "quote": "the use of any aspect of the Asserted Trademarks would be descriptive or generic of, and used fairly and in good faith only to describe, the Accused Products.",
+      "topic": "other_defenses"
+    },
+    "n138": {
+      "doc_id": "758341",
+      "kind": "answer",
+      "page": 125,
+      "point": "Wanjiaxin contends that Crocs has waited an unreasonable amount of time to assert its claims, causing substantial prejudice to Wanjiaxin under the doctrine of laches.",
+      "quote": "Complainant waited an unreasonable amount of time to assert its claims, causing substantial prejudice to Wanjiaxin.",
+      "topic": "other_defenses"
+    },
+    "n139": {
+      "doc_id": "758341",
+      "kind": "answer",
+      "page": 125,
+      "point": "Wanjiaxin asserts an unclean hands defense, alleging that Crocs is attempting to improperly extend its expired design rights through the Asserted Trademarks to maintain an unconstitutional monopoly in the relevant market.",
+      "quote": "Complainant is attempting to improperly extend its expired design rights through the Asserted Trademarks to maintain an unconstitutional monopoly in the relevant market",
+      "topic": "unenforceability"
+    },
+    "n14": {
+      "doc_id": "754941",
+      "kind": "complaint",
+      "page": 48,
+      "point": "The accused products are manufactured abroad (in China, Brazil, and other countries) and are imported into the United States. The products bear labels stating 'Made in China' and are distributed through retailers and e-commerce platforms including Amazon, eBay, and respondents' own websites.",
+      "quote": "The Accused Products are manufactured abroad and are imported into the United States. Specifically, and as seen in the pictures above, the shoes have a label stating \"Made in China.\"",
+      "topic": "importation"
+    },
+    "n140": {
+      "doc_id": "758341",
+      "kind": "answer",
+      "page": 126,
+      "point": "Wanjiaxin requests that the Commission determine that Wanjiaxin has not imported or sold footwear covered by valid and enforceable trademark claims and that Complainant has failed to establish a domestic industry and substantial injury.",
+      "quote": "Determine that Wanjiaxin has not imported, sold for importation, or sold within the United States after importation Certain Casual Footwear and Packaging Thereof that are covered by a valid and enforceable asserted claim of the Asserted Trademarks",
+      "topic": "relief"
+    },
+    "n141": {
+      "doc_id": "758341",
+      "kind": "answer",
+      "page": 126,
+      "point": "Wanjiaxin requests that the Commission find no violation of Section 337 and deny Crocs's request for a general exclusion order, limited exclusion order, cease and desist orders, and any other relief.",
+      "quote": "Find that no violation of Section 337 of the Tariff Act of 1930, as amended, exists by reason of any manufacture, importation, offer for sale, or sale by Wanjiaxin",
+      "topic": "relief"
+    },
+    "n142": {
+      "doc_id": "753796",
+      "kind": "ruling",
+      "page": 1,
+      "point": "Respondent Loeffler Randall Inc. moved on September 23, 2021 for summary determination of non-infringement due to lack of substantial similarity.",
+      "quote": "On September 23, 2021, Respondent Loeffler Randall, Inc. (\"Loeffler Randall\") moved (1270-023) for summary determination of noninfringement due to lack of substantial similarity.",
+      "topic": "motion"
+    },
+    "n143": {
+      "doc_id": "753796",
+      "kind": "ruling",
+      "page": 1,
+      "point": "Complainant Crocs, Inc. and the Commission Investigative Staff opposed Loeffler Randall's motion.",
+      "quote": "Complainant Crocs, Inc. and the Commission Investigative Staff both opposed the motion.",
+      "topic": "parties"
+    },
+    "n144": {
+      "doc_id": "753796",
+      "kind": "ruling",
+      "page": 1,
+      "point": "The question is whether Loeffler Randall's footwear products lack substantial similarity to the asserted patent claims, warranting summary judgment of non-infringement without a trial.",
+      "quote": "summary determination of noninfringement due to lack of substantial similarity. Complainant Crocs, Inc. and the Commission Investigative Staff both opposed the motion.",
+      "topic": "issue"
+    },
+    "n145": {
+      "doc_id": "753796",
+      "kind": "ruling",
+      "page": 1,
+      "point": "The ALJ found that genuine issues of material fact may remain regarding substantial similarity between the products and the asserted patent claims.",
+      "quote": "Because genuine issues of material facts may remain, good cause does not exist to grant the motion in lieu of a trial of all issues on the merits.",
+      "topic": "reasoning"
+    },
+    "n146": {
+      "doc_id": "753796",
+      "kind": "ruling",
+      "page": 1,
+      "point": "The ALJ denied Loeffler Randall's motion for summary determination of non-infringement.",
+      "quote": "Accordingly, Loeffler Randall's motion (1270-023) is hereby denied.",
+      "topic": "outcome"
+    },
+    "n147": {
+      "doc_id": "753796",
+      "kind": "ruling",
+      "page": 1,
+      "point": "All issues in the investigation, including the non-infringement question, remain for trial on the merits.",
+      "quote": "good cause does not exist to grant the motion in lieu of a trial of all issues on the merits.",
+      "topic": "effect"
+    },
+    "n148": {
+      "doc_id": "776777",
+      "kind": "ruling",
+      "page": 1,
+      "point": "Respondents Walmart Inc., Orly Shoe Corporation, Hobby Lobby Stores, Inc., and Quanzhou Zheng De Network Corp. (Amoji) filed a motion on June 10, 2022 seeking an initial determination that Complainant Crocs, Inc.'s asserted trade dress is functional and therefore invalid, and that respondents' accused products cannot infringe the asserted trade dress as a matter of law.",
+      "quote": "Respondents Walmart Inc., Orly Shoe Corporation, Hobby Lobby Stores, Inc., and Quanzhou Zheng De Network Corp., d/b/a Amoji (collectively, \"Respondents\") filed a motion (Mot. 1 270-054) for summary determination of invalidity due to functionality.",
+      "topic": "motion"
+    },
+    "n149": {
+      "doc_id": "776777",
+      "kind": "ruling",
+      "page": 1,
+      "point": "Respondents contended that Crocs owns two utility patents showing the claimed shoe design and that the existence of a utility patent is strong and incontrovertible evidence that the claimed trade dress is functional.",
+      "quote": "Respondents contend that Crocs owns two utility patents showing the claimed shoe design. Mem. at 1. According to Respondents, \"[t]he existence of a utility patent is strong and \u2014in this case\u2014incontrovertible evidence that [the] claimed trade dress is functional.\"",
+      "topic": "motion"
+    },
+    "n15": {
+      "doc_id": "754941",
+      "kind": "complaint",
+      "page": 55,
+      "point": "Crocs alleges that respondents' accused products infringe the Crocs 3D Marks by copying the design features including the size, positioning, number, and shape of holes on the horizontal portion of the upper, the textured strip along the vertical portion with trapezoidal openings, and the textured strip and decorative band on the heel.",
+      "quote": "As shown in Figure 3 below, Cape Robbin and Accused Products bear designs that are likely to cause confusion with the Crocs 3D Marks. In particular, the size, positioning, number, and shape of the holes on the horizontal portion of the upper of the Accused Products is confusingly similar to the 3D Marks.",
+      "topic": "infringement"
+    },
+    "n150": {
+      "doc_id": "776777",
+      "kind": "ruling",
+      "page": 2,
+      "point": "The issue is whether Crocs' 3D trade dress marks are functional under the Morton-Norwich test and therefore invalid as a matter of law, such that respondents' accused products cannot infringe.",
+      "quote": "To assess whether a mark is functional, the Commission applies the Morton-Norwich factors: (1) the existence of a utility patent that discloses th e utilitarian advantages of the design; (2) advertising materials touting the utilitarian advantages of the design; (3) the availability to competitors of functionally equivalent designs; and (4) facts indicating that the design results in a comparatively simple or cheap method of manufacture.",
+      "topic": "issue"
+    },
+    "n151": {
+      "doc_id": "776777",
+      "kind": "ruling",
+      "page": 2,
+      "point": "The ALJ stated that functionality determinations are based on the whole collection of elements taken together, not individual elements versus overall visual impression.",
+      "quote": "Functionality determinations are based on \"the whole collection of elements taken together.\" Certain Motorized Vehicles, Comm'n Op. at 16.",
+      "topic": "reasoning"
+    },
+    "n152": {
+      "doc_id": "776777",
+      "kind": "ruling",
+      "page": 2,
+      "point": "The ALJ found that genuine issues of material fact exist regarding whether the 3D marks are disclosed in U.S. Patent Nos. 6,993,858 and 7,146,751; whether Crocs has touted the functionality of the 3D marks in advertising; whether commercial alternatives to the 3D marks are available; and whether the 3D marks result from a simpler or cheaper method of manufacture.",
+      "quote": "Here, there are genuine issues of material fact with respect to the Morton-Norwich factors. Specifically, there are factual disputes as to whether (1) the 3D marks are disclosed in U.S. Patent Nos. 6,993,858 and 7,146,751; (2) Crocs has touted the functionality of the 3D marks in its",
+      "topic": "reasoning"
+    },
+    "n153": {
+      "doc_id": "776777",
+      "kind": "ruling",
+      "page": 2,
+      "point": "The ALJ applied the legal standard for summary determination, requiring that there be no genuine issue as to any material fact and that the moving party be entitled to determination as a matter of law, with evidence viewed in the light most favorable to the opposing party.",
+      "quote": "Summary determination is appropriate when there is no genuine issue as to any material fact and the moving party is entitled to a determination as a matter of law. See 19 C.F.R. \u00a7 210.18.",
+      "topic": "reasoning"
+    },
+    "n154": {
+      "doc_id": "776777",
+      "kind": "ruling",
+      "page": 3,
+      "point": "The ALJ denied respondents' motion for summary determination of invalidity due to functionality, as Motion Docket No. 1270-054 was DENIED.",
+      "quote": "Motion Docket No. 12 70-054 for summary determination is therefore DENIED.",
+      "topic": "outcome"
+    },
+    "n155": {
+      "doc_id": "777367",
+      "kind": "ruling",
+      "page": 1,
+      "point": "Respondent Quanzhou ZhengDe Network Corp., d/b/a Amoji filed a motion on June 10, 2022 for partial summary determination of non-infringement with respect to certain ZhengDe alternative footwear designs.",
+      "quote": "On June 10, 2022, Respondent Quanzhou ZhengDe Network Corp., d/b/a Amoji (\"ZhengDe\") filed a motion (Mot. 1270-057) for partial summary determination of noninfringement",
+      "topic": "motion"
+    },
+    "n156": {
+      "doc_id": "777367",
+      "kind": "ruling",
+      "page": 2,
+      "point": "The motion raised whether ZhengDe's alternative footwear designs were ripe for adjudication and, if so, whether they infringed the asserted patents.",
+      "quote": "In determining whether there is a genuine issue of material fact, \"the evidence must be viewed in the light most favorable to the party opposing the motion\"",
+      "topic": "issue"
+    },
+    "n157": {
+      "doc_id": "777367",
+      "kind": "ruling",
+      "page": 3,
+      "point": "The Administrative Law Judge denied ZhengDe's motion for partial summary determination.",
+      "quote": "For this reason, Motion Docket No. 1270-057 for partial summary determination is DENIED.",
+      "topic": "outcome"
+    },
+    "n158": {
+      "doc_id": "777367",
+      "kind": "ruling",
+      "page": 2,
+      "point": "The ALJ found there were genuine issues of material fact as to whether the alternative footwear designs met the four-factor test for ripeness for adjudication established in the Oligosaccharides case.",
+      "quote": "There are genuine issues of material fact as to whether the alternative footwear designs are ripe for adjudication.",
+      "topic": "reasoning"
+    },
+    "n159": {
+      "doc_id": "777367",
+      "kind": "ruling",
+      "page": 2,
+      "point": "The ALJ identified that Crocs disputed three of the four ripeness factors: whether the alternative designs had been imported, whether they were sufficiently fixed in design, and whether they were sufficiently disclosed during discovery.",
+      "quote": "Crocs disputes three of the four factors \u2013 namely, whether the alternative footwear designs have been imported, whether they are sufficiently fixed in design, and whether they were sufficiently disclosed",
+      "topic": "reasoning"
+    },
+    "n16": {
+      "doc_id": "754941",
+      "kind": "complaint",
+      "page": 50,
+      "point": "Crocs alleges that respondents' accused products are likely to cause confusion with Crocs' trademarks and have already caused actual confusion. Customer reviews on retail websites show consumers referring to accused products as 'Crocs,' such as reviews stating 'I so love my crocs' and 'I love these platform crocs' when purchasing Cape Robbin or Akira products.",
+      "quote": "One such \"Verified Buyer\" Toya, claims in a January 18, 2021 review that \"I so love my crocs\": Another \"Verified Buyer\", Bianca, wrote a review on December 28, 2020 stating, \"I love these platform crocs\"",
+      "topic": "infringement"
+    },
+    "n160": {
+      "doc_id": "777367",
+      "kind": "ruling",
+      "page": 2,
+      "point": "Under the applicable test from Certain Human Milk Oligosaccharides and Methods of Producing the Same, Inv. No. 337-TA-1120, a respondent must show: (1) whether the product is within the scope of the investigation; (2) whether it has been imported; (3) whether it is sufficiently fixed in design; and (4) whether it has been sufficiently disclosed by respondent during discovery.",
+      "quote": "The test for determining whether a respondent has met its burden for adjudication of a redesigned or alternative product includes four factors: \"(1) whether the product is within the scope of the investigation; (2) whether it has been imported",
+      "topic": "reasoning"
+    },
+    "n161": {
+      "doc_id": "788548",
+      "kind": "final_id",
+      "page": 12,
+      "point": "Crocs, Inc. is the complainant, a Delaware corporation headquartered in Broomfield, Colorado, founded in 2002. The remaining respondents are Orly Shoe Corp., a New York corporation; Hobby Lobby Stores, Inc., an Oklahoma corporation with over 900 retail store locations; and Quanzhou ZhengDe Network Corp. d/b/a Amoji, a Chinese corporation founded around 2016.",
+      "quote": "Crocs is a Delaware corporation with its headquarters and principal place of business in Broomfield, Colorado.",
+      "topic": "parties"
+    },
+    "n162": {
+      "doc_id": "788548",
+      "kind": "final_id",
+      "page": 14,
+      "point": "Crocs asserted three trademark registrations: U.S. Trademark Registration No. 5,149,328 (the '328 Registration), U.S. Trademark Registration No. 5,273,875 (the '875 Registration), and U.S. Trademark Registration No. 3,836,415 (the '415 Registration). The '328 and '875 Registrations are 3D marks covering trade dress designs, and the '415 Registration is a word mark for CROCS.",
+      "quote": "Crocs asserts three trademarks: (1) U.S. Trademark Registration No. 5,149,328 (\\\"the '328 Registration\\\"); (2) U.S. Trademark Registration No. 5,273,875 (\\\"the '875 Registration\\\"); and (3) U.S. Trademark Registration No. 3,836,415 (\\\"the '415 Registration\\\").",
+      "topic": "ip_asserted"
+    },
+    "n163": {
+      "doc_id": "788548",
+      "kind": "final_id",
+      "page": 17,
+      "point": "Crocs accused Orly Gator shoes and an Orly Redesign supplied to Hobby Lobby, and Amoji Garden Clogs and five Amoji Redesigns. The products at issue are casual footwear with holes in the upper and such footwear's packaging.",
+      "quote": "The products at issue in this investigation are \\\"casual footwear with holes in the upper and such footwear's packaging.\\\"",
+      "topic": "products"
+    },
+    "n164": {
+      "doc_id": "788548",
+      "kind": "final_id",
+      "page": 10,
+      "point": "The Commission investigated whether casual footwear and packaging thereof violated Section 337 by reason of infringement of U.S. Trademark Registration Nos. 3,836,415; 5,149,328; and 5,273,875, and whether a domestic industry existed as required by Section 337(a)(2).",
+      "quote": "[W]hether there is a violation of subsection (a)(1)(C) of section 337 in the importation into the United States, the sale for importation , or the sale within the United States after importation of certain products . . . by reason of infringement of one or more [U.S. Trademark Registration Nos. 3,836,415; 5,149,328; and 5,273,875]",
+      "topic": "scope"
+    },
+    "n165": {
+      "doc_id": "788548",
+      "kind": "final_id",
+      "page": 15,
+      "point": "The '328 Registration claims a three-dimensional configuration of the upper of a shoe comprising a pattern of 13 round holes on the horizontal portion and a textured strip on the vertical portion with 7 trapezoidal openings. The '875 Registration includes these elements plus a textured strip on the heel and a decorative band along the heel strap.",
+      "quote": "The mark consists of a three dimensional configuration of the outside design of an upper for a shoe comprising a pattern of 13 round holes on the horizontal portion of the upper of the shoe and a textured strip along the vertical portion of the upper having a pattern of 7 trapezoidal openings.",
+      "topic": "claim_construction"
+    },
+    "n166": {
+      "doc_id": "788548",
+      "kind": "final_id",
+      "page": 158,
+      "point": "The ALJ found that U.S. Trademark Registration Nos. 5,149,328 and 5,273,875 (the 3D marks) are invalid because they have not acquired secondary meaning, though they are not functional and not generic.",
+      "quote": "14. U.S. Trademark Registration Nos. 5,149,328 and 5,273,875 are invalid. 15. U.S. Trademark No. 3,836,415 is valid.",
+      "topic": "validity"
+    },
+    "n167": {
+      "doc_id": "788548",
+      "kind": "final_id",
+      "page": 14,
+      "point": "The Trademark Office initially rejected Crocs' applications to register the overall look of the Classic Clog as generic, finding that the elements are commonly present in waterproof strap clogs and that applicant cannot exclude competitors from using such ubiquitous design elements. Crocs then narrowed its claimed design elements to specific ventilation holes.",
+      "quote": "These features are nondistinctive and do not function as a mark because such elements are so common in the industry for such products and are the same or substantially similar to the designs of competitors' products such that consumers are accustomed to seeing such elements on similar products.",
+      "topic": "validity"
+    },
+    "n168": {
+      "doc_id": "788548",
+      "kind": "final_id",
+      "page": 158,
+      "point": "The ALJ found that U.S. Trademark Registrations 5,149,328 and 5,273,875 are not functional under the four-factor Morton-Norwich test, which examines utility patents, advertising, manufacturing, and availability of alternative designs.",
+      "quote": "12. U.S. Trademark Registration Nos. 5,149,328 and 5,273,875 are not functional.",
+      "topic": "validity"
+    },
+    "n169": {
+      "doc_id": "788548",
+      "kind": "final_id",
+      "page": 158,
+      "point": "The ALJ found that the 3D marks and word mark are not generic, meaning they do not refer to a genus of goods or services rather than indicating a particular source.",
+      "quote": "13. The Asserted Trademarks are not generic.",
+      "topic": "validity"
+    },
+    "n17": {
+      "doc_id": "754941",
+      "kind": "complaint",
+      "page": 27,
+      "point": "Crocs alleges trademark infringement under Section 32(1) of the Lanham Act, false designation of source/unfair competition under Section 43(a), and dilution under Section 43(c) of the Lanham Act with respect to the Asserted Trademarks.",
+      "quote": "Respondents have also violated Section 337(a)(1)(A) by engaging in unfair methods of competition, false designations of source, and/or likely dilution of one or more trademarks that Crocs uses in connection with the Crocs Shoes.",
+      "topic": "other_unfair_acts"
+    },
+    "n170": {
+      "doc_id": "788548",
+      "kind": "final_id",
+      "page": 157,
+      "point": "The ALJ concluded that the Orly Gator and Orly Redesign products do not infringe the Asserted Trademarks, based on analysis of the DuPont factors for likelihood of confusion.",
+      "quote": "4. The Orly Accused Products do not infringe the Asserted Trademarks.",
+      "topic": "infringement"
+    },
+    "n171": {
+      "doc_id": "788548",
+      "kind": "final_id",
+      "page": 157,
+      "point": "The ALJ concluded that the Hobby Lobby Accused Products do not infringe the Asserted Trademarks.",
+      "quote": "5. The Hobby Lobby Accused Products do not infringe the Asserted Trademarks.",
+      "topic": "infringement"
+    },
+    "n172": {
+      "doc_id": "788548",
+      "kind": "final_id",
+      "page": 158,
+      "point": "The ALJ concluded that the Orly, Hobby Lobby, and Amoji accused products do not falsely designate their source or cause unfair competition.",
+      "quote": "8. The Orly Accused Products do not falsely designate their source or cause unfair competition.",
+      "topic": "other_unfair_acts"
+    },
+    "n173": {
+      "doc_id": "788548",
+      "kind": "final_id",
+      "page": 158,
+      "point": "The ALJ concluded that respondents do not dilute the Asserted Trademarks, including findings on dilution by blurring and dilution by tarnishment.",
+      "quote": "11. Respondents do not dilute the Asserted Trademarks.",
+      "topic": "other_unfair_acts"
+    },
+    "n174": {
+      "doc_id": "788548",
+      "kind": "final_id",
+      "page": 158,
+      "point": "The ALJ found that the technical prong of the domestic industry requirement has been satisfied for the Asserted Trademarks, meaning Crocs' domestic activities satisfy the requirement that the products be covered by the asserted intellectual property rights.",
+      "quote": "17. The technical prong of the domestic industry requirement has been satisfied for the Asserted Trademarks.",
+      "topic": "domestic_industry"
+    },
+    "n175": {
+      "doc_id": "788548",
+      "kind": "final_id",
+      "page": 156,
+      "point": "From 2018 to 2021, Crocs' domestic investments in plant and equipment and labor and capital totaled a substantial amount. The ALJ found these investments quantitatively large in absolute terms and qualitatively significant, as the Classic Clog is critical to Crocs' business and its U.S.-based design and development employees are essential to the company's success.",
+      "quote": "From 2018-2021, Crocs' domestic industry investments in plant and equipment and labor and capital totaled [amount]. These domestic investments are quantitatively large in absolute terms, and on that basis satisfy the economic prong of the domestic industry requirement.",
+      "topic": "domestic_industry"
+    },
+    "n176": {
+      "doc_id": "788548",
+      "kind": "final_id",
+      "page": 158,
+      "point": "The ALJ found that the economic prong of the domestic industry requirement is satisfied under 19 U.S.C. \u00a7 1337(a)(3)(A) and (B) based on Crocs' significant plant and equipment investments and labor and capital expenditures related to its unlined Classic Clog product in the United States.",
+      "quote": "18. The economic prong of the domestic industry requirement has been satisfied with respect to the Asserted Patents.",
+      "topic": "domestic_industry"
+    },
+    "n177": {
+      "doc_id": "788548",
+      "kind": "final_id",
+      "page": 9,
+      "point": "The ALJ determined that no violation of Section 337 of the Tariff Act of 1930 has occurred based on infringement of the asserted trademarks and that there is no violation under 19 U.S.C. \u00a7 1337(a)(1)(A).",
+      "quote": "For the reasons stated herein, I have determined that no violation of section 337 of the Tariff Act of 1930, as amended, has occurred in the importation into the United States, the sale for importation, or the sale within the United States after importation of certain casual footwear and packaging thereof alleged to infringe U.S. Trademark Registration Nos. 3,836,415; 5,149,328; and 5,273,875.",
+      "topic": "result"
+    },
+    "n178": {
+      "doc_id": "788548",
+      "kind": "final_id",
+      "page": 159,
+      "point": "Because no violation of Section 337 was found, the ALJ recommends against a general exclusion order, limited exclusion orders, and cease and desist orders. However, the ALJ provided conditional recommendations regarding the form of relief should the Commission on review find a violation.",
+      "quote": "Because no violation of section 337 has occurred, I recommend against a GEO. Should the Commission disagree, however, the record demonstrates that a GEO is necessary to prevent circumvention of a limited exclusion order and there is a widespread pattern of infringement.",
+      "topic": "remedy"
+    },
+    "n179": {
+      "doc_id": "788548",
+      "kind": "final_id",
+      "page": 161,
+      "point": "Should the Commission determine that a violation has occurred, the ALJ recommends that limited exclusion orders issue against the Accused Products found to infringe, with a carve-out for respondents' footwear affirmatively found not to infringe the Asserted Trademarks.",
+      "quote": "Should the Commission determine that a violation has occurred, I recommend entry of a limited exclusion order against the Accused Products found to infringe.",
+      "topic": "relief"
+    },
+    "n18": {
+      "doc_id": "754941",
+      "kind": "complaint",
+      "page": 32,
+      "point": "Crocs has established a domestic industry with both technical and economic prongs. The technical prong is satisfied by Crocs designing and developing Crocs Shoes in the United States that practice the Asserted Trademarks. Over the past three years, Crocs sold more than 23 million pairs generating $521.4 million in revenue in 2020, more than 12 million pairs generating $248.4 million in 2019, and more than 7.5 million pairs generating $131.8 million in 2018.",
+      "quote": "Over the past three calendar years, for example, Crocs has sold: more than 23 million pairs of Crocs Shoes and generated $521.4 million in revenue in 2020; more than 12 million pairs of Crocs Shoes and generated $248.4 million in revenue in 2019; and more than 7.5 million Crocs Shoes; and generated $131.8 million in revenue in 2018.",
+      "topic": "domestic_industry"
+    },
+    "n180": {
+      "doc_id": "788548",
+      "kind": "final_id",
+      "page": 163,
+      "point": "The ALJ recommends cease and desist orders against Orly, Hobby Lobby, and Amoji if the Commission determines a violation has occurred, based on their commercially significant inventories or significant domestic operations that could undercut the remedy provided by an exclusion order.",
+      "quote": "Based on these facts, I recommend that a cease and desist order issue as to Orly if the Commission determines that a violation of section 337 has occurred.",
+      "topic": "relief"
+    },
+    "n181": {
+      "doc_id": "788548",
+      "kind": "final_id",
+      "page": 166,
+      "point": "If an exclusion order issues, the ALJ recommends that bond be set at a specified amount per shoe during the 60-day Presidential review period to protect Crocs from injury, based on a price differential calculation between the Accused Products and the domestic industry products.",
+      "quote": "It is therefore my recommendation that the Commission set bond at [amount] per shoe during the Presidential review period.",
+      "topic": "remedy"
+    },
+    "n182": {
+      "doc_id": "788548",
+      "kind": "final_id",
+      "page": 17,
+      "point": "The ALJ found that Crocs' word mark CROCS (Registration No. 3,836,415) is valid and has reached incontestable status as of August 25, 2010, meaning the registration is conclusive evidence of the validity of the registered mark.",
+      "quote": "The Word Mark has reached incontestable status. JX-0003 at 152-158, 169, 182-188, 192 (declarations of incontestability and use); JX-0004 at CROCS_ITC045682; 15 U.S.C. \u00a7 1065; 15 U.S.C. \u00a7 1115(b)",
+      "topic": "decision"
+    },
+    "n183": {
+      "doc_id": "788548",
+      "kind": "final_id",
+      "page": 157,
+      "point": "The Commission has subject matter, personal, and in rem jurisdiction in this investigation, and the importation or sale requirement of Section 337 has been satisfied.",
+      "quote": "1. The Commission has subject matter, personal, and in rem jurisdiction in this investigation. 2. The importation or sale requirement of section 337 has been satisfied.",
+      "topic": "importation"
+    },
+    "n184": {
+      "doc_id": "793866",
+      "kind": "commission_notice",
+      "page": 1,
+      "point": "The Commission instituted the investigation on July 9, 2021, based on a complaint filed by Crocs, Inc. of Broomfield, Colorado.",
+      "quote": "The Commission instituted this investigation on July 9, 2021, based on a complaint filed by Crocs, Inc. of Broomfield, Colorado",
+      "topic": "parties"
+    },
+    "n185": {
+      "doc_id": "793866",
+      "kind": "commission_notice",
+      "page": 1,
+      "point": "Crocs alleges violations of Section 337 based on infringement, false designation of origin, and dilution of U.S. Trademark Registration Nos. 5,149,328 and 5,273,875 (the 3D Marks) and 3,836,415 (the Word Mark).",
+      "quote": "infringement, false designation of origin, and dilution of one of more of U.S. Trademark Registration Nos. 5,149,328; 5,273,875 (collectively, the \"3D Marks\"); and 3,836,415 (\"the Word Mark\")",
+      "topic": "ip_asserted"
+    },
+    "n186": {
+      "doc_id": "793866",
+      "kind": "commission_notice",
+      "page": 1,
+      "point": "The alleged violations concern the importation into the United States, sale for importation, or sale after importation of certain casual footwear and packaging thereof.",
+      "quote": "the importation into the United States, sale for importation, or sale in the United States after importation of certain casual footwear and packaging thereof",
+      "topic": "products"
+    },
+    "n187": {
+      "doc_id": "793866",
+      "kind": "commission_notice",
+      "page": 1,
+      "point": "The Commission's notice of investigation named numerous respondents, including Hobby Lobby Stores, Inc., Quanzhou ZhengDe Network Corp. d/b/a Amoji, and others, and subsequently amended the complaint to add additional respondents including Orly Shoe Corp. and Walmart Inc.",
+      "quote": "named numerous respondents, including: Hobby Lobby Stores, Inc. of Oklahoma City, Oklahoma",
+      "topic": "respondents"
+    },
+    "n188": {
+      "doc_id": "793866",
+      "kind": "commission_notice",
+      "page": 3,
+      "point": "The ALJ found that Crocs satisfied both the technical and economic prongs of the domestic industry requirement.",
+      "quote": "The ID also finds that Crocs has satisfied both the technical and economic prongs of the domestic industry (\"DI\") requirement",
+      "topic": "domestic_industry"
+    },
+    "n189": {
+      "doc_id": "793866",
+      "kind": "commission_notice",
+      "page": 3,
+      "point": "The ALJ issued a final initial determination on January 9, 2023, finding no violation of Section 337 because Crocs failed to prove infringement of the 3D Marks, failed to prove infringement of the Word Mark by Orly or Hobby Lobby, and failed to prove false designation of origin or dilution by any respondents.",
+      "quote": "On January 9, 2023, the ALJ issued the subject ID finding no violation of section 337 because: (1) Crocs failed to prove that any of Respondents infringes the 3D Marks",
+      "topic": "findings"
+    },
+    "n19": {
+      "doc_id": "754941",
+      "kind": "complaint",
+      "page": 30,
+      "point": "Crocs distributes Crocs Shoes bearing the Asserted Trademarks through major retailers including Nordstrom, Journeys, Foot Locker, Dick's Sporting Goods, REI, and online platforms like Amazon and Zappos, as well as through its own website www.crocs.com and retail stores in multiple countries.",
+      "quote": "Crocs distributes its iconic footwear through a vast network of domestic distribution channels, including major retailers and department stores such as Nordstrom, Journeys, Foot Locker, Finish Line, Urban Outfitters, Shoe Carnival, Designer Shoe Warehouse, and Famous footwear",
+      "topic": "domestic_industry"
+    },
+    "n190": {
+      "doc_id": "793866",
+      "kind": "commission_notice",
+      "page": 3,
+      "point": "The ALJ found that the 3D Marks are invalid for lack of secondary meaning, and found that respondents failed to prove the 3D Marks are invalid as functional or the Word Mark is invalid as generic.",
+      "quote": "the 3D Marks are invalid for lack of secondary meaning; and (6) Crocs waived its infringement contentions against Defaulting Respondents",
+      "topic": "invalidity"
+    },
+    "n191": {
+      "doc_id": "793866",
+      "kind": "commission_notice",
+      "page": 4,
+      "point": "The Commission determined not to review the remaining findings in the ID.",
+      "quote": "The Commission has determined not to review the remaining findings in the ID.",
+      "topic": "decision"
+    },
+    "n192": {
+      "doc_id": "793866",
+      "kind": "commission_notice",
+      "page": 4,
+      "point": "The Commission is interested in receiving written submissions addressing the form of remedy that should be ordered, which may include an order resulting in exclusion of subject articles from entry into the United States and/or cease-and-desist orders.",
+      "quote": "the Commission is interested in receiving written submissions that address the form of remedy, if any, that should be ordered",
+      "topic": "remedy"
+    },
+    "n193": {
+      "doc_id": "793866",
+      "kind": "commission_notice",
+      "page": 4,
+      "point": "The Commission is interested in receiving written submissions addressing public interest factors, including the effect of any remedy on public health and welfare, competitive conditions in the U.S. economy, U.S. production of like or directly competitive articles, and U.S. consumers.",
+      "quote": "the public interest factors the Commission will consider include the effect that an exclusion order and/or cease-and-desist order would have on: (1) the public health and welfare; (2) competitive conditions in the U.S. economy",
+      "topic": "public_interest"
+    },
+    "n194": {
+      "doc_id": "793866",
+      "kind": "commission_notice",
+      "page": 5,
+      "point": "Parties' initial written submissions on the issues under review, remedy, public interest, and bonding are due by April 19, 2023, and reply submissions are due by April 26, 2023.",
+      "quote": "The parties' written submissions and proposed remedial orders must be filed no later than the close of business on April 19, 2023. Reply submissions must be filed no later than the close of business on April 26, 2023.",
+      "topic": "next_steps"
+    },
+    "n195": {
+      "doc_id": "793866",
+      "kind": "commission_notice",
+      "page": 5,
+      "point": "Opening submissions are limited to 50 pages and reply submissions are limited to 30 pages.",
+      "quote": "Opening submissions are limited to 50 pages. Reply submissions are limited to 30 pages.",
+      "topic": "next_steps"
+    },
+    "n196": {
+      "doc_id": "793866",
+      "kind": "commission_notice",
+      "page": 5,
+      "point": "The Commission requests that in its initial submission, Complainant identify the remedy sought and provide the HTSUS subheadings under which the accused products are imported, the names of known importers, and identification of articles that are 'packaging of' the subject products.",
+      "quote": "Complainant is requested to identify the remedy sought, and both Complainant and OUII are requested to submit proposed remedial orders for the Commission's consideration",
+      "topic": "other"
+    },
+    "n197": {
+      "doc_id": "793866",
+      "kind": "commission_notice",
+      "page": 5,
+      "point": "Failure to provide information regarding 'packaging of' the subject products may result in waiver of any remedy directed to such packaging.",
+      "quote": "Failure to provide this information may result in waiver of any remedy directed to \"packaging of\" the subject products",
+      "topic": "other"
+    },
+    "n198": {
+      "doc_id": "793866",
+      "kind": "commission_notice",
+      "page": 4,
+      "point": "The Commission requests briefing on whether evidence demonstrates that shoes allegedly subject to Orly's first sale practiced the 3D Marks in question and whether they were the same as the Orly Gator shoes presently at issue, and the implications for the presumption of validity and burden of proof.",
+      "quote": "Explain whether the evidence of record demonstrates that the shoes that were allegedly the subject of Orly's first sale practiced the 3D Marks in question",
+      "topic": "issue"
+    },
+    "n199": {
+      "doc_id": "793866",
+      "kind": "commission_notice",
+      "page": 4,
+      "point": "The Commission requests briefing on whether Crocs' infringement contentions in its pre-hearing and post-hearing briefs provided sufficient notice that Crocs was accusing the lined version of Orly Gator products of infringement and any significant differences between lined and unlined versions.",
+      "quote": "Explain whether the infringement contention presented in Crocs' pre-hearing and post-hearing briefs provided sufficient notice and information that Crocs was accusing the lined version of the accused Orly Gator products of infringement",
+      "topic": "issue"
+    },
+    "n2": {
+      "doc_id": "746084",
+      "kind": "notice_of_institution",
+      "page": 1,
+      "point": "The investigation also covers alleged false designation of source or trademark dilution relating to the casual footwear and packaging.",
+      "quote": "false designation of source or trademark dilution, the threat or effect of which is to destroy or substantially injure an industry",
+      "topic": "scope"
+    },
+    "n20": {
+      "doc_id": "754941",
+      "kind": "complaint",
+      "page": 27,
+      "point": "To design and develop Crocs Shoes, Crocs makes significant investments in plant and equipment, employs significant labor and capital, and makes substantial investments in the exploitation of the Asserted Trademarks through design and research and development activities.",
+      "quote": "Crocs Shoes sold domestically are designed and developed in the United States. To design and develop the Crocs Shoes, Crocs makes significant investments in plant and equipment, employs significant labor and capital, and makes substantial investments in the exploitation of the Asserted Trademarks through activities such as design and research and development.",
+      "topic": "domestic_industry"
+    },
+    "n200": {
+      "doc_id": "805361",
+      "kind": "commission_opinion",
+      "page": 3,
+      "point": "The Commission determined that Crocs failed to prove a violation of Section 337 by participating respondents Orly, Hobby Lobby, and Amoji with respect to three trademark registrations: the \u02bc328 Mark and \u02bc875 Mark (3D marks) and the \u02bc415 Registration (word mark 'CROCS') because Crocs failed to prove likelihood of confusion, infringement, false designation of origin, or dilution by tarnishment or blurring.",
+      "quote": "the Commission has determined that there has been no violation of section 337 of the Tariff Act of 1930",
+      "topic": "holdings"
+    },
+    "n201": {
+      "doc_id": "805361",
+      "kind": "commission_opinion",
+      "page": 3,
+      "point": "The Commission issued a limited exclusion order (LEO) against the four respondents found in default (La Modish, Star Bay, Huizhou, and Anao) and cease and desist orders (CDOs) against certain of the respondents found in default, but took no position on secondary meaning or the presumption of validity that would affect those remedies against the participating respondents.",
+      "quote": "The Commission has determined to issue a limited exclusion order ('LEO') against the respondents previously found in default and cease and desist orders ('CDO') against certain of the respondents found in default.",
+      "topic": "remedy"
+    },
+    "n202": {
+      "doc_id": "805361",
+      "kind": "commission_opinion",
+      "page": 3,
+      "point": "The Commission set the bond amount at 100 percent of the entered value of infringing goods imported during the period of Presidential review.",
+      "quote": "The Commission has also determined to set a bond in the amount of one hundred (100) percent of the entered value of infringing goods imported during the period of Presidential review.",
+      "topic": "remedy"
+    },
+    "n203": {
+      "doc_id": "805361",
+      "kind": "commission_opinion",
+      "page": 3,
+      "point": "The Commission found that public interest factors do not preclude entry of the LEO and CDO relief.",
+      "quote": "The Commission finds that the public interest factors do not preclude entry of such relief.",
+      "topic": "public_interest"
+    },
+    "n204": {
+      "doc_id": "805361",
+      "kind": "commission_opinion",
+      "page": 3,
+      "point": "Commissioner Kearns joined Parts I, II, III, IV, and V.A. of the Commission's opinion but otherwise dissented, filing a separate opinion explaining his views on the remaining issues.",
+      "quote": "Commissioner Kearns joins Parts I, II, III, IV, and V.A. of this Opinion but otherwise respectfully dissents from the Commission's decision",
+      "topic": "separate_views"
+    },
+    "n205": {
+      "doc_id": "805361",
+      "kind": "commission_opinion",
+      "page": 8,
+      "point": "The asserted 3D marks consist of specific design elements of a shoe upper: the \u02bc328 Mark claims a pattern of 13 round holes in the horizontal portion and 7 trapezoidal holes in the vertical portion; the \u02bc875 Mark includes those same elements plus a textured strip on the heel and a decorative band along the heel strap.",
+      "quote": "The mark consists of a three dimensional configuration of the outside design of an upper for a shoe comprising a pattern of 13 round holes",
+      "topic": "technology"
+    },
+    "n206": {
+      "doc_id": "805361",
+      "kind": "commission_opinion",
+      "page": 11,
+      "point": "The accused products are the Orly Gator, Orly Redesign, and Amoji Garden Clogs (including Revised Garden Clogs), all casual footwear with holes in the upper; Orly also used the mark 'GATOR' and Hobby Lobby used the mark 'CROC,' both accused of infringing the word mark 'CROCS'.",
+      "quote": "Crocs accuses the 'Orly Gator' and 'Orly Redesign,' below, of infringing the 3D Marks.",
+      "topic": "products"
+    },
+    "n207": {
+      "doc_id": "805361",
+      "kind": "commission_opinion",
+      "page": 14,
+      "point": "Crocs asserted the lined and unlined versions of its Classic Clog include the 3D Marks and take the Commission's position on whether Crocs satisfied the domestic industry requirement, neither confirming nor denying Crocs's satisfaction of the technical and economic prongs.",
+      "quote": "Crocs asserts the lined and unlined versions of its Classic Clog include the 3D Marks.",
+      "topic": "domestic_industry"
+    },
+    "n208": {
+      "doc_id": "805361",
+      "kind": "commission_opinion",
+      "page": 7,
+      "point": "The ALJ found that the 3D Marks do not cover the entirety of the shoe or its overall look because the overall look of a clog is a common or generic design element not entitled to trademark protection.",
+      "quote": "do not cover the entirety of the shoe or its overall look.' Id. at 5 (emphasis in ID).",
+      "topic": "findings"
+    },
+    "n209": {
+      "doc_id": "805361",
+      "kind": "commission_opinion",
+      "page": 8,
+      "point": "During prosecution of the \u02bc328 Mark, the trademark examiner stated that the overall clog shape, defined midsole, and topline collar represent generic elements commonly present in waterproof strap clogs that are nondistinctive and do not function as marks, and only the specific shape and placement of ventilation/draining holes are potentially capable of distinguishing Crocs's goods.",
+      "quote": "The remaining elements of the proposed configuration which appear potentially capable of distinguishing applicant's goods comprise the specific shape and placement of ventilation/draining holes.",
+      "topic": "claim_construction"
+    },
+    "n21": {
+      "doc_id": "754941",
+      "kind": "complaint",
+      "page": 30,
+      "point": "Crocs' Classic Clog was conceptualized as a boat shoe and became recognized by 2005 as a standard-bearer in fashion footwear, professional footwear, and casual lifestyle footwear markets. The shoe's distinctive appearance features holes and textured elements that form the basis of the 3D Marks.",
+      "quote": "Crocs' iconic Classic Clog was conceptualized during a sailing trip and originally presented to consumers as a boat shoe. Soon after, it became apparent that the shoe appealed to consumers of all demographics seeking fun and friendly, comfortable footwear.",
+      "topic": "technology"
+    },
+    "n210": {
+      "doc_id": "805361",
+      "kind": "commission_opinion",
+      "page": 21,
+      "point": "The Commission affirmed the ALJ's finding that Crocs failed to prove that Orly, Hobby Lobby, or Amoji infringe the 3D Marks or Word Mark, finding that the Orly/Hobby Lobby Gator has a similar overall commercial appearance to the 3D Marks but the Orly/Hobby Lobby Redesign and Amoji Garden Clog do not.",
+      "quote": "the Commission affirms the ID's findings that Orly, Hobby Lobby, and Amoji do not infringe the 3D Marks or Word Mark",
+      "topic": "infringement"
+    },
+    "n211": {
+      "doc_id": "805361",
+      "kind": "commission_opinion",
+      "page": 22,
+      "point": "With respect to DuPont factor 2 (similarity and nature of goods), the Commission adopted the ALJ's finding that this factor favors likelihood of confusion because the products are all EVA clogs or molded clog-type footwear, but declines to elevate this factor and assigns it lesser weight because the trademark examiner found the clog to be a common generic feature.",
+      "quote": "the Commission affirms the ID's finding that this factor favors finding a likelihood of confusion because the Orly Gator, Orly Redesign, Amoji Garden Clog, and Classic Clog are all EVA clogs",
+      "topic": "infringement"
+    },
+    "n212": {
+      "doc_id": "805361",
+      "kind": "commission_opinion",
+      "page": 22,
+      "point": "With respect to DuPont factor 4 (conditions of sale), the Commission affirmed that this factor weighs against likelihood of confusion because accused shoes have different tags and price points than Crocs Classic Clogs, with Orly Gators retailing for $6-10 at Hobby Lobby versus $40 or more for Classic Clogs.",
+      "quote": "retail price of $6-10 for Orly Gators at Hobby Lobby vs. $40 or more for Classic Clogs",
+      "topic": "infringement"
+    },
+    "n213": {
+      "doc_id": "805361",
+      "kind": "commission_opinion",
+      "page": 23,
+      "point": "With respect to DuPont factor 5 (fame of mark), the Commission modified the ALJ's finding to determine this factor is neutral rather than weighing against likelihood of confusion, but agreed that Crocs's evidence of fame for the 3D Marks is weak, as distinguished from general recognition of the common clog design.",
+      "quote": "the Commission modifies the ID to find this factor is neutral; it does not weigh against the likelihood of confusion.",
+      "topic": "infringement"
+    },
+    "n214": {
+      "doc_id": "805361",
+      "kind": "commission_opinion",
+      "page": 24,
+      "point": "With respect to DuPont factors 7, 8, and 12 (actual confusion), the Commission found that Crocs's alleged evidence of actual confusion is ambiguous and weak, consisting only of two social media posts referring to purchasing 'crocs' at Hobby Lobby which may have used the term generically rather than as a trademark, and testimony from Orly's former Chief Operating Officer that was corrected upon closer review and provided little evidence of real-life consumer confusion.",
+      "quote": "These two posts refer to purchasing 'crocs' at Hobby Lobby, which suggests they were using the term generically, although this is not clear.",
+      "topic": "infringement"
+    },
+    "n215": {
+      "doc_id": "805361",
+      "kind": "commission_opinion",
+      "page": 26,
+      "point": "The Commission found that Dr. Pittaoulis's consumer survey was unreliable because her control image (a black mesh slide) bore little resemblance to the non-trademarked elements of the test stimuli, such as the overall clog shape and heel strap, rendering it impossible to determine whether survey respondents were reacting to the absence of the 3D Marks or to the absence of many other unclaimed features.",
+      "quote": "the ID correctly finds that Dr. Pittaoulis's control shoe did not share many of the non-trademarked design elements of the test shoe, which rendered her survey unreliable and non-probative.",
+      "topic": "infringement"
+    },
+    "n216": {
+      "doc_id": "805361",
+      "kind": "commission_opinion",
+      "page": 29,
+      "point": "The Commission rejected Crocs's argument that gross association rates (65-75%) alone can establish likelihood of confusion, finding that gross association rates lack a control to filter out unwanted influences and that over half of Dr. Pittaoulis's survey respondents erroneously associated even a black mesh slide with Crocs despite its substantial differences from the 3D Marks or Classic Clog.",
+      "quote": "The Commission disagrees. Gross association rates alone, which by definition lack a control to filter out unwanted influences, make it very difficult, if not impossible, to determine",
+      "topic": "infringement"
+    },
+    "n217": {
+      "doc_id": "805361",
+      "kind": "commission_opinion",
+      "page": 34,
+      "point": "With respect to DuPont factor 9 (variety of goods), the Commission modified the ALJ's finding to determine this factor is neutral rather than weighing against likelihood of confusion, noting that where a trademark is not used on a variety of goods or services, the TTAB has held this factor should be viewed as neutral.",
+      "quote": "the Commission finds this factor is neutral. Not even Crocs, however, argues that this factor should weigh in favor of likelihood of confusion.",
+      "topic": "infringement"
+    },
+    "n218": {
+      "doc_id": "805361",
+      "kind": "commission_opinion",
+      "page": 1,
+      "point": "The Commission affirmed the ALJ's finding that Crocs failed to prove that respondents falsely designated the source or origin of the accused products, which is an unfair act under Section 337(a)(1)(A).",
+      "quote": "Crocs Failed to Show False Designation of Origin",
+      "topic": "other_unfair_acts"
+    },
+    "n219": {
+      "doc_id": "805361",
+      "kind": "commission_opinion",
+      "page": 3,
+      "point": "The Commission took no position on the ALJ's findings regarding secondary meaning and the presumption of validity for the 3D Marks, as well as findings that respondents failed to prove the 3D Marks are functional or that the Word Mark is generic.",
+      "quote": "The Commission takes no position on Orly's alleged first sale, the presumption of validity, secondary meaning, fair use, injury, and the technical and economic prongs of domestic industry.",
+      "topic": "invalidity"
+    },
+    "n22": {
+      "doc_id": "754941",
+      "kind": "complaint",
+      "page": 34,
+      "point": "The Crocs 3D Marks are non-functional. They feature one-of-a-kind ornamental design characteristics giving the impression of a fun and distinctively quirky clog-like shoe. The distinctively gentle slope of the upper gives the shoe a unique, recognizable outline, and competitors have virtually infinite non-infringing footwear styles available.",
+      "quote": "They 3D Marks feature one-of-a-kind ornamental design characteristics that give the overall impression of a fun and distinctively quirky clog-like shoe for which Crocs is well-known. The distinctively gentle slope of the upper gives the shoe a unique, recognizable outline.",
+      "topic": "technology"
+    },
+    "n220": {
+      "doc_id": "805361",
+      "kind": "commission_opinion",
+      "page": 5,
+      "point": "The ALJ found that respondents failed to prove the 3D Marks are invalid as functional, and the Commission took no position on this finding or on respondents' fair use defense.",
+      "quote": "The ID also finds that Respondents failed to prove that the 3D Marks are invalid as functional or the Word Mark is invalid as generic.",
+      "topic": "other_defenses"
+    },
+    "n221": {
+      "doc_id": "805361",
+      "kind": "commission_opinion",
+      "page": 19,
+      "point": "The Commission reversed the ALJ's finding that Crocs waived its infringement contentions with respect to the lined versions of the Orly Gator, finding that Crocs's pre-hearing brief expressly referenced both lined and unlined versions of the Orly Gators and alleged they were substantially similar to the 3D Marks.",
+      "quote": "The Commission has determined to reverse the ID's finding of waiver with respect to the lined Orly Gators",
+      "topic": "infringement"
+    },
+    "n222": {
+      "doc_id": "805361",
+      "kind": "commission_opinion",
+      "page": 35,
+      "point": "The Commission reversed the ALJ's finding that Crocs waived its infringement contentions against the four defaulting respondents (La Modish, Star Bay, Huizhou, and Anao), finding that this waiver doctrine does not apply to issuance of an LEO or CDO against a party found in default pursuant to 19 U.S.C. \u00a7 1337(g)(1).",
+      "quote": "the Commission has determined to set aside the ID's findings with respect to waiver as they do not apply to issuance of an LEO or CDO against a party found in default",
+      "topic": "decision"
+    },
+    "n223": {
+      "doc_id": "805361",
+      "kind": "commission_opinion",
+      "page": 91,
+      "point": "Commissioner Kearns stated in his dissent that he would find the 3D Marks acquired secondary meaning long before 2016 based on the Converse factors, including 20 years of consistent use, substantial exclusivity from 2011-2020, and billions of dollars in sales, and would remand to the ALJ for further proceedings on the domestic industry requirement before addressing remedy.",
+      "quote": "I therefore find that Crocs established that the 3D Marks acquired secondary meaning long before 2016.",
+      "topic": "separate_views"
+    },
+    "n224": {
+      "doc_id": "805361",
+      "kind": "commission_opinion",
+      "page": 89,
+      "point": "Crocs had been granted a general exclusion order based on a design patent in Investigation No. 337-TA-567 from 2011 to 2020, which contributed to Crocs's substantial exclusivity over the 3D Marks during that period.",
+      "quote": "owing in large part to the Commission's issuance of a general exclusion order based on Croc's design patent in Inv. No. 337-TA-567",
+      "topic": "related_proceedings"
+    },
+    "n225": {
+      "doc_id": "805361",
+      "kind": "commission_opinion",
+      "page": 3,
+      "point": "The ALJ found that Crocs satisfied both the technical and economic prongs of the domestic industry requirement, but the Commission took no position on whether Crocs satisfied the economic prong or on Crocs's injury or threat of injury.",
+      "quote": "The Commission takes no position on Orly's alleged first sale, the presumption of validity, secondary meaning, fair use, injury, and the technical and economic prongs of domestic industry.",
+      "topic": "findings"
+    },
+    "n226": {
+      "doc_id": "805361",
+      "kind": "commission_opinion",
+      "page": 4,
+      "point": "Crocs alleged violations of Section 337(a)(1)(A) by diluting the Asserted Marks and falsely designating the origin of accused footwear, and violations of Section 337(a)(1)(C) by importing, selling for importation, or selling after importation casual footwear and packaging that infringe the Asserted Marks.",
+      "quote": "Crocs accused respondents of violating section 337(a)(1)(A) (19 U.S.C. \u00a7 1337(a)(1)(A)) by diluting its Asserted Marks and falsely designating the origin",
+      "topic": "issue"
+    },
+    "n227": {
+      "doc_id": "805361",
+      "kind": "commission_opinion",
+      "page": 3,
+      "point": "The Commission determined there is no violation of Section 337 as to the participating respondents (Orly, Hobby Lobby, and Amoji) with respect to the 3D Marks and Word Mark, but issued an LEO and CDOs against the defaulting respondents and set a 100 percent bond.",
+      "quote": "the Commission has determined that there has been no violation of section 337 of the Tariff Act of 1930, as amended, 19 U.S.C. \u00a7 1337 ('section 337'), by the participating respondents",
+      "topic": "outcome"
+    },
+    "n23": {
+      "doc_id": "754941",
+      "kind": "complaint",
+      "page": 29,
+      "point": "The Crocs Word Mark encompasses several standard character marks for 'CROCS' registered for use in footwear and in lightweight, slip-resistant footwear specifically. It was first used in November 2002 and federally registered August 24, 2010, with renewal on October 4, 2019.",
+      "quote": "The Word Mark encompasses several standard character marks for \"CROCS\", which are registered for use in footwear and in lightweight, slip-resistant footwear specifically. The Word Mark was first used in November 2002.",
+      "topic": "ip_asserted"
+    },
+    "n24": {
+      "doc_id": "754941",
+      "kind": "complaint",
+      "page": 29,
+      "point": "Neither the 3D Marks nor the Word Mark were subject to a prior registration or unsuccessful registration, and all registrations are on the Principal Register of the U.S. Patent and Trademark Office.",
+      "quote": "Neither the 3D Marks nor the Word Mark were subject to a prior registration or unsuccessful registration.",
+      "topic": "ip_asserted"
+    },
+    "n25": {
+      "doc_id": "754941",
+      "kind": "complaint",
+      "page": 42,
+      "point": "Crocs previously obtained a General Exclusion Order and Cease & Desist Order in ITC Investigation 337-TA-567 regarding foam footwear infringing U.S. Patents 6,993,858 and D517,789. The '789 patent was upheld by the Federal Circuit and is now expired, after which a flood of knockoffs has appeared. Crocs is also involved in ongoing District of Colorado litigation since 2006 involving patent infringement claims.",
+      "quote": "Following the ALJ's initial determination, the Commission issued its decision finding no violation of section 337. Certain Foam Footwear, Inv. 337-TA-567, 73 Fed. Reg. 450, 73-74 (Aug. 1, 2008). However, on remand from a reversal of that decision by the Federal Circuit, the Commission ultimately issued a General Exclusion Order and a Cease & Desist Order to prohibit importation of the infringing footwear.",
+      "topic": "related_proceedings"
+    },
+    "n26": {
+      "doc_id": "754941",
+      "kind": "complaint",
+      "page": 42,
+      "point": "Crocs is involved in District of Colorado litigation that has been ongoing since 2006 involving claims of infringement of several patents including the '789 patent, in cases Crocs, Inc. v. Effervescent et al., Case No. 06-cv-00605-PAB-KMT, and U.S.A. Dawgs, Inc. v. Snyder et al., Case No. 16-cv-02004-PAB-KMT (consolidated).",
+      "quote": "Crocs is also involved in litigation in the District of Colorado, which has been ongoing since 2006 and involves claims of infringement of several of Crocs' patents, including the '789 patent. See Crocs, Inc. v. Effervescent et al., Case No. 06-cv-00605-PAB-KMT (D. Colo), U.S.A. Dawgs, Inc. v. Snyder et al., Case No. 16-cv-02004-PAB-KMT (D. Colo.) (consolidated).",
+      "topic": "related_proceedings"
+    },
+    "n27": {
+      "doc_id": "754941",
+      "kind": "complaint",
+      "page": 27,
+      "point": "Crocs seeks a General Exclusion Order excluding from entry into the United States all imported shoes that violate Crocs' rights in the Asserted Trademarks due to evidence of likely circumvention of any limited exclusion orders and a pattern of violation.",
+      "quote": "Because Respondents' conduct evidences likely circumvention of any limited exclusion orders that may issue and a pattern of violation, Crocs seeks a General Exclusion Order pursuant to Section 337(d) excluding from entry into the United States all imported shoes that violate Crocs' rights in the Asserted Trademarks.",
+      "topic": "relief"
+    },
+    "n28": {
+      "doc_id": "754941",
+      "kind": "complaint",
+      "page": 34,
+      "point": "Crocs has licensed the Asserted 3D Marks on only one occasion: a 2017 partnership with luxury footwear designer Balenciaga, where cross-over shoes featuring the 3D Marks were sold for $850 at high-end retailers including Barneys New York and sold out during pre-release. Crocs has not licensed the Word Mark.",
+      "quote": "Specifically, in 2017 Crocs unveiled a licensing partnership with famed footwear designer Balenciaga. These shoes retailed for $850, and were described as one of the \"hottest trends\" of 2018 by Business Insider.",
+      "topic": "ip_asserted"
+    },
+    "n29": {
+      "doc_id": "754941",
+      "kind": "complaint",
+      "page": 25,
+      "point": "Since its founding in 2002, Crocs has sold nearly 800 million pairs of shoes in over 90 countries. The company was named 'Brand of the Year' by Footwear News in 2005, launched the largest footwear IPO in history in 2006 raising approximately $208 million, and reported sales of $1 billion worldwide for the first time in 2011.",
+      "quote": "Since the company launched in 2002, Crocs has sold nearly 800 million pairs of shoes in over 90 countries, and garnered widespread recognition of its comfort-driven, revolutionary footwear, making Crocs one of the ten largest non-athletic footwear brands in the world.",
+      "topic": "domestic_industry"
+    },
+    "n3": {
+      "doc_id": "746084",
+      "kind": "notice_of_institution",
+      "page": 2,
+      "point": "The plain language description of the accused products is 'casual footwear with holes in the upper and such footwear's packaging.'",
+      "quote": "\"casual footwear with holes in the upper and such footwear's packaging\"",
+      "topic": "products"
+    },
+    "n30": {
+      "doc_id": "754941",
+      "kind": "complaint",
+      "page": 32,
+      "point": "Crocs' trademarks have become famous through widespread publicity. By 2006, the Classic Clog was recognized as 'a global phenomenon.' The design has been featured extensively in media, social media, and through high-profile public figures including President George W. Bush, Prince George, and numerous celebrities.",
+      "quote": "Since its debut, Crocs footwear bearing the Crocs 3D Marks and Crocs Word Mark has received substantial publicity. By 2006, the Classic Clog had already morphed into \"a global phenomenon\" thanks to its strange look.",
+      "topic": "technology"
+    },
+    "n31": {
+      "doc_id": "754941",
+      "kind": "complaint",
+      "page": 38,
+      "point": "In 2020, Lyst, the largest global fashion search platform, reported that the Classic Clog embodied in the Crocs 3D Marks was the eighth most wanted item in the world. The New York Times declared that 'Crocs Won 2020.' The Classic Clog garnered nearly 25 billion observed media impressions in 2020 alone.",
+      "quote": "In 2020, the largest global fashion search platform, Lyst, reported that, based on web searches, the Classic Clog that is embodied in the Crocs 3D Marks was the eighth most wanted item in the world. The New York Times declared that \"Crocs Won 2020,\" Exhibit 28, and fashion bloggers predicted that \"2021 will be the Year of the Croc.\"",
+      "topic": "technology"
+    },
+    "n32": {
+      "doc_id": "754941",
+      "kind": "complaint",
+      "page": 38,
+      "point": "Crocs has made considerable investments to build the goodwill and widespread recognition embodied in the Asserted Trademarks through design, research and development, and strategic marketing campaigns including the 'Ugly Can Be Beautiful' campaign in 2005 and the 'Come As You Are' campaign in 2013.",
+      "quote": "Building on these measures, the company implemented a return to the basics that relied on the goodwill it had established around the Crocs 3D Marks and Crocs Word Mark over the past decade by reintroducing the Classic Clog with attention-grabbing celebrity partnerships and a fresh ad campaign that acknowledged the company's detractors.",
+      "topic": "domestic_industry"
+    },
+    "n33": {
+      "doc_id": "751637",
+      "kind": "answer",
+      "page": 1,
+      "point": "PW Shoes, Inc. is a respondent in Investigation 337-TA-1270 and denies engaging in unfair competition or importing casual footwear products in violation of Section 337 as alleged by Crocs.",
+      "quote": "Respondent PW Shoes, Inc. (\"PW\") hereby responds to the Corrected and Supplemental Complaint",
+      "topic": "respondents"
+    },
+    "n34": {
+      "doc_id": "751637",
+      "kind": "answer",
+      "page": 1,
+      "point": "PW denies each and every allegation in the Complaint and Notice of Investigation except as specifically admitted, and denies that it has engaged in unfair competition in violation of Section 337 of the Tariff Act of 1930.",
+      "quote": "PW denies each and every allegation in the Complaint and Notice of Investigation except as specifically admitted herein.",
+      "topic": "general_response"
+    },
+    "n35": {
+      "doc_id": "751637",
+      "kind": "answer",
+      "page": 1,
+      "point": "PW denies that the Asserted Trademarks (U.S. Trademark Registration Nos. 3,863,415, 5,149,328, and 5,273,875) confer valid and enforceable trademark rights to Crocs.",
+      "quote": "The trademark registrations at issue in the Investigation, namely U.S. Trademark Registration Nos. 3,863,415, 5,149,328 and 5,273,875 (the \"Asserted Trademarks\"), do not confer valid and enforceable trademark rights",
+      "topic": "general_response"
+    },
+    "n36": {
+      "doc_id": "751637",
+      "kind": "answer",
+      "page": 1,
+      "point": "PW denies that it is causing the importation, sale for importation, or sale within the United States after importation of casual footwear products and packaging in violation of the Asserted Trademarks or Section 337.",
+      "quote": "PW denies that it is causing the importation, the sale for importation, or the sale within the United States after importation of certain footwear products",
+      "topic": "general_response"
+    },
+    "n37": {
+      "doc_id": "751637",
+      "kind": "answer",
+      "page": 142,
+      "point": "PW asserts a First Affirmative Defense of non-infringement, stating that it has not directly infringed, indirectly infringed, contributed to, or induced infringement of any valid or enforceable claim of the Asserted Trademarks.",
+      "quote": "PW has not directly infringed, indirectly infringed, contributed to or induced infringement oof any valid or enforceable claim",
+      "topic": "non_infringement"
+    },
+    "n38": {
+      "doc_id": "751637",
+      "kind": "answer",
+      "page": 143,
+      "point": "PW asserts a Third Affirmative Defense of genericness, contending that U.S. Registration Nos. 5,149,328 and 5,273,875 and any claimed common law trade dress rights are invalid because the marks are generic.",
+      "quote": "Complainant's ownership of U.S. Registration Nos. 5,149,328 and 5,237,875 and any claimed unregistered common law trade dress rights are invalid because the marks at issue are generic.",
+      "topic": "invalidity"
+    },
+    "n39": {
+      "doc_id": "751637",
+      "kind": "answer",
+      "page": 143,
+      "point": "PW asserts a Fourth Affirmative Defense of lack of secondary meaning, arguing that U.S. Registration Nos. 5,149,328 and 5,273,875 and any claimed common law trade dress rights lack secondary meaning.",
+      "quote": "Complainant's ownership of U.S. Registration Nos. 5,149,328 and 5,237,875 and any claimed unregistered common law trade dress rights are invalid because the marks at issue lack secondary meaning.",
+      "topic": "invalidity"
+    },
+    "n4": {
+      "doc_id": "746084",
+      "kind": "notice_of_institution",
+      "page": 1,
+      "point": "The complainant is Crocs, Inc. of Broomfield, Colorado.",
+      "quote": "on behalf of Crocs, Inc. of Broomfield, Colorado",
+      "topic": "parties"
+    },
+    "n40": {
+      "doc_id": "751637",
+      "kind": "answer",
+      "page": 142,
+      "point": "PW asserts a Second Affirmative Defense of functionality, contending that the Asserted Trademarks and their use are functional and therefore not protectable.",
+      "quote": "Complainant's claims and the relief sought in the Complaint are barred, in whole or in part, on the basis that the Asserted Trademarks at issue, and the use of said marks, are functional.",
+      "topic": "unenforceability"
+    },
+    "n41": {
+      "doc_id": "751637",
+      "kind": "answer",
+      "page": 143,
+      "point": "PW asserts a Seventh Affirmative Defense of waiver, estoppel, and laches, claiming that Crocs' claims and relief are barred by these equitable doctrines.",
+      "quote": "Complainant's claims and the relief sought in the Complaint are barred, in whole or in part, by the equitable doctrines of waiver, estoppel, and laches.",
+      "topic": "unenforceability"
+    },
+    "n42": {
+      "doc_id": "751637",
+      "kind": "answer",
+      "page": 143,
+      "point": "PW asserts a Fifth Affirmative Defense of no likelihood of confusion, contending that there is no likelihood of confusion between PW's products and any alleged trademark rights claimed by Crocs.",
+      "quote": "There is no likelihood of confusion between the products offered by PW and any alleged rights Crocs claims in the Asserted Trademarks.",
+      "topic": "other_defenses"
+    },
+    "n43": {
+      "doc_id": "751637",
+      "kind": "answer",
+      "page": 143,
+      "point": "PW asserts a Sixth Affirmative Defense of failure to state a claim, arguing that the Complaint fails to state a claim upon which relief may be granted.",
+      "quote": "The Complaint fails to state a claim upon which relief may be granted.",
+      "topic": "other_defenses"
+    },
+    "n44": {
+      "doc_id": "751637",
+      "kind": "answer",
+      "page": 143,
+      "point": "PW asserts an Eighth Affirmative Defense of no unfair act, denying that PW has committed any unfair act within the meaning of 19 U.S.C. \u00a7 1337.",
+      "quote": "PW has committed no unfair act within the meaning of 19 U.S.C. \u00a7 1337.",
+      "topic": "other_defenses"
+    },
+    "n45": {
+      "doc_id": "751637",
+      "kind": "answer",
+      "page": 144,
+      "point": "PW asserts a Tenth Affirmative Defense of lack of domestic industry, contending that Crocs has not alleged and cannot prove the existence of a domestic industry as required by 19 U.S.C. \u00a7 1337.",
+      "quote": "Crocs has not adequately alleged and cannot prove the existence of a domestic industry as required and defined by 19 U.S.C. \u00a7 1337",
+      "topic": "domestic_industry"
+    },
+    "n46": {
+      "doc_id": "751637",
+      "kind": "answer",
+      "page": 143,
+      "point": "PW asserts a Ninth Affirmative Defense regarding public interest, arguing that the relief sought by Crocs is not in the public interest.",
+      "quote": "The relief sought by Crocs is not in the public interest.",
+      "topic": "relief"
+    },
+    "n47": {
+      "doc_id": "751637",
+      "kind": "answer",
+      "page": 3,
+      "point": "PW denies that Crocs is entitled to any relief requested, including a General Exclusion Order pursuant to Section 337(d) and cease-and-desist orders pursuant to Section 337(f).",
+      "quote": "PW denies that Crocs is entitled to any relief it seeks against PW.",
+      "topic": "relief"
+    },
+    "n48": {
+      "doc_id": "751637",
+      "kind": "answer",
+      "page": 3,
+      "point": "PW admits the Accused Products are casual footwear with holes in the upper and such footwear's packaging, as Crocs described them.",
+      "quote": "PW admits the description Crocs offers for the category of Accused Products is casual footwear with holes in the upper",
+      "topic": "products"
+    },
+    "n49": {
+      "doc_id": "751637",
+      "kind": "answer",
+      "page": 142,
+      "point": "PW identifies its Slingback Sandal Clog product with Harmonized Tariff Schedule (HTSUS) number 6402.99.3145 and identifies its supplier in Confidential Exhibit A.",
+      "quote": "The Harmonized Tariff Schedule (HTSUS) number of the Slingback Sandal Clog is 6402.99.3145.",
+      "topic": "products"
+    },
+    "n5": {
+      "doc_id": "746084",
+      "kind": "notice_of_institution",
+      "page": 2,
+      "point": "The Office of Unfair Import Investigations is a party to the investigation, represented by Pathenia M. Proctor.",
+      "quote": "Pathenia M. Proctor, The Office of Unfair Import Investigations, U.S. International Trade Commission",
+      "topic": "staff"
+    },
+    "n50": {
+      "doc_id": "751637",
+      "kind": "answer",
+      "page": 142,
+      "point": "PW states it is investigating statistical data regarding the volume and value of imports of the subject article and will supplement its response in discovery, while denying that any supplied data relates to or supports any allegation of trademark infringement.",
+      "quote": "PW states that it is investigating statistical data, and other such data required by19 C.F.R. \u00a7 210.13(b), regarding the volume and value of imports",
+      "topic": "scope"
+    },
+    "n51": {
+      "doc_id": "756616",
+      "kind": "answer",
+      "page": 1,
+      "point": "Orly Shoe Corporation is the respondent answering the complaint, and the response indicates that Hobby Lobby Stores, Inc. is also listed as a respondent.",
+      "quote": "Respondent Orly Shoe Corp. (\"Orly\"), by its undersigned attorneys, hereby responds to the First Amended Complaint",
+      "topic": "respondents"
+    },
+    "n52": {
+      "doc_id": "756616",
+      "kind": "answer",
+      "page": 1,
+      "point": "Orly denies engaging in unfair competition or violating Section 337 through importation or sale of footwear products that infringe Crocs' intellectual property rights, and denies that any asserted trademark is valid and enforceable.",
+      "quote": "Orly denies that it has engaged in unfair competition or violated Section 337 by importing, selling for importation, or selling within the United States after importation any footwear products",
+      "topic": "general_response"
+    },
+    "n53": {
+      "doc_id": "756616",
+      "kind": "answer",
+      "page": 1,
+      "point": "Orly denies that its White Foam Clog Ladies Shoes product or any other Orly product infringes or violates any valid and enforceable intellectual property rights.",
+      "quote": "In the Complaint, Crocs specifically accused the Orly White Foam Clog Ladies Shoes product. Orly denies that the White Foam Clog Ladies Shoes product",
+      "topic": "general_response"
+    },
+    "n54": {
+      "doc_id": "756616",
+      "kind": "answer",
+      "page": 4,
+      "point": "Crocs asserts trademark registrations numbered 5,149,328 and 5,273,875 against Orly, as referenced in the certified copies included in the complaint appendices.",
+      "quote": "Orly admits that Appendix 3 is what Crocs purports to be a certified copy of U.S. Trademark Registration No. 5,149,328. Orly admits that Appendix 5 is what Crocs purports to be a certified copy of U.S. Trademark Registration No. 5,273,875",
+      "topic": "ip_asserted"
+    },
+    "n55": {
+      "doc_id": "756616",
+      "kind": "answer",
+      "page": 90,
+      "point": "Orly asserts that the asserted trademarks are functional and therefore invalid and unprotectable, with the underlying federal registrations subject to cancellation.",
+      "quote": "The Asserted Trademarks are functional, and are therefore invalid and unprotectable and the underlying federal registration should be cancelled",
+      "topic": "invalidity"
+    },
+    "n56": {
+      "doc_id": "756616",
+      "kind": "answer",
+      "page": 90,
+      "point": "Orly contends that the asserted trademarks are merely ornamental, not source-identifying, and therefore invalid and unprotectable with registrations subject to cancellation.",
+      "quote": "The Asserted Trademarks are merely ornamental, and are therefore invalid and unprotectable and the underlying federal registration should be cancelled",
+      "topic": "invalidity"
+    },
+    "n57": {
+      "doc_id": "756616",
+      "kind": "answer",
+      "page": 90,
+      "point": "Orly argues that the asserted trademarks lack inherent distinctiveness and have not acquired secondary meaning, making them invalid and unprotectable.",
+      "quote": "The Asserted Trademarks are not inherently distinctive, and have not acquired distinctiveness or secondary meaning, and are therefore invalid and unprotectable",
+      "topic": "invalidity"
+    },
+    "n58": {
+      "doc_id": "756616",
+      "kind": "answer",
+      "page": 91,
+      "point": "Orly alleges that the asserted trademarks are generic, comprising common and functional elements used widely throughout the shoe industry, and therefore cannot identify a particular source.",
+      "quote": "since it is vastly used and extremely common in the shoe industry, it cannot identify a particular source",
+      "topic": "invalidity"
+    },
+    "n59": {
+      "doc_id": "756616",
+      "kind": "answer",
+      "page": 90,
+      "point": "Orly asserts that the design elements claimed by Crocs are part of a genre of shoe not limited to a single source or manufacturer and therefore cannot convey trademark rights.",
+      "quote": "the design elements claimed by Crocs are part of a genre of shoe that is not limited to a single source or manufacturer and therefore, cannot convey trademark rights",
+      "topic": "invalidity"
+    },
+    "n6": {
+      "doc_id": "746084",
+      "kind": "notice_of_institution",
+      "page": 1,
+      "point": "Crocs requested that the Commission issue a general exclusion order, or in the alternative a limited exclusion order, and cease and desist orders.",
+      "quote": "issue a general exclusion order, or in the alternative a limited exclusion order, and cease and desist orders",
+      "topic": "other"
+    },
+    "n60": {
+      "doc_id": "756616",
+      "kind": "answer",
+      "page": 92,
+      "point": "Orly denies that it has infringed any valid and enforceable trademark claim and asserts that its footwear sales do not create a likelihood of consumer confusion regarding source, sponsorship or affiliation.",
+      "quote": "Orly does not and has not infringed any valid and enforceable claim of Complainant's Asserted Trademarks and the sale of its footwear products do not create a likelihood of consumer confusion",
+      "topic": "non_infringement"
+    },
+    "n61": {
+      "doc_id": "756616",
+      "kind": "answer",
+      "page": 92,
+      "point": "Orly argues there exists no likelihood of confusion, deception or misleading of the public and that Crocs has failed to establish that the asserted trademarks are exclusively associated with it.",
+      "quote": "There exists no likelihood of confusion, deception or misleading of the public. Complainant has also failed to establish that the asserted trademarks are distinctive or exclusively associated with Complainant",
+      "topic": "non_infringement"
+    },
+    "n62": {
+      "doc_id": "756616",
+      "kind": "answer",
+      "page": 91,
+      "point": "Orly asserts that Crocs has not adequately alleged and cannot prove the existence of a domestic industry or that such industry is in the process of being established as required by Section 1337(a)(2) and (a)(3).",
+      "quote": "Complainant has not adequately alleged and cannot prove: (i) that a domestic industry exists; and/or (ii) that such domestic industry is in the process of being established, as is required under \u00a7 1337(a)(2)",
+      "topic": "domestic_industry"
+    },
+    "n63": {
+      "doc_id": "756616",
+      "kind": "answer",
+      "page": 91,
+      "point": "Orly contends that Crocs cannot establish a significant investment in plant, equipment, labor or capital relating to articles protected by the asserted trademarks.",
+      "quote": "Complainant cannot establish that it has made \"significant investment\" in plant equipment, labor, or capital relating to articles protected by each of the Asserted Trademarks",
+      "topic": "domestic_industry"
+    },
+    "n64": {
+      "doc_id": "756616",
+      "kind": "answer",
+      "page": 91,
+      "point": "Orly argues that Crocs cannot establish substantial investment in licensing, research and development, or other qualifying activities relating to the asserted midsole trademark sufficient to satisfy the economic prong of the domestic industry requirement.",
+      "quote": "Complainant cannot establish a \"substantial investment\" in licensing, research and development, or other qualifying activities relating to the Asserted Midsole Trademark",
+      "topic": "domestic_industry"
+    },
+    "n65": {
+      "doc_id": "756616",
+      "kind": "answer",
+      "page": 91,
+      "point": "Orly reserves the right to assert lack of domestic industry as a defense, noting no protectable industry exists or is being established relating to the asserted trademarks.",
+      "quote": "on information and belief, as no protectable industry exists or is being established in the United States as defined under Section 337 with respect to the Asserted Trademarks",
+      "topic": "domestic_industry"
+    },
+    "n66": {
+      "doc_id": "756616",
+      "kind": "answer",
+      "page": 93,
+      "point": "Orly asserts that Crocs' requests for relief are barred by the doctrine of laches.",
+      "quote": "Complainant's requests for relief are barred, in whole or in part, by the doctrine of laches",
+      "topic": "other_defenses"
+    },
+    "n67": {
+      "doc_id": "756616",
+      "kind": "answer",
+      "page": 93,
+      "point": "Orly contends that Crocs has abandoned the asserted trademarks through acts or omissions, rendering them invalid or unenforceable and the registrations subject to cancellation.",
+      "quote": "Complainant or its affiliates or predecessors-in-interest, has, through acts or omissions, abandoned at least the Asserted Trademarks",
+      "topic": "other_defenses"
+    },
+    "n68": {
+      "doc_id": "756616",
+      "kind": "answer",
+      "page": 93,
+      "point": "Orly asserts that Crocs is using the asserted trademark in violation of antitrust laws by seeking an improper and unconstitutional monopoly on the shoe design.",
+      "quote": "by seeking an improper and unconstitutional monopoly on the design at issue. This monopolization leads to an actual adverse effect on competition",
+      "topic": "other_defenses"
+    },
+    "n69": {
+      "doc_id": "756616",
+      "kind": "answer",
+      "page": 94,
+      "point": "Orly argues that the use by Orly of the asserted trademarks is protected by the fair use doctrine.",
+      "quote": "the use by Orly of any of the Asserted Trademarks is protected by the fair use doctrine",
+      "topic": "other_defenses"
+    },
+    "n7": {
+      "doc_id": "754941",
+      "kind": "complaint",
+      "page": 25,
+      "point": "Complainant is Crocs, Inc., a Delaware corporation headquartered in Broomfield, Colorado. Crocs manufactures, sells, and distributes footwear bearing its registered trademarks through numerous retail channels and online platforms worldwide.",
+      "quote": "Crocs, Inc. (\"Crocs\" or \"Complainant\"), requests that the United States International Trade Commission (\"Commission\" or \"ITC\") institute an investigation under Section 337 of the Tariff Act of 1930, as Amended, 19 U.S.C. \u00a7 1337 (\"Section 337\"), based on the unlawful importation",
+      "topic": "parties"
+    },
+    "n70": {
+      "doc_id": "756616",
+      "kind": "answer",
+      "page": 94,
+      "point": "Orly asserts that the asserted trademarks are invalid or unenforceable under the doctrine of unclean hands.",
+      "quote": "The Asserted Trademarks are invalid and/ or unenforceable under the doctrine of unclean hands",
+      "topic": "other_defenses"
+    },
+    "n71": {
+      "doc_id": "756616",
+      "kind": "answer",
+      "page": 94,
+      "point": "Orly contends that Crocs' claims are barred at least in part by the applicable statute of limitations.",
+      "quote": "Complainant's claims are barred at least in part by the applicable statute of limitations",
+      "topic": "other_defenses"
+    },
+    "n72": {
+      "doc_id": "756616",
+      "kind": "answer",
+      "page": 95,
+      "point": "Orly requests that the Commission deny all relief requested in the complaint and find that Orly has not violated Section 337 or the Lanham Act.",
+      "quote": "Denying all relief requested in the Complaint; b) Finding that Orly has not violated Section 337 of the Tariff Act",
+      "topic": "relief"
+    },
+    "n73": {
+      "doc_id": "756616",
+      "kind": "answer",
+      "page": 95,
+      "point": "Orly requests that the Commission find the asserted trademarks invalid and unenforceable, and that no protectable domestic industry or substantial injury exists relating to the trademarks.",
+      "quote": "Finding that the Asserted Trademarks are invalid, unenforceable or both; e) Finding that there is no protectable domestic industry",
+      "topic": "relief"
+    },
+    "n74": {
+      "doc_id": "756984",
+      "kind": "answer",
+      "page": 29,
+      "point": "ZhengDe asserts the affirmative defense of non-infringement, denying that it has infringed any valid and enforceable trademarks and that it committed any acts in violation of Section 337.",
+      "quote": "ZhengDe has not and does not infringe any valid and enforceable Asserted Trademarks. ZhengDe also has not otherwise committed any acts in violation of 19 U.S.C. \u00a7 1337.",
+      "topic": "non_infringement"
+    },
+    "n75": {
+      "doc_id": "756984",
+      "kind": "answer",
+      "page": 24,
+      "point": "ZhengDe denies there is likelihood of confusion or dilution between its products and the Asserted Trademarks and denies that ZhengDe's products cause substantial injury to Crocs.",
+      "quote": "ZhengDe denies that there is a likelihood of confusion between ZhengDe's products and the Asserted Trademarks. ZhengDe further denies that there is a likelihood of dilution between ZhengDe's products and the Asserted Trademarks.",
+      "topic": "non_infringement"
+    },
+    "n76": {
+      "doc_id": "756984",
+      "kind": "answer",
+      "page": 31,
+      "point": "ZhengDe asserts that the Asserted Trademarks are functional and therefore invalid and unprotectable, that they are merely ornamental and not inherently distinctive, and that they lack secondary meaning.",
+      "quote": "The Asserted Trademarks are functional, and are therefore invalid and unprotectable and the underlying federal registration should be cancelled. The Asserted Trademarks are merely ornamental, and are therefore in valid and unprotectable.",
+      "topic": "invalidity"
+    },
+    "n77": {
+      "doc_id": "756984",
+      "kind": "answer",
+      "page": 31,
+      "point": "ZhengDe contends that the Asserted Trademarks lack distinctiveness and secondary meaning because the design elements are part of a genre of shoes not limited to a single source or manufacturer.",
+      "quote": "the design elements claimed by Crocs are part of a genre of shoe that is not limited to a single source or manufacturer and therefore, cannot convey trademark rights.",
+      "topic": "invalidity"
+    },
+    "n78": {
+      "doc_id": "756984",
+      "kind": "answer",
+      "page": 32,
+      "point": "ZhengDe asserts that the Asserted Trademarks are comprised of ornamental elements that are not source-identifying and therefore Crocs cannot assert exclusive trademark rights in them.",
+      "quote": "The Asserted Trademarks are comprised of various ornamental elements that are not source identifying. Accordingly, Crocs cannot assert exclusive trademark rights in them.",
+      "topic": "invalidity"
+    },
+    "n79": {
+      "doc_id": "756984",
+      "kind": "answer",
+      "page": 30,
+      "point": "ZhengDe asserts the affirmative defense that Complainant does not have valid, protectable marks in which it enjoys any rights that may be asserted against ZhengDe.",
+      "quote": "Complainant has not valid, protectable marks in which it enjoys any rights that may be asserted against ZhengDe.",
+      "topic": "validity"
+    },
+    "n8": {
+      "doc_id": "754941",
+      "kind": "complaint",
+      "page": 25,
+      "point": "The respondents include: Cape Robbin Inc. (California), Huizhou Xinshunzu Shoes Co., Ltd. (China), Bijora, Inc. d/b/a Akira (Illinois), Dr. Leonard's Healthcare Corp. a/k/a Carol Wright (New Jersey), Orly Shoe Corp. (New York), Donggong Eastar Footwear Enterprises Co., Ltd. (China), KGS Sourcing Ltd. (Hong Kong), Fullbeauty Brands Inc. d/b/a Kingsize (New York), Hawkins Footwear (Georgia), Hobby Lobby Stores, Inc. (Oklahoma), La Modish Boutique (California), Legend Footwear d/b/a Wild Diva (California), Loeffler Randall Inc. (New York), Maxhouse Rise Ltd. (Hong Kong), and others.",
+      "quote": "The proposed Respondents are Cape Robbin Inc. (\"Cape Robbin\"); Bijora, Inc., d/b/a Akira (\"Akira\"); Dr. Leonard's Healthcare Corp. a/k/a Carol Wright (\"Dr. Leonard's\"), Orly Shoe Corp. (\"Orly\"); Fullbeauty Brands Inc. d/b/a Kingsize (\"Fullbeauty\")",
+      "topic": "parties"
+    },
+    "n80": {
+      "doc_id": "756984",
+      "kind": "answer",
+      "page": 29,
+      "point": "ZhengDe asserts the affirmative defense of fair use, claiming the claims are barred by the doctrines of descriptive and/or nominative fair use.",
+      "quote": "The claims made in the Complaint are barred, in whole or in part, by the doctrine of descriptive and/or nominative fair use.",
+      "topic": "other_defenses"
+    },
+    "n81": {
+      "doc_id": "756984",
+      "kind": "answer",
+      "page": 30,
+      "point": "ZhengDe asserts the affirmative defense of functionality, claiming the claims are barred because the alleged marks and their use are functional.",
+      "quote": "The claims made in the Complaint and the relief sought therein are barred, in whole or in part, on the basis that the alleged marks at issue and the use of said marks are functional.",
+      "topic": "other_defenses"
+    },
+    "n82": {
+      "doc_id": "756984",
+      "kind": "answer",
+      "page": 30,
+      "point": "ZhengDe asserts the affirmative defense that the marks at issue lack distinctiveness, including secondary meaning.",
+      "quote": "The claims made in the Complaint and the relief sought therein are barred, in whole or in part, on the basis that the marks at issue lack distinctiveness, in cluding, without limitation, secondary meaning.",
+      "topic": "other_defenses"
+    },
+    "n83": {
+      "doc_id": "756984",
+      "kind": "answer",
+      "page": 31,
+      "point": "ZhengDe asserts the affirmative defense that the marks at issue are generic.",
+      "quote": "The claims made in the Complaint and the relief sought therein are barred, in whole or in part, on the basis that the marks at issue are generic.",
+      "topic": "other_defenses"
+    },
+    "n84": {
+      "doc_id": "756984",
+      "kind": "answer",
+      "page": 31,
+      "point": "ZhengDe asserts the affirmative defense of waiver, estoppel, acquiescence, and/or laches barring the claims in the Complaint.",
+      "quote": "The claims made in the Complaint and the relief sought therein are barred, in whole or in part, by the doctrines of waiver, estoppel, acquiescence, and/or laches.",
+      "topic": "other_defenses"
+    },
+    "n85": {
+      "doc_id": "756984",
+      "kind": "answer",
+      "page": 31,
+      "point": "ZhengDe asserts the affirmative defense of unclean hands barring Crocs' claims.",
+      "quote": "The claims made in the Complaint are barred, in whole or in part, by the doctrine of unclean hands.",
+      "topic": "other_defenses"
+    },
+    "n86": {
+      "doc_id": "756984",
+      "kind": "answer",
+      "page": 32,
+      "point": "ZhengDe asserts that there is no likelihood of confusion, deception or misleading of the public and that Complainant has failed to establish that the asserted trademarks are distinctive or exclusively associated with Complainant.",
+      "quote": "There exists no likelihood of confusion, deception or misleading of the public. Complainant has also failed to establish that the a sserted trademarks are distinctive or exclusively associated with Complainant.",
+      "topic": "other_defenses"
+    },
+    "n87": {
+      "doc_id": "756984",
+      "kind": "answer",
+      "page": 32,
+      "point": "ZhengDe asserts the affirmative defense that Complainant's Asserted Trademarks are not famous as defined by federal trademark laws.",
+      "quote": "Complainant's Asserted Trademarks are not famous as defined by the federal trademark laws.",
+      "topic": "other_defenses"
+    },
+    "n88": {
+      "doc_id": "756984",
+      "kind": "answer",
+      "page": 33,
+      "point": "ZhengDe asserts the affirmative defense that it has not diluted the distinctive quality of any alleged famous trademarks of Complainant.",
+      "quote": "Amoji does not and has not diluted the distinctive quality of any alleged famous trademarks of Complainant. The Asserted Trademarks lack distinctiveness and are not famous.",
+      "topic": "other_defenses"
+    },
+    "n89": {
+      "doc_id": "756984",
+      "kind": "answer",
+      "page": 33,
+      "point": "ZhengDe asserts the affirmative defense of trademark misuse, alleging that Crocs is seeking an improper and unconstitutional monopoly on the design, which harms competition by controlling consumer prices and eliminating alternative design choices.",
+      "quote": "Complainant has been using and is attempting to further use the Asserted Trademarks in violation of antitrust laws, inter alia, by seeking an improper and unconstitutional monopoly on the design at issue.",
+      "topic": "other_defenses"
+    },
+    "n9": {
+      "doc_id": "754941",
+      "kind": "complaint",
+      "page": 26,
+      "point": "Additional respondents include: PW Shoes, Inc. a/k/a P&W (New York), SG Footwear Meser Grp. Inc. (New Jersey), Shoe-Nami, Inc. (Louisiana), Skechers USA, Inc. (California), Star Bay Group Inc. (New Jersey), Yoki Fashion International LLC (New York), Quanzhou ZhengDe Network Corp. d/b/a Amoji (China), 718Closeouts (New York), Royal Deluxe Accessories, LLC (New Jersey), and Fujian Huayuan Well Import and Export Trade Co., Ltd. (China).",
+      "quote": "PW Shoes, Inc. a/k/a P&W (\"PW\"); SG Footwear Meser Grp. Inc. a/k/a S. Goldberg & Co. (\"SG Footwear\"); Shoe-Nami, Inc. (\"Shoe-Nami\"); Skechers USA, Inc. (\"Skechers\"); Star Bay Group Inc. (\"Star Bay\"); Yoki Fashion International LLC (\"Yoki\")",
+      "topic": "parties"
+    },
+    "n90": {
+      "doc_id": "756984",
+      "kind": "answer",
+      "page": 30,
+      "point": "ZhengDe asserts the affirmative defense that Complainant has not adequately alleged and cannot prove the existence of a domestic industry or that a domestic industry is in the process of being established as required by Section 337.",
+      "quote": "Complainant has not adequately allege d and cannot prove th e existence of a domestic industry or that a domesti c industry is in the process of being established, as required by Section 337(a).",
+      "topic": "domestic_industry"
+    },
+    "n91": {
+      "doc_id": "756984",
+      "kind": "answer",
+      "page": 30,
+      "point": "ZhengDe asserts the affirmative defense that the remedies Complainant seeks would be contrary to the public interest and will adversely affect competitive conditions and harm consumers by limiting competition and reducing choice.",
+      "quote": "The remedies that Complainant seeks in this Investigation would be contrary to the public interest and therefore are unwarrant ed under 19 U.S.C. \u00a7 1337(d)-(f). Specifically, Complainant's requested relief will adversely affect competitive conditions in the U.S. economy and harm U.S. consumers by limiting competition and reducing consumer choice.",
+      "topic": "relief"
+    },
+    "n92": {
+      "doc_id": "756984",
+      "kind": "answer",
+      "page": 32,
+      "point": "ZhengDe asserts the affirmative defense that Complainant cannot prove the existence of substantial injury in connection with the asserted trademarks as required by Section 337.",
+      "quote": "Complainant cannot prove the existence of a substantial injury, pursuant to Section 337(a)(1)(A) in connection with the asserted trademarks.",
+      "topic": "relief"
+    },
+    "n93": {
+      "doc_id": "757304",
+      "kind": "answer",
+      "page": 2,
+      "point": "Walmart Inc. is responding to allegations that it violated Section 337 by importing, selling for importation, or selling casual footwear and packaging after importation that Crocs alleges infringe Crocs' trademark rights.",
+      "quote": "Respondent Walmart Inc. (\"Walmart\") hereby responds to the First Amended Complaint filed under Section 337",
+      "topic": "respondents"
+    },
+    "n94": {
+      "doc_id": "757304",
+      "kind": "answer",
+      "page": 3,
+      "point": "Crocs Inc. is the complainant who filed the First Amended Complaint on October 22, 2021, and Walmart Inc. is the respondent named in the complaint.",
+      "quote": "Walmart admits that the First Amended Complaint alleges violations of Section 337 based upon",
+      "topic": "parties"
+    },
+    "n95": {
+      "doc_id": "757304",
+      "kind": "answer",
+      "page": 3,
+      "point": "The asserted marks are U.S. Trademark Registration No. 3,836,415 (the '415 mark), U.S. Trademark Registration No. 5,149,328 (the '328 mark), and U.S. Trademark Registration No. 5,273,875 (the '875 mark), which are referred to as 3D Marks related to casual footwear design.",
+      "quote": "certain trademarks rights held by Complainant, including but not limited to U.S. Trademark Registration No. 3,836,415",
+      "topic": "ip_asserted"
+    },
+    "n96": {
+      "doc_id": "757304",
+      "kind": "answer",
+      "page": 2,
+      "point": "Walmart denies that it has violated Section 337 by engaging in unfair competition or by importing, selling for importation, or selling any product that infringes Complainant's asserted trademarks, and denies all allegations in the First Amended Complaint except as specifically admitted.",
+      "quote": "Walmart denies that it has violated Section 337 by engaging in unfair competition or by importing into the United States",
+      "topic": "general_response"
+    },
+    "n97": {
+      "doc_id": "757304",
+      "kind": "answer",
+      "page": 3,
+      "point": "Walmart admits that Crocs filed the original complaint on June 8, 2021, filed supplements on June 10, 17, 22, 25, and 28, 2021, and filed the First Amended Complaint on October 22, 2021.",
+      "quote": "Walmart admits that Complainant filed a Complaint with the Commission on June 8, 2021",
+      "topic": "general_response"
+    },
+    "n98": {
+      "doc_id": "757304",
+      "kind": "answer",
+      "page": 3,
+      "point": "Walmart admits the Commission instituted an investigation pursuant to Notice of Investigation dated July 6, 2021, and published in the Federal Register on July 9, 2021, but denies that it has violated Section 337 subsections (a)(1)(A) or (a)(1)(C).",
+      "quote": "Walmart further admits that the Commission has instituted an investigation, as set forth in the Commission's Notice of Investigation",
+      "topic": "general_response"
+    },
+    "n99": {
+      "doc_id": "757304",
+      "kind": "answer",
+      "page": 122,
+      "point": "Walmart asserts a First Defense of non-infringement, alleging that it has not infringed any valid and enforceable trademark or trade dress rights and does not induce or contribute to infringement by others.",
+      "quote": "FIRST DEFENSE: NON-INFRINGEMENT Walmart has not infringed and does not infringe, either directly or indirectly, any valid",
+      "topic": "non_infringement"
+    }
+  },
+  "notes_model": "claude-haiku-4-5-20251001",
+  "notes_version": 2,
+  "pending": [],
+  "phase": 3,
+  "sources": [
+    "746084",
+    "751637",
+    "753796",
+    "754941",
+    "756616",
+    "756984",
+    "757304",
+    "758341",
+    "776777",
+    "777367",
+    "788548",
+    "793866",
+    "805361"
+  ],
+  "summary": {
+    "about": [
+      {
+        "cites": [
+          "n4",
+          "n5",
+          "n8",
+          "n9",
+          "n184",
+          "n187"
+        ],
+        "text": "The complainant is Crocs, Inc., a Delaware company based in Broomfield, Colorado, that makes and sells the Classic Clog and other footwear worldwide. The Commission's notice of investigation, issued in July 2021 on Crocs' complaint, named a large number of respondents -- footwear brands, importers, and retailers such as Cape Robbin, Orly Shoe Corp., Hobby Lobby Stores, Walmart, PW Shoes, Quanzhou ZhengDe Network Corp. (d/b/a Amoji), Fujian Wanjiaxin Industrial Developing (a/k/a Wanjiaxin), Maxhouse Rise, Loeffler Randall, and others based in the United States, China, Hong Kong, and Brazil. The case concerns alleged copying of the look of Crocs' clog-style shoes -- footwear with round holes across the top of the foot and a textured strip with trapezoidal openings along the side, some also with a textured heel strip and decorative heel-strap band -- as well as use of the CROCS name."
+      },
+      {
+        "cites": [
+          "n1",
+          "n2",
+          "n11",
+          "n23",
+          "n162",
+          "n164",
+          "n205"
+        ],
+        "text": "Crocs asserted three federal trademark registrations: the '328 and '875 registrations, which are three-dimensional ('3D') marks protecting the specific design of holes, textured strip, and (for the '875 mark) heel details on the shoe upper, and the '415 registration, a word mark for 'CROCS.' The 3D marks were registered in 2017 based on use since 2003; the word mark was registered in 2010 based on use since 2002. The Commission instituted the investigation to determine whether the importation and sale of the accused footwear and its packaging violated Section 337 of the Tariff Act, the statute that lets the Commission block imports that infringe intellectual property rights, by infringing these marks or through false designation of source or trademark dilution."
+      }
+    ],
+    "allegations": [
+      {
+        "cites": [
+          "n13",
+          "n14",
+          "n15",
+          "n16",
+          "n17"
+        ],
+        "text": "Crocs alleges that the accused products -- clog-style shoes sold by respondents such as Cape Robbin, Orly, Hobby Lobby, Amoji, and others, manufactured abroad (including in China and Brazil) and imported into the United States for sale through retailers and online platforms -- copy the design features protected by the 3D marks, including the size, positioning, number and shape of the holes and the textured heel and strap elements. Crocs alleges this importation and sale constitutes trademark infringement, false designation of source, and dilution in violation of Section 337, pointing to customer reviews referring to accused shoes as 'crocs' as evidence of actual confusion."
+      },
+      {
+        "cites": [
+          "n18",
+          "n19",
+          "n20"
+        ],
+        "text": "To bring a Section 337 case a complainant must show a domestic industry -- U.S. activity tied to the asserted right. Crocs alleges it satisfies this requirement because it designs and develops its Classic Clog and other Crocs Shoes bearing the asserted marks in the United States, selling over 23 million pairs for $521.4 million in 2020 alone, and because it makes significant investments in plant, equipment, labor, capital, and research and development directed to products practicing the marks."
+      },
+      {
+        "cites": [
+          "n6",
+          "n27"
+        ],
+        "text": "Crocs seeks a general exclusion order -- an order barring the entry of infringing goods regardless of source, as opposed to a limited exclusion order aimed only at named respondents -- arguing that a pattern of violation and difficulty identifying the source of many infringing imports justifies broad relief, or in the alternative a limited exclusion order together with cease-and-desist orders, which would bar named U.S. respondents from selling their existing U.S. inventory of infringing goods."
+      }
+    ],
+    "answers": [
+      {
+        "doc_id": "751637",
+        "group": "A1",
+        "paragraphs": [
+          {
+            "cites": [
+              "n34",
+              "n35",
+              "n38",
+              "n39",
+              "n40",
+              "n45",
+              "n46",
+              "n47"
+            ],
+            "text": "PW Shoes denies infringing any valid trademark and denies that the asserted marks are valid, arguing they are generic, functional, and lack secondary meaning (the association consumers must make between a design and a single source for it to work as a trademark). PW also denies domestic industry, denies any likelihood of confusion, and raises waiver, estoppel, and laches, contending Crocs is not entitled to a general exclusion order or cease-and-desist orders."
+          }
+        ],
+        "who": "PW Shoes, Inc."
+      },
+      {
+        "doc_id": "756616",
+        "group": "A2",
+        "paragraphs": [
+          {
+            "cites": [
+              "n52",
+              "n53",
+              "n55",
+              "n57",
+              "n58",
+              "n62",
+              "n63",
+              "n66",
+              "n68",
+              "n69"
+            ],
+            "text": "Orly Shoe Corporation (with Hobby Lobby also named in this answer) denies that its White Foam Clog or other products infringe, and denies that the 3D marks are valid, asserting they are functional, merely ornamental, generic, and lacking distinctiveness or secondary meaning, with the underlying registrations subject to cancellation. Orly also disputes domestic industry, arguing Crocs cannot show the required investment in plant, equipment, labor, or capital tied to the marks, and raises laches, abandonment, unclean hands, antitrust misuse, and fair use."
+          }
+        ],
+        "who": "Orly Shoe Corporation; Hobby Lobby Stores, Inc."
+      },
+      {
+        "doc_id": "756984",
+        "group": "A3",
+        "paragraphs": [
+          {
+            "cites": [
+              "n74",
+              "n76",
+              "n77",
+              "n79",
+              "n83",
+              "n87",
+              "n89",
+              "n90",
+              "n91"
+            ],
+            "text": "Quanzhou ZhengDe (Amoji) denies infringing any valid trademark and denies any likelihood of confusion or dilution, and argues the marks are invalid as functional, ornamental, generic, and lacking secondary meaning and fame. ZhengDe also denies domestic industry, and raises fair use, laches, unclean hands, and trademark misuse, arguing the requested relief would harm competition and consumers."
+          }
+        ],
+        "who": "Quanzhou ZhengDe Network Corp., d/b/a Amoji"
+      },
+      {
+        "doc_id": "757304",
+        "group": "A4",
+        "paragraphs": [
+          {
+            "cites": [
+              "n96",
+              "n99",
+              "n101",
+              "n107",
+              "n108",
+              "n109",
+              "n112",
+              "n113",
+              "n117",
+              "n118"
+            ],
+            "text": "Walmart denies violating Section 337 and denies that the accused products infringe the 3D marks, arguing they are not substantially similar to generic foam clogs sold by Walmart and that there is no likelihood of confusion given differences in price, channels of trade, and lack of fame. Walmart also contends the 3D marks are invalid as functional, ornamental, generic, and lacking secondary meaning, that Crocs cannot establish domestic industry on either the technical or economic prong, and raises fair use, laches, unclean hands, and public-interest objections, seeking a finding of no violation and attorneys' fees."
+          }
+        ],
+        "who": "Walmart Inc.; Loeffler Randall Inc."
+      },
+      {
+        "doc_id": "758341",
+        "group": "A5",
+        "paragraphs": [
+          {
+            "cites": [
+              "n124",
+              "n126",
+              "n128",
+              "n129",
+              "n132",
+              "n133",
+              "n137",
+              "n138",
+              "n139",
+              "n140"
+            ],
+            "text": "Fujian Wanjiaxin (with Maxhouse Rise also named) denies infringing any valid trademark, arguing the accused products are generic foam clogs not substantially similar to the 3D marks and that there is no likelihood of confusion given differences in appearance, price, and lack of fame. Wanjiaxin contends the marks are functional (citing Crocs' own touting of ventilation benefits), ornamental, generic, and without secondary meaning, disputes domestic industry on both prongs, and raises fair use, laches, and unclean hands, seeking denial of all relief."
+          }
+        ],
+        "who": "Fujian Wanjiaxin Industrial Developing, Inc., a/k/a Fujian Wanjiaxin Light Industrial Developing, Inc.; Maxhouse Rise Ltd."
+      }
+    ],
+    "decisions": [
+      {
+        "cites": [
+          "n166",
+          "n168",
+          "n169",
+          "n170",
+          "n171",
+          "n172",
+          "n173",
+          "n174",
+          "n176",
+          "n177",
+          "n178",
+          "n179",
+          "n180",
+          "n181",
+          "n182"
+        ],
+        "text": "In the final initial determination, the ALJ found that the 3D marks ('328 and '875) are invalid for lack of secondary meaning, though not functional and not generic; the word mark ('415) was found valid and incontestable. The ALJ found that the remaining accused products -- the Orly Gator and Orly Redesign shoes, the Hobby Lobby products, and the Amoji Garden Clogs and Redesigns -- did not infringe the 3D marks or the word mark, did not falsely designate source, and did not dilute the marks by blurring or tarnishment. The ALJ found that Crocs had satisfied both the technical and economic prongs of the domestic industry requirement, based on Crocs' substantial U.S. investment in designing and developing the Classic Clog. Because no infringement was found, the ALJ concluded there was no violation of Section 337, while making conditional recommendations that, if the Commission found a violation, limited exclusion orders and cease-and-desist orders should issue against Orly, Hobby Lobby, and Amoji, with a bond set by a price-differential calculation."
+      },
+      {
+        "cites": [
+          "n188",
+          "n189",
+          "n190",
+          "n191",
+          "n210",
+          "n211",
+          "n213",
+          "n214",
+          "n215",
+          "n216",
+          "n217",
+          "n221",
+          "n222",
+          "n223"
+        ],
+        "text": "On review, the Commission determined not to review most of the ALJ's findings, including domestic industry and the functionality/genericness rulings, but reviewed and affirmed the ALJ's ultimate finding that Crocs failed to prove infringement, false designation of origin, or dilution by Orly, Hobby Lobby, or Amoji. The Commission agreed the Orly/Hobby Lobby Gator shoe had overall similar commercial appearance to the 3D marks but that the Redesign and Amoji Garden Clog did not, and found Crocs' evidence of actual confusion (two social-media posts and corrected witness testimony) weak, and its consumer survey unreliable because its control image did not properly isolate the trademarked design elements. The Commission modified some individual likelihood-of-confusion factors (finding fame and variety-of-goods neutral rather than against confusion) but the overall no-infringement result stood. The Commission also reversed the ALJ's finding that Crocs had waived certain infringement contentions, both as to lined Orly Gator shoes and as to the four defaulting respondents, but this did not change the ultimate outcome for the participating respondents. Commissioner Kearns dissented in part, stating he would have found the 3D marks acquired secondary meaning and would have remanded on domestic industry."
+      },
+      {
+        "cites": [
+          "n200",
+          "n201",
+          "n202",
+          "n203",
+          "n227"
+        ],
+        "text": "Because four respondents -- La Modish Boutique, Star Bay Group, Huizhou Xinshunzu, and Jinjiang Anao Footwear -- had been found in default and did not participate in the litigated findings, the Commission issued a limited exclusion order and cease-and-desist orders against them despite finding no violation as to the litigating respondents, reasoning that the waiver doctrine applied to Crocs' proof did not bar relief against defaulting parties. The Commission set the bond during the period of Presidential review at 100 percent of the entered value of infringing goods, and found the public interest factors did not preclude this relief."
+      }
+    ],
+    "headline": "In Investigation No. 337-TA-1270, Crocs, Inc. accused numerous makers, importers, and sellers of \"casual footwear with holes in the upper\" (and its packaging) of infringing Crocs' registered trademarks covering the design of its Classic Clog and the CROCS word mark; after most respondents settled or defaulted, the Commission found no violation by the three respondents who litigated to decision (Orly, Hobby Lobby, and Amoji) but issued a limited exclusion order and cease-and-desist orders against four defaulting respondents.",
+    "rulings": [
+      {
+        "cites": [
+          "n142",
+          "n143",
+          "n144",
+          "n145",
+          "n146",
+          "n147"
+        ],
+        "text": "Before the hearing, respondent Loeffler Randall moved for summary determination -- a ruling without trial where there is no genuine factual dispute -- that its footwear was not substantially similar to the asserted marks and therefore did not infringe. Crocs and the investigative staff opposed. The ALJ found genuine issues of material fact remained on substantial similarity and denied the motion, leaving non-infringement for trial."
+      },
+      {
+        "cites": [
+          "n148",
+          "n149",
+          "n150",
+          "n151",
+          "n152",
+          "n153",
+          "n154"
+        ],
+        "text": "Walmart, Orly, Hobby Lobby, and ZhengDe later moved for a ruling that Crocs' 3D trade dress was functional and therefore invalid as a matter of law, pointing to two Crocs utility patents covering the shoe design as strong evidence of functionality. Applying the Morton-Norwich test (which looks at utility patents, advertising claims, alternative designs, and manufacturing cost) and the general standard for summary determination, the ALJ found disputed facts on whether the marks were disclosed in the patents, whether Crocs had touted functional benefits, and whether alternative designs and cheaper manufacturing methods existed, and denied the motion."
+      },
+      {
+        "cites": [
+          "n155",
+          "n156",
+          "n158",
+          "n159",
+          "n160",
+          "n157"
+        ],
+        "text": "ZhengDe separately moved for partial summary determination of non-infringement as to certain alternative footwear designs it had developed. Applying a four-factor ripeness test from a prior Commission case (whether a product is within the investigation's scope, has been imported, is fixed in design, and has been disclosed in discovery), the ALJ found Crocs disputed three of the four factors and that genuine issues of fact remained, denying the motion."
+      }
+    ],
+    "standing": [
+      {
+        "cites": [
+          "t21",
+          "t28",
+          "t30",
+          "t31",
+          "t34",
+          "t38",
+          "t36",
+          "t39",
+          "t40",
+          "t41",
+          "n200",
+          "n227",
+          "n219",
+          "n225",
+          "n204"
+        ],
+        "text": "The investigation is terminated. Most originally named respondents left the case through settlement or consent orders -- among them Cape Robbin, SG Footwear, Dr. Leonard's, Fullbeauty, Legend Footwear, Fujian Huayuan Well, Bijora, Hawkins Footwear, Shoe-Nami, PW Shoes, 718Closeouts, Dongguan Eastar, KGS Sourcing, Maxhouse Rise and Wanjiaxin, Mould Industria de Matrizes, Royal Deluxe Accessories, Loeffler Randall, Skechers, and Walmart. Four respondents -- La Modish Boutique, Star Bay Group, Huizhou Xinshunzu Shoes, and Jinjiang Anao Footwear -- were found in default and are subject to a limited exclusion order and cease-and-desist orders (against La Modish and Star Bay) with a 100-percent bond. As to the three respondents who litigated to a decision -- Orly Shoe Corp., Hobby Lobby Stores, and Quanzhou ZhengDe Network Corp. (Amoji) -- the Commission found no violation of Section 337: Crocs did not prove infringement, false designation of origin, or dilution of the 3D marks or the CROCS word mark, so no exclusion order or cease-and-desist order issued against them. The Commission took no position on several underlying findings, including secondary meaning, the presumption of validity for the 3D marks, and whether Crocs satisfied the economic prong of domestic industry, and Commissioner Kearns dissented in part from the Commission's opinion."
+      }
+    ]
   },
   "title": "Certain Casual Footwear and Packaging Thereof",
-  "total_cost_usd": 0.109719
+  "total_cost_usd": 0.513425,
+  "warnings": [],
+  "writer_cut_off": false,
+  "writer_model": "claude-sonnet-5"
 }

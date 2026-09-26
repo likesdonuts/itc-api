@@ -1,0 +1,218 @@
+{
+  "cost_usd": 0.035715,
+  "date": "2025-01-08",
+  "doc_id": "840703",
+  "file": "840703_2301327_2301327.pdf",
+  "kind": "final_id",
+  "model": "claude-haiku-4-5-20251001",
+  "notes_version": 2,
+  "overview": "This is the Administrative Law Judge's final initial determination in Investigation 337-TA-1384 concerning passive optical network equipment. The ALJ found no violation of Section 337 because the complainant Optimum Communications Services, Inc. is not the owner or exclusive licensee of the asserted patents, the importation requirement has not been satisfied, and the infringement and domestic industry requirements have not been established.",
+  "pages_read": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10,
+    11,
+    12,
+    13,
+    14,
+    15,
+    16,
+    17,
+    18,
+    19,
+    20,
+    44,
+    45,
+    46,
+    47,
+    48,
+    49,
+    50,
+    51,
+    52,
+    53,
+    54,
+    55,
+    56,
+    57,
+    58
+  ],
+  "points": [
+    {
+      "page": 6,
+      "point": "Complainant Optimum Communications Services, Inc. is a Delaware corporation based in Jersey City, New Jersey; the three named respondents are Hangzhou Sumlo Industrial Co., Ltd., Hangzhou DAYTAI Network Technologies Co., Ltd., and Hangzhou Softel Optic Co., Ltd., all Chinese companies.",
+      "quote": "Optimum Communications Services, Inc. is a Delaware corporation having a principal place of business in Jersey City, New Jersey.",
+      "topic": "parties"
+    },
+    {
+      "page": 4,
+      "point": "Optimum asserts claims 1 and 12-14 of U.S. Patent No. 7,333,511 (the '511 patent) and claims 1 and 3 of U.S. Patent No. 7,558,260 (the '260 patent).",
+      "quote": "whether there is a violation of subsection (a)(1)(B) of section 337 in the importation into the United States, the sale for importation, or the sale within the United States after importation of certain products identified in paragraph (2) by reason of infringement of one or more of claims 1 and 12\u201314 of [U.S. Patent No. 7,333,511] and claims 1 and 3 of [U.S. Patent No. 7,558,260]",
+      "topic": "ip_asserted"
+    },
+    {
+      "page": 4,
+      "point": "The accused products are described as optical line termination (OLT) and optical network unit/terminal (ONU/ONT) equipment that conform to passive optical network standards including ITU-T Recommendation series G.984.x for Gigabit-capable Passive Optical Network (G-PON), 10GPON/XGS-PON, TWDM-PON/NG-PON2, IEEE 802.3ah (EPON), and 802.3av (10G-EPON).",
+      "quote": "optical line termination (OLT) and optical network unit/terminal (ONU/ONT) equipment that conform to passive optical network standards of ITU-T Recommendation series G.984.x for Gigabit -capable Passive Optical Network (G -PON) and its successor standards",
+      "topic": "technology"
+    },
+    {
+      "page": 10,
+      "point": "Optimum has not specifically identified any accused products by name, model number, or manufacturer, despite repeated Staff requests to do so.",
+      "quote": "Optimum has not specifically identified any accused products from the three named respondents that allegedly infringe any of the asserted claims of either asserted patent despite repeated requests to do so by the Staff.",
+      "topic": "products"
+    },
+    {
+      "page": 11,
+      "point": "The ALJ found that Optimum has not provided substantial, reliable, and probative evidence establishing infringement of any of the asserted claims because Optimum practices the standard rather than identifying specific infringing products.",
+      "quote": "Instead of identifying specific accused products, Optimum contends that the practice of certain standards infringes the asserted claims.",
+      "topic": "infringement"
+    },
+    {
+      "page": 12,
+      "point": "Optimum abandoned its infringement allegations regarding IEEE 802.3ah (EPON) and 802.3av (10G-EPON) standards by not presenting them in its hearing brief, limiting its allegations to ITU Recommendations G.984.3, G.987.3, and G.989.3.",
+      "quote": "By not presenting any infringement contentions as to the IEEE 802.3ah (EPON) or 802.3av (10G-EPON) standards (or as to CX-0019 or CX-0020) in its hearing brief, Optimum has abandoned any such contentions.",
+      "topic": "infringement"
+    },
+    {
+      "page": 14,
+      "point": "The ALJ found that Optimum has not satisfied the technical prong of the domestic industry requirement because it has not identified specific domestic industry products that practice the asserted claims.",
+      "quote": "Based on the contentions in its hearing brief, Optimum has limited its allegations of domestic industry to those it made in asserting infringement, namely ITU Recommendations G.984.3, G.987.3, and G.989.3.",
+      "topic": "domestic_industry"
+    },
+    {
+      "page": 46,
+      "point": "The ALJ found that EPB did not become a licensee of the asserted patents until June 12, 2024, well after the complaint was filed on November 14, 2023, and therefore EPB's expenditures cannot be used to demonstrate an economic domestic industry.",
+      "quote": "The evidence supports, at most, that EPB became a licensee to the asserted patents well after this investigation was instituted and indeed after briefing was completed.",
+      "topic": "domestic_industry"
+    },
+    {
+      "page": 45,
+      "point": "The ALJ found that Optimum's October 16, 2023 authorization letter to EPB did not create a license because it explicitly stated that Optimum was not granting a royalty-free license to practice any of its patents for unlimited purposes.",
+      "quote": "this letter should not be understood to indicate that OCS is granting a royalty-free license to practice any of its patents for unlimited purposes",
+      "topic": "domestic_industry"
+    },
+    {
+      "page": 47,
+      "point": "The ALJ found that the economic prong of the domestic industry requirement has not been satisfied because Optimum failed to provide a quantitative analysis of EPB's investments and offered only unsubstantiated qualitative assertions about regional and national significance.",
+      "quote": "A quantitative analysis is required for satisfaction of the economic prong of the domestic industry requirement.",
+      "topic": "domestic_industry"
+    },
+    {
+      "page": 50,
+      "point": "The ALJ found that the importation requirement has not been satisfied in the conclusions of law.",
+      "quote": "2. The importation requirement has not been satisfied.",
+      "topic": "importation"
+    },
+    {
+      "page": 44,
+      "point": "The Staff did not challenge the validity of any of the asserted claims, and as a result there has been no showing that any of the asserted claims is invalid.",
+      "quote": "The Staff does not challenge the validity of any of the asserted claims. Staff Br. at 44. As a result, there has been no showing that any of the asserted claims is invalid.",
+      "topic": "validity"
+    },
+    {
+      "page": 57,
+      "point": "The ALJ's initial determination is that a violation of Section 337 of the Tariff Act has not occurred by the importation, sale for importation, or sale within the United States after importation of products that infringe U.S. Patent No. 7,558,260 or U.S. Patent No. 7,333,511.",
+      "quote": "It is my initial determination that a violation of section 337 of the Tariff Act, as amended, has not occurred by the importation into the United States, the sale for importation, or the sale within the United States after importation of products that infringe U.S. Patent No. 7,558,260 and U.S. Patent No. 7,333,511.",
+      "topic": "result"
+    },
+    {
+      "page": 51,
+      "point": "Because no violation of Section 337 was found, the ALJ recommends no limited exclusion orders, no cease and desist orders, and no general exclusion orders issue.",
+      "quote": "I recommend that no limited exclusion orders issue against any of the defaulted respondents.",
+      "topic": "outcome"
+    },
+    {
+      "page": 52,
+      "point": "The ALJ notes that even if a violation were found, Optimum seeks a general exclusion order barring entry into the United States of articles from any source that infringe the asserted claims.",
+      "quote": "Optimum seeks a general exclusion order barring entry into the United States of articles, regardless of source, that infringe claims 1 and 12-14 of the '511 patent or claims 1 and 3 of the 260 patent.",
+      "topic": "relief"
+    },
+    {
+      "page": 57,
+      "point": "The ALJ recommends a 0% bond because Optimum has not demonstrated that it would be injured if a bond is not set, noting that Optimum has not sold any physical products and has no evidence of ever licensing the asserted patents for royalties.",
+      "quote": "Because Optimum has failed to demonstrate the necessity of a bond, it is my recommendation that the Commission, in the event it finds a violation of section 337 has occurred, set a 0% bond for any importations of infringing products during the Presidential review period.",
+      "topic": "remedy"
+    },
+    {
+      "page": 50,
+      "point": "The ALJ found that the Commission lacks statutory authority with respect to the investigation because Optimum is not the owner or exclusive licensee of the asserted patents.",
+      "quote": "1. The Commission lacks statutory authority with respect to this investigation because Optimum is not the owner or exclusive licensee of the asserted patents.",
+      "topic": "holdings"
+    },
+    {
+      "page": 15,
+      "point": "After the investigation was instituted, Optimum assigned the asserted patents to Mark Sandstrom on July 18, 2024, and Sandstrom then reassigned them to Optimum on August 27, 2024; the ALJ found these post-institution assignments rendered Optimum's standing questionable.",
+      "quote": "That document, dated July 18, 2024 (after institution of this investigation), states that Optimum Communication Services, Inc. \"assign[ed] unto Mark Sandstrom\" several patents, including the asserted patents.",
+      "topic": "effect"
+    },
+    {
+      "page": 15,
+      "point": "Xenogenic Development LLC moved to intervene in the investigation, claiming it owns the asserted patents; the ALJ granted Xenogenic limited intervenor status for purposes of addressing ownership-related issues in the event of Commission review.",
+      "quote": "Proposed intervenor Xenogenic contends that it owns the asserted patents and moved to intervene on that basis.",
+      "topic": "other_unfair_acts"
+    },
+    {
+      "page": 5,
+      "point": "All three named respondents\u2014Sumlo, DAYTAI, and Softel\u2014were found in default by initial determination on April 10, 2024.",
+      "quote": "I issued an initial determination finding all three named respondents in default. Order No. 12 (initial determination) (Apr. 10, 2024) (EDIS Doc. ID 818209), unreviewed by, Comm'n Notice (May 9, 2024) (EDIS Doc. ID 821098).",
+      "topic": "respondents"
+    },
+    {
+      "page": 45,
+      "point": "Optimum filed a motion for the admission of CX-0058C, an exhibit containing emails between Optimum and EPB dated through June 20, 2024, in which EPB confirmed licensee status; the motion was granted after briefing was completed.",
+      "quote": "After briefing was concluded, Optimum filed a motion for the admission of CX-0058C. The Staff did not oppose, and the motion was granted.",
+      "topic": "motion"
+    },
+    {
+      "page": 15,
+      "point": "After the investigation was instituted, Mark Sandstrom filed a Declaratory Judgment action in the U.S. District Court for the District of Minnesota against Ericsson, asserting that he owns the patents asserted in this investigation.",
+      "quote": "affer this investigation was instituted, Mr. Sandstrom, the president of Optimum, filed a Declaratory Judgment action in the U.S. District Court for the District of Minnesota seeking a declaration that Defendants Ericsson Inc. and Telefonaktiebolaget LM Ericsson require a license for certain patents, including the '260 and '511 patents asserted in this investigation.",
+      "topic": "related_proceedings"
+    },
+    {
+      "page": 4,
+      "point": "The investigation was instituted to determine whether there is a violation of Section 337(a)(1)(B) based on infringement of the asserted patent claims and whether a domestic industry exists as required by Section 337(a)(2).",
+      "quote": "The Commission instituted this investigation to determine: whether there is a violation of subsection (a)(1)(B) of section 337 in the importation into the United States, the sale for importation, or the sale within the United States after importation of certain products",
+      "topic": "scope"
+    },
+    {
+      "page": 11,
+      "point": "The central issue is whether the practice of certain ITU and IEEE standards infringes the asserted claims, which the ALJ found Optimum failed to establish because it did not identify specific products or explain how the standards implement the claimed inventions.",
+      "quote": "Instead of identifying specific accused products, Optimum contends that the practice of certain standards infringes the asserted claims.",
+      "topic": "issue"
+    },
+    {
+      "page": 12,
+      "point": "The ALJ decided that Ground Rule 11.2 applied, requiring parties to detail all contentions in pre-hearing briefs; Optimum's failure to address IEEE standards in its hearing brief resulted in abandonment of those claims.",
+      "quote": "By not presenting any infringement contentions as to the IEEE 802.3ah (EPON) or 802.3av (10G-EPON) standards (or as to CX-0019 or CX-0020) in its hearing brief, Optimum has abandoned any such contentions.",
+      "topic": "decision"
+    },
+    {
+      "page": 6,
+      "point": "Optimum proceeded pro se in this investigation, and the Staff and defaulted respondents opposed many of Optimum's contentions regarding infringement, domestic industry, and ownership.",
+      "quote": "Optimum is proceeding pro se in this investigation.",
+      "topic": "general_response"
+    }
+  ],
+  "rejected": [
+    {
+      "page": 28,
+      "point": "The filing does not detail specific claim constructions because the ALJ found the infringement and ownership issues were dispositive; no substantive claim construction analysis is provided.",
+      "quote": "V. Claim Construction ..........................................................................................................",
+      "rejected": "quote too short to check",
+      "topic": "claim_construction"
+    }
+  ],
+  "taken_at": "2026-09-26T21:05:56+00:00",
+  "title": "Initial Determination on Violation of Section 337 and Recommended Determination on Remedy and Bond",
+  "truncated": false,
+  "who": ""
+}
