@@ -1,6 +1,6 @@
 # ITC Section 337 Tracker: Product Overview
 
-*Last updated: 2026-09-25*
+*Last updated: 2026-09-26*
 
 ## What it is
 
@@ -37,6 +37,7 @@ It refreshes itself once a day when opened, or on demand.
 | Federal Register | Commission notices cited by the claims analysis | On demand |
 | AI model (Claude Haiku) | Reads rulings in the PDFs to find which patent claims were dropped, found invalid or found infringed | On demand per case, with a $20 spending cap |
 | AI model (Claude Haiku) | Reads judges' scheduling orders for the procedural schedule of each active case | Daily, only new orders, with its own $20 spending cap |
+| AI models (Claude Haiku, Claude Sonnet) | Planned: plain-English case summaries. Haiku takes notes on each document, Sonnet writes the summary. Today the app only previews what a summary would read and cost | On demand per case, with its own $20 spending cap; runs stop at the cap until it is raised |
 
 Each daily download is kept as a dated copy. So the app can always rebuild
 from a known file, and every sync is logged to help spot bad data days.
@@ -93,6 +94,7 @@ from a known file, and every sync is logged to help spot bad data days.
 | Business-development and competitive questions ("which firms is this firm growing with?", "who gets sued most?", "which rivals keep suing each other?") had no answer short of manual research. | Caseload timelines and co-counsel lists on each firm's page. Frequent-flier rankings of the most-sued and most-suing companies. A list of companies that have sued each other in both directions. All of it can be grouped by corporate family and filtered by years. |
 | The daily update took about an hour. Every day it re-read every page of about 190 cases' dockets and re-checked about 1,400 files it already had, roughly 4,000 requests to the USITC. | It now reads only each docket's new filings and skips files already downloaded. Closed and inactive cases are refreshed weekly or monthly instead of daily. Each case still gets a full weekly re-check to catch corrections. That's expected to cut a typical day to about 80 cases and a few hundred requests. Every run's duration, step by step, is now logged and shown on the dashboard. |
 | The USITC's daily data file sometimes fails to download. | The download retries automatically. If it still fails, the rest of the daily update runs anyway and the failure is logged. |
+| Lawyers new to IP and Section 337 can't easily tell what a case is about or where it stands. A complaint filing runs to over 1,000 pages (one reached 35,000), mostly exhibits, and the rest of the docket runs to hundreds of filings. | Being built in phases: a **Summary** tab on every case page. It will explain the complaint's allegations and claims, the respondents' defenses, the rulings before the hearing, and the judge's and Commission's decisions, each tied to its source. Next to it is a plain-English guide to how Section 337 cases work, with stages, key terms and remedies. **Done so far:** the app picks the few documents worth reading and only the relevant pages of each, e.g. the complaint itself, not its exhibits, and one answer per defense team, up to five. Routine events such as settlements, defaults and exclusion orders are noted from their titles without opening them. Before any money is spent, each case shows exactly what would be read and what it would cost: about $0.15 to $0.40 a case. The Section 337 guide is drafted and awaiting review by a practitioner. |
 | Gigabytes of PDFs slowed down version control. | Documents stay on the local machine only, and can be downloaded again from the USITC at any time. |
 
 ## Current limits
@@ -117,6 +119,15 @@ from a known file, and every sync is logged to help spot bad data days.
 - A document edited after it was filed (for example, made public later) is
   picked up by the weekly full re-check, so it can take up to a week to
   appear. New filings appear the next day.
+- Case summaries are not written yet: the Summary tab shows only what would
+  be read and the cost. They will read only public versions of filings, so
+  anything redacted is invisible to them. The Section 337 guide needs review
+  by a Section 337 practitioner before users rely on it.
+- About 60 of the oldest investigations (three-digit numbers such as
+  337-TA-112) have document lists mixed with other cases' filings. The USITC's
+  document search appears to match on the start of the number, so 337-112
+  picks up 337-1120 to 337-1129. Their counsel and document counts are
+  unreliable until this is fixed.
 
 ## On hold
 

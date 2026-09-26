@@ -6,7 +6,8 @@ page's behalf:
 
     POST /api/jobs          start a job: the daily sync, documents for the
                             cases picked on the page, one claims analysis,
-                            or the document-list backfill
+                            one case summary's cost estimate, or the
+                            document-list backfill
     POST /api/jobs/stop     ask the running job to stop (the backfill only)
     GET  /api/jobs/current  the running (or last) job, with its progress
     GET  /api/status        when the last sync and fetch ran, the token's expiry
@@ -242,6 +243,19 @@ class Controller:
             raise JobRefused(HTTPStatus.NOT_FOUND, f"{number} is not on disk. Run the daily sync first.")
         return self._start("claims", f"Claims analysis: {key}", lambda job: self._run_claims(job, key))
 
+    def start_summary_estimate(self, number: str) -> Job:
+        """Count the pages of what a case summary would read (EDIS attachment
+        lists; no downloads, no model), so its Summary tab can show a cost."""
+        store = Store.load(self.data_dir)
+        key = store.find_key(str(number or ""))
+        if key is None:
+            raise JobRefused(HTTPStatus.NOT_FOUND, f"{number} is not on disk. Run the daily sync first.")
+        token = self._usable_token()
+        return self._start(
+            "summary_estimate", f"Estimate summary cost: {key}",
+            lambda job: self._run_summary_estimate(job, key, token),
+        )
+
     def _start(self, kind: str, label: str, work: Callable[[Job], None], *, stoppable: bool = False) -> Job:
         if not self._lock.acquire(blocking=False):
             raise JobRefused(HTTPStatus.CONFLICT, "Another job is still running; wait for it to finish")
@@ -399,6 +413,23 @@ class Controller:
         else:
             job.finish(f"Built from {events} claim event(s).{cost}", "ok")
 
+    def _run_summary_estimate(self, job: Job, key: str, token: str) -> None:
+        from datalayer.summary import config as summary_config
+        from datalayer.summary import estimate as summary_estimate
+        from datalayer.summary import preview
+
+        log = self._logger(job)
+        store = Store.load(self.data_dir)
+        counted = preview.count_pages(store, key, token=token, log=log)
+        render_site(store, data_dir=self.data_dir, site_dir=self.site_dir, schema_path=self.schema_path, log=log)
+        est = summary_estimate.build(store, key, summary_config.load())
+        bound = "About" if est.complete else "Up to"
+        job.finish(
+            f"{counted} document(s) counted. {bound} {preview.money(est.total_usd)} to summarize "
+            f"({len(est.lines)} documents, {est.pages_read:,} pages).",
+            "ok",
+        )
+
     def _read_schedules(self, store: Store, token: str, log: Logger,
                         timer: dailylog.DailyTimer | None = None) -> tuple[str, bool]:
         """Read the live cases' new scheduling orders for Next actions. Never
@@ -536,6 +567,8 @@ class Handler(SimpleHTTPRequestHandler):
                 job = self.controller.start_documents(numbers, download=bool(payload.get("download")))
             elif kind == "claims":
                 job = self.controller.start_claims(str(payload.get("number") or ""))
+            elif kind == "summary_estimate":
+                job = self.controller.start_summary_estimate(str(payload.get("number") or ""))
             elif kind == "backfill":
                 job = self.controller.start_backfill()
             else:
