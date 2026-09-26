@@ -159,6 +159,11 @@ def build_parser() -> argparse.ArgumentParser:
         "next-actions",
         help="rebuild each open investigation's next actions: stage, dates and deadlines (offline)",
     )
+    p_next.add_argument(
+        "--orders", action="store_true",
+        help="first read new scheduling orders (downloads their PDFs from EDIS; Claude Haiku, own budget)",
+    )
+    p_next.add_argument("numbers", nargs="*", help="with --orders: only these investigations (default: every live one)")
     _add_render_flag(p_next)
 
     p_analytics = sub.add_parser(
@@ -259,11 +264,30 @@ def _counsel(store: Store, *, verbose: bool = False) -> None:
     nextactions_build.run(store, log=print)
 
 
+def _read_schedules(store: Store) -> None:
+    """The daily job's last document step: the live cases' new scheduling
+    orders, for Next actions. Skipped, with a note, without an API key."""
+    from datalayer.claims.extract import MissingApiKeyError
+    from datalayer.nextactions import orders
+
+    try:
+        orders.run(store, token=load_token(), log=print)
+    except MissingApiKeyError as exc:
+        print(f"  ! Scheduling orders not read: {exc}")
+
+
 def cmd_next_actions(args: argparse.Namespace, store: Store) -> int:
+    code = 0
+    if args.orders:
+        from datalayer.nextactions import orders
+
+        numbers = [store.find_key(n) or n for n in args.numbers] or None
+        report = orders.run(store, token=load_token(), keys=numbers, log=print)
+        code = 1 if report.stopped else 0
     nextactions_build.run(store, log=print)
     if args.render:
         _render(args, store)
-    return 0
+    return code
 
 
 def _only_types(args: argparse.Namespace) -> frozenset[str] | None:
@@ -618,6 +642,8 @@ def cmd_refresh(args: argparse.Namespace, store: Store) -> int:
                 only_types=_only_types(args),
                 by_hand=False,
             )
+        if not args.no_attachments:
+            _read_schedules(store)
 
     _counsel(store)
     _render(args, store)

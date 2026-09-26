@@ -36,6 +36,7 @@ It refreshes itself once a day when opened, or on demand.
 | USITC Electronic Document Information System (EDIS) | Each case's docket: every filing, who filed it, for whom, and the PDFs | Listed once for every case (the backfill), then daily for open cases and cases being followed; PDFs on demand (needs a free EDIS access token) |
 | Federal Register | Commission notices cited by the claims analysis | On demand |
 | AI model (Claude Haiku) | Reads rulings in the PDFs to find which patent claims were dropped, found invalid or found infringed | On demand per case, with a $20 spending cap |
+| AI model (Claude Haiku) | Reads judges' scheduling orders for the procedural schedule of each active case | Daily, only new orders, with its own $20 spending cap |
 
 Each daily download is kept as a dated copy. So the app can always rebuild
 from a known file, and every sync is logged to help spot bad data days.
@@ -69,6 +70,9 @@ from a known file, and every sync is logged to help spot bad data days.
     linked to their former names (for example Philips Lighting → Signify).
   - Borderline cases were checked by AI for about $0.21 in total, and 64
     are left for a person to decide.
+- **Next actions:** schedules for 5 pilot cases read for about $0.32; the
+  other active cases' orders (about 175) are read by the next daily update,
+  an estimated $1.50.
 - **Claims analysis:** 3 pilot cases analyzed for about $0.15 in total AI
   cost.
 
@@ -79,7 +83,7 @@ from a known file, and every sync is logged to help spot bad data days.
 | Tracking a case meant checking two USITC websites by hand. | A daily one-click sync merges both into one searchable list with a page per case. |
 | Neither source says who represents whom. | The app reads filing records and attorneys' Notice of Appearance PDFs. It links each law firm and attorney to its clients, and marks lead counsel and withdrawals. The list is searchable by firm or attorney. |
 | Companies subpoenaed into a case never appear in the official party list. | The app finds them from their own filings. It shows why they are involved, such as "responding to a subpoena served by Respondents", read from their notices, including scanned documents. |
-| For an active case, it was hard to know what happens next and when: hearing dates, decision deadlines and review periods are spread across the case record, orders, notices and the Commission's rules. | A **Next actions** tab on every open case shows its stage and the next event with a countdown. It lists every known date, each labeled by its source: the USITC case record, the docket, or the Commission's rules (with the rule cited, e.g. petitions for review due 12 days after the final decision). When nothing is scheduled it says "Awaiting decision" and names who is deciding. Today 72 cases are actively moving, and 70 of them have an upcoming date. |
+| For an active case, it was hard to know what happens next and when: hearing dates, decision deadlines and review periods are spread across the case record, orders, notices and the Commission's rules. | A **Next actions** tab on every open case shows a stage bar and the next event with a countdown. It lists every date in the judge's procedural schedule (discovery cutoffs, expert reports, Markman and evidentiary hearings, briefing), with later amendments applied and each linked to its order. It adds the dates in the USITC case record and the deadlines set by the Commission's rules, with the rule cited (e.g. petitions for review due 12 days after the final decision). When nothing is scheduled it says "Awaiting decision" and names who is deciding. AI reads the schedules, which are often scanned tables, and each date is checked against the order's text. Today 72 cases are actively moving, and 70 of them have an upcoming date. |
 | It was hard to know whether a case's data is current. | Each case shows when its documents were last fetched, plus how many documents it has and how many have PDFs on disk. |
 | Following how patent claims narrow means reading hundreds of pages of rulings. | An AI-assisted claims timeline shows, for each respondent, which claims were withdrawn, dismissed or found invalid, and when. Every finding links back to its source sentence and is checked before it is shown. Cost is tracked against a hard budget. |
 | Firm and attorney information only existed for the ~185 cases someone had chosen to fetch, too few for firm-level trends. | A one-click backfill lists the filings of every case (no PDFs), newest first, and can be stopped and resumed. It has now run: counsel covers 1,143 investigations instead of 179, which is what the firm and attorney analytics are built on. |
@@ -100,20 +104,14 @@ from a known file, and every sync is logged to help spot bad data days.
 - 64 name pairs are waiting for a person to decide. Until then each stays
   as two entries, which can undercount a firm, attorney or company but
   never merges two different ones.
-- Next actions show the dates in the USITC case record, the docket and the
-  rules. The detailed procedural schedules in judges' orders (discovery
-  cutoffs, expert reports, briefing) come in the next phase. Only the main
-  violation phase of a case is covered, not remand, enforcement or
-  modification proceedings.
+- Next actions cover only the main violation phase of a case, not remand,
+  enforcement or modification proceedings. Procedural schedules come from
+  the orders a judge has actually issued, so a brand-new case shows only its
+  rule-based dates until its schedule order is filed.
 - About 90 very old investigations are still listed by the USITC as
   "active" (usually because their exclusion orders remain in force). They
-  have no dates, so there is nothing to show for them.
-
-## In progress
-
-- **Next actions, phase 2:** read the judges' scheduling orders with AI (on
-  its own $20 budget) so every date in a case's procedural schedule appears,
-  with amendments applied.
+  have no dates, so there is nothing to show for them. The daily update now
+  checks them monthly instead of daily.
 
 ## On hold
 

@@ -142,9 +142,14 @@ def _iso(day: date | None) -> str | None:
 DORMANT_AFTER_DAYS = 730
 
 
-def build_case(case: dict[str, Any], documents: list[dict[str, Any]], *, today: date | None = None) -> NextActions | None:
-    """The next actions of one open investigation, or None when it is closed."""
+def build_case(case: dict[str, Any], documents: list[dict[str, Any]], *, today: date | None = None,
+               schedule: list[dict[str, Any]] | None = None) -> NextActions | None:
+    """The next actions of one open investigation, or None when it is closed.
+    `schedule` is its procedural schedule as read from the orders
+    (orders.schedule_events), when there is one."""
     result = _build_case(case, documents)
+    if result is not None and schedule and result.stage in ("alj", "commission", "pre_institution"):
+        _add_schedule(result, schedule)
     if result is None or result.stage in ("undated", "other", "concluded", "pre_institution"):
         return result
     today = today or date.today()
@@ -157,6 +162,41 @@ def build_case(case: dict[str, Any], documents: list[dict[str, Any]], *, today: 
             "which for older cases usually means its remedial orders remain in force; nothing further is scheduled."
         )
     return result
+
+
+_KINDS = {
+    "hearing": "hearing", "claim_construction": "hearing", "initial_determination": "decision",
+    "target_date": "decision",
+}
+
+
+def _add_schedule(result: NextActions, schedule: list[dict[str, Any]]) -> None:
+    """The procedural schedule's dates, minus the milestones the case record
+    already gives (it is kept current by the USITC, so it wins)."""
+    have = {e.label for e in result.events if e.basis == "case data"}
+    for item in schedule:
+        name = str(item.get("event") or "")
+        lower, category = name.lower(), item.get("category")
+        if (
+            (category == "target_date" and any(label.startswith("Target date") for label in have))
+            or (category == "hearing" and "evidentiary hearing" in lower and "Evidentiary hearing" in have
+                and not re.search(r"pre-?hearing|brief|statement", lower))
+            or (category == "claim_construction" and "hearing" in lower
+                and "Markman (claim construction) hearing" in have)
+            or (category == "initial_determination"
+                and "Final initial determination on violation (scheduled)" in have)
+        ):
+            continue
+        notes = []
+        if item.get("relative"):
+            notes.append(str(item["relative"]))
+        if item.get("replaces") and item.get("replaces") != item.get("date"):
+            notes.append(f"moved from {item['replaces']}")
+        note = "; ".join(notes)
+        result.events.append(Event(
+            date=item.get("date"), end=item.get("end"), label=name, basis="order", kind=_KINDS.get(category, "deadline"),
+            note=(note[:1].upper() + note[1:]) or None, source=item.get("source"),
+        ))
 
 
 def _build_case(case: dict[str, Any], documents: list[dict[str, Any]]) -> NextActions | None:
@@ -361,9 +401,12 @@ def load(data_dir: Path) -> dict[str, Any]:
 
 def run(store: Store, *, log: Logger = print) -> dict[str, Any]:
     """Rebuild data/next_actions.json for every open investigation."""
+    from .orders import schedule_events
+
     cases = {}
     for number, case in sorted(store.investigations.items()):
-        built = build_case(case, store.documents.get(number) or [])
+        documents = store.documents.get(number) or []
+        built = build_case(case, documents, schedule=schedule_events(store.data_dir, documents))
         if built is not None:
             cases[number] = built.to_dict()
     out = {"built_at": datetime.now(timezone.utc).isoformat(timespec="seconds"), "cases": cases}

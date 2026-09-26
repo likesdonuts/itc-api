@@ -179,8 +179,9 @@ class TestTheProcessAndThePage(DataDirTestCase):
         self.assertIn('data-tab="next"', html)
         self.assertIn('data-date="2027-01-15"', html)
         self.assertIn("19 CFR 210.42(a)(1)(i)", html)
-        self.assertIn("pill-amber", html)  # by rule
-        self.assertIn("Waiting on:", html)
+        self.assertIn("b-by-rule", html)  # by rule
+        self.assertIn(">Waiting on<", html)
+        self.assertIn('class="na-steps"', html)
         self.assertEqual(templates._with_tabs("<p>overview</p>", None, None), "<p>overview</p>")
 
 

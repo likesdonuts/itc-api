@@ -340,6 +340,9 @@ class Controller:
                     if fetched.failed:
                         message += f" {len(fetched.failed)} skipped."
                         level = "warn"
+                    note, warn = self._read_schedules(store, token, log)
+                    message += note
+                    level = "warn" if warn else level
 
         self._rebuild(store, log)
         job.finish(message, level)
@@ -367,6 +370,24 @@ class Controller:
             job.finish(f"Built from {events} claim event(s), with warnings: {'; '.join(warnings)}.{cost}", "warn")
         else:
             job.finish(f"Built from {events} claim event(s).{cost}", "ok")
+
+    def _read_schedules(self, store: Store, token: str, log: Logger) -> tuple[str, bool]:
+        """Read the live cases' new scheduling orders for Next actions. Never
+        fails the sync: without an API key, or past its budget, it says so."""
+        from datalayer.claims.extract import MissingApiKeyError
+        from datalayer.nextactions import orders
+
+        try:
+            report = orders.run(store, token=token, log=log)
+        except MissingApiKeyError:
+            return " Scheduling orders not read: no Anthropic API key in .env.", True
+        except ProcessAborted as exc:
+            return f" Scheduling orders not fetched: {exc}", True
+        if report.stopped:
+            return f" Scheduling orders: {report.stopped}.", True
+        if report.read:
+            return f" {report.read} scheduling order(s) read (${report.cost:.2f}).", False
+        return "", False
 
     def _run_backfill(self, job: Job, token: str) -> None:
         log = self._logger(job)

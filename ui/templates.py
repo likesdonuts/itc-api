@@ -344,19 +344,45 @@ time.stamp.today { color: var(--green-fg); font-weight: 600; }
 }
 .tabs a:hover { color: var(--ink); text-decoration: none; }
 .tabs a.active { color: var(--accent); border-bottom-color: var(--accent); }
-.next-head { display: flex; gap: 1.5rem; flex-wrap: wrap; align-items: baseline; }
-.next-head .next-label { font-size: 0.72rem; font-weight: 600; color: var(--muted); text-transform: uppercase; letter-spacing: 0.05em; }
-.next-head .next-what { font-size: 1.15rem; font-weight: 600; }
-.next-head .next-when { color: var(--muted); }
-.next-waiting { margin-top: 0.5rem; color: var(--muted); }
-.next-waiting strong { color: var(--ink); }
-table.next-events tr.past td { color: var(--muted); }
-table.next-events tr.past .pill { opacity: 0.7; }
-table.next-events tr.is-next td { background: var(--accent-weak, var(--blue-bg)); }
-table.next-events td.when { white-space: nowrap; color: var(--muted); font-size: 0.85rem; }
-table.next-events td.date-cell { white-space: nowrap; min-width: 0; }
-table.next-events .event-note { display: block; font-size: 0.82rem; color: var(--muted); }
-.next-notes li { margin-bottom: 0.3rem; }
+.na-steps { display: flex; list-style: none; margin: 1rem 0 0.9rem; padding: 0; gap: 0.25rem; flex-wrap: wrap; }
+.na-steps li { flex: 1 1 7rem; font-size: 0.78rem; color: var(--muted); padding-top: 0.45rem; border-top: 3px solid var(--border); }
+.na-steps li.done { border-top-color: var(--green-fg); color: var(--ink); }
+.na-steps li.current { border-top-color: var(--accent); color: var(--accent); font-weight: 700; }
+.na-hero { display: flex; gap: 2rem; flex-wrap: wrap; align-items: flex-start; }
+.na-hero > div { flex: 1 1 16rem; min-width: 0; }
+.na-label { font-size: 0.7rem; font-weight: 700; color: var(--muted); text-transform: uppercase; letter-spacing: 0.06em; margin-bottom: 0.2rem; }
+.na-next { font-size: 1.2rem; font-weight: 650; line-height: 1.3; }
+.na-when { margin-top: 0.25rem; color: var(--muted); }
+.na-count { display: inline-block; margin-left: 0.4rem; padding: 0.05rem 0.55rem; border-radius: 999px; font-size: 0.8rem;
+  font-weight: 600; background: var(--blue-bg); color: var(--blue-fg); }
+.na-count.soon { background: var(--amber-bg); color: var(--amber-fg); }
+.na-card h3 { margin: 0 0 0.5rem; font-size: 0.95rem; }
+.na-card h3 small, .na-past summary small { color: var(--muted); font-weight: 400; }
+table.na-list { width: 100%; border-collapse: collapse; }
+table.na-list td { padding: 0.55rem 0.5rem; border-top: 1px solid var(--border); vertical-align: top; }
+table.na-list tr:first-child td { border-top: none; }
+table.na-list td.na-date { width: 8.5rem; white-space: nowrap; font-weight: 600; font-variant-numeric: tabular-nums; }
+table.na-list td.na-date small { display: block; font-weight: 400; color: var(--muted); }
+table.na-list td.when { width: 7rem; text-align: right; white-space: nowrap; color: var(--muted); font-size: 0.84rem; }
+table.na-list tr.is-next td { background: var(--accent-weak, var(--blue-bg)); }
+table.na-list tr.is-next td.na-date { box-shadow: inset 3px 0 0 var(--accent); }
+.na-title { font-weight: 500; }
+.na-meta { margin-top: 0.15rem; font-size: 0.8rem; color: var(--muted); }
+.na-meta > * + *::before { content: "·"; margin: 0 0.4rem; color: var(--border); }
+.na-basis { font-weight: 700; text-transform: uppercase; letter-spacing: 0.04em; font-size: 0.68rem; }
+.na-basis.b-order { color: var(--green-fg); }
+.na-basis.b-case-data { color: var(--blue-fg); }
+.na-basis.b-by-rule { color: var(--amber-fg); }
+.na-basis.b-docket { color: var(--gray-fg); }
+.na-past { padding: 0.8rem 1.1rem; }
+.na-past summary { cursor: pointer; font-weight: 600; font-size: 0.95rem; }
+.na-past[open] summary { margin-bottom: 0.5rem; }
+.na-past td { color: var(--muted); }
+.na-notes { margin: 0; padding-left: 1.1rem; }
+.na-notes li { margin-bottom: 0.3rem; }
+.na-legend { font-size: 0.8rem; color: var(--muted); line-height: 1.55; }
+.na-empty { color: var(--muted); padding: 0.3rem 0; }
+@media (max-width: 640px) { table.na-list td.na-date { width: 6.5rem; } table.na-list td.when { display: none; } }
 .claims-matrix th .stage-count { font-weight: 400; text-transform: none; letter-spacing: 0; margin-top: 0.15rem; }
 .claims-matrix tr.patent-row th {
   background: var(--surface-2);
@@ -930,33 +956,46 @@ _DETAIL_SCRIPT = """
 (function () {
   // Next actions: past, next and how far away, against the day the page is
   // viewed rather than the day it was rendered.
-  const rows = Array.from(document.querySelectorAll('tr.next-event'));
+  const rows = Array.from(document.querySelectorAll('#na-upcoming tr.next-event'));
   if (!rows.length) return;
   const today = new Date();
   today.setHours(0, 0, 0, 0);
   const DAY = 86400000;
-  let next = null;
+  const pastBody = document.getElementById('na-past-rows');
+  let next = null, upcoming = 0;
+  const past = [];
   rows.forEach(function (row) {
-    const iso = row.dataset.date;
+    const parts = row.dataset.date.split('-').map(Number);
+    const days = Math.round((new Date(parts[0], parts[1] - 1, parts[2]) - today) / DAY);
     const cell = row.querySelector('td.when');
-    if (!iso) { cell.textContent = ''; return; }
-    const parts = iso.split('-').map(Number);
-    const when = new Date(parts[0], parts[1] - 1, parts[2]);
-    const days = Math.round((when - today) / DAY);
     if (days < 0) {
-      row.classList.add('past');
       cell.textContent = -days === 1 ? 'yesterday' : (-days < 60 ? -days + ' days ago' : '');
+      past.push(row);
     } else {
+      upcoming += 1;
       cell.textContent = days === 0 ? 'today' : (days === 1 ? 'tomorrow' : 'in ' + days + ' days');
       if (!next) next = {row: row, days: days};
     }
   });
+  // The most recent past dates first.
+  past.reverse().forEach(function (row) { pastBody.appendChild(row); });
+  if (past.length) {
+    document.getElementById('na-past').hidden = false;
+    document.getElementById('na-past-count').textContent = '(' + past.length + ')';
+  }
+  document.getElementById('na-up-count').textContent = upcoming ? '(' + upcoming + ' ahead)' : '';
+  document.getElementById('na-up-empty').hidden = upcoming > 0;
   const what = document.getElementById('next-what');
   const whenEl = document.getElementById('next-when');
   if (next) {
     next.row.classList.add('is-next');
     what.textContent = next.row.dataset.label;
-    whenEl.textContent = next.row.querySelector('td.date-cell').textContent + ' · ' + next.row.querySelector('td.when').textContent;
+    const date = next.row.querySelector('td.na-date').firstChild.textContent;
+    const badge = document.createElement('span');
+    badge.className = 'na-count' + (next.days <= 7 ? ' soon' : '');
+    badge.textContent = next.row.querySelector('td.when').textContent;
+    whenEl.textContent = date;
+    whenEl.appendChild(badge);
   } else {
     what.textContent = 'Awaiting decision';
     whenEl.textContent = 'No date on record is still ahead.';
@@ -1679,13 +1718,13 @@ def _claims_section(claims: dict[str, Any]) -> str:
 
 
 def _with_tabs(overview: str, claims: dict[str, Any] | None, next_actions: dict[str, Any] | None,
-               next_built_at: str | None = None) -> str:
+               next_built_at: str | None = None, documents: list[dict[str, Any]] | None = None) -> str:
     """The page body, split into tabs when the case has more than its
     overview: Next actions for an open investigation, Claims once it has a
     claims analysis. Unchanged otherwise."""
     tabs = [("overview", "Overview", overview)]
     if next_actions:
-        tabs.append(("next", "Next actions", _next_actions_section(next_actions, next_built_at)))
+        tabs.append(("next", "Next actions", _next_actions_section(next_actions, next_built_at, documents)))
     if claims and claims.get("built_at"):
         tabs.append(("claims", "Claims", _claims_section(claims)))
     if len(tabs) == 1:
@@ -1702,64 +1741,108 @@ def _with_tabs(overview: str, claims: dict[str, Any] | None, next_actions: dict[
     return f'<nav class="tabs">{nav}</nav>\n{panels}'
 
 
-_BASIS_PILLS = {"case data": "pill-blue", "docket": "pill-gray", "by rule": "pill-amber"}
+_NA_STEPS = ("Complaint filed", "Instituted", "Before the ALJ", "Final ID", "Commission", "Presidential review")
+# Which step each stage is on; "concluded" has passed them all.
+_NA_STEP_OF = {"pre_institution": 0, "alj": 2, "commission": 4, "presidential": 5, "concluded": 6}
+_NA_BASIS_LABEL = {"order": "Order", "case data": "Case record", "by rule": "By rule", "docket": "Docket"}
 
 
-def _next_actions_section(record: dict[str, Any], built_at: str | None) -> str:
+def _na_steps(stage: str) -> str:
+    current = _NA_STEP_OF.get(stage)
+    if current is None:
+        return ""
+    items = []
+    for i, name in enumerate(_NA_STEPS):
+        cls = "done" if i < current else "current" if i == current else ""
+        items.append(f'<li class="{cls}">{name}</li>')
+    return f'<ol class="na-steps" aria-label="Stage">{"".join(items)}</ol>'
+
+
+def _na_row(event: dict[str, Any], sources: dict[str, str]) -> str:
+    day, end = event.get("date"), event.get("end")
+    date_cell = _date(day) if day else "Not set"
+    if end and end != day:
+        date_cell += f"<small>to {_date(end)}</small>"
+    basis = event.get("basis") or ""
+    meta = [f'<span class="na-basis b-{basis.replace(" ", "-")}">{_NA_BASIS_LABEL.get(basis, _e(basis))}</span>']
+    if event.get("cite"):
+        meta.append(f"<span>{_e(event['cite'])}</span>")
+    if event.get("note"):
+        meta.append(f"<span>{_e(event['note'])}</span>")
+    source = event.get("source") or {}
+    if source.get("title"):
+        title = _e(source["title"] if len(source["title"]) <= 80 else source["title"][:77] + "…")
+        href = sources.get(str(source.get("id") or ""))
+        text = f"{title}, {_date(source.get('date'))}"
+        meta.append(f'<a href="{_e(href)}">{text}</a>' if href else f"<span>{text}</span>")
+    return (
+        f'<tr class="next-event" data-date="{_e(end or day or "")}" data-label="{_e(event.get("label"))}">'
+        f'<td class="na-date">{date_cell}</td>'
+        f'<td><div class="na-title">{_e(event.get("label"))}</div><div class="na-meta">{"".join(meta)}</div></td>'
+        f'<td class="when"></td></tr>'
+    )
+
+
+def _next_actions_section(record: dict[str, Any], built_at: str | None,
+                          documents: list[dict[str, Any]] | None = None) -> str:
     """What happens next in an open investigation (datalayer/nextactions).
 
-    Which event is next, and how far away each one is, are worked out in the
-    page against the day it is viewed, so the tab stays right between
-    rebuilds.
+    Which event is next, how far away each is, and which are past are all
+    worked out in the page against the day it is viewed (the script moves
+    past rows into the folded "Past" list), so the tab stays right between
+    rebuilds. Without the script, everything simply shows in date order.
     """
-    rows = []
-    for event in record.get("events") or []:
-        day = event.get("date")
-        date_cell = _date(day) if day else '<span class="muted">not set</span>'
-        if event.get("end") and event.get("end") != day:
-            date_cell += f" &ndash; {_date(event['end'])}"
-        source = event.get("source") or {}
-        detail = []
-        if event.get("note"):
-            detail.append(_e(event["note"]))
-        if source.get("title"):
-            detail.append(f"From: {_e(source['title'])} ({_date(source.get('date'))})")
-        basis = event.get("basis") or ""
-        cite = f' <span class="muted">{_e(event["cite"])}</span>' if event.get("cite") else ""
-        rows.append(
-            f'<tr class="next-event" data-date="{_e(event.get("end") or day or "")}" data-label="{_e(event.get("label"))}">'
-            f'<td class="date-cell">{date_cell}</td>'
-            f'<td>{_e(event.get("label"))}'
-            + (f'<span class="event-note">{" &middot; ".join(detail)}</span>' if detail else "")
-            + f'</td><td><span class="pill {_BASIS_PILLS.get(basis, "pill-gray")}">{_e(basis)}</span>{cite}</td>'
-            f'<td class="when"></td></tr>'
-        )
-    table = (
-        '<div class="card"><div class="table-wrap"><table class="list next-events">'
-        "<thead><tr><th>Date</th><th>What</th><th>Basis</th><th></th></tr></thead>"
-        f"<tbody>{''.join(rows)}</tbody></table></div></div>"
-        if rows else ""
-    )
+    # Each source document's PDF, where it is on disk.
+    sources = {
+        str(d.get("id")): (d.get("attachments") or [{}])[0].get("href")
+        for d in documents or [] if (d.get("attachments") or [{}])[0].get("href")
+    }
+    dated = [e for e in record.get("events") or [] if e.get("date")]
+    undated = [e for e in record.get("events") or [] if not e.get("date")]
     waiting = record.get("waiting_on")
     notes = "".join(f"<li>{_e(n)}</li>" for n in record.get("notes") or [])
+
+    upcoming = (
+        f'<div class="card na-card"><h3>Upcoming <small id="na-up-count"></small></h3>'
+        f'<table class="na-list" id="na-upcoming"><tbody>{"".join(_na_row(e, sources) for e in dated)}</tbody></table>'
+        f'<div class="na-empty" id="na-up-empty" hidden>Nothing dated is still ahead.</div></div>'
+        if dated else ""
+    )
+    to_be_set = (
+        f'<div class="card na-card"><h3>Not yet dated <small>({len(undated)})</small></h3>'
+        f'<table class="na-list"><tbody>{"".join(_na_row(e, sources) for e in undated)}</tbody></table></div>'
+        if undated else ""
+    )
+    past = (
+        '<details class="card na-past" id="na-past" hidden><summary>Past <small id="na-past-count"></small></summary>'
+        '<table class="na-list"><tbody id="na-past-rows"></tbody></table></details>'
+        if dated else ""
+    )
     return f"""<div class="section-block next-actions">
-  <div class="card">
-    <div class="next-head">
-      <div><div class="next-label">Stage</div><div class="next-what">{_e(record.get("stage_label"))}</div></div>
-      <div><div class="next-label">Next</div><div class="next-what" id="next-what">{"&mdash;" if rows else "Nothing scheduled"}</div>
-        <div class="next-when" id="next-when"></div></div>
+  {_na_steps(str(record.get("stage") or ""))}
+  <div class="card na-hero">
+    <div>
+      <div class="na-label">Next</div>
+      <div class="na-next" id="next-what">{"&mdash;" if dated else "Nothing scheduled"}</div>
+      <div class="na-when" id="next-when"></div>
     </div>
-    {f'<div class="next-waiting">Waiting on: <strong>{_e(waiting)}</strong></div>' if waiting else ""}
+    <div>
+      <div class="na-label">Stage</div>
+      <div>{_e(record.get("stage_label"))}</div>
+      {f'<div class="na-label" style="margin-top:0.6rem">Waiting on</div><div>{_e(waiting)}</div>' if waiting else ""}
+    </div>
   </div>
-  {table}
-  {f'<div class="card"><ul class="next-notes">{notes}</ul></div>' if notes else ""}
-  <p class="muted" style="font-size:0.82rem">
-    <strong>Case data</strong>: dates the USITC's investigation record gives. <strong>Docket</strong>: when a
-    document was issued. <strong>By rule</strong>: calculated under 19 CFR Part 210, counting days as
-    19 CFR 201.14 does (starting the first business day after the event, and moving a deadline that lands
-    on a weekend or federal holiday to the next business day), from the day a document was issued.
-    Orders and notices can change any of these; this tab is for orientation, not a substitute for them.
-    Worked out {_date(built_at) if built_at else "at the last sync"}.
+  {f'<div class="card"><ul class="na-notes">{notes}</ul></div>' if notes else ""}
+  {upcoming}
+  {to_be_set}
+  {past}
+  <p class="na-legend">
+    <strong>Order</strong>: the ALJ's or the Commission's procedural schedule, with later amendments applied.
+    <strong>Case record</strong>: dates in the USITC's investigation record. <strong>Docket</strong>: when a
+    document was issued. <strong>By rule</strong>: calculated under 19 CFR Part 210, counting days as 19 CFR
+    201.14 does (from the first business day after the event; a deadline on a weekend or federal holiday moves
+    to the next business day). Orders and notices can change any of these; this tab is for orientation, not a
+    substitute for them. Worked out {_date(built_at) if built_at else "at the last sync"}.
   </p>
 </div>"""
 
@@ -1830,7 +1913,7 @@ def render_detail(
 </div>
 {withdrawn_notice}
 {_control_panel(str(number or ""), fetched_at, claims_state)}
-{_with_tabs(''.join(block for block in blocks if block), claims, next_actions, next_built_at)}
+{_with_tabs(''.join(block for block in blocks if block), claims, next_actions, next_built_at, documents)}
 <p class="footer-note">
   Investigation {_e(number)} &middot; case information from the IDS investigations
   feed &middot; IDS snapshot {_date(case.get('ids_snapshot'))}
