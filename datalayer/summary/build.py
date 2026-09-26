@@ -129,7 +129,7 @@ def _facts(store: Store, key: str, cfg: summary_config.SummaryConfig) -> tuple[d
     summary due for rewriting."""
     from ..claims import build as claims_build
 
-    titles = facts.title_facts(_selection(store, key, cfg))
+    titles = facts.title_facts(store.documents.get(key) or [])
     analysis = claims_build.load(store.data_dir, key)
     claims = facts.claims_facts(analysis)
     basis = ",".join(f["doc_id"] for f in titles) + "|" + str((analysis or {}).get("built_at") or "")
@@ -251,7 +251,8 @@ def _build(store: Store, key: str, case: dict[str, Any], cfg: summary_config.Sum
         "sources": sources,
         "facts_basis": facts_basis,
         "writer_cut_off": cut_off,  # written again next time, not kept
-        "facts": {fid: {k: f.get(k) for k in ("type", "doc_id", "date", "label", "title", "text", "quote", "files")}
+        "facts": {fid: {k: f.get(k) for k in ("type", "kind", "doc_id", "date", "label", "title", "who", "must",
+                                              "text", "quote", "files")}
                   for fid, f in known.items()},
         "notes_version": cfg.notes_version,
         "writer_model": cfg.writer_model if not reuse else previous.get("writer_model"),

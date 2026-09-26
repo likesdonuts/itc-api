@@ -1,0 +1,183 @@
+{
+  "cost_usd": 0.027907,
+  "date": "2026-01-13",
+  "doc_id": "868805",
+  "file": "868805_2476343_2476343.pdf",
+  "kind": "answer",
+  "model": "claude-haiku-4-5-20251001",
+  "notes_version": 2,
+  "overview": "This is Hisense's answer to the complaint filed by BH Innovations LLC, Longitude Licensing Limited, and 138 East LCD Advancements Ltd. in ITC Investigation 337-TA-1462 concerning alleged infringement of patents related to liquid crystal display devices. Hisense denies infringement, denies that a domestic industry exists, and asserts multiple defenses including lack of infringement, patent invalidity, and patent exhaustion.",
+  "pages_read": [
+    1,
+    2,
+    3,
+    4,
+    18,
+    19,
+    20,
+    21,
+    22,
+    23,
+    24,
+    25,
+    26,
+    27,
+    28,
+    29,
+    30,
+    31,
+    32,
+    33,
+    34,
+    35,
+    36,
+    37
+  ],
+  "points": [
+    {
+      "page": 3,
+      "point": "Respondents are Hisense USA Corporation, Hisense Co., Ltd., Hisense International Co., Ltd., and Hisense Visual Technology Co. Ltd., collectively referred to as \"Hisense.\"",
+      "quote": "Respondents Hisense USA Corporation, Hisense Co., Ltd., Hisense International Co., Ltd., and Hisense Visual Technology Co. Ltd. (collectively \"Hisense\") hereby answers the Complaint",
+      "topic": "respondents"
+    },
+    {
+      "page": 3,
+      "point": "Hisense denies all allegations that it has engaged in unfair competition or infringement, denies that it has imported, sold for importation, or sold infringing products, denies that a domestic industry exists as required by Section 337, and denies that complainants are entitled to any relief.",
+      "quote": "Hisense denies that it has engaged in acts of unfair competition in violation of Section 337 by importing, selling for importation, and/or selling after importation into the United States any product that infringes the asserted patents.",
+      "topic": "general_response"
+    },
+    {
+      "page": 4,
+      "point": "The asserted patents are U.S. Patent No. 7,705,948 (the '948 patent), independent claim 1, and U.S. Patent No. 7,570,334 (the '334 patent), independent claim 1.",
+      "quote": "Hisense admits that Complainants assert independent claim 1 of U.S. Patent No. 7,705,948 (the '948 patent') and independent claim 1 of U.S. Patent No. 7,570,334",
+      "topic": "ip_asserted"
+    },
+    {
+      "page": 4,
+      "point": "Hisense's \"Accused Products\" are televisions containing liquid crystal display (LCD) panels manufactured by HKC Corporation Ltd., as defined by the instituted scope of the investigation.",
+      "quote": "Hisense understands Hisense's \"\"Accused Products\" to mean televisions that contain liquid crystal display (LCD\") panels manufactured by HKC Corporation Ltd., that are accused of infringing",
+      "topic": "products"
+    },
+    {
+      "page": 27,
+      "point": "Hisense asserts that it does not literally infringe any valid and enforceable claim of the asserted patents because at least one claim element is not met for each asserted claim.",
+      "quote": "On information and belief, Hisense does not literally infringe any valid and enforceable claim of the asserted patents. On information and belief, at least one claim element is not met",
+      "topic": "non_infringement"
+    },
+    {
+      "page": 27,
+      "point": "Hisense argues that complainants are barred from relying on the doctrine of equivalents to allege infringement because of the all-elements rule, vitiation, intentional narrow claiming, prosecution history estoppel, prior art estoppel, and the disclosure-dedication doctrine.",
+      "quote": "Complainants are barred from relying on the doctrine of equivalents to allege infringement of any valid and enforceable claim of the asserted patents because of the all-elements rule, vitiation, intentional narrow claiming, prosecution history estoppel, prior art estoppel",
+      "topic": "non_infringement"
+    },
+    {
+      "page": 28,
+      "point": "Hisense argues that any claims of indirect infringement are barred because Hisense did not know the internal structure of HKC LCD panels, did not commit affirmative acts to encourage infringement, and did not know that induced acts were infringing.",
+      "quote": "any claims of indirect infringement are barred at least because Hisense did not and does not \"know\" what the internal structure, arrangement, and geometry are of the elements of the LCD panels",
+      "topic": "non_infringement"
+    },
+    {
+      "page": 18,
+      "point": "Complainants identified Hisense TV model 32A4H as an accused product, but Hisense states this TV does not contain an HKC LCD panel and instead contains an LCD panel provided by Complainants' licensee, and therefore cannot be infringing.",
+      "quote": "the Hisense TV model 32A4H cannot be an infringing product when it does not contain an HKC LCD panel and instead contains an LCD panel provided by Complainants' licensee",
+      "topic": "products"
+    },
+    {
+      "page": 19,
+      "point": "The only HKC product identified in Complainants' claim chart for the '334 patent is model PT320AT02-5-XR-1, which has been discontinued according to the website relied on by Complainants, and has not been used in the Hisense TV model 32A4H.",
+      "quote": "the only HKC product identified in Complainants' claim chart for the '334 patent has been discontinued according to the website relied on by Complainants in this Complaint, and this specific HKC product has not been used in the Hisense TV model 32A4H",
+      "topic": "products"
+    },
+    {
+      "page": 20,
+      "point": "Complainants have not identified which, if any, specific HKC product is contained in any Hisense TV product.",
+      "quote": "In this paragraph, Complainants fail to identify which, if any, specific HKC product is contained in any Hisense TV product.",
+      "topic": "products"
+    },
+    {
+      "page": 28,
+      "point": "Hisense denies that Complainants have adequately alleged and cannot prove the existence of a domestic industry as required by Section 337(a)(2) and (a)(3).",
+      "quote": "Complainants have not adequately alleged and cannot prove the existence of a domestic industry, as required by Section 337(a)(2) and defined by Section 337(a)(3)",
+      "topic": "domestic_industry"
+    },
+    {
+      "page": 28,
+      "point": "Hisense asserts that Complainants cannot establish that any products of licensee Innolux Corporation practice at least one valid and enforceable claim of the asserted patents.",
+      "quote": "Complainants cannot establish that any products of licensee Innolux Corporation practice at least one valid and enforceable claim of the asserted patents",
+      "topic": "domestic_industry"
+    },
+    {
+      "page": 28,
+      "point": "Hisense asserts that the asserted claims are invalid for failing to comply with 35 U.S.C. \u00a7\u00a7 102, 103, 112, and 256, and notes that defendants in litigation concerning the '948 patent have alleged invalidity on numerous grounds.",
+      "quote": "The Asserted Claims are invalid for failing to comply with one or more of the conditions for patentability set forth in Part II of Title 35 of the United States Code, including but not limited to 35 U.S.C. \u00a7\u00a7 102, 103, 112, and 256",
+      "topic": "invalidity"
+    },
+    {
+      "page": 29,
+      "point": "Hisense asserts that Complainants are barred from enforcing the asserted claims by the doctrines of waiver, equitable estoppel, and acquiescence.",
+      "quote": "Complainants are barred from enforcing any asserted claim of any of the Asserted Patents or from obtaining the requested relief by one or more of the doctrines of waiver, equitable estoppel, and acquiescence",
+      "topic": "unenforceability"
+    },
+    {
+      "page": 29,
+      "point": "Hisense argues that Complainants have not adequately alleged and cannot establish that the requested relief is in the public interest, considering effects on public health, welfare, competitive conditions, domestic production of like articles, and consumers.",
+      "quote": "Complainants have not adequately alleged and cannot establish that the requested relief is in the public interest, after considering the effect of exclusion upon the public health and welfare, competitive conditions",
+      "topic": "other_defenses"
+    },
+    {
+      "page": 29,
+      "point": "Hisense asserts collateral estoppel based on identical issues of claim construction, infringement, validity, or enforceability of the '948 patent that are litigated in Civil Action No. 2:23-CV-00515 in the Eastern District of Texas.",
+      "quote": "To the extent any issue of claim construction, infringement, validity, or enforceability of the claims of the '948 patent in this Investigation is identical to issues that are litigated and adjudicated against one or more of the Complainants in Civil Action No. 2:23-CV-00515",
+      "topic": "other_defenses"
+    },
+    {
+      "page": 30,
+      "point": "Hisense asserts the patent exhaustion defense and single recovery rule, arguing that to the extent Hisense products contain LCD panels provided by licensees or under covenants not to sue, or for which Complainants have already recovered compensation, such claims are barred.",
+      "quote": "To the extent that Complainants' allegations of infringement relate to Hisense products that contain LCD panels provided by or for any named licensee of the Asserted Patents, or that contain LCD panels provided by or for a licensee of the Asserted Patents under a covenant not to sue, whether explicitly or impliedly, or contain LCD panels for which one or more of the Complainants has already recovered complete compensation, Complainants' claims are barred by the doctrine of patent exhaustion and/or by the single recovery rule",
+      "topic": "other_defenses"
+    },
+    {
+      "page": 30,
+      "point": "Hisense asserts that to the extent Hisense products contain LCD panels provided by licensees or under covenants not to sue, Hisense has an express or implied license under the asserted patents.",
+      "quote": "To the extent that Complainants' allegations of infringement relate to Hisense products that contain LCD panels provided by or for any named licensee of the Asserted Patents, or that contain LCD panels provided by or for a licensee of the Asserted Patents under a covenant not to sue, whether explicitly or impliedly, Complainants' claims are barred because Hisense has an express or implied license",
+      "topic": "other_defenses"
+    },
+    {
+      "page": 31,
+      "point": "Hisense asserts that to the extent it or its customers or suppliers import accused products for or sell them to the United States government, such acts are not subject to Complainants' requests for relief.",
+      "quote": "To the extent that Hisense or its customers or suppliers import any accused products for, or sell any accused products to, the United States government, such acts are not subject to the requests for relief of Complainants",
+      "topic": "other_defenses"
+    },
+    {
+      "page": 18,
+      "point": "Hisense admits that Hisense USA has imported TVs containing LCD panels into the United States from Mexico, but denies that it has participated in infringement or that Complainants are entitled to relief.",
+      "quote": "Hisense admits that Hisense USA has imported TVs containing LCD panels into the United States from Mexico. Hisense denies that it has participated in infringement",
+      "topic": "importation"
+    },
+    {
+      "page": 31,
+      "point": "Hisense requests that the Commission deny all relief requested by Complainants, find that Hisense has not violated Section 337, find that asserted claims are invalid, find that a domestic industry does not exist, find that Accused Products do not satisfy every element of any valid claim, and find that the requested relief is not in the public interest.",
+      "quote": "Denying all relief requested in the Complaint; Finding that Hisense has not violated Section 337 of the Tariff Act of 1930, as amended, 19 U.S.C. $ 1337; Finding that Hisense has not infringed any valid claims of the Asserted Patents",
+      "topic": "relief"
+    },
+    {
+      "page": 30,
+      "point": "Hisense references Civil Action No. 2:23-CV-00515 in the Eastern District of Texas, in which defendants including BOE Technology Group Co., Ltd. have alleged that claims of the '948 patent are invalid on numerous grounds, with jury selection and trial day 1 scheduled for January 9, 2026.",
+      "quote": "jury selection followed by trial day 1 has been set in Civil Action No. 2:23-CV-00515, Eastern District of Texas, for Friday, Jan. 9, 2026, at 9:00 a.m. in Courtroom 106",
+      "topic": "related_proceedings"
+    }
+  ],
+  "rejected": [
+    {
+      "page": 20,
+      "point": "No Hisense TV products have been identified in Complainants' claim charts, and the accused product shown in one claim chart is an LG 27-inch monitor (27MP40W), not a Hisense product.",
+      "quote": "no Hisense TV products have been identified in Complainants' charts. See Exhibit 5A to the Complaint, which identifies the accused product as an \"LG 27 inch monitor (27MP40W)\"",
+      "rejected": "quote not found in the filing",
+      "topic": "products"
+    }
+  ],
+  "taken_at": "2026-09-26T21:40:37+00:00",
+  "title": "Respondents Hisense USA Corporation, Hisense Co., Ltd., Hisense International Co., Ltd., and Hisense Visual Technology Co. Ltd.'s Answer to the Complaint of BH Innovations LLC under Section 337 of the Tariff Act of 1930, as Amended, and Response to the Notice of Investigation",
+  "truncated": false,
+  "who": "Hisense USA Corporation, Hisense Co., Ltd., Hisense International Co., Ltd., and Hisense Visual Technology Co. Ltd."
+}

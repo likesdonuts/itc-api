@@ -1,9 +1,9 @@
 """Facts a summary can cite without reading anything, so without paying:
 
-    title facts    what an order's or notice's title already says: a
-                   respondent settled out, was found in default, the
-                   Commission let a ruling stand, an exclusion order issued
-                   (select.py's "noted" documents)
+    title facts    the case history (history.py): every dispositive event,
+                   from its title -- a respondent settled out, was found in
+                   default, the Commission let a ruling stand or ended the
+                   case, an exclusion order issued
     claims facts   the claims analysis's findings, where the case has one:
                    which claims were withdrawn, found invalid or not, found
                    infringed or not, and the overall violation finding --
@@ -17,9 +17,7 @@ from __future__ import annotations
 
 from typing import Any
 
-from .select import Selection
-
-TITLE_KINDS = {"termination": "Termination", "default": "Default", "not_reviewed": "Not reviewed", "remedy": "Remedial order"}
+from . import history
 
 # The claims analysis's findings worth a sentence, in the order a case reaches them.
 CLAIM_ACTIONS = {
@@ -39,13 +37,15 @@ SPEAKERS = {"Complaint": "the complaint", "ID/RD - Final on Violation": "the fin
             "Order": "an ALJ order"}
 
 
-def title_facts(selection: Selection, limit: int = 80) -> list[dict[str, Any]]:
-    """The noted documents, oldest first (at most `limit`, the latest kept)."""
-    items = sorted(selection.noted, key=lambda i: (i.day, i.id))[-limit:]
+def title_facts(documents: list[dict[str, Any]], limit: int = 120) -> list[dict[str, Any]]:
+    """The case history (history.py), oldest first -- every dispositive
+    event, read or not, so the writer sees the whole sequence (at most
+    `limit`, the latest kept). `must` marks the events a summary has to
+    account for."""
     return [
-        {"doc_id": item.id, "kind": item.kind, "date": item.day, "title": item.title,
-         "label": TITLE_KINDS.get(item.kind, item.kind)}
-        for item in items
+        {"doc_id": e.doc_id, "kind": e.kind, "date": e.date, "title": e.title, "label": e.label, "who": e.who,
+         "must": e.kind in history.MUST_MENTION}
+        for e in history.events(documents)[-limit:]
     ]
 
 

@@ -418,6 +418,8 @@ table.na-list tr.sum-group td { padding-top: 0.9rem; font-size: 0.7rem; font-wei
 .primer-note { font-size: 0.8rem; color: var(--muted); }
 .case-summary > .card { padding: 1rem 1.2rem; margin-bottom: 0.9rem; }
 .case-summary > details.card { padding: 0.8rem 1.2rem; }
+.case-summary .na-past td { color: var(--ink); }
+table.na-list tr.sum-must .na-title { font-weight: 650; }
 .case-summary h4 { font-size: 0.85rem; margin: 0.9rem 0 0.3rem; }
 .sum-actions { display: flex; gap: 0.5rem; flex-wrap: wrap; }
 .sum-hero .warn { color: var(--amber-fg); }
@@ -1904,12 +1906,39 @@ _SUM_GROUPS = {
     "rulings": "Rulings before the hearing",
     "decisions": "The ALJ's and the Commission's decisions",
 }
-_SUM_NOTED = {
-    "termination": "Terminations",
-    "default": "Defaults",
-    "not_reviewed": "The Commission let a ruling stand",
-    "remedy": "Remedial orders",
-}
+def _case_history(documents: list[dict[str, Any]] | None) -> str:
+    """Every dispositive event, from the documents' titles (datalayer/summary/
+    history.py): no model, so it is complete and current whether or not a
+    summary has been written. Open when short; events that change who or what
+    is in the case are in bold."""
+    from datalayer.summary import history
+
+    events = history.events(documents or [])
+    if not events:
+        return ""
+    files = _file_links(documents)
+    rows = []
+    for event in events:
+        href = (files.get(event.doc_id) or [""])[0]
+        title = _e(event.title if len(event.title) <= 150 else event.title[:147] + "…")
+        title = f'<a href="{_e(href)}">{title}</a>' if href else title
+        meta = [f'<span class="na-basis">{_e(event.label)}</span>']
+        if event.who:
+            meta.append(f"<span>{_e(event.who)}</span>")
+        if not event.public:
+            meta.append("<span>Confidential: no public version yet</span>")
+        elif len(event.versions) > 1:
+            meta.append("<span>Dated by its first version</span>")
+        strong = " sum-must" if event.kind in history.MUST_MENTION else ""
+        rows.append(f'<tr class="{strong.strip()}"><td class="na-date">{_date(event.date)}</td>'
+                    f'<td><div class="na-title">{title}</div><div class="na-meta">{"".join(meta)}</div></td></tr>')
+    opened = " open" if len(events) <= 20 else ""
+    return (
+        f'<details class="card na-past"{opened}><summary>What happened <small>({len(events)} events)</small></summary>'
+        '<p class="primer-note">Every termination, default, ruling and decision on the docket, read from the titles of '
+        "the orders and notices, so it costs nothing and is always complete. Events that change who or what is in the "
+        f'case are in bold.</p><table class="na-list"><tbody>{"".join(rows)}</tbody></table></details>'
+    )
 
 
 def _file_links(documents: list[dict[str, Any]] | None) -> dict[str, list[str]]:
@@ -2134,6 +2163,7 @@ def _summary_section(estimate: Any, primer: Any, documents: list[dict[str, Any]]
   </div>""")
         if written:
             blocks.append(_written_summary(record, documents))
+        blocks.append(_case_history(documents))
 
         rows = []
         for section, heading in _SUM_GROUPS.items():
@@ -2149,19 +2179,6 @@ def _summary_section(estimate: Any, primer: Any, documents: list[dict[str, Any]]
             blocks.append(f'<div class="card na-card"><h3>What would be read <small>({len(estimate.lines)} documents)'
                           f'</small></h3>{table}</div>')
 
-        noted = estimate.selection.noted
-        if noted:
-            parts = []
-            for kind, heading in _SUM_NOTED.items():
-                items = [i for i in noted if i.kind == kind]
-                if items:
-                    lis = "".join(f"<li>{_date(i.day)}: {_e(i.title)}</li>" for i in items)
-                    parts.append(f"<h4>{heading} <small>({len(items)})</small></h4><ul class=\"na-notes\">{lis}</ul>")
-            blocks.append(
-                f'<details class="card na-past"><summary>Noted from their titles, not opened <small>({len(noted)})</small>'
-                f'</summary><p class="primer-note">The title already says what happened, so these cost nothing.</p>'
-                f'{"".join(parts)}</details>'
-            )
         left_out = estimate.selection.not_read
         if left_out or estimate.selection.skipped_filings:
             lis = "".join(

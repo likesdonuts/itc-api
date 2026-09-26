@@ -140,7 +140,7 @@ class TestRulingsAndDecisions(unittest.TestCase):
         sel = select(docs)
         self.assertEqual([i.kind for i in sel.reading("decisions")], ["final_id", "commission_notice", "commission_opinion"])
         self.assertTrue(sel.reading("decisions")[0].title.startswith("[Corrected]"))
-        self.assertEqual(sorted(i.kind for i in sel.noted), ["not_reviewed", "remedy"])
+        self.assertEqual(sorted(i.kind for i in sel.noted), ["not_reviewed", "order"])
 
     def test_only_public_documents(self):
         docs = [doc("Commission Opinion", "Opinion, Commission", public=False)]

@@ -929,9 +929,8 @@ Commission notices and opinions):
    kept in the file with the reason, never used. Cached per document in
    `data/summaries/notes/<id>.json` (tracked: paid for), reused until
    `notes_version` changes.
-4. **Facts that need no reading** (`facts.py`, free): *title facts* ("t3")
-   from the documents noted by title -- terminations, defaults, the
-   Commission declining review, remedial orders -- and *claims facts* ("c2")
+4. **Facts that need no reading** (`facts.py`, free): *title facts* ("t3"),
+   the case history (below), and *claims facts* ("c2")
    from the claims analysis, where the case has one: its checked (`ok`)
    findings -- withdrawn, found invalid or not, infringed or not, violation
    or not -- grouped by patent, respondents and source ("claims 1-3, 5 of the
@@ -947,6 +946,32 @@ Commission notices and opinions):
    It is rewritten only when what it draws on changes: the documents read,
    the documents noted by title, the claims analysis's build, or the
    summary's phase (`PHASE`; a phase 2 summary shows **Update summary**).
+
+**The case history** (`summary/history.py`, free) is every dispositive event
+on the docket, from the documents index alone: the titles of the ALJ's IDs
+and the Commission's notices, orders and opinions say what happened.
+Institution; terminations (withdrawal, settlement, consent order, arbitration,
+claims or patents); defaults; summary determinations; the final ID (dated by
+the ALJ's notice of its issue when there is one); remand IDs; the Commission
+reviewing an ID or letting it stand -- any dispositive one, terminations and
+defaults included, since that makes them final; its own determinations
+(final determinations, terminations, violation or not, remand, rescission);
+its remand, reversal and remedial orders; its opinions. Housekeeping is left
+out (target dates, extensions, schedules, declassification, staff changes,
+early-adjudication requests, errata), and so are Federal Register reprints.
+A document's versions -- confidential, then public weeks later, or corrected
+-- are one event, dated by the first and linked to the latest public one;
+titles that differ by a letter still match. Of the ~4,900 public documents
+in the 4-digit cases whose titles look dispositive, all but ~50 (errata,
+reprints) are classified.
+
+The history is shown on the Summary tab as **What happened**, written or not,
+and is the writer's title facts. Events that change who or what is in the
+case (`MUST_MENTION`: terminations, defaults, final and remand IDs, the
+Commission letting an ID stand, its determinations and orders) are marked for
+the writer, who must cite each one; code checks, and warns about any the
+summary leaves out. The history also decides which documents are "noted from
+their titles" in the reading plan.
 
 On the page, each paragraph ends with one chip per page it cites ("p. 12",
 or "Answer p. 3" when it draws on more than one filing); hovering shows the

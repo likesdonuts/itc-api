@@ -1,0 +1,219 @@
+{
+  "cost_usd": 0.028677,
+  "date": "2026-01-05",
+  "doc_id": "867938",
+  "file": "867938_2470870_2470870.pdf",
+  "kind": "answer",
+  "model": "claude-haiku-4-5-20251001",
+  "notes_version": 2,
+  "overview": "This is TCL Respondents' answer to the amended complaint in a Section 337 investigation involving allegations of patent infringement of U.S. Patents 7,705,948 and 7,570,334 related to liquid crystal display devices. TCL denies infringement, invalidity, and the existence of a domestic industry, and asserts seventeen affirmative defenses.",
+  "pages_read": [
+    1,
+    2,
+    3,
+    4,
+    29,
+    30,
+    31,
+    32,
+    33,
+    34,
+    35,
+    36,
+    37,
+    38,
+    39,
+    40,
+    41,
+    42,
+    43,
+    44,
+    45,
+    46,
+    47,
+    48
+  ],
+  "points": [
+    {
+      "page": 3,
+      "point": "The asserted patents are U.S. Patent No. 7,705,948 and U.S. Patent No. 7,570,334, both relating to liquid crystal display technology.",
+      "quote": "A. U.S. Patent No. 7,705,948.................................................................................... 12 B. U.S. Patent No. 7,570,334.................................................................................... 13",
+      "topic": "ip_asserted"
+    },
+    {
+      "page": 32,
+      "point": "TCL Respondents deny that they have violated Section 337 or that they directly or indirectly infringe any valid and enforceable claims of the asserted patents, either literally or under the doctrine of equivalents.",
+      "quote": "TCL Respondents do not directly infringe, indirectly infringe, willfully infringe, contribute to infringement, or induce infringement of any valid or enforceable claim of the Asserted Patents",
+      "topic": "general_response"
+    },
+    {
+      "page": 32,
+      "point": "TCL Respondents assert that complainants have not shown infringement of any claims of the asserted patents, nor have they shown any accused TCL products infringe any asserted claims, and TCL reserves the right to amend responses to offer claim charts establishing non-infringement after further discovery.",
+      "quote": "Complainant has not shown infringement of any claims of the Asserted Patents. Nor has complainants shown any Accused TCL Products infringe any Asserted Claims.",
+      "topic": "non_infringement"
+    },
+    {
+      "page": 32,
+      "point": "TCL asserts that the asserted claims are invalid under 35 U.S.C. \u00a7\u00a7 101, 102, 103, 112, 116, and/or 256, particularly under \u00a7\u00a7 102 and 103 in view of prior art identified in the patents' faces and prosecution histories.",
+      "quote": "The Asserted Claims of the Asserted Patents are each invalid for failure to meet the requirements set forth in 35 U.S.C. \u00a7\u00a7 101, 102, 103, 112, 116, and/or 256.",
+      "topic": "invalidity"
+    },
+    {
+      "page": 32,
+      "point": "TCL alleges that it would have been obvious to one of ordinary skill in the art to modify or combine the prior art references, as certain references identify and address the same technical issues and suggest similar solutions, with any alleged differences being trivial.",
+      "quote": "It would have been obvious to one of ordinary skill in the art to modify or to combine any of the prior art references with other references",
+      "topic": "invalidity"
+    },
+    {
+      "page": 33,
+      "point": "TCL asserts that one or more claims of the asserted patents are invalid under 35 U.S.C. \u00a7 112 as indefinite and for failure to comply with written description and/or enablement requirements.",
+      "quote": "one or more of the claims of the Asserted Patents are invalid under 35 U.S.C. \u00a7 112 as indefinite and for failure to comply with the written description and/or enablement requirements.",
+      "topic": "invalidity"
+    },
+    {
+      "page": 33,
+      "point": "TCL asserts that complainants have not adequately alleged and cannot prove the existence of a domestic industry, and specifically that complainants have not demonstrated that Innolux has made significant investments in plant and equipment, significant employment of labor and capital, and substantial investments in exploitation of the asserted patents.",
+      "quote": "Complainants have not adequately alleged and cannot prove the existence of a domestic industry. More particularly, Complainants have not adequately alleged and cannot prove that a domestic industry exists on the basis of the activities of Innolux.",
+      "topic": "domestic_industry"
+    },
+    {
+      "page": 33,
+      "point": "TCL denies that complainants have satisfied the technical and economic prongs of the domestic industry requirement.",
+      "quote": "Complainants have not satisfied the technical and economic prongs of the domestic industry requirement.",
+      "topic": "domestic_industry"
+    },
+    {
+      "page": 29,
+      "point": "TCL denies all allegations concerning Innolux's substantial investments in labor and capital in activities related to the asserted patents, engineering and research and development activities in the United States, significant activities relating to the technology of the asserted patents, and significant investment in plant and equipment and employment of labor and capital.",
+      "quote": "TCL Respondents deny that Complainants have shown a domestic industry.",
+      "topic": "domestic_industry"
+    },
+    {
+      "page": 33,
+      "point": "TCL asserts a prosecution history estoppel and/or disclaimer defense, alleging that due to admissions and statements made to the U.S. Patent and Trademark Office during prosecution of the applications resulting in the asserted patents, complainants are estopped from construing a valid and enforceable claim as infringed literally or under the doctrine of equivalents by the accused products.",
+      "quote": "due to admissions and statements made to the United States Patent and Trademark Office during the prosecution of the applications that resulted in the Asserted Patents",
+      "topic": "unenforceability"
+    },
+    {
+      "page": 34,
+      "point": "TCL asserts that complainants are barred from seeking relief for alleged infringement if the accused products or components thereof are licensed, whether expressly or impliedly, or barred as a result of patent exhaustion.",
+      "quote": "Complainants are barred from seeking relief for alleged infringement of the Asserted Patents in whole or in part to the extent that the Accused Products or components thereof are licensed",
+      "topic": "unenforceability"
+    },
+    {
+      "page": 34,
+      "point": "TCL asserts as an affirmative defense a lack of importation, arguing that if complainants are unable to prove that the allegedly infringing articles are imported into the United States, sold for importation, or sold after importation by each TCL respondent, then complainants' claims should be denied.",
+      "quote": "To the extent that Complainants are unable to prove that the allegedly infringing articles are imported into the United States, sold for importation into the United States, or sold after importation into the United States by each TCL Respondent",
+      "topic": "importation"
+    },
+    {
+      "page": 38,
+      "point": "TCL denies engaging in unlawful importation into the United States, sale for importation, or sale within the United States after importation of liquid crystal display devices, components thereof, and products containing the same that infringe the asserted claims of the asserted patents.",
+      "quote": "TCL Respondents deny that they are in violation of 19 U.S.C. \u00a7 1337 and that they have engaged in the unlawful importation into the United States",
+      "topic": "other_unfair_acts"
+    },
+    {
+      "page": 34,
+      "point": "TCL asserts an inventorship defense, reserving the right to assert improper inventorship as a defense if it determines through discovery and investigation that any asserted patent fails to name the appropriate inventors.",
+      "quote": "To the extent that TCL Respondents determine through discovery and investigation that any Asserted Patent fails to name the appropriate inventors, TCL Respondents reserve the right to assert improper inventorship as a defense.",
+      "topic": "other_defenses"
+    },
+    {
+      "page": 34,
+      "point": "TCL asserts an ensnarement defense, arguing that complainants' claims are barred by the doctrine of ensnarement to the extent that complainants make infringement claims under the doctrine of equivalents that would ensnare prior art.",
+      "quote": "Complainants' claims are barred by the doctrine of ensnarement to the extent that Complainants make infringement claims under th e doctrine of equivalents that would ensnare prior art.",
+      "topic": "other_defenses"
+    },
+    {
+      "page": 35,
+      "point": "TCL asserts a prosecution laches defense, arguing that complainants' claims are barred because complainants have prejudiced TCL respondents by inexcusably delaying prosecution of applications for the asserted patents.",
+      "quote": "Complainants' claims are barred by the doctrine of prosecution laches because Complainants have prejudiced TCL Respondents by inexcusably delaying prosecution of applications for the Asserted Patents.",
+      "topic": "other_defenses"
+    },
+    {
+      "page": 35,
+      "point": "TCL asserts equitable defenses including laches, waiver, acquiescence, equitable estoppel, implied license, patent misuse, and unclean hands, arguing that some or all of complainant's claims are barred by these doctrines.",
+      "quote": "On information and belief, some or all of Complainant's claims for relief are barred, in whole or in part, by the doctrines of laches, waiver, acquiescence, equitable estoppel, implied license, patent misuse, unclean hands",
+      "topic": "other_defenses"
+    },
+    {
+      "page": 36,
+      "point": "TCL asserts a res judicata, claim preclusion, issue preclusion, and collateral estoppel defense, arguing on information and belief that BHI's claims are barred by these doctrines.",
+      "quote": "On information and belief, BHI's claims are barred in whole or in part by the doctrines of res judicata, claim preclusion, issue preclusion, and/or collateral estoppel.",
+      "topic": "other_defenses"
+    },
+    {
+      "page": 36,
+      "point": "TCL asserts a claim construction estoppel defense, arguing on information and belief that representations, omissions, and/or concessions made during prosecution of the asserted patents and related patents limit the scope of the claims such that BHI is estopped from construing the claims to cover any accused product.",
+      "quote": "On information and belief, representations, omissions, and/or concessions made during prosecution of the Asserted Patents, and/or related U.S. or foreign patents and patent applications, limit the scope of the claims",
+      "topic": "other_defenses"
+    },
+    {
+      "page": 35,
+      "point": "TCL asserts a statutory authority defense, arguing that one or more complainants lack substantial rights in the asserted patents and therefore statutory authority is lacking, and that multiple license agreements preclude complainants from claiming substantial rights.",
+      "quote": "One or more Complainants lacks substantial rights in the Asserted Patents and therefore statutory authority is lacking. For example, multiple license agreements preclude Complainants from claiming substantial rights",
+      "topic": "other_defenses"
+    },
+    {
+      "page": 35,
+      "point": "TCL argues that the requested relief should not issue pursuant to 19 U.S.C. \u00a7 1337(d)(1) because of potential adverse effects upon public health and welfare, competitive conditions in the United States economy, production of like or directly competitive articles in the United States, and United States consumers.",
+      "quote": "Pursuant to 19 U.S.C. \u00a7 1337(d)(1), the requested relief should not issue because of its potential adverse effects upon the public health and welfare, competitive conditions in the United States economy",
+      "topic": "relief"
+    },
+    {
+      "page": 36,
+      "point": "TCL requests that the Commission determine that TCL respondents have not violated Section 337, have not directly or indirectly infringed any valid and enforceable claims of the asserted patents, and that there is no domestic industry for each asserted patent.",
+      "quote": "Determining that TCL Respondents have not violated Section 337 of the Tariff Act of 1930, as amended",
+      "topic": "relief"
+    },
+    {
+      "page": 36,
+      "point": "TCL requests that the Commission find that the asserted claims of the asserted patents are invalid, find that there is no domestic industry for each asserted patent, and find that the relief requested by complainants would not be in the public interest.",
+      "quote": "Finding that the Asserted Claims of the Asserted Patents are invalid",
+      "topic": "relief"
+    },
+    {
+      "page": 37,
+      "point": "TCL requests that the Commission deny all relief requested in the complaint, dismiss the complaint, terminate the investigation, and award TCL respondents their attorneys' fees and costs incurred in responding to the complaint and defending themselves.",
+      "quote": "Denying all relief requested in the Complaint; (7) Determining that TCL Respondents have not imported, sold for importation, or sold within the United States after importation certain liquid crystal display devices",
+      "topic": "relief"
+    },
+    {
+      "page": 41,
+      "point": "The accused TCL products are liquid crystal display devices, components thereof, and products containing the same, which have been imported into the United States under at least HTSUS number 8528.72.6430.",
+      "quote": "On information and belief, the Accused TCL Products have been imported into the United States under at least HTSUS number 8528.72.6430.",
+      "topic": "products"
+    },
+    {
+      "page": 41,
+      "point": "TCL identifies certain TCL respondents and their supply chain partners as having capacity to produce and ensure continued production of the accused TCL products for consumers in the United States, and believe that the United States constitutes a relatively significant market for these products.",
+      "quote": "Certain TCL Respondents and their supply chain partners have the capacity to produce and ensure continued production of the Accused TCL Products for consumers in the United States.",
+      "topic": "importation"
+    },
+    {
+      "page": 38,
+      "point": "TCL denies all allegations in the complaint and notice of investigation, stating that TCL currently lacks sufficient information and knowledge to form a belief as to the truth of complainants' allegations and thus denies them on that basis.",
+      "quote": "TCL Respondents currently lack sufficient information and knowledge to form a belief as to the truth of Complainants' allegations, and thus TCL Respondents deny all such allegations",
+      "topic": "general_response"
+    },
+    {
+      "page": 36,
+      "point": "TCL reserves the right to assert that its claims are not barred by the actions of others over whom they have no control, and to argue this defense based on discovery and investigation.",
+      "quote": "To the extent TCL Respondents determine through discovery and investigation, TCL Respondents reserve the right to argue that BHI's claims are barred, in whole or in part, because TCL Respondents are not liable for the acts of others",
+      "topic": "other_defenses"
+    }
+  ],
+  "rejected": [
+    {
+      "page": 1,
+      "point": "TCL Electronics Holdings Ltd., Shenzhen TCL New Technology Co. Ltd., TCL King Electrical Appliances Co. Ltd., TTE Technology Inc., TCL Technology Group Corp., TCL Moka International Ltd., TCL Overseas Marketing Ltd., TCL Industries Holdings Co., Ltd., and TCL Smart Device (Vietnam) Co. Ltd. are the named TCL respondents.",
+      "quote": "TCL Electronics Holdings Ltd. ... TCL Smart Device (Vietnam) Co. Ltd.",
+      "rejected": "quote not found in the filing",
+      "topic": "respondents"
+    }
+  ],
+  "taken_at": "2026-09-26T21:38:04+00:00",
+  "title": "Response of TCL Respondents to the Complaint and Notice of Investigation",
+  "truncated": false,
+  "who": "TCL Technology Group Corp., TTE Technology Inc., TCL Moka International, Ltd., TCL Overseas Marketing Ltd., TCL King Electrical Appliances Co., Ltd., TCL Industries Holdings Co., Limited, TCL Electronics Holdings Ltd., Shenzhen TCL New Technology Company Limited, and TCL Smart Device (Vietnam) Co. Ltd."
+}

@@ -20,10 +20,11 @@ says something a newcomer needs, and as little of each as will do:
     decisions     the final ID, the Commission's notices of a decision to
                   review or of a final determination, and its opinions.
 
-Some events need no reading at all, because the title says it all:
-terminations (settlement, withdrawal, consent order), defaults, the
-Commission declining to review a dispositive ruling, and the remedial
-orders it issued. These are noted from their titles.
+Every other dispositive event needs no reading at all, because its title
+says what happened: terminations (settlement, withdrawal, consent order),
+defaults, the Commission letting a ruling stand or terminating the case,
+remand orders and remedial orders. These are noted from their titles, from
+the case history (history.py).
 
 Only public documents are ever read.
 """
@@ -263,9 +264,6 @@ _PROCEDURAL = re.compile(
     r"extension|extend|\btime\b|\bleave\b|schedul|strike|\bbrief|page\s+limit|to\s+file|to\s+respond|oral\s+argument|withdraw\s+(?:its|the|their)\s+motion",
     re.I,
 )
-_DEFAULT = re.compile(r"\bdefault", re.I)
-# \b: "Determination" contains "terminat".
-_TERMINATION = re.compile(r"\bterminat|\bwithdraw|\bsettle|consent\s+order|\barbitration", re.I)
 _DENIAL = re.compile(r"^\W*(?:\(\d+\)\s*)?(?:\[?corrected\]?\s*)?(?:public\s+version\s*)?(?:order\s+no\.?\s*\d+\s*:?\s*)?"
                      r"(?:initial\s+determ\w*\s+|id\s+)?(?:denying|dismissing)\b", re.I)
 _VARIANT = re.compile(r"\[?\bcorrected\b\]?|\bpublic\s+version\b|\(public\)|order\s+no\.?\s*\d+\s*:?", re.I)
@@ -310,14 +308,8 @@ def _rulings(documents: list[dict[str, Any]], sel: Selection, limit: int) -> Non
         kind = doc.get("document_type")
         if kind not in ("ID/RD - Other Than Final on Violation", "Order"):
             continue
-        title = _title(doc)
         if _is_sd_ruling(doc):
             rulings.append(doc)
-        elif kind == "ID/RD - Other Than Final on Violation":
-            if _DEFAULT.search(title):
-                sel.noted.append(Item("rulings", "default", doc, "Default"))
-            elif _TERMINATION.search(title):
-                sel.noted.append(Item("rulings", "termination", doc, "Termination"))
 
     rulings = _latest_versions(rulings)
     # Grants change the case; denials only keep it on course. Newest first within each.
@@ -347,7 +339,6 @@ _FINAL = re.compile(
     r"|termination\s+of\s+the\s+investigation\s+with",
     re.I,
 )
-_REMEDY = re.compile(r"exclusion\s+order|cease\s+and\s+desist|consent\s+order", re.I)
 
 
 def _decisions(documents: list[dict[str, Any]], sel: Selection) -> None:
@@ -370,9 +361,8 @@ def _decisions(documents: list[dict[str, Any]], sel: Selection) -> None:
         if _FR_REPRINT.search(title) or "commission" not in title.lower() or _HOUSEKEEPING.search(title):
             continue
         if _NOT_TO_REVIEW.search(title):
-            if _MERITS.search(title):
-                sel.noted.append(Item("decisions", "not_reviewed", doc, "The Commission let the ruling stand"))
-        elif (_TO_REVIEW.search(title) and _MERITS.search(title)) or _FINAL.search(title):
+            continue  # its title says it all: in the case history
+        if (_TO_REVIEW.search(title) and _MERITS.search(title)) or _FINAL.search(title):
             sel.read.append(Item("decisions", "commission_notice", doc, "What the Commission decided, and why it reviewed"))
 
     opinions = _latest_versions([d for d in public if d.get("document_type") == "Opinion, Commission"])
@@ -381,9 +371,25 @@ def _decisions(documents: list[dict[str, Any]], sel: Selection) -> None:
     for doc in opinions[:-2]:
         sel.not_read.append(Item("decisions", "commission_opinion", doc, "An earlier opinion; the latest two are read"))
 
-    for doc in sorted(public, key=_order):
-        if doc.get("document_type") == "Order, Commission" and _REMEDY.search(_title(doc)):
-            sel.noted.append(Item("decisions", "remedy", doc, "Remedy issued"))
+
+# Where each kind of history event sits.
+_HISTORY_SECTION = {"termination": "rulings", "default": "rulings", "summary_determination": "rulings",
+                    "institution": "complaint"}
+
+
+def _noted(documents: list[dict[str, Any]], sel: Selection) -> None:
+    """The case history's events (history.py) that are not read: known from
+    their titles, so they cost nothing."""
+    from . import history
+
+    by_id = {str(d.get("id")): d for d in documents}
+    read = {i.id for i in sel.read}
+    for event in history.events(documents):
+        if read & set(event.versions):
+            continue
+        sel.noted.append(Item(_HISTORY_SECTION.get(event.kind, "decisions"), event.kind,
+                              by_id.get(event.doc_id, {"id": event.doc_id, "title": event.title}), event.label,
+                              who=event.who))
 
 
 def select(documents: list[dict[str, Any]], *, max_answer_groups: int = 5, max_rulings: int = 10) -> Selection:
@@ -395,6 +401,7 @@ def select(documents: list[dict[str, Any]], *, max_answer_groups: int = 5, max_r
     _answers(documents, sel, max_answer_groups)
     _rulings(documents, sel, max_rulings)
     _decisions(documents, sel)
+    _noted(documents, sel)
     order = {name: i for i, name in enumerate(SECTIONS)}
     for items in (sel.read, sel.noted, sel.not_read):
         items.sort(key=lambda i: (order[i.section], i.day, i.id))

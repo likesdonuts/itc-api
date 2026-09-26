@@ -1,0 +1,1889 @@
+{
+  "built_at": "2026-09-26T22:05:29+00:00",
+  "cost_usd": 0.069999,
+  "documents": [
+    {
+      "date": "2025-08-29",
+      "doc_id": "860765",
+      "file": "860765_2425691_2425691.pdf",
+      "kind": "complaint",
+      "pages_read": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20,
+        21,
+        22,
+        23,
+        24,
+        25,
+        26,
+        27,
+        28,
+        29,
+        30,
+        31,
+        32,
+        33,
+        34,
+        35,
+        36
+      ],
+      "points": 43,
+      "rejected": 4,
+      "title": "Public Complaint and Exhibits",
+      "truncated": false,
+      "who": ""
+    },
+    {
+      "date": "2025-11-24",
+      "doc_id": "864847",
+      "file": "864847_2453629_2453629.pdf",
+      "kind": "notice_of_institution",
+      "pages_read": [
+        1,
+        2,
+        3,
+        4
+      ],
+      "points": 5,
+      "rejected": 0,
+      "title": "Institution of Investigation",
+      "truncated": false,
+      "who": ""
+    },
+    {
+      "date": "2026-01-05",
+      "doc_id": "867938",
+      "file": "867938_2470870_2470870.pdf",
+      "kind": "answer",
+      "pages_read": [
+        1,
+        2,
+        3,
+        4,
+        29,
+        30,
+        31,
+        32,
+        33,
+        34,
+        35,
+        36,
+        37,
+        38,
+        39,
+        40,
+        41,
+        42,
+        43,
+        44,
+        45,
+        46,
+        47,
+        48
+      ],
+      "points": 28,
+      "rejected": 1,
+      "title": "Response of TCL Respondents to the Complaint and Notice of Investigation",
+      "truncated": false,
+      "who": "TCL Technology Group Corp., TTE Technology Inc., TCL Moka International, Ltd., TCL Overseas Marketing Ltd., TCL King Electrical Appliances Co., Ltd., TCL Industries Holdings Co., Limited, TCL Electronics Holdings Ltd., Shenzhen TCL New Technology Company Limited, and TCL Smart Device (Vietnam) Co. Ltd."
+    },
+    {
+      "date": "2026-01-05",
+      "doc_id": "867949",
+      "file": "867949_2470912_2470912.pdf",
+      "kind": "answer",
+      "pages_read": [
+        1,
+        2,
+        3,
+        4,
+        16,
+        17,
+        18,
+        19,
+        20,
+        21,
+        22,
+        23,
+        24,
+        25,
+        26,
+        27,
+        28,
+        29,
+        30,
+        31,
+        32,
+        33,
+        34,
+        35
+      ],
+      "points": 26,
+      "rejected": 2,
+      "title": "Respondents LG Electronics Inc. and LG Electronics USA, Inc.'s Response to the Complaint and Notice of Investigation",
+      "truncated": false,
+      "who": "LG Electronics, Inc. and LG Electronics USA, Inc."
+    },
+    {
+      "date": "2026-01-13",
+      "doc_id": "868805",
+      "file": "868805_2476343_2476343.pdf",
+      "kind": "answer",
+      "pages_read": [
+        1,
+        2,
+        3,
+        4,
+        18,
+        19,
+        20,
+        21,
+        22,
+        23,
+        24,
+        25,
+        26,
+        27,
+        28,
+        29,
+        30,
+        31,
+        32,
+        33,
+        34,
+        35,
+        36,
+        37
+      ],
+      "points": 22,
+      "rejected": 1,
+      "title": "Respondents Hisense USA Corporation, Hisense Co., Ltd., Hisense International Co., Ltd., and Hisense Visual Technology Co. Ltd.'s Answer to the Complaint of BH Innovations LLC under Section 337 of the Tariff Act of 1930, as Amended, and Response to the Notice of Investigation",
+      "truncated": false,
+      "who": "Hisense USA Corporation, Hisense Co., Ltd., Hisense International Co., Ltd., and Hisense Visual Technology Co. Ltd."
+    },
+    {
+      "date": "2026-06-03",
+      "doc_id": "884140",
+      "file": "884140_2557955_2557955.pdf",
+      "kind": "answer",
+      "pages_read": [
+        1,
+        2,
+        3,
+        4,
+        37,
+        38,
+        39,
+        40,
+        41,
+        42,
+        43,
+        44,
+        45,
+        46,
+        47,
+        48,
+        49,
+        50,
+        51,
+        52,
+        53,
+        54,
+        55,
+        56
+      ],
+      "points": 20,
+      "rejected": 0,
+      "title": "Verified Amended Response of HKC Corporation Ltd., Chongqing HKC Optoelectronics, and HKC Overseas Ltd.to the Amended Complaint of BH Innovations LLC, Longitude Licensing Limited and 138 East LCD Advancements Ltd. under Section 337 of the Tariff Act of 1930",
+      "truncated": false,
+      "who": "HKC Corporation Ltd., Chongqing HKC Optoelectronics, and HKC Overseas Ltd."
+    },
+    {
+      "date": "2026-06-16",
+      "doc_id": "885396",
+      "file": "885396_2564064_2564064.pdf",
+      "kind": "answer",
+      "pages_read": [
+        1,
+        2,
+        3,
+        4,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20,
+        21,
+        22,
+        23,
+        24,
+        25,
+        26,
+        27,
+        28,
+        29,
+        30,
+        31,
+        32,
+        33,
+        34
+      ],
+      "points": 29,
+      "rejected": 1,
+      "title": "Respondent VIZIO Holding Corp.'s Amended Response to the Amended Complaint of BH Innovations LLC, Longitude Licensing Limited, and 138 East LCD Advancements Ltd. under Section 337 of the Tariff Act of 1930",
+      "truncated": false,
+      "who": "VIZIO Holding Corp."
+    }
+  ],
+  "facts": {
+    "t1": {
+      "date": "2025-11-24",
+      "doc_id": "864847",
+      "files": null,
+      "kind": "institution",
+      "label": "Instituted",
+      "must": false,
+      "quote": null,
+      "text": null,
+      "title": "Institution of Investigation",
+      "type": "title",
+      "who": ""
+    },
+    "t2": {
+      "date": "2026-07-22",
+      "doc_id": "890739",
+      "files": null,
+      "kind": "termination",
+      "label": "Termination",
+      "must": true,
+      "quote": null,
+      "text": null,
+      "title": "Initial Determination Granting Complainants\u2019 Second Amended Unopposed Motion for Termination of the Investigation as to all Respondents Based on Withdrawal of the Complaint and Denying Other Pending Motions [Dkt. Nos. 1462-008, -019, -020, -021, and -022]",
+      "type": "title",
+      "who": ""
+    },
+    "t3": {
+      "date": "2026-08-21",
+      "doc_id": "892274",
+      "files": null,
+      "kind": "not_reviewed",
+      "label": "Commission let stand",
+      "must": true,
+      "quote": null,
+      "text": null,
+      "title": "Commission Determination Not to Review an Initial Determination Terminating the Investigation Based on Withdrawal of the Complaint; Termination of the Investigation",
+      "type": "title",
+      "who": ""
+    }
+  },
+  "facts_basis": "864847,890739,892274|",
+  "key": "337-1462",
+  "last_attempt": {
+    "at": "2026-09-26T22:05:29+00:00",
+    "error": null
+  },
+  "notes": {
+    "n1": {
+      "doc_id": "860765",
+      "kind": "complaint",
+      "page": 10,
+      "point": "BH Innovations LLC (BHI), a Delaware limited liability company with principal place of business at 401 East 89th Street, #18B, New York, NY 10128, is the complainant and exclusive licensee of the asserted patents.",
+      "quote": "BHI is the exclusive licensee of certain patents, including the '948 patent and the '334 patent, that cover inventions developed by Seiko Epson Corporation",
+      "topic": "parties"
+    },
+    "n10": {
+      "doc_id": "860765",
+      "kind": "complaint",
+      "page": 9,
+      "point": "LCD devices consist of a liquid crystal material sandwiched between two glass substrate layers, and use the optical and electrical properties of liquid crystal molecules to control light transmission through colored filters for pixels.",
+      "quote": "An LCD utilizes the optical and electrical properties of liquid crystal molecules to control the transmission of light through a layer of liquid crystals. LCD devices in use today commonly create an image using a number of small areas, known as pixels",
+      "topic": "technology"
+    },
+    "n100": {
+      "doc_id": "867949",
+      "kind": "answer",
+      "page": 26,
+      "point": "LGE requests that the Commission determine that Complainants have failed to establish the existence of a domestic industry and find that no violation of Section 337 exists by reason of any manufacture, importation, offer for sale, or sale by LGE.",
+      "quote": "Determine that Complainants have failed to establish the existence of a domestic industry; C. Find that no violation of Section 337 of the Tariff Act of 1930, as amended, exists",
+      "topic": "relief"
+    },
+    "n101": {
+      "doc_id": "867949",
+      "kind": "answer",
+      "page": 27,
+      "point": "LGE requests that the Commission deny Complainants' request for a limited exclusion order, cease and desist orders, imposition of a bond, and any other relief requested as to LGE and its products, and terminate this Investigation with a finding of no violation.",
+      "quote": "Deny Complainants' request for a limited exclusion order, cease and desist orders, imposition of a bond, and any other relief requested as to LGE and/or its products; E. Terminate this Investigation with a finding of no violation",
+      "topic": "relief"
+    },
+    "n102": {
+      "doc_id": "867949",
+      "kind": "answer",
+      "page": 2,
+      "point": "The Investigation covers certain liquid crystal display devices, components thereof, and products containing the same, identified as Investigation No. 337-TA-1462 by the U.S. International Trade Commission with Notice of Investigation dated November 24, 2025, published in the Federal Register on November 28, 2025 (90 Fed. Reg. 54,742).",
+      "quote": "Notice of Investigation issued by the U.S. International Trade Commission (\"Commission\") on November 24, 202 5, as published in the Federal Register on November 28, 2025 (90 Fed. Reg. 54,742)",
+      "topic": "scope"
+    },
+    "n103": {
+      "doc_id": "868805",
+      "kind": "answer",
+      "page": 3,
+      "point": "Respondents are Hisense USA Corporation, Hisense Co., Ltd., Hisense International Co., Ltd., and Hisense Visual Technology Co. Ltd., collectively referred to as \"Hisense.\"",
+      "quote": "Respondents Hisense USA Corporation, Hisense Co., Ltd., Hisense International Co., Ltd., and Hisense Visual Technology Co. Ltd. (collectively \"Hisense\") hereby answers the Complaint",
+      "topic": "respondents"
+    },
+    "n104": {
+      "doc_id": "868805",
+      "kind": "answer",
+      "page": 3,
+      "point": "Hisense denies all allegations that it has engaged in unfair competition or infringement, denies that it has imported, sold for importation, or sold infringing products, denies that a domestic industry exists as required by Section 337, and denies that complainants are entitled to any relief.",
+      "quote": "Hisense denies that it has engaged in acts of unfair competition in violation of Section 337 by importing, selling for importation, and/or selling after importation into the United States any product that infringes the asserted patents.",
+      "topic": "general_response"
+    },
+    "n105": {
+      "doc_id": "868805",
+      "kind": "answer",
+      "page": 4,
+      "point": "The asserted patents are U.S. Patent No. 7,705,948 (the '948 patent), independent claim 1, and U.S. Patent No. 7,570,334 (the '334 patent), independent claim 1.",
+      "quote": "Hisense admits that Complainants assert independent claim 1 of U.S. Patent No. 7,705,948 (the '948 patent') and independent claim 1 of U.S. Patent No. 7,570,334",
+      "topic": "ip_asserted"
+    },
+    "n106": {
+      "doc_id": "868805",
+      "kind": "answer",
+      "page": 4,
+      "point": "Hisense's \"Accused Products\" are televisions containing liquid crystal display (LCD) panels manufactured by HKC Corporation Ltd., as defined by the instituted scope of the investigation.",
+      "quote": "Hisense understands Hisense's \"\"Accused Products\" to mean televisions that contain liquid crystal display (LCD\") panels manufactured by HKC Corporation Ltd., that are accused of infringing",
+      "topic": "products"
+    },
+    "n107": {
+      "doc_id": "868805",
+      "kind": "answer",
+      "page": 27,
+      "point": "Hisense asserts that it does not literally infringe any valid and enforceable claim of the asserted patents because at least one claim element is not met for each asserted claim.",
+      "quote": "On information and belief, Hisense does not literally infringe any valid and enforceable claim of the asserted patents. On information and belief, at least one claim element is not met",
+      "topic": "non_infringement"
+    },
+    "n108": {
+      "doc_id": "868805",
+      "kind": "answer",
+      "page": 27,
+      "point": "Hisense argues that complainants are barred from relying on the doctrine of equivalents to allege infringement because of the all-elements rule, vitiation, intentional narrow claiming, prosecution history estoppel, prior art estoppel, and the disclosure-dedication doctrine.",
+      "quote": "Complainants are barred from relying on the doctrine of equivalents to allege infringement of any valid and enforceable claim of the asserted patents because of the all-elements rule, vitiation, intentional narrow claiming, prosecution history estoppel, prior art estoppel",
+      "topic": "non_infringement"
+    },
+    "n109": {
+      "doc_id": "868805",
+      "kind": "answer",
+      "page": 28,
+      "point": "Hisense argues that any claims of indirect infringement are barred because Hisense did not know the internal structure of HKC LCD panels, did not commit affirmative acts to encourage infringement, and did not know that induced acts were infringing.",
+      "quote": "any claims of indirect infringement are barred at least because Hisense did not and does not \"know\" what the internal structure, arrangement, and geometry are of the elements of the LCD panels",
+      "topic": "non_infringement"
+    },
+    "n11": {
+      "doc_id": "860765",
+      "kind": "complaint",
+      "page": 17,
+      "point": "The '948 patent relates to LCD devices with a substrate containing an upper electrode layer with slits, an insulating layer, and a lower electrode layer, where the slit geometry reduces disclination and improves light transmission, image quality, and manufacturing yield.",
+      "quote": "the '948 patent claims inventions that relate to LCD devices comprising a substrate with an upper electrode layer having slits formed on it, an insulating layer between the substrate and the upper electrode layer, and a lower electrode layer",
+      "topic": "technology"
+    },
+    "n110": {
+      "doc_id": "868805",
+      "kind": "answer",
+      "page": 18,
+      "point": "Complainants identified Hisense TV model 32A4H as an accused product, but Hisense states this TV does not contain an HKC LCD panel and instead contains an LCD panel provided by Complainants' licensee, and therefore cannot be infringing.",
+      "quote": "the Hisense TV model 32A4H cannot be an infringing product when it does not contain an HKC LCD panel and instead contains an LCD panel provided by Complainants' licensee",
+      "topic": "products"
+    },
+    "n111": {
+      "doc_id": "868805",
+      "kind": "answer",
+      "page": 19,
+      "point": "The only HKC product identified in Complainants' claim chart for the '334 patent is model PT320AT02-5-XR-1, which has been discontinued according to the website relied on by Complainants, and has not been used in the Hisense TV model 32A4H.",
+      "quote": "the only HKC product identified in Complainants' claim chart for the '334 patent has been discontinued according to the website relied on by Complainants in this Complaint, and this specific HKC product has not been used in the Hisense TV model 32A4H",
+      "topic": "products"
+    },
+    "n112": {
+      "doc_id": "868805",
+      "kind": "answer",
+      "page": 20,
+      "point": "Complainants have not identified which, if any, specific HKC product is contained in any Hisense TV product.",
+      "quote": "In this paragraph, Complainants fail to identify which, if any, specific HKC product is contained in any Hisense TV product.",
+      "topic": "products"
+    },
+    "n113": {
+      "doc_id": "868805",
+      "kind": "answer",
+      "page": 28,
+      "point": "Hisense denies that Complainants have adequately alleged and cannot prove the existence of a domestic industry as required by Section 337(a)(2) and (a)(3).",
+      "quote": "Complainants have not adequately alleged and cannot prove the existence of a domestic industry, as required by Section 337(a)(2) and defined by Section 337(a)(3)",
+      "topic": "domestic_industry"
+    },
+    "n114": {
+      "doc_id": "868805",
+      "kind": "answer",
+      "page": 28,
+      "point": "Hisense asserts that Complainants cannot establish that any products of licensee Innolux Corporation practice at least one valid and enforceable claim of the asserted patents.",
+      "quote": "Complainants cannot establish that any products of licensee Innolux Corporation practice at least one valid and enforceable claim of the asserted patents",
+      "topic": "domestic_industry"
+    },
+    "n115": {
+      "doc_id": "868805",
+      "kind": "answer",
+      "page": 28,
+      "point": "Hisense asserts that the asserted claims are invalid for failing to comply with 35 U.S.C. \u00a7\u00a7 102, 103, 112, and 256, and notes that defendants in litigation concerning the '948 patent have alleged invalidity on numerous grounds.",
+      "quote": "The Asserted Claims are invalid for failing to comply with one or more of the conditions for patentability set forth in Part II of Title 35 of the United States Code, including but not limited to 35 U.S.C. \u00a7\u00a7 102, 103, 112, and 256",
+      "topic": "invalidity"
+    },
+    "n116": {
+      "doc_id": "868805",
+      "kind": "answer",
+      "page": 29,
+      "point": "Hisense asserts that Complainants are barred from enforcing the asserted claims by the doctrines of waiver, equitable estoppel, and acquiescence.",
+      "quote": "Complainants are barred from enforcing any asserted claim of any of the Asserted Patents or from obtaining the requested relief by one or more of the doctrines of waiver, equitable estoppel, and acquiescence",
+      "topic": "unenforceability"
+    },
+    "n117": {
+      "doc_id": "868805",
+      "kind": "answer",
+      "page": 29,
+      "point": "Hisense argues that Complainants have not adequately alleged and cannot establish that the requested relief is in the public interest, considering effects on public health, welfare, competitive conditions, domestic production of like articles, and consumers.",
+      "quote": "Complainants have not adequately alleged and cannot establish that the requested relief is in the public interest, after considering the effect of exclusion upon the public health and welfare, competitive conditions",
+      "topic": "other_defenses"
+    },
+    "n118": {
+      "doc_id": "868805",
+      "kind": "answer",
+      "page": 29,
+      "point": "Hisense asserts collateral estoppel based on identical issues of claim construction, infringement, validity, or enforceability of the '948 patent that are litigated in Civil Action No. 2:23-CV-00515 in the Eastern District of Texas.",
+      "quote": "To the extent any issue of claim construction, infringement, validity, or enforceability of the claims of the '948 patent in this Investigation is identical to issues that are litigated and adjudicated against one or more of the Complainants in Civil Action No. 2:23-CV-00515",
+      "topic": "other_defenses"
+    },
+    "n119": {
+      "doc_id": "868805",
+      "kind": "answer",
+      "page": 30,
+      "point": "Hisense asserts the patent exhaustion defense and single recovery rule, arguing that to the extent Hisense products contain LCD panels provided by licensees or under covenants not to sue, or for which Complainants have already recovered compensation, such claims are barred.",
+      "quote": "To the extent that Complainants' allegations of infringement relate to Hisense products that contain LCD panels provided by or for any named licensee of the Asserted Patents, or that contain LCD panels provided by or for a licensee of the Asserted Patents under a covenant not to sue, whether explicitly or impliedly, or contain LCD panels for which one or more of the Complainants has already recovered complete compensation, Complainants' claims are barred by the doctrine of patent exhaustion and/or by the single recovery rule",
+      "topic": "other_defenses"
+    },
+    "n12": {
+      "doc_id": "860765",
+      "kind": "complaint",
+      "page": 18,
+      "point": "The '334 patent relates to LCD panels with opposing substrates containing pixel electrodes and an opposing electrode, a sealing region with a sealing member, vertical-conduction electrodes and members, and a frame-shaped dummy region.",
+      "quote": "the '334 patent claims inventions that relate to LCD panels comprising a pair of opposing substrates with a pixel region between them that contains a plurality of pixel electrodes arrayed on one of the two substrates",
+      "topic": "technology"
+    },
+    "n120": {
+      "doc_id": "868805",
+      "kind": "answer",
+      "page": 30,
+      "point": "Hisense asserts that to the extent Hisense products contain LCD panels provided by licensees or under covenants not to sue, Hisense has an express or implied license under the asserted patents.",
+      "quote": "To the extent that Complainants' allegations of infringement relate to Hisense products that contain LCD panels provided by or for any named licensee of the Asserted Patents, or that contain LCD panels provided by or for a licensee of the Asserted Patents under a covenant not to sue, whether explicitly or impliedly, Complainants' claims are barred because Hisense has an express or implied license",
+      "topic": "other_defenses"
+    },
+    "n121": {
+      "doc_id": "868805",
+      "kind": "answer",
+      "page": 31,
+      "point": "Hisense asserts that to the extent it or its customers or suppliers import accused products for or sell them to the United States government, such acts are not subject to Complainants' requests for relief.",
+      "quote": "To the extent that Hisense or its customers or suppliers import any accused products for, or sell any accused products to, the United States government, such acts are not subject to the requests for relief of Complainants",
+      "topic": "other_defenses"
+    },
+    "n122": {
+      "doc_id": "868805",
+      "kind": "answer",
+      "page": 18,
+      "point": "Hisense admits that Hisense USA has imported TVs containing LCD panels into the United States from Mexico, but denies that it has participated in infringement or that Complainants are entitled to relief.",
+      "quote": "Hisense admits that Hisense USA has imported TVs containing LCD panels into the United States from Mexico. Hisense denies that it has participated in infringement",
+      "topic": "importation"
+    },
+    "n123": {
+      "doc_id": "868805",
+      "kind": "answer",
+      "page": 31,
+      "point": "Hisense requests that the Commission deny all relief requested by Complainants, find that Hisense has not violated Section 337, find that asserted claims are invalid, find that a domestic industry does not exist, find that Accused Products do not satisfy every element of any valid claim, and find that the requested relief is not in the public interest.",
+      "quote": "Denying all relief requested in the Complaint; Finding that Hisense has not violated Section 337 of the Tariff Act of 1930, as amended, 19 U.S.C. $ 1337; Finding that Hisense has not infringed any valid claims of the Asserted Patents",
+      "topic": "relief"
+    },
+    "n124": {
+      "doc_id": "868805",
+      "kind": "answer",
+      "page": 30,
+      "point": "Hisense references Civil Action No. 2:23-CV-00515 in the Eastern District of Texas, in which defendants including BOE Technology Group Co., Ltd. have alleged that claims of the '948 patent are invalid on numerous grounds, with jury selection and trial day 1 scheduled for January 9, 2026.",
+      "quote": "jury selection followed by trial day 1 has been set in Civil Action No. 2:23-CV-00515, Eastern District of Texas, for Friday, Jan. 9, 2026, at 9:00 a.m. in Courtroom 106",
+      "topic": "related_proceedings"
+    },
+    "n125": {
+      "doc_id": "884140",
+      "kind": "answer",
+      "page": 1,
+      "point": "Respondents are HKC Corporation Limited (located in Shenzhen, China), Chongqing HKC Optoelectronics Technology Co., Ltd. (located in Chongqing, China), and HKC Overseas Limited (located in Hong Kong), which manufacture and sell liquid crystal display devices and components.",
+      "quote": "HKC Corporation Limited 5F and 7F. Factory Building 1 HKC Industrial Park 1 Gongye 2nd Road Baoan District, Shenzhen City Guang Province, 518108, China",
+      "topic": "respondents"
+    },
+    "n126": {
+      "doc_id": "884140",
+      "kind": "answer",
+      "page": 39,
+      "point": "Respondents deny that they have imported, sold for importation, or sold within the United States liquid crystal display devices covered by valid and enforceable asserted patent claims, and deny violating Section 337 of the Tariff Act.",
+      "quote": "HKC Respondents deny that they are in violation of 19 U.S.C. \u00a7 1337 and that they have engaged in the unlawful importation into the United States, the sale for importation, or the sale within the United States after importation",
+      "topic": "general_response"
+    },
+    "n127": {
+      "doc_id": "884140",
+      "kind": "answer",
+      "page": 38,
+      "point": "Respondents deny that they have directly infringed, contributorily infringed, or induced infringement of any asserted patent claims.",
+      "quote": "Determining that HKC Respondents have not directly infringed, contributorily infringed, and/or induced infringement of any of the asserted claims of the Asserted Patents",
+      "topic": "general_response"
+    },
+    "n128": {
+      "doc_id": "884140",
+      "kind": "answer",
+      "page": 44,
+      "point": "Respondents contend that the asserted claims of the patents-in-suit are invalid under 35 U.S.C. \u00a7\u00a7 102 or 103.",
+      "quote": "Initial Invalidity Contentions in response to, e.g., Complainants' Interrogatory No. 11 (\"Describe Your contention, if any, that the Asserted Claims are invalid, including without limitation by specifying all legal and factual bases for invalidity, including any grounds for invalidity raised under 35 U.S.C. \u00a7\u00a7 102 or 103",
+      "topic": "invalidity"
+    },
+    "n129": {
+      "doc_id": "884140",
+      "kind": "answer",
+      "page": 37,
+      "point": "Respondents allege that the '334 patent (U.S. Patent No. 7,570,334) is unenforceable due to inequitable conduct by the inventor, Masao Murade, during patent prosecution.",
+      "quote": "material to the patentability of claim 14 of the '334 patent with a specific intent to deceive the Examiner, who would not have issued claim 14 but-for the inventor's deliberate failure to disclose his own material prior art references.",
+      "topic": "unenforceability"
+    },
+    "n13": {
+      "doc_id": "860765",
+      "kind": "complaint",
+      "page": 16,
+      "point": "U.S. Patent No. 7,705,948 ('948 patent), entitled 'Liquid Crystal Display Device,' issued April 27, 2010, from an application filed October 12, 2007, with inventors Yasuo Segawa, Masaaki Aota, and Shinji Ichikaka, expires August 5, 2028.",
+      "quote": "The '948 patent, entitled 'Liquid Crystal Display Device,' duly and legally issued on April 27, 2010, from a patent application filed October 12, 2007",
+      "topic": "ip_asserted"
+    },
+    "n130": {
+      "doc_id": "884140",
+      "kind": "answer",
+      "page": 37,
+      "point": "Respondents contend that the inventor failed to disclose material prior art references including U.S. Patent App. Pub. No. 2005/0078240 (later U.S. Patent No. 7,196,353), U.S. Patent No. 6,433,841, U.S. Patent No. 6,611,301, and U.S. Patent No. 6,897,932, all listing Masao Murade as a named inventor and disclosing the 'dummy pixel' subject matter of claim 14.",
+      "quote": "Those withheld, material prior art references include at least the following references: U.S. Patent App. Pub. No. 2005/0078240 (later issued as U.S. Patent No. 7,196,353); U.S. Patent No. 6,433,841; U.S. Patent No. 6,611,301; and U.S. Patent No. 6,897,932.",
+      "topic": "unenforceability"
+    },
+    "n131": {
+      "doc_id": "884140",
+      "kind": "answer",
+      "page": 37,
+      "point": "Respondents allege that the Examiner's allowance of claim 14 was based on the incorrect belief that prior art did not disclose the 'dummy pixel' limitation, and that the inventor knew this characterization was incorrect based on his own prior art references.",
+      "quote": "the Examiner stated that claim 14 of the '334 patent was patentable based on the incorrect belief that the prior art did not disclose or suggest the recited \"dummy pixel\" limitation of claim 14.",
+      "topic": "unenforceability"
+    },
+    "n132": {
+      "doc_id": "884140",
+      "kind": "answer",
+      "page": 37,
+      "point": "Respondents allege the inventor deliberately withheld these material prior art references because he understood they would have led the Examiner to reject claim 14 as obvious.",
+      "quote": "Upon information and belief, and subject to further discovery, the inventor understood that his own \"dummy pixel\" prior art would have led the Examiner to reject claim 14 of the '334 patent, and therefore deliberately decided to withhold those references from the Examiner.",
+      "topic": "unenforceability"
+    },
+    "n133": {
+      "doc_id": "884140",
+      "kind": "answer",
+      "page": 47,
+      "point": "Respondents argue that claim 14 was obtained through prosecution history where the Examiner rejected the original independent claim but allowed a dependent claim based on the belief that prior art did not render obvious the dummy pixel subject matter.",
+      "quote": "the Examiner stated that dependent claim 10 was allowable because the prior art\u2014\"alone or in combination\"\u2014did not \"disclose or render obvious\" the subject matter recited in dependent claim 10",
+      "topic": "unenforceability"
+    },
+    "n134": {
+      "doc_id": "884140",
+      "kind": "answer",
+      "page": 52,
+      "point": "Respondents contend that the named inventor Masao Murade was aware of substantively identical dummy pixel subject matter in his own issued patents yet failed to disclose these references in any information disclosure statement during prosecution.",
+      "quote": "Despite this knowledge and awareness of substantively identical subject matter relating to dummy pixel electrodes claimed and described in his own issued patents, at no point during prosecution of the '334 patent did the named inventor disclose this prior art to the Examiner",
+      "topic": "unenforceability"
+    },
+    "n135": {
+      "doc_id": "884140",
+      "kind": "answer",
+      "page": 52,
+      "point": "Respondents argue that the withheld prior art references were not cumulative because the Examiner cited only one English-language U.S. Patent (Karasawa), with remaining cited references being Japanese-language Foreign Patent Documents.",
+      "quote": "the Examiner-cited Karasawa reference is the only English-language, U.S. Patent document cited on the face page of the '334 patent, with the remaining cited references all being Japanese-language Foreign Patent Documents.",
+      "topic": "unenforceability"
+    },
+    "n136": {
+      "doc_id": "884140",
+      "kind": "answer",
+      "page": 40,
+      "point": "Respondents state they do not directly market or target accused panels to the United States market and commercial activities occur outside the United States.",
+      "quote": "The accused panels are not specifically marketed or targeted to the United States market. HKC Respondents' commercial activities related to the accused panels occur outside of the United States.",
+      "topic": "non_infringement"
+    },
+    "n137": {
+      "doc_id": "884140",
+      "kind": "answer",
+      "page": 40,
+      "point": "Respondents sell accused panels to customers outside the United States, although some shipments to Mexico may be transshipped through United States free trade zones, and have no information about customers' importation and sales in the United States.",
+      "quote": "HKC Respondents sell accused panels to customers outside of the United States, although some shipments to Mexico may be trans-shipped through United States free trade zones, and have no information about customers' importation and sales of their products incorporating the accused panels in the United States.",
+      "topic": "non_infringement"
+    },
+    "n138": {
+      "doc_id": "884140",
+      "kind": "answer",
+      "page": 40,
+      "point": "Respondents state they only sell certain finished products (TVs) incorporating accused panels to VIZIO and Westinghouse, which are responsible for sales to end users in the United States.",
+      "quote": "HKC Respondents only sell certain finished products (i.e., TVs) incorporating the accused panels to VIZIO and Westinghouse, which may be imported and sold by those companies in the United States.",
+      "topic": "non_infringement"
+    },
+    "n139": {
+      "doc_id": "884140",
+      "kind": "answer",
+      "page": 40,
+      "point": "Respondents shipped approximately 200 units of free samples of finished products incorporating accused panels for after-sales service to VIZIO from January 1, 2025 to November 30, 2025, with an U.S. subsidiary as consignee.",
+      "quote": "From January 1, 2025 to November 30, 2025, shipment of approximately 200 units of free samples of finished products incorporating the accused panels for after-sales service to VIZIO listed Innoview American Limited, an U.S. subsidiary wholly owned by HKC Overseas Limited, as consignee/importer.",
+      "topic": "non_infringement"
+    },
+    "n14": {
+      "doc_id": "860765",
+      "kind": "complaint",
+      "page": 9,
+      "point": "U.S. Patent No. 7,705,948 includes fifteen claims, with claims 1, 7, and 14 being independent claims; BHI asserts claim 1 of the '948 patent against the proposed respondents.",
+      "quote": "BHI asserts that the Proposed Respondents' accused products practice at least claims 1, 2, 3, and 5 of the '948 patent and/or claim 1 of the '334 patent",
+      "topic": "ip_asserted"
+    },
+    "n140": {
+      "doc_id": "884140",
+      "kind": "answer",
+      "page": 39,
+      "point": "Respondents deny the complainants' allegation that a domestic industry exists but lack sufficient information to form a belief as to whether it meets the domestic industry requirement.",
+      "quote": "HKC Respondents admit that, as set forth in the Summary in the Commission's Notice of Investigation, the Complaint alleges that an industry in the United States exists, but HKC Respondents lack sufficient information and knowledge to form a belief as to the truth of Complainants' allegation",
+      "topic": "domestic_industry"
+    },
+    "n141": {
+      "doc_id": "884140",
+      "kind": "answer",
+      "page": 40,
+      "point": "Respondents allege there is no substantial effect or threat to any domestic industry as alleged in the complaint.",
+      "quote": "Upon information and belief, there is no substantial effect or threat to any domestic industry as alleged in the Complaint.",
+      "topic": "domestic_industry"
+    },
+    "n142": {
+      "doc_id": "884140",
+      "kind": "answer",
+      "page": 38,
+      "point": "Respondents request that the Commission deny all relief requested by complainants and determine that HKC Respondents have not imported or sold within the United States liquid crystal display devices covered by valid and enforceable asserted patent claims.",
+      "quote": "Denying all relief Complainants requested in the Complaint; (2) Determining that HKC Respondents have not imported, sold for importation, or sold within the United States after importation certain liquid crystal display devices",
+      "topic": "relief"
+    },
+    "n143": {
+      "doc_id": "884140",
+      "kind": "answer",
+      "page": 38,
+      "point": "Respondents request a finding that the asserted claims are invalid and the '334 patent is unenforceable due to inequitable conduct.",
+      "quote": "Finding that the asserted claims of the Asserted Patents are invalid; (6) Finding that the '334 patent is unenforceable due to inequitable conduct",
+      "topic": "relief"
+    },
+    "n144": {
+      "doc_id": "884140",
+      "kind": "answer",
+      "page": 38,
+      "point": "Respondents request dismissal of the complaint, termination of the investigation, and an award of their attorneys' fees and costs.",
+      "quote": "Awarding HKC Respondents their attorneys' fees and costs incurred in responding to the Complaint and defending themselves in this Investigation; (9) Dismissing the present Complaint and terminating the present Investigation",
+      "topic": "relief"
+    },
+    "n145": {
+      "doc_id": "885396",
+      "kind": "answer",
+      "page": 1,
+      "point": "VIZIO Holding Corp., located at 39 Tesla, Irvine, California 92618, is the respondent in this investigation and denies that it has violated Section 337 or the Tariff Act of 1930.",
+      "quote": "RESPONDENT VIZIO HOLDING CORP.'S AMENDED RESPONSE TO THE AMENDED COMPLAINT OF BH INNOVATIONS LLC",
+      "topic": "respondents"
+    },
+    "n146": {
+      "doc_id": "885396",
+      "kind": "answer",
+      "page": 2,
+      "point": "Complainants are BH Innovations LLC (BHI), Longitude Licensing Limited (Longitude), and 138 East LCD Advancements Ltd. (138).",
+      "quote": "filed by BH Innovations LLC (\"BHI\"), Longitude Licensing Limited (\"Longitude\") and 138 East LCD Advancements Ltd. (\"138\")",
+      "topic": "parties"
+    },
+    "n147": {
+      "doc_id": "885396",
+      "kind": "answer",
+      "page": 3,
+      "point": "LCD devices comprise liquid crystal material sandwiched between two layers called substrates; LCD devices use optical and electrical properties of liquid crystal molecules to control light transmission through pixels controlled by thin-film transistors.",
+      "quote": "LCD device may comprise a liquid crystal material that is sandwiched between two layers known as substrates",
+      "topic": "technology"
+    },
+    "n148": {
+      "doc_id": "885396",
+      "kind": "answer",
+      "page": 2,
+      "point": "The investigation concerns liquid crystal display devices, components thereof, and products containing the same, specifically LCD devices such as television screens and computer monitors.",
+      "quote": "complained of alleged unfair importation into the United States, sale for importation into the United States, and/or sale within the United States after importation of certain liquid crystal display (\"LCD\") devices",
+      "topic": "products"
+    },
+    "n149": {
+      "doc_id": "885396",
+      "kind": "answer",
+      "page": 3,
+      "point": "VIZIO denies all allegations of the complaint except as expressly admitted, denies any characterizations of the Asserted Patents not disclosed therein, and denies that it has infringed the Asserted Patents or committed any unfair methods of competition or unfair acts.",
+      "quote": "VIZIO denies any unfair methods of competition or unfair acts",
+      "topic": "general_response"
+    },
+    "n15": {
+      "doc_id": "860765",
+      "kind": "complaint",
+      "page": 17,
+      "point": "U.S. Patent No. 7,570,334 ('334 patent), entitled 'Electro-optical Device and Electronic Apparatus,' issued August 4, 2009, from an application filed June 4, 2007, with inventor Masao Murade, expires October 3, 2027.",
+      "quote": "The '334 patent, entitled 'Electro-optical Device and Electronic Apparatus,' duly and legally issued on August 4, 2009, from a patent application filed June 4, 2007",
+      "topic": "ip_asserted"
+    },
+    "n150": {
+      "doc_id": "885396",
+      "kind": "answer",
+      "page": 23,
+      "point": "VIZIO challenges that Complainants have established a domestic industry, alleging that Complainants fail to demonstrate that Innolux has made significant investments in plant and equipment, significant employment of labor and capital, and/or substantial investments in exploitation of the Asserted Patents.",
+      "quote": "Complainants fail to demonstrate that Innolux has made significant investments in plant and equipment, significant employment of labor and capital",
+      "topic": "domestic_industry"
+    },
+    "n151": {
+      "doc_id": "885396",
+      "kind": "answer",
+      "page": 22,
+      "point": "VIZIO asserts that it does not directly infringe, indirectly infringe, contribute to infringement, or induce infringement of any valid or enforceable claim of the Asserted Patents, either literally or under the doctrine of equivalents.",
+      "quote": "VIZIO does not directly infringe, indirectly infringe, contribute to infringement, or induce infringement of any valid or enforceable claim",
+      "topic": "non_infringement"
+    },
+    "n152": {
+      "doc_id": "885396",
+      "kind": "answer",
+      "page": 22,
+      "point": "VIZIO alleges that all asserted claims of the Asserted Patents are invalid under 35 U.S.C. \u00a7\u00a7 101, 102, 103, 112, 116, and/or 256, and are invalid under 35 U.S.C. \u00a7 102 and/or \u00a7 103 in view of prior art identified on the face of the asserted patents and in their prosecution histories.",
+      "quote": "asserted claims of the Asserted Patents are invalid under 35 U.S.C. \u00a7 102 and/or 35 U.S.C. \u00a7 103 in view of at least the prior art identified on the face",
+      "topic": "invalidity"
+    },
+    "n153": {
+      "doc_id": "885396",
+      "kind": "answer",
+      "page": 25,
+      "point": "VIZIO alleges that the '334 patent is unenforceable for inequitable conduct because the named inventor Masao Murade intentionally withheld material prior art references during prosecution with specific intent to deceive the Examiner regarding claim 14's patentability.",
+      "quote": "the '334 patent is unenforceable for inequitable conduct, because during prosecution the named inventor of the '334 patent, Masao Murade, intentionally withheld information material to the patentability",
+      "topic": "unenforceability"
+    },
+    "n154": {
+      "doc_id": "885396",
+      "kind": "answer",
+      "page": 25,
+      "point": "VIZIO alleges that the named inventor Masao Murade withheld material prior art references including U.S. Patent App. Pub. No. 2005/0078240 (later issued as U.S. Patent No. 7,196,353), U.S. Patent No. 6,433,841, U.S. Patent No. 6,611,301, and U.S. Patent No. 6,897,932, all listing him as a named inventor and disclosing 'dummy pixel' subject matter.",
+      "quote": "U.S. Patent App. Pub. No. 2005/0078240 (later issued as U.S. Patent No. 7,196,353); U.S. Patent No. 6,433,841; U.S. Patent No. 6,611,301; and U.S. Patent No. 6,897,932",
+      "topic": "unenforceability"
+    },
+    "n155": {
+      "doc_id": "885396",
+      "kind": "answer",
+      "page": 23,
+      "point": "VIZIO asserts prosecution history estoppel, alleging that due to admissions and statements made to the USPTO during prosecution of the Asserted Patents, Complainants are estopped from construing a valid and enforceable claim as infringed literally or under the doctrine of equivalents.",
+      "quote": "due to admissions and statements made to the United States Patent and Trademark Office during the prosecution of the applications that resulted in the Asserted Patents",
+      "topic": "other_defenses"
+    },
+    "n156": {
+      "doc_id": "885396",
+      "kind": "answer",
+      "page": 23,
+      "point": "VIZIO asserts patent exhaustion, license, and/or implied license as defenses, alleging that Complainants' claims against VIZIO are barred as a result of patent exhaustion, a license, and/or an implied license to the Asserted Patents.",
+      "quote": "Complainants' claims against VIZIO are barred as a result of patent exhaustion, a license, and/or an implied license to the Asserted Patents",
+      "topic": "other_defenses"
+    },
+    "n157": {
+      "doc_id": "885396",
+      "kind": "answer",
+      "page": 24,
+      "point": "VIZIO asserts the doctrine of ensnarement, alleging that Complainants' claims are barred to the extent they make infringement claims under the doctrine of equivalents that would ensnare prior art.",
+      "quote": "Complainants' claims are barred by the doctrine of ensnarement to the extent that Complainants make infringement claims under the doctrine of equivalents",
+      "topic": "other_defenses"
+    },
+    "n158": {
+      "doc_id": "885396",
+      "kind": "answer",
+      "page": 24,
+      "point": "VIZIO asserts prosecution laches as a defense, alleging that Complainants have prejudiced VIZIO by inexcusably delaying prosecution of applications for the Asserted Patents.",
+      "quote": "Complainants' claims are barred by the doctrine of prosecution laches because Complainants have prejudiced VIZIO by inexcusably delaying prosecution",
+      "topic": "other_defenses"
+    },
+    "n159": {
+      "doc_id": "885396",
+      "kind": "answer",
+      "page": 24,
+      "point": "VIZIO asserts laches, acquiescence, and waiver, alleging that Complainants have known of the Accused Products of VIZIO for several years and their delay in pursuing any valid right or claim has prejudiced VIZIO and precludes the relief Complainants seek.",
+      "quote": "On information and belief, Complainants have known of the Accused Products of VIZIO for several years",
+      "topic": "other_defenses"
+    },
+    "n16": {
+      "doc_id": "860765",
+      "kind": "complaint",
+      "page": 17,
+      "point": "U.S. Patent No. 7,570,334 includes fourteen claims, with claims 1, 13, and 14 being independent claims; BHI asserts claim 1 of the '334 patent against the proposed respondents.",
+      "quote": "The '334 patent includes fourteen (14) claims. Claims 1, 13, and 14 are independent claims.",
+      "topic": "ip_asserted"
+    },
+    "n160": {
+      "doc_id": "885396",
+      "kind": "answer",
+      "page": 23,
+      "point": "VIZIO asserts improper inventorship as a defense, reserving the right to assert that any Asserted Patent fails to name the appropriate inventors.",
+      "quote": "To the extent that VIZIO determines through discovery and investigation that any Asserted Patent fails to name the appropriate inventors",
+      "topic": "other_defenses"
+    },
+    "n161": {
+      "doc_id": "885396",
+      "kind": "answer",
+      "page": 24,
+      "point": "VIZIO asserts lack of statutory authority as a defense, alleging that one or more Complainants lacks substantial rights in the Asserted Patents due to the existence of multiple tortured license agreements that preclude Complainants from claiming substantial rights and therefore lack standing.",
+      "quote": "Complainants have extremely narrow rights due to the existence of multiple tortured license agreements that preclude Complainants from claiming substantial rights",
+      "topic": "other_defenses"
+    },
+    "n162": {
+      "doc_id": "885396",
+      "kind": "answer",
+      "page": 25,
+      "point": "VIZIO asserts that at least some of the Accused Products are covered by one or more license agreements to one or more respondents.",
+      "quote": "At least some of the Accused Products are covered by one or more license agreements to one or more respondents",
+      "topic": "other_defenses"
+    },
+    "n163": {
+      "doc_id": "885396",
+      "kind": "answer",
+      "page": 24,
+      "point": "VIZIO denies that Complainants are entitled to any relief requested, including an exclusion order, cease and desist order, or any other form of relief, and argues that granting such relief would not be consistent with the Public Interest under 19 U.S.C. \u00a7 1337(d)(1).",
+      "quote": "the requested relief should not issue because of its potential adverse effects upon the public health and welfare, competitive conditions in the United States economy",
+      "topic": "relief"
+    },
+    "n164": {
+      "doc_id": "885396",
+      "kind": "answer",
+      "page": 23,
+      "point": "VIZIO asserts lack of importation as a defense, reserving the right to argue that Complainants cannot prove that the allegedly infringing articles are imported into the United States, sold for importation into the United States, or sold after importation into the United States by VIZIO.",
+      "quote": "To the extent that Complainants are unable to prove that the allegedly infringing articles are imported into the United States, sold for importation into the United States, or sold after importation",
+      "topic": "importation"
+    },
+    "n165": {
+      "doc_id": "885396",
+      "kind": "answer",
+      "page": 3,
+      "point": "VIZIO denies that it has committed any unfair methods of competition or unfair acts in violation of Section 337 of the Tariff Act of 1930.",
+      "quote": "VIZIO denies that any such assertion is correct or proper and, in particular, VIZIO denies that they infringe any of the Asserted Patents and denies that they have committed any unfair methods of competition and unfair acts",
+      "topic": "other_unfair_acts"
+    },
+    "n166": {
+      "doc_id": "885396",
+      "kind": "answer",
+      "page": 3,
+      "point": "VIZIO denies any characterizations of the Asserted Patents to the extent they purport to attribute to the Asserted Patents anything not covered by the scope of the Asserted Patents.",
+      "quote": "VIZIO denies any characterizations relating to the Asserted Patents to the extent they purport to attribute to the Asserted Patents anything that is not covered by the scope of the Asserted Patents",
+      "topic": "scope"
+    },
+    "n167": {
+      "doc_id": "885396",
+      "kind": "answer",
+      "page": 21,
+      "point": "VIZIO states that it has not fully collected and reviewed all information relevant to the matters and issues raised, and reserves the right to seek amendment of, modify, and/or expand its defenses and to take further positions as discovery proceeds in this investigation.",
+      "quote": "Discovery is ongoing as of the time of this Response and thus VIZIO has not fully collected and reviewed all of the information that may be relevant",
+      "topic": "general_response"
+    },
+    "n168": {
+      "doc_id": "885396",
+      "kind": "answer",
+      "page": 28,
+      "point": "VIZIO admits that from January 2025 to November 2025, it imported VIZIO LCD models containing the accused HKC panel, with VIZIO, Inc. being an importer of record for such shipments under HTS number 8528.72.6430.",
+      "quote": "from January 2025 to November 2025, the quantity and value of the VIZIO LCD models containing the accused HKC panel imported by VIZIO were approximately",
+      "topic": "importation"
+    },
+    "n169": {
+      "doc_id": "885396",
+      "kind": "answer",
+      "page": 28,
+      "point": "The Accused Products consist of VIZIO LCD models containing accused HKC panels, imported and sold by VIZIO, with manufacturing capacity and sales information provided in the filing.",
+      "quote": "VIZIO's manufacturing capacity is fully dependent on",
+      "topic": "products"
+    },
+    "n17": {
+      "doc_id": "860765",
+      "kind": "complaint",
+      "page": 15,
+      "point": "The products at issue are LCD devices composed of two glass substrates sandwiching liquid crystal pixels and associated control circuitry, components thereof, and products containing such LCD devices.",
+      "quote": "the products at issue are LCD devices composed of two glass substrates sandwiching a layer of liquid crystal pixels and the associated circuitry for controlling the amount of light passing through those pixels",
+      "topic": "products"
+    },
+    "n170": {
+      "doc_id": "885396",
+      "kind": "answer",
+      "page": 3,
+      "point": "VIZIO admits that Complainants purport to have filed a Complaint pursuant to Section 337 of the Tariff Act of 1930 alleging unfair importation and sale of LCD devices and components, and that Complainants purport to assert the '948 and '334 patents claiming infringement of claim 1.",
+      "quote": "VIZIO admits that the Complaint purports to assert infringement of claim 1 of the Asserted Patents",
+      "topic": "general_response"
+    },
+    "n171": {
+      "doc_id": "885396",
+      "kind": "answer",
+      "page": 27,
+      "point": "VIZIO admits that the Commission has instituted an investigation as set forth in the Notice of Investigation dated November 24, 2025 and published in the Federal Register on November 28, 2025, but denies that it is in violation of 19 U.S.C. \u00a7 1337.",
+      "quote": "VIZIO acknowledges that the Commission has instituted an investigation as set forth in the Commission's Notice of Investigation, dated November 24, 2025",
+      "topic": "general_response"
+    },
+    "n172": {
+      "doc_id": "885396",
+      "kind": "answer",
+      "page": 27,
+      "point": "VIZIO lacks sufficient information and knowledge to form a belief as to whether Complainants meet the domestic industry requirement and denies such allegations on that basis.",
+      "quote": "VIZIO lacks sufficient information and knowledge to form a belief as to the truth of Complainants' allegation that they meet the domestic industry requirement",
+      "topic": "general_response"
+    },
+    "n173": {
+      "doc_id": "885396",
+      "kind": "answer",
+      "page": 26,
+      "point": "VIZIO requests that the Commission deny all relief Complainants requested, determine that VIZIO has not violated Section 337, has not infringed the Asserted Patents, find that the asserted claims are invalid and that the '334 patent is unenforceable, find no domestic industry exists, and award VIZIO its attorneys' fees and costs.",
+      "quote": "Determining that VIZIO has not violated Section 337 of the Tariff Act of 1930, as amended, 19 U.S.C. \u00a7 1337",
+      "topic": "relief"
+    },
+    "n18": {
+      "doc_id": "860765",
+      "kind": "complaint",
+      "page": 26,
+      "point": "HiSense 32A4 model TVs containing HKC panels are exemplary infringing products.",
+      "quote": "HiSense 32A4 model TVs containing an HKC panel are LCD devices comprising a substrate with an upper electrode layer having slits formed on it",
+      "topic": "products"
+    },
+    "n19": {
+      "doc_id": "860765",
+      "kind": "complaint",
+      "page": 19,
+      "point": "BHI alleges that VIZIO manufactures, imports, offers for sale, and/or sells LCD devices including VIZIO D32fM-K07 model TVs containing HKC model PT320CT01 panels that infringe claim 1 of the '334 patent.",
+      "quote": "VIZIO manufactures, imports, offers for sale and/or sells LCD devices, components thereof, and products containing same that infringe the Asserted Patents, and more specifically at least claim 1 of the '334 patent",
+      "topic": "infringement"
+    },
+    "n2": {
+      "doc_id": "860765",
+      "kind": "complaint",
+      "page": 10,
+      "point": "138 East LCD Advancements Ltd. is the owner by assignment of the '948 patent and was the owner by assignment of the '334 patent, which it has assigned to BHI.",
+      "quote": "138 East LCD Advancements Ltd. ('138 East') is the owner by assignment of the '948 patent and was the owner by assignment of the '334 patent.",
+      "topic": "parties"
+    },
+    "n20": {
+      "doc_id": "860765",
+      "kind": "complaint",
+      "page": 19,
+      "point": "BHI alleges that TCL manufactures, imports, offers for sale, and/or sells LCD devices including TCL 32S331 and 32S355 model TVs containing HKC model PT320AT02 panels that infringe claim 1 of the '334 patent.",
+      "quote": "TCL manufactures, imports, offers for sale and/or sells LCD devices, components thereof, and products containing same that infringe the Asserted Patents, and more specifically at least claim 1 of the '334 patent",
+      "topic": "infringement"
+    },
+    "n21": {
+      "doc_id": "860765",
+      "kind": "complaint",
+      "page": 19,
+      "point": "BHI alleges that LGE manufactures, imports, offers for sale, and/or sells LCD devices including LG 27MP40W model monitors containing HKC model NS270CS01 panels that infringe claim 1 of the '948 patent.",
+      "quote": "LGE manufactures, imports, offers for sale and/or sells LCD devices, components thereof, and products containing same that infringe the Asserted Patents, and more specifically at least claim 1 of the '948 patent",
+      "topic": "infringement"
+    },
+    "n22": {
+      "doc_id": "860765",
+      "kind": "complaint",
+      "page": 19,
+      "point": "BHI alleges that Westinghouse manufactures, imports, offers for sale, and/or sells LCD devices including WR24HT2212 model TVs containing HKC model PT236AT02 panels that infringe claim 1 of the '334 patent.",
+      "quote": "Westinghouse manufactures, imports, offers for sale and/or sells LCD devices, components thereof, and products containing same that infringe the Asserted Patents, and more specifically at least claim 1 of the '334 patent",
+      "topic": "infringement"
+    },
+    "n23": {
+      "doc_id": "860765",
+      "kind": "complaint",
+      "page": 20,
+      "point": "BHI alleges that HiSense manufactures, imports, offers for sale, and/or sells LCD devices including TVs containing HKC panels (models PT236AT02, PT320CT01, or NS270CS01) that infringe claim 1 of both the '948 and '334 patents.",
+      "quote": "HiSense manufactures, imports, offers for sale and/or sells LCD devices, components thereof, and products containing same that infringe the Asserted Patents, and more specifically at least claim 1 of the '948 patent and claim 1 of the '334 patent",
+      "topic": "infringement"
+    },
+    "n24": {
+      "doc_id": "860765",
+      "kind": "complaint",
+      "page": 20,
+      "point": "BHI alleges that HKC manufactures and sells for importation LCD devices and panels (PT236AT02, PT320CT01, PT320AT02, and NS270CS01) that infringe claim 1 of both the '948 and '334 patents.",
+      "quote": "HKC manufactures and sells for importation LCD devices, components thereof, and products containing same that infringe the Asserted Patents, and more specifically at least claim 1 of the '948 patent and claim 1 of the '334 patent",
+      "topic": "infringement"
+    },
+    "n25": {
+      "doc_id": "860765",
+      "kind": "complaint",
+      "page": 21,
+      "point": "BHI alleges that VIZIO's D32fM-K07 model TVs containing HKC PT320CT01 panels were manufactured in China and imported into the United States, as evidenced by receipts, delivery records, and photographs showing the manufacturing origin.",
+      "quote": "BHI has obtained within the United States a representative VIZIO LCD device that was made in China and that infringe s at least claim 1 of the '334 patent. Receipts and delivery records showing the purchase of accused LCD devices from within the U.S. are attached",
+      "topic": "importation"
+    },
+    "n26": {
+      "doc_id": "860765",
+      "kind": "complaint",
+      "page": 22,
+      "point": "BHI is aware of TCL LCD devices manufactured in China that were imported into the United States and infringe claim 1 of the '334 patent, as shown in Exhibit 5B.",
+      "quote": "BHI is aware of the importation into the United States of at least two TCL LCD devices that were made in China and that infringe at least claim 1 of the '334 patent",
+      "topic": "importation"
+    },
+    "n27": {
+      "doc_id": "860765",
+      "kind": "complaint",
+      "page": 23,
+      "point": "BHI obtained within the United States a representative LGE LCD device manufactured in China that infringes claim 1 of the '948 patent, evidenced by receipts, delivery records, and photographs.",
+      "quote": "BHI has obtained within the United States at least one representative LGE LCD device that was made in China and that infringes at least claim 1 of the '948 patent. Receipts and delivery records showing the purchase of an accused LCD device",
+      "topic": "importation"
+    },
+    "n28": {
+      "doc_id": "860765",
+      "kind": "complaint",
+      "page": 24,
+      "point": "BHI obtained a representative Westinghouse LCD device manufactured in China that infringes claim 1 of the '334 patent, as shown by receipts, delivery records, and photographs.",
+      "quote": "BHI has obtained within the United States at least one representative Westinghouse LCD device that was made in China and that infringes the claims of the Asserted Patents",
+      "topic": "importation"
+    },
+    "n29": {
+      "doc_id": "860765",
+      "kind": "complaint",
+      "page": 26,
+      "point": "BHI is aware of HiSense LCD devices manufactured in Mexico that were imported into the United States and infringe claim 1 of the '334 patent.",
+      "quote": "BHI is aware of the importation into the United States of at least one HiSense LCD device that was made in Mexico and that infringe s at least claim 1 of the '334 patent",
+      "topic": "importation"
+    },
+    "n3": {
+      "doc_id": "860765",
+      "kind": "complaint",
+      "page": 11,
+      "point": "BHI is authorized to enforce the '948 patent through Longitude Licensing Limited, which holds the exclusive right to license the patent from 138 East.",
+      "quote": "138 East has granted the exclusive right to license the '948 patent to Longitude Licensing Limited ('Longitude'). A copy of 138 East's authorization to Longitude to grant licenses is attached",
+      "topic": "parties"
+    },
+    "n30": {
+      "doc_id": "860765",
+      "kind": "complaint",
+      "page": 27,
+      "point": "BHI has obtained representative HKC LCD devices manufactured in China and imported into the United States that infringe one or more claims of the asserted patents.",
+      "quote": "BHI has obtained within the United States representative HKC LCD device s that were made in China and that infringe the claims of the Asserted Patents",
+      "topic": "importation"
+    },
+    "n31": {
+      "doc_id": "860765",
+      "kind": "complaint",
+      "page": 31,
+      "point": "The domestic industry is satisfied through Innolux Corporation and its wholly owned U.S. subsidiaries Innolux USA, Inc. and InnoCare Optoelectronics USA, Inc., which conduct manufacturing, engineering, research, development, repair, service, and customer support activities in the United States.",
+      "quote": "Innolux operates in the United States through two wholly owned subsidiaries, Innolux USA, Inc. and I nnoCare Optoelectronics USA, Inc. Innolux USA primarily conducts activities in connection with, among other things, engineering, repair, and service",
+      "topic": "domestic_industry"
+    },
+    "n32": {
+      "doc_id": "860765",
+      "kind": "complaint",
+      "page": 29,
+      "point": "Innolux manufactures and sells LCD panels (models P101KDA and M238HCA-L3B) protected by the '948 patent and found in products such as Amazon brand tablets, satisfying the technical prong of the domestic industry requirement.",
+      "quote": "At a minimum, Innolux's P101KDA and M238HCA-L3B model panel s are protected by the '948 patent. These model panels are found in, e.g., Amazon brand tablets.",
+      "topic": "domestic_industry"
+    },
+    "n33": {
+      "doc_id": "860765",
+      "kind": "complaint",
+      "page": 30,
+      "point": "Innolux manufactures and sells an N116BGE-EA2 model panel protected by the '334 patent and found in products such as Lenovo brand tablets, satisfying the technical prong of the domestic industry requirement.",
+      "quote": "At a minimum, Innolux's N116BGE-EA2 model panel is protected by the '334 patent. This model panel is found in, e.g., Lenovo brand tablets",
+      "topic": "domestic_industry"
+    },
+    "n34": {
+      "doc_id": "860765",
+      "kind": "complaint",
+      "page": 30,
+      "point": "Innolux has made substantial investments in U.S. labor and capital in research and development, testing, repair, refurbishment, and customer support activities related to the asserted patents.",
+      "quote": "A domestic industry exists based upon the substantial investments by 138 East's licensees in domestic research and development, testing, repair, refurbishment, customer support and other after-market activities",
+      "topic": "domestic_industry"
+    },
+    "n35": {
+      "doc_id": "860765",
+      "kind": "complaint",
+      "page": 30,
+      "point": "Innolux generates many millions of dollars in annual revenues from sales of licensed products covered by the asserted patents and maintains significant U.S. manufacturing facilities for these products.",
+      "quote": "Revenues generated by sales of these licensed products are extensive and total many millions of dollars annually. Further details of these activities are described in Confidential Exhibit C3",
+      "topic": "domestic_industry"
+    },
+    "n36": {
+      "doc_id": "860765",
+      "kind": "complaint",
+      "page": 32,
+      "point": "Innolux maintains an inventory of spare parts in the United States provided to domestic customers for direct service or replacement of products and components outside of warranty service.",
+      "quote": "Innolux maintains an inventory of spare parts in the United States that are provided through Innolux USA to its customers in the United States so that those domestic customers can directly service or replace Innolux products",
+      "topic": "domestic_industry"
+    },
+    "n37": {
+      "doc_id": "860765",
+      "kind": "complaint",
+      "page": 31,
+      "point": "Innolux engineers in U.S. offices work with domestic customers including HP, Dell, Amazon, and VIZIO to ensure products meet specifications and modify or customize products as required.",
+      "quote": "They are sold and supported in the United States to such companies as Hewlett Packard ('HP'), Dell, Amazon, and V IZIO. See Confidential Exhibit C 3. Although Innolux's LCD panels are manufactured outside the United States",
+      "topic": "domestic_industry"
+    },
+    "n38": {
+      "doc_id": "860765",
+      "kind": "complaint",
+      "page": 33,
+      "point": "Innolux employs field application engineers and customer service engineers physically stationed at the offices of domestic customers to develop and customize/modify products being purchased and utilized by those customers.",
+      "quote": "Innolux also employees field application engineers and customer services engineers who are physically stationed at the offices of one or more of Innolux's domestic customers",
+      "topic": "domestic_industry"
+    },
+    "n39": {
+      "doc_id": "860765",
+      "kind": "complaint",
+      "page": 19,
+      "point": "Concurrently with the ITC complaint, BHI is filing a complaint against the proposed respondents in the U.S. District Court for the Eastern District of Texas alleging infringement of the asserted patents.",
+      "quote": "Concurrently with the filing of the instant ITC complaint, BHI is also filing a complaint against the Proposed Respondents in the U.S. District Court for the Eastern District of Texas alleging infringement",
+      "topic": "related_proceedings"
+    },
+    "n4": {
+      "doc_id": "860765",
+      "kind": "complaint",
+      "page": 11,
+      "point": "The proposed respondents are HKC Corp. Ltd., Chongqing HKC Optoelectronics, and HKC Overseas Ltd. (collectively HKC), manufacturers, distributors, and sellers of LCD panels and components for other manufacturers.",
+      "quote": "On information and belief, HKC is a manufacturer, distributor, seller, and marketer of components of LCD devices, particularly LCD panels, and/or products containing the same that infringe the asserted claims",
+      "topic": "respondents"
+    },
+    "n40": {
+      "doc_id": "860765",
+      "kind": "complaint",
+      "page": 19,
+      "point": "Two prior cases have been filed concerning the '948 patent: Longitude Licensing Limited v. BOE Technology Group Co., Ltd., Case No. 2:23-cv-00515 (EDTX), and Longitude Licensing Limited v. Sharp Corporation, Case No. 2:23-cv-00165 (EDTX); the latter was voluntarily dismissed in July 2023.",
+      "quote": "Other litigation concerning the '948 patent consists of the following cases : Longitude Licensing Limited v. BOE Technology Group Co., Ltd., Case No. 2:23-cv-00515 (EDTX); and Longitude Licensing Limited v. Sharp Corporation, Case No. 2: 23-cv-00165 (EDTX). Trial in Case No. 2:23-cv-00515 was scheduled to commence in August 2025",
+      "topic": "related_proceedings"
+    },
+    "n41": {
+      "doc_id": "860765",
+      "kind": "complaint",
+      "page": 9,
+      "point": "BHI seeks a permanent limited exclusion order excluding from entry into the U.S. all LCD devices and products containing them manufactured or sold by the proposed respondents that infringe the asserted patents.",
+      "quote": "BHI seeks relief from the Commission in the form of a permanent limited exclusion order, pursuant to Section 337(d), excluding from entry into the U.S. all of the Proposed Respondents' LCD devices, components thereof, and products containing same that infringe one or more claims",
+      "topic": "relief"
+    },
+    "n42": {
+      "doc_id": "860765",
+      "kind": "complaint",
+      "page": 10,
+      "point": "BHI seeks a permanent cease and desist order halting the importation, sale, offer for sale, use, demonstration, promotion, marketing, and/or advertising of infringing LCD devices and products by the proposed respondents.",
+      "quote": "BHI also seeks a permanent cease and desist order, pursuant to Section 337(f), halting the importing, selling, offering for sale, using, demonstrating, promoting, marketing, and/or advertising by the Proposed Respondents and related entities of LCD devices",
+      "topic": "relief"
+    },
+    "n43": {
+      "doc_id": "860765",
+      "kind": "complaint",
+      "page": 10,
+      "point": "BHI requests imposition of a bond upon the proposed respondents' importation of infringing LCD devices during the 60-day Presidential review period pursuant to Sections 337(e) and (j).",
+      "quote": "BHI additionally requests that the Commission impose a bond upon the Proposed Respondents' importation of infringing LCD devices, components thereof, and products containing same during the 60-day Presidential review period pursuant to Section 337(e), (j)",
+      "topic": "relief"
+    },
+    "n44": {
+      "doc_id": "864847",
+      "kind": "notice_of_institution",
+      "page": 1,
+      "point": "The complainants are BH Innovations LLC of New York, Longitude Licensing Limited of Ireland, and 138 East LCD Advancements Ltd. of Ireland.",
+      "quote": "BH Innovations LLC of New York, New York. The complaint was amended on September 19, 2025, to add Longitude Licensing Limited of Ireland, and 138 East LCD Advancements Ltd. of Ireland as complainants.",
+      "topic": "parties"
+    },
+    "n45": {
+      "doc_id": "864847",
+      "kind": "notice_of_institution",
+      "page": 2,
+      "point": "The investigation covers infringement of claim 1 of U.S. Patent No. 7,705,948 and claim 1 of U.S. Patent No. 7,570,334.",
+      "quote": "infringement of one or more of claim 1 of the '948 patent and claim 1 of the '334 patent",
+      "topic": "scope"
+    },
+    "n46": {
+      "doc_id": "864847",
+      "kind": "notice_of_institution",
+      "page": 2,
+      "point": "The accused products are LCD devices composed of two glass substrates sandwiching a layer of liquid crystal pixels and associated circuitry for controlling light, components thereof, and products containing the same.",
+      "quote": "LCD devices composed of two glass substrates sandwiching a layer of liquid crystal pixels and the associated circuitry for controlling the amount of light passing through those pixels, components thereof, and products containing same",
+      "topic": "products"
+    },
+    "n47": {
+      "doc_id": "864847",
+      "kind": "notice_of_institution",
+      "page": 3,
+      "point": "The respondents are HKC Corporation Ltd., Chongqing HKC Optoelectronics Technology Co. Ltd., HKC Overseas Ltd., HiSense Co. Ltd., HiSense International Co. Ltd., HiSense Visual Technology Co. Ltd., HiSense US Corporation, VIZIO Holding Corp., TCL Electronics Holdings Ltd., Shenzhen TCL New Technology Co. Ltd., TCL King Electrical Appliances Co. Ltd., TTE Technology Inc., TCL Technology Group Corp., TCL Moka International Ltd., TCL Overseas Marketing Ltd., and TCL Industries Holdings Co. Ltd.",
+      "quote": "The respondents are the following entities alleged to be in violation of section 337, and are the parties upon which the complaint is to be served:",
+      "topic": "parties"
+    },
+    "n48": {
+      "doc_id": "864847",
+      "kind": "notice_of_institution",
+      "page": 2,
+      "point": "The filing does not indicate whether the Office of Unfair Import Investigations is designated as a party to the investigation.",
+      "quote": "Pursuant to section 210.10(b)(1) of the Commission's Rules of Practice and Procedure, 19 C.F.R. 210.10(b)(1), the plain language description",
+      "topic": "staff"
+    },
+    "n49": {
+      "doc_id": "867938",
+      "kind": "answer",
+      "page": 3,
+      "point": "The asserted patents are U.S. Patent No. 7,705,948 and U.S. Patent No. 7,570,334, both relating to liquid crystal display technology.",
+      "quote": "A. U.S. Patent No. 7,705,948.................................................................................... 12 B. U.S. Patent No. 7,570,334.................................................................................... 13",
+      "topic": "ip_asserted"
+    },
+    "n5": {
+      "doc_id": "860765",
+      "kind": "complaint",
+      "page": 12,
+      "point": "The proposed respondents include HiSense Co., Ltd., HiSense International Co., Ltd., HiSense Visual Technology Co. Ltd., and HiSense US Corporation (collectively HiSense), manufacturers, distributors, sellers, marketers, and importers of LCD devices and products containing LCD devices.",
+      "quote": "On information and belief, HiSense is a manufacturer, distributor, seller, marketer, and importer of LCD devices and/or products containing the same that infringe the asserted claims",
+      "topic": "respondents"
+    },
+    "n50": {
+      "doc_id": "867938",
+      "kind": "answer",
+      "page": 32,
+      "point": "TCL Respondents deny that they have violated Section 337 or that they directly or indirectly infringe any valid and enforceable claims of the asserted patents, either literally or under the doctrine of equivalents.",
+      "quote": "TCL Respondents do not directly infringe, indirectly infringe, willfully infringe, contribute to infringement, or induce infringement of any valid or enforceable claim of the Asserted Patents",
+      "topic": "general_response"
+    },
+    "n51": {
+      "doc_id": "867938",
+      "kind": "answer",
+      "page": 32,
+      "point": "TCL Respondents assert that complainants have not shown infringement of any claims of the asserted patents, nor have they shown any accused TCL products infringe any asserted claims, and TCL reserves the right to amend responses to offer claim charts establishing non-infringement after further discovery.",
+      "quote": "Complainant has not shown infringement of any claims of the Asserted Patents. Nor has complainants shown any Accused TCL Products infringe any Asserted Claims.",
+      "topic": "non_infringement"
+    },
+    "n52": {
+      "doc_id": "867938",
+      "kind": "answer",
+      "page": 32,
+      "point": "TCL asserts that the asserted claims are invalid under 35 U.S.C. \u00a7\u00a7 101, 102, 103, 112, 116, and/or 256, particularly under \u00a7\u00a7 102 and 103 in view of prior art identified in the patents' faces and prosecution histories.",
+      "quote": "The Asserted Claims of the Asserted Patents are each invalid for failure to meet the requirements set forth in 35 U.S.C. \u00a7\u00a7 101, 102, 103, 112, 116, and/or 256.",
+      "topic": "invalidity"
+    },
+    "n53": {
+      "doc_id": "867938",
+      "kind": "answer",
+      "page": 32,
+      "point": "TCL alleges that it would have been obvious to one of ordinary skill in the art to modify or combine the prior art references, as certain references identify and address the same technical issues and suggest similar solutions, with any alleged differences being trivial.",
+      "quote": "It would have been obvious to one of ordinary skill in the art to modify or to combine any of the prior art references with other references",
+      "topic": "invalidity"
+    },
+    "n54": {
+      "doc_id": "867938",
+      "kind": "answer",
+      "page": 33,
+      "point": "TCL asserts that one or more claims of the asserted patents are invalid under 35 U.S.C. \u00a7 112 as indefinite and for failure to comply with written description and/or enablement requirements.",
+      "quote": "one or more of the claims of the Asserted Patents are invalid under 35 U.S.C. \u00a7 112 as indefinite and for failure to comply with the written description and/or enablement requirements.",
+      "topic": "invalidity"
+    },
+    "n55": {
+      "doc_id": "867938",
+      "kind": "answer",
+      "page": 33,
+      "point": "TCL asserts that complainants have not adequately alleged and cannot prove the existence of a domestic industry, and specifically that complainants have not demonstrated that Innolux has made significant investments in plant and equipment, significant employment of labor and capital, and substantial investments in exploitation of the asserted patents.",
+      "quote": "Complainants have not adequately alleged and cannot prove the existence of a domestic industry. More particularly, Complainants have not adequately alleged and cannot prove that a domestic industry exists on the basis of the activities of Innolux.",
+      "topic": "domestic_industry"
+    },
+    "n56": {
+      "doc_id": "867938",
+      "kind": "answer",
+      "page": 33,
+      "point": "TCL denies that complainants have satisfied the technical and economic prongs of the domestic industry requirement.",
+      "quote": "Complainants have not satisfied the technical and economic prongs of the domestic industry requirement.",
+      "topic": "domestic_industry"
+    },
+    "n57": {
+      "doc_id": "867938",
+      "kind": "answer",
+      "page": 29,
+      "point": "TCL denies all allegations concerning Innolux's substantial investments in labor and capital in activities related to the asserted patents, engineering and research and development activities in the United States, significant activities relating to the technology of the asserted patents, and significant investment in plant and equipment and employment of labor and capital.",
+      "quote": "TCL Respondents deny that Complainants have shown a domestic industry.",
+      "topic": "domestic_industry"
+    },
+    "n58": {
+      "doc_id": "867938",
+      "kind": "answer",
+      "page": 33,
+      "point": "TCL asserts a prosecution history estoppel and/or disclaimer defense, alleging that due to admissions and statements made to the U.S. Patent and Trademark Office during prosecution of the applications resulting in the asserted patents, complainants are estopped from construing a valid and enforceable claim as infringed literally or under the doctrine of equivalents by the accused products.",
+      "quote": "due to admissions and statements made to the United States Patent and Trademark Office during the prosecution of the applications that resulted in the Asserted Patents",
+      "topic": "unenforceability"
+    },
+    "n59": {
+      "doc_id": "867938",
+      "kind": "answer",
+      "page": 34,
+      "point": "TCL asserts that complainants are barred from seeking relief for alleged infringement if the accused products or components thereof are licensed, whether expressly or impliedly, or barred as a result of patent exhaustion.",
+      "quote": "Complainants are barred from seeking relief for alleged infringement of the Asserted Patents in whole or in part to the extent that the Accused Products or components thereof are licensed",
+      "topic": "unenforceability"
+    },
+    "n6": {
+      "doc_id": "860765",
+      "kind": "complaint",
+      "page": 12,
+      "point": "VIZIO Holding Corp., with principal place of business at 39 Tesla, Irvine, California 92618, is a proposed respondent that manufactures, distributes, sells, markets, and imports LCD devices and products containing LCD devices.",
+      "quote": "On information and belief, VIZIO is a manufacturer, distributor, seller, marketer, and importer of LCD devices and/or products containing the same that infringe at least one claim",
+      "topic": "respondents"
+    },
+    "n60": {
+      "doc_id": "867938",
+      "kind": "answer",
+      "page": 34,
+      "point": "TCL asserts as an affirmative defense a lack of importation, arguing that if complainants are unable to prove that the allegedly infringing articles are imported into the United States, sold for importation, or sold after importation by each TCL respondent, then complainants' claims should be denied.",
+      "quote": "To the extent that Complainants are unable to prove that the allegedly infringing articles are imported into the United States, sold for importation into the United States, or sold after importation into the United States by each TCL Respondent",
+      "topic": "importation"
+    },
+    "n61": {
+      "doc_id": "867938",
+      "kind": "answer",
+      "page": 38,
+      "point": "TCL denies engaging in unlawful importation into the United States, sale for importation, or sale within the United States after importation of liquid crystal display devices, components thereof, and products containing the same that infringe the asserted claims of the asserted patents.",
+      "quote": "TCL Respondents deny that they are in violation of 19 U.S.C. \u00a7 1337 and that they have engaged in the unlawful importation into the United States",
+      "topic": "other_unfair_acts"
+    },
+    "n62": {
+      "doc_id": "867938",
+      "kind": "answer",
+      "page": 34,
+      "point": "TCL asserts an inventorship defense, reserving the right to assert improper inventorship as a defense if it determines through discovery and investigation that any asserted patent fails to name the appropriate inventors.",
+      "quote": "To the extent that TCL Respondents determine through discovery and investigation that any Asserted Patent fails to name the appropriate inventors, TCL Respondents reserve the right to assert improper inventorship as a defense.",
+      "topic": "other_defenses"
+    },
+    "n63": {
+      "doc_id": "867938",
+      "kind": "answer",
+      "page": 34,
+      "point": "TCL asserts an ensnarement defense, arguing that complainants' claims are barred by the doctrine of ensnarement to the extent that complainants make infringement claims under the doctrine of equivalents that would ensnare prior art.",
+      "quote": "Complainants' claims are barred by the doctrine of ensnarement to the extent that Complainants make infringement claims under th e doctrine of equivalents that would ensnare prior art.",
+      "topic": "other_defenses"
+    },
+    "n64": {
+      "doc_id": "867938",
+      "kind": "answer",
+      "page": 35,
+      "point": "TCL asserts a prosecution laches defense, arguing that complainants' claims are barred because complainants have prejudiced TCL respondents by inexcusably delaying prosecution of applications for the asserted patents.",
+      "quote": "Complainants' claims are barred by the doctrine of prosecution laches because Complainants have prejudiced TCL Respondents by inexcusably delaying prosecution of applications for the Asserted Patents.",
+      "topic": "other_defenses"
+    },
+    "n65": {
+      "doc_id": "867938",
+      "kind": "answer",
+      "page": 35,
+      "point": "TCL asserts equitable defenses including laches, waiver, acquiescence, equitable estoppel, implied license, patent misuse, and unclean hands, arguing that some or all of complainant's claims are barred by these doctrines.",
+      "quote": "On information and belief, some or all of Complainant's claims for relief are barred, in whole or in part, by the doctrines of laches, waiver, acquiescence, equitable estoppel, implied license, patent misuse, unclean hands",
+      "topic": "other_defenses"
+    },
+    "n66": {
+      "doc_id": "867938",
+      "kind": "answer",
+      "page": 36,
+      "point": "TCL asserts a res judicata, claim preclusion, issue preclusion, and collateral estoppel defense, arguing on information and belief that BHI's claims are barred by these doctrines.",
+      "quote": "On information and belief, BHI's claims are barred in whole or in part by the doctrines of res judicata, claim preclusion, issue preclusion, and/or collateral estoppel.",
+      "topic": "other_defenses"
+    },
+    "n67": {
+      "doc_id": "867938",
+      "kind": "answer",
+      "page": 36,
+      "point": "TCL asserts a claim construction estoppel defense, arguing on information and belief that representations, omissions, and/or concessions made during prosecution of the asserted patents and related patents limit the scope of the claims such that BHI is estopped from construing the claims to cover any accused product.",
+      "quote": "On information and belief, representations, omissions, and/or concessions made during prosecution of the Asserted Patents, and/or related U.S. or foreign patents and patent applications, limit the scope of the claims",
+      "topic": "other_defenses"
+    },
+    "n68": {
+      "doc_id": "867938",
+      "kind": "answer",
+      "page": 35,
+      "point": "TCL asserts a statutory authority defense, arguing that one or more complainants lack substantial rights in the asserted patents and therefore statutory authority is lacking, and that multiple license agreements preclude complainants from claiming substantial rights.",
+      "quote": "One or more Complainants lacks substantial rights in the Asserted Patents and therefore statutory authority is lacking. For example, multiple license agreements preclude Complainants from claiming substantial rights",
+      "topic": "other_defenses"
+    },
+    "n69": {
+      "doc_id": "867938",
+      "kind": "answer",
+      "page": 35,
+      "point": "TCL argues that the requested relief should not issue pursuant to 19 U.S.C. \u00a7 1337(d)(1) because of potential adverse effects upon public health and welfare, competitive conditions in the United States economy, production of like or directly competitive articles in the United States, and United States consumers.",
+      "quote": "Pursuant to 19 U.S.C. \u00a7 1337(d)(1), the requested relief should not issue because of its potential adverse effects upon the public health and welfare, competitive conditions in the United States economy",
+      "topic": "relief"
+    },
+    "n7": {
+      "doc_id": "860765",
+      "kind": "complaint",
+      "page": 12,
+      "point": "TCL entities (TCL Electronics Holdings Ltd., Shenzhen TCL New Technology Co. Ltd., TCL King Electrical Appliances Co. Ltd., TTE Technology Inc., TCL Technology Group Corp., TCL Moka International Ltd., TCL Overseas Marketing Ltd., TCL Industries Holdings Co., Ltd., and TCL Smart Device (Vietnam) Co. Ltd.) collectively manufacture, distribute, sell, market, and import LCD devices and products.",
+      "quote": "TCL is a manufacturer, distributor, seller, marketer, and importer of LCD devices and/or products containing the same that infringe at least one claim",
+      "topic": "respondents"
+    },
+    "n70": {
+      "doc_id": "867938",
+      "kind": "answer",
+      "page": 36,
+      "point": "TCL requests that the Commission determine that TCL respondents have not violated Section 337, have not directly or indirectly infringed any valid and enforceable claims of the asserted patents, and that there is no domestic industry for each asserted patent.",
+      "quote": "Determining that TCL Respondents have not violated Section 337 of the Tariff Act of 1930, as amended",
+      "topic": "relief"
+    },
+    "n71": {
+      "doc_id": "867938",
+      "kind": "answer",
+      "page": 36,
+      "point": "TCL requests that the Commission find that the asserted claims of the asserted patents are invalid, find that there is no domestic industry for each asserted patent, and find that the relief requested by complainants would not be in the public interest.",
+      "quote": "Finding that the Asserted Claims of the Asserted Patents are invalid",
+      "topic": "relief"
+    },
+    "n72": {
+      "doc_id": "867938",
+      "kind": "answer",
+      "page": 37,
+      "point": "TCL requests that the Commission deny all relief requested in the complaint, dismiss the complaint, terminate the investigation, and award TCL respondents their attorneys' fees and costs incurred in responding to the complaint and defending themselves.",
+      "quote": "Denying all relief requested in the Complaint; (7) Determining that TCL Respondents have not imported, sold for importation, or sold within the United States after importation certain liquid crystal display devices",
+      "topic": "relief"
+    },
+    "n73": {
+      "doc_id": "867938",
+      "kind": "answer",
+      "page": 41,
+      "point": "The accused TCL products are liquid crystal display devices, components thereof, and products containing the same, which have been imported into the United States under at least HTSUS number 8528.72.6430.",
+      "quote": "On information and belief, the Accused TCL Products have been imported into the United States under at least HTSUS number 8528.72.6430.",
+      "topic": "products"
+    },
+    "n74": {
+      "doc_id": "867938",
+      "kind": "answer",
+      "page": 41,
+      "point": "TCL identifies certain TCL respondents and their supply chain partners as having capacity to produce and ensure continued production of the accused TCL products for consumers in the United States, and believe that the United States constitutes a relatively significant market for these products.",
+      "quote": "Certain TCL Respondents and their supply chain partners have the capacity to produce and ensure continued production of the Accused TCL Products for consumers in the United States.",
+      "topic": "importation"
+    },
+    "n75": {
+      "doc_id": "867938",
+      "kind": "answer",
+      "page": 38,
+      "point": "TCL denies all allegations in the complaint and notice of investigation, stating that TCL currently lacks sufficient information and knowledge to form a belief as to the truth of complainants' allegations and thus denies them on that basis.",
+      "quote": "TCL Respondents currently lack sufficient information and knowledge to form a belief as to the truth of Complainants' allegations, and thus TCL Respondents deny all such allegations",
+      "topic": "general_response"
+    },
+    "n76": {
+      "doc_id": "867938",
+      "kind": "answer",
+      "page": 36,
+      "point": "TCL reserves the right to assert that its claims are not barred by the actions of others over whom they have no control, and to argue this defense based on discovery and investigation.",
+      "quote": "To the extent TCL Respondents determine through discovery and investigation, TCL Respondents reserve the right to argue that BHI's claims are barred, in whole or in part, because TCL Respondents are not liable for the acts of others",
+      "topic": "other_defenses"
+    },
+    "n77": {
+      "doc_id": "867949",
+      "kind": "answer",
+      "page": 1,
+      "point": "LG Electronics Inc. is located at LG Twin Towers, 128 Yeouidae-ro, Yeongdeungpo-gu, Seoul, Republic of Korea, and LG Electronics USA, Inc. is located at 111 Sylvan Avenue, Englewood Cliffs, NJ 07632.",
+      "quote": "LG Electronics Inc. LG Twin Towers 128 Yeouidae-ro Yeongdeungpo-gu Seoul, Republic of Korea LG Electronics USA, Inc. 111 Sylvan Avenue Englewood Cliffs, NJ 07632",
+      "topic": "respondents"
+    },
+    "n78": {
+      "doc_id": "867949",
+      "kind": "answer",
+      "page": 2,
+      "point": "The complainants are BH Innovations LLC (BHI), Longitude Licensing Limited (Longitude), and 138 East LCD Advancements Ltd. (138 East), who filed the complaint on August 29, 2025, amended it on September 19, 2025, and supplemented it on September 25, 2025.",
+      "quote": "BH Innovations LLC (\"BHI\"), Longitude Licensing Limited (\"Longitude\"), and 138 East LCD Advancements Ltd. (\"138 East\") (together \"Complainants\") on August 29, 2025, amended on September 19, 2025, and supplemented on September 25, 2025",
+      "topic": "parties"
+    },
+    "n79": {
+      "doc_id": "867949",
+      "kind": "answer",
+      "page": 2,
+      "point": "The asserted patents are U.S. Patent No. 7,705,948 (the '948 Patent) and U.S. Patent No. 7,570,334 (the '334 Patent), collectively referred to as the Asserted Patents.",
+      "quote": "U.S. Patents Nos. 7,705,948 (the \"'948 Patent\") and 7,570,334 (the \"'334 Patent\") (collectively the \"Asserted Patents\")",
+      "topic": "ip_asserted"
+    },
+    "n8": {
+      "doc_id": "860765",
+      "kind": "complaint",
+      "page": 12,
+      "point": "LG Electronics, Inc. and LG Electronics USA, Inc. (collectively LGE) are manufacturers, distributors, sellers, marketers, and importers of LCD devices and products containing LCD devices.",
+      "quote": "On information and belief, LGE is a manufacturer, distributor, seller, marketer, and importer of LCD devices and/or products containing the same that infringe at least one claim",
+      "topic": "respondents"
+    },
+    "n80": {
+      "doc_id": "867949",
+      "kind": "answer",
+      "page": 16,
+      "point": "The accused products identified for LGE are LG 27MP40W model Monitors containing LCD panels provided by HKC, and some LG27MP240W model Monitors have contained HKC model SN270CS01 panels.",
+      "quote": "admits that some LG27MP240W model Monitors have contained HKC model SN270CS01 panels",
+      "topic": "products"
+    },
+    "n81": {
+      "doc_id": "867949",
+      "kind": "answer",
+      "page": 2,
+      "point": "LGE denies that it has engaged in unfair competition or violated Section 337 by importing, selling for importation, or selling within the United States after importation any product that infringes any valid and enforceable claim of the Asserted Patents, either literally or under the doctrine of equivalents.",
+      "quote": "LGE denies that it has engaged in unfair competition or violated Section 337 by importing, selling for importation, and/or selling within the United States after importation",
+      "topic": "general_response"
+    },
+    "n82": {
+      "doc_id": "867949",
+      "kind": "answer",
+      "page": 2,
+      "point": "LGE denies that any asserted claim of the Asserted Patents is valid and enforceable, and denies all allegations in the Complaint except as expressly and specifically admitted.",
+      "quote": "LGE further denies that any asserted claim of the Asserted Patents is valid and/or enforceable. Except as expressly and specifically admitted herein, LGE denies all allegations in the Complaint.",
+      "topic": "general_response"
+    },
+    "n83": {
+      "doc_id": "867949",
+      "kind": "answer",
+      "page": 2,
+      "point": "LGE states that the Complaint and supporting documentation lack clarity and are insufficient to demonstrate that LGE is violating Section 337, and reserves the right to amend its response based on additional facts developed during discovery.",
+      "quote": "The Complaint and supporting documentation lack clarity and are insufficient to demonstrate that LGE is violating Section 337",
+      "topic": "general_response"
+    },
+    "n84": {
+      "doc_id": "867949",
+      "kind": "answer",
+      "page": 4,
+      "point": "LGE admits that claim 1 of the Asserted Patents is alleged to be infringed and that complainants purport to assert infringement and unfair methods of competition.",
+      "quote": "LGE admits that the Complaint purports to assert infringement of claim 1 of the Asserted Patents",
+      "topic": "general_response"
+    },
+    "n85": {
+      "doc_id": "867949",
+      "kind": "answer",
+      "page": 24,
+      "point": "LGE asserts that Complainants have not adequately alleged and cannot prove that a domestic industry exists on the basis of the activities of Innolux, and that Complainants fail to demonstrate that Innolux has made significant investments in plant and equipment, significant employment of labor and capital, and/or substantial investments in exploitation of the Asserted Patents.",
+      "quote": "Complainants have not adequately alleged and cannot prove that a domestic industry exists on the basis of the activities of Innolux. Complainants fail to demonstrate that Innolux has made significant investments in plant and equipment",
+      "topic": "domestic_industry"
+    },
+    "n86": {
+      "doc_id": "867949",
+      "kind": "answer",
+      "page": 23,
+      "point": "LGE asserts as its first affirmative defense that it does not directly infringe, indirectly infringe, contribute to infringement, or induce infringement of any valid or enforceable claim of the Asserted Patents, either literally or under the doctrine of equivalents.",
+      "quote": "LGE does not directly infringe, indirectly infringe, contribute to infringement, or induce infringement of any valid or enforceable claim of the Asserted Patents",
+      "topic": "non_infringement"
+    },
+    "n87": {
+      "doc_id": "867949",
+      "kind": "answer",
+      "page": 23,
+      "point": "LGE states that this Investigation has just begun and reserves the right to amend its response, including offering claim charts establishing non-infringement of the asserted claims after further discovery, and will provide noninfringement contentions in accordance with the Procedural Schedule.",
+      "quote": "This Investigation has just begun, and LGE reserves the right to amend its response, including offering claim charts establishing non-infringement of the asserted claims",
+      "topic": "non_infringement"
+    },
+    "n88": {
+      "doc_id": "867949",
+      "kind": "answer",
+      "page": 23,
+      "point": "LGE asserts as its second affirmative defense that the asserted claims of the Asserted Patents are each invalid for failure to meet the requirements set forth in 35 U.S.C. \u00a7\u00a7 101, 102, 103, 112, 116, and/or 256.",
+      "quote": "The asserted claims of the Asserted Patents are each invalid for failure to meet the requirements set forth in 35 U.S.C. \u00a7\u00a7 101, 102, 103, 112, 116, and/or 256.",
+      "topic": "invalidity"
+    },
+    "n89": {
+      "doc_id": "867949",
+      "kind": "answer",
+      "page": 23,
+      "point": "Without limitation and subject to further investigation, all asserted claims of the Asserted Patents are invalid under 35 U.S.C. \u00a7 102 and/or 35 U.S.C. \u00a7 103 in view of at least the prior art identified on the face of the asserted patents and in the prosecution histories.",
+      "quote": "all asserted claims of the Asserted Patents are invalid under 35 U.S.C. \u00a7 102 and/or 35 U.S.C. \u00a7 103 in view of at least the prior art identified on the face of the asserted patents and in the prosecution histories",
+      "topic": "invalidity"
+    },
+    "n9": {
+      "doc_id": "860765",
+      "kind": "complaint",
+      "page": 12,
+      "point": "Westinghouse Electric Corporation, with principal place of business at 4000 Town Center Blvd., Suite 210, Canonsburg, Pennsylvania 15317, is a manufacturer, distributor, seller, marketer, and importer of LCD devices and products.",
+      "quote": "On information and belief, Westinghouse is a manufacturer, distributor, seller, marketer, and importer of LCD devices and/or products containing the same that infringe at least one claim",
+      "topic": "respondents"
+    },
+    "n90": {
+      "doc_id": "867949",
+      "kind": "answer",
+      "page": 24,
+      "point": "LGE asserts a prosecution history estoppel defense, stating that on information and belief, due to admissions and statements made to the United States Patent and Trademark Office during the prosecution of the applications that resulted in the Asserted Patents or related patent applications, Complainants are estopped from construing a valid and enforceable claim as infringed literally or under the doctrine of equivalents.",
+      "quote": "Complainants are estopped fro m construing a valid and enforceable claim, if any, of the Asserted Patents as infringed literally or under the doctrine of equivalents by the Accused Products.",
+      "topic": "other_defenses"
+    },
+    "n91": {
+      "doc_id": "867949",
+      "kind": "answer",
+      "page": 24,
+      "point": "LGE asserts a lack of importation defense, stating that to the extent Complainants are unable to prove that the allegedly infringing articles are imported into the United States, sold for importation, or sold after importation by each LGE entity, Complainants' claims should be denied.",
+      "quote": "To the extent that Complainants are unable to prove that the allegedly infringing articles are imported into the United States, sold for importation into the United States, or sold after importation",
+      "topic": "importation"
+    },
+    "n92": {
+      "doc_id": "867949",
+      "kind": "answer",
+      "page": 24,
+      "point": "LGE asserts a patent exhaustion, license, and/or implied license defense, stating that on information and belief, Complainant's claims against LGE are barred as a result of patent exhaustion, a license, and/or an implied license to the Asserted Patents.",
+      "quote": "Complainant's claims against LGE are barred as a result of patent exhaustion, a license, and/or an implied license to the Asserted Patents.",
+      "topic": "unenforceability"
+    },
+    "n93": {
+      "doc_id": "867949",
+      "kind": "answer",
+      "page": 24,
+      "point": "LGE asserts an inventorship defense, reserving the right to assert improper inventorship as a defense to the extent that it determines through discovery and investigation that any Asserted Patent fails to name the appropriate inventors.",
+      "quote": "To the extent that LGE determines through discovery and investigation that any Asserted Patent fails to name the appropriate inventors, LGE reserves the right to assert improper inventorship as a defense.",
+      "topic": "other_defenses"
+    },
+    "n94": {
+      "doc_id": "867949",
+      "kind": "answer",
+      "page": 25,
+      "point": "LGE asserts an ensnarement defense, stating that Complainants' claims are barred by the doctrine of ensnarement to the extent that Complainants make infringement claims under the doctrine of equivalents that would ensnare prior art.",
+      "quote": "Complainants' claims are barred by the doctrine of ensnarement to the extent that Complainants make infringement claims under the doctrine of equivalents that would ensnare prior art.",
+      "topic": "other_defenses"
+    },
+    "n95": {
+      "doc_id": "867949",
+      "kind": "answer",
+      "page": 25,
+      "point": "LGE asserts a prosecution laches defense, stating that Complainants' claims are barred by the doctrine of prosecution laches because Complainants have prejudiced LGE by inexcusably delaying prosecution of applications for the Asserted Patents.",
+      "quote": "Complainants' claims are barred by the doctrine of prosecution laches because Complainants have prejudiced LGE by inexcusably delaying prosecution of applications for the Asserted Patents.",
+      "topic": "other_defenses"
+    },
+    "n96": {
+      "doc_id": "867949",
+      "kind": "answer",
+      "page": 25,
+      "point": "LGE asserts a laches, acquiescence, and waiver defense, stating that Complainants have known of the Accused Products of HKC Respondents for several years and sued HKC Respondents without alleging the Asserted Patents three years ago, which has prejudiced downstream respondents including LGE.",
+      "quote": "Complainants have known of the Accused Products of HKC Respondents for several years, and sued HKC  Respondents without alleging the Asserted Patents three years ago.",
+      "topic": "other_defenses"
+    },
+    "n97": {
+      "doc_id": "867949",
+      "kind": "answer",
+      "page": 25,
+      "point": "LGE asserts a public interest defense, stating that pursuant to 19 U.S.C. \u00a7 1337(d)(1), the requested relief should not issue because of its potential adverse effects upon the public health and welfare, competitive conditions in the United States economy, the production of like or directly competitive articles in the United States, and/or United States consumers.",
+      "quote": "the requested relief should not issue because of its potential adverse effects upon the public health and welfare, competitive conditions in the United States economy",
+      "topic": "other_defenses"
+    },
+    "n98": {
+      "doc_id": "867949",
+      "kind": "answer",
+      "page": 26,
+      "point": "LGE asserts a license defense, stating that at least some of the Accused Products are covered by one or more license agreements to one or more Respondents.",
+      "quote": "At least some of the Accused Products are covered by one or more license agreements to one or more Respondents.",
+      "topic": "unenforceability"
+    },
+    "n99": {
+      "doc_id": "867949",
+      "kind": "answer",
+      "page": 26,
+      "point": "LGE requests that the Commission determine that LGE has not imported, sold for importation, or sold within the United States after importation certain liquid crystal display devices that are covered by a valid and enforceable Asserted Claim of any Asserted Patent.",
+      "quote": "Determine that LGE has not imported, sold for importation, or sold within the United States after importation certain liquid crystal display devices, components thereof, and products containing the same that are covered by a valid and enforceable Asserted Claim",
+      "topic": "relief"
+    }
+  },
+  "notes_model": "claude-haiku-4-5-20251001",
+  "notes_version": 2,
+  "pending": [],
+  "phase": 3,
+  "sources": [
+    "860765",
+    "864847",
+    "867938",
+    "867949",
+    "868805",
+    "884140",
+    "885396"
+  ],
+  "summary": {
+    "about": [
+      {
+        "cites": [
+          "n1",
+          "n2",
+          "n3",
+          "n11",
+          "n12",
+          "n13",
+          "n15",
+          "n147"
+        ],
+        "text": "The complainant, BH Innovations LLC (BHI), together with patent owners Longitude Licensing Limited and 138 East LCD Advancements Ltd., brought this investigation before the U.S. International Trade Commission under Section 337, a statute letting the Commission block imports that infringe U.S. patents. BHI is the exclusive licensee of two patents: U.S. Patent No. 7,705,948 ('the 948 patent'), covering LCD devices with a slitted electrode layer design said to reduce visual defects and improve manufacturing yield, and U.S. Patent No. 7,570,334 ('the 334 patent'), covering LCD panel designs with particular electrode and sealing structures. The accused technology is found in LCD devices generally: a liquid crystal layer sandwiched between glass substrates, with circuitry controlling light transmission through pixels to form images on screens such as televisions and computer monitors."
+      },
+      {
+        "cites": [
+          "n4",
+          "n5",
+          "n6",
+          "n7",
+          "n8",
+          "n45",
+          "n46",
+          "n47",
+          "t1"
+        ],
+        "text": "The named respondents were TCL entities (TCL Technology Group Corp., TTE Technology Inc., TCL Moka International, TCL Overseas Marketing, TCL King Electrical Appliances, TCL Industries Holdings, TCL Electronics Holdings, Shenzhen TCL New Technology, and TCL Smart Device (Vietnam)), LG Electronics Inc. and LG Electronics USA Inc., Hisense USA Corporation and related Hisense entities, HKC Corporation Ltd. and related HKC entities, and VIZIO Holding Corp. -- all alleged to manufacture, import, or sell televisions or monitors containing LCD panels, many supplied by HKC. The Commission instituted the investigation on November 24, 2025, covering alleged infringement of claim 1 of the 948 patent and claim 1 of the 334 patent by LCD devices, their components, and products containing them."
+      }
+    ],
+    "allegations": [
+      {
+        "cites": [
+          "n19",
+          "n20",
+          "n21",
+          "n23",
+          "n24",
+          "n25",
+          "n26",
+          "n27",
+          "n29",
+          "n30"
+        ],
+        "text": "BHI alleged that each group of respondents violated Section 337 by importing into the United States, or selling for importation or after importation, LCD devices that infringe claim 1 of the 948 patent, the 334 patent, or both. Specifically, BHI alleged VIZIO's D32fM-K07 televisions (using HKC PT320CT01 panels) and TCL's 32S331 and 32S355 televisions (using HKC PT320AT02 panels) infringe the 334 patent; LG's 27MP40W monitors (using HKC NS270CS01 panels) infringe the 948 patent; and Hisense televisions and HKC's own panels and devices infringe claim 1 of both patents. BHI supported these importation allegations with receipts, delivery records, and photographs showing manufacture in China (for TCL, LG, VIZIO, and HKC products) or Mexico (for Hisense products) and subsequent importation into the United States."
+      },
+      {
+        "cites": [
+          "n31",
+          "n32",
+          "n33",
+          "n34",
+          "n35",
+          "n36",
+          "n37",
+          "n38"
+        ],
+        "text": "BHI alleged that the domestic industry requirement -- the requirement that a complainant show a qualifying U.S. economic activity tied to the patent -- was satisfied through Innolux Corporation and its U.S. subsidiaries, which BHI said manufacture and sell licensed LCD panels practicing the 948 and 334 patents (found in products such as tablets), and which engage in substantial U.S. research, development, engineering, testing, repair, and customer support activities, along with significant revenues and spare-parts inventories tied to the patents."
+      },
+      {
+        "cites": [
+          "n41",
+          "n42",
+          "n43"
+        ],
+        "text": "BHI requested that the Commission issue a permanent limited exclusion order (an order barring the specified infringing imports from entering the United States) against the named respondents' infringing LCD devices, permanent cease and desist orders (orders barring further U.S. sale, marketing, or use of infringing inventory) against the respondents, and the imposition of a bond during the 60-day Presidential review period that follows any Commission exclusion order."
+      }
+    ],
+    "answers": [
+      {
+        "doc_id": "867938",
+        "group": "A1",
+        "paragraphs": [
+          {
+            "cites": [
+              "n50",
+              "n55",
+              "n56",
+              "n52",
+              "n58",
+              "n59",
+              "n69"
+            ],
+            "text": "The TCL respondents denied infringing any valid claim of the asserted patents and denied that a domestic industry exists, arguing complainants had not shown Innolux's U.S. investments met the statutory thresholds. They asserted the asserted claims are invalid under 35 U.S.C. \u00a7\u00a7 101, 102, 103, 112, 116, and/or 256 over prior art, and raised numerous other defenses including prosecution history estoppel, patent exhaustion/license, inventorship, ensnarement, prosecution laches, and public-interest objections to any exclusion order."
+          }
+        ],
+        "who": "TCL Technology Group Corp., TTE Technology Inc., TCL Moka International, Ltd., TCL Overseas Marketing Ltd., TCL King Electrical Appliances Co., Ltd., TCL Industries Holdings Co., Limited, TCL Electronics Holdings Ltd., Shenzhen TCL New Technology Company Limited, and TCL Smart Device (Vietnam) Co. Ltd."
+      },
+      {
+        "doc_id": "867949",
+        "group": "A2",
+        "paragraphs": [
+          {
+            "cites": [
+              "n81",
+              "n85",
+              "n88",
+              "n91",
+              "n92",
+              "n96",
+              "n97"
+            ],
+            "text": "LG Electronics denied infringing any valid or enforceable claim of the asserted patents and denied that complainants proved a domestic industry based on Innolux's activities. LGE asserted the asserted claims are invalid under \u00a7\u00a7 101, 102, 103, 112, 116, and/or 256, and raised defenses of prosecution history estoppel, lack of importation, patent exhaustion/license, laches and acquiescence (citing complainants' prior knowledge of HKC-related products), and public interest."
+          }
+        ],
+        "who": "LG Electronics, Inc. and LG Electronics USA, Inc."
+      },
+      {
+        "doc_id": "868805",
+        "group": "A3",
+        "paragraphs": [
+          {
+            "cites": [
+              "n104",
+              "n110",
+              "n111",
+              "n112",
+              "n115",
+              "n119",
+              "n118",
+              "n117"
+            ],
+            "text": "Hisense denied infringing the asserted patents, denied importing or selling infringing products, and disputed that complainants had identified which, if any, specific HKC panel was actually contained in the accused Hisense television models. Hisense argued the asserted claims are invalid, that no domestic industry exists, and asserted patent exhaustion/license, collateral estoppel based on related district court litigation over the 948 patent, and public-interest defenses."
+          }
+        ],
+        "who": "Hisense USA Corporation, Hisense Co., Ltd., Hisense International Co., Ltd., and Hisense Visual Technology Co. Ltd."
+      },
+      {
+        "doc_id": "884140",
+        "group": "A4",
+        "paragraphs": [
+          {
+            "cites": [
+              "n126",
+              "n127",
+              "n136",
+              "n137",
+              "n138",
+              "n128",
+              "n129",
+              "n130",
+              "n132"
+            ],
+            "text": "HKC denied importing, selling, or infringing, stating its commercial activities occur outside the United States and that it sells finished products only to VIZIO and Westinghouse, who are responsible for U.S. sales. HKC contended the asserted claims are invalid under \u00a7\u00a7 102 or 103, and specifically alleged the 334 patent is unenforceable because inventor Masao Murade committed inequitable conduct by withholding his own prior patents disclosing the same 'dummy pixel' subject matter claimed in claim 14 during prosecution."
+          }
+        ],
+        "who": "HKC Corporation Ltd., Chongqing HKC Optoelectronics, and HKC Overseas Ltd."
+      },
+      {
+        "doc_id": "885396",
+        "group": "A5",
+        "paragraphs": [
+          {
+            "cites": [
+              "n149",
+              "n150",
+              "n151",
+              "n152",
+              "n153",
+              "n154",
+              "n168"
+            ],
+            "text": "VIZIO denied infringing the asserted patents and denied that complainants established a domestic industry through Innolux. VIZIO asserted invalidity under \u00a7\u00a7 101, 102, 103, 112, 116, and/or 256, and separately alleged the 334 patent is unenforceable for inequitable conduct based on the inventor's alleged withholding of his own prior patents disclosing 'dummy pixel' subject matter, while admitting it imported accused VIZIO models containing HKC panels."
+          }
+        ],
+        "who": "VIZIO Holding Corp."
+      }
+    ],
+    "decisions": [],
+    "headline": "BH Innovations LLC and related patent owners accused TCL, LG Electronics, Hisense, HKC, and VIZIO of importing and selling televisions and monitors using infringing liquid crystal display (LCD) panels, but the Commission terminated the investigation after complainants withdrew the complaint.",
+    "rulings": [],
+    "standing": [
+      {
+        "cites": [
+          "t2",
+          "t3"
+        ],
+        "text": "The investigation was terminated in its entirety as to all respondents. The Administrative Law Judge granted complainants' second amended unopposed motion to terminate the investigation based on withdrawal of the complaint, and denied other pending motions in the same order. The Commission subsequently determined not to review that initial determination, letting it stand and formally terminating the investigation. No infringement, validity, domestic industry, or remedy determination was reached, and no exclusion order or cease and desist order is in force."
+      }
+    ]
+  },
+  "title": "Liquid Crystal Devices, Components Thereof, and Products Containing Same",
+  "total_cost_usd": 0.335887,
+  "warnings": [],
+  "writer_cut_off": false,
+  "writer_model": "claude-sonnet-5"
+}
