@@ -1,6 +1,30 @@
 [
   {
     "attachments": [],
+    "document_date": "2026-09-25",
+    "document_type": "Motion Response/Reply",
+    "filed_by": "Cortney C. Hoecherl",
+    "firm_organization": "USITC",
+    "id": "895833",
+    "official_received_date": "2026-09-25T15:05:00",
+    "on_behalf_of": "Office of Unfair Import Investigations",
+    "security_level": "Confidential",
+    "title": "Commission Investigative Staff's Omnibus Response to the Private Parties' Motions in Limine"
+  },
+  {
+    "attachments": [],
+    "document_date": "2026-09-24",
+    "document_type": "Motion Response/Reply",
+    "filed_by": "Adam D. Swain",
+    "firm_organization": "Alston & Bird LLP",
+    "id": "895689",
+    "official_received_date": "2026-09-24T13:52:00",
+    "on_behalf_of": "Mohawk Industries, Inc., Dal-Tile LLC, Surface Warehouse, L.P. d/b/a US Surfaces and d/b/a Vadara Quartz Surfaces, M S International Inc. d/b/a MSI, Arizona Tile, LLC, Caesarstone Ltd., Caesarstone USA, Inc., OHM International Inc., Architectural Surfaces Group LLC, LX Hausys, Ltd., and LX Hausys America, Inc.",
+    "security_level": "Confidential",
+    "title": "Respondents' Opposition to Complainant's Motion in Limine No. 1 to Exclude All Testimony from Dr. Jeffrey Gotro"
+  },
+  {
+    "attachments": [],
     "document_date": "2026-09-22",
     "document_type": "Brief Filed With ALJ",
     "filed_by": "Cortney C. Hoecherl",
@@ -1272,7 +1296,12 @@
     "title": "Commission Investigative Staff's Response to Joint Motion to Terminate the Investigation as to the Cosentino Respondent"
   },
   {
-    "attachments": [],
+    "attachments": [
+      {
+        "href": "../../data/documents/337-1482/887846_2579705_2579705.pdf",
+        "label": "2579705.pdf"
+      }
+    ],
     "document_date": "2026-07-13",
     "document_type": "Notice of Appearance",
     "filed_by": "Joseph J. Raffetto",
@@ -1704,7 +1733,12 @@
     "title": "Agreement to Be Bound by the Protective Order of Jillian Doctor, Leyhbert Sharp, and Dominic Adams"
   },
   {
-    "attachments": [],
+    "attachments": [
+      {
+        "href": "../../data/documents/337-1482/884502_2560074_2560074.pdf",
+        "label": "2560074.pdf"
+      }
+    ],
     "document_date": "2026-06-08",
     "document_type": "Notice of Appearance",
     "filed_by": "Joseph C. Masullo",
@@ -1932,7 +1966,12 @@
     "title": "Commission Investigative Staff\u2019s Response to Respondents\u2019 Motion to Compel Inspection of Cambria\u2019s Le Sueur Domestic Industry Facility"
   },
   {
-    "attachments": [],
+    "attachments": [
+      {
+        "href": "../../data/documents/337-1482/882474_2549681_2549681.pdf",
+        "label": "2549681.pdf"
+      }
+    ],
     "document_date": "2026-05-18",
     "document_type": "Notice of Appearance",
     "filed_by": "S. Alex Lasher",
@@ -2016,7 +2055,12 @@
     "title": "Agreement to Be Bound by the Protective Order of K. Kevin Chu, Xi (\u201cTracy\u201d) Gao, Marc Kaplan, S. Alex Lasher, Brice Lynch, August Melcher, Luiz Miranda, Jared Newton, Ashle Page, and Vanessa Rodriguez"
   },
   {
-    "attachments": [],
+    "attachments": [
+      {
+        "href": "../../data/documents/337-1482/882098_2547770_2547770.pdf",
+        "label": "2547770.pdf"
+      }
+    ],
     "document_date": "2026-05-13",
     "document_type": "Notice of Appearance",
     "filed_by": "Alex Lasher",
@@ -2220,7 +2264,12 @@
     "title": "Case Management Conference (Pages 1-48)"
   },
   {
-    "attachments": [],
+    "attachments": [
+      {
+        "href": "../../data/documents/337-1482/880972_2540970_2540970.pdf",
+        "label": "2540970.pdf"
+      }
+    ],
     "document_date": "2026-05-01",
     "document_type": "Notice of Appearance",
     "filed_by": "Cyrus T. Frelinghuysen",
@@ -2724,7 +2773,12 @@
     "title": "Agreement to Be Bound by the Protective Order of Wyatt L. Bazrod"
   },
   {
-    "attachments": [],
+    "attachments": [
+      {
+        "href": "../../data/documents/337-1482/876514_2522471_2522471.pdf",
+        "label": "2522471.pdf"
+      }
+    ],
     "document_date": "2026-03-25",
     "document_type": "Notice of Appearance",
     "filed_by": "Jeffrey C. Totten",
@@ -2784,7 +2838,12 @@
     "title": "Agreement to Be Bound by the Protective Order of Jeffrey C. Totten, Jennifer H. Roscetti, Smith R. Brittingham IV, Deena Kablaoui Lanier, and Candace C. Walther"
   },
   {
-    "attachments": [],
+    "attachments": [
+      {
+        "href": "../../data/documents/337-1482/876011_2520639_2520639.pdf",
+        "label": "2520639.pdf"
+      }
+    ],
     "document_date": "2026-03-20",
     "document_type": "Notice of Appearance",
     "filed_by": "Jeffrey C. Totten",
@@ -2820,7 +2879,12 @@
     "title": "Complainant Cambria Company LLC's Response in Non-Opposition to C&C North America, Inc.\u2019s Motion to Intervene as a Respondent"
   },
   {
-    "attachments": [],
+    "attachments": [
+      {
+        "href": "../../data/documents/337-1482/875786_2519843_2519843.pdf",
+        "label": "2519843.pdf"
+      }
+    ],
     "document_date": "2026-03-18",
     "document_type": "Notice of Appearance",
     "filed_by": "Jeffrey C. Totten",
@@ -3444,7 +3508,12 @@
     "title": "Agreement to Be Bound by the Protective Order of Jeffrey S. Ginsberg, George S. Soussou, Basil William,  Barbara A. Murphy, David F. Nickel, Susan Koegel, and Matthew N. Duescher"
   },
   {
-    "attachments": [],
+    "attachments": [
+      {
+        "href": "../../data/documents/337-1482/870834_2488847_2488847.pdf",
+        "label": "2488847.pdf"
+      }
+    ],
     "document_date": "2026-01-30",
     "document_type": "Notice of Appearance",
     "filed_by": "Matthew N. Duescher",
@@ -3480,7 +3549,12 @@
     "title": "Agreement to Be Bound by the Protective Order of Sudip K. Kundu"
   },
   {
-    "attachments": [],
+    "attachments": [
+      {
+        "href": "../../data/documents/337-1482/870680_2487751_2487751.pdf",
+        "label": "2487751.pdf"
+      }
+    ],
     "document_date": "2026-01-29",
     "document_type": "Notice of Appearance",
     "filed_by": "Sudip K. Kundu",
@@ -3516,7 +3590,12 @@
     "title": "Agreement to Be Bound by the Protective Order of Thomas D. Pease, Julie P. Bookbinder, Cyrus T. Frelinghuysen, Aimee Housinger, Giancarlo Scaccia, Jeffrey R. Colin, Richard A. Edlin, Kassidy Schmitz, Omar A. Nesheiwat, Jong-In Son, and Chang Joo Kim"
   },
   {
-    "attachments": [],
+    "attachments": [
+      {
+        "href": "../../data/documents/337-1482/870639_2487620_2487620.pdf",
+        "label": "2487620.pdf"
+      }
+    ],
     "document_date": "2026-01-29",
     "document_type": "Notice of Appearance",
     "filed_by": "Thomas D. Pease",
@@ -3540,7 +3619,12 @@
     "title": "Institution of Investigation Returned from LX Hausys, Ltd"
   },
   {
-    "attachments": [],
+    "attachments": [
+      {
+        "href": "../../data/documents/337-1482/870618_2487575_2487575.pdf",
+        "label": "2487575.pdf"
+      }
+    ],
     "document_date": "2026-01-29",
     "document_type": "Notice of Appearance",
     "filed_by": "Adam D. Swain",
@@ -3552,7 +3636,12 @@
     "title": "Notice of Appearance of Alston & Bird LLP on Behalf of Dal-Tile, LLC; Designation of Adam D. Swain as Lead Counsel"
   },
   {
-    "attachments": [],
+    "attachments": [
+      {
+        "href": "../../data/documents/337-1482/870518_2486953_2486953.pdf",
+        "label": "2486953.pdf"
+      }
+    ],
     "document_date": "2026-01-28",
     "document_type": "Notice of Appearance",
     "filed_by": "Joseph J. Raffetto",
@@ -3564,7 +3653,12 @@
     "title": "Notice of Appearance of Hogan Lovells US LLP on Behalf of Surface Warehouse, L.P.; Designation of Joseph J. Raffetto as Lead Counsel"
   },
   {
-    "attachments": [],
+    "attachments": [
+      {
+        "href": "../../data/documents/337-1482/870514_2486945_2486945.pdf",
+        "label": "2486945.pdf"
+      }
+    ],
     "document_date": "2026-01-28",
     "document_type": "Notice of Appearance",
     "filed_by": "Joseph J. Raffetto",
@@ -3576,7 +3670,12 @@
     "title": "Notice of Appearance of Hogan Lovells US LLP on Behalf of M S International Inc d/b/a MSI; Designation of Joseph J. Raffetto as Lead Counsel"
   },
   {
-    "attachments": [],
+    "attachments": [
+      {
+        "href": "../../data/documents/337-1482/870477_2486888_2486888.pdf",
+        "label": "2486888.pdf"
+      }
+    ],
     "document_date": "2026-01-28",
     "document_type": "Notice of Appearance",
     "filed_by": "Scott A. Hughes",
@@ -3588,7 +3687,12 @@
     "title": "Notice of Appearance of Hogan Lovells US LLP on Behalf of Caesarstone Ltd. and Caesarstone USA, Inc.; Designation of Scott A. Hughes as Lead Counsel"
   },
   {
-    "attachments": [],
+    "attachments": [
+      {
+        "href": "../../data/documents/337-1482/870461_2486783_2486783.pdf",
+        "label": "2486783.pdf"
+      }
+    ],
     "document_date": "2026-01-28",
     "document_type": "Notice of Appearance",
     "filed_by": "Scott A. Hughes",
@@ -3600,7 +3704,12 @@
     "title": "Notice of Appearance of Hogan Lovells US LLP on Behalf of Arizona Tile, LLC; Designation of Scott A. Hughes as Lead Counsel"
   },
   {
-    "attachments": [],
+    "attachments": [
+      {
+        "href": "../../data/documents/337-1482/870321_2484361_2484361.pdf",
+        "label": "2484361.pdf"
+      }
+    ],
     "document_date": "2026-01-27",
     "document_type": "Notice of Appearance",
     "filed_by": "Joseph C. Masullo",
@@ -3636,7 +3745,12 @@
     "title": "Agreement to Be Bound by the Protective Order of Adam D. Swain, John D. Haynes, Shri Abhyankar, James H. Atkison, Ashwin Thiruppathi, Jennifer D. Cieluch, and Elliott C. Riches"
   },
   {
-    "attachments": [],
+    "attachments": [
+      {
+        "href": "../../data/documents/337-1482/870269_2484244_2484244.pdf",
+        "label": "2484244.pdf"
+      }
+    ],
     "document_date": "2026-01-27",
     "document_type": "Notice of Appearance",
     "filed_by": "Adam D. Swain",

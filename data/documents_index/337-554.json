@@ -1812,7 +1812,12 @@
     "title": "PO Subscription for Arthur Wineburg"
   },
   {
-    "attachments": [],
+    "attachments": [
+      {
+        "href": "../../data/documents/337-554/243383_271305_271305.pdf",
+        "label": "271305.pdf"
+      }
+    ],
     "document_date": "2005-12-02",
     "document_type": "Notice of Appearance",
     "filed_by": "Gary M. Hoffman",
@@ -1860,7 +1865,12 @@
     "title": "Original Verification of Supplemental Letter"
   },
   {
-    "attachments": [],
+    "attachments": [
+      {
+        "href": "../../data/documents/337-554/243162_270918_270918.pdf",
+        "label": "270918.pdf"
+      }
+    ],
     "document_date": "2005-11-29",
     "document_type": "Notice of Appearance",
     "filed_by": "Arthur Wineburg",
@@ -1944,7 +1954,12 @@
     "title": "Supplemental Letter to Complaint"
   },
   {
-    "attachments": [],
+    "attachments": [
+      {
+        "href": "../../data/documents/337-554/242131_269956_269956.pdf",
+        "label": "269956.pdf"
+      }
+    ],
     "document_date": "2005-11-11",
     "document_type": "Notice of Appearance",
     "filed_by": "Jerold I. Schneider",

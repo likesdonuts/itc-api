@@ -2352,7 +2352,12 @@
     "title": null
   },
   {
-    "attachments": [],
+    "attachments": [
+      {
+        "href": "../../data/documents/337-561/247279_275577_275577.pdf",
+        "label": "275577.pdf"
+      }
+    ],
     "document_date": "2006-02-08",
     "document_type": "Notice of Appearance",
     "filed_by": "Thomas Winland",

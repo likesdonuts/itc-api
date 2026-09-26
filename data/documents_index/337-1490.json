@@ -1,6 +1,42 @@
 [
   {
     "attachments": [],
+    "document_date": "2026-09-24",
+    "document_type": "Motion",
+    "filed_by": "John C. Evans",
+    "firm_organization": "Jones Day",
+    "id": "895747",
+    "official_received_date": "2026-09-25T08:45:00",
+    "on_behalf_of": "Polaris Inc., Polaris Industries Inc., and Polaris Sales Inc.",
+    "security_level": "Confidential",
+    "title": "Complainants' Motion to Strike Respondents' Final Invalidity Contentions Using Two Different Alleged Prior Art Yamaha Rhino Vehicles as \"a Single Primary Reference\""
+  },
+  {
+    "attachments": [],
+    "document_date": "2026-09-24",
+    "document_type": "Motion",
+    "filed_by": "John C. Evans",
+    "firm_organization": "Jones Day",
+    "id": "895725",
+    "official_received_date": "2026-09-24T16:49:00",
+    "on_behalf_of": "Polaris Inc., Polaris Industries Inc., and Polaris Sales Inc.",
+    "security_level": "Public",
+    "title": "Complainants\u2019 Reply in Support of Opposed Motion for Leave to File a Supplemental Claim Construction Brief regarding CFMOTO\u2019s August 2026 Ex Parte Reexamination Requests Concerning the \u2019501 and \u2019337 Patents"
+  },
+  {
+    "attachments": [],
+    "document_date": "2026-09-23",
+    "document_type": "Response/Submission to ALJ Order",
+    "filed_by": "Christian A. Roberts",
+    "firm_organization": "Jones Day",
+    "id": "895589",
+    "official_received_date": "2026-09-23T16:11:00",
+    "on_behalf_of": "Polaris Inc., Polaris Industries Inc., and Polaris Sales Inc.",
+    "security_level": "Public",
+    "title": "Complainants' Letter to ALJ Bhattacharyya Pursuant to Order No. 16"
+  },
+  {
+    "attachments": [],
     "document_date": "2026-09-23",
     "document_type": "Order",
     "filed_by": "Monica Bhattacharyya",
@@ -660,7 +696,12 @@
     "title": "Stipulated Motion for Extension of Time for Non-Party Speedwerx, Inc. to File Motion to Limit or Quash Subpoena"
   },
   {
-    "attachments": [],
+    "attachments": [
+      {
+        "href": "../../data/documents/337-1490/887245_2577011_2577011.pdf",
+        "label": "2577011.pdf"
+      }
+    ],
     "document_date": "2026-07-07",
     "document_type": "Notice of Appearance",
     "filed_by": "Ryan A. Olson",
@@ -996,7 +1037,12 @@
     "title": "Scheduling Preliminary Conference"
   },
   {
-    "attachments": [],
+    "attachments": [
+      {
+        "href": "../../data/documents/337-1490/879958_2537273_2537273.pdf",
+        "label": "2537273.pdf"
+      }
+    ],
     "document_date": "2026-04-22",
     "document_type": "Notice of Appearance",
     "filed_by": "Diane L. Peterson",
@@ -1080,7 +1126,12 @@
     "title": "Agreement to Be Bound by the Protective Order of Boris Parker"
   },
   {
-    "attachments": [],
+    "attachments": [
+      {
+        "href": "../../data/documents/337-1490/877318_2525083_2525083.pdf",
+        "label": "2525083.pdf"
+      }
+    ],
     "document_date": "2026-03-31",
     "document_type": "Notice of Appearance",
     "filed_by": "Boris Parker",
@@ -1188,7 +1239,12 @@
     "title": "Protective Order"
   },
   {
-    "attachments": [],
+    "attachments": [
+      {
+        "href": "../../data/documents/337-1490/874864_2515107_2515107.pdf",
+        "label": "2515107.pdf"
+      }
+    ],
     "document_date": "2026-03-09",
     "document_type": "Notice of Appearance",
     "filed_by": "John C. Evans",
@@ -1200,7 +1256,12 @@
     "title": "Notice of Appearance of Jones Day on Behalf of Polaris Inc., Polaris Industries Inc., and Polaris Sales Inc.; Designation of John C. Evans as Lead Counsel"
   },
   {
-    "attachments": [],
+    "attachments": [
+      {
+        "href": "../../data/documents/337-1490/874850_2515051_2515051.pdf",
+        "label": "2515051.pdf"
+      }
+    ],
     "document_date": "2026-03-09",
     "document_type": "Notice of Appearance",
     "filed_by": "Joseph A. Herriges",

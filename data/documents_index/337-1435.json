@@ -960,7 +960,12 @@
     "title": "Complainants' Unopposed Motion for an Extension of Time to Respond to the Commission Investigative Staff's First Set of Interrogatories"
   },
   {
-    "attachments": [],
+    "attachments": [
+      {
+        "href": "../../data/documents/337-1435/846122_2343513_2343513.pdf",
+        "label": "2343513.pdf"
+      }
+    ],
     "document_date": "2025-03-18",
     "document_type": "Notice of Appearance",
     "filed_by": "David Lloyd",
@@ -1152,7 +1157,12 @@
     "title": "Protective Order"
   },
   {
-    "attachments": [],
+    "attachments": [
+      {
+        "href": "../../data/documents/337-1435/842198_2309965_2309965.pdf",
+        "label": "2309965.pdf"
+      }
+    ],
     "document_date": "2025-01-30",
     "document_type": "Notice of Appearance",
     "filed_by": "Adam D. Swain",

@@ -1,6 +1,30 @@
 [
   {
     "attachments": [],
+    "document_date": "2026-09-25",
+    "document_type": "Returned Mail",
+    "filed_by": "Lisa R. Barton",
+    "firm_organization": "USITC",
+    "id": "895870",
+    "official_received_date": "2026-09-25T16:21:00",
+    "on_behalf_of": "Office of the Secretary",
+    "security_level": "Public",
+    "title": "Notice of a Commission Determination Not to Review an Initial Determination Finding Respondents Skeema and Dental68 in Default Returned from iDentalShop"
+  },
+  {
+    "attachments": [],
+    "document_date": "2026-09-25",
+    "document_type": "Returned Mail",
+    "filed_by": "Lisa R. Barton",
+    "firm_organization": "USITC",
+    "id": "895869",
+    "official_received_date": "2026-09-25T16:19:00",
+    "on_behalf_of": "Office of the Secretary",
+    "security_level": "Public",
+    "title": "Notice of a Commission Determination Terminating the Investigation as to Certain Respondents Based on Withdrawal of the Complaint Returned from iDentalShop"
+  },
+  {
+    "attachments": [],
     "document_date": "2026-09-03",
     "document_type": "Returned Mail",
     "filed_by": "Lisa R. Barton",
@@ -2796,7 +2820,12 @@
     "title": "Joint Submission in Response to Order No. 3"
   },
   {
-    "attachments": [],
+    "attachments": [
+      {
+        "href": "../../data/documents/337-1479/870667_2487725_2487725.pdf",
+        "label": "2487725.pdf"
+      }
+    ],
     "document_date": "2026-01-29",
     "document_type": "Notice of Appearance",
     "filed_by": "Ye Edward Huang",
@@ -2856,7 +2885,12 @@
     "title": "Protective Order"
   },
   {
-    "attachments": [],
+    "attachments": [
+      {
+        "href": "../../data/documents/337-1479/869276_2479107_2479107.pdf",
+        "label": "2479107.pdf"
+      }
+    ],
     "document_date": "2026-01-16",
     "document_type": "Notice of Appearance",
     "filed_by": "Steven Susser",

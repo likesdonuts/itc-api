@@ -1452,7 +1452,12 @@
     "title": "Agreement to Be Bound by the Protective Order of Patrick J. McCarthy, Christie Larochelle, Jeremy Knight, Denise Go, Jarrad Gunther, Timothy Shannon, Daniel Mitchell, Seth Coburn, Aleksander Goranin, Alice Snedeker, and Brianna Vinci"
   },
   {
-    "attachments": [],
+    "attachments": [
+      {
+        "href": "../../data/documents/337-1371/802810_2035397_2035397.pdf",
+        "label": "2035397.pdf"
+      }
+    ],
     "document_date": "2023-08-21",
     "document_type": "Notice of Appearance",
     "filed_by": "Adam D. Swain",
@@ -1488,7 +1493,12 @@
     "title": "[Corrected] Notice of Ground Rules"
   },
   {
-    "attachments": [],
+    "attachments": [
+      {
+        "href": "../../data/documents/337-1371/802683_2034998_2034998.pdf",
+        "label": "2034998.pdf"
+      }
+    ],
     "document_date": "2023-08-18",
     "document_type": "Notice of Appearance",
     "filed_by": "Patrick J. McCarthy",

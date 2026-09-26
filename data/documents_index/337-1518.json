@@ -1,5 +1,166 @@
 [
   {
+    "attachments": [],
+    "document_date": "2026-09-24",
+    "document_type": "Answer to Complaint",
+    "filed_by": "Jason Xu",
+    "firm_organization": "Rimon, P.C.",
+    "id": "895750",
+    "official_received_date": "2026-09-25T08:45:00",
+    "on_behalf_of": "Chervon (China) Trading Co., Ltd., Nanjing Chervon Industry Co., Ltd., and Chervon North America, Inc.",
+    "security_level": "Public",
+    "title": "Exhibit A to Chervon\u2019s Response to the Complaint and Notice of Investigation"
+  },
+  {
+    "attachments": [],
+    "document_date": "2026-09-24",
+    "document_type": "Answer to Complaint",
+    "filed_by": "Paul F. Brinkman",
+    "firm_organization": "Kirkland & Ellis LLP",
+    "id": "895730",
+    "official_received_date": "2026-09-24T16:59:00",
+    "on_behalf_of": "EVE Energy Co., Ltd., EVE Energy North America Corporation, and EVE Energy US Holding LLC",
+    "security_level": "Public",
+    "title": "EVE Energy Respondents' Response to the Complaint and Notice of Investigation"
+  },
+  {
+    "attachments": [],
+    "document_date": "2026-09-24",
+    "document_type": "Answer to Complaint",
+    "filed_by": "Amol Parikh",
+    "firm_organization": "McDermott Will & Schulte LLP",
+    "id": "895654",
+    "official_received_date": "2026-09-24T09:53:00",
+    "on_behalf_of": "Koki Holdings Co., Ltd.",
+    "security_level": "Public",
+    "title": "Respondent Koki Holdings Co., Ltd.'s Response to the Complaint and the Notice of Investigation"
+  },
+  {
+    "attachments": [],
+    "document_date": "2026-09-24",
+    "document_type": "Answer to Complaint",
+    "filed_by": "Amol Parikh",
+    "firm_organization": "McDermott Will & Schulte LLP",
+    "id": "895653",
+    "official_received_date": "2026-09-24T09:49:00",
+    "on_behalf_of": "Koki Holdings America Ltd.",
+    "security_level": "Public",
+    "title": "Respondent Koki Holdings America Ltd.'s Response to the Complaint and the Notice of Investigation"
+  },
+  {
+    "attachments": [
+      {
+        "href": "../../data/documents/337-1518/895643_2624919_2624919.pdf",
+        "label": "2624919.pdf"
+      }
+    ],
+    "document_date": "2026-09-23",
+    "document_type": "Notice of Appearance",
+    "filed_by": "Christopher J. Gass",
+    "firm_organization": "Leydig, Voit & Mayer, Ltd.",
+    "id": "895643",
+    "official_received_date": "2026-09-24T08:45:00",
+    "on_behalf_of": "EVE Energy Co., Ltd., EVE Energy North America Corporation, EVE Energy US Holding LLC, Robert Bosch GmbH, and Robert Bosch Tool Corporation",
+    "security_level": "Public",
+    "title": "Supplemental Notice of Appearance; Additional Attorneys from Leydig, Voit & Mayer, Ltd. on Behalf of EVE Energy Co., Ltd., EVE Energy North America Corporation, EVE Energy US Holding LLC, Robert Bosch GmbH, and Robert Bosch Tool Corporation"
+  },
+  {
+    "attachments": [],
+    "document_date": "2026-09-23",
+    "document_type": "PO Subscription",
+    "filed_by": "Christopher J. Gass",
+    "firm_organization": "Leydig, Voit & Mayer, Ltd.",
+    "id": "895642",
+    "official_received_date": "2026-09-24T08:45:00",
+    "on_behalf_of": "EVE Energy Co., Ltd., EVE Energy North America Corporation, EVE Energy US Holding LLC, Robert Bosch GmbH, and Robert Bosch Tool Corporation",
+    "security_level": "Public",
+    "title": "Agreement to Be Bound by the Protective Order of David M. Airan, Pei R. Chen, Christopher J. Gass, James W. Sanner, Michael J. Schubert, Wesley O. Mueller, and Paul J. Filbin"
+  },
+  {
+    "attachments": [],
+    "document_date": "2026-09-23",
+    "document_type": "Answer to Complaint",
+    "filed_by": "Paul F. Brinkman",
+    "firm_organization": "Kirkland & Ellis LLP",
+    "id": "895624",
+    "official_received_date": "2026-09-23T17:12:00",
+    "on_behalf_of": "EVE Energy Co., Ltd., EVE Energy North America Corporation, and EVE Energy US Holding LLC",
+    "security_level": "Confidential",
+    "title": "EVE Energy Respondents' Response to the Complaint and Notice of Investigation"
+  },
+  {
+    "attachments": [],
+    "document_date": "2026-09-23",
+    "document_type": "Answer to Complaint",
+    "filed_by": "Jordan L. Coyle",
+    "firm_organization": "Orrick, Herrington & Sutcliffe LLP",
+    "id": "895616",
+    "official_received_date": "2026-09-23T16:57:00",
+    "on_behalf_of": "Robert Bosch GmbH and Robert Bosch Tool Corporation",
+    "security_level": "Confidential",
+    "title": "Confidential Appendix A to Verified Response of Robert Bosch GmbH and Robert Bosch Tool Corporation to the Complaint of LG Energy Solution Ltd. and LG Energy Solution Arizona, Inc. under Section 337 of the Tariff Act of 1930"
+  },
+  {
+    "attachments": [],
+    "document_date": "2026-09-23",
+    "document_type": "Answer to Complaint",
+    "filed_by": "Jordan L. Coyle",
+    "firm_organization": "Orrick, Herrington & Sutcliffe LLP",
+    "id": "895613",
+    "official_received_date": "2026-09-23T16:49:00",
+    "on_behalf_of": "Robert Bosch GmbH and Robert Bosch Tool Corporation",
+    "security_level": "Public",
+    "title": "Verified Response of Robert Bosch GmbH and Robert Bosch Tool Corporation to the Complaint of LG Energy Solution Ltd. and LG Energy Solution Arizona, Inc. under Section 337 of the Tariff Act of 1930"
+  },
+  {
+    "attachments": [],
+    "document_date": "2026-09-23",
+    "document_type": "Answer to Complaint",
+    "filed_by": "Jason Xu",
+    "firm_organization": "Rimon, P.C.",
+    "id": "895605",
+    "official_received_date": "2026-09-23T16:38:00",
+    "on_behalf_of": "Chervon (China) Trading Co., Ltd., Nanjing Chervon Industry Co., Ltd., and Chervon North America, Inc.",
+    "security_level": "Confidential",
+    "title": "Exhibit A to Chervon\u2019s Response to the Complaint and Notice of Investigation"
+  },
+  {
+    "attachments": [],
+    "document_date": "2026-09-23",
+    "document_type": "Answer to Complaint",
+    "filed_by": "Amol Parikh",
+    "firm_organization": "McDermott Will & Schulte LLP",
+    "id": "895602",
+    "official_received_date": "2026-09-23T16:35:00",
+    "on_behalf_of": "Koki Holding Co., Ltd.",
+    "security_level": "Confidential",
+    "title": "Respondent Koki Holding Co., Ltd.'s Response to the Complaint and the Notice of Investigation"
+  },
+  {
+    "attachments": [],
+    "document_date": "2026-09-23",
+    "document_type": "Answer to Complaint",
+    "filed_by": "Amol Parikh",
+    "firm_organization": "McDermott Will & Schulte LLP",
+    "id": "895598",
+    "official_received_date": "2026-09-23T16:30:00",
+    "on_behalf_of": "Koki Holdings America Ltd.",
+    "security_level": "Confidential",
+    "title": "Respondent Koki Holdings America Ltd.\u2019s Response to the Complaint and the Notice of Investigation"
+  },
+  {
+    "attachments": [],
+    "document_date": "2026-09-23",
+    "document_type": "PO Subscription",
+    "filed_by": "Hana Oh",
+    "firm_organization": "Quinn Emanuel Urquhart & Sullivan LLP",
+    "id": "895577",
+    "official_received_date": "2026-09-23T15:30:00",
+    "on_behalf_of": "LG Energy Solution Ltd. and LG Energy Solution Arizona, Inc.",
+    "security_level": "Public",
+    "title": "Agreement to Be Bound by the Protective Order of Hana Oh"
+  },
+  {
     "attachments": [
       {
         "href": "../../data/documents/337-1518/895248_2622987_2622987.pdf",

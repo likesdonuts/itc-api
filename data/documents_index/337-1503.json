@@ -1,6 +1,90 @@
 [
   {
     "attachments": [],
+    "document_date": "2026-09-25",
+    "document_type": "Order",
+    "filed_by": "Cameron R. Elliot",
+    "firm_organization": "USITC",
+    "id": "895818",
+    "official_received_date": "2026-09-25T14:24:00",
+    "on_behalf_of": "Administrative Law Judge",
+    "security_level": "Public",
+    "title": "Granting Complainant's Motion for an Order to Show Cause Why a Certain Respondent Should Not Be Found in Default"
+  },
+  {
+    "attachments": [],
+    "document_date": "2026-09-25",
+    "document_type": "Order",
+    "filed_by": "Cameron R. Elliot",
+    "firm_organization": "USITC",
+    "id": "895783",
+    "official_received_date": "2026-09-25T09:49:00",
+    "on_behalf_of": "Administrative Law Judge",
+    "security_level": "Public",
+    "title": "Order Directing a Response to Respondent Engage Sporting's Motion to Terminate Based on a Consent Order Stipulation and Proposed Consent Order"
+  },
+  {
+    "attachments": [],
+    "document_date": "2026-09-24",
+    "document_type": "ID/RD - Other Than Final on Violation",
+    "filed_by": "Cameron R. Elliot",
+    "firm_organization": "USITC",
+    "id": "895686",
+    "official_received_date": "2026-09-24T13:36:00",
+    "on_behalf_of": "Administrative Law Judge",
+    "security_level": "Public",
+    "title": "Initial Determination Granting Joint Motion to Terminate the Investigation as to Respondents Facolos Pickleball LLC and Facolos Sports Joint Stock Company Based on Consent Order Stipulation and Proposed Consent Order"
+  },
+  {
+    "attachments": [],
+    "document_date": "2026-09-24",
+    "document_type": "ID/RD - Other Than Final on Violation",
+    "filed_by": "Cameron R. Elliot",
+    "firm_organization": "USITC",
+    "id": "895685",
+    "official_received_date": "2026-09-24T13:35:00",
+    "on_behalf_of": "Administrative Law Judge",
+    "security_level": "Public",
+    "title": "Initial Determination Granting Joint Motion to Terminate the Investigation as to Respondents All Racquet Sports, LLC and All for Padel S.L. Based on Consent Order Stipulation and Proposed Consent Order"
+  },
+  {
+    "attachments": [],
+    "document_date": "2026-09-24",
+    "document_type": "ID/RD - Other Than Final on Violation",
+    "filed_by": "Cameron R. Elliot",
+    "firm_organization": "USITC",
+    "id": "895684",
+    "official_received_date": "2026-09-24T13:33:00",
+    "on_behalf_of": "Administrative Law Judge",
+    "security_level": "Public",
+    "title": "Initial Determination Granting Joint Motion to Terminate the Investigation as to Respondent Volair Based on Consent Order Stipulation and Proposed Consent Order"
+  },
+  {
+    "attachments": [],
+    "document_date": "2026-09-24",
+    "document_type": "ID/RD - Other Than Final on Violation",
+    "filed_by": "Cameron R. Elliot",
+    "firm_organization": "USITC",
+    "id": "895673",
+    "official_received_date": "2026-09-24T11:48:00",
+    "on_behalf_of": "Administrative Law Judge",
+    "security_level": "Public",
+    "title": "Initial Determination Granting Join Motion to Terminate the Investigation as to Proton Respondents Based on Consent Order Stipulation and Proposed Consent Order"
+  },
+  {
+    "attachments": [],
+    "document_date": "2026-09-24",
+    "document_type": "ID/RD - Other Than Final on Violation",
+    "filed_by": "Cameron R. Elliot",
+    "firm_organization": "USITC",
+    "id": "895672",
+    "official_received_date": "2026-09-24T11:46:00",
+    "on_behalf_of": "Administrative Law Judge",
+    "security_level": "Public",
+    "title": "Initial Determination Granting Joint Motion to Terminate the Investigation as to Paddletek Respondents Based on Consent Order Stipulation and Proposed Consent Order"
+  },
+  {
+    "attachments": [],
     "document_date": "2026-09-18",
     "document_type": "Correspondence",
     "filed_by": "Nicholas F. Lenning",
@@ -156,7 +240,12 @@
     "title": "Agreement to Be Bound by the Protective Order of David Alberti, Sal Lim, Russell Tonkovich, Hong Lin, and Jeremiah Armstrong"
   },
   {
-    "attachments": [],
+    "attachments": [
+      {
+        "href": "../../data/documents/337-1503/890177_2598197_2598197.pdf",
+        "label": "2598197.pdf"
+      }
+    ],
     "document_date": "2026-07-31",
     "document_type": "Notice of Appearance",
     "filed_by": "Paul M. Bartkowski",
@@ -168,7 +257,12 @@
     "title": "Supplemental Notice of Appearance; Additional Attorneys from Alberti Lim & Tonkovich LLP on Behalf of Sport Squad, Inc. d/b/a JOOLA"
   },
   {
-    "attachments": [],
+    "attachments": [
+      {
+        "href": "../../data/documents/337-1503/890155_2598115_2598115.pdf",
+        "label": "2598115.pdf"
+      }
+    ],
     "document_date": "2026-07-31",
     "document_type": "Notice of Appearance",
     "filed_by": "Paul M Bartkowski",
@@ -192,7 +286,12 @@
     "title": "Agreement to Be Bound by the Protective Order of Paul M. Bartkowski, Thomas R. Burns, Jr., and Emi Ito Ortiz"
   },
   {
-    "attachments": [],
+    "attachments": [
+      {
+        "href": "../../data/documents/337-1503/890113_2598036_2598036.pdf",
+        "label": "2598036.pdf"
+      }
+    ],
     "document_date": "2026-07-31",
     "document_type": "Notice of Appearance",
     "filed_by": "Paul M. Bartkowski",
@@ -290,18 +389,6 @@
   {
     "attachments": [],
     "document_date": "2026-07-07",
-    "document_type": "Answer to Complaint",
-    "filed_by": "Douglas L. Bridges",
-    "firm_organization": "Jayaram Law, Inc.",
-    "id": "887199",
-    "official_received_date": "2026-07-07T11:30:00",
-    "on_behalf_of": "Vegas Pickleball LLC dba RPM Pickleball",
-    "security_level": "Confidential",
-    "title": "Corrected Confidential Exhibit A to Respondent Vegas Pickleball LLC dba RPM Pickleball's Response to the First Amended Complaint and Notice of Investigation"
-  },
-  {
-    "attachments": [],
-    "document_date": "2026-07-07",
     "document_type": "Order",
     "filed_by": "Cameron R. Elliot",
     "firm_organization": "USITC",
@@ -310,6 +397,18 @@
     "on_behalf_of": "Administrative Law Judge",
     "security_level": "Public",
     "title": "Granting Complainant's Motion to Stay All Deadlines with Respect to Certain Respondents"
+  },
+  {
+    "attachments": [],
+    "document_date": "2026-07-07",
+    "document_type": "Answer to Complaint",
+    "filed_by": "Douglas L. Bridges",
+    "firm_organization": "Jayaram Law, Inc.",
+    "id": "887199",
+    "official_received_date": "2026-07-07T11:30:00",
+    "on_behalf_of": "Vegas Pickleball LLC dba RPM Pickleball",
+    "security_level": "Confidential",
+    "title": "Corrected Confidential Exhibit A to Respondent Vegas Pickleball LLC dba RPM Pickleball's Response to the First Amended Complaint and Notice of Investigation"
   },
   {
     "attachments": [],
@@ -672,7 +771,12 @@
     "title": "Joint Motion to Terminate Respondents Paddletek, LLC, Paddletek Pickleball, LLC, ProXR, LLC, ProXR Pickleball, LLC, Thirty-Five Capital, LLC, UPP Paddles, LLC, United Pickleball Properties, LLC, and Engage Pickleball, LLC Based on Consent Order"
   },
   {
-    "attachments": [],
+    "attachments": [
+      {
+        "href": "../../data/documents/337-1503/885913_2570891_2570891.pdf",
+        "label": "2570891.pdf"
+      }
+    ],
     "document_date": "2026-06-23",
     "document_type": "Notice of Appearance",
     "filed_by": "Alan A. Meda",
@@ -696,7 +800,12 @@
     "title": "Agreement to Be Bound by the Protective Order of Stamatios Stamoulis, Richard C. Weinblatt, and Shekhar Vyas"
   },
   {
-    "attachments": [],
+    "attachments": [
+      {
+        "href": "../../data/documents/337-1503/885758_2566446_2566446.pdf",
+        "label": "2566446.pdf"
+      }
+    ],
     "document_date": "2026-06-22",
     "document_type": "Notice of Appearance",
     "filed_by": "Richard Weinblatt",
@@ -732,7 +841,12 @@
     "title": "Agreement to Be Bound by the Protective Order of Ury Fischer, Noah Rashkind, and Dylan Smith"
   },
   {
-    "attachments": [],
+    "attachments": [
+      {
+        "href": "../../data/documents/337-1503/885308_2563850_2563850.pdf",
+        "label": "2563850.pdf"
+      }
+    ],
     "document_date": "2026-06-16",
     "document_type": "Notice of Appearance",
     "filed_by": "Ury Fischer",
@@ -780,7 +894,12 @@
     "title": "Agreement to Be Bound by the Protective Order of Douglas L. Bridges and Kenneth Anand"
   },
   {
-    "attachments": [],
+    "attachments": [
+      {
+        "href": "../../data/documents/337-1503/885208_2563257_2563257.pdf",
+        "label": "2563257.pdf"
+      }
+    ],
     "document_date": "2026-06-15",
     "document_type": "Notice of Appearance",
     "filed_by": "Douglas L. Bridges",
@@ -792,7 +911,12 @@
     "title": "Notice of Appearance of Jayaram Law, Inc. on Behalf of Vegas Pickleball LLC d/b/a RPM Pickleball; Designation of Douglas L. Bridges as Lead Counsel"
   },
   {
-    "attachments": [],
+    "attachments": [
+      {
+        "href": "../../data/documents/337-1503/885165_2562962_2562962.pdf",
+        "label": "2562962.pdf"
+      }
+    ],
     "document_date": "2026-06-15",
     "document_type": "Notice of Appearance",
     "filed_by": "Edward H. Rice",
@@ -816,7 +940,12 @@
     "title": "Agreement to Be Bound by the Protective Order of Maxim Price, David L. Hecht, and J. Tanner Murphy"
   },
   {
-    "attachments": [],
+    "attachments": [
+      {
+        "href": "../../data/documents/337-1503/885065_2562407_2562407.pdf",
+        "label": "2562407.pdf"
+      }
+    ],
     "document_date": "2026-06-12",
     "document_type": "Notice of Appearance",
     "filed_by": "David L. Hecht",
@@ -852,7 +981,12 @@
     "title": "Agreement to Be Bound by the Protective Order of P. Andrew Riley, Lei Mei, Robert A. Hall, Guang-Yu Zhu, and Jiwei Zhang"
   },
   {
-    "attachments": [],
+    "attachments": [
+      {
+        "href": "../../data/documents/337-1503/884968_2561738_2561738.pdf",
+        "label": "2561738.pdf"
+      }
+    ],
     "document_date": "2026-06-11",
     "document_type": "Notice of Appearance",
     "filed_by": "P. Andrew Riley",
@@ -876,7 +1010,12 @@
     "title": "Agreement to Be Bound by the Protective Order of Nicholas F. Lenning, Shawn P. Hickey, Rachel Berman, Jason A. Engel, Austin C. Holler, Kyle M. Kantarek, and Kahlan E. Noel"
   },
   {
-    "attachments": [],
+    "attachments": [
+      {
+        "href": "../../data/documents/337-1503/884799_2561374_2561374.pdf",
+        "label": "2561374.pdf"
+      }
+    ],
     "document_date": "2026-06-10",
     "document_type": "Notice of Appearance",
     "filed_by": "Nicholas F. Lenning",

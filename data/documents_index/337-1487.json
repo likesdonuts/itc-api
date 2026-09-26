@@ -1,6 +1,18 @@
 [
   {
     "attachments": [],
+    "document_date": "2026-09-24",
+    "document_type": "PO Subscription",
+    "filed_by": "James P. Gagen",
+    "firm_organization": "Paul Hastings LLP",
+    "id": "895723",
+    "official_received_date": "2026-09-24T16:41:00",
+    "on_behalf_of": "Everspin Technologies, Inc.",
+    "security_level": "Public",
+    "title": "Agreement to Be Bound by the Protective Order of Randi Garcia and Ryan Wong"
+  },
+  {
+    "attachments": [],
     "document_date": "2026-09-23",
     "document_type": "Motion",
     "filed_by": "James P. Gagen",
@@ -612,7 +624,12 @@
     "title": "Non-Party GlobalFoundries U.S. Inc.\u2019s Motion to Amend the Protective Order to Include a Prosecution Bar"
   },
   {
-    "attachments": [],
+    "attachments": [
+      {
+        "href": "../../data/documents/337-1487/888150_2583021_2583021.pdf",
+        "label": "2583021.pdf"
+      }
+    ],
     "document_date": "2026-07-15",
     "document_type": "Notice of Appearance",
     "filed_by": "Thomas E. Garten",
@@ -1548,7 +1565,12 @@
     "title": "Agreement to Be Bound by the Protective Order of James P. Gagen, Naveen Modi, Paul M. Anderson, Jason Heidemann, and Gabriel Steinberg"
   },
   {
-    "attachments": [],
+    "attachments": [
+      {
+        "href": "../../data/documents/337-1487/874512_2512955_2512955.pdf",
+        "label": "2512955.pdf"
+      }
+    ],
     "document_date": "2026-03-05",
     "document_type": "Notice of Appearance",
     "filed_by": "James P. Gagen",
@@ -1608,7 +1630,12 @@
     "title": null
   },
   {
-    "attachments": [],
+    "attachments": [
+      {
+        "href": "../../data/documents/337-1487/874099_2511275_2511275.pdf",
+        "label": "2511275.pdf"
+      }
+    ],
     "document_date": "2026-03-02",
     "document_type": "Notice of Appearance",
     "filed_by": "William P. Nelson",

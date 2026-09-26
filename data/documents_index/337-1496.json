@@ -1,6 +1,18 @@
 [
   {
     "attachments": [],
+    "document_date": "2026-09-24",
+    "document_type": "Order",
+    "filed_by": "Clark S. Cheney",
+    "firm_organization": "USITC",
+    "id": "895693",
+    "official_received_date": "2026-09-24T14:42:00",
+    "on_behalf_of": "Chief Administrative Law Judge",
+    "security_level": "Public",
+    "title": "Scheduling Case Management Conference and Other Case Management Matters"
+  },
+  {
+    "attachments": [],
     "document_date": "2026-09-21",
     "document_type": "PO Subscription",
     "filed_by": "Patrick J. McKeever",
@@ -468,7 +480,12 @@
     "title": "Markman Hearing (Pages 1-266)"
   },
   {
-    "attachments": [],
+    "attachments": [
+      {
+        "href": "../../data/documents/337-1496/889056_2591714_2591714.pdf",
+        "label": "2591714.pdf"
+      }
+    ],
     "document_date": "2026-07-22",
     "document_type": "Notice of Appearance",
     "filed_by": "Patrick J. McKeever",
@@ -612,7 +629,12 @@
     "title": "Agreement to Be Bound by the Protective Order of Wendy Lam, Eileen Schmidtke, and Anthony Valerio"
   },
   {
-    "attachments": [],
+    "attachments": [
+      {
+        "href": "../../data/documents/337-1496/887144_2576602_2576602.pdf",
+        "label": "2576602.pdf"
+      }
+    ],
     "document_date": "2026-07-06",
     "document_type": "Notice of Appearance",
     "filed_by": "Patrick J. McKeever",
@@ -1116,7 +1138,12 @@
     "title": "F.R. Notice of Institution of Investigation"
   },
   {
-    "attachments": [],
+    "attachments": [
+      {
+        "href": "../../data/documents/337-1496/878763_2532399_2532399.pdf",
+        "label": "2532399.pdf"
+      }
+    ],
     "document_date": "2026-04-13",
     "document_type": "Notice of Appearance",
     "filed_by": "Hari Santhanam",
@@ -1140,7 +1167,12 @@
     "title": "Agreement to Be Bound by the Protective Order of Paul M. Bartkowski and Thomas R. Burns, Jr."
   },
   {
-    "attachments": [],
+    "attachments": [
+      {
+        "href": "../../data/documents/337-1496/878736_2532277_2532277.pdf",
+        "label": "2532277.pdf"
+      }
+    ],
     "document_date": "2026-04-13",
     "document_type": "Notice of Appearance",
     "filed_by": "Paul M. Bartkowski",
@@ -1260,7 +1292,12 @@
     "title": "Agreement to Be Bound by the Protective Order of Kevin C. Wheeler, Charles H. Sanders, Michael David, Cecilia Peniza, Sean T. Gloth, Greg Polins, Brian Y. Kim, and Shuai Yuan"
   },
   {
-    "attachments": [],
+    "attachments": [
+      {
+        "href": "../../data/documents/337-1496/878386_2530272_2530272.pdf",
+        "label": "2530272.pdf"
+      }
+    ],
     "document_date": "2026-04-09",
     "document_type": "Notice of Appearance",
     "filed_by": "Michael A. David",
@@ -1320,7 +1357,12 @@
     "title": "Protective Order"
   },
   {
-    "attachments": [],
+    "attachments": [
+      {
+        "href": "../../data/documents/337-1496/878303_2529582_2529582.pdf",
+        "label": "2529582.pdf"
+      }
+    ],
     "document_date": "2026-04-08",
     "document_type": "Notice of Appearance",
     "filed_by": "Hari Santhanam",

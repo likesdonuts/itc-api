@@ -240,7 +240,12 @@
     "title": "Agreement to Be Bound by the Protective Order of Annita Zhong, Jason Sheasby, Stephen Payne, Andrew Strabone, Michael Tezyan, and Ke Yang"
   },
   {
-    "attachments": [],
+    "attachments": [
+      {
+        "href": "../../data/documents/337-1511/889427_2594777_2594777.pdf",
+        "label": "2594777.pdf"
+      }
+    ],
     "document_date": "2026-07-27",
     "document_type": "Notice of Appearance",
     "filed_by": "Daniel E. Yonan",
@@ -276,7 +281,12 @@
     "title": null
   },
   {
-    "attachments": [],
+    "attachments": [
+      {
+        "href": "../../data/documents/337-1511/889142_2592002_2592002.pdf",
+        "label": "2592002.pdf"
+      }
+    ],
     "document_date": "2026-07-23",
     "document_type": "Notice of Appearance",
     "filed_by": "Richard S. Zembek",
@@ -338,18 +348,6 @@
   {
     "attachments": [],
     "document_date": "2026-07-22",
-    "document_type": "Notice of Appearance",
-    "filed_by": "Kristopher L. Reed",
-    "firm_organization": "Holland & Knight LLP",
-    "id": "889057",
-    "official_received_date": "2026-07-23T08:45:00",
-    "on_behalf_of": "Broadcom Inc.",
-    "security_level": "Public",
-    "title": "Notice of Appearance of Holland & Knight LLP on Behalf of Broadcom Inc.; Designation of Kristopher L. Reed as Lead Counsel"
-  },
-  {
-    "attachments": [],
-    "document_date": "2026-07-22",
     "document_type": "PO Subscription",
     "filed_by": "Amanda L. Major",
     "firm_organization": "Wilmer Cutler Pickering Hale and Dorr LLP",
@@ -358,6 +356,23 @@
     "on_behalf_of": "NVIDIA Corporation",
     "security_level": "Public",
     "title": "Agreement to Be Bound by the Protective Order of Amanda L. Major"
+  },
+  {
+    "attachments": [
+      {
+        "href": "../../data/documents/337-1511/889057_2591716_2591716.pdf",
+        "label": "2591716.pdf"
+      }
+    ],
+    "document_date": "2026-07-22",
+    "document_type": "Notice of Appearance",
+    "filed_by": "Kristopher L. Reed",
+    "firm_organization": "Holland & Knight LLP",
+    "id": "889057",
+    "official_received_date": "2026-07-23T08:45:00",
+    "on_behalf_of": "Broadcom Inc.",
+    "security_level": "Public",
+    "title": "Notice of Appearance of Holland & Knight LLP on Behalf of Broadcom Inc.; Designation of Kristopher L. Reed as Lead Counsel"
   },
   {
     "attachments": [],
@@ -420,7 +435,12 @@
     "title": "Agreement to Be Bound by the Protective Order of Daniel Clark, Sydney Donovan, Zachary Enos, Harry Hanson, Jordan Hirsch, Kathryn Leicht, Valene Mezmin, Alexander Nemtzow, Danny Perry, Michael Summersgill, Grant Rowan, and Tyler Shearer"
   },
   {
-    "attachments": [],
+    "attachments": [
+      {
+        "href": "../../data/documents/337-1511/888952_2591343_2591343.pdf",
+        "label": "2591343.pdf"
+      }
+    ],
     "document_date": "2026-07-22",
     "document_type": "Notice of Appearance",
     "filed_by": "Amanda L. Major",
@@ -432,7 +452,12 @@
     "title": "Notice of Appearance of Wilmer Cutler Pickering Hale and Dorr LLP on Behalf of NVIDIA Corporation; Designation of Amanda L. Major as Lead Counsel"
   },
   {
-    "attachments": [],
+    "attachments": [
+      {
+        "href": "../../data/documents/337-1511/888847_2589885_2589885.pdf",
+        "label": "2589885.pdf"
+      }
+    ],
     "document_date": "2026-07-21",
     "document_type": "Notice of Appearance",
     "filed_by": "Daniel E. Yonan",
@@ -444,7 +469,12 @@
     "title": "Notice of Appearance of Stern, Kessler, Goldstein & Fox, P.L.L.C. and Irell & Manella LLP on Behalf of Netlist, Inc.; Designation of Daniel E. Yonan as Lead Counsel"
   },
   {
-    "attachments": [],
+    "attachments": [
+      {
+        "href": "../../data/documents/337-1511/888848_2589887_2589887.pdf",
+        "label": "2589887.pdf"
+      }
+    ],
     "document_date": "2026-07-21",
     "document_type": "Notice of Appearance",
     "filed_by": "Paul F. Brinkman",
@@ -456,7 +486,12 @@
     "title": "Notice of Appearance of Kirkland & Ellis LLP on Behalf of Samsung Electronics America, Inc., Samsung Electronics Co., Ltd., and Samsung Semiconductor, Inc.; Designation of Paul F. Brinkman as Lead Counsel"
   },
   {
-    "attachments": [],
+    "attachments": [
+      {
+        "href": "../../data/documents/337-1511/888845_2589879_2589879.pdf",
+        "label": "2589879.pdf"
+      }
+    ],
     "document_date": "2026-07-21",
     "document_type": "Notice of Appearance",
     "filed_by": "Gregory F. Corbett",

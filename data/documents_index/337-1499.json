@@ -5,6 +5,30 @@
     "document_type": "PO Subscription",
     "filed_by": "Smith R. Brittingham IV",
     "firm_organization": "Finnegan, Henderson, Farabow, Garrett & Dunner, LLP",
+    "id": "895756",
+    "official_received_date": "2026-09-25T08:45:00",
+    "on_behalf_of": "Archer Aviation Inc.",
+    "security_level": "Public",
+    "title": "Agreement to Be Bound by the Protective Order of Bethany Woodward"
+  },
+  {
+    "attachments": [],
+    "document_date": "2026-09-24",
+    "document_type": "PO Subscription",
+    "filed_by": "Smith R. Brittingham IV",
+    "firm_organization": "Finnegan, Henderson, Farabow, Garrett & Dunner, LLP",
+    "id": "895729",
+    "official_received_date": "2026-09-24T16:59:00",
+    "on_behalf_of": "Archer Aviation Inc.",
+    "security_level": "Public",
+    "title": "Agreement to Be Bound by the Protective Order of Tomas Reyes"
+  },
+  {
+    "attachments": [],
+    "document_date": "2026-09-24",
+    "document_type": "PO Subscription",
+    "filed_by": "Smith R. Brittingham IV",
+    "firm_organization": "Finnegan, Henderson, Farabow, Garrett & Dunner, LLP",
     "id": "895646",
     "official_received_date": "2026-09-24T08:45:00",
     "on_behalf_of": "Archer Aviation Inc.",
@@ -108,7 +132,12 @@
     "title": "Agreement to Be Bound by the Protective Order of Philip Astor, Kiara Miller, and Brian Krieger"
   },
   {
-    "attachments": [],
+    "attachments": [
+      {
+        "href": "../../data/documents/337-1499/894665_2619971_2619971.pdf",
+        "label": "2619971.pdf"
+      }
+    ],
     "document_date": "2026-09-14",
     "document_type": "Notice of Appearance",
     "filed_by": "Brian D. Hill",
@@ -324,7 +353,12 @@
     "title": "Agreement to Be Bound by to the Protective Order of Barbara A. Murphy, David F. Nickel, and Matthew N. Duescher"
   },
   {
-    "attachments": [],
+    "attachments": [
+      {
+        "href": "../../data/documents/337-1499/893091_2613777_2613777.pdf",
+        "label": "2613777.pdf"
+      }
+    ],
     "document_date": "2026-08-28",
     "document_type": "Notice of Appearance",
     "filed_by": "Barbara A. Murphy",
@@ -1152,7 +1186,12 @@
     "title": "Institution of Investigation; Correction"
   },
   {
-    "attachments": [],
+    "attachments": [
+      {
+        "href": "../../data/documents/337-1499/879102_2533272_2533272.pdf",
+        "label": "2533272.pdf"
+      }
+    ],
     "document_date": "2026-04-15",
     "document_type": "Notice of Appearance",
     "filed_by": "S. Alex Lasher",
@@ -1164,7 +1203,12 @@
     "title": "Notice of Appearance of Quinn Emanuel Urquhart & Sullivan, LLP on Behalf of Joby Aero, Inc. and Joby Aviation, Inc.; Designation of S. Alex Lasher as Lead Counsel"
   },
   {
-    "attachments": [],
+    "attachments": [
+      {
+        "href": "../../data/documents/337-1499/878515_2530899_2530899.pdf",
+        "label": "2530899.pdf"
+      }
+    ],
     "document_date": "2026-04-10",
     "document_type": "Notice of Appearance",
     "filed_by": "Smith R. Brittingham IV",

@@ -1164,7 +1164,12 @@
     "title": null
   },
   {
-    "attachments": [],
+    "attachments": [
+      {
+        "href": "../../data/documents/337-532/225867_248087_248087.pdf",
+        "label": "248087.pdf"
+      }
+    ],
     "document_date": "2005-03-09",
     "document_type": "Notice of Appearance",
     "filed_by": "Michael S. Elkind",
@@ -1200,7 +1205,12 @@
     "title": "Protective Order"
   },
   {
-    "attachments": [],
+    "attachments": [
+      {
+        "href": "../../data/documents/337-532/225778_247932_247932.pdf",
+        "label": "247932.pdf"
+      }
+    ],
     "document_date": "2005-03-09",
     "document_type": "Notice of Appearance",
     "filed_by": "S. Alex Lasher",

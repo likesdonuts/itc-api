@@ -1,6 +1,66 @@
 [
   {
     "attachments": [],
+    "document_date": "2026-09-24",
+    "document_type": "Returned Mail",
+    "filed_by": "Lisa R. Barton",
+    "firm_organization": "USITC",
+    "id": "895738",
+    "official_received_date": "2026-09-24T17:07:00",
+    "on_behalf_of": "Office of the Secretary",
+    "security_level": "Public",
+    "title": "Requesting Parties' Positions on Default Determination Returned from Fa Yih Enterprise Co., Ltd."
+  },
+  {
+    "attachments": [],
+    "document_date": "2026-09-24",
+    "document_type": "Returned Mail",
+    "filed_by": "Lisa R. Barton",
+    "firm_organization": "USITC",
+    "id": "895736",
+    "official_received_date": "2026-09-24T17:06:00",
+    "on_behalf_of": "Office of the Secretary",
+    "security_level": "Public",
+    "title": "Initial Determination Finding Respondent Jiangsu Srumto in Default Returned from Fa Yih Enterprise Co., Ltd."
+  },
+  {
+    "attachments": [],
+    "document_date": "2026-09-24",
+    "document_type": "Order, Commission",
+    "filed_by": "Lisa R. Barton",
+    "firm_organization": "USITC",
+    "id": "895680",
+    "official_received_date": "2026-09-24T12:38:00",
+    "on_behalf_of": "Office of the Secretary",
+    "security_level": "Public",
+    "title": "Consent Order for Global Net Automotive Co. Ltd."
+  },
+  {
+    "attachments": [],
+    "document_date": "2026-09-24",
+    "document_type": "Notice",
+    "filed_by": "Lisa R. Barton",
+    "firm_organization": "USITC",
+    "id": "895679",
+    "official_received_date": "2026-09-24T12:35:00",
+    "on_behalf_of": "Office of the Secretary",
+    "security_level": "Public",
+    "title": "Commission Determination Not to Review an Initial Determination Terminating the Investigation as to Respondent Global Net Automotive Co. Ltd. Based upon a Consent Order Stipulation; Issuance of Consent Order"
+  },
+  {
+    "attachments": [],
+    "document_date": "2026-09-23",
+    "document_type": "Motion",
+    "filed_by": "Joseph A. Herriges",
+    "firm_organization": "Fish & Richardson P.C.",
+    "id": "895638",
+    "official_received_date": "2026-09-24T08:45:00",
+    "on_behalf_of": "General Motors LLC, GM Global Technology Operations LLC, LKQ Corporation, Keystone Automotive Industries, Inc., ANTRC Industrial Corp., Pro Fortune Industrial Co., Ltd., Auto Power Co., Ltd., Depo Auto Parts Ind. Co., Ltd., Forerunner Automotive Industrial Corp., Gordon Auto Body Parts Co., Ltd., Grand HC Auto Tooling Corp., Maxzone Vehicle Lighting Corp., Tong Yang Industry Co., Ltd., Y.C.C. Parts Mfg. Co., Ltd., CCC Intelligent Solutions Inc., CCC Intelligent Solutions Holdings Inc., Quality Collision Parts, Inc., Power Auto Parts, Inc., Mitchell International, Inc., and Office of Unfair Import Investigations",
+    "security_level": "Public",
+    "title": "Joint Motion to Extend Contentions Deadlines"
+  },
+  {
+    "attachments": [],
     "document_date": "2026-09-22",
     "document_type": "PO Subscription",
     "filed_by": "Joseph A. Herriges",
@@ -708,7 +768,12 @@
     "title": "Granting Joint Unopposed Motion to Amend the Protective Order Returned from Changshou Gete Vehicle Parts Co., Ltd."
   },
   {
-    "attachments": [],
+    "attachments": [
+      {
+        "href": "../../data/documents/337-1491/892752_2612816_2612816.pdf",
+        "label": "2612816.pdf"
+      }
+    ],
     "document_date": "2026-08-26",
     "document_type": "Notice of Appearance",
     "filed_by": "Joshua A. Hartman",
@@ -1176,7 +1241,12 @@
     "title": "Respondent Mitchell International, Inc.'s Corrected Joinder in Certain Respondents' Motion for Leave to Amend Their Response to the Amended Complaint and Notice of Investigation"
   },
   {
-    "attachments": [],
+    "attachments": [
+      {
+        "href": "../../data/documents/337-1491/890292_2598683_2598683.pdf",
+        "label": "2598683.pdf"
+      }
+    ],
     "document_date": "2026-08-03",
     "document_type": "Notice of Appearance",
     "filed_by": "Joshua A. Hartman",
@@ -1296,7 +1366,12 @@
     "title": "Respondents\u2019 Unopposed Motion for Extension of Time to Respond to the Complaint and Notice of Investigation"
   },
   {
-    "attachments": [],
+    "attachments": [
+      {
+        "href": "../../data/documents/337-1491/889261_2593658_2593658.pdf",
+        "label": "2593658.pdf"
+      }
+    ],
     "document_date": "2026-07-24",
     "document_type": "Notice of Appearance",
     "filed_by": "Joshua A. Hartman",
@@ -1428,7 +1503,12 @@
     "title": "Amended Complaint Returned from Changzhou Pulis Auto Parts Co. LTD"
   },
   {
-    "attachments": [],
+    "attachments": [
+      {
+        "href": "../../data/documents/337-1491/888580_2585898_2585898.pdf",
+        "label": "2585898.pdf"
+      }
+    ],
     "document_date": "2026-07-20",
     "document_type": "Notice of Appearance",
     "filed_by": "Joshua A. Hartman",
@@ -1476,7 +1556,12 @@
     "title": "Stipulation Extending Non-Party Flex-N-Gate Corp.'s Deadline to Respond and Object to Subpoena"
   },
   {
-    "attachments": [],
+    "attachments": [
+      {
+        "href": "../../data/documents/337-1491/888166_2583150_2583150.pdf",
+        "label": "2583150.pdf"
+      }
+    ],
     "document_date": "2026-07-15",
     "document_type": "Notice of Appearance",
     "filed_by": "Bryan G. Harrison",
@@ -1524,7 +1609,12 @@
     "title": "Agreement to Be Bound by Protective Order of Mareesa A. Frederick and Gary C. Ma"
   },
   {
-    "attachments": [],
+    "attachments": [
+      {
+        "href": "../../data/documents/337-1491/888020_2581748_2581748.pdf",
+        "label": "2581748.pdf"
+      }
+    ],
     "document_date": "2026-07-14",
     "document_type": "Notice of Appearance",
     "filed_by": "Mareesa A. Frederick",
@@ -1560,7 +1650,12 @@
     "title": "June 2026 Discovery Committee Report"
   },
   {
-    "attachments": [],
+    "attachments": [
+      {
+        "href": "../../data/documents/337-1491/887571_2577791_2577791.pdf",
+        "label": "2577791.pdf"
+      }
+    ],
     "document_date": "2026-07-09",
     "document_type": "Notice of Appearance",
     "filed_by": "Joshua A. Hartman",
@@ -1848,7 +1943,12 @@
     "title": "F.R. Notice of Commission Determination Not to Review an Initial Determination Granting an Unopposed Motion to Amend the Complaint and Notice of Investigation"
   },
   {
-    "attachments": [],
+    "attachments": [
+      {
+        "href": "../../data/documents/337-1491/885982_2571031_2571031.pdf",
+        "label": "2571031.pdf"
+      }
+    ],
     "document_date": "2026-06-23",
     "document_type": "Notice of Appearance",
     "filed_by": "Joshua A. Hartman",
@@ -1980,7 +2080,12 @@
     "title": "Initial Determination Setting an Amended Target Date"
   },
   {
-    "attachments": [],
+    "attachments": [
+      {
+        "href": "../../data/documents/337-1491/885009_2562204_2562204.pdf",
+        "label": "2562204.pdf"
+      }
+    ],
     "document_date": "2026-06-12",
     "document_type": "Notice of Appearance",
     "filed_by": "Joshua A. Hartman",
@@ -2148,7 +2253,12 @@
     "title": "Respondent AP AUTO PARTS INDUSTRIAL LTD.'s Response to Verified Complaint under Section 337 of the Tariff Act of 1930, as Amended"
   },
   {
-    "attachments": [],
+    "attachments": [
+      {
+        "href": "../../data/documents/337-1491/883534_2555190_2555190.pdf",
+        "label": "2555190.pdf"
+      }
+    ],
     "document_date": "2026-05-28",
     "document_type": "Notice of Appearance",
     "filed_by": "Joseph A. Herriges",
@@ -2328,7 +2438,12 @@
     "title": "Respondent AP Auto Parts Industrial Ltd.'s Response to Order to Show Cause"
   },
   {
-    "attachments": [],
+    "attachments": [
+      {
+        "href": "../../data/documents/337-1491/882614_2550546_2550546.pdf",
+        "label": "2550546.pdf"
+      }
+    ],
     "document_date": "2026-05-19",
     "document_type": "Notice of Appearance",
     "filed_by": "Michael T. Smith",
@@ -3228,7 +3343,12 @@
     "title": "Agreement to Be Bound by the Protective Order of Brian M. Akkashian, Devin W. Bone, Alec M. Torigian, and Matthew J. Enright"
   },
   {
-    "attachments": [],
+    "attachments": [
+      {
+        "href": "../../data/documents/337-1491/878301_2529579_2529579.pdf",
+        "label": "2529579.pdf"
+      }
+    ],
     "document_date": "2026-04-08",
     "document_type": "Notice of Appearance",
     "filed_by": "Gregory A. Kubly",
@@ -3264,7 +3384,12 @@
     "title": "Respondent Best Value Auto Body Supply's Second Unopposed Motion for an Extension of Time to Respond to the Complaint and Notice of Investigation"
   },
   {
-    "attachments": [],
+    "attachments": [
+      {
+        "href": "../../data/documents/337-1491/877795_2526788_2526788.pdf",
+        "label": "2526788.pdf"
+      }
+    ],
     "document_date": "2026-04-03",
     "document_type": "Notice of Appearance",
     "filed_by": "Joshua A. Hartman",
@@ -3300,7 +3425,12 @@
     "title": "Unopposed Motion for Extension of Time for Certain Respondents to Respond to the Complaint and Notice of Investigation and for Certain Respondents to File This Motion out of Time under Ground Rule 1.9.1"
   },
   {
-    "attachments": [],
+    "attachments": [
+      {
+        "href": "../../data/documents/337-1491/877777_2526670_2526670.pdf",
+        "label": "2526670.pdf"
+      }
+    ],
     "document_date": "2026-04-02",
     "document_type": "Notice of Appearance",
     "filed_by": "Brian M. Akkashian",
@@ -3336,7 +3466,12 @@
     "title": "Agreement to Be Bound by the Protective Order of Tracy Ellen Block"
   },
   {
-    "attachments": [],
+    "attachments": [
+      {
+        "href": "../../data/documents/337-1491/877319_2525086_2525086.pdf",
+        "label": "2525086.pdf"
+      }
+    ],
     "document_date": "2026-03-31",
     "document_type": "Notice of Appearance",
     "filed_by": "Erin P. Gibson",
@@ -3372,7 +3507,12 @@
     "title": "Agreement to Be Bound by the Protective Order of Timothy Schelin"
   },
   {
-    "attachments": [],
+    "attachments": [
+      {
+        "href": "../../data/documents/337-1491/876838_2523756_2523756.pdf",
+        "label": "2523756.pdf"
+      }
+    ],
     "document_date": "2026-03-27",
     "document_type": "Notice of Appearance",
     "filed_by": "Joshua A. Hartman",
@@ -3456,7 +3596,12 @@
     "title": "Respondent Best Value Auto Body Supply\u2019s Unopposed Motion for an Extension of Time to Respond to the Complaint and Notice of Investigation"
   },
   {
-    "attachments": [],
+    "attachments": [
+      {
+        "href": "../../data/documents/337-1491/875695_2519570_2519570.pdf",
+        "label": "2519570.pdf"
+      }
+    ],
     "document_date": "2026-03-17",
     "document_type": "Notice of Appearance",
     "filed_by": "Louis S. Mastriani",
@@ -3480,7 +3625,12 @@
     "title": "Request for Confidential Materials on Behalf of Mitchell International, Inc."
   },
   {
-    "attachments": [],
+    "attachments": [
+      {
+        "href": "../../data/documents/337-1491/875634_2519127_2519127.pdf",
+        "label": "2519127.pdf"
+      }
+    ],
     "document_date": "2026-03-16",
     "document_type": "Notice of Appearance",
     "filed_by": "Erin P. Gibson",
@@ -3540,7 +3690,12 @@
     "title": "Agreement to Be Bound by the Protective Order of Joshua Hartman, Elizabeth Muirhead, Bridget Greene, Edward Choi, Barry F. Irwin, Michael Bregenzer, Joseph Saltiel, Joseph Marinelli, Jason Keener, Robyn Bowland, Nicholas Wheeler, Daniel Zhang, Alexander Bennett, Katherine Schelli, and Philothel Vasilopoulos"
   },
   {
-    "attachments": [],
+    "attachments": [
+      {
+        "href": "../../data/documents/337-1491/875396_2518459_2518459.pdf",
+        "label": "2518459.pdf"
+      }
+    ],
     "document_date": "2026-03-13",
     "document_type": "Notice of Appearance",
     "filed_by": "Joshua A. Hartman",
@@ -3576,7 +3731,12 @@
     "title": "Agreement to Be Bound by the Protective Order of Joseph A. Herriges, Michael J. McKeon, Christian A. Chu, John J. Thuermer, Joshua P. Carrigan, Leeron G. Kalay, Jacqueline T. Moran, Ethan J. Rubin, Nitika G. Fiorella, Louis E. Fogel, and Aiden C. Berdahl"
   },
   {
-    "attachments": [],
+    "attachments": [
+      {
+        "href": "../../data/documents/337-1491/875349_2517499_2517499.pdf",
+        "label": "2517499.pdf"
+      }
+    ],
     "document_date": "2026-03-12",
     "document_type": "Notice of Appearance",
     "filed_by": "Joseph A. Herriges",
@@ -3612,7 +3772,12 @@
     "title": "Notice of Ground Rules"
   },
   {
-    "attachments": [],
+    "attachments": [
+      {
+        "href": "../../data/documents/337-1491/875298_2517351_2517351.pdf",
+        "label": "2517351.pdf"
+      }
+    ],
     "document_date": "2026-03-12",
     "document_type": "Notice of Appearance",
     "filed_by": "Timothy K. Sendek",

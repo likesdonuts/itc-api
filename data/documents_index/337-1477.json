@@ -2,6 +2,54 @@
   {
     "attachments": [],
     "document_date": "2026-09-24",
+    "document_type": "PO Subscription",
+    "filed_by": "Matthew D. Aichele",
+    "firm_organization": "Russ August & Kabat",
+    "id": "895751",
+    "official_received_date": "2026-09-25T08:45:00",
+    "on_behalf_of": "UnaliWear, Inc.",
+    "security_level": "Public",
+    "title": "Agreement to Be Bound by the Protective Order of Willie Montgomery"
+  },
+  {
+    "attachments": [],
+    "document_date": "2026-09-24",
+    "document_type": "Order",
+    "filed_by": "Cameron R. Elliot",
+    "firm_organization": "USITC",
+    "id": "895722",
+    "official_received_date": "2026-09-24T16:40:00",
+    "on_behalf_of": "Administrative Law Judge",
+    "security_level": "Public",
+    "title": "Denying Complainant's Motions in Limine Nos. 3-5 as Moot"
+  },
+  {
+    "attachments": [],
+    "document_date": "2026-09-24",
+    "document_type": "ID/RD - Other Than Final on Violation",
+    "filed_by": "Cameron R. Elliot",
+    "firm_organization": "USITC",
+    "id": "895720",
+    "official_received_date": "2026-09-24T16:38:00",
+    "on_behalf_of": "Administrative Law Judge",
+    "security_level": "Public",
+    "title": "Initial Determination Granting Complainant's Motion to Terminate the Samsung, Google, and Garmin Respondents from This Investigation Based on Withdrawal of the Complaint"
+  },
+  {
+    "attachments": [],
+    "document_date": "2026-09-24",
+    "document_type": "Notice",
+    "filed_by": "Cameron R. Elliot",
+    "firm_organization": "USITC",
+    "id": "895690",
+    "official_received_date": "2026-09-24T14:21:00",
+    "on_behalf_of": "Administrative Law Judge",
+    "security_level": "Public",
+    "title": "Notice regarding Evidentiary Hearing"
+  },
+  {
+    "attachments": [],
+    "document_date": "2026-09-24",
     "document_type": "Order",
     "filed_by": "Cameron R. Elliot",
     "firm_organization": "USITC",
@@ -552,7 +600,12 @@
     "title": "Agreement to Be Bound by the Protective Order of Tuan Nguyen, Katie Cao, Hau Le, Davidson Miller, Ylonda Washington, Tran Vo, Greg Ward, Thanh Q. Tran, Phuong Nguyen, Hirut Weldselasse, Giang Dong, Lam Dang, Bao Le, and So Nguyen"
   },
   {
-    "attachments": [],
+    "attachments": [
+      {
+        "href": "../../data/documents/337-1477/892671_2612136_2612136.pdf",
+        "label": "2612136.pdf"
+      }
+    ],
     "document_date": "2026-08-25",
     "document_type": "Notice of Appearance",
     "filed_by": "Ric Macchiaroli",
@@ -3432,7 +3485,12 @@
     "title": "Agreement to Be Bound by the Protective Order of Paul M. Bartkowski, Thomas R. Burns, Jr., Emi Ito Ortiz, and Rachael Lamkin"
   },
   {
-    "attachments": [],
+    "attachments": [
+      {
+        "href": "../../data/documents/337-1477/869197_2478516_2478516.pdf",
+        "label": "2478516.pdf"
+      }
+    ],
     "document_date": "2026-01-16",
     "document_type": "Notice of Appearance",
     "filed_by": "Paul M. Bartkowski",
@@ -3468,7 +3526,12 @@
     "title": "Agreement to Be Bound by the Protective Order of Matthew D. Aichele, Reza Mirzaie, Brian D. Ledahl, Bradley Hyde, Susan Tull, Sarah Wang, Mackenzie Paladino, and Stephen O\u2019Donohue."
   },
   {
-    "attachments": [],
+    "attachments": [
+      {
+        "href": "../../data/documents/337-1477/869163_2478417_2478417.pdf",
+        "label": "2478417.pdf"
+      }
+    ],
     "document_date": "2026-01-15",
     "document_type": "Notice of Appearance",
     "filed_by": "Tuhin Ganguly",
@@ -3492,7 +3555,12 @@
     "title": "Agreement to Be Bound by the Protective Order of Tuhin Ganguly, David J. Shaw, Raymond Habbaz, Atifah Safi, and Thomas Romanchek"
   },
   {
-    "attachments": [],
+    "attachments": [
+      {
+        "href": "../../data/documents/337-1477/869155_2478394_2478394.pdf",
+        "label": "2478394.pdf"
+      }
+    ],
     "document_date": "2026-01-15",
     "document_type": "Notice of Appearance",
     "filed_by": "Matthew D. Aichele",
@@ -3504,7 +3572,12 @@
     "title": "Notice of Appearance of Russ August & Kabat on Behalf of UnaliWear, Inc.; Designation of Matthew D. Aichele as Lead Counsel"
   },
   {
-    "attachments": [],
+    "attachments": [
+      {
+        "href": "../../data/documents/337-1477/869133_2478332_2478332.pdf",
+        "label": "2478332.pdf"
+      }
+    ],
     "document_date": "2026-01-15",
     "document_type": "Notice of Appearance",
     "filed_by": "Erin P. Gibson",
@@ -3516,7 +3589,12 @@
     "title": "Notice of Appearance of DLA Piper LLP (US) on Behalf of Apple Inc.; Designation of Erin P. Gibson as Lead Counsel"
   },
   {
-    "attachments": [],
+    "attachments": [
+      {
+        "href": "../../data/documents/337-1477/869114_2478269_2478269.pdf",
+        "label": "2478269.pdf"
+      }
+    ],
     "document_date": "2026-01-15",
     "document_type": "Notice of Appearance",
     "filed_by": "Smith R. Brittingham IV",

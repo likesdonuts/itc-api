@@ -1,6 +1,54 @@
 [
   {
     "attachments": [],
+    "document_date": "2026-09-25",
+    "document_type": "Returned Mail",
+    "filed_by": "Lisa R. Barton",
+    "firm_organization": "USITC",
+    "id": "895797",
+    "official_received_date": "2026-09-25T11:26:00",
+    "on_behalf_of": "Office of the Secretary",
+    "security_level": "Public",
+    "title": "Order No. 30: Granting-in-Part and Denying-in-Part Complainant\u2019s Motion to Compel Discovery Returned from Texas Central Distribution LLC"
+  },
+  {
+    "attachments": [],
+    "document_date": "2026-09-25",
+    "document_type": "Returned Mail",
+    "filed_by": "Lisa R. Barton",
+    "firm_organization": "USITC",
+    "id": "895796",
+    "official_received_date": "2026-09-25T11:25:00",
+    "on_behalf_of": "Office of the Secretary",
+    "security_level": "Public",
+    "title": "Order No. 32: Granting Joint Unopposed Motion for Leave to Take Certain Fact Witness Depositions out of Time Returned from Texas Central Distribution LLC"
+  },
+  {
+    "attachments": [],
+    "document_date": "2026-09-24",
+    "document_type": "Order",
+    "filed_by": "Monica Bhattacharyya",
+    "firm_organization": "USITC",
+    "id": "895719",
+    "official_received_date": "2026-09-24T16:33:00",
+    "on_behalf_of": "Administrative Law Judge",
+    "security_level": "Public",
+    "title": "Granting Unopposed Motion for Extension of Time"
+  },
+  {
+    "attachments": [],
+    "document_date": "2026-09-24",
+    "document_type": "Motion",
+    "filed_by": "Matthew J. Rizzolo",
+    "firm_organization": "Morgan, Lewis & Bockius LLP",
+    "id": "895697",
+    "official_received_date": "2026-09-24T15:12:00",
+    "on_behalf_of": "Ecto World LLC d/b/a Demand Vape, Magellan Technology Inc., Safa Goods, LLC, Unishow USA, Inc., RZ Smoke Inc., Headway Funding, Inc. d/b/a Jewel Distribution, Heaven Gifts Int\u2019l Ltd., iMiracle HK Ltd., iMiracle (Shenzhen) Technology Co. Ltd., Geek Miracle (HK) Limited, Guangdong Qisitech Co., Ltd., Shenzhen, Geekvape Technology Co., Ltd., and Zhuhai Qisitech Co., Ltd",
+    "security_level": "Public",
+    "title": "Unopposed Motion for Extension of Time"
+  },
+  {
+    "attachments": [],
     "document_date": "2026-09-22",
     "document_type": "Motion",
     "filed_by": "Harold H. Davis, Jr.",
@@ -840,7 +888,12 @@
     "title": "Agreement to Be Bound by the Protective Order of Mary Allred, Sherry Brooks, Chester Wong, Kim Johnson, and Trevor Price"
   },
   {
-    "attachments": [],
+    "attachments": [
+      {
+        "href": "../../data/documents/337-1486/889490_2594965_2594965.pdf",
+        "label": "2594965.pdf"
+      }
+    ],
     "document_date": "2026-07-27",
     "document_type": "Notice of Appearance",
     "filed_by": "Joseph A. Smith",
@@ -912,7 +965,12 @@
     "title": "Agreement to Be Bound by the Protective Order of P. Andrew Riley, Edward Naidich, Lei Mei, Robert A. Hall, Jeff Pearson, and Jiwei Zhang"
   },
   {
-    "attachments": [],
+    "attachments": [
+      {
+        "href": "../../data/documents/337-1486/889010_2591473_2591473.pdf",
+        "label": "2591473.pdf"
+      }
+    ],
     "document_date": "2026-07-22",
     "document_type": "Notice of Appearance",
     "filed_by": "P. Andrew Riley",
@@ -1440,7 +1498,12 @@
     "title": "Joint Motion for Extension of Time"
   },
   {
-    "attachments": [],
+    "attachments": [
+      {
+        "href": "../../data/documents/337-1486/885753_2566437_2566437.pdf",
+        "label": "2566437.pdf"
+      }
+    ],
     "document_date": "2026-06-22",
     "document_type": "Notice of Appearance",
     "filed_by": "Ryan Roman",
@@ -1680,7 +1743,12 @@
     "title": "Granting Non-Party Helix Innovations LLC's Motion for an Extension of Time to Quash or Limit Respondents' Subpoena Duces Tecum and Ad Testificandum"
   },
   {
-    "attachments": [],
+    "attachments": [
+      {
+        "href": "../../data/documents/337-1486/884880_2561529_2561529.pdf",
+        "label": "2561529.pdf"
+      }
+    ],
     "document_date": "2026-06-11",
     "document_type": "Notice of Appearance",
     "filed_by": "Benjamin C. Elacqua",
@@ -1704,7 +1772,12 @@
     "title": "Non-Party Helix Innovations LLC\u2019s Unopposed Motion for an Extension of Time to Quash or Limit Respondents\u2019 Subpoena Duces Tecum and Ad Testificandum"
   },
   {
-    "attachments": [],
+    "attachments": [
+      {
+        "href": "../../data/documents/337-1486/884645_2560977_2560977.pdf",
+        "label": "2560977.pdf"
+      }
+    ],
     "document_date": "2026-06-09",
     "document_type": "Notice of Appearance",
     "filed_by": "Ryan Roman",
@@ -2748,7 +2821,12 @@
     "title": "Agreement to Be Bound by the Protective Order of Lauren Ierardi"
   },
   {
-    "attachments": [],
+    "attachments": [
+      {
+        "href": "../../data/documents/337-1486/877123_2524678_2524678.pdf",
+        "label": "2524678.pdf"
+      }
+    ],
     "document_date": "2026-03-30",
     "document_type": "Notice of Appearance",
     "filed_by": "Joseph A. Smith",
@@ -2772,7 +2850,12 @@
     "title": "Agreement to Be Bound by the Protective Order of Dov Seewald"
   },
   {
-    "attachments": [],
+    "attachments": [
+      {
+        "href": "../../data/documents/337-1486/877116_2524583_2524583.pdf",
+        "label": "2524583.pdf"
+      }
+    ],
     "document_date": "2026-03-30",
     "document_type": "Notice of Appearance",
     "filed_by": "Joseph A. Smith",
@@ -2892,7 +2975,12 @@
     "title": "Notice of Institution of Investigation Returned from Heaven Gifts International Ltd."
   },
   {
-    "attachments": [],
+    "attachments": [
+      {
+        "href": "../../data/documents/337-1486/875637_2519133_2519133.pdf",
+        "label": "2519133.pdf"
+      }
+    ],
     "document_date": "2026-03-16",
     "document_type": "Notice of Appearance",
     "filed_by": "Joseph A. Smith",
@@ -2928,7 +3016,12 @@
     "title": "Notice of Institution of Investigation Returned from Headway Funding Inc. d/b/a Jewel Distribution"
   },
   {
-    "attachments": [],
+    "attachments": [
+      {
+        "href": "../../data/documents/337-1486/875326_2517411_2517411.pdf",
+        "label": "2517411.pdf"
+      }
+    ],
     "document_date": "2026-03-12",
     "document_type": "Notice of Appearance",
     "filed_by": "Joseph A. Smith",
@@ -2964,7 +3057,12 @@
     "title": "Agreement to Be Bound by the Protective Order of Andrew Himebaugh"
   },
   {
-    "attachments": [],
+    "attachments": [
+      {
+        "href": "../../data/documents/337-1486/875190_2516809_2516809.pdf",
+        "label": "2516809.pdf"
+      }
+    ],
     "document_date": "2026-03-11",
     "document_type": "Notice of Appearance",
     "filed_by": "Joseph A. Smith",
@@ -3012,7 +3110,12 @@
     "title": "Agreement to Be Bound by the Protective Order of Matthew Rizzolo, Stephanie Roberts, Melissa Story, Aliza Karetnick, Cora Liang, and Juliana Kirby"
   },
   {
-    "attachments": [],
+    "attachments": [
+      {
+        "href": "../../data/documents/337-1486/874997_2516011_2516011.pdf",
+        "label": "2516011.pdf"
+      }
+    ],
     "document_date": "2026-03-10",
     "document_type": "Notice of Appearance",
     "filed_by": "Matthew J. Rizzolo",
@@ -3156,7 +3259,12 @@
     "title": "Agreement to Be Bound by the Protective Order of Steven E. Adkins and Paul C. Goulet"
   },
   {
-    "attachments": [],
+    "attachments": [
+      {
+        "href": "../../data/documents/337-1486/874489_2512822_2512822.pdf",
+        "label": "2512822.pdf"
+      }
+    ],
     "document_date": "2026-03-05",
     "document_type": "Notice of Appearance",
     "filed_by": "Paul C. Goulet",
@@ -3168,7 +3276,12 @@
     "title": "Supplemental Notice of Appearance; Additional Attorneys from FisherBroyles, LLP on Behalf of Safa Goods, LLC"
   },
   {
-    "attachments": [],
+    "attachments": [
+      {
+        "href": "../../data/documents/337-1486/874459_2512698_2512698.pdf",
+        "label": "2512698.pdf"
+      }
+    ],
     "document_date": "2026-03-05",
     "document_type": "Notice of Appearance",
     "filed_by": "Patrick J. McCarthy",
@@ -3204,7 +3317,12 @@
     "title": "Protective Order"
   },
   {
-    "attachments": [],
+    "attachments": [
+      {
+        "href": "../../data/documents/337-1486/874448_2512677_2512677.pdf",
+        "label": "2512677.pdf"
+      }
+    ],
     "document_date": "2026-03-05",
     "document_type": "Notice of Appearance",
     "filed_by": "Steven E. Adkins",
@@ -3216,7 +3334,12 @@
     "title": "Notice of Appearance of FisherBroyles, LLP, Sterne, Kessler, Goldstein & Fox P.L.L.C., and Thompson Hine LLP on Behalf of Magellan Technology Inc.; Designation of Steven E. Adkins as Lead Counsel"
   },
   {
-    "attachments": [],
+    "attachments": [
+      {
+        "href": "../../data/documents/337-1486/874446_2512670_2512670.pdf",
+        "label": "2512670.pdf"
+      }
+    ],
     "document_date": "2026-03-05",
     "document_type": "Notice of Appearance",
     "filed_by": "Harold H. Davis, Jr.",
@@ -3228,7 +3351,12 @@
     "title": "Notice of Appearance of Greenberg Traurig, LLP on Behalf of R.J. Reynolds Tobacco Company, R.J. Reynolds Vapor Company, RAI Services Company, Reynolds Marketing Services Company; Designation of Harold H. Davis, Jr. as Lead Counsel"
   },
   {
-    "attachments": [],
+    "attachments": [
+      {
+        "href": "../../data/documents/337-1486/874375_2512250_2512250.pdf",
+        "label": "2512250.pdf"
+      }
+    ],
     "document_date": "2026-03-04",
     "document_type": "Notice of Appearance",
     "filed_by": "Daniel E. Yonan",
@@ -3240,7 +3368,12 @@
     "title": "Notice of Appearance of Sterne, Kessler, Goldstein & Fox, P.L.L.C. on Behalf of ECTO World, LLC d/b/a Demand Vape; Designation of Daniel E. Yonan as Lead Counsel"
   },
   {
-    "attachments": [],
+    "attachments": [
+      {
+        "href": "../../data/documents/337-1486/874285_2511924_2511924.pdf",
+        "label": "2511924.pdf"
+      }
+    ],
     "document_date": "2026-03-04",
     "document_type": "Notice of Appearance",
     "filed_by": "Joseph A. Smith",

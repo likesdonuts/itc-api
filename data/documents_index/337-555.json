@@ -1176,7 +1176,12 @@
     "title": "Mailing"
   },
   {
-    "attachments": [],
+    "attachments": [
+      {
+        "href": "../../data/documents/337-555/243171_270920_270920.pdf",
+        "label": "270920.pdf"
+      }
+    ],
     "document_date": "2005-11-29",
     "document_type": "Notice of Appearance",
     "filed_by": "Charles F. Schill",

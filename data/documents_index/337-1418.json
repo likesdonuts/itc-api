@@ -2088,7 +2088,12 @@
     "title": "Protective Order"
   },
   {
-    "attachments": [],
+    "attachments": [
+      {
+        "href": "../../data/documents/337-1418/833092_2247067_2247067.pdf",
+        "label": "2247067.pdf"
+      }
+    ],
     "document_date": "2024-09-24",
     "document_type": "Notice of Appearance",
     "filed_by": "Richard A. Sterba",
@@ -2124,7 +2129,12 @@
     "title": "Letter Enclosing Certificates of Service on Respondents and Embassy"
   },
   {
-    "attachments": [],
+    "attachments": [
+      {
+        "href": "../../data/documents/337-1418/832704_2245233_2245233.pdf",
+        "label": "2245233.pdf"
+      }
+    ],
     "document_date": "2024-09-19",
     "document_type": "Notice of Appearance",
     "filed_by": "Paul F. Brinkman",

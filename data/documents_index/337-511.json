@@ -1056,7 +1056,12 @@
     "title": null
   },
   {
-    "attachments": [],
+    "attachments": [
+      {
+        "href": "../../data/documents/337-511/211806_225742_225742.pdf",
+        "label": "225742.pdf"
+      }
+    ],
     "document_date": "2004-08-10",
     "document_type": "Notice of Appearance",
     "filed_by": "Robert Shapiro",
@@ -1272,7 +1277,12 @@
     "title": "Verification of Response to the Complaint and Notice of Investigation, Including Affirmative Defense"
   },
   {
-    "attachments": [],
+    "attachments": [
+      {
+        "href": "../../data/documents/337-511/209138_222473_222473.pdf",
+        "label": "222473.pdf"
+      }
+    ],
     "document_date": "2004-06-24",
     "document_type": "Notice of Appearance",
     "filed_by": "William J. Heller",
@@ -1332,7 +1342,12 @@
     "title": "Motion And Memo In Support For Leave To Intervene"
   },
   {
-    "attachments": [],
+    "attachments": [
+      {
+        "href": "../../data/documents/337-511/209086_222198_222198.pdf",
+        "label": "222198.pdf"
+      }
+    ],
     "document_date": "2004-06-23",
     "document_type": "Notice of Appearance",
     "filed_by": "Robert S. Katz",
@@ -1344,7 +1359,12 @@
     "title": null
   },
   {
-    "attachments": [],
+    "attachments": [
+      {
+        "href": "../../data/documents/337-511/209112_222191_222191.pdf",
+        "label": "222191.pdf"
+      }
+    ],
     "document_date": "2004-06-23",
     "document_type": "Notice of Appearance",
     "filed_by": "Robert Katz",

@@ -36,6 +36,7 @@ from pathlib import Path
 from typing import Any, Callable
 
 from datalayer import backfill, counsel, docs, ingest, ids
+from datalayer.nextactions import build as nextactions_build
 from datalayer.client import decode_jwt_exp
 from datalayer.config import DATA_DIR, SCHEMA_PATH, SITE_DIR, MissingTokenError, load_token
 from datalayer.runner import ProcessAborted
@@ -279,6 +280,7 @@ class Controller:
 
     def _rebuild(self, store: Store, log: Logger) -> None:
         counsel.run(store, log=log)
+        nextactions_build.run(store, log=log)
         render_site(
             store, data_dir=self.data_dir, site_dir=self.site_dir, schema_path=self.schema_path, log=log
         )

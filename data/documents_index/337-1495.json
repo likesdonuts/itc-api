@@ -1,6 +1,18 @@
 [
   {
     "attachments": [],
+    "document_date": "2026-09-23",
+    "document_type": "PO Subscription",
+    "filed_by": "Brian Mack",
+    "firm_organization": "Quinn Emanuel Urquhart & Sullivan LLP",
+    "id": "895576",
+    "official_received_date": "2026-09-23T15:27:00",
+    "on_behalf_of": "Dolby Laboratories, Inc.",
+    "security_level": "Public",
+    "title": "Agreement to Be Bound by the Protective Order of Dan Schonfeld"
+  },
+  {
+    "attachments": [],
     "document_date": "2026-09-14",
     "document_type": "Notice",
     "filed_by": "Lisa R. Barton",
@@ -36,7 +48,12 @@
     "title": "Agreement to Be Bound by the Protective Order of Christopher Marchese, Adam R. Shartzer, Aleksandr Gelberg, Madelyn McCormick, Alex Yu, James Young, and Joshua Park"
   },
   {
-    "attachments": [],
+    "attachments": [
+      {
+        "href": "../../data/documents/337-1495/895398_2623588_2623588.pdf",
+        "label": "2623588.pdf"
+      }
+    ],
     "document_date": "2026-09-22",
     "document_type": "Notice of Appearance",
     "filed_by": "Adam R. Shartzer",
@@ -336,7 +353,12 @@
     "title": "Joint Claim Construction Chart"
   },
   {
-    "attachments": [],
+    "attachments": [
+      {
+        "href": "../../data/documents/337-1495/891391_2606522_2606522.pdf",
+        "label": "2606522.pdf"
+      }
+    ],
     "document_date": "2026-08-13",
     "document_type": "Notice of Appearance",
     "filed_by": "Brian E. Mack",
@@ -624,7 +646,12 @@
     "title": "Scheduling Discovery/Case Management Teleconference"
   },
   {
-    "attachments": [],
+    "attachments": [
+      {
+        "href": "../../data/documents/337-1495/887733_2578912_2578912.pdf",
+        "label": "2578912.pdf"
+      }
+    ],
     "document_date": "2026-07-10",
     "document_type": "Notice of Appearance",
     "filed_by": "Brian E. Mack",
@@ -828,7 +855,12 @@
     "title": "Agreement to Be Bound by the Protective Order by Katherine G. Rubschlager"
   },
   {
-    "attachments": [],
+    "attachments": [
+      {
+        "href": "../../data/documents/337-1495/884238_2558256_2558256.pdf",
+        "label": "2558256.pdf"
+      }
+    ],
     "document_date": "2026-06-04",
     "document_type": "Notice of Appearance",
     "filed_by": "M. Scott Stevens",
@@ -1092,7 +1124,12 @@
     "title": "Scheduling Preliminary Conference"
   },
   {
-    "attachments": [],
+    "attachments": [
+      {
+        "href": "../../data/documents/337-1495/881140_2541957_2541957.pdf",
+        "label": "2541957.pdf"
+      }
+    ],
     "document_date": "2026-05-04",
     "document_type": "Notice of Appearance",
     "filed_by": "Donald R. McPhail",
@@ -1308,7 +1345,12 @@
     "title": "Agreement to Be Bound by the Protective Order of Samuel N. Tiu, Michael J. Bettinger, and Leif E. Peterson"
   },
   {
-    "attachments": [],
+    "attachments": [
+      {
+        "href": "../../data/documents/337-1495/878331_2529925_2529925.pdf",
+        "label": "2529925.pdf"
+      }
+    ],
     "document_date": "2026-04-08",
     "document_type": "Notice of Appearance",
     "filed_by": "Donald R. McPhail",
@@ -1320,7 +1362,12 @@
     "title": "Notice of Appearance of Vanguard Crest P.C. on Behalf of Shenzhen TCL New Technology Co., Ltd., TCL Electronics Holdings Limited, TCL Industries Holdings Co., Ltd., TCL King Electrical Appliances (Huizhou) Company Limited, TCL Moka International Ltd., TCL Overseas Marketing Limited, TCL Smart Device (Vietnam) Company Limited, TCL Smart Screen Technology HK, TCL Technology Group Corp., and TTE Technology, Inc.,; Designation of Donald R. McPhail as Lead Counsel"
   },
   {
-    "attachments": [],
+    "attachments": [
+      {
+        "href": "../../data/documents/337-1495/878333_2529937_2529937.pdf",
+        "label": "2529937.pdf"
+      }
+    ],
     "document_date": "2026-04-08",
     "document_type": "Notice of Appearance",
     "filed_by": "Samuel N. Tiu",
@@ -1416,7 +1463,12 @@
     "title": "Protective Order"
   },
   {
-    "attachments": [],
+    "attachments": [
+      {
+        "href": "../../data/documents/337-1495/877883_2527333_2527333.pdf",
+        "label": "2527333.pdf"
+      }
+    ],
     "document_date": "2026-04-03",
     "document_type": "Notice of Appearance",
     "filed_by": "Samuel N. Tiu",
@@ -1428,7 +1480,12 @@
     "title": "Supplemental Notice of Appearance; Additional Attorneys from Sidley Austin LLP on Behalf of Hisense Co., Ltd., Hisense USA Corporation, and Hisense Electronics Manufacturing Company of America Corporation"
   },
   {
-    "attachments": [],
+    "attachments": [
+      {
+        "href": "../../data/documents/337-1495/877875_2527287_2527287.pdf",
+        "label": "2527287.pdf"
+      }
+    ],
     "document_date": "2026-04-03",
     "document_type": "Notice of Appearance",
     "filed_by": "Paul C. Goulet",
@@ -1440,7 +1497,12 @@
     "title": "Notice of Appearance of FisherBroyles, LLP on Behalf of Hisense USA Corporation, Hisense Co., Ltd., and Hisense Electronics Manufacturing Company of America Corporation; Designation of Paul C. Goulet as Lead Counsel"
   },
   {
-    "attachments": [],
+    "attachments": [
+      {
+        "href": "../../data/documents/337-1495/877862_2527012_2527012.pdf",
+        "label": "2527012.pdf"
+      }
+    ],
     "document_date": "2026-04-03",
     "document_type": "Notice of Appearance",
     "filed_by": "M. Scott Stevens",

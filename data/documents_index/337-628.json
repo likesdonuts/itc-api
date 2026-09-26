@@ -3468,7 +3468,12 @@
     "title": "Agreement to be Bound by the Protective Order"
   },
   {
-    "attachments": [],
+    "attachments": [
+      {
+        "href": "../../data/documents/337-628/300634_364563_364563.pdf",
+        "label": "364563.pdf"
+      }
+    ],
     "document_date": "2008-05-16",
     "document_type": "Notice of Appearance",
     "filed_by": "Troy D. Vahidi",
@@ -4104,7 +4109,12 @@
     "title": "Agreement to be Bound by the Protective Order"
   },
   {
-    "attachments": [],
+    "attachments": [
+      {
+        "href": "../../data/documents/337-628/290216_346007_346007.pdf",
+        "label": "346007.pdf"
+      }
+    ],
     "document_date": "2008-01-18",
     "document_type": "Notice of Appearance",
     "filed_by": "Ruffin B. Cordell",

@@ -828,7 +828,12 @@
     "title": "Response to Amended Complaint"
   },
   {
-    "attachments": [],
+    "attachments": [
+      {
+        "href": "../../data/documents/337-599/273534_316615_316615.pdf",
+        "label": "316615.pdf"
+      }
+    ],
     "document_date": "2007-05-01",
     "document_type": "Notice of Appearance",
     "filed_by": "Evelyn G. Heilbrunn",
@@ -960,7 +965,12 @@
     "title": "Agreement to be Bound by the Protective Order"
   },
   {
-    "attachments": [],
+    "attachments": [
+      {
+        "href": "../../data/documents/337-599/272729_315197_315197.pdf",
+        "label": "315197.pdf"
+      }
+    ],
     "document_date": "2007-04-13",
     "document_type": "Notice of Appearance",
     "filed_by": "Timothy Scott Teter",
@@ -1152,7 +1162,12 @@
     "title": "Agreement to be Bound by the Protective Order--Nguyen"
   },
   {
-    "attachments": [],
+    "attachments": [
+      {
+        "href": "../../data/documents/337-599/272544_315016_315016.pdf",
+        "label": "315016.pdf"
+      }
+    ],
     "document_date": "2007-04-11",
     "document_type": "Notice of Appearance",
     "filed_by": "Jim Adduci",
@@ -1176,7 +1191,12 @@
     "title": "Letter Requesting Confidential Materials"
   },
   {
-    "attachments": [],
+    "attachments": [
+      {
+        "href": "../../data/documents/337-599/272458_314794_314794.pdf",
+        "label": "314794.pdf"
+      }
+    ],
     "document_date": "2007-04-10",
     "document_type": "Notice of Appearance",
     "filed_by": "Larry L. Shatzer",

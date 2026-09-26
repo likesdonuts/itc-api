@@ -192,7 +192,12 @@
     "title": "Response to Complaint/Notice of Appearance"
   },
   {
-    "attachments": [],
+    "attachments": [
+      {
+        "href": "../../data/documents/337-535/229794_254542_254542.pdf",
+        "label": "254542.pdf"
+      }
+    ],
     "document_date": "2005-04-26",
     "document_type": "Notice of Appearance",
     "filed_by": "Michael J. Songer",
@@ -228,7 +233,12 @@
     "title": "Nortel Response To Ciena's Amended Complaint"
   },
   {
-    "attachments": [],
+    "attachments": [
+      {
+        "href": "../../data/documents/337-535/229214_253849_253849.pdf",
+        "label": "253849.pdf"
+      }
+    ],
     "document_date": "2005-04-18",
     "document_type": "Notice of Appearance",
     "filed_by": "Michael J. Songer",

@@ -17,6 +17,7 @@ from datalayer.claims import build as claims_build
 from datalayer.claims import config as claims_config
 from datalayer.claims import status as claims_status
 from datalayer.config import DATA_DIR, SCHEMA_PATH, SITE_DIR
+from datalayer.nextactions import build as nextactions_build
 from datalayer.store import Store, write_text_atomic
 
 from . import templates
@@ -112,6 +113,8 @@ def render_site(
     # Claims analyses, and whether each needs building -- all from disk, so
     # rendering still makes no network call.
     analyses = claims_build.load_all(store.data_dir)
+    next_actions = nextactions_build.load(store.data_dir)
+    next_cases = next_actions.get("cases") or {}
     try:
         pipeline_version = claims_config.load().pipeline_version
     except claims_config.ClaimsConfigError:
@@ -132,6 +135,8 @@ def render_site(
                 ),
                 counsel=store.counsel.get(number),
                 fetched_at=fetched_at.get(number),
+                next_actions=next_cases.get(number),
+                next_built_at=next_actions.get("built_at"),
             ),
         )
         written.add(page)

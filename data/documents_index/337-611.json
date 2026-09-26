@@ -684,7 +684,16 @@
     "title": "Agreement to be Bound by the Protective Order"
   },
   {
-    "attachments": [],
+    "attachments": [
+      {
+        "href": "../../data/documents/337-611/280668_328199_328199.pdf",
+        "label": "328199.pdf"
+      },
+      {
+        "href": "../../data/documents/337-611/280668_329105_329105.pdf",
+        "label": "329105.pdf"
+      }
+    ],
     "document_date": "2007-08-20",
     "document_type": "Notice of Appearance",
     "filed_by": "Lyle B. Vander Schaaf",
@@ -804,7 +813,12 @@
     "title": "Agreement to be Bound by the Protective Order"
   },
   {
-    "attachments": [],
+    "attachments": [
+      {
+        "href": "../../data/documents/337-611/279444_327050_327050.pdf",
+        "label": "327050.pdf"
+      }
+    ],
     "document_date": "2007-08-06",
     "document_type": "Notice of Appearance",
     "filed_by": "Tom M. Schaumberg",

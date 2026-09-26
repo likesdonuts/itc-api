@@ -7,8 +7,10 @@ __pycache__/
 data/ids/
 data/investigations.json
 
-# Rebuilt from the cases and the documents by 'python cli.py counsel'.
+# Rebuilt from the cases and the documents by 'python cli.py counsel' (and
+# 'next-actions'), after every sync and fetch.
 data/counsel.json
+data/next_actions.json
 
 # Federal Register notices the claims analysis read; fetched again on demand.
 # The analyses themselves (data/claims/*.json) and data/claims_costs.csv are

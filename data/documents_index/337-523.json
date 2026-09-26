@@ -6072,7 +6072,12 @@
     "title": "Protective Order"
   },
   {
-    "attachments": [],
+    "attachments": [
+      {
+        "href": "../../data/documents/337-523/225575_246999_246999.pdf",
+        "label": "246999.pdf"
+      }
+    ],
     "document_date": "2005-03-07",
     "document_type": "Notice of Appearance",
     "filed_by": "Arthur Wineburg",
@@ -6084,7 +6089,12 @@
     "title": null
   },
   {
-    "attachments": [],
+    "attachments": [
+      {
+        "href": "../../data/documents/337-523/225584_247000_247000.pdf",
+        "label": "247000.pdf"
+      }
+    ],
     "document_date": "2005-03-07",
     "document_type": "Notice of Appearance",
     "filed_by": "Daniel E. Yonan",
@@ -7164,7 +7174,12 @@
     "title": "Motion To Compel Complainant Mediatek, Inc. To Produce Documents"
   },
   {
-    "attachments": [],
+    "attachments": [
+      {
+        "href": "../../data/documents/337-523/221604_241441_241441.pdf",
+        "label": "241441.pdf"
+      }
+    ],
     "document_date": "2005-01-11",
     "document_type": "Notice of Appearance",
     "filed_by": "June Cohan",
@@ -8292,7 +8307,12 @@
     "title": null
   },
   {
-    "attachments": [],
+    "attachments": [
+      {
+        "href": "../../data/documents/337-523/217704_236293_236293.pdf",
+        "label": "236293.pdf"
+      }
+    ],
     "document_date": "2004-11-05",
     "document_type": "Notice of Appearance",
     "filed_by": "Yitai HU",
@@ -8832,7 +8852,12 @@
     "title": "Notice of Appearance"
   },
   {
-    "attachments": [],
+    "attachments": [
+      {
+        "href": "../../data/documents/337-523/212998_229966_229966.pdf",
+        "label": "229966.pdf"
+      }
+    ],
     "document_date": "2004-08-30",
     "document_type": "Notice of Appearance",
     "filed_by": "Smith R. Brittingham",

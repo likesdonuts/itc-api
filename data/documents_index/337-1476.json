@@ -1,6 +1,42 @@
 [
   {
     "attachments": [],
+    "document_date": "2026-09-25",
+    "document_type": "PO Subscription",
+    "filed_by": "Mark D. Litvack",
+    "firm_organization": "Pillsbury Winthrop Shaw Pittman LLP",
+    "id": "895794",
+    "official_received_date": "2026-09-25T11:20:00",
+    "on_behalf_of": "Caragum International",
+    "security_level": "Public",
+    "title": "Agreement to Be Bound by the Protective Order of  Anne Smith and Eileen Schmidtke"
+  },
+  {
+    "attachments": [],
+    "document_date": "2026-09-24",
+    "document_type": "Order",
+    "filed_by": "Bryan F. Moore",
+    "firm_organization": "USITC",
+    "id": "895712",
+    "official_received_date": "2026-09-24T16:06:00",
+    "on_behalf_of": "Administrative Law Judge",
+    "security_level": "Public",
+    "title": "Granting Motion for Leave to Take the Deposition of PepsiCo, Inc. out of Time"
+  },
+  {
+    "attachments": [],
+    "document_date": "2026-09-24",
+    "document_type": "Motion",
+    "filed_by": "Jas S. Dhillon",
+    "firm_organization": "Law Office of Jas Dhillon, P.C.",
+    "id": "895688",
+    "official_received_date": "2026-09-24T13:50:00",
+    "on_behalf_of": "T&R Chemicals, Inc., Caragum International, and Kemi Rosins Portugal S.A.",
+    "security_level": "Public",
+    "title": "Stipulated Motion for Leave to Take the Deposition of PepsiCo, Inc. out of Time"
+  },
+  {
+    "attachments": [],
     "document_date": "2026-09-17",
     "document_type": "PO Subscription",
     "filed_by": "Christine M. Streatfeild",
@@ -144,7 +180,12 @@
     "title": "Commission Investigative Staff\u2019s Response to Respondents\u2019 Motion to Supplement Their Expert Disclosures to Identify a Rebuttal Witness"
   },
   {
-    "attachments": [],
+    "attachments": [
+      {
+        "href": "../../data/documents/337-1476/892365_2611099_2611099.pdf",
+        "label": "2611099.pdf"
+      }
+    ],
     "document_date": "2026-08-21",
     "document_type": "Notice of Appearance",
     "filed_by": "Harold H. Davis, Jr.",
@@ -1992,7 +2033,12 @@
     "title": "Unopposed Motion of Non-Party The Coca-Cola Company for an Extension of Time to Respond to, Object to, and/or, Move to Quash or Limit the Subpoena Duces Tecum and Ad Testificandum"
   },
   {
-    "attachments": [],
+    "attachments": [
+      {
+        "href": "../../data/documents/337-1476/873074_2500697_2500697.pdf",
+        "label": "2500697.pdf"
+      }
+    ],
     "document_date": "2026-02-19",
     "document_type": "Notice of Appearance",
     "filed_by": "Jessica C. Hill",
@@ -2040,7 +2086,12 @@
     "title": "Notice of Errata and Request for Leave to File Amended Answer"
   },
   {
-    "attachments": [],
+    "attachments": [
+      {
+        "href": "../../data/documents/337-1476/872335_2497592_2497592.pdf",
+        "label": "2497592.pdf"
+      }
+    ],
     "document_date": "2026-02-11",
     "document_type": "Notice of Appearance",
     "filed_by": "Jas Dhillon",
@@ -2076,7 +2127,12 @@
     "title": "Agreement to  Be Bound by the Protective Order of Anthony G. Hopp and Christopher L. Yeatman"
   },
   {
-    "attachments": [],
+    "attachments": [
+      {
+        "href": "../../data/documents/337-1476/871753_2495168_2495168.pdf",
+        "label": "2495168.pdf"
+      }
+    ],
     "document_date": "2026-02-05",
     "document_type": "Notice of Appearance",
     "filed_by": "Christopher L. Yeatman",
@@ -2100,7 +2156,12 @@
     "title": "Preliminary Conference (Pages 1-43)"
   },
   {
-    "attachments": [],
+    "attachments": [
+      {
+        "href": "../../data/documents/337-1476/871413_2492612_2492612.pdf",
+        "label": "2492612.pdf"
+      }
+    ],
     "document_date": "2026-02-03",
     "document_type": "Notice of Appearance",
     "filed_by": "Anthony G. Hopp",
@@ -2256,7 +2317,12 @@
     "title": "Agreement to Be Bound by the Protective Order of Christine Streatfeild, Barry Thompson, Shima S. Roy, Richard Wells, Michael Boardman, Lauren Shapiro, and Cole A. Gray"
   },
   {
-    "attachments": [],
+    "attachments": [
+      {
+        "href": "../../data/documents/337-1476/868843_2477068_2477068.pdf",
+        "label": "2477068.pdf"
+      }
+    ],
     "document_date": "2026-01-13",
     "document_type": "Notice of Appearance",
     "filed_by": "Christine M. Streatfeild",
@@ -2268,7 +2334,12 @@
     "title": "Notice of Appearance of Baker & McKenzie LLP on Behalf of Kemi Pine Rosins Portugal S.A.; Designation of Christine M. Streatfeild as Lead Counsel"
   },
   {
-    "attachments": [],
+    "attachments": [
+      {
+        "href": "../../data/documents/337-1476/868708_2475795_2475795.pdf",
+        "label": "2475795.pdf"
+      }
+    ],
     "document_date": "2026-01-12",
     "document_type": "Notice of Appearance",
     "filed_by": "Mark D. Litvack",
@@ -2280,7 +2351,12 @@
     "title": "Notice of Appearance of Pillsbury Winthrop Shaw Pittman LLP on Behalf of Caragum International; Designation of Mark D. Litvack as Lead Counsel"
   },
   {
-    "attachments": [],
+    "attachments": [
+      {
+        "href": "../../data/documents/337-1476/868456_2474107_2474107.pdf",
+        "label": "2474107.pdf"
+      }
+    ],
     "document_date": "2026-01-09",
     "document_type": "Notice of Appearance",
     "filed_by": "Vu Bui",
@@ -2328,7 +2404,12 @@
     "title": "Protective Order"
   },
   {
-    "attachments": [],
+    "attachments": [
+      {
+        "href": "../../data/documents/337-1476/868232_2473348_2473348.pdf",
+        "label": "2473348.pdf"
+      }
+    ],
     "document_date": "2026-01-07",
     "document_type": "Notice of Appearance",
     "filed_by": "Harold H. Davis",

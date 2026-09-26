@@ -1,6 +1,18 @@
 [
   {
     "attachments": [],
+    "document_date": "2026-09-24",
+    "document_type": "PO Subscription",
+    "filed_by": "Benjamin C. Elacqua",
+    "firm_organization": "Fish & Richardson P.C.",
+    "id": "895741",
+    "official_received_date": "2026-09-24T17:14:00",
+    "on_behalf_of": "NJOY, LLC, NJOY Holdings, Inc., Altria Group, Inc., Altria Group Distribution Company, and Altria Client Services LLC",
+    "security_level": "Public",
+    "title": "Agreement to Be Bound by the Protective Order of John Lane"
+  },
+  {
+    "attachments": [],
     "document_date": "2026-09-22",
     "document_type": "PO Subscription",
     "filed_by": "Michael T. Renaud",
@@ -2772,7 +2784,12 @@
     "title": "Agreement to Be Bound by the Protective Order of Robin D. Rogers"
   },
   {
-    "attachments": [],
+    "attachments": [
+      {
+        "href": "../../data/documents/337-1460/863967_2446591_2446591.pdf",
+        "label": "2446591.pdf"
+      }
+    ],
     "document_date": "2025-11-17",
     "document_type": "Notice of Appearance",
     "filed_by": "David M. Maiorana",
@@ -2916,7 +2933,12 @@
     "title": "Agreement to Be Bound by the Protective Order of Benjamin C. Elacqua, Richard A. Sterba, Scott M. Flanz, Aamir A. Kazi, Jacqueline Tio, Elizabeth G. H. Ranks, Allison E. Elkman, Mariam Khan, Joseph R. Dorris, Joshua H. Park, and Ethan K. Kovar"
   },
   {
-    "attachments": [],
+    "attachments": [
+      {
+        "href": "../../data/documents/337-1460/861894_2432612_2432612.pdf",
+        "label": "2432612.pdf"
+      }
+    ],
     "document_date": "2025-09-15",
     "document_type": "Notice of Appearance",
     "filed_by": "Adam S. Rizk",
@@ -2964,7 +2986,12 @@
     "title": "Protective Order"
   },
   {
-    "attachments": [],
+    "attachments": [
+      {
+        "href": "../../data/documents/337-1460/861764_2431152_2431152.pdf",
+        "label": "2431152.pdf"
+      }
+    ],
     "document_date": "2025-09-12",
     "document_type": "Notice of Appearance",
     "filed_by": "Benjamin C. Elacqua",

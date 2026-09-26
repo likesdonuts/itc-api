@@ -1,6 +1,54 @@
 [
   {
     "attachments": [],
+    "document_date": "2026-09-25",
+    "document_type": "Order, Commission",
+    "filed_by": "Lisa R. Barton",
+    "firm_organization": "USITC",
+    "id": "895807",
+    "official_received_date": "2026-09-25T12:19:00",
+    "on_behalf_of": "Office of the Secretary",
+    "security_level": "Public",
+    "title": "Corrected Cease and Desist Order for Mountain Peak, Inc."
+  },
+  {
+    "attachments": [],
+    "document_date": "2026-09-25",
+    "document_type": "Order, Commission",
+    "filed_by": "Lisa R. Barton",
+    "firm_organization": "USITC",
+    "id": "895806",
+    "official_received_date": "2026-09-25T12:17:00",
+    "on_behalf_of": "Office of the Secretary",
+    "security_level": "Public",
+    "title": "Corrected Cease and Desist Order for Straightouttaink, LP"
+  },
+  {
+    "attachments": [],
+    "document_date": "2026-09-25",
+    "document_type": "Order, Commission",
+    "filed_by": "Lisa R. Barton",
+    "firm_organization": "USITC",
+    "id": "895805",
+    "official_received_date": "2026-09-25T12:15:00",
+    "on_behalf_of": "Office of the Secretary",
+    "security_level": "Public",
+    "title": "Corrected General Exclusion Order"
+  },
+  {
+    "attachments": [],
+    "document_date": "2026-09-23",
+    "document_type": "Correspondence - USITC",
+    "filed_by": "Lisa R. Barton",
+    "firm_organization": "USITC",
+    "id": "895575",
+    "official_received_date": "2026-09-23T15:19:00",
+    "on_behalf_of": "Office of the Secretary",
+    "security_level": "Public",
+    "title": "Letter to Chief Alaina van Horn of U.S. Customs and Border Protection about the Issuance of a General Exclusion Order"
+  },
+  {
+    "attachments": [],
     "document_date": "2026-09-23",
     "document_type": "Opinion, Commission",
     "filed_by": "Lisa R. Barton",
@@ -1968,7 +2016,12 @@
     "title": "Institution of Investigation Returned from Shangrao Shixuan E-Commerce Co."
   },
   {
-    "attachments": [],
+    "attachments": [
+      {
+        "href": "../../data/documents/337-1451/855530_2396939_2396939.pdf",
+        "label": "2396939.pdf"
+      }
+    ],
     "document_date": "2025-06-30",
     "document_type": "Notice of Appearance",
     "filed_by": "S. Alex Lasher",

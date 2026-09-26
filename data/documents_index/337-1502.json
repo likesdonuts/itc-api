@@ -528,7 +528,12 @@
     "title": "Complainant's Proof of Service of Complaint and Notice of Institution on Respondents Hamilton Trading Corp., Sigmai (Asia) Limited Inc., The Elegant Inc., and JDC Trading Inc."
   },
   {
-    "attachments": [],
+    "attachments": [
+      {
+        "href": "../../data/documents/337-1502/889601_2595342_2595342.pdf",
+        "label": "2595342.pdf"
+      }
+    ],
     "document_date": "2026-07-28",
     "document_type": "Notice of Appearance",
     "filed_by": "Robert M. Isackson",
@@ -612,7 +617,20 @@
     "title": null
   },
   {
-    "attachments": [],
+    "attachments": [
+      {
+        "href": "../../data/documents/337-1502/888214_2583365_2583365.pdf",
+        "label": "2583365.pdf"
+      },
+      {
+        "href": "../../data/documents/337-1502/888214_2583366_2583366.pdf",
+        "label": "2583366.pdf"
+      },
+      {
+        "href": "../../data/documents/337-1502/888214_2583367_2583367.pdf",
+        "label": "2583367.pdf"
+      }
+    ],
     "document_date": "2026-07-16",
     "document_type": "Notice of Appearance",
     "filed_by": "Colleen Hinson",
@@ -1020,7 +1038,12 @@
     "title": "F.R. Notice of Institution of Investigation"
   },
   {
-    "attachments": [],
+    "attachments": [
+      {
+        "href": "../../data/documents/337-1502/884142_2557960_2557960.pdf",
+        "label": "2557960.pdf"
+      }
+    ],
     "document_date": "2026-06-03",
     "document_type": "Notice of Appearance",
     "filed_by": "Adam R. Hess",
