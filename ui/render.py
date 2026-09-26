@@ -95,6 +95,9 @@ def render_site(
     }
     meta = {"snapshot_day": (store.state.get("runs", {}).get("ingest") or {}).get("snapshot")}
 
+    next_actions = nextactions_build.load(store.data_dir)
+    next_cases = next_actions.get("cases") or {}
+
     index_path = site_dir / "index.html"
     write_text_atomic(
         index_path,
@@ -106,6 +109,7 @@ def render_site(
             fetched_at=fetched_at,
             counsel=store.counsel,
             meta=meta,
+            next_actions=next_cases,
         ),
     )
 
@@ -113,8 +117,6 @@ def render_site(
     # Claims analyses, and whether each needs building -- all from disk, so
     # rendering still makes no network call.
     analyses = claims_build.load_all(store.data_dir)
-    next_actions = nextactions_build.load(store.data_dir)
-    next_cases = next_actions.get("cases") or {}
     try:
         pipeline_version = claims_config.load().pipeline_version
     except claims_config.ClaimsConfigError:

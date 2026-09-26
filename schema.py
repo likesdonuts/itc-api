@@ -37,10 +37,11 @@ from datalayer.config import SCHEMA_PATH
 
 FIELD_TYPES = {
     "text", "long_text", "date", "datetime", "bool", "list", "mono", "number", "status", "case_link",
+    "next_deadline",
 }
 
 # Values the UI layer supplies itself rather than reading from a case record.
-RENDER_EXTRAS = {"document_count", "pdf_document_count", "documents_fetched_at"}
+RENDER_EXTRAS = {"document_count", "pdf_document_count", "documents_fetched_at", "next_deadline"}
 
 SECTION_KINDS = {"fields", "stages", "documents", "parties"}
 STAGE_CHOICES = {"primary", "current"}

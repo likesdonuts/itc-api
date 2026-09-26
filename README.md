@@ -612,8 +612,8 @@ The stage follows the docket: before the ALJ until a final ID issues; then
 the review deadlines, replaced by an undated entry once the Commission
 extends the review date; then "decided to review" or "not to review" (a
 final ID of no violation left unreviewed concludes it); then a final
-determination, with a remedy starting Presidential review. A stay order
-without a later order lifting it adds a note.
+determination, with a remedy starting Presidential review. Stays and
+respondents leaving the case are covered below.
 
 Two kinds of open case have nothing to show, and say why. The USITC lists
 about 90 investigations from the 1970s to the 2000s as "Active" with no
@@ -631,6 +631,37 @@ ones not yet dated (relative deadlines), and the past ones folded away. Each
 row names its basis, citation and source document, linked to the PDF when it
 is on disk. `next_actions.json` is rebuilt with counsel after every sync and
 fetch.
+
+The case list shows the same data: a **Next deadline** column (the first
+coming date that is not on hold, or "Stayed"; a `next_deadline` column type
+in `ui_schema.json`, fed at render time) and a **Due in the next 7 days**
+panel above the table, listing every open case's dates in the coming week
+with a link to its Next actions tab. Both are worked out in the browser for
+the day the page is viewed, from the dates embedded when it was rendered.
+
+#### Stays and respondents out of the case (`nextactions/stays.py`)
+
+Read from the titles of what the ALJ and the Commission issued:
+
+- **A whole-case stay** ("Granting Joint Motion to Stay the Procedural
+  Schedule", "Staying the Investigation for Fourteen Days", "Extending Stay
+  ... until September 30, 2026") puts every date from its start on hold:
+  shown, tagged "On hold", never "next". The tab's stage reads "(stayed)",
+  its "Next" says "Stayed", an amber banner links the order and gives the
+  end date when the title has one, and the case list says "Stayed". A stay
+  is over when an order lifts it, when its end date passes, or when a later
+  order sets the procedural schedule again (rescheduling is how it usually
+  ends). Extensions keep the stay's first day. Orders denying a stay are
+  ignored. Once the final ID is out, only stays ordered since then count.
+- **A stay for some respondents** ("as to HP", "with respect to Certain
+  Respondents") is listed; the schedule carries on for the rest.
+- **Respondents out of the case**: initial determinations terminating the
+  investigation as to named respondents, or finding them in default, listed
+  (folded) with their dates; each is final once a Commission notice declining
+  review follows within 90 days (those notices usually say only "Certain
+  Respondents", so they add no names of their own). Terminations as to
+  claims or patents are not parties and are skipped. A date in the order
+  schedule that names one of them is dropped.
 
 #### Procedural schedules from the orders (`nextactions/orders.py`)
 

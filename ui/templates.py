@@ -10,6 +10,7 @@ that drives the local server (server.py).
 from __future__ import annotations
 
 import html
+import json
 import re
 from collections import Counter
 from typing import Any
@@ -110,6 +111,14 @@ a:hover { text-decoration: underline; }
   color: var(--ink);
 }
 .toolbar input[type="search"] { flex: 1 1 240px; }
+.next-deadline { white-space: nowrap; font-variant-numeric: tabular-nums; }
+.next-deadline small { display: block; white-space: normal; color: var(--muted); font-size: 0.78rem; max-width: 16rem;
+  overflow: hidden; text-overflow: ellipsis; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; }
+.due-panel { margin-bottom: 1rem; }
+.due-head { margin-bottom: 0.5rem; }
+table.due-list td { padding: 0.35rem 0.5rem; vertical-align: top; }
+table.due-list td.due-date { width: 7.5rem; white-space: nowrap; font-weight: 600; font-variant-numeric: tabular-nums; min-width: 0; }
+table.due-list td:first-child:not(.pick) { min-width: 0; }
 .toolbar select { flex: 0 0 auto; }
 .toolbar input:focus, .toolbar select:focus {
   outline: none;
@@ -382,6 +391,12 @@ table.na-list tr.is-next td.na-date { box-shadow: inset 3px 0 0 var(--accent); }
 .na-notes li { margin-bottom: 0.3rem; }
 .na-legend { font-size: 0.8rem; color: var(--muted); line-height: 1.55; }
 .na-empty { color: var(--muted); padding: 0.3rem 0; }
+.na-stay { border-left: 4px solid var(--amber-fg); background: var(--amber-bg); }
+.na-stay strong { color: var(--amber-fg); }
+.na-hold { color: var(--amber-fg); font-weight: 700; text-transform: uppercase; letter-spacing: 0.04em; font-size: 0.68rem; }
+table.na-list tr.on-hold .na-title { color: var(--muted); }
+table.na-list td.na-who { width: auto; }
+table.na-list td.na-how { width: 11rem; white-space: nowrap; color: var(--muted); font-size: 0.85rem; }
 @media (max-width: 640px) { table.na-list td.na-date { width: 6.5rem; } table.na-list td.when { display: none; } }
 .claims-matrix th .stage-count { font-weight: 400; text-transform: none; letter-spacing: 0; margin-top: 0.15rem; }
 .claims-matrix tr.patent-row th {
@@ -538,7 +553,33 @@ def _rendered(spec: ui_schema.FieldSpec, value: Any, *, href: str | None = None)
             return _e(values[0])
         items = "".join(f"<li>{_e(item)}</li>" for item in values)
         return f"<ul>{items}</ul>"
+    if spec.type == "next_deadline":
+        return _next_deadline_cell(value)
     return _e(value)
+
+
+def _upcoming(record: dict[str, Any] | None, since: str) -> list[list[str]]:
+    """A case's dated, not-on-hold events from `since` on: [[date, label], ...]."""
+    return [
+        [e["date"], e["label"]]
+        for e in (record or {}).get("events") or []
+        if e.get("date") and e["date"] >= since and not e.get("on_hold")
+    ]
+
+
+def _next_deadline_cell(value: dict[str, Any]) -> str:
+    """The list page's Next deadline: the first of the case's coming dates
+    (the script moves on to the next one as days pass), or "Stayed"."""
+    if value.get("stayed"):
+        return '<span class="pill pill-amber">Stayed</span>'
+    items = value.get("items") or []
+    if not items:
+        return ""
+    first = next((i for i in items if i[0] >= value.get("today", "")), None)
+    text = f"{_date(first[0])}<small>{_e(first[1])}</small>" if first else ""
+    return (
+        f'<span class="next-deadline" data-next="{_e(json.dumps(items))}">{text}</span>'
+    )
 
 
 def _resolved_cells(
@@ -594,6 +635,44 @@ def _fields_section(
 
 
 _INDEX_SCRIPT = """
+(function () {
+  // Next deadline and "due in the next 7 days", against the day the page is
+  // viewed rather than the day it was rendered.
+  const pad = function (n) { return String(n).padStart(2, '0'); };
+  const now = new Date();
+  const today = now.getFullYear() + '-' + pad(now.getMonth() + 1) + '-' + pad(now.getDate());
+  const weekOut = new Date(now.getTime() + 7 * 86400000);
+  const horizon = weekOut.getFullYear() + '-' + pad(weekOut.getMonth() + 1) + '-' + pad(weekOut.getDate());
+  const MONTHS = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
+  const show = function (iso) { const p = iso.split('-'); return pad(+p[2]) + ' ' + MONTHS[+p[1] - 1] + ' ' + p[0]; };
+  const esc = function (s) { const d = document.createElement('div'); d.textContent = s; return d.innerHTML; };
+
+  document.querySelectorAll('.next-deadline').forEach(function (cell) {
+    const items = JSON.parse(cell.dataset.next || '[]');
+    const first = items.find(function (i) { return i[0] >= today; });
+    cell.innerHTML = first ? show(first[0]) + '<small>' + esc(first[1]) + '</small>' : '';
+  });
+
+  const data = document.getElementById('due-data');
+  if (!data) return;
+  const due = JSON.parse(data.textContent).filter(function (i) { return i[0] >= today && i[0] <= horizon; });
+  if (!due.length) return;
+  const body = document.getElementById('due-rows');
+  const row = function (i) {
+    return '<tr><td class="due-date">' + show(i[0]) + '</td><td><a href="' + i[4] + '">' + esc(i[1]) + '</a> '
+      + '<span class="muted">' + esc(i[2]) + '</span></td><td>' + esc(i[3]) + '</td></tr>';
+  };
+  body.innerHTML = due.slice(0, 8).map(row).join('');
+  document.getElementById('due-count').textContent = due.length + (due.length === 1 ? ' date' : ' dates');
+  const more = document.getElementById('due-more');
+  if (due.length > 8) {
+    more.hidden = false;
+    more.textContent = 'Show all ' + due.length;
+    more.addEventListener('click', function () { body.innerHTML = due.map(row).join(''); more.hidden = true; });
+  }
+  document.getElementById('due-panel').hidden = false;
+})();
+
 (function () {
   const rows = Array.from(document.querySelectorAll('table.list tbody tr[data-search]'));
   const search = document.getElementById('search');
@@ -971,6 +1050,10 @@ _DETAIL_SCRIPT = """
     if (days < 0) {
       cell.textContent = -days === 1 ? 'yesterday' : (-days < 60 ? -days + ' days ago' : '');
       past.push(row);
+    } else if (row.dataset.hold) {
+      // Suspended by a stay: shown, but not what comes next.
+      upcoming += 1;
+      cell.textContent = 'on hold';
     } else {
       upcoming += 1;
       cell.textContent = days === 0 ? 'today' : (days === 1 ? 'tomorrow' : 'in ' + days + ' days');
@@ -996,6 +1079,9 @@ _DETAIL_SCRIPT = """
     badge.textContent = next.row.querySelector('td.when').textContent;
     whenEl.textContent = date;
     whenEl.appendChild(badge);
+  } else if (document.querySelector('.na-stay')) {
+    what.textContent = 'Stayed';
+    whenEl.textContent = 'Scheduled dates are on hold until the stay ends.';
   } else {
     what.textContent = 'Awaiting decision';
     whenEl.textContent = 'No date on record is still ahead.';
@@ -1066,15 +1152,24 @@ def render_index(
     fetched_at: dict[str, str] | None = None,
     counsel: dict[str, Any] | None = None,
     meta: dict[str, Any] | None = None,
+    next_actions: dict[str, Any] | None = None,
+    today: str | None = None,
 ) -> str:
     """`pdf_counts` is how many of each case's documents have a PDF on disk;
-    `fetched_at` is when each case's documents were last fetched.
+    `fetched_at` is when each case's documents were last fetched;
+    `next_actions` each open case's entry in data/next_actions.json, for the
+    Next deadline column and the "due in the next 7 days" panel.
     """
     document_counts = document_counts or {}
     pdf_counts = pdf_counts or {}
     fetched_at = fetched_at or {}
     counsel = counsel or {}
     meta = meta or {}
+    next_actions = next_actions or {}
+    today = today or _today_iso()
+    # Coming dates from a week back, so a page opened days after it was
+    # rendered still finds what is next.
+    since = _days_before(today, 7)
     columns = schema.index_columns
 
     rows = sorted(
@@ -1099,10 +1194,15 @@ def render_index(
     row_html = []
     for case in rows:
         number = str(case.get("investigation_number") or "")
+        record = next_actions.get(number)
         extra = {
             "document_count": document_counts.get(number, 0),
             "pdf_document_count": pdf_counts.get(number, 0),
             "documents_fetched_at": fetched_at.get(number),
+            "next_deadline": (
+                {"items": _upcoming(record, since), "stayed": bool(record.get("stay")), "today": today}
+                if record else None
+            ),
         }
         href = f"investigations/{slug_for(number)}.html"
         cells = []
@@ -1143,6 +1243,7 @@ def render_index(
   <div class="stats">{stats_html}</div>
 </div>
 {_control_panel()}
+{_due_panel(rows, next_actions, since)}
 <div class="toolbar">
   <input type="search" id="search" placeholder="Search by case name, number, party, firm, attorney&hellip;">
   <select id="status-filter">
@@ -1172,6 +1273,42 @@ def render_index(
 </p>
 """
     return _page("ITC 337 Investigations", body, script=_INDEX_SCRIPT + _CONTROL_SCRIPT)
+
+
+def _today_iso() -> str:
+    from datetime import date
+
+    return date.today().isoformat()
+
+
+def _days_before(day: str, days: int) -> str:
+    from datetime import date, timedelta
+
+    return (date.fromisoformat(day) - timedelta(days=days)).isoformat()
+
+
+def _due_panel(cases: list[dict[str, Any]], next_actions: dict[str, Any], since: str) -> str:
+    """"Due in the next 7 days": every open case's dates from `since` to five
+    weeks on, which the script narrows to the coming week on the day the page
+    is viewed (and hides when there are none)."""
+    until = _days_before(since, -42)
+    titles = {str(c.get("investigation_number")): c.get("title") or "" for c in cases}
+    items = []
+    for number, record in sorted(next_actions.items()):
+        if record.get("stay"):
+            continue
+        for day, label in _upcoming(record, since):
+            if day <= until:
+                items.append([day, number, titles.get(number, ""), label, f"investigations/{slug_for(number)}.html#next"])
+    items.sort()
+    if not items:
+        return ""
+    return f"""<div class="card due-panel" id="due-panel" hidden>
+  <div class="due-head"><strong>Due in the next 7 days</strong> <span class="muted" id="due-count"></span></div>
+  <table class="list due-list"><tbody id="due-rows"></tbody></table>
+  <button class="btn btn-quiet" id="due-more" hidden>Show all</button>
+  <script type="application/json" id="due-data">{json.dumps(items).replace("</", "<\\/")}</script>
+</div>"""
 
 
 def _stage_label(stage: dict[str, Any]) -> str:
@@ -1765,6 +1902,8 @@ def _na_row(event: dict[str, Any], sources: dict[str, str]) -> str:
         date_cell += f"<small>to {_date(end)}</small>"
     basis = event.get("basis") or ""
     meta = [f'<span class="na-basis b-{basis.replace(" ", "-")}">{_NA_BASIS_LABEL.get(basis, _e(basis))}</span>']
+    if event.get("on_hold"):
+        meta.insert(0, '<span class="na-hold">On hold</span>')
     if event.get("cite"):
         meta.append(f"<span>{_e(event['cite'])}</span>")
     if event.get("note"):
@@ -1775,8 +1914,10 @@ def _na_row(event: dict[str, Any], sources: dict[str, str]) -> str:
         href = sources.get(str(source.get("id") or ""))
         text = f"{title}, {_date(source.get('date'))}"
         meta.append(f'<a href="{_e(href)}">{text}</a>' if href else f"<span>{text}</span>")
+    hold = ' data-hold="1"' if event.get("on_hold") else ""
     return (
-        f'<tr class="next-event" data-date="{_e(end or day or "")}" data-label="{_e(event.get("label"))}">'
+        f'<tr class="next-event{" on-hold" if hold else ""}" data-date="{_e(end or day or "")}"{hold} '
+        f'data-label="{_e(event.get("label"))}">'
         f'<td class="na-date">{date_cell}</td>'
         f'<td><div class="na-title">{_e(event.get("label"))}</div><div class="na-meta">{"".join(meta)}</div></td>'
         f'<td class="when"></td></tr>'
@@ -1801,6 +1942,44 @@ def _next_actions_section(record: dict[str, Any], built_at: str | None,
     undated = [e for e in record.get("events") or [] if not e.get("date")]
     waiting = record.get("waiting_on")
     notes = "".join(f"<li>{_e(n)}</li>" for n in record.get("notes") or [])
+
+    def doc_link(source: dict[str, Any], text: str) -> str:
+        href = sources.get(str((source or {}).get("id") or ""))
+        return f'<a href="{_e(href)}">{text}</a>' if href else text
+
+    stay = record.get("stay")
+    stay_card = ""
+    if stay:
+        until = f" It is set to run until {_date(stay['until'])}." if stay.get("until") else ""
+        extended = " (since extended)" if stay.get("extended") else ""
+        stay_card = (
+            f'<div class="card na-stay"><strong>Stayed since {_date(stay["since"])}</strong>{extended}: '
+            f'{doc_link(stay.get("source"), _e((stay.get("source") or {}).get("title") or "stay order"))}.{until} '
+            "Scheduled dates from then on are on hold, and are likely to be reset when it ends.</div>"
+        )
+    partial = "".join(
+        f'<li>Stayed as to <strong>{_e(p["who"])}</strong> since {_date(p["since"])}'
+        + (f" (until {_date(p['until'])})" if p.get("until") else "")
+        + f': {doc_link(p.get("source"), _e((p.get("source") or {}).get("title") or "order"))}. '
+          "The schedule continues for the other respondents.</li>"
+        for p in record.get("partial_stays") or []
+    )
+    if partial:
+        notes = partial + notes
+    out = record.get("out_of_case") or []
+    out_card = ""
+    if out:
+        rows = "".join(
+            f'<tr><td class="na-date">{_date(o["date"])}</td><td class="na-who">'
+            f'{doc_link(o.get("source"), _e(o["who"]))}</td>'
+            f'<td class="na-how">{_e(o["how"].capitalize())}'
+            f'{"" if o.get("final") else ", pending Commission review"}</td></tr>'
+            for o in out
+        )
+        out_card = (
+            f'<details class="card na-past"><summary>Respondents no longer in the case <small>({len(out)})</small>'
+            f'</summary><table class="na-list"><tbody>{rows}</tbody></table></details>'
+        )
 
     upcoming = (
         f'<div class="card na-card"><h3>Upcoming <small id="na-up-count"></small></h3>'
@@ -1832,10 +2011,12 @@ def _next_actions_section(record: dict[str, Any], built_at: str | None,
       {f'<div class="na-label" style="margin-top:0.6rem">Waiting on</div><div>{_e(waiting)}</div>' if waiting else ""}
     </div>
   </div>
+  {stay_card}
   {f'<div class="card"><ul class="na-notes">{notes}</ul></div>' if notes else ""}
   {upcoming}
   {to_be_set}
   {past}
+  {out_card}
   <p class="na-legend">
     <strong>Order</strong>: the ALJ's or the Commission's procedural schedule, with later amendments applied.
     <strong>Case record</strong>: dates in the USITC's investigation record. <strong>Docket</strong>: when a
