@@ -1,0 +1,163 @@
+{
+  "cost_usd": 0.024563,
+  "date": "2026-06-03",
+  "doc_id": "884140",
+  "file": "884140_2557955_2557955.pdf",
+  "kind": "answer",
+  "model": "claude-haiku-4-5-20251001",
+  "notes_version": 2,
+  "overview": "This is a verified amended response filed by HKC Corporation Ltd., Chongqing HKC Optoelectronics Technology Co., Ltd., and HKC Overseas Limited to the amended complaint of BH Innovations LLC, Longitude Licensing Limited, and 138 East LCD Advancements Ltd. in a Section 337 investigation concerning liquid crystal display devices. The respondents deny infringement of the asserted patents and challenge their validity and enforceability.",
+  "pages_read": [
+    1,
+    2,
+    3,
+    4,
+    37,
+    38,
+    39,
+    40,
+    41,
+    42,
+    43,
+    44,
+    45,
+    46,
+    47,
+    48,
+    49,
+    50,
+    51,
+    52,
+    53,
+    54,
+    55,
+    56
+  ],
+  "points": [
+    {
+      "page": 1,
+      "point": "Respondents are HKC Corporation Limited (located in Shenzhen, China), Chongqing HKC Optoelectronics Technology Co., Ltd. (located in Chongqing, China), and HKC Overseas Limited (located in Hong Kong), which manufacture and sell liquid crystal display devices and components.",
+      "quote": "HKC Corporation Limited 5F and 7F. Factory Building 1 HKC Industrial Park 1 Gongye 2nd Road Baoan District, Shenzhen City Guang Province, 518108, China",
+      "topic": "respondents"
+    },
+    {
+      "page": 39,
+      "point": "Respondents deny that they have imported, sold for importation, or sold within the United States liquid crystal display devices covered by valid and enforceable asserted patent claims, and deny violating Section 337 of the Tariff Act.",
+      "quote": "HKC Respondents deny that they are in violation of 19 U.S.C. \u00a7 1337 and that they have engaged in the unlawful importation into the United States, the sale for importation, or the sale within the United States after importation",
+      "topic": "general_response"
+    },
+    {
+      "page": 38,
+      "point": "Respondents deny that they have directly infringed, contributorily infringed, or induced infringement of any asserted patent claims.",
+      "quote": "Determining that HKC Respondents have not directly infringed, contributorily infringed, and/or induced infringement of any of the asserted claims of the Asserted Patents",
+      "topic": "general_response"
+    },
+    {
+      "page": 44,
+      "point": "Respondents contend that the asserted claims of the patents-in-suit are invalid under 35 U.S.C. \u00a7\u00a7 102 or 103.",
+      "quote": "Initial Invalidity Contentions in response to, e.g., Complainants' Interrogatory No. 11 (\"Describe Your contention, if any, that the Asserted Claims are invalid, including without limitation by specifying all legal and factual bases for invalidity, including any grounds for invalidity raised under 35 U.S.C. \u00a7\u00a7 102 or 103",
+      "topic": "invalidity"
+    },
+    {
+      "page": 37,
+      "point": "Respondents allege that the '334 patent (U.S. Patent No. 7,570,334) is unenforceable due to inequitable conduct by the inventor, Masao Murade, during patent prosecution.",
+      "quote": "material to the patentability of claim 14 of the '334 patent with a specific intent to deceive the Examiner, who would not have issued claim 14 but-for the inventor's deliberate failure to disclose his own material prior art references.",
+      "topic": "unenforceability"
+    },
+    {
+      "page": 37,
+      "point": "Respondents contend that the inventor failed to disclose material prior art references including U.S. Patent App. Pub. No. 2005/0078240 (later U.S. Patent No. 7,196,353), U.S. Patent No. 6,433,841, U.S. Patent No. 6,611,301, and U.S. Patent No. 6,897,932, all listing Masao Murade as a named inventor and disclosing the 'dummy pixel' subject matter of claim 14.",
+      "quote": "Those withheld, material prior art references include at least the following references: U.S. Patent App. Pub. No. 2005/0078240 (later issued as U.S. Patent No. 7,196,353); U.S. Patent No. 6,433,841; U.S. Patent No. 6,611,301; and U.S. Patent No. 6,897,932.",
+      "topic": "unenforceability"
+    },
+    {
+      "page": 37,
+      "point": "Respondents allege that the Examiner's allowance of claim 14 was based on the incorrect belief that prior art did not disclose the 'dummy pixel' limitation, and that the inventor knew this characterization was incorrect based on his own prior art references.",
+      "quote": "the Examiner stated that claim 14 of the '334 patent was patentable based on the incorrect belief that the prior art did not disclose or suggest the recited \"dummy pixel\" limitation of claim 14.",
+      "topic": "unenforceability"
+    },
+    {
+      "page": 37,
+      "point": "Respondents allege the inventor deliberately withheld these material prior art references because he understood they would have led the Examiner to reject claim 14 as obvious.",
+      "quote": "Upon information and belief, and subject to further discovery, the inventor understood that his own \"dummy pixel\" prior art would have led the Examiner to reject claim 14 of the '334 patent, and therefore deliberately decided to withhold those references from the Examiner.",
+      "topic": "unenforceability"
+    },
+    {
+      "page": 47,
+      "point": "Respondents argue that claim 14 was obtained through prosecution history where the Examiner rejected the original independent claim but allowed a dependent claim based on the belief that prior art did not render obvious the dummy pixel subject matter.",
+      "quote": "the Examiner stated that dependent claim 10 was allowable because the prior art\u2014\"alone or in combination\"\u2014did not \"disclose or render obvious\" the subject matter recited in dependent claim 10",
+      "topic": "unenforceability"
+    },
+    {
+      "page": 52,
+      "point": "Respondents contend that the named inventor Masao Murade was aware of substantively identical dummy pixel subject matter in his own issued patents yet failed to disclose these references in any information disclosure statement during prosecution.",
+      "quote": "Despite this knowledge and awareness of substantively identical subject matter relating to dummy pixel electrodes claimed and described in his own issued patents, at no point during prosecution of the '334 patent did the named inventor disclose this prior art to the Examiner",
+      "topic": "unenforceability"
+    },
+    {
+      "page": 52,
+      "point": "Respondents argue that the withheld prior art references were not cumulative because the Examiner cited only one English-language U.S. Patent (Karasawa), with remaining cited references being Japanese-language Foreign Patent Documents.",
+      "quote": "the Examiner-cited Karasawa reference is the only English-language, U.S. Patent document cited on the face page of the '334 patent, with the remaining cited references all being Japanese-language Foreign Patent Documents.",
+      "topic": "unenforceability"
+    },
+    {
+      "page": 40,
+      "point": "Respondents state they do not directly market or target accused panels to the United States market and commercial activities occur outside the United States.",
+      "quote": "The accused panels are not specifically marketed or targeted to the United States market. HKC Respondents' commercial activities related to the accused panels occur outside of the United States.",
+      "topic": "non_infringement"
+    },
+    {
+      "page": 40,
+      "point": "Respondents sell accused panels to customers outside the United States, although some shipments to Mexico may be transshipped through United States free trade zones, and have no information about customers' importation and sales in the United States.",
+      "quote": "HKC Respondents sell accused panels to customers outside of the United States, although some shipments to Mexico may be trans-shipped through United States free trade zones, and have no information about customers' importation and sales of their products incorporating the accused panels in the United States.",
+      "topic": "non_infringement"
+    },
+    {
+      "page": 40,
+      "point": "Respondents state they only sell certain finished products (TVs) incorporating accused panels to VIZIO and Westinghouse, which are responsible for sales to end users in the United States.",
+      "quote": "HKC Respondents only sell certain finished products (i.e., TVs) incorporating the accused panels to VIZIO and Westinghouse, which may be imported and sold by those companies in the United States.",
+      "topic": "non_infringement"
+    },
+    {
+      "page": 40,
+      "point": "Respondents shipped approximately 200 units of free samples of finished products incorporating accused panels for after-sales service to VIZIO from January 1, 2025 to November 30, 2025, with an U.S. subsidiary as consignee.",
+      "quote": "From January 1, 2025 to November 30, 2025, shipment of approximately 200 units of free samples of finished products incorporating the accused panels for after-sales service to VIZIO listed Innoview American Limited, an U.S. subsidiary wholly owned by HKC Overseas Limited, as consignee/importer.",
+      "topic": "non_infringement"
+    },
+    {
+      "page": 39,
+      "point": "Respondents deny the complainants' allegation that a domestic industry exists but lack sufficient information to form a belief as to whether it meets the domestic industry requirement.",
+      "quote": "HKC Respondents admit that, as set forth in the Summary in the Commission's Notice of Investigation, the Complaint alleges that an industry in the United States exists, but HKC Respondents lack sufficient information and knowledge to form a belief as to the truth of Complainants' allegation",
+      "topic": "domestic_industry"
+    },
+    {
+      "page": 40,
+      "point": "Respondents allege there is no substantial effect or threat to any domestic industry as alleged in the complaint.",
+      "quote": "Upon information and belief, there is no substantial effect or threat to any domestic industry as alleged in the Complaint.",
+      "topic": "domestic_industry"
+    },
+    {
+      "page": 38,
+      "point": "Respondents request that the Commission deny all relief requested by complainants and determine that HKC Respondents have not imported or sold within the United States liquid crystal display devices covered by valid and enforceable asserted patent claims.",
+      "quote": "Denying all relief Complainants requested in the Complaint; (2) Determining that HKC Respondents have not imported, sold for importation, or sold within the United States after importation certain liquid crystal display devices",
+      "topic": "relief"
+    },
+    {
+      "page": 38,
+      "point": "Respondents request a finding that the asserted claims are invalid and the '334 patent is unenforceable due to inequitable conduct.",
+      "quote": "Finding that the asserted claims of the Asserted Patents are invalid; (6) Finding that the '334 patent is unenforceable due to inequitable conduct",
+      "topic": "relief"
+    },
+    {
+      "page": 38,
+      "point": "Respondents request dismissal of the complaint, termination of the investigation, and an award of their attorneys' fees and costs.",
+      "quote": "Awarding HKC Respondents their attorneys' fees and costs incurred in responding to the Complaint and defending themselves in this Investigation; (9) Dismissing the present Complaint and terminating the present Investigation",
+      "topic": "relief"
+    }
+  ],
+  "rejected": [],
+  "taken_at": "2026-09-26T21:41:07+00:00",
+  "title": "Verified Amended Response of HKC Corporation Ltd., Chongqing HKC Optoelectronics, and HKC Overseas Ltd.to the Amended Complaint of BH Innovations LLC, Longitude Licensing Limited and 138 East LCD Advancements Ltd. under Section 337 of the Tariff Act of 1930",
+  "truncated": false,
+  "who": "HKC Corporation Ltd., Chongqing HKC Optoelectronics, and HKC Overseas Ltd."
+}

@@ -1,0 +1,342 @@
+{
+  "cost_usd": 0.048243,
+  "date": "2025-08-29",
+  "doc_id": "860765",
+  "file": "860765_2425691_2425691.pdf",
+  "kind": "complaint",
+  "model": "claude-haiku-4-5-20251001",
+  "notes_version": 2,
+  "overview": "This is a Section 337 complaint filed by BH Innovations LLC (BHI) on August 29, 2025, alleging that multiple respondents unlawfully import and sell liquid crystal display (LCD) devices that infringe U.S. Patent No. 7,705,948 and U.S. Patent No. 7,570,334. BHI seeks a limited exclusion order, cease-and-desist orders, and a bond during the Presidential review period.",
+  "pages_read": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10,
+    11,
+    12,
+    13,
+    14,
+    15,
+    16,
+    17,
+    18,
+    19,
+    20,
+    21,
+    22,
+    23,
+    24,
+    25,
+    26,
+    27,
+    28,
+    29,
+    30,
+    31,
+    32,
+    33,
+    34,
+    35,
+    36
+  ],
+  "points": [
+    {
+      "page": 10,
+      "point": "BH Innovations LLC (BHI), a Delaware limited liability company with principal place of business at 401 East 89th Street, #18B, New York, NY 10128, is the complainant and exclusive licensee of the asserted patents.",
+      "quote": "BHI is the exclusive licensee of certain patents, including the '948 patent and the '334 patent, that cover inventions developed by Seiko Epson Corporation",
+      "topic": "parties"
+    },
+    {
+      "page": 10,
+      "point": "138 East LCD Advancements Ltd. is the owner by assignment of the '948 patent and was the owner by assignment of the '334 patent, which it has assigned to BHI.",
+      "quote": "138 East LCD Advancements Ltd. ('138 East') is the owner by assignment of the '948 patent and was the owner by assignment of the '334 patent.",
+      "topic": "parties"
+    },
+    {
+      "page": 11,
+      "point": "BHI is authorized to enforce the '948 patent through Longitude Licensing Limited, which holds the exclusive right to license the patent from 138 East.",
+      "quote": "138 East has granted the exclusive right to license the '948 patent to Longitude Licensing Limited ('Longitude'). A copy of 138 East's authorization to Longitude to grant licenses is attached",
+      "topic": "parties"
+    },
+    {
+      "page": 11,
+      "point": "The proposed respondents are HKC Corp. Ltd., Chongqing HKC Optoelectronics, and HKC Overseas Ltd. (collectively HKC), manufacturers, distributors, and sellers of LCD panels and components for other manufacturers.",
+      "quote": "On information and belief, HKC is a manufacturer, distributor, seller, and marketer of components of LCD devices, particularly LCD panels, and/or products containing the same that infringe the asserted claims",
+      "topic": "respondents"
+    },
+    {
+      "page": 12,
+      "point": "The proposed respondents include HiSense Co., Ltd., HiSense International Co., Ltd., HiSense Visual Technology Co. Ltd., and HiSense US Corporation (collectively HiSense), manufacturers, distributors, sellers, marketers, and importers of LCD devices and products containing LCD devices.",
+      "quote": "On information and belief, HiSense is a manufacturer, distributor, seller, marketer, and importer of LCD devices and/or products containing the same that infringe the asserted claims",
+      "topic": "respondents"
+    },
+    {
+      "page": 12,
+      "point": "VIZIO Holding Corp., with principal place of business at 39 Tesla, Irvine, California 92618, is a proposed respondent that manufactures, distributes, sells, markets, and imports LCD devices and products containing LCD devices.",
+      "quote": "On information and belief, VIZIO is a manufacturer, distributor, seller, marketer, and importer of LCD devices and/or products containing the same that infringe at least one claim",
+      "topic": "respondents"
+    },
+    {
+      "page": 12,
+      "point": "TCL entities (TCL Electronics Holdings Ltd., Shenzhen TCL New Technology Co. Ltd., TCL King Electrical Appliances Co. Ltd., TTE Technology Inc., TCL Technology Group Corp., TCL Moka International Ltd., TCL Overseas Marketing Ltd., TCL Industries Holdings Co., Ltd., and TCL Smart Device (Vietnam) Co. Ltd.) collectively manufacture, distribute, sell, market, and import LCD devices and products.",
+      "quote": "TCL is a manufacturer, distributor, seller, marketer, and importer of LCD devices and/or products containing the same that infringe at least one claim",
+      "topic": "respondents"
+    },
+    {
+      "page": 12,
+      "point": "LG Electronics, Inc. and LG Electronics USA, Inc. (collectively LGE) are manufacturers, distributors, sellers, marketers, and importers of LCD devices and products containing LCD devices.",
+      "quote": "On information and belief, LGE is a manufacturer, distributor, seller, marketer, and importer of LCD devices and/or products containing the same that infringe at least one claim",
+      "topic": "respondents"
+    },
+    {
+      "page": 12,
+      "point": "Westinghouse Electric Corporation, with principal place of business at 4000 Town Center Blvd., Suite 210, Canonsburg, Pennsylvania 15317, is a manufacturer, distributor, seller, marketer, and importer of LCD devices and products.",
+      "quote": "On information and belief, Westinghouse is a manufacturer, distributor, seller, marketer, and importer of LCD devices and/or products containing the same that infringe at least one claim",
+      "topic": "respondents"
+    },
+    {
+      "page": 9,
+      "point": "LCD devices consist of a liquid crystal material sandwiched between two glass substrate layers, and use the optical and electrical properties of liquid crystal molecules to control light transmission through colored filters for pixels.",
+      "quote": "An LCD utilizes the optical and electrical properties of liquid crystal molecules to control the transmission of light through a layer of liquid crystals. LCD devices in use today commonly create an image using a number of small areas, known as pixels",
+      "topic": "technology"
+    },
+    {
+      "page": 17,
+      "point": "The '948 patent relates to LCD devices with a substrate containing an upper electrode layer with slits, an insulating layer, and a lower electrode layer, where the slit geometry reduces disclination and improves light transmission, image quality, and manufacturing yield.",
+      "quote": "the '948 patent claims inventions that relate to LCD devices comprising a substrate with an upper electrode layer having slits formed on it, an insulating layer between the substrate and the upper electrode layer, and a lower electrode layer",
+      "topic": "technology"
+    },
+    {
+      "page": 18,
+      "point": "The '334 patent relates to LCD panels with opposing substrates containing pixel electrodes and an opposing electrode, a sealing region with a sealing member, vertical-conduction electrodes and members, and a frame-shaped dummy region.",
+      "quote": "the '334 patent claims inventions that relate to LCD panels comprising a pair of opposing substrates with a pixel region between them that contains a plurality of pixel electrodes arrayed on one of the two substrates",
+      "topic": "technology"
+    },
+    {
+      "page": 16,
+      "point": "U.S. Patent No. 7,705,948 ('948 patent), entitled 'Liquid Crystal Display Device,' issued April 27, 2010, from an application filed October 12, 2007, with inventors Yasuo Segawa, Masaaki Aota, and Shinji Ichikaka, expires August 5, 2028.",
+      "quote": "The '948 patent, entitled 'Liquid Crystal Display Device,' duly and legally issued on April 27, 2010, from a patent application filed October 12, 2007",
+      "topic": "ip_asserted"
+    },
+    {
+      "page": 9,
+      "point": "U.S. Patent No. 7,705,948 includes fifteen claims, with claims 1, 7, and 14 being independent claims; BHI asserts claim 1 of the '948 patent against the proposed respondents.",
+      "quote": "BHI asserts that the Proposed Respondents' accused products practice at least claims 1, 2, 3, and 5 of the '948 patent and/or claim 1 of the '334 patent",
+      "topic": "ip_asserted"
+    },
+    {
+      "page": 17,
+      "point": "U.S. Patent No. 7,570,334 ('334 patent), entitled 'Electro-optical Device and Electronic Apparatus,' issued August 4, 2009, from an application filed June 4, 2007, with inventor Masao Murade, expires October 3, 2027.",
+      "quote": "The '334 patent, entitled 'Electro-optical Device and Electronic Apparatus,' duly and legally issued on August 4, 2009, from a patent application filed June 4, 2007",
+      "topic": "ip_asserted"
+    },
+    {
+      "page": 17,
+      "point": "U.S. Patent No. 7,570,334 includes fourteen claims, with claims 1, 13, and 14 being independent claims; BHI asserts claim 1 of the '334 patent against the proposed respondents.",
+      "quote": "The '334 patent includes fourteen (14) claims. Claims 1, 13, and 14 are independent claims.",
+      "topic": "ip_asserted"
+    },
+    {
+      "page": 15,
+      "point": "The products at issue are LCD devices composed of two glass substrates sandwiching liquid crystal pixels and associated control circuitry, components thereof, and products containing such LCD devices.",
+      "quote": "the products at issue are LCD devices composed of two glass substrates sandwiching a layer of liquid crystal pixels and the associated circuitry for controlling the amount of light passing through those pixels",
+      "topic": "products"
+    },
+    {
+      "page": 26,
+      "point": "HiSense 32A4 model TVs containing HKC panels are exemplary infringing products.",
+      "quote": "HiSense 32A4 model TVs containing an HKC panel are LCD devices comprising a substrate with an upper electrode layer having slits formed on it",
+      "topic": "products"
+    },
+    {
+      "page": 19,
+      "point": "BHI alleges that VIZIO manufactures, imports, offers for sale, and/or sells LCD devices including VIZIO D32fM-K07 model TVs containing HKC model PT320CT01 panels that infringe claim 1 of the '334 patent.",
+      "quote": "VIZIO manufactures, imports, offers for sale and/or sells LCD devices, components thereof, and products containing same that infringe the Asserted Patents, and more specifically at least claim 1 of the '334 patent",
+      "topic": "infringement"
+    },
+    {
+      "page": 19,
+      "point": "BHI alleges that TCL manufactures, imports, offers for sale, and/or sells LCD devices including TCL 32S331 and 32S355 model TVs containing HKC model PT320AT02 panels that infringe claim 1 of the '334 patent.",
+      "quote": "TCL manufactures, imports, offers for sale and/or sells LCD devices, components thereof, and products containing same that infringe the Asserted Patents, and more specifically at least claim 1 of the '334 patent",
+      "topic": "infringement"
+    },
+    {
+      "page": 19,
+      "point": "BHI alleges that LGE manufactures, imports, offers for sale, and/or sells LCD devices including LG 27MP40W model monitors containing HKC model NS270CS01 panels that infringe claim 1 of the '948 patent.",
+      "quote": "LGE manufactures, imports, offers for sale and/or sells LCD devices, components thereof, and products containing same that infringe the Asserted Patents, and more specifically at least claim 1 of the '948 patent",
+      "topic": "infringement"
+    },
+    {
+      "page": 19,
+      "point": "BHI alleges that Westinghouse manufactures, imports, offers for sale, and/or sells LCD devices including WR24HT2212 model TVs containing HKC model PT236AT02 panels that infringe claim 1 of the '334 patent.",
+      "quote": "Westinghouse manufactures, imports, offers for sale and/or sells LCD devices, components thereof, and products containing same that infringe the Asserted Patents, and more specifically at least claim 1 of the '334 patent",
+      "topic": "infringement"
+    },
+    {
+      "page": 20,
+      "point": "BHI alleges that HiSense manufactures, imports, offers for sale, and/or sells LCD devices including TVs containing HKC panels (models PT236AT02, PT320CT01, or NS270CS01) that infringe claim 1 of both the '948 and '334 patents.",
+      "quote": "HiSense manufactures, imports, offers for sale and/or sells LCD devices, components thereof, and products containing same that infringe the Asserted Patents, and more specifically at least claim 1 of the '948 patent and claim 1 of the '334 patent",
+      "topic": "infringement"
+    },
+    {
+      "page": 20,
+      "point": "BHI alleges that HKC manufactures and sells for importation LCD devices and panels (PT236AT02, PT320CT01, PT320AT02, and NS270CS01) that infringe claim 1 of both the '948 and '334 patents.",
+      "quote": "HKC manufactures and sells for importation LCD devices, components thereof, and products containing same that infringe the Asserted Patents, and more specifically at least claim 1 of the '948 patent and claim 1 of the '334 patent",
+      "topic": "infringement"
+    },
+    {
+      "page": 21,
+      "point": "BHI alleges that VIZIO's D32fM-K07 model TVs containing HKC PT320CT01 panels were manufactured in China and imported into the United States, as evidenced by receipts, delivery records, and photographs showing the manufacturing origin.",
+      "quote": "BHI has obtained within the United States a representative VIZIO LCD device that was made in China and that infringe s at least claim 1 of the '334 patent. Receipts and delivery records showing the purchase of accused LCD devices from within the U.S. are attached",
+      "topic": "importation"
+    },
+    {
+      "page": 22,
+      "point": "BHI is aware of TCL LCD devices manufactured in China that were imported into the United States and infringe claim 1 of the '334 patent, as shown in Exhibit 5B.",
+      "quote": "BHI is aware of the importation into the United States of at least two TCL LCD devices that were made in China and that infringe at least claim 1 of the '334 patent",
+      "topic": "importation"
+    },
+    {
+      "page": 23,
+      "point": "BHI obtained within the United States a representative LGE LCD device manufactured in China that infringes claim 1 of the '948 patent, evidenced by receipts, delivery records, and photographs.",
+      "quote": "BHI has obtained within the United States at least one representative LGE LCD device that was made in China and that infringes at least claim 1 of the '948 patent. Receipts and delivery records showing the purchase of an accused LCD device",
+      "topic": "importation"
+    },
+    {
+      "page": 24,
+      "point": "BHI obtained a representative Westinghouse LCD device manufactured in China that infringes claim 1 of the '334 patent, as shown by receipts, delivery records, and photographs.",
+      "quote": "BHI has obtained within the United States at least one representative Westinghouse LCD device that was made in China and that infringes the claims of the Asserted Patents",
+      "topic": "importation"
+    },
+    {
+      "page": 26,
+      "point": "BHI is aware of HiSense LCD devices manufactured in Mexico that were imported into the United States and infringe claim 1 of the '334 patent.",
+      "quote": "BHI is aware of the importation into the United States of at least one HiSense LCD device that was made in Mexico and that infringe s at least claim 1 of the '334 patent",
+      "topic": "importation"
+    },
+    {
+      "page": 27,
+      "point": "BHI has obtained representative HKC LCD devices manufactured in China and imported into the United States that infringe one or more claims of the asserted patents.",
+      "quote": "BHI has obtained within the United States representative HKC LCD device s that were made in China and that infringe the claims of the Asserted Patents",
+      "topic": "importation"
+    },
+    {
+      "page": 31,
+      "point": "The domestic industry is satisfied through Innolux Corporation and its wholly owned U.S. subsidiaries Innolux USA, Inc. and InnoCare Optoelectronics USA, Inc., which conduct manufacturing, engineering, research, development, repair, service, and customer support activities in the United States.",
+      "quote": "Innolux operates in the United States through two wholly owned subsidiaries, Innolux USA, Inc. and I nnoCare Optoelectronics USA, Inc. Innolux USA primarily conducts activities in connection with, among other things, engineering, repair, and service",
+      "topic": "domestic_industry"
+    },
+    {
+      "page": 29,
+      "point": "Innolux manufactures and sells LCD panels (models P101KDA and M238HCA-L3B) protected by the '948 patent and found in products such as Amazon brand tablets, satisfying the technical prong of the domestic industry requirement.",
+      "quote": "At a minimum, Innolux's P101KDA and M238HCA-L3B model panel s are protected by the '948 patent. These model panels are found in, e.g., Amazon brand tablets.",
+      "topic": "domestic_industry"
+    },
+    {
+      "page": 30,
+      "point": "Innolux manufactures and sells an N116BGE-EA2 model panel protected by the '334 patent and found in products such as Lenovo brand tablets, satisfying the technical prong of the domestic industry requirement.",
+      "quote": "At a minimum, Innolux's N116BGE-EA2 model panel is protected by the '334 patent. This model panel is found in, e.g., Lenovo brand tablets",
+      "topic": "domestic_industry"
+    },
+    {
+      "page": 30,
+      "point": "Innolux has made substantial investments in U.S. labor and capital in research and development, testing, repair, refurbishment, and customer support activities related to the asserted patents.",
+      "quote": "A domestic industry exists based upon the substantial investments by 138 East's licensees in domestic research and development, testing, repair, refurbishment, customer support and other after-market activities",
+      "topic": "domestic_industry"
+    },
+    {
+      "page": 30,
+      "point": "Innolux generates many millions of dollars in annual revenues from sales of licensed products covered by the asserted patents and maintains significant U.S. manufacturing facilities for these products.",
+      "quote": "Revenues generated by sales of these licensed products are extensive and total many millions of dollars annually. Further details of these activities are described in Confidential Exhibit C3",
+      "topic": "domestic_industry"
+    },
+    {
+      "page": 32,
+      "point": "Innolux maintains an inventory of spare parts in the United States provided to domestic customers for direct service or replacement of products and components outside of warranty service.",
+      "quote": "Innolux maintains an inventory of spare parts in the United States that are provided through Innolux USA to its customers in the United States so that those domestic customers can directly service or replace Innolux products",
+      "topic": "domestic_industry"
+    },
+    {
+      "page": 31,
+      "point": "Innolux engineers in U.S. offices work with domestic customers including HP, Dell, Amazon, and VIZIO to ensure products meet specifications and modify or customize products as required.",
+      "quote": "They are sold and supported in the United States to such companies as Hewlett Packard ('HP'), Dell, Amazon, and V IZIO. See Confidential Exhibit C 3. Although Innolux's LCD panels are manufactured outside the United States",
+      "topic": "domestic_industry"
+    },
+    {
+      "page": 33,
+      "point": "Innolux employs field application engineers and customer service engineers physically stationed at the offices of domestic customers to develop and customize/modify products being purchased and utilized by those customers.",
+      "quote": "Innolux also employees field application engineers and customer services engineers who are physically stationed at the offices of one or more of Innolux's domestic customers",
+      "topic": "domestic_industry"
+    },
+    {
+      "page": 19,
+      "point": "Concurrently with the ITC complaint, BHI is filing a complaint against the proposed respondents in the U.S. District Court for the Eastern District of Texas alleging infringement of the asserted patents.",
+      "quote": "Concurrently with the filing of the instant ITC complaint, BHI is also filing a complaint against the Proposed Respondents in the U.S. District Court for the Eastern District of Texas alleging infringement",
+      "topic": "related_proceedings"
+    },
+    {
+      "page": 19,
+      "point": "Two prior cases have been filed concerning the '948 patent: Longitude Licensing Limited v. BOE Technology Group Co., Ltd., Case No. 2:23-cv-00515 (EDTX), and Longitude Licensing Limited v. Sharp Corporation, Case No. 2:23-cv-00165 (EDTX); the latter was voluntarily dismissed in July 2023.",
+      "quote": "Other litigation concerning the '948 patent consists of the following cases : Longitude Licensing Limited v. BOE Technology Group Co., Ltd., Case No. 2:23-cv-00515 (EDTX); and Longitude Licensing Limited v. Sharp Corporation, Case No. 2: 23-cv-00165 (EDTX). Trial in Case No. 2:23-cv-00515 was scheduled to commence in August 2025",
+      "topic": "related_proceedings"
+    },
+    {
+      "page": 9,
+      "point": "BHI seeks a permanent limited exclusion order excluding from entry into the U.S. all LCD devices and products containing them manufactured or sold by the proposed respondents that infringe the asserted patents.",
+      "quote": "BHI seeks relief from the Commission in the form of a permanent limited exclusion order, pursuant to Section 337(d), excluding from entry into the U.S. all of the Proposed Respondents' LCD devices, components thereof, and products containing same that infringe one or more claims",
+      "topic": "relief"
+    },
+    {
+      "page": 10,
+      "point": "BHI seeks a permanent cease and desist order halting the importation, sale, offer for sale, use, demonstration, promotion, marketing, and/or advertising of infringing LCD devices and products by the proposed respondents.",
+      "quote": "BHI also seeks a permanent cease and desist order, pursuant to Section 337(f), halting the importing, selling, offering for sale, using, demonstrating, promoting, marketing, and/or advertising by the Proposed Respondents and related entities of LCD devices",
+      "topic": "relief"
+    },
+    {
+      "page": 10,
+      "point": "BHI requests imposition of a bond upon the proposed respondents' importation of infringing LCD devices during the 60-day Presidential review period pursuant to Sections 337(e) and (j).",
+      "quote": "BHI additionally requests that the Commission impose a bond upon the Proposed Respondents' importation of infringing LCD devices, components thereof, and products containing same during the 60-day Presidential review period pursuant to Section 337(e), (j)",
+      "topic": "relief"
+    }
+  ],
+  "rejected": [
+    {
+      "page": 19,
+      "point": "Exemplary accused products include VIZIO D32fM-K07 model TVs containing HKC model PT320CT01 panels, and TCL 32S331 and 32S355 model TVs containing HKC model PT320AT02 panels.",
+      "quote": "VIZIO D32fM-K07 model TVs containing an HKC model PT320CT01 panel. On further information and belief, TCL's infringing products include, without limitation, the following: TCL 32S331 and 32S355 model TVs",
+      "rejected": "quote not found in the filing",
+      "topic": "products"
+    },
+    {
+      "page": 19,
+      "point": "Exemplary accused products include LG 27MP40W model monitors containing HKC model NS270CS01 panels and Westinghouse WR24HT2212 model TVs containing HKC model PT236AT02 panels.",
+      "quote": "LG 27MP40W model Monitors containing an HKC model NS270CS01 panel. On further information and belief, Westinghouse's infringing products include, without limitation, the following: WR24HT2212 model TVs",
+      "rejected": "quote not found in the filing",
+      "topic": "products"
+    },
+    {
+      "page": 31,
+      "point": "Innolux maintains major facilities in San Diego, California and San Jose, California staffed with numerous employees engaged in product customization, repair, refurbishment, failure analysis, and supporting overseas engineering activities.",
+      "quote": "Innolux runs a major facility in San Diego, California, staffed with numerous employees, many of whom are dedicated to repair and refurbishment of Innolux's products. See Confidential Exhibit C 3. This facility has primary responsibility for repairing and refurbishing",
+      "rejected": "quote not found in the filing",
+      "topic": "domestic_industry"
+    },
+    {
+      "page": 32,
+      "point": "Innolux maintains service and support centers in Los Angeles and Irvine, California; Houston and Austin, Texas; and Hoffman Estates, Illinois, with sales and engineering liaisons at nine U.S. facilities.",
+      "quote": "Innolux has also invested in service and support centers located in: Los Angeles and Irvine, California; Houston and Austin, Texas ; and Hoffman Estates, Illinois. See Confidential Exhibit C3. Innolux also maintains staff in the United States to act as sales and engineering liaisons",
+      "rejected": "quote not found in the filing",
+      "topic": "domestic_industry"
+    }
+  ],
+  "taken_at": "2026-09-26T21:36:55+00:00",
+  "title": "Public Complaint and Exhibits",
+  "truncated": false,
+  "who": ""
+}

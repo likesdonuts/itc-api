@@ -3044,9 +3044,11 @@
     "fetched_at": "2026-09-26T17:42:14.479602+00:00"
   },
   "337-1455": {
-    "attachments_downloaded": 0,
+    "attachments_downloaded": 290,
     "documents": 144,
-    "fetched_at": "2026-09-26T17:42:25.711530+00:00"
+    "fetched_at": "2026-09-26T21:57:37.998648+00:00",
+    "full_listed_at": "2026-09-26T21:57:37+00:00",
+    "listing": "full"
   },
   "337-1456": {
     "attachments_downloaded": 0,

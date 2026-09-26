@@ -19,7 +19,7 @@ SYSTEM = """You write a case summary of a U.S. International Trade Commission Se
 
 You are given, each with an id:
 - notes (n1, n2, ...) taken from the complaint, the notice of institution, the respondents' answers, the Administrative Law Judge's (ALJ's) summary determination rulings, the final initial determination (final ID), and the Commission's notices and opinions, each with its source and page;
-- title facts (t1, t2, ...): what the titles of orders and notices say -- settlements, defaults, the Commission declining to review a ruling, exclusion orders issued;
+- title facts (t1, t2, ...): the case history, oldest first -- every dispositive event, from the titles of the ALJ's and the Commission's orders and notices: terminations (settlement, withdrawal of the complaint or of claims, consent orders), defaults, summary determinations, the final ID, the Commission reviewing a ruling or letting it stand, its determinations and orders. Events marked * change who or what is in the case, or end it: the summary must account for every one of them -- in rulings, decisions or standing -- citing it. Many alike events may be told together ("eleven respondents settled between August and December 2021") citing them all;
 - claims facts (c1, c2, ...): which patent claims were withdrawn, found invalid or not, found infringed or not, from a checked analysis of the decisions.
 Write only from these: every statement must be supported by an item you cite. If they do not say something, leave it out; never add facts, law or background from elsewhere beyond a few words defining a term.
 
@@ -120,8 +120,9 @@ def user_message(*, key: str, title: str, status: str, numbered: dict[str, dict[
     titles = {k: v for k, v in facts.items() if v["type"] == "title"}
     claims = {k: v for k, v in facts.items() if v["type"] == "claims"}
     if titles:
-        lines += ["", "Title facts:"]
-        lines += [f"[{fid}] ({f['date']}, {f['label']}) {f['title']}" for fid, f in titles.items()]
+        lines += ["", "Title facts (the case history; * = must be accounted for):"]
+        lines += [f"[{fid}]{'*' if f.get('must') else ''} ({f['date']}, {f['label']}) {f['title']}"
+                  + (f" [names: {f['who']}]" if f.get("who") else "") for fid, f in titles.items()]
     if claims:
         lines += ["", "Claims facts:"]
         lines += [f"[{fid}] ({f['date']}) {f['text']}" for fid, f in claims.items()]
@@ -166,4 +167,12 @@ def check(answer: dict[str, Any], numbered: dict[str, Any], groups: dict[str, An
         {"group": gid, "who": groups[gid]["who"], "doc_id": groups[gid]["doc_id"], "paragraphs": by_group[gid]}
         for gid in groups if gid in by_group
     ]
+    # Every event of the case history that changes the case must be in it.
+    cited = {c for section in SECTIONS for p in out[section] for c in p["cites"]}
+    cited |= {c for a in out["answers"] for p in a["paragraphs"] for c in p["cites"]}
+    missing = [fid for fid, f in (facts or {}).items() if f.get("must") and fid not in cited]
+    if missing:
+        warnings.append(f"the summary does not mention {len(missing)} event(s) of the case history: "
+                        + "; ".join(f"{(facts or {})[m]['date']} {(facts or {})[m]['label']}" for m in missing[:8])
+                        + (" ..." if len(missing) > 8 else ""))
     return out, warnings

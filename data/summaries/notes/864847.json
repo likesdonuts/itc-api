@@ -1,0 +1,53 @@
+{
+  "cost_usd": 0.007241,
+  "date": "2025-11-24",
+  "doc_id": "864847",
+  "file": "864847_2453629_2453629.pdf",
+  "kind": "notice_of_institution",
+  "model": "claude-haiku-4-5-20251001",
+  "notes_version": 2,
+  "overview": "This is the Notice of Institution of Investigation for ITC Investigation 337-TA-1462, dated November 24, 2025. BH Innovations LLC, Longitude Licensing Limited, and 138 East LCD Advancements Ltd. filed a complaint alleging that various LCD manufacturers infringe claims of U.S. Patent Nos. 7,705,948 and 7,570,334 through importation and sale of LCD devices and products containing LCD devices. The Commission instituted the investigation and named 18 respondents.",
+  "pages_read": [
+    1,
+    2,
+    3,
+    4
+  ],
+  "points": [
+    {
+      "page": 1,
+      "point": "The complainants are BH Innovations LLC of New York, Longitude Licensing Limited of Ireland, and 138 East LCD Advancements Ltd. of Ireland.",
+      "quote": "BH Innovations LLC of New York, New York. The complaint was amended on September 19, 2025, to add Longitude Licensing Limited of Ireland, and 138 East LCD Advancements Ltd. of Ireland as complainants.",
+      "topic": "parties"
+    },
+    {
+      "page": 2,
+      "point": "The investigation covers infringement of claim 1 of U.S. Patent No. 7,705,948 and claim 1 of U.S. Patent No. 7,570,334.",
+      "quote": "infringement of one or more of claim 1 of the '948 patent and claim 1 of the '334 patent",
+      "topic": "scope"
+    },
+    {
+      "page": 2,
+      "point": "The accused products are LCD devices composed of two glass substrates sandwiching a layer of liquid crystal pixels and associated circuitry for controlling light, components thereof, and products containing the same.",
+      "quote": "LCD devices composed of two glass substrates sandwiching a layer of liquid crystal pixels and the associated circuitry for controlling the amount of light passing through those pixels, components thereof, and products containing same",
+      "topic": "products"
+    },
+    {
+      "page": 3,
+      "point": "The respondents are HKC Corporation Ltd., Chongqing HKC Optoelectronics Technology Co. Ltd., HKC Overseas Ltd., HiSense Co. Ltd., HiSense International Co. Ltd., HiSense Visual Technology Co. Ltd., HiSense US Corporation, VIZIO Holding Corp., TCL Electronics Holdings Ltd., Shenzhen TCL New Technology Co. Ltd., TCL King Electrical Appliances Co. Ltd., TTE Technology Inc., TCL Technology Group Corp., TCL Moka International Ltd., TCL Overseas Marketing Ltd., and TCL Industries Holdings Co. Ltd.",
+      "quote": "The respondents are the following entities alleged to be in violation of section 337, and are the parties upon which the complaint is to be served:",
+      "topic": "parties"
+    },
+    {
+      "page": 2,
+      "point": "The filing does not indicate whether the Office of Unfair Import Investigations is designated as a party to the investigation.",
+      "quote": "Pursuant to section 210.10(b)(1) of the Commission's Rules of Practice and Procedure, 19 C.F.R. 210.10(b)(1), the plain language description",
+      "topic": "staff"
+    }
+  ],
+  "rejected": [],
+  "taken_at": "2026-09-26T21:37:04+00:00",
+  "title": "Institution of Investigation",
+  "truncated": false,
+  "who": ""
+}

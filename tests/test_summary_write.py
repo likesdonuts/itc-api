@@ -16,7 +16,6 @@ from support import DataDirTestCase, FakeEdisClient
 
 from datalayer import docs
 from datalayer.summary import build, config as summary_config, facts, fetch, notes, text, write
-from datalayer.summary.select import select
 
 COMPLAINT_PAGE = ("Complainant Acme Inc. alleges that Globex Corp. imports into the United States "
                   "wireless earbuds that infringe claims 1-5 of U.S. Patent No. 10,945,648.")
@@ -236,8 +235,8 @@ class TestFacts(unittest.TestCase):
         docs = [{"id": "7", "title": "Initial Determination Terminating Respondent Globex Based on a Settlement Agreement",
                  "document_type": "ID/RD - Other Than Final on Violation", "document_date": "2026-03-01",
                  "security_level": "Public"}]
-        [fact] = facts.title_facts(select(docs))
-        self.assertEqual((fact["label"], fact["doc_id"], fact["date"]), ("Termination", "7", "2026-03-01"))
+        [fact] = facts.title_facts(docs)
+        self.assertEqual((fact["label"], fact["doc_id"], fact["date"], fact["must"]), ("Termination", "7", "2026-03-01", True))
 
     def test_the_writer_may_cite_facts_but_not_invent_them(self):
         known = write.number_facts([{"doc_id": "7", "label": "Termination", "date": "d", "title": "T"}],
@@ -279,7 +278,8 @@ class TestDecisionsInTheBuild(BuildTestCase):
         final_call = model.calls[-2]["messages"][0]["content"]
         self.assertIn("final initial determination", final_call)
         writer = model.calls[-1]["messages"][0]["content"]
-        self.assertIn("[t1] (2026-04-01, Termination)", writer)
+        self.assertIn("[t1]* (2026-04-01, Termination)", writer)
+        self.assertIn("[t2]* (2026-08-01, Final ID)", writer)  # the case history includes what is also read
         self.assertIn("[c1] (2026-08-01) violation of Section 337 found, per the final ID", writer)
         self.assertEqual(result["facts"]["t1"]["doc_id"], "400")
         self.assertEqual(build.state(self.store_, "337-1", result, self.cfg)["state"], "up_to_date")

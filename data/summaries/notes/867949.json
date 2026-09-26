@@ -1,0 +1,214 @@
+{
+  "cost_usd": 0.030279,
+  "date": "2026-01-05",
+  "doc_id": "867949",
+  "file": "867949_2470912_2470912.pdf",
+  "kind": "answer",
+  "model": "claude-haiku-4-5-20251001",
+  "notes_version": 2,
+  "overview": "This is LG Electronics Inc. and LG Electronics USA, Inc.'s response to the amended complaint in ITC Investigation 337-TA-1462 concerning liquid crystal display (LCD) devices and components. LGE denies all allegations that it infringes the asserted patents (U.S. Patent Nos. 7,705,948 and 7,570,334) and denies liability under Section 337, while asserting fourteen affirmative defenses including non-infringement, invalidity, lack of domestic industry, and various equitable doctrines.",
+  "pages_read": [
+    1,
+    2,
+    3,
+    4,
+    16,
+    17,
+    18,
+    19,
+    20,
+    21,
+    22,
+    23,
+    24,
+    25,
+    26,
+    27,
+    28,
+    29,
+    30,
+    31,
+    32,
+    33,
+    34,
+    35
+  ],
+  "points": [
+    {
+      "page": 1,
+      "point": "LG Electronics Inc. is located at LG Twin Towers, 128 Yeouidae-ro, Yeongdeungpo-gu, Seoul, Republic of Korea, and LG Electronics USA, Inc. is located at 111 Sylvan Avenue, Englewood Cliffs, NJ 07632.",
+      "quote": "LG Electronics Inc. LG Twin Towers 128 Yeouidae-ro Yeongdeungpo-gu Seoul, Republic of Korea LG Electronics USA, Inc. 111 Sylvan Avenue Englewood Cliffs, NJ 07632",
+      "topic": "respondents"
+    },
+    {
+      "page": 2,
+      "point": "The complainants are BH Innovations LLC (BHI), Longitude Licensing Limited (Longitude), and 138 East LCD Advancements Ltd. (138 East), who filed the complaint on August 29, 2025, amended it on September 19, 2025, and supplemented it on September 25, 2025.",
+      "quote": "BH Innovations LLC (\"BHI\"), Longitude Licensing Limited (\"Longitude\"), and 138 East LCD Advancements Ltd. (\"138 East\") (together \"Complainants\") on August 29, 2025, amended on September 19, 2025, and supplemented on September 25, 2025",
+      "topic": "parties"
+    },
+    {
+      "page": 2,
+      "point": "The asserted patents are U.S. Patent No. 7,705,948 (the '948 Patent) and U.S. Patent No. 7,570,334 (the '334 Patent), collectively referred to as the Asserted Patents.",
+      "quote": "U.S. Patents Nos. 7,705,948 (the \"'948 Patent\") and 7,570,334 (the \"'334 Patent\") (collectively the \"Asserted Patents\")",
+      "topic": "ip_asserted"
+    },
+    {
+      "page": 16,
+      "point": "The accused products identified for LGE are LG 27MP40W model Monitors containing LCD panels provided by HKC, and some LG27MP240W model Monitors have contained HKC model SN270CS01 panels.",
+      "quote": "admits that some LG27MP240W model Monitors have contained HKC model SN270CS01 panels",
+      "topic": "products"
+    },
+    {
+      "page": 2,
+      "point": "LGE denies that it has engaged in unfair competition or violated Section 337 by importing, selling for importation, or selling within the United States after importation any product that infringes any valid and enforceable claim of the Asserted Patents, either literally or under the doctrine of equivalents.",
+      "quote": "LGE denies that it has engaged in unfair competition or violated Section 337 by importing, selling for importation, and/or selling within the United States after importation",
+      "topic": "general_response"
+    },
+    {
+      "page": 2,
+      "point": "LGE denies that any asserted claim of the Asserted Patents is valid and enforceable, and denies all allegations in the Complaint except as expressly and specifically admitted.",
+      "quote": "LGE further denies that any asserted claim of the Asserted Patents is valid and/or enforceable. Except as expressly and specifically admitted herein, LGE denies all allegations in the Complaint.",
+      "topic": "general_response"
+    },
+    {
+      "page": 2,
+      "point": "LGE states that the Complaint and supporting documentation lack clarity and are insufficient to demonstrate that LGE is violating Section 337, and reserves the right to amend its response based on additional facts developed during discovery.",
+      "quote": "The Complaint and supporting documentation lack clarity and are insufficient to demonstrate that LGE is violating Section 337",
+      "topic": "general_response"
+    },
+    {
+      "page": 4,
+      "point": "LGE admits that claim 1 of the Asserted Patents is alleged to be infringed and that complainants purport to assert infringement and unfair methods of competition.",
+      "quote": "LGE admits that the Complaint purports to assert infringement of claim 1 of the Asserted Patents",
+      "topic": "general_response"
+    },
+    {
+      "page": 24,
+      "point": "LGE asserts that Complainants have not adequately alleged and cannot prove that a domestic industry exists on the basis of the activities of Innolux, and that Complainants fail to demonstrate that Innolux has made significant investments in plant and equipment, significant employment of labor and capital, and/or substantial investments in exploitation of the Asserted Patents.",
+      "quote": "Complainants have not adequately alleged and cannot prove that a domestic industry exists on the basis of the activities of Innolux. Complainants fail to demonstrate that Innolux has made significant investments in plant and equipment",
+      "topic": "domestic_industry"
+    },
+    {
+      "page": 23,
+      "point": "LGE asserts as its first affirmative defense that it does not directly infringe, indirectly infringe, contribute to infringement, or induce infringement of any valid or enforceable claim of the Asserted Patents, either literally or under the doctrine of equivalents.",
+      "quote": "LGE does not directly infringe, indirectly infringe, contribute to infringement, or induce infringement of any valid or enforceable claim of the Asserted Patents",
+      "topic": "non_infringement"
+    },
+    {
+      "page": 23,
+      "point": "LGE states that this Investigation has just begun and reserves the right to amend its response, including offering claim charts establishing non-infringement of the asserted claims after further discovery, and will provide noninfringement contentions in accordance with the Procedural Schedule.",
+      "quote": "This Investigation has just begun, and LGE reserves the right to amend its response, including offering claim charts establishing non-infringement of the asserted claims",
+      "topic": "non_infringement"
+    },
+    {
+      "page": 23,
+      "point": "LGE asserts as its second affirmative defense that the asserted claims of the Asserted Patents are each invalid for failure to meet the requirements set forth in 35 U.S.C. \u00a7\u00a7 101, 102, 103, 112, 116, and/or 256.",
+      "quote": "The asserted claims of the Asserted Patents are each invalid for failure to meet the requirements set forth in 35 U.S.C. \u00a7\u00a7 101, 102, 103, 112, 116, and/or 256.",
+      "topic": "invalidity"
+    },
+    {
+      "page": 23,
+      "point": "Without limitation and subject to further investigation, all asserted claims of the Asserted Patents are invalid under 35 U.S.C. \u00a7 102 and/or 35 U.S.C. \u00a7 103 in view of at least the prior art identified on the face of the asserted patents and in the prosecution histories.",
+      "quote": "all asserted claims of the Asserted Patents are invalid under 35 U.S.C. \u00a7 102 and/or 35 U.S.C. \u00a7 103 in view of at least the prior art identified on the face of the asserted patents and in the prosecution histories",
+      "topic": "invalidity"
+    },
+    {
+      "page": 24,
+      "point": "LGE asserts a prosecution history estoppel defense, stating that on information and belief, due to admissions and statements made to the United States Patent and Trademark Office during the prosecution of the applications that resulted in the Asserted Patents or related patent applications, Complainants are estopped from construing a valid and enforceable claim as infringed literally or under the doctrine of equivalents.",
+      "quote": "Complainants are estopped fro m construing a valid and enforceable claim, if any, of the Asserted Patents as infringed literally or under the doctrine of equivalents by the Accused Products.",
+      "topic": "other_defenses"
+    },
+    {
+      "page": 24,
+      "point": "LGE asserts a lack of importation defense, stating that to the extent Complainants are unable to prove that the allegedly infringing articles are imported into the United States, sold for importation, or sold after importation by each LGE entity, Complainants' claims should be denied.",
+      "quote": "To the extent that Complainants are unable to prove that the allegedly infringing articles are imported into the United States, sold for importation into the United States, or sold after importation",
+      "topic": "importation"
+    },
+    {
+      "page": 24,
+      "point": "LGE asserts a patent exhaustion, license, and/or implied license defense, stating that on information and belief, Complainant's claims against LGE are barred as a result of patent exhaustion, a license, and/or an implied license to the Asserted Patents.",
+      "quote": "Complainant's claims against LGE are barred as a result of patent exhaustion, a license, and/or an implied license to the Asserted Patents.",
+      "topic": "unenforceability"
+    },
+    {
+      "page": 24,
+      "point": "LGE asserts an inventorship defense, reserving the right to assert improper inventorship as a defense to the extent that it determines through discovery and investigation that any Asserted Patent fails to name the appropriate inventors.",
+      "quote": "To the extent that LGE determines through discovery and investigation that any Asserted Patent fails to name the appropriate inventors, LGE reserves the right to assert improper inventorship as a defense.",
+      "topic": "other_defenses"
+    },
+    {
+      "page": 25,
+      "point": "LGE asserts an ensnarement defense, stating that Complainants' claims are barred by the doctrine of ensnarement to the extent that Complainants make infringement claims under the doctrine of equivalents that would ensnare prior art.",
+      "quote": "Complainants' claims are barred by the doctrine of ensnarement to the extent that Complainants make infringement claims under the doctrine of equivalents that would ensnare prior art.",
+      "topic": "other_defenses"
+    },
+    {
+      "page": 25,
+      "point": "LGE asserts a prosecution laches defense, stating that Complainants' claims are barred by the doctrine of prosecution laches because Complainants have prejudiced LGE by inexcusably delaying prosecution of applications for the Asserted Patents.",
+      "quote": "Complainants' claims are barred by the doctrine of prosecution laches because Complainants have prejudiced LGE by inexcusably delaying prosecution of applications for the Asserted Patents.",
+      "topic": "other_defenses"
+    },
+    {
+      "page": 25,
+      "point": "LGE asserts a laches, acquiescence, and waiver defense, stating that Complainants have known of the Accused Products of HKC Respondents for several years and sued HKC Respondents without alleging the Asserted Patents three years ago, which has prejudiced downstream respondents including LGE.",
+      "quote": "Complainants have known of the Accused Products of HKC Respondents for several years, and sued HKC  Respondents without alleging the Asserted Patents three years ago.",
+      "topic": "other_defenses"
+    },
+    {
+      "page": 25,
+      "point": "LGE asserts a public interest defense, stating that pursuant to 19 U.S.C. \u00a7 1337(d)(1), the requested relief should not issue because of its potential adverse effects upon the public health and welfare, competitive conditions in the United States economy, the production of like or directly competitive articles in the United States, and/or United States consumers.",
+      "quote": "the requested relief should not issue because of its potential adverse effects upon the public health and welfare, competitive conditions in the United States economy",
+      "topic": "other_defenses"
+    },
+    {
+      "page": 26,
+      "point": "LGE asserts a license defense, stating that at least some of the Accused Products are covered by one or more license agreements to one or more Respondents.",
+      "quote": "At least some of the Accused Products are covered by one or more license agreements to one or more Respondents.",
+      "topic": "unenforceability"
+    },
+    {
+      "page": 26,
+      "point": "LGE requests that the Commission determine that LGE has not imported, sold for importation, or sold within the United States after importation certain liquid crystal display devices that are covered by a valid and enforceable Asserted Claim of any Asserted Patent.",
+      "quote": "Determine that LGE has not imported, sold for importation, or sold within the United States after importation certain liquid crystal display devices, components thereof, and products containing the same that are covered by a valid and enforceable Asserted Claim",
+      "topic": "relief"
+    },
+    {
+      "page": 26,
+      "point": "LGE requests that the Commission determine that Complainants have failed to establish the existence of a domestic industry and find that no violation of Section 337 exists by reason of any manufacture, importation, offer for sale, or sale by LGE.",
+      "quote": "Determine that Complainants have failed to establish the existence of a domestic industry; C. Find that no violation of Section 337 of the Tariff Act of 1930, as amended, exists",
+      "topic": "relief"
+    },
+    {
+      "page": 27,
+      "point": "LGE requests that the Commission deny Complainants' request for a limited exclusion order, cease and desist orders, imposition of a bond, and any other relief requested as to LGE and its products, and terminate this Investigation with a finding of no violation.",
+      "quote": "Deny Complainants' request for a limited exclusion order, cease and desist orders, imposition of a bond, and any other relief requested as to LGE and/or its products; E. Terminate this Investigation with a finding of no violation",
+      "topic": "relief"
+    },
+    {
+      "page": 2,
+      "point": "The Investigation covers certain liquid crystal display devices, components thereof, and products containing the same, identified as Investigation No. 337-TA-1462 by the U.S. International Trade Commission with Notice of Investigation dated November 24, 2025, published in the Federal Register on November 28, 2025 (90 Fed. Reg. 54,742).",
+      "quote": "Notice of Investigation issued by the U.S. International Trade Commission (\"Commission\") on November 24, 202 5, as published in the Federal Register on November 28, 2025 (90 Fed. Reg. 54,742)",
+      "topic": "scope"
+    }
+  ],
+  "rejected": [
+    {
+      "page": 23,
+      "point": "LGE states that it is in the process of obtaining additional relevant prior art, including through discovery, and reserves the right to modify, supplement, and/or amend its invalidity defenses upon obtaining additional prior art.",
+      "quote": "LGE is in the process of obtaining additional relevant prior art, including through discovery, and reserves the right to modify, supplement, and/or amend its invalidity defenses",
+      "rejected": "quote not found in the filing",
+      "topic": "invalidity"
+    },
+    {
+      "page": 25,
+      "point": "LGE asserts a lack of statutory authority defense, stating that one or more Complainants lacks substantial rights in the Asserted Patents due to extremely narrow rights arising from the existence of multiple license agreements that preclude Complainants from claiming substantial rights and therefore lack standing.",
+      "quote": "Complainants have extremely narrow rights due to the existence of multiple tortured license agreements that preclude Complainants from claiming substantial rights in the Asserted Patents",
+      "rejected": "quote not found in the filing",
+      "topic": "other_defenses"
+    }
+  ],
+  "taken_at": "2026-09-26T21:38:53+00:00",
+  "title": "Respondents LG Electronics Inc. and LG Electronics USA, Inc.'s Response to the Complaint and Notice of Investigation",
+  "truncated": false,
+  "who": "LG Electronics, Inc. and LG Electronics USA, Inc."
+}
