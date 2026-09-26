@@ -31,6 +31,10 @@ from datalayer.store import Store  # noqa: E402
 from ui.render import render_site  # noqa: E402
 
 
+# A filing date recent enough that the case is a daily one (backfill.refresh_every).
+RECENT = datetime.now(timezone.utc).date().isoformat()
+
+
 def jwt(expires: datetime) -> str:
     claims = base64.urlsafe_b64encode(json.dumps({"exp": int(expires.timestamp())}).encode())
     return f"e30.{claims.decode().rstrip('=')}.sig"
@@ -208,7 +212,7 @@ class TestDocumentJobs(ServerTestCase):
 class TestDailyJob(ServerTestCase):
     def test_it_syncs_then_refreshes_collected_cases_appearances_only(self):
         store = Store.load(self.data_dir)
-        store.put_documents("337-1478", [{"id": "1", "title": "Complaint"}])
+        store.put_documents("337-1478", [{"id": "1", "title": "Complaint", "document_date": RECENT}])
         store.save_documents()
 
         with mock.patch("datalayer.ingest.run", self.fake_ingest()), mock.patch(
@@ -222,12 +226,22 @@ class TestDailyJob(ServerTestCase):
         self.assertTrue(self.calls[1]["download"])
         self.assertEqual(self.calls[1]["only_types"], {"Notice of Appearance"})
         self.assertFalse(self.calls[1]["by_hand"])
+        self.assertTrue(self.calls[1]["new_only"])
+
+        # Timed, and the dashboard says how long it took.
+        from datalayer import dailylog
+
+        [row] = dailylog.read(self.data_dir)
+        self.assertEqual(row["outcome"], "ok")
+        self.assertNotEqual(row["seconds_render"], "")
+        self.assertIn("Took", job["message"])
+        self.assertIsNotNone(self.get_json("/api/status")["daily"]["seconds"])
 
     def test_a_closed_backfilled_case_is_not_refreshed(self):
         store = Store.load(self.data_dir)
         store.investigations["337-1478"]["status"] = "Terminated"
         store.save_cases()
-        store.put_documents("337-1478", [{"id": "1", "title": "Complaint"}])
+        store.put_documents("337-1478", [{"id": "1", "title": "Complaint", "document_date": RECENT}])
         store.documents_state["337-1478"]["backfill"] = True
         store.save_documents()
 
@@ -241,7 +255,7 @@ class TestDailyJob(ServerTestCase):
     def test_without_a_token_the_case_data_still_updates(self):
         self.token = None
         store = Store.load(self.data_dir)
-        store.put_documents("337-1478", [{"id": "1"}])
+        store.put_documents("337-1478", [{"id": "1", "document_date": RECENT}])
         store.save_documents()
 
         with mock.patch("datalayer.ingest.run", self.fake_ingest()), mock.patch(
@@ -255,7 +269,7 @@ class TestDailyJob(ServerTestCase):
 
     def test_a_rejected_token_is_a_warning_not_a_lost_sync(self):
         store = Store.load(self.data_dir)
-        store.put_documents("337-1478", [{"id": "1"}])
+        store.put_documents("337-1478", [{"id": "1", "document_date": RECENT}])
         store.save_documents()
 
         def refused(*args, **kwargs):
@@ -273,7 +287,7 @@ class TestDailyJob(ServerTestCase):
         from datalayer.ids import IdsError
 
         store = Store.load(self.data_dir)
-        store.put_documents("337-1478", [{"id": "1", "title": "Complaint"}])
+        store.put_documents("337-1478", [{"id": "1", "title": "Complaint", "document_date": RECENT}])
         store.save_documents()
 
         with mock.patch(

@@ -1,0 +1,358 @@
+{
+  "case": "337-1484",
+  "cost_usd": 0.02522,
+  "date": "2026-05-06",
+  "doc_id": "881506",
+  "document_type": "Order",
+  "events": [
+    {
+      "category": "motions",
+      "date": "",
+      "end_date": "",
+      "event": "Deadline to file responses to motions in limine",
+      "quote": "Deadline to file responses to motions in limine must be filed no later than seven (7) business days prior to the evidentiary hearing",
+      "relative": "seven (7) business days prior to the evidentiary hearing"
+    }
+  ],
+  "extracted_at": "2026-09-26T18:23:17+00:00",
+  "model": "claude-haiku-4-5-20251001",
+  "prompt_version": 2,
+  "rejected": [
+    {
+      "category": "prehearing",
+      "date": "",
+      "end_date": "",
+      "event": "Preliminary conference",
+      "quote": "By separate order, the Administrative Law Judge may instruct the parties to appear at a preliminary conference",
+      "rejected": "neither a date nor a relative rule",
+      "relative": ""
+    },
+    {
+      "category": "claim_construction",
+      "date": "",
+      "end_date": "",
+      "event": "Exchange list of claim terms to be construed",
+      "quote": "Exchange list of claim terms to be construed",
+      "rejected": "neither a date nor a relative rule",
+      "relative": ""
+    },
+    {
+      "category": "claim_construction",
+      "date": "",
+      "end_date": "",
+      "event": "Exchange proposed constructions for all terms on all lists",
+      "quote": "Exchange proposed constructions for all terms on all lists",
+      "rejected": "neither a date nor a relative rule",
+      "relative": ""
+    },
+    {
+      "category": "claim_construction",
+      "date": "",
+      "end_date": "",
+      "event": "File chart of agreed and disputed constructions",
+      "quote": "File chart of agreed and disputed constructions",
+      "rejected": "neither a date nor a relative rule",
+      "relative": ""
+    },
+    {
+      "category": "claim_construction",
+      "date": "",
+      "end_date": "",
+      "event": "File opening claim construction briefs",
+      "quote": "File opening claim construction briefs",
+      "rejected": "neither a date nor a relative rule",
+      "relative": ""
+    },
+    {
+      "category": "claim_construction",
+      "date": "",
+      "end_date": "",
+      "event": "File responsive claim construction briefs",
+      "quote": "File responsive claim construction briefs",
+      "rejected": "neither a date nor a relative rule",
+      "relative": ""
+    },
+    {
+      "category": "claim_construction",
+      "date": "",
+      "end_date": "",
+      "event": "Claim construction hearing",
+      "quote": "Claim construction hearing",
+      "rejected": "neither a date nor a relative rule",
+      "relative": ""
+    },
+    {
+      "category": "discovery",
+      "date": "",
+      "end_date": "",
+      "event": "Complainant files list of all distinct accused products",
+      "quote": "Complainant files list of all distinct accused products",
+      "rejected": "neither a date nor a relative rule",
+      "relative": ""
+    },
+    {
+      "category": "discovery",
+      "date": "",
+      "end_date": "",
+      "event": "File notice of prior art",
+      "quote": "File notice of prior art",
+      "rejected": "neither a date nor a relative rule",
+      "relative": ""
+    },
+    {
+      "category": "discovery",
+      "date": "",
+      "end_date": "",
+      "event": "Fact discovery cutoff and completion",
+      "quote": "Fact discovery cutoff and completion",
+      "rejected": "neither a date nor a relative rule",
+      "relative": ""
+    },
+    {
+      "category": "motions",
+      "date": "",
+      "end_date": "",
+      "event": "Deadline for motions to compel fact discovery",
+      "quote": "Deadline for motions to compel fact discovery",
+      "rejected": "neither a date nor a relative rule",
+      "relative": ""
+    },
+    {
+      "category": "expert",
+      "date": "",
+      "end_date": "",
+      "event": "Exchange initial expert reports",
+      "quote": "Exchange initial expert reports (identify tests/surveys/data)",
+      "rejected": "neither a date nor a relative rule",
+      "relative": ""
+    },
+    {
+      "category": "expert",
+      "date": "",
+      "end_date": "",
+      "event": "Exchange rebuttal expert reports",
+      "quote": "Exchange rebuttal expert reports (identify tests/surveys/data)",
+      "rejected": "neither a date nor a relative rule",
+      "relative": ""
+    },
+    {
+      "category": "prehearing",
+      "date": "",
+      "end_date": "",
+      "event": "File tentative list of witnesses",
+      "quote": "File tentative list of witnesses a party will call to testify at the hearing, with an identification of each witness' relationship to the party",
+      "rejected": "neither a date nor a relative rule",
+      "relative": ""
+    },
+    {
+      "category": "expert",
+      "date": "",
+      "end_date": "",
+      "event": "Expert discovery cutoff and completion",
+      "quote": "Expert discovery cutoff and completion",
+      "rejected": "neither a date nor a relative rule",
+      "relative": ""
+    },
+    {
+      "category": "prehearing",
+      "date": "",
+      "end_date": "",
+      "event": "Deadline for one-day mediation session",
+      "quote": "Deadline for one-day mediation session",
+      "rejected": "neither a date nor a relative rule",
+      "relative": ""
+    },
+    {
+      "category": "prehearing",
+      "date": "",
+      "end_date": "",
+      "event": "Submit joint report on mediation",
+      "quote": "Submit joint report on mediation",
+      "rejected": "neither a date nor a relative rule",
+      "relative": ""
+    },
+    {
+      "category": "motions",
+      "date": "",
+      "end_date": "",
+      "event": "Deadline for filing summary determination motions",
+      "quote": "Deadline for filing summary determination motions",
+      "rejected": "neither a date nor a relative rule",
+      "relative": ""
+    },
+    {
+      "category": "prehearing",
+      "date": "",
+      "end_date": "",
+      "event": "Exchange of exhibit lists among the parties",
+      "quote": "Exchange of exhibit lists among the parties",
+      "rejected": "neither a date nor a relative rule",
+      "relative": ""
+    },
+    {
+      "category": "prehearing",
+      "date": "",
+      "end_date": "",
+      "event": "Complainant and respondent serve proposed direct exhibits",
+      "quote": "Complainant and respondent serve proposed direct exhibits and identify physical exhibits",
+      "rejected": "neither a date nor a relative rule",
+      "relative": ""
+    },
+    {
+      "category": "prehearing",
+      "date": "",
+      "end_date": "",
+      "event": "Serve proposed rebuttal exhibits",
+      "quote": "Serve proposed rebuttal exhibits and identify rebuttal physical exhibits",
+      "rejected": "neither a date nor a relative rule",
+      "relative": ""
+    },
+    {
+      "category": "prehearing",
+      "date": "",
+      "end_date": "",
+      "event": "Commission investigative attorney serves proposed direct exhibits",
+      "quote": "Commission investigative attorney serves proposed direct exhibits  and identifies physical exhibits",
+      "rejected": "neither a date nor a relative rule",
+      "relative": ""
+    },
+    {
+      "category": "prehearing",
+      "date": "",
+      "end_date": "",
+      "event": "Complainant and respondent file pre-trial statements and briefs",
+      "quote": "Complainant and respondent file pre-trial statements and briefs",
+      "rejected": "neither a date nor a relative rule",
+      "relative": ""
+    },
+    {
+      "category": "prehearing",
+      "date": "",
+      "end_date": "",
+      "event": "Commission investigative attorney files pre-trial statement and brief",
+      "quote": "Commission investigative attorney files pre-trial statement and brief",
+      "rejected": "neither a date nor a relative rule",
+      "relative": ""
+    },
+    {
+      "category": "prehearing",
+      "date": "",
+      "end_date": "",
+      "event": "File joint list of unopposed exhibits",
+      "quote": "File joint list of unopposed exhibits",
+      "rejected": "neither a date nor a relative rule",
+      "relative": ""
+    },
+    {
+      "category": "motions",
+      "date": "",
+      "end_date": "",
+      "event": "Deadline to file motions in limine",
+      "quote": "Deadline to file motions in limine",
+      "rejected": "neither a date nor a relative rule",
+      "relative": ""
+    },
+    {
+      "category": "prehearing",
+      "date": "",
+      "end_date": "",
+      "event": "Final pre-hearing conference",
+      "quote": "Final pre-hearing conference",
+      "rejected": "neither a date nor a relative rule",
+      "relative": ""
+    },
+    {
+      "category": "hearing",
+      "date": "",
+      "end_date": "",
+      "event": "Evidentiary Hearing",
+      "quote": "Evidentiary Hearing",
+      "rejected": "neither a date nor a relative rule",
+      "relative": ""
+    },
+    {
+      "category": "prehearing",
+      "date": "",
+      "end_date": "",
+      "event": "File final exhibit list",
+      "quote": "File final exhibit list",
+      "rejected": "neither a date nor a relative rule",
+      "relative": ""
+    },
+    {
+      "category": "briefing",
+      "date": "",
+      "end_date": "",
+      "event": "Complainant and respondent file post-hearing initial briefs",
+      "quote": "Complainant and respondent file post -hearing initial briefs with the Secretary and submit final exhibits with the Administrative Law Judge",
+      "rejected": "neither a date nor a relative rule",
+      "relative": ""
+    },
+    {
+      "category": "briefing",
+      "date": "",
+      "end_date": "",
+      "event": "Commission investigative attorney files post-hearing initial brief",
+      "quote": "Commission investigative attorney files post-hearing initial brief",
+      "rejected": "neither a date nor a relative rule",
+      "relative": ""
+    },
+    {
+      "category": "briefing",
+      "date": "",
+      "end_date": "",
+      "event": "Complainant and respondent file post-hearing responsive briefs",
+      "quote": "Complainant and respondent file post-hearing responsive briefs",
+      "rejected": "neither a date nor a relative rule",
+      "relative": ""
+    },
+    {
+      "category": "briefing",
+      "date": "",
+      "end_date": "",
+      "event": "Commission investigative attorney files post-hearing responsive brief",
+      "quote": "Commission investigative attorney files post-hearing responsive brief",
+      "rejected": "neither a date nor a relative rule",
+      "relative": ""
+    },
+    {
+      "category": "briefing",
+      "date": "",
+      "end_date": "",
+      "event": "Parties file post-hearing reply briefs",
+      "quote": "Parties file post-hearing reply briefs",
+      "rejected": "neither a date nor a relative rule",
+      "relative": ""
+    },
+    {
+      "category": "other",
+      "date": "",
+      "end_date": "",
+      "event": "Deadline for any motion to correct to the Evidentiary Hearing transcript",
+      "quote": "Deadline for any motion to correct to the Evidentiary Hearing transcript",
+      "rejected": "neither a date nor a relative rule",
+      "relative": ""
+    },
+    {
+      "category": "initial_determination",
+      "date": "",
+      "end_date": "",
+      "event": "Final initial determination on violation",
+      "quote": "Final initial determination on violation",
+      "rejected": "neither a date nor a relative rule",
+      "relative": ""
+    },
+    {
+      "category": "target_date",
+      "date": "",
+      "end_date": "",
+      "event": "Target date for completion of investigation",
+      "quote": "Target date for completion of investigation",
+      "rejected": "neither a date nor a relative rule",
+      "relative": ""
+    }
+  ],
+  "role": "amendment",
+  "title": "Amending Ground Rules",
+  "truncated": true
+}

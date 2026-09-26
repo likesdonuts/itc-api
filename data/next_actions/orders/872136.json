@@ -1,0 +1,32 @@
+{
+  "case": "337-1470",
+  "cost_usd": 0.006849,
+  "date": "2026-02-10",
+  "doc_id": "872136",
+  "document_type": "Notice",
+  "events": [
+    {
+      "category": "target_date",
+      "date": "2027-07-23",
+      "end_date": "",
+      "event": "Target date for completion of investigation",
+      "quote": "setting a nineteen-month target date of July 23, 2027, for completion of this investigation",
+      "relative": ""
+    },
+    {
+      "category": "initial_determination",
+      "date": "2027-03-23",
+      "end_date": "",
+      "event": "Final initial determination on violation due",
+      "quote": "The ID states that the final ID on violation is due to issue by March 23, 2027",
+      "relative": ""
+    }
+  ],
+  "extracted_at": "2026-09-26T18:14:36+00:00",
+  "model": "claude-haiku-4-5-20251001",
+  "prompt_version": 2,
+  "rejected": [],
+  "role": "target_date",
+  "title": "Commission Determination Not to Review an Initial Determination Setting a Nineteen-Month Target Date for Completion of This Investigation",
+  "truncated": false
+}

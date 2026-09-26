@@ -17,7 +17,7 @@ from support import (
 )
 
 import cli
-from datalayer import backfill, docs, ids
+from datalayer import backfill, dailylog, docs, ids
 
 
 @contextmanager
@@ -153,14 +153,20 @@ class TestOtherCommands(CliTestCase):
             ["docs", "337-1478"], client=FakeEdisClient(documents={"337-1478": EDIS_DOCUMENTS})
         )
 
-        raw = json.dumps(payload([ids_row(status="Terminated")])).encode()
+        # Still open, so a daily case (a closed one would wait for its weekly turn).
+        raw = json.dumps(payload([ids_row(status="Pending before the ALJ")])).encode()
         again = FakeEdisClient(documents={"337-1478": EDIS_DOCUMENTS})
         exit_code, _ = self.invoke(["refresh"], client=again, raw=raw)
 
         self.assertEqual(exit_code, 0)
         self.assertEqual(again.document_calls, ["337-1478"])
-        self.assertEqual(self.read_json("investigations.json")["337-1478"]["status"], "Terminated")
+        self.assertEqual(self.read_json("investigations.json")["337-1478"]["status"], "Pending before the ALJ")
         self.assertTrue((self.site_dir / "index.html").exists())
+        # And timed.
+        [row] = dailylog.read(self.data_dir)
+        self.assertEqual(row["outcome"], "ok")
+        self.assertEqual(row["cases"], "1")
+        self.assertNotEqual(row["seconds_documents"], "")
 
     def test_refresh_still_refreshes_documents_when_the_case_download_fails(self):
         self.seed_cases(day="2020-01-01")

@@ -1,0 +1,200 @@
+{
+  "case": "337-1520",
+  "cost_usd": 0.011409,
+  "date": "2026-09-16",
+  "doc_id": "894973",
+  "document_type": "Order",
+  "events": [
+    {
+      "category": "other",
+      "date": "2026-08-31",
+      "end_date": "",
+      "event": "Investigation instituted",
+      "quote": "Investigation instituted. Monday, August 31, 2026",
+      "relative": ""
+    },
+    {
+      "category": "discovery",
+      "date": "2026-09-02",
+      "end_date": "",
+      "event": "Domestic industry fact discovery begins",
+      "quote": "Domestic industry fact discovery begins. Wednesday, September 2, 2026",
+      "relative": ""
+    },
+    {
+      "category": "expert",
+      "date": "2026-09-14",
+      "end_date": "",
+      "event": "File identification of expert witnesses",
+      "quote": "File identification of expert witnesses, including their expertise and curriculum vitae. Monday, September 14, 2026",
+      "relative": ""
+    },
+    {
+      "category": "claim_construction",
+      "date": "2026-09-14",
+      "end_date": "",
+      "event": "Complainant serves Domestic Industry Contentions",
+      "quote": "Complainant serves Domestic Industry Contentions. Monday, September 14, 2026",
+      "relative": ""
+    },
+    {
+      "category": "discovery",
+      "date": "2026-09-15",
+      "end_date": "",
+      "event": "Deadline to request third party discovery",
+      "quote": "Deadline to request third party discovery. Tuesday, September 15, 2026",
+      "relative": ""
+    },
+    {
+      "category": "prehearing",
+      "date": "2026-09-16",
+      "end_date": "",
+      "event": "Each party files tentative list of witnesses",
+      "quote": "Each party files tentative list of witnesses that it intends to call at the hearing. Wednesday, September 16, 2026",
+      "relative": ""
+    },
+    {
+      "category": "claim_construction",
+      "date": "2026-09-21",
+      "end_date": "",
+      "event": "Respondent serves response to Domestic Industry Contentions",
+      "quote": "Respondent serves response to Complainant's Domestic Industry Contentions. Monday September 21, 2026",
+      "relative": ""
+    },
+    {
+      "category": "discovery",
+      "date": "2026-09-25",
+      "end_date": "",
+      "event": "Discovery cut-off and completion",
+      "quote": "Discovery cut-off and completion. Friday, September 25, 2026",
+      "relative": ""
+    },
+    {
+      "category": "motions",
+      "date": "2026-09-28",
+      "end_date": "",
+      "event": "Deadline for motion to compel fact discovery",
+      "quote": "Deadline for motion to compel fact discovery. Monday, September 28, 2026",
+      "relative": ""
+    },
+    {
+      "category": "expert",
+      "date": "2026-09-30",
+      "end_date": "",
+      "event": "Complainant's expert report on economic prong due",
+      "quote": "Complainant's expert report on economic prong due. Wednesday, September 30, 2026",
+      "relative": ""
+    },
+    {
+      "category": "expert",
+      "date": "2026-10-07",
+      "end_date": "",
+      "event": "Respondent's expert report on economic prong due",
+      "quote": "Respondent's expert report on economic prong due. Wednesday, October 7, 2026",
+      "relative": ""
+    },
+    {
+      "category": "discovery",
+      "date": "2026-10-12",
+      "end_date": "",
+      "event": "Expert discovery cut-off and completion",
+      "quote": "Expert discovery cut-off and completion. Monday, October 12, 2026",
+      "relative": ""
+    },
+    {
+      "category": "prehearing",
+      "date": "2026-10-14",
+      "end_date": "",
+      "event": "Parties exchange exhibit lists",
+      "quote": "Parties exchange exhibit lists. Wednesday, October 14, 2026",
+      "relative": ""
+    },
+    {
+      "category": "prehearing",
+      "date": "2026-10-16",
+      "end_date": "",
+      "event": "All parties submit and serve direct exhibits",
+      "quote": "All parties submit and serve direct exhibits. Friday, October 16, 2026",
+      "relative": ""
+    },
+    {
+      "category": "prehearing",
+      "date": "2026-10-21",
+      "end_date": "",
+      "event": "Complainant and Respondent file pre-hearing briefs and statements",
+      "quote": "Complainant and Respondent file pre-hearing briefs (75-page limit) and pre-hearing statements. Wednesday, October 21, 2026",
+      "relative": ""
+    },
+    {
+      "category": "prehearing",
+      "date": "2026-10-23",
+      "end_date": "",
+      "event": "Staff files pre-hearing brief and statement",
+      "quote": "Staff files pre-hearing brief (75-page limit) and pre-hearing statement. Friday, October 23, 2026",
+      "relative": ""
+    },
+    {
+      "category": "motions",
+      "date": "2026-10-23",
+      "end_date": "",
+      "event": "Deadline to file motions in limine",
+      "quote": "Deadline to file motions in limine. Friday, October 23, 2026",
+      "relative": ""
+    },
+    {
+      "category": "motions",
+      "date": "2026-10-26",
+      "end_date": "",
+      "event": "Deadline to respond to motions in limine",
+      "quote": "Deadline to respond to motions in limine. Monday, October 26, 2026",
+      "relative": ""
+    },
+    {
+      "category": "prehearing",
+      "date": "2026-10-28",
+      "end_date": "",
+      "event": "Pre-trial conference",
+      "quote": "Pre-trial conference. Wednesday, October 28, 2026, 9:30 a.m. ET",
+      "relative": ""
+    },
+    {
+      "category": "hearing",
+      "date": "2026-10-28",
+      "end_date": "2026-10-29",
+      "event": "Hearing",
+      "quote": "Hearing. Wednesday, October 28, 2026 \u2013 Thursday, October 29, 2026 (if needed)",
+      "relative": ""
+    },
+    {
+      "category": "briefing",
+      "date": "2026-11-04",
+      "end_date": "",
+      "event": "File initial post-hearing briefs and final exhibits",
+      "quote": "File initial post-hearing briefs (50-page limit), final exhibit lists, and submit final exhibits. Wednesday, November 4, 2026",
+      "relative": ""
+    },
+    {
+      "category": "briefing",
+      "date": "2026-11-09",
+      "end_date": "",
+      "event": "File reply post-hearing briefs",
+      "quote": "File reply post-hearing briefs (20-page limit). Monday, November 9, 2026",
+      "relative": ""
+    },
+    {
+      "category": "initial_determination",
+      "date": "2026-12-04",
+      "end_date": "",
+      "event": "Initial Determination on economic prong of domestic industry requirement",
+      "quote": "Initial Determination on the economic prong of the domestic industry requirement. Friday, December 4, 2026",
+      "relative": ""
+    }
+  ],
+  "extracted_at": "2026-09-26T18:43:04+00:00",
+  "model": "claude-haiku-4-5-20251001",
+  "prompt_version": 2,
+  "rejected": [],
+  "role": "full_schedule",
+  "title": "Setting 100-Day Procedural Schedule",
+  "truncated": false
+}

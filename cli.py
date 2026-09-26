@@ -46,7 +46,7 @@ import sys
 from pathlib import Path
 
 import schema as ui_schema
-from datalayer import backfill, counsel, docs, ids, ingest, normalize, runlog
+from datalayer import backfill, counsel, dailylog, docs, ids, ingest, normalize, runlog
 from datalayer.nextactions import build as nextactions_build
 from datalayer.config import DATA_DIR, IDS_DIR, MissingTokenError, SCHEMA_PATH, SITE_DIR, load_token
 from datalayer.runner import ProcessAborted
@@ -622,38 +622,56 @@ def cmd_status(args: argparse.Namespace, store: Store) -> int:
 
 
 def cmd_refresh(args: argparse.Namespace, store: Store) -> int:
+    timer = dailylog.DailyTimer()
+    outcome = "error"
     try:
-        report = ingest.run(store, ids_dir=args.ids_dir)
-    except ids.IdsError as exc:
-        # Carry on with the documents: they don't depend on today's feed.
-        report = None
-        print(f"IDS ERROR: {exc}\nCase data not updated; refreshing documents with the case data on disk.")
+        with timer.step("ingest"):
+            try:
+                report = ingest.run(store, ids_dir=args.ids_dir)
+            except ids.IdsError as exc:
+                # Carry on with the documents: they don't depend on today's feed.
+                report = None
+                print(f"IDS ERROR: {exc}\nCase data not updated; refreshing documents with the case data on disk.")
 
-    if not args.no_documents:
-        # Backfilled cases only while they are open, as in the app.
-        targets = backfill.daily_targets(store)
-        if targets:
-            print(f"\nRefreshing documents for {len(targets)} case(s) already fetched...")
-            docs.run(
-                store,
-                load_token(),
-                targets,
-                download=not args.no_attachments,
-                only_types=_only_types(args),
-                by_hand=False,
-            )
-        if not args.no_attachments:
-            _read_schedules(store)
+        if not args.no_documents:
+            # The cases due today, as in the app (backfill.refresh_every).
+            targets = backfill.daily_targets(store)
+            if targets:
+                print(f"\nRefreshing documents for {len(targets)} case(s) (new filings)...")
+                with timer.step("documents"):
+                    fetched = docs.run(
+                        store,
+                        load_token(),
+                        targets,
+                        download=not args.no_attachments,
+                        only_types=_only_types(args),
+                        by_hand=False,
+                        new_only=True,
+                    )
+                timer.count("cases", len(fetched.fetched))
+                timer.count("full_listings", sum(1 for r in fetched.fetched if r.full))
+                timer.count("pdfs_downloaded", fetched.downloaded)
+            if not args.no_attachments:
+                with timer.step("schedules"):
+                    _read_schedules(store)
 
-    _counsel(store)
-    _render(args, store)
+        with timer.step("counsel"):
+            counsel.run(store, log=print)
+        with timer.step("next_actions"):
+            nextactions_build.run(store, log=print)
+        with timer.step("render"):
+            _render(args, store)
+        outcome = "ok" if report is not None else "warn"
+    finally:
+        row = timer.row(outcome)
+        dailylog.append(args.data_dir, row)
+        store.record_run("daily", seconds=row["seconds"], summary=dailylog.summary(row), outcome=outcome)
+        store.save_state()
+        print("\n" + dailylog.summary(row))
     if report is None:
-        print("\nDone, but the case data was not updated (see IDS ERROR above).")
+        print("Done, but the case data was not updated (see IDS ERROR above).")
         return 1
-    print(
-        f"\nDone. {report.cases} investigation(s) tracked from IDS snapshot "
-        f"{report.snapshot_day}."
-    )
+    print(f"Done. {report.cases} investigation(s) tracked from IDS snapshot {report.snapshot_day}.")
     return 0
 
 

@@ -1,0 +1,128 @@
+{
+  "case": "337-1502",
+  "cost_usd": 0.008139,
+  "date": "2026-07-17",
+  "doc_id": "888347",
+  "document_type": "Order",
+  "events": [
+    {
+      "category": "motions",
+      "date": "2026-07-31",
+      "end_date": "",
+      "event": "Deadline to file a motion to terminate based on consent order",
+      "quote": "Deadline to file a motion to terminate the following respondents based on consent order: Creative Trading, MBCH Solutions LLC, and Simple Shipping Solutions LLC\nJuly 31, 2026",
+      "relative": ""
+    },
+    {
+      "category": "motions",
+      "date": "2026-08-14",
+      "end_date": "",
+      "event": "Deadline to file motions to withdraw allegations as to unserved respondents",
+      "quote": "Deadline to file motions to withdraw allegations in the complaint as to unserved respondents\nAugust 14, 2026",
+      "relative": ""
+    },
+    {
+      "category": "motions",
+      "date": "2026-08-31",
+      "end_date": "",
+      "event": "Deadline to file motions requesting orders to show cause why respondents should not be found in default",
+      "quote": "Deadline to file motions requesting orders to show cause why respondents should not be found in default\nAugust 31, 2026",
+      "relative": ""
+    },
+    {
+      "category": "discovery",
+      "date": "2026-10-16",
+      "end_date": "",
+      "event": "Fact discovery cutoff and completion",
+      "quote": "Fact discovery cutoff and completion\nOctober 16, 2026",
+      "relative": ""
+    },
+    {
+      "category": "expert",
+      "date": "2026-10-23",
+      "end_date": "",
+      "event": "Exchange initial expert reports",
+      "quote": "Exchange initial expert reports\nOctober 23, 2026",
+      "relative": ""
+    },
+    {
+      "category": "expert",
+      "date": "2026-11-06",
+      "end_date": "",
+      "event": "Exchange rebuttal expert reports",
+      "quote": "Exchange rebuttal expert reports\nNovember 6, 2026",
+      "relative": ""
+    },
+    {
+      "category": "expert",
+      "date": "2026-11-13",
+      "end_date": "",
+      "event": "Expert discovery cutoff and completion",
+      "quote": "Expert discovery cutoff and completion\nNovember 13, 2026",
+      "relative": ""
+    },
+    {
+      "category": "motions",
+      "date": "2026-11-19",
+      "end_date": "",
+      "event": "Deadline for filing summary determination motions",
+      "quote": "Deadline for filing summary determination motions\nNovember 19, 2026",
+      "relative": ""
+    },
+    {
+      "category": "prehearing",
+      "date": "2026-12-04",
+      "end_date": "",
+      "event": "File pre-trial statements and briefs - complainant and respondents",
+      "quote": "File pre-trial statements and briefs - complainant and respondents\nDecember 4, 2026",
+      "relative": ""
+    },
+    {
+      "category": "prehearing",
+      "date": "2026-12-15",
+      "end_date": "",
+      "event": "File pre-trial statement and brief - Staff",
+      "quote": "File pre-trial statement and brief - Staff\nDecember 15, 2026",
+      "relative": ""
+    },
+    {
+      "category": "prehearing",
+      "date": "2027-01-20",
+      "end_date": "",
+      "event": "Pre-hearing conference",
+      "quote": "Pre-hearing conference\nJanuary 20, 2027, at 9:00 a.m. Eastern",
+      "relative": ""
+    },
+    {
+      "category": "hearing",
+      "date": "2027-01-20",
+      "end_date": "2027-01-22",
+      "event": "Evidentiary hearing",
+      "quote": "Evidentiary hearing\nJanuary 20-22, 2027",
+      "relative": ""
+    },
+    {
+      "category": "initial_determination",
+      "date": "2027-03-19",
+      "end_date": "",
+      "event": "Initial determination",
+      "quote": "Initial determination\nMarch 19, 2027",
+      "relative": ""
+    },
+    {
+      "category": "target_date",
+      "date": "2027-07-19",
+      "end_date": "",
+      "event": "Target date for completion of the investigation",
+      "quote": "Target date for completion of the investigation\nJuly 19, 2027",
+      "relative": ""
+    }
+  ],
+  "extracted_at": "2026-09-26T18:36:24+00:00",
+  "model": "claude-haiku-4-5-20251001",
+  "prompt_version": 2,
+  "rejected": [],
+  "role": "full_schedule",
+  "title": "Procedural Schedule",
+  "truncated": false
+}

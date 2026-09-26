@@ -1,0 +1,112 @@
+{
+  "case": "337-1467",
+  "cost_usd": 0.006867,
+  "date": "2026-08-19",
+  "doc_id": "892095",
+  "document_type": "Order",
+  "events": [
+    {
+      "category": "prehearing",
+      "date": "2026-08-21",
+      "end_date": "",
+      "event": "Parties file pre-hearing statements and briefs",
+      "quote": "Parties file pre-hearing statements and briefs August 21, 2026",
+      "relative": ""
+    },
+    {
+      "category": "prehearing",
+      "date": "2026-08-24",
+      "end_date": "",
+      "event": "Case management conference",
+      "quote": "Case management conference August 24, 2026, at 1:00 pm ET",
+      "relative": ""
+    },
+    {
+      "category": "motions",
+      "date": "2026-08-31",
+      "end_date": "",
+      "event": "Deadline for motions in limine and high priority objections",
+      "quote": "Deadline for motions in limine and high priority objections August 31, 2026",
+      "relative": ""
+    },
+    {
+      "category": "prehearing",
+      "date": "2026-09-07",
+      "end_date": "",
+      "event": "File joint list of unopposed exhibits",
+      "quote": "File joint list of unopposed exhibits  September 7, 2026",
+      "relative": ""
+    },
+    {
+      "category": "motions",
+      "date": "2026-09-07",
+      "end_date": "",
+      "event": "File responses to motions in limine and high priority objections",
+      "quote": "File responses to motions in limine and high priority objections September 7, 2026",
+      "relative": ""
+    },
+    {
+      "category": "claim_construction",
+      "date": "2026-09-18",
+      "end_date": "",
+      "event": "Parties file statement of uncontested claim elements",
+      "quote": "Parties file statement of uncontested claim elements September 18, 2026",
+      "relative": ""
+    },
+    {
+      "category": "prehearing",
+      "date": "2026-11-04",
+      "end_date": "",
+      "event": "Final prehearing conference",
+      "quote": "Final prehearing conference November 4, 2026, at 9:00 am ET",
+      "relative": ""
+    },
+    {
+      "category": "hearing",
+      "date": "2026-11-04",
+      "end_date": "2026-11-10",
+      "event": "Evidentiary hearing",
+      "quote": "Evidentiary Hearing November 4\u20136, 9\u201310, 2026",
+      "relative": ""
+    },
+    {
+      "category": "prehearing",
+      "date": "",
+      "end_date": "",
+      "event": "Attendance at one-day mediation session",
+      "quote": "Attendance at one-day mediation session By December 15, 2026",
+      "relative": "By December 15, 2026"
+    },
+    {
+      "category": "other",
+      "date": "",
+      "end_date": "",
+      "event": "Submission of mediation report",
+      "quote": "Submission of mediation report Within 7 days of mediation",
+      "relative": "Within 7 days of mediation"
+    },
+    {
+      "category": "initial_determination",
+      "date": "2027-03-08",
+      "end_date": "",
+      "event": "Final Initial Determination on Violation",
+      "quote": "Final Initial Determination on Violation March 8, 2027",
+      "relative": ""
+    },
+    {
+      "category": "target_date",
+      "date": "2027-07-08",
+      "end_date": "",
+      "event": "Target date for completion of investigation",
+      "quote": "Target date for completion of investigation July 8, 2027",
+      "relative": ""
+    }
+  ],
+  "extracted_at": "2026-09-26T18:11:51+00:00",
+  "model": "claude-haiku-4-5-20251001",
+  "prompt_version": 2,
+  "rejected": [],
+  "role": "amendment",
+  "title": "Regarding Pre-Hearing Briefs and Amending the Procedural Schedule",
+  "truncated": false
+}

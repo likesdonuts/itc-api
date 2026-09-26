@@ -1,0 +1,32 @@
+{
+  "case": "337-1447",
+  "cost_usd": 0.003625,
+  "date": "2026-09-24",
+  "doc_id": "895660",
+  "document_type": "ID/RD - Other Than Final on Violation",
+  "events": [
+    {
+      "category": "target_date",
+      "date": "2027-03-01",
+      "end_date": "",
+      "event": "Target date",
+      "quote": "The new target date for this investigation is March 1, 2027, which is approximately 21.75 months after institution of the investigation.",
+      "relative": ""
+    },
+    {
+      "category": "initial_determination",
+      "date": "2026-10-30",
+      "end_date": "",
+      "event": "Final initial determination due",
+      "quote": "any final initial determination shall be due no later than October 30, 2026",
+      "relative": ""
+    }
+  ],
+  "extracted_at": "2026-09-26T18:08:00+00:00",
+  "model": "claude-haiku-4-5-20251001",
+  "prompt_version": 2,
+  "rejected": [],
+  "role": "target_date",
+  "title": "Initial Determination Extending Target Date to 21.75 Months",
+  "truncated": false
+}

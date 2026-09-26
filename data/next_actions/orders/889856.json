@@ -1,0 +1,184 @@
+{
+  "case": "337-1467",
+  "cost_usd": 0.01327,
+  "date": "2026-07-30",
+  "doc_id": "889856",
+  "document_type": "Order",
+  "events": [
+    {
+      "category": "prehearing",
+      "date": "2026-08-04",
+      "end_date": "",
+      "event": "Parties Exchange Hearing Exhibit Lists",
+      "quote": "Parties Exchange Hearing Exhibit Lists (Most likely, Tentative) July 31, 2026 August 4, 2026",
+      "relative": ""
+    },
+    {
+      "category": "motions",
+      "date": "2026-08-10",
+      "end_date": "",
+      "event": "File Motions for Receipt of Evidence Without a Witness",
+      "quote": "File Motions for Receipt of Evidence Without a Witness August 4, 2026 August 10, 2026",
+      "relative": ""
+    },
+    {
+      "category": "prehearing",
+      "date": "2026-08-21",
+      "end_date": "",
+      "event": "Complainants and Respondents file Pre-Hearing Statements and Pre-Hearing Briefs",
+      "quote": "Complainants and Respondents file Pre-Hearing Statements and Pre-Hearing Briefs August 7, 2026 August 21, 2026",
+      "relative": ""
+    },
+    {
+      "category": "prehearing",
+      "date": "2026-08-31",
+      "end_date": "",
+      "event": "Parties file Joint Outline of Issues from Pre-Hearing Briefs",
+      "quote": "Parties file Joint Outline of Issues from Pre-Hearing Briefs (Per Ground Rule 7.3) August 17, 2026 August 31, 2026",
+      "relative": ""
+    },
+    {
+      "category": "other",
+      "date": "2026-08-31",
+      "end_date": "",
+      "event": "Submission of Declarations Justifying Confidentiality of Exhibits",
+      "quote": "Submission of Declarations Justifying Confidentiality of Exhibits August 17, 2026 August 31, 2026",
+      "relative": ""
+    },
+    {
+      "category": "motions",
+      "date": "2026-08-31",
+      "end_date": "",
+      "event": "Last day to file Motions in Limine",
+      "quote": "Last day to file Motions in Limine (\"MIL\") (Complainants are limited to no more than two (2) MILs and HPOs in combination, and Respondents are limited to no more than three (3) MILs and HPOs in combination) without Leave August 17, 2026 August 31, 2026",
+      "relative": ""
+    },
+    {
+      "category": "motions",
+      "date": "2026-08-31",
+      "end_date": "",
+      "event": "Last day to file High Priority Objections",
+      "quote": "Last day to file High Priority Objections (\"HPO\") (See note for MIL) August 17, 2026 August 31, 2026",
+      "relative": ""
+    },
+    {
+      "category": "motions",
+      "date": "2026-09-07",
+      "end_date": "",
+      "event": "File Responses to Motions in Limine",
+      "quote": "File Responses to Motions in Limine August 24, 2026 September 7, 2026",
+      "relative": ""
+    },
+    {
+      "category": "motions",
+      "date": "2026-09-07",
+      "end_date": "",
+      "event": "File Responses to High Priority Objections",
+      "quote": "File Responses to High Priority Objections August 24, 2026 September 7, 2026",
+      "relative": ""
+    },
+    {
+      "category": "prehearing",
+      "date": "2026-09-09",
+      "end_date": "",
+      "event": "File on EDIS any Stipulations Regarding Exchange of Demonstratives for Evidentiary Hearing",
+      "quote": "File on EDIS any Stipulations Regarding Exchange of Demonstratives for Evidentiary Hearing and Any Other Stipulations into Which the Parties Enter September 9, 2026",
+      "relative": ""
+    },
+    {
+      "category": "prehearing",
+      "date": "2026-09-21",
+      "end_date": "",
+      "event": "Pre-Hearing Conference",
+      "quote": "Pre-Hearing Conference (There May Be One or More Conferences Before to Resolve MILS or Other Issues) September 23, 2026 September 21, 2026",
+      "relative": ""
+    },
+    {
+      "category": "hearing",
+      "date": "2026-09-21",
+      "end_date": "2026-09-25",
+      "event": "Evidentiary Hearing",
+      "quote": "Evidentiary Hearing (Starting with Tutorials, as Parties Propose) September 21-25, 2026",
+      "relative": ""
+    },
+    {
+      "category": "prehearing",
+      "date": "2026-10-06",
+      "end_date": "",
+      "event": "Last Day to submit Final Exhibits to Box",
+      "quote": "Last Day to submit Final Exhibits to Box. All Exhibits should be properly labeled (Follow the Ground Rules and Docket Requirements) October 6, 2026",
+      "relative": ""
+    },
+    {
+      "category": "briefing",
+      "date": "2026-10-19",
+      "end_date": "",
+      "event": "Complainants and Respondents file Initial Post-Hearing Briefs",
+      "quote": "Complainants and Respondents file Initial Post-Hearing Briefs (Only on Issues for Which the Party Bears the Burden of Proof) and Final Exhibit Lists October 19, 2026",
+      "relative": ""
+    },
+    {
+      "category": "briefing",
+      "date": "2026-11-04",
+      "end_date": "",
+      "event": "Complainants and Respondents file Reply Post-Hearing Briefs",
+      "quote": "Complainants and Respondents file Reply Post-Hearing Briefs (Only on Issues Discussed in the Initial Post-Hearing Brief of an Opposing Party) October 26, 2026 November 4, 2026",
+      "relative": ""
+    },
+    {
+      "category": "briefing",
+      "date": "2026-11-11",
+      "end_date": "",
+      "event": "Parties File Outline of Issues, Tracing Arguments from Pre-Hearing Through Post-Hearing Reply Briefs",
+      "quote": "Parties File Outline of Issues, Tracing Arguments from Pre-Hearing Through Post-Hearing Reply Briefs (Include Arguments That Have Been Dropped, Per Ground Rule 7.3) October 30, 2026 November 11, 2026",
+      "relative": ""
+    },
+    {
+      "category": "briefing",
+      "date": "2026-11-11",
+      "end_date": "",
+      "event": "Private Parties File Statement of Undisputed FACTS and Theories",
+      "quote": "Private Parties File Statement of Undisputed FACTS and Theories (This includes: facts that are not disputed; if patents: claim terms that are infringed/practiced are not disputed, theories/facts that experts agree upon) October 30, 2026 November 11, 2026",
+      "relative": ""
+    },
+    {
+      "category": "other",
+      "date": "2026-12-15",
+      "end_date": "",
+      "event": "Attendance at One-day Mediation Session",
+      "quote": "Attendance at One-day Mediation Session August 26, 2026 December 15, 2026",
+      "relative": ""
+    },
+    {
+      "category": "other",
+      "date": "2026-12-21",
+      "end_date": "",
+      "event": "Submission of Mediation Report",
+      "quote": "Submission of Mediation Report September 1, 2026 December 21, 2026",
+      "relative": ""
+    },
+    {
+      "category": "initial_determination",
+      "date": "2027-03-08",
+      "end_date": "",
+      "event": "Final Initial Determination due",
+      "quote": "Final ID due March 8, 2027",
+      "relative": ""
+    },
+    {
+      "category": "target_date",
+      "date": "2027-07-08",
+      "end_date": "",
+      "event": "Target Date",
+      "quote": "Target Date July 8, 2027",
+      "relative": ""
+    }
+  ],
+  "extracted_at": "2026-09-26T18:11:43+00:00",
+  "model": "claude-haiku-4-5-20251001",
+  "prompt_version": 2,
+  "rejected": [],
+  "role": "amendment",
+  "title": "Order Granting Joint Unopposed Motion to Amend Procedural Schedule [Motion Docket No. 1467-023]",
+  "truncated": false
+}

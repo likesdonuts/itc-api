@@ -16,6 +16,7 @@ from __future__ import annotations
 
 import re
 from dataclasses import dataclass, field
+from datetime import datetime, timedelta, timezone
 from pathlib import Path
 from typing import Any, Callable, Iterable
 
@@ -48,6 +49,7 @@ class DocsResult:
     downloaded: int = 0
     note: str | None = None
     ok: bool = True
+    full: bool = True  # the whole docket was listed, not only its new filings
 
     @classmethod
     def skipped(cls, key: str, note: str) -> "DocsResult":
@@ -122,20 +124,26 @@ def download_document_attachments(
     return results, downloaded
 
 
-def fetch_document_rows(client: EdisClient, key: str) -> list[dict[str, Any]]:
+def fetch_document_rows(
+    client: EdisClient, key: str, known_ids: set[str] | None = None
+) -> tuple[list[dict[str, Any]], bool]:
     """EDIS wants the number in its own spelling, so try the forms one case
     number can take ("337-TA-1478", "337-1478", "1478") until one answers.
+
+    With `known_ids`, only the new filings are read (see
+    EdisClient.list_documents). Returns the rows and whether they are the
+    whole docket.
     """
     for candidate in lookup_candidates(key):
         try:
-            rows = client.list_documents(candidate)
+            rows = client.list_documents(candidate, known_ids=known_ids) if known_ids else client.list_documents(candidate)
         except EdisAuthError:
             raise
         except EdisError:
             continue
         if rows:
-            return rows
-    return []
+            return rows, bool(getattr(client, "last_listing_complete", True)) or not known_ids
+    return [], True
 
 
 def _kept_attachments(
@@ -194,14 +202,16 @@ def _edis_documents(
             and (only_types is None or row.get("documentType") in only_types)
             and (only_ids is None or str(doc_id) in only_ids)
         )
-        if doc_id and wanted:
+        kept = _kept_attachments(docs_dir, key, doc_id, previous_attachments.get(str(doc_id)))
+        # A document whose PDFs are already on disk is not asked about again:
+        # asking EDIS for its attachment list every day was a third of the
+        # daily sync's requests, for files that were never going to change.
+        if doc_id and wanted and not kept:
             attachments, downloaded = download_document_attachments(
                 client, docs_dir, key, str(doc_id), row.get("securityLevel"), log
             )
         else:
-            attachments = _kept_attachments(
-                docs_dir, key, doc_id, previous_attachments.get(str(doc_id))
-            )
+            attachments = kept
         downloaded_total += downloaded
         documents.append(
             {
@@ -229,10 +239,20 @@ def fetch_case(
     download: bool = True,
     only_types: frozenset[str] | None = None,
     only_ids: frozenset[str] | None = None,
+    full: bool = True,
     log: Logger = print,
 ) -> DocsResult:
-    """Refresh one case's documents. Touches nothing else about the case."""
-    rows = fetch_document_rows(client, key)
+    """Refresh one case's documents. Touches nothing else about the case.
+
+    `full=False` reads only the new filings: EDIS lists a docket newest
+    first, so the pages up to the first one made up entirely of documents
+    already on file are enough, and the rest are kept as they were. A full
+    listing (the default, and weekly in the daily sync) also picks up edits
+    to older documents and removals.
+    """
+    previous = store.documents.get(key)
+    known = {str(d.get("id")) for d in previous or [] if d.get("id")} if not full else None
+    rows, complete = fetch_document_rows(client, key, known or None)
     if not rows:
         return DocsResult.skipped(key, "EDIS lists no documents for this number")
 
@@ -244,11 +264,43 @@ def fetch_case(
         download=download,
         only_types=only_types,
         only_ids=only_ids,
-        previous=store.documents.get(key),
+        previous=previous,
         log=log,
     )
-    store.put_documents(key, documents, attachments_downloaded=downloaded)
-    return DocsResult(key=key, document_count=len(documents), downloaded=downloaded)
+    if not complete:
+        listed = {str(d.get("id")) for d in documents}
+        documents += [d for d in previous or [] if str(d.get("id")) not in listed]
+    last_full = (
+        datetime.now(timezone.utc).isoformat(timespec="seconds") if complete
+        else (store.documents_state.get(key) or {}).get("full_listed_at")
+    )
+    store.put_documents(
+        key, documents, attachments_downloaded=downloaded, full_listed_at=last_full,
+        listing="full" if complete else "new only",
+    )
+    return DocsResult(key=key, document_count=len(documents), downloaded=downloaded, full=complete)
+
+
+# Reading only new filings misses edits to older documents (an attachment
+# added, a document made public) and removals; a full listing this often
+# catches them.
+FULL_RELIST_DAYS = 7
+
+
+def _full_listing_due(store: Store, key: str) -> bool:
+    if not store.documents.get(key):
+        return True
+    state = store.documents_state.get(key) or {}
+    # Before new-filings-only reading existed every listing was a full one,
+    # so a case with no record of either was last listed in full when fetched.
+    last = str(state.get("full_listed_at") or ("" if state.get("listing") else state.get("fetched_at")) or "")
+    if not last:
+        return True
+    try:
+        when = datetime.fromisoformat(last)
+    except ValueError:
+        return True
+    return datetime.now(timezone.utc) - when >= timedelta(days=FULL_RELIST_DAYS)
 
 
 def fetch_many(
@@ -259,15 +311,22 @@ def fetch_many(
     download: bool = True,
     only_types: frozenset[str] | None = None,
     only_ids: frozenset[str] | None = None,
+    new_only: bool = False,
     log: Logger = print,
 ) -> list[DocsResult]:
-    """One case failing is not the run failing; a rejected token is."""
+    """One case failing is not the run failing; a rejected token is.
+
+    `new_only` reads only each case's new filings, except for a case whose
+    last full listing is FULL_RELIST_DAYS old (or that has none), which is
+    listed in full.
+    """
     results: list[DocsResult] = []
     for key in keys:
         log(f"{key}...")
         try:
             result = fetch_case(
-                client, store, key, download=download, only_types=only_types, only_ids=only_ids, log=log
+                client, store, key, download=download, only_types=only_types, only_ids=only_ids,
+                full=not new_only or _full_listing_due(store, key), log=log,
             )
         except EdisAuthError:
             raise
@@ -277,8 +336,9 @@ def fetch_many(
             result = DocsResult.skipped(key, f"network error: {exc}")
 
         if result.ok:
+            listed = "listed" if result.full else "on file (new filings read)"
             log(
-                f"  {result.document_count} document(s) listed, "
+                f"  {result.document_count} document(s) {listed}, "
                 f"{result.downloaded} new attachment(s) downloaded."
             )
         else:
@@ -323,6 +383,7 @@ def run(
     only_ids: frozenset[str] | None = None,
     known_only: bool = False,
     by_hand: bool = True,
+    new_only: bool = False,
     log: Logger = print,
 ) -> DocsReport:
     """`only_types` limits downloads to those document types and `only_ids`
@@ -351,7 +412,8 @@ def run(
 
     with edis_session(token) as client:
         report.results = fetch_many(
-            client, store, targets, download=download, only_types=only_types, only_ids=only_ids, log=log
+            client, store, targets, download=download, only_types=only_types, only_ids=only_ids,
+            new_only=new_only, log=log,
         )
     if not by_hand:
         for key in backfilled:

@@ -1,0 +1,32 @@
+{
+  "case": "337-1497",
+  "cost_usd": 0.003742,
+  "date": "2026-05-22",
+  "doc_id": "883024",
+  "document_type": "Notice",
+  "events": [
+    {
+      "category": "target_date",
+      "date": "2028-01-13",
+      "end_date": "",
+      "event": "Target date for completion of investigation",
+      "quote": "setting the target date for completion of the investigation to January 13, 2028",
+      "relative": ""
+    },
+    {
+      "category": "initial_determination",
+      "date": "2027-09-13",
+      "end_date": "",
+      "event": "Deadline for issuing final Initial Determination",
+      "quote": "the deadline for issuing the final ID is September 13, 2027",
+      "relative": ""
+    }
+  ],
+  "extracted_at": "2026-09-26T18:33:36+00:00",
+  "model": "claude-haiku-4-5-20251001",
+  "prompt_version": 2,
+  "rejected": [],
+  "role": "target_date",
+  "title": "Commission Determination Not to Review an Initial Determination Setting the Target Date",
+  "truncated": false
+}

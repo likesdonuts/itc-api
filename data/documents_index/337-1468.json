@@ -984,7 +984,16 @@
     "title": "Joint Stipulation regarding Subject Article Features between Complainant and Toff Respondents"
   },
   {
-    "attachments": [],
+    "attachments": [
+      {
+        "href": "../../data/documents/337-1468/881111_2541821_2541821.pdf",
+        "label": "2541821.pdf"
+      },
+      {
+        "href": "../../data/documents/337-1468/881111_2541890_2541890.pdf",
+        "label": "2541890.pdf"
+      }
+    ],
     "document_date": "2026-05-04",
     "document_type": "Order",
     "filed_by": "Doris Johnson Hines",
@@ -1742,18 +1751,6 @@
   {
     "attachments": [],
     "document_date": "2026-02-10",
-    "document_type": "Notice",
-    "filed_by": "Lisa R. Barton",
-    "firm_organization": "USITC",
-    "id": "872197",
-    "official_received_date": "2026-02-10T15:02:00",
-    "on_behalf_of": "Office of the Secretary",
-    "security_level": "Public",
-    "title": "Commission Determination Not to Review an Initial Determination Terminating the Investigation with Respect to a Respondent Based on the Entry of a Consent Order; Issuance of a Consent Order"
-  },
-  {
-    "attachments": [],
-    "document_date": "2026-02-10",
     "document_type": "Order, Commission",
     "filed_by": "Lisa R. Barton",
     "firm_organization": "USITC",
@@ -1765,6 +1762,27 @@
   },
   {
     "attachments": [],
+    "document_date": "2026-02-10",
+    "document_type": "Notice",
+    "filed_by": "Lisa R. Barton",
+    "firm_organization": "USITC",
+    "id": "872197",
+    "official_received_date": "2026-02-10T15:02:00",
+    "on_behalf_of": "Office of the Secretary",
+    "security_level": "Public",
+    "title": "Commission Determination Not to Review an Initial Determination Terminating the Investigation with Respect to a Respondent Based on the Entry of a Consent Order; Issuance of a Consent Order"
+  },
+  {
+    "attachments": [
+      {
+        "href": "../../data/documents/337-1468/872094_2496329_2496329.pdf",
+        "label": "2496329.pdf"
+      },
+      {
+        "href": "../../data/documents/337-1468/872094_2496476_2496476.pdf",
+        "label": "2496476.pdf"
+      }
+    ],
     "document_date": "2026-02-09",
     "document_type": "Order",
     "filed_by": "Doris Johnson Hines",
@@ -1925,7 +1943,16 @@
     "title": "Agreement to Be Bound by the Protective Order of Emily Towers and Christian Roberts"
   },
   {
-    "attachments": [],
+    "attachments": [
+      {
+        "href": "../../data/documents/337-1468/868758_2476010_2476010.pdf",
+        "label": "2476010.pdf"
+      },
+      {
+        "href": "../../data/documents/337-1468/868758_2476013_2476013.pdf",
+        "label": "2476013.pdf"
+      }
+    ],
     "document_date": "2026-01-13",
     "document_type": "Order",
     "filed_by": "Doris Johnson Hines",
@@ -2021,7 +2048,16 @@
     "title": "Respondent Nexxbase's Motion to Terminate on the Basis of Consent Order Stipulation and Proposed Consent Order and Motion to Stay Investigation Pending a Final Ruling on the Motion to Terminate"
   },
   {
-    "attachments": [],
+    "attachments": [
+      {
+        "href": "../../data/documents/337-1468/868077_2471179_2471179.pdf",
+        "label": "2471179.pdf"
+      },
+      {
+        "href": "../../data/documents/337-1468/868077_2471234_2471234.pdf",
+        "label": "2471234.pdf"
+      }
+    ],
     "document_date": "2026-01-06",
     "document_type": "Order",
     "filed_by": "Doris Johnson Hines",

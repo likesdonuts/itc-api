@@ -1,0 +1,52 @@
+{
+  "case": "337-1447",
+  "cost_usd": 0.004164,
+  "date": "2025-08-18",
+  "doc_id": "859827",
+  "document_type": "Order",
+  "events": [],
+  "extracted_at": "2026-09-26T18:05:56+00:00",
+  "model": "claude-haiku-4-5-20251001",
+  "prompt_version": 2,
+  "rejected": [
+    {
+      "category": "discovery",
+      "date": "",
+      "end_date": "",
+      "event": "Initial deadline for responses to contention interrogatories on issues for which the responding party does not bear the burden of proof",
+      "quote": "Initial deadline for responses to contention interrogatories on issues for which the responding party does not bear the burden of proof",
+      "rejected": "neither a date nor a relative rule",
+      "relative": ""
+    },
+    {
+      "category": "claim_construction",
+      "date": "",
+      "end_date": "",
+      "event": "Private parties file opening claim construction briefs, which shall include any Markman declarations upon which the private parties will rely",
+      "quote": "Private parties file opening claim construction briefs, which shall include any Markman declarations upon which the private parties will rely",
+      "rejected": "neither a date nor a relative rule",
+      "relative": ""
+    },
+    {
+      "category": "expert",
+      "date": "",
+      "end_date": "",
+      "event": "File identification of testifying expert witnesses, including their expertise and curriculum vitae",
+      "quote": "File identification of testifying expert witnesses, including their expertise and curriculum vitae",
+      "rejected": "neither a date nor a relative rule",
+      "relative": ""
+    },
+    {
+      "category": "claim_construction",
+      "date": "",
+      "end_date": "",
+      "event": "Commission investigative attorney files opening claim construction brief",
+      "quote": "Commission investigative attorney files opening claim construction brief",
+      "rejected": "neither a date nor a relative rule",
+      "relative": ""
+    }
+  ],
+  "role": "amendment",
+  "title": "Granting Joint Motion to Hold Certain Procedural Schedule Deadlines in Abeyance",
+  "truncated": false
+}

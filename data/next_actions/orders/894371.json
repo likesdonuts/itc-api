@@ -1,0 +1,264 @@
+{
+  "case": "337-1516",
+  "cost_usd": 0.015556,
+  "date": "2026-09-10",
+  "doc_id": "894371",
+  "document_type": "Order",
+  "events": [
+    {
+      "category": "expert",
+      "date": "2026-09-29",
+      "end_date": "",
+      "event": "File identification of expert witnesses, including their expertise and curriculum vitae",
+      "quote": "File identification of expert witnesses, including their expertise and curriculum vitae\nTuesday, September 29, 2026",
+      "relative": ""
+    },
+    {
+      "category": "claim_construction",
+      "date": "2026-10-01",
+      "end_date": "",
+      "event": "Exchange list of claim terms to be construed",
+      "quote": "Exchange list of claim terms to be construed\nThursday, October 1, 2026",
+      "relative": ""
+    },
+    {
+      "category": "claim_construction",
+      "date": "2026-10-20",
+      "end_date": "",
+      "event": "Initial deadline for responses to contention interrogatories on issues for which the responding party bears the burden of proof, including proposed claim constructions",
+      "quote": "Initial deadline for responses to contention interrogatories\non issues for which the responding party bears the burden\nof proof, including proposed claim constructions\nTuesday, October 20, 2026",
+      "relative": ""
+    },
+    {
+      "category": "claim_construction",
+      "date": "2026-11-05",
+      "end_date": "",
+      "event": "Initial deadline for responses to contention interrogatories on issues for which the responding party does not bear the burden of proof, including responses to claim construction",
+      "quote": "Initial deadline for responses to contention interrogatories\non issues for which the responding party does not bear the\nburden of proof, including responses to claim construction\nThursday, November 5, 2026",
+      "relative": ""
+    },
+    {
+      "category": "prehearing",
+      "date": "2026-11-10",
+      "end_date": "",
+      "event": "File tentative lists of witnesses a party will call to testify at the hearing, with an identification of each witness' relationship to the party",
+      "quote": "File tentative lists of witnesses a party will call to testify at\nthe hearing, with an identification of each witness'\nrelationship to the party\nTuesday, November 10, 2026",
+      "relative": ""
+    },
+    {
+      "category": "discovery",
+      "date": "2026-11-10",
+      "end_date": "",
+      "event": "G.R. 5.3 Maximum Scope of the Investigation Disclosure",
+      "quote": "G.R. 5.3 Maximum Scope of the Investigation Disclosure\nTuesday, November 10, 2026",
+      "relative": ""
+    },
+    {
+      "category": "discovery",
+      "date": "2026-11-18",
+      "end_date": "",
+      "event": "G.R. 5.2 Disclosure of Domestic Industry Contentions",
+      "quote": "G.R. 5.2 Disclosure of Domestic Industry Contentions\nWednesday, November 18, 2026",
+      "relative": ""
+    },
+    {
+      "category": "discovery",
+      "date": "2026-12-03",
+      "end_date": "",
+      "event": "G.R. 5.1 File notice of prior art",
+      "quote": "G.R. 5.1 File notice of prior art\nThursday, December 3, 2026",
+      "relative": ""
+    },
+    {
+      "category": "claim_construction",
+      "date": "2026-12-03",
+      "end_date": "",
+      "event": "Cut-off date for supplements to contention interrogatories on issues for which the responding party bears the burden of proof, including proposed claim constructions",
+      "quote": "Cut-off date for supplements to contention interrogatories\non issues for which the responding party bears the burden\nof proof, including proposed claim constructions\nThursday, December 3, 2026",
+      "relative": ""
+    },
+    {
+      "category": "claim_construction",
+      "date": "2026-12-10",
+      "end_date": "",
+      "event": "Cut-off date for supplements to contention interrogatories on issues for which the responding party does not bear the burden of proof, including responses to claim construction",
+      "quote": "Cut-off date for supplements to contention interrogatories\non issues for which the responding party does not bear the\nburden of proof, including responses to claim construction\nThursday, December 10, 2026",
+      "relative": ""
+    },
+    {
+      "category": "discovery",
+      "date": "2026-12-10",
+      "end_date": "",
+      "event": "Fact discovery cut-off and completion",
+      "quote": "Fact discovery cut-off and completion\nThursday, December 10, 2026",
+      "relative": ""
+    },
+    {
+      "category": "motions",
+      "date": "2026-12-11",
+      "end_date": "",
+      "event": "Deadlines for motions to compel fact discovery",
+      "quote": "Deadlines for motions to compel fact discovery\nFriday, December 11, 2026",
+      "relative": ""
+    },
+    {
+      "category": "discovery",
+      "date": "2026-12-11",
+      "end_date": "",
+      "event": "G.R. 5.3 Initial Case-Narrowing Disclosure",
+      "quote": "G.R. 5.3 Initial Case-Narrowing Disclosure\nFriday, December 11, 2026",
+      "relative": ""
+    },
+    {
+      "category": "expert",
+      "date": "2026-12-22",
+      "end_date": "",
+      "event": "Exchange of initial expert reports (identify tests/surveys/data)",
+      "quote": "Exchange of initial expert reports (identify\ntests/surveys/data)\nTuesday, December 22, 2026",
+      "relative": ""
+    },
+    {
+      "category": "expert",
+      "date": "2027-01-20",
+      "end_date": "",
+      "event": "Exchange of rebuttal expert reports",
+      "quote": "Exchange of rebuttal expert reports\nWednesday, January 20, 2027",
+      "relative": ""
+    },
+    {
+      "category": "expert",
+      "date": "2027-02-04",
+      "end_date": "",
+      "event": "Expert discovery cut-off and completion",
+      "quote": "Expert discovery cut-off and completion\nThursday, February 4, 2027",
+      "relative": ""
+    },
+    {
+      "category": "motions",
+      "date": "2027-02-09",
+      "end_date": "",
+      "event": "Deadline for motions to compel expert discovery",
+      "quote": "Deadline for motions to compel expert discovery\nTuesday, February 9, 2027",
+      "relative": ""
+    },
+    {
+      "category": "motions",
+      "date": "2027-02-10",
+      "end_date": "",
+      "event": "Deadline for filing motions for summary determination",
+      "quote": "Deadline for filing motions for summary determination\nWednesday, February 10, 2027",
+      "relative": ""
+    },
+    {
+      "category": "prehearing",
+      "date": "2027-02-19",
+      "end_date": "",
+      "event": "Exchange of exhibit lists among the parties",
+      "quote": "Exchange of exhibit lists among the parties\nFriday, February 19, 2027",
+      "relative": ""
+    },
+    {
+      "category": "prehearing",
+      "date": "2027-03-02",
+      "end_date": "",
+      "event": "Submit and serve direct exhibits, with physical exhibits available",
+      "quote": "Submit and serve direct exhibits, with physical exhibits\navailable\nTuesday, March 2, 2027",
+      "relative": ""
+    },
+    {
+      "category": "prehearing",
+      "date": "2027-03-05",
+      "end_date": "",
+      "event": "Submit and serve rebuttal exhibits, with rebuttal physical exhibits available",
+      "quote": "Submit and serve rebuttal exhibits, with rebuttal physical\nexhibits available\nFriday, March 5, 2027",
+      "relative": ""
+    },
+    {
+      "category": "discovery",
+      "date": "2027-03-01",
+      "end_date": "",
+      "event": "G.R. 5.3 Final Case-Narrowing Disclosure",
+      "quote": "G.R. 5.3 Final Case-Narrowing Disclosure\nMonday, March 1, 2027",
+      "relative": ""
+    },
+    {
+      "category": "prehearing",
+      "date": "2027-03-09",
+      "end_date": "",
+      "event": "File pre-trial statements and briefs",
+      "quote": "File pre-trial statements and briefs\nTuesday, March 9, 2027",
+      "relative": ""
+    },
+    {
+      "category": "motions",
+      "date": "2027-03-17",
+      "end_date": "",
+      "event": "Deadline to file motions in limine",
+      "quote": "Deadline to file motions in limine\nWednesday, March 17, 2027",
+      "relative": ""
+    },
+    {
+      "category": "motions",
+      "date": "2027-03-29",
+      "end_date": "",
+      "event": "File responses to motions in limine",
+      "quote": "File responses to motions in limine\nMonday, March 29, 2027",
+      "relative": ""
+    },
+    {
+      "category": "prehearing",
+      "date": "2027-04-12",
+      "end_date": "",
+      "event": "Pre-trial conference",
+      "quote": "Pre-trial conference\nMonday, April 12, 2027",
+      "relative": ""
+    },
+    {
+      "category": "hearing",
+      "date": "2027-04-12",
+      "end_date": "2027-04-16",
+      "event": "Evidentiary hearing",
+      "quote": "Hearing\nMonday, April 12, 2027\nthrough Friday, April 16, 2027",
+      "relative": ""
+    },
+    {
+      "category": "briefing",
+      "date": "2027-05-04",
+      "end_date": "",
+      "event": "File initial post-trial briefs and final exhibit lists",
+      "quote": "File initial post-trial briefs and final exhibit lists\nTuesday, May 4, 2027",
+      "relative": ""
+    },
+    {
+      "category": "briefing",
+      "date": "2027-05-21",
+      "end_date": "",
+      "event": "File reply post-trial briefs",
+      "quote": "File reply post-trial briefs\nFriday, May 21, 2027",
+      "relative": ""
+    },
+    {
+      "category": "initial_determination",
+      "date": "2027-08-13",
+      "end_date": "",
+      "event": "Initial Determination",
+      "quote": "Initial Determination\nFriday, August 13, 2027",
+      "relative": ""
+    },
+    {
+      "category": "target_date",
+      "date": "2027-12-14",
+      "end_date": "",
+      "event": "Target date for completion of investigation",
+      "quote": "Target date for completion of investigation\nTuesday, December 14, 2027",
+      "relative": ""
+    }
+  ],
+  "extracted_at": "2026-09-26T18:42:43+00:00",
+  "model": "claude-haiku-4-5-20251001",
+  "prompt_version": 2,
+  "rejected": [],
+  "role": "full_schedule",
+  "title": "Setting the Procedural Schedule",
+  "truncated": false
+}

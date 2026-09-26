@@ -1,0 +1,24 @@
+{
+  "case": "337-1511",
+  "cost_usd": 0.017086,
+  "date": "2026-07-21",
+  "doc_id": "888811",
+  "document_type": "Order",
+  "events": [
+    {
+      "category": "discovery",
+      "date": "2026-08-04",
+      "end_date": "",
+      "event": "Submission of Joint Discovery Statement",
+      "quote": "parties are directed to file a joint discovery statement, on or before August 4, 2026",
+      "relative": ""
+    }
+  ],
+  "extracted_at": "2026-09-26T18:40:34+00:00",
+  "model": "claude-haiku-4-5-20251001",
+  "prompt_version": 2,
+  "rejected": [],
+  "role": "other",
+  "title": "Notice of Ground Rules; Order Setting Date for Submission of Joint Discovery Statement",
+  "truncated": true
+}

@@ -1,0 +1,88 @@
+{
+  "case": "337-1467",
+  "cost_usd": 0.007791,
+  "date": "2026-04-30",
+  "doc_id": "880890",
+  "document_type": "Order",
+  "events": [
+    {
+      "category": "claim_construction",
+      "date": "2026-05-05",
+      "end_date": "",
+      "event": "Final Burden-of-Proof Contentions Exchange",
+      "quote": "Final Burden-of-Proof Contentions Exchange\n(Parties may supplement with additional evidence from any fact depositions taken\nafter this date) May 1, 2026 May 5, 2026",
+      "relative": ""
+    },
+    {
+      "category": "claim_construction",
+      "date": "2026-05-11",
+      "end_date": "",
+      "event": "File Joint Chart Setting Forth Parties' Post-Hearing Claim Constructions",
+      "quote": "File Joint Chart Setting Forth Parties' Post-Hearing Claim Constructions (Per Ground\nRule 1.14) April 2, 2026 May 11, 2026",
+      "relative": ""
+    },
+    {
+      "category": "prehearing",
+      "date": "2026-05-14",
+      "end_date": "",
+      "event": "Management Conference",
+      "quote": "Management Conference (Likely on\nWebex) May 14, 2026\n2:00 p.m.",
+      "relative": ""
+    },
+    {
+      "category": "discovery",
+      "date": "2026-05-19",
+      "end_date": "",
+      "event": "Fact Discovery Cutoff and Completion",
+      "quote": "Fact Discovery Cutoff and Completion\n(This includes completion of fact\nTests/Surveys/Data) (No extensions without\nLeave) (Note: this means that all fact\ncontentions on infringement and invalidity\nhave been exchanged and completed) May 15, 2026 May 19, 2026",
+      "relative": ""
+    },
+    {
+      "category": "claim_construction",
+      "date": "2026-05-19",
+      "end_date": "",
+      "event": "Final Non-Burden-of-Proof Contentions Exchange",
+      "quote": "Final Non-Burden-of-Proof Contentions\nExchange\n(Parties may supplement with additional\nevidence from any fact depositions taken\nafter this date) May 15, 2026 May 19, 2026",
+      "relative": ""
+    },
+    {
+      "category": "expert",
+      "date": "2026-06-01",
+      "end_date": "",
+      "event": "Exchange of Initial Expert Reports",
+      "quote": "Exchange of Initial Expert Reports (Send\ncopies to McNamara337@usitc.gov) May 27, 2026 June 1, 2026",
+      "relative": ""
+    },
+    {
+      "category": "expert",
+      "date": "2026-06-15",
+      "end_date": "",
+      "event": "Exchange of Rebuttal Expert Reports",
+      "quote": "Exchange of Rebuttal Expert Reports (Send\ncopies to McNamara337@usitc.gov) June 10, 2026 June 15, 2026",
+      "relative": ""
+    },
+    {
+      "category": "discovery",
+      "date": "2026-07-07",
+      "end_date": "",
+      "event": "Expert Discovery Cutoff and Completion",
+      "quote": "Expert Discovery Cutoff and Completion\n(No extensions without Leave) June 30, 2026 July 7, 2026",
+      "relative": ""
+    },
+    {
+      "category": "motions",
+      "date": "2026-07-21",
+      "end_date": "",
+      "event": "Last Day to file Summary Determination Motions",
+      "quote": "Last Day to file Summary Determination\nMotions July 24, 2026 July 21, 2026",
+      "relative": ""
+    }
+  ],
+  "extracted_at": "2026-09-26T18:11:29+00:00",
+  "model": "claude-haiku-4-5-20251001",
+  "prompt_version": 2,
+  "rejected": [],
+  "role": "amendment",
+  "title": "Granting in-Part and Denying in-Part the Parties\u2019 Joint Motion to Amend the Procedural Schedule [Motion Docket No. 1467-017]",
+  "truncated": false
+}

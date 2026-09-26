@@ -53,6 +53,7 @@ data/                 the handoff between the layers
   next_actions.json     each open case's next actions  <- written by next-actions (with counsel)
   analytics/            firm, attorney and company entities  <- written by analytics
   sync_log.csv          one row per sync, for watching the daily download
+  daily_sync_log.csv    one row per daily job: how long each step took, EDIS requests
   documents/<number>/   downloaded PDFs (gitignored)
 site/                 generated output
 analytics_ui/         THE ANALYTICS APP'S UI - data/analytics/ -> site_analytics/ (bundle, page, render)
@@ -94,14 +95,16 @@ stop.
 
 The panel at the top of the list page does the day's work:
 
-- **Run daily sync** downloads today's case data, then re-lists the documents
-  of every case whose documents you have collected before and downloads only
-  their Notice of Appearance PDFs, then rebuilds attorneys and pages. If the
+- **Run daily sync** downloads today's case data, then reads the new filings
+  of the cases due for a refresh and downloads only their new Notice of
+  Appearance PDFs, reads any new scheduling orders for the Next actions tab,
+  then rebuilds attorneys and pages. Live cases are refreshed every day; closed
+  or quiet ones on a weekly or monthly turn (see
+  [How often a case is refreshed](#how-often-a-case-is-refreshed)). If the
   IDS download fails (it is tried three times), the rest still runs on the
-  case data already on disk, and the job ends with a warning saying so.
-  Backfilled cases (below) are included only while they are open, and ones
-  with nothing filed in two years only monthly. It then reads any new
-  scheduling orders for the Next actions tab.
+  case data already on disk, and the job ends with a warning saying so. The
+  status line says how long the last one took (hover for each step), and every
+  run is logged in `data/daily_sync_log.csv`.
 - **Backfill all cases** lists the documents of every case that has no list
   yet, without PDFs, so counsel covers the whole history. It is long (see
   [the backfill](#the-backfill-every-cases-document-list)); **Stop** ends it
@@ -204,7 +207,7 @@ own from the command line.
 | `python cli.py fields` | none | Lists every field name `ui_schema.json` can use, with samples. |
 | `python cli.py status` | none | Which snapshot is current, which cases have documents, and the last few syncs. |
 | `python cli.py normalize` | none | Rewrites stored document dates to ISO 8601 in place. |
-| `python cli.py refresh` | IDS + EDIS | The daily job: sync, re-fetch documents already on disk, render. A failed IDS download does not stop the documents; the command then exits with 1. |
+| `python cli.py refresh` | IDS + EDIS | The daily job: sync, the new filings of the cases due today, scheduling orders, counsel, next actions, render; timed into `data/daily_sync_log.csv`. A failed IDS download does not stop the documents; the command then exits with 1. |
 
 Besides `ITC Tracker.bat` and `ITC Analytics.bat`, Windows users can double-click `sync.bat`,
 `docs.bat` (it prompts for numbers), `render.bat`, `serve.bat`, or `run.bat`
@@ -337,9 +340,55 @@ and a save rewrites only the cases whose list changed, so a daily sync's git
 diff is the few open cases it touched. A leftover `data/documents_index.json`
 from before is read and converted on the next save.
 
-EDIS returns a case's documents 20 to a page; the client reads up to 1,000
-pages. (It used to stop at 50 pages, which cut 337-TA-395 off at exactly
-1,000 documents -- "Update list" on it once fetches the rest.)
+EDIS returns a case's documents 20 to a page, newest first; the client reads
+up to 1,000 pages. (It used to stop at 50 pages, which cut 337-TA-395 off at
+exactly 1,000 documents -- "Update list" on it once fetches the rest.)
+
+**New filings only.** A routine refresh (the daily sync, `refresh`) does not
+re-read a whole docket: it reads pages until the first one made up entirely
+of documents already on file, adds what is new, and keeps the rest -- one
+request for a case with nothing new, two for a case with a few new filings
+(stopping at the first *all*-known page, not the first known document, catches
+a new filing listed a little out of order). Reading only new filings would
+miss an older document's edits (an attachment added, a document made public)
+and removals, so each case is still listed in full once a week
+(`docs.FULL_RELIST_DAYS`); `documents_state.json` records `full_listed_at` and
+whether the last listing was `"full"` or `"new only"`. Anything fetched by
+hand -- Fetch documents, Update list(s), `docs` with numbers -- is always a
+full listing.
+
+**No repeat attachment lookups.** A document whose PDFs are already on disk
+is not asked about again (the attachment list of each of ~1,400 appearance
+notices used to be requested every day).
+
+#### How often a case is refreshed
+
+`backfill.refresh_every` decides, and `backfill.daily_targets` lists the cases
+due today:
+
+| Case | Refreshed |
+| --- | --- |
+| open, with a filing in the last two years | daily |
+| fetched by you, and closed or with no filing in two years | weekly |
+| backfilled, open, with no filing in two years (the decades-old "Active" listings) | monthly |
+| backfilled and closed | never (fetch it by hand to make it yours) |
+
+A new filing brings a quiet case back to daily. Together with new-filings-only
+reading this took a daily sync from about 190 cases and 4,000 EDIS requests
+(about an hour of listing) to about 80 cases and a couple of hundred requests.
+
+#### Timing (`data/daily_sync_log.csv`)
+
+Every daily job -- the app's Run daily sync or `python cli.py refresh` --
+appends a row when it finishes, failed runs included (`dailylog.py`): when it
+started and ended, total seconds and seconds per step (`ingest`, `documents`,
+`schedules`, `counsel`, `next_actions`, `render`; empty for a step that did not
+run), cases refreshed and how many were listed in full, EDIS requests by kind
+(list pages, attachment lists, downloads), PDFs downloaded, scheduling orders
+read, pages OCR'd, and the job's message. The job's message ends with the same
+summary ("Took 4 min (ingest 31 s, documents 2.1 min, ...; 164 EDIS
+requests)"), `state.json` keeps the last one under `runs.daily`, and the
+dashboard's status line shows it. The file is tracked, like `sync_log.csv`.
 
 #### The backfill: every case's document list
 
@@ -369,8 +418,8 @@ cases that can still get filings instead of growing to every case on file.
 And the USITC lists about 90 investigations decades old as "Active" (their
 remedial orders are still in force) with nothing filed in years: a
 backfilled case with no filing in two years is re-listed monthly rather than
-daily, and one new filing makes it daily again (`backfill.daily_targets`).
-That took the daily sync from about 300 cases to about 190.
+daily, and one new filing makes it daily again (see
+[How often a case is refreshed](#how-often-a-case-is-refreshed)).
 Fetching or updating a case by hand clears the mark: it becomes one of yours
 and is refreshed daily like any other. `docs --existing` and `--all` are
 refreshes and keep the mark.

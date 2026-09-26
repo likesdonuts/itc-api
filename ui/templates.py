@@ -812,6 +812,13 @@ _CONTROL_SCRIPT = """
           : item("This case's documents fetched " + when(mine), isToday(mine) ? 'ok' : ''));
     } else {
       parts.push(item('Documents last fetched ' + when((s.documents || {}).finished_at)));
+      const daily = s.daily || {};
+      if (daily.seconds != null) {
+        const mins = Math.round(daily.seconds / 60);
+        const took = item('Last daily sync took ' + (mins >= 1 ? mins + ' min' : Math.round(daily.seconds) + ' s'));
+        if (daily.summary) took.title = daily.summary;
+        parts.push(took);
+      }
       const filled = s.backfill || {};
       if (filled.remaining != null) {
         parts.push(filled.remaining

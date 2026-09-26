@@ -1,0 +1,15 @@
+{
+  "case": "337-1447",
+  "cost_usd": 0.035312,
+  "date": "2025-08-25",
+  "doc_id": "860328",
+  "document_type": "ID/RD - Other Than Final on Violation",
+  "events": [],
+  "extracted_at": "2026-09-26T18:07:20+00:00",
+  "model": "claude-haiku-4-5-20251001",
+  "prompt_version": 2,
+  "rejected": [],
+  "role": "amendment",
+  "title": "Initial Determination Extending Target Date and Amending Procedural Schedule",
+  "truncated": true
+}

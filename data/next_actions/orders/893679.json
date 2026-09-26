@@ -1,0 +1,32 @@
+{
+  "case": "337-1511",
+  "cost_usd": 0.004383,
+  "date": "2026-09-01",
+  "doc_id": "893679",
+  "document_type": "Notice",
+  "events": [
+    {
+      "category": "target_date",
+      "date": "2028-03-20",
+      "end_date": "",
+      "event": "Target date for completion of investigation",
+      "quote": "setting a 20-month target date of March 20, 2028, for completion of the investigation",
+      "relative": ""
+    },
+    {
+      "category": "initial_determination",
+      "date": "2027-11-19",
+      "end_date": "",
+      "event": "Final initial determination due",
+      "quote": "the final initial determination is due on November 19, 2027",
+      "relative": ""
+    }
+  ],
+  "extracted_at": "2026-09-26T18:40:43+00:00",
+  "model": "claude-haiku-4-5-20251001",
+  "prompt_version": 2,
+  "rejected": [],
+  "role": "target_date",
+  "title": "Commission Determination Not to Review an Initial Determination Setting a Twenty-Month Target Date",
+  "truncated": false
+}

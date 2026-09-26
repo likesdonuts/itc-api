@@ -35,7 +35,7 @@ from http.server import SimpleHTTPRequestHandler, ThreadingHTTPServer
 from pathlib import Path
 from typing import Any, Callable
 
-from datalayer import backfill, counsel, docs, ingest, ids
+from datalayer import backfill, counsel, dailylog, docs, ingest, ids
 from datalayer.nextactions import build as nextactions_build
 from datalayer.client import decode_jwt_exp
 from datalayer.config import DATA_DIR, SCHEMA_PATH, SITE_DIR, MissingTokenError, load_token
@@ -159,6 +159,11 @@ class Controller:
                 "remaining": filled.get("remaining"),
                 "of": filled.get("of"),
             },
+            "daily": {
+                "finished_at": (runs.get("daily") or {}).get("finished_at"),
+                "seconds": (runs.get("daily") or {}).get("seconds"),
+                "summary": (runs.get("daily") or {}).get("summary"),
+            },
             "token": self.token_status(),
             "job": job.to_dict() if job else None,
         }
@@ -278,22 +283,39 @@ class Controller:
 
         return log
 
-    def _rebuild(self, store: Store, log: Logger) -> None:
-        counsel.run(store, log=log)
-        nextactions_build.run(store, log=log)
-        render_site(
-            store, data_dir=self.data_dir, site_dir=self.site_dir, schema_path=self.schema_path, log=log
-        )
+    def _rebuild(self, store: Store, log: Logger, timer: dailylog.DailyTimer | None = None) -> None:
+        timer = timer or dailylog.DailyTimer()
+        with timer.step("counsel"):
+            counsel.run(store, log=log)
+        with timer.step("next_actions"):
+            nextactions_build.run(store, log=log)
+        with timer.step("render"):
+            render_site(
+                store, data_dir=self.data_dir, site_dir=self.site_dir, schema_path=self.schema_path, log=log
+            )
 
     def _run_daily(self, job: Job) -> None:
         """Today's case data, then the document lists and appearance notices
-        of every case whose documents have been collected before.
-        """
+        of every case due for a refresh, timed step by step (dailylog.py)."""
+        timer = dailylog.DailyTimer()
         log = self._logger(job)
+        try:
+            self._daily_steps(job, timer, log)
+        finally:
+            outcome = job.level if job.state == "done" else "error"
+            row = timer.row(outcome, job.message)
+            dailylog.append(self.data_dir, row)
+            state = Store.load(self.data_dir)
+            state.record_run("daily", seconds=row["seconds"], summary=dailylog.summary(row), outcome=outcome)
+            state.save_state()
+            log(dailylog.summary(row))
+
+    def _daily_steps(self, job: Job, timer: dailylog.DailyTimer, log: Logger) -> None:
         store = Store.load(self.data_dir)
         level = "ok"
         try:
-            report = ingest.run(store, ids_dir=Path(self.data_dir) / "ids", log=log)
+            with timer.step("ingest"):
+                report = ingest.run(store, ids_dir=Path(self.data_dir) / "ids", log=log)
         except ids.IdsError as exc:
             # The case data is one step of the job, not a precondition: the
             # documents and appearance notices are refreshed anyway, against
@@ -318,21 +340,26 @@ class Controller:
                 message += " Documents not refreshed: no EDIS token in .env."
                 level = "warn"
             if token:
-                log(f"Refreshing documents for {len(targets)} case(s) (appearance PDFs only)...")
+                log(f"Refreshing documents for {len(targets)} case(s) (new filings; appearance PDFs only)...")
                 try:
-                    fetched = docs.run(
-                        store,
-                        token,
-                        targets,
-                        download=True,
-                        only_types=docs.APPEARANCE_TYPES,
-                        by_hand=False,
-                        log=log,
-                    )
+                    with timer.step("documents"):
+                        fetched = docs.run(
+                            store,
+                            token,
+                            targets,
+                            download=True,
+                            only_types=docs.APPEARANCE_TYPES,
+                            by_hand=False,
+                            new_only=True,
+                            log=log,
+                        )
                 except ProcessAborted as exc:
                     message += f" Documents not refreshed: {exc}"
                     level = "warn"
                 else:
+                    timer.count("cases", len(fetched.fetched))
+                    timer.count("full_listings", sum(1 for r in fetched.fetched if r.full))
+                    timer.count("pdfs_downloaded", fetched.downloaded)
                     message += (
                         f" Documents refreshed for {len(fetched.fetched)} case(s), "
                         f"{fetched.downloaded} new file(s)."
@@ -340,12 +367,13 @@ class Controller:
                     if fetched.failed:
                         message += f" {len(fetched.failed)} skipped."
                         level = "warn"
-                    note, warn = self._read_schedules(store, token, log)
+                    with timer.step("schedules"):
+                        note, warn = self._read_schedules(store, token, log, timer)
                     message += note
                     level = "warn" if warn else level
 
-        self._rebuild(store, log)
-        job.finish(message, level)
+        self._rebuild(store, log, timer)
+        job.finish(f"{message} {dailylog.summary(timer.row(level))}", level)
 
     def _run_claims(self, job: Job, key: str) -> None:
         from datalayer.claims import build as claims_build
@@ -371,7 +399,8 @@ class Controller:
         else:
             job.finish(f"Built from {events} claim event(s).{cost}", "ok")
 
-    def _read_schedules(self, store: Store, token: str, log: Logger) -> tuple[str, bool]:
+    def _read_schedules(self, store: Store, token: str, log: Logger,
+                        timer: dailylog.DailyTimer | None = None) -> tuple[str, bool]:
         """Read the live cases' new scheduling orders for Next actions. Never
         fails the sync: without an API key, or past its budget, it says so."""
         from datalayer.claims.extract import MissingApiKeyError
@@ -383,6 +412,8 @@ class Controller:
             return " Scheduling orders not read: no Anthropic API key in .env.", True
         except ProcessAborted as exc:
             return f" Scheduling orders not fetched: {exc}", True
+        if timer:
+            timer.count("orders_read", report.read)
         if report.stopped:
             return f" Scheduling orders: {report.stopped}.", True
         if report.read:

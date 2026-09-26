@@ -653,7 +653,16 @@
     "title": "Agreement to Be Bound by the Protective Order of Maria A. Stubbings"
   },
   {
-    "attachments": [],
+    "attachments": [
+      {
+        "href": "../../data/documents/337-1483/876010_2520637_2520637.pdf",
+        "label": "2520637.pdf"
+      },
+      {
+        "href": "../../data/documents/337-1483/876010_2520642_2520642.pdf",
+        "label": "2520642.pdf"
+      }
+    ],
     "document_date": "2026-03-20",
     "document_type": "Notice",
     "filed_by": "Lisa R. Barton",
@@ -677,7 +686,16 @@
     "title": "Agreement to Be Bound by the Protective Order of Nikos Papanikolopoulos"
   },
   {
-    "attachments": [],
+    "attachments": [
+      {
+        "href": "../../data/documents/337-1483/875577_2518993_2518993.pdf",
+        "label": "2518993.pdf"
+      },
+      {
+        "href": "../../data/documents/337-1483/875577_2518996_2518996.pdf",
+        "label": "2518996.pdf"
+      }
+    ],
     "document_date": "2026-03-16",
     "document_type": "Order",
     "filed_by": "Clark S. Cheney",

@@ -1,0 +1,32 @@
+{
+  "case": "337-1490",
+  "cost_usd": 0.003537,
+  "date": "2026-08-06",
+  "doc_id": "890695",
+  "document_type": "Order",
+  "events": [
+    {
+      "category": "discovery",
+      "date": "2026-09-04",
+      "end_date": "",
+      "event": "Cut-off date for supplements to contention interrogatories on burden issues",
+      "quote": "Cut-off date for supplements to contention interrogatories on issues for which the responding party bears the burden of proof, and on public interest issues (if applicable) ... September 4, 2026",
+      "relative": ""
+    },
+    {
+      "category": "discovery",
+      "date": "2026-09-11",
+      "end_date": "",
+      "event": "Cut-off date for supplements to contention interrogatories on non-burden issues",
+      "quote": "Cut-off date for supplements to contention interrogatories on issues for which the responding party does not bear the burden of proof ... September 11, 2026",
+      "relative": ""
+    }
+  ],
+  "extracted_at": "2026-09-26T18:28:46+00:00",
+  "model": "claude-haiku-4-5-20251001",
+  "prompt_version": 2,
+  "rejected": [],
+  "role": "amendment",
+  "title": "Granting Complainants' Unopposed Motion to Amend the Procedural Schedule",
+  "truncated": false
+}

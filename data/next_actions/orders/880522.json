@@ -1,0 +1,15 @@
+{
+  "case": "337-1488",
+  "cost_usd": 0.003076,
+  "date": "2026-04-28",
+  "doc_id": "880522",
+  "document_type": "Order",
+  "events": [],
+  "extracted_at": "2026-09-26T18:27:22+00:00",
+  "model": "claude-haiku-4-5-20251001",
+  "prompt_version": 2,
+  "rejected": [],
+  "role": "other",
+  "title": "Granting Complainants Inventist, Inc. and Alien Technology Group, Inc. d/b/a Alien Rides\u2019 and Respondent Inmotion Technologies Co., Ltd. d/b/a Inmotion\u2019s Joint Motion to Stay the Procedural Schedule [Motion Docket No. 1488-003]",
+  "truncated": false
+}

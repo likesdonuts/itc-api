@@ -1,0 +1,24 @@
+{
+  "case": "337-1487",
+  "cost_usd": 0.003574,
+  "date": "2026-08-26",
+  "doc_id": "892760",
+  "document_type": "Notice",
+  "events": [
+    {
+      "category": "target_date",
+      "date": "2027-08-16",
+      "end_date": "",
+      "event": "Target date for completion of investigation",
+      "quote": "extending the target date for completion of the investigation to August 16, 2027",
+      "relative": ""
+    }
+  ],
+  "extracted_at": "2026-09-26T18:26:18+00:00",
+  "model": "claude-haiku-4-5-20251001",
+  "prompt_version": 2,
+  "rejected": [],
+  "role": "target_date",
+  "title": "Commission Determination Not to Review an Initial Determination Extending the Target Date for Completion of the Investigation",
+  "truncated": false
+}

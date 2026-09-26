@@ -1,0 +1,15 @@
+{
+  "case": "337-1469",
+  "cost_usd": 0.002345,
+  "date": "2026-07-28",
+  "doc_id": "889542",
+  "document_type": "Order",
+  "events": [],
+  "extracted_at": "2026-09-26T18:13:52+00:00",
+  "model": "claude-haiku-4-5-20251001",
+  "prompt_version": 2,
+  "rejected": [],
+  "role": "amendment",
+  "title": "Granting Joint Motion to Modify the Procedural Schedule as to Deadlines for Exhibit Lists and Exhibits",
+  "truncated": false
+}

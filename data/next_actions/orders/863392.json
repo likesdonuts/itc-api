@@ -1,0 +1,24 @@
+{
+  "case": "337-1458",
+  "cost_usd": 0.002966,
+  "date": "2025-09-30",
+  "doc_id": "863392",
+  "document_type": "Order",
+  "events": [
+    {
+      "category": "other",
+      "date": "2025-11-20",
+      "end_date": "",
+      "event": "Technology Stipulation Deadline",
+      "quote": "Technology Stipulation Deadline October 1, 2025 November 20, 2025",
+      "relative": ""
+    }
+  ],
+  "extracted_at": "2026-09-26T18:08:46+00:00",
+  "model": "claude-haiku-4-5-20251001",
+  "prompt_version": 2,
+  "rejected": [],
+  "role": "amendment",
+  "title": "Granting Joint Motion to Amend the Procedural Schedule [Motion Docket No. 1458-001]",
+  "truncated": false
+}

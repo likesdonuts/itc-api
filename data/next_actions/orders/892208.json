@@ -1,0 +1,56 @@
+{
+  "case": "337-1490",
+  "cost_usd": 0.005293,
+  "date": "2026-08-20",
+  "doc_id": "892208",
+  "document_type": "Order",
+  "events": [
+    {
+      "category": "other",
+      "date": "2026-08-26",
+      "end_date": "",
+      "event": "Initial Claim Narrowing",
+      "quote": "Initial Claim Narrowing1 Wednesday, August 26, 2026",
+      "relative": ""
+    },
+    {
+      "category": "other",
+      "date": "2026-09-04",
+      "end_date": "",
+      "event": "Initial Invalidity Narrowing",
+      "quote": "Initial Invalidity Narrowing2 Friday, September 4, 2026",
+      "relative": ""
+    },
+    {
+      "category": "other",
+      "date": "2026-09-18",
+      "end_date": "",
+      "event": "Intermediate Claim Narrowing",
+      "quote": "Intermediate Claim Narrowing3 Friday, September 18, 2026",
+      "relative": ""
+    },
+    {
+      "category": "other",
+      "date": "2026-10-02",
+      "end_date": "",
+      "event": "Intermediate Invalidity Narrowing",
+      "quote": "Intermediate Invalidity Narrowing4 Friday, October 2, 2026",
+      "relative": ""
+    },
+    {
+      "category": "other",
+      "date": "2026-10-16",
+      "end_date": "",
+      "event": "Final Invalidity Narrowing",
+      "quote": "Final Invalidity Narrowing5 Friday, October 16, 2026",
+      "relative": ""
+    }
+  ],
+  "extracted_at": "2026-09-26T18:28:52+00:00",
+  "model": "claude-haiku-4-5-20251001",
+  "prompt_version": 2,
+  "rejected": [],
+  "role": "amendment",
+  "title": "Regarding Case Narrowing Proposals; Amending Procedural Schedule",
+  "truncated": false
+}

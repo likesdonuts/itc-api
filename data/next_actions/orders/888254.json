@@ -1,0 +1,24 @@
+{
+  "case": "337-1490",
+  "cost_usd": 0.003879,
+  "date": "2026-07-16",
+  "doc_id": "888254",
+  "document_type": "Order",
+  "events": [
+    {
+      "category": "claim_construction",
+      "date": "2026-08-19",
+      "end_date": "",
+      "event": "Markman hearing",
+      "quote": "the Markman hearing will be held on Wednesday, August 19, 2026, beginning at 9:30 AM",
+      "relative": ""
+    }
+  ],
+  "extracted_at": "2026-09-26T18:28:43+00:00",
+  "model": "claude-haiku-4-5-20251001",
+  "prompt_version": 2,
+  "rejected": [],
+  "role": "amendment",
+  "title": "Amending the Procedural Schedule",
+  "truncated": false
+}

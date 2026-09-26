@@ -1,0 +1,15 @@
+{
+  "case": "337-1520",
+  "cost_usd": 0.002317,
+  "date": "2026-09-25",
+  "doc_id": "895859",
+  "document_type": "Order",
+  "events": [],
+  "extracted_at": "2026-09-26T18:43:05+00:00",
+  "model": "claude-haiku-4-5-20251001",
+  "prompt_version": 2,
+  "rejected": [],
+  "role": "other",
+  "title": "Granting Joint Motion to Modify Procedural Schedule in 100-Day Proceeding",
+  "truncated": false
+}

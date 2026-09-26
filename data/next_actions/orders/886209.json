@@ -1,0 +1,15 @@
+{
+  "case": "337-1497",
+  "cost_usd": 0.002274,
+  "date": "2026-06-25",
+  "doc_id": "886209",
+  "document_type": "Order",
+  "events": [],
+  "extracted_at": "2026-09-26T18:34:07+00:00",
+  "model": "claude-haiku-4-5-20251001",
+  "prompt_version": 2,
+  "rejected": [],
+  "role": "other",
+  "title": "Amending the Ground Rules",
+  "truncated": false
+}

@@ -1,0 +1,15 @@
+{
+  "case": "337-1519",
+  "cost_usd": 0.015185,
+  "date": "2026-08-27",
+  "doc_id": "892941",
+  "document_type": "Order",
+  "events": [],
+  "extracted_at": "2026-09-26T18:42:50+00:00",
+  "model": "claude-haiku-4-5-20251001",
+  "prompt_version": 2,
+  "rejected": [],
+  "role": "other",
+  "title": "Notice of Ground Rules",
+  "truncated": true
+}

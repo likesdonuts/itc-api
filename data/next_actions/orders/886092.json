@@ -1,0 +1,24 @@
+{
+  "case": "337-1500",
+  "cost_usd": 0.003577,
+  "date": "2026-06-24",
+  "doc_id": "886092",
+  "document_type": "Notice",
+  "events": [
+    {
+      "category": "target_date",
+      "date": "2027-11-30",
+      "end_date": "",
+      "event": "Target date for completion of investigation",
+      "quote": "19-month target date of November 30, 2027",
+      "relative": ""
+    }
+  ],
+  "extracted_at": "2026-09-26T18:35:43+00:00",
+  "model": "claude-haiku-4-5-20251001",
+  "prompt_version": 2,
+  "rejected": [],
+  "role": "target_date",
+  "title": "Commission Determination Not to Review an Initial Determination Setting a 19-Month Target Date",
+  "truncated": false
+}

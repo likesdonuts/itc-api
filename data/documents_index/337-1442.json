@@ -72,7 +72,16 @@
     "title": null
   },
   {
-    "attachments": [],
+    "attachments": [
+      {
+        "href": "../../data/documents/337-1442/893931_2616579_2616579.pdf",
+        "label": "2616579.pdf"
+      },
+      {
+        "href": "../../data/documents/337-1442/893931_2616661_2616661.pdf",
+        "label": "2616661.pdf"
+      }
+    ],
     "document_date": "2026-09-03",
     "document_type": "Notice",
     "filed_by": "Lisa R. Barton",
@@ -504,7 +513,16 @@
     "title": "Respondent's Petition for Review of Initial Determination"
   },
   {
-    "attachments": [],
+    "attachments": [
+      {
+        "href": "../../data/documents/337-1442/885755_2566439_2566439.pdf",
+        "label": "2566439.pdf"
+      },
+      {
+        "href": "../../data/documents/337-1442/885755_2569426_2569426.pdf",
+        "label": "2569426.pdf"
+      }
+    ],
     "document_date": "2026-06-22",
     "document_type": "Notice",
     "filed_by": "Lisa R. Barton",

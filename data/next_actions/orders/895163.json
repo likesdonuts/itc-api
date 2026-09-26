@@ -1,0 +1,25 @@
+{
+  "case": "337-1494",
+  "cost_usd": 0.004236,
+  "date": "2026-09-18",
+  "doc_id": "895163",
+  "document_type": "Order",
+  "events": [],
+  "extracted_at": "2026-09-26T18:31:46+00:00",
+  "model": "claude-haiku-4-5-20251001",
+  "prompt_version": 2,
+  "rejected": [
+    {
+      "category": "other",
+      "date": "",
+      "end_date": "",
+      "event": "All procedural schedule deadlines stayed",
+      "quote": "All deadlines and dates in the procedural schedule, except the target date, are hereby stayed.",
+      "rejected": "neither a date nor a relative rule",
+      "relative": ""
+    }
+  ],
+  "role": "amendment",
+  "title": "Granting Unopposed Requests to Stay Procedural Schedule and for Expedited Treatment",
+  "truncated": false
+}

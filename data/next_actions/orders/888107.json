@@ -1,0 +1,48 @@
+{
+  "case": "337-1470",
+  "cost_usd": 0.005722,
+  "date": "2026-07-15",
+  "doc_id": "888107",
+  "document_type": "Order",
+  "events": [
+    {
+      "category": "motions",
+      "date": "2026-08-21",
+      "end_date": "",
+      "event": "Complainant files its motion for summary determination",
+      "quote": "Complainant files its motion for summary determination August 21, 2026",
+      "relative": ""
+    },
+    {
+      "category": "motions",
+      "date": "2026-09-11",
+      "end_date": "",
+      "event": "Staff files its response to Complainant's motion for summary determination",
+      "quote": "Staff files its response to Complainant's motion for summary determination September 11, 2026",
+      "relative": ""
+    },
+    {
+      "category": "initial_determination",
+      "date": "2027-03-23",
+      "end_date": "",
+      "event": "Final initial determination on violation",
+      "quote": "Final initial determination on violation March 23, 2027",
+      "relative": ""
+    },
+    {
+      "category": "target_date",
+      "date": "2027-07-23",
+      "end_date": "",
+      "event": "Target date for completion of investigation",
+      "quote": "Target date for completion of investigation July 23, 2027",
+      "relative": ""
+    }
+  ],
+  "extracted_at": "2026-09-26T18:14:47+00:00",
+  "model": "claude-haiku-4-5-20251001",
+  "prompt_version": 2,
+  "rejected": [],
+  "role": "amendment",
+  "title": "Granting Complainant Bose Corporation and the Commission Investigative Staff's Joint Motion to Vacate the Existing Procedural Schedule and Enter a New Procedural Schedule",
+  "truncated": false
+}
