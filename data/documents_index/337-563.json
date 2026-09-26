@@ -240,23 +240,6 @@
   {
     "attachments": [
       {
-        "href": "../../data/documents/337-563/265085_302369_302369.pdf",
-        "label": "302369.pdf"
-      }
-    ],
-    "document_date": "2006-11-15",
-    "document_type": "Correspondence - USITC",
-    "filed_by": "Marilyn R. Abbott",
-    "firm_organization": "USITC",
-    "id": "265085",
-    "official_received_date": "2006-11-15",
-    "on_behalf_of": "Office of the Secretary",
-    "security_level": "Public",
-    "title": "To Soriano-Transmittal of Limited Exclusion Order"
-  },
-  {
-    "attachments": [
-      {
         "href": "../../data/documents/337-563/265079_302507_302507.pdf",
         "label": "302507.pdf"
       }
@@ -270,6 +253,23 @@
     "on_behalf_of": "Office of the Secretary",
     "security_level": "Public",
     "title": "Served to Parties on Service List"
+  },
+  {
+    "attachments": [
+      {
+        "href": "../../data/documents/337-563/265085_302369_302369.pdf",
+        "label": "302369.pdf"
+      }
+    ],
+    "document_date": "2006-11-15",
+    "document_type": "Correspondence - USITC",
+    "filed_by": "Marilyn R. Abbott",
+    "firm_organization": "USITC",
+    "id": "265085",
+    "official_received_date": "2006-11-15",
+    "on_behalf_of": "Office of the Secretary",
+    "security_level": "Public",
+    "title": "To Soriano-Transmittal of Limited Exclusion Order"
   },
   {
     "attachments": [

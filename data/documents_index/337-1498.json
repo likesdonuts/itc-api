@@ -1,6 +1,54 @@
 [
   {
     "attachments": [],
+    "document_date": "2026-09-25",
+    "document_type": "PO Subscription",
+    "filed_by": "Michael A. Oakes",
+    "firm_organization": "Hunton Andrews Kurth LLP",
+    "id": "895875",
+    "official_received_date": "2026-09-25T16:35:00",
+    "on_behalf_of": "Hisamitsu America, Inc. and Hisamitsu Pharmaceutical Co., Inc.",
+    "security_level": "Public",
+    "title": "Agreement to Be Bound by the Protective Order of Charles Argoff"
+  },
+  {
+    "attachments": [],
+    "document_date": "2026-09-25",
+    "document_type": "Notice of Prior Art",
+    "filed_by": "Celine J. Crowson",
+    "firm_organization": "Hogan Lovells Cadwalader US LLP",
+    "id": "895871",
+    "official_received_date": "2026-09-25T16:24:00",
+    "on_behalf_of": "Reckitt Benckiser Group plc, Reckitt Benckiser LLC, Veridian Healthcare LLC, Hisamitsu Pharmaceutical Co., Inc., Hisamitsu America, Inc., Opella Healthcare Group SAS, and Chattem, Inc.",
+    "security_level": "Public",
+    "title": "Respondents Reckitt Benckiser Group plc, Reckitt Benckiser LLC, Veridian Healthcare LLC, Hisamitsu Pharmaceutical Co., Inc., Hisamitsu America, Inc., Opella Healthcare Group SAS, and Chattem, Inc.'s Notice of Prior Art"
+  },
+  {
+    "attachments": [],
+    "document_date": "2026-09-25",
+    "document_type": "PO Subscription",
+    "filed_by": "Celine J. Crowson",
+    "firm_organization": "Hogan Lovells Cadwalader US LLP",
+    "id": "895849",
+    "official_received_date": "2026-09-25T15:24:00",
+    "on_behalf_of": "Reckitt Benckiser Group plc and Reckitt Benckiser LLC",
+    "security_level": "Public",
+    "title": "Agreement to Be Bound by the Protective Order of Donna M. Kazaitis and Janice Kocek"
+  },
+  {
+    "attachments": [],
+    "document_date": "2026-09-25",
+    "document_type": "Motion Response/Reply",
+    "filed_by": "Annette M. McGarry",
+    "firm_organization": "McGarry & McGarry, LLC",
+    "id": "895828",
+    "official_received_date": "2026-09-25T14:48:00",
+    "on_behalf_of": "JAR Laboratories LLC",
+    "security_level": "Confidential",
+    "title": "Complainant JAR Laboratories LLC's Response to Respondents' Motion for the Issuance of Subpoenas to Alleged Direct Infringers"
+  },
+  {
+    "attachments": [],
     "document_date": "2026-09-21",
     "document_type": "Motion",
     "filed_by": "Celine J. Crowson",
@@ -132,7 +180,12 @@
     "title": "Agreement to Be Bound by the Protective Order of Alyson Wooten"
   },
   {
-    "attachments": [],
+    "attachments": [
+      {
+        "href": "../../data/documents/337-1498/891580_2607298_2607298.pdf",
+        "label": "2607298.pdf"
+      }
+    ],
     "document_date": "2026-08-14",
     "document_type": "Notice of Appearance",
     "filed_by": "Jeffrey M. Telep",
@@ -288,7 +341,12 @@
     "title": "Complainant's Identification of Expert Witness"
   },
   {
-    "attachments": [],
+    "attachments": [
+      {
+        "href": "../../data/documents/337-1498/888050_2582493_2582493.pdf",
+        "label": "2582493.pdf"
+      }
+    ],
     "document_date": "2026-07-14",
     "document_type": "Notice of Appearance",
     "filed_by": "Celine J. Crowson",
@@ -696,7 +754,12 @@
     "title": "Agreement to Be Bound by the Protective Order of Nikki Reeves, Lauren K. Roth, and Miles Varn"
   },
   {
-    "attachments": [],
+    "attachments": [
+      {
+        "href": "../../data/documents/337-1498/880228_2538044_2538044.pdf",
+        "label": "2538044.pdf"
+      }
+    ],
     "document_date": "2026-04-24",
     "document_type": "Notice of Appearance",
     "filed_by": "Brian D. Hill",
@@ -804,7 +867,12 @@
     "title": "Agreement to Be Bound by the Protective Order of Jeffrey M. Telep and Brian D. Hill"
   },
   {
-    "attachments": [],
+    "attachments": [
+      {
+        "href": "../../data/documents/337-1498/879535_2535656_2535656.pdf",
+        "label": "2535656.pdf"
+      }
+    ],
     "document_date": "2026-04-20",
     "document_type": "Notice of Appearance",
     "filed_by": "Michael A. Oakes",
@@ -852,7 +920,12 @@
     "title": "Agreement to Be Bound by the Protective Order of  Celine J. Crowson, Scott Hughes, Joseph J. Raffetto, Robert J. Weinschenk, Nicholas W. Rotz, David Feigenbaum, Rhianna Lindop, J. Leonardo Gomez, and Nicholas Spagnuolo"
   },
   {
-    "attachments": [],
+    "attachments": [
+      {
+        "href": "../../data/documents/337-1498/879312_2534336_2534336.pdf",
+        "label": "2534336.pdf"
+      }
+    ],
     "document_date": "2026-04-16",
     "document_type": "Notice of Appearance",
     "filed_by": "Celine J. Crowson",
@@ -888,7 +961,12 @@
     "title": "Agreement to Be Bound by the Protective Order of Stephen Yang, Roman Tsibulevskiy, Forrest Gothia, Brian McGinley and Nicholas Jackson"
   },
   {
-    "attachments": [],
+    "attachments": [
+      {
+        "href": "../../data/documents/337-1498/879309_2534328_2534328.pdf",
+        "label": "2534328.pdf"
+      }
+    ],
     "document_date": "2026-04-16",
     "document_type": "Notice of Appearance",
     "filed_by": "Nicholas H. Jackson",
@@ -924,7 +1002,12 @@
     "title": "Agreement to Be Bound by the Protective Order of Matthew Rizzolo, Stephanie Roberts, Emily Burge, Christopher J. Betti, and Maria E. Doukas"
   },
   {
-    "attachments": [],
+    "attachments": [
+      {
+        "href": "../../data/documents/337-1498/879170_2533849_2533849.pdf",
+        "label": "2533849.pdf"
+      }
+    ],
     "document_date": "2026-04-15",
     "document_type": "Notice of Appearance",
     "filed_by": "Matthew J. Rizzolo",
@@ -936,7 +1019,12 @@
     "title": "Notice of Appearance of Morgan, Lewis & Bockius LLP on Behalf of Perrigo Company plc, Perrigo Company, and Perrigo Direct, Inc.; Designation of Matthew J. Rizzolo as Lead Counsel"
   },
   {
-    "attachments": [],
+    "attachments": [
+      {
+        "href": "../../data/documents/337-1498/879164_2533833_2533833.pdf",
+        "label": "2533833.pdf"
+      }
+    ],
     "document_date": "2026-04-15",
     "document_type": "Notice of Appearance",
     "filed_by": "Brian D. Hill",
@@ -984,7 +1072,12 @@
     "title": "Protective Order"
   },
   {
-    "attachments": [],
+    "attachments": [
+      {
+        "href": "../../data/documents/337-1498/878787_2532613_2532613.pdf",
+        "label": "2532613.pdf"
+      }
+    ],
     "document_date": "2026-04-14",
     "document_type": "Notice of Appearance",
     "filed_by": "Annette M. McGarry",

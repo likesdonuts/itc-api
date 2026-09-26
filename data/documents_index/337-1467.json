@@ -1,6 +1,18 @@
 [
   {
     "attachments": [],
+    "document_date": "2026-09-24",
+    "document_type": "Order",
+    "filed_by": "Doris Johnson Hines",
+    "firm_organization": "USITC",
+    "id": "895703",
+    "official_received_date": "2026-09-24T15:29:00",
+    "on_behalf_of": "Administrative Law Judge",
+    "security_level": "Public",
+    "title": "Granting Joint Request for Receipt of Evidence without a Sponsoring Witness"
+  },
+  {
+    "attachments": [],
     "document_date": "2026-09-23",
     "document_type": "Order",
     "filed_by": "Doris Johnson Hines",
@@ -1092,7 +1104,12 @@
     "title": "Complainant Whirlpool's Notice of Markman Presentation"
   },
   {
-    "attachments": [],
+    "attachments": [
+      {
+        "href": "../../data/documents/337-1467/879856_2536848_2536848.pdf",
+        "label": "2536848.pdf"
+      }
+    ],
     "document_date": "2026-04-22",
     "document_type": "Notice of Appearance",
     "filed_by": "Robert T. Vlasis III",
@@ -1284,7 +1301,12 @@
     "title": "Agreement to Be Bound by the Protective Order of Amy K. LoBue"
   },
   {
-    "attachments": [],
+    "attachments": [
+      {
+        "href": "../../data/documents/337-1467/876455_2522289_2522289.pdf",
+        "label": "2522289.pdf"
+      }
+    ],
     "document_date": "2026-03-24",
     "document_type": "Notice of Appearance",
     "filed_by": "Brian E. Ferguson",
@@ -1308,7 +1330,12 @@
     "title": "Scheduling the Markman Hearing for March 26, 2026"
   },
   {
-    "attachments": [],
+    "attachments": [
+      {
+        "href": "../../data/documents/337-1467/875806_2519901_2519901.pdf",
+        "label": "2519901.pdf"
+      }
+    ],
     "document_date": "2026-03-18",
     "document_type": "Notice of Appearance",
     "filed_by": "Robert T. Vlasis III",
@@ -1848,7 +1875,12 @@
     "title": "Agreement to Be Bound by the Protective Order of Kevin P. Martin and Cassandra Snyder"
   },
   {
-    "attachments": [],
+    "attachments": [
+      {
+        "href": "../../data/documents/337-1467/871450_2492912_2492912.pdf",
+        "label": "2492912.pdf"
+      }
+    ],
     "document_date": "2026-02-03",
     "document_type": "Notice of Appearance",
     "filed_by": "Brian E. Ferguson",
@@ -1908,7 +1940,12 @@
     "title": "Respondents\u2019 Haier US Appliance Solutions, Inc., Electrolux Consumer Products, Inc., Cosmo Products, LLC, CTM Household Appliances Inc., Koolmore Supply, Inc., THOR International, and Unique Appliances Ltd.\u2019s Unopposed Motion for an Extension of Time to Respond to the Complaint and Notice of Investigation and Respond to Complainant\u2019s First Set of Discovery Requests"
   },
   {
-    "attachments": [],
+    "attachments": [
+      {
+        "href": "../../data/documents/337-1467/871093_2491406_2491406.pdf",
+        "label": "2491406.pdf"
+      }
+    ],
     "document_date": "2026-02-02",
     "document_type": "Notice of Appearance",
     "filed_by": "Robert T. Vlasis III",
@@ -2292,7 +2329,12 @@
     "title": "Respondents' Midea Group Co., Ltd., Midea America Corporation, Haier US Appliance Solutions, Inc., Electrolux Consumer Products, Inc., Cosmo Products, LLC, and CTM Household Appliances Inc.\u2019s Unopposed Motion for an Extension of Time to Respond to the Complaint and Notice of Investigation"
   },
   {
-    "attachments": [],
+    "attachments": [
+      {
+        "href": "../../data/documents/337-1467/868415_2473950_2473950.pdf",
+        "label": "2473950.pdf"
+      }
+    ],
     "document_date": "2026-01-08",
     "document_type": "Notice of Appearance",
     "filed_by": "Linhong Zhang",
@@ -2484,7 +2526,12 @@
     "title": "Agreement to Be Bound by the Protective Order of Stephanie L. Roberts, Collin W. Park, Jason C. White, Zachary D. Miller, Juliana Kirby,  Anna Johnson, and Calvin M. Brien"
   },
   {
-    "attachments": [],
+    "attachments": [
+      {
+        "href": "../../data/documents/337-1467/867342_2468478_2468478.pdf",
+        "label": "2468478.pdf"
+      }
+    ],
     "document_date": "2025-12-23",
     "document_type": "Notice of Appearance",
     "filed_by": "Stephanie L. Roberts",
@@ -2520,7 +2567,12 @@
     "title": "Agreement to Be Bound by the Protective Order of Rett Snotherly, Benjamin Levi, and Tom M. Schaumberg."
   },
   {
-    "attachments": [],
+    "attachments": [
+      {
+        "href": "../../data/documents/337-1467/867311_2468347_2468347.pdf",
+        "label": "2468347.pdf"
+      }
+    ],
     "document_date": "2025-12-23",
     "document_type": "Notice of Appearance",
     "filed_by": "Rett Snotherly",
@@ -2556,7 +2608,12 @@
     "title": "Agreement to Be Bound by the Protective Order of Linhong Zhang, Jack R. Wilson, Kevin Su, and Clair Xue"
   },
   {
-    "attachments": [],
+    "attachments": [
+      {
+        "href": "../../data/documents/337-1467/867169_2468059_2468059.pdf",
+        "label": "2468059.pdf"
+      }
+    ],
     "document_date": "2025-12-22",
     "document_type": "Notice of Appearance",
     "filed_by": "Linhong Zhang",
@@ -2568,7 +2625,12 @@
     "title": "Notice of Appearance of Fish & Richardson P.C. on Behalf of Midea Group Co., Ltd., Midea America Corporation, Haier US Appliance Solutions, Inc., Electrolux Consumer Products, Inc., Cosmo Products, LLC, and CTM Household Appliances Inc.; Designation of Linhong Zhang as Lead Counsel"
   },
   {
-    "attachments": [],
+    "attachments": [
+      {
+        "href": "../../data/documents/337-1467/867038_2467722_2467722.pdf",
+        "label": "2467722.pdf"
+      }
+    ],
     "document_date": "2025-12-19",
     "document_type": "Notice of Appearance",
     "filed_by": "Patrick J. McCarthy",
@@ -2592,7 +2654,12 @@
     "title": "Protective Order"
   },
   {
-    "attachments": [],
+    "attachments": [
+      {
+        "href": "../../data/documents/337-1467/866930_2467006_2467006.pdf",
+        "label": "2467006.pdf"
+      }
+    ],
     "document_date": "2025-12-18",
     "document_type": "Notice of Appearance",
     "filed_by": "Robert Vlasis III",

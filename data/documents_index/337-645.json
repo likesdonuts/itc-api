@@ -996,7 +996,12 @@
     "title": "Agreement to be Bound by the Protective Order of X. Yang"
   },
   {
-    "attachments": [],
+    "attachments": [
+      {
+        "href": "../../data/documents/337-645/311601_391845_391845.pdf",
+        "label": "391845.pdf"
+      }
+    ],
     "document_date": "2008-10-09",
     "document_type": "Notice of Appearance",
     "filed_by": "Ruffin B. Cordell",
@@ -1008,7 +1013,12 @@
     "title": "Notice of Appearance of Ruffin B. Cordell on Behalf of Terumo"
   },
   {
-    "attachments": [],
+    "attachments": [
+      {
+        "href": "../../data/documents/337-645/311499_391649_391649.pdf",
+        "label": "391649.pdf"
+      }
+    ],
     "document_date": "2008-10-08",
     "document_type": "Notice of Appearance",
     "filed_by": "Veronica Susana Ascarrunz",
@@ -2124,7 +2134,12 @@
     "title": null
   },
   {
-    "attachments": [],
+    "attachments": [
+      {
+        "href": "../../data/documents/337-645/299107_361487_361487.pdf",
+        "label": "361487.pdf"
+      }
+    ],
     "document_date": "2008-05-01",
     "document_type": "Notice of Appearance",
     "filed_by": "Jeffrey R. Whieldon",

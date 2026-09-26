@@ -444,7 +444,12 @@
     "title": "Certified Mail"
   },
   {
-    "attachments": [],
+    "attachments": [
+      {
+        "href": "../../data/documents/337-573/256580_290627_290627.pdf",
+        "label": "290627.pdf"
+      }
+    ],
     "document_date": "2006-06-15",
     "document_type": "Notice of Appearance",
     "filed_by": "V. James Adduci",

@@ -1,6 +1,42 @@
 [
   {
     "attachments": [],
+    "document_date": "2026-09-24",
+    "document_type": "Brief Filed With ALJ",
+    "filed_by": "S. Alex Lasher",
+    "firm_organization": "Quinn Emanuel Urquhart & Sullivan LLP",
+    "id": "895696",
+    "official_received_date": "2026-09-24T15:07:00",
+    "on_behalf_of": "Doosan Bobcat North America, Inc.",
+    "security_level": "Public",
+    "title": "Complainant's Post-Hearing Responsive Brief"
+  },
+  {
+    "attachments": [],
+    "document_date": "2026-09-24",
+    "document_type": "PO Subscription",
+    "filed_by": "K. Kevin Chu",
+    "firm_organization": "Quinn Emanuel Urquhart & Sullivan LLP",
+    "id": "895670",
+    "official_received_date": "2026-09-24T11:22:00",
+    "on_behalf_of": "Doosan Bobcat North America, Inc.",
+    "security_level": "Public",
+    "title": "Agreement to Be Bound by the Protective Order of Samantha Gill and Aaron Krigelski."
+  },
+  {
+    "attachments": [],
+    "document_date": "2026-09-24",
+    "document_type": "Brief Filed With ALJ",
+    "filed_by": "Paul F. Brinkman",
+    "firm_organization": "Kirkland & Ellis LLP",
+    "id": "895655",
+    "official_received_date": "2026-09-24T09:56:00",
+    "on_behalf_of": "Caterpillar Inc.",
+    "security_level": "Public",
+    "title": "Respondent Caterpillar Inc.'s Post-Hearing Responsive Brief"
+  },
+  {
+    "attachments": [],
     "document_date": "2026-09-18",
     "document_type": "Brief Filed With ALJ",
     "filed_by": "S. Alex Lasher",
@@ -237,6 +273,18 @@
     "official_received_date": "2026-08-28T16:37:00",
     "on_behalf_of": "Administrative Law Judge",
     "security_level": "Confidential",
+    "title": "Evidentiary Hearing (Pages 1-281) (with excerpts)"
+  },
+  {
+    "attachments": [],
+    "document_date": "2026-08-10",
+    "document_type": "Transcript",
+    "filed_by": "Bryan F. Moore",
+    "firm_organization": "USITC",
+    "id": "893192",
+    "official_received_date": "2026-08-28T16:36:00",
+    "on_behalf_of": "Administrative Law Judge",
+    "security_level": "Public",
     "title": "Evidentiary Hearing (Pages 1-281) (with excerpts)"
   },
   {
@@ -1188,7 +1236,12 @@
     "title": "Agreement to Be Bound by the Protective Order of Christine E. Lehman and Connor Houghton"
   },
   {
-    "attachments": [],
+    "attachments": [
+      {
+        "href": "../../data/documents/337-1473/889046_2591693_2591693.pdf",
+        "label": "2591693.pdf"
+      }
+    ],
     "document_date": "2026-07-22",
     "document_type": "Notice of Appearance",
     "filed_by": "Christine E. Lehman",
@@ -2028,7 +2081,12 @@
     "title": "Agreement to Be Bound by the Protective Order of Mark Arndt and Richard Webster"
   },
   {
-    "attachments": [],
+    "attachments": [
+      {
+        "href": "../../data/documents/337-1473/881231_2542430_2542430.pdf",
+        "label": "2542430.pdf"
+      }
+    ],
     "document_date": "2026-05-05",
     "document_type": "Notice of Appearance",
     "filed_by": "Aarti Shah",
@@ -2556,7 +2614,12 @@
     "title": "Agreement to Be Bound by the Protective Order of Thad C. Kodish, Brian P. Boyd, and Charles N. Reese, Jr."
   },
   {
-    "attachments": [],
+    "attachments": [
+      {
+        "href": "../../data/documents/337-1473/868526_2474230_2474230.pdf",
+        "label": "2474230.pdf"
+      }
+    ],
     "document_date": "2026-01-09",
     "document_type": "Notice of Appearance",
     "filed_by": "Thad C. Kodish",
@@ -2592,7 +2655,12 @@
     "title": "Agreement to Be Bound by the Protective Order of Paul F. Brinkman, Gregg F. LoCascio, John C. O\u2019Quinn, Eric D. Hayes, John Lausch, Jeanne M. Heffernan, Lauren O. Casazza, Karthik Ravishankar, Katie Chang, Adam M. Janes, Palmer Corbett, Jacob Gremillion, James John Lomeo, Elizabeth Elrod, Hunter Dentino, Christopher T. Ilardi, and Emily Crawford Sheffield"
   },
   {
-    "attachments": [],
+    "attachments": [
+      {
+        "href": "../../data/documents/337-1473/868375_2473823_2473823.pdf",
+        "label": "2473823.pdf"
+      }
+    ],
     "document_date": "2026-01-08",
     "document_type": "Notice of Appearance",
     "filed_by": "Paul F. Brinkman",
@@ -2640,7 +2708,12 @@
     "title": "Protective Order"
   },
   {
-    "attachments": [],
+    "attachments": [
+      {
+        "href": "../../data/documents/337-1473/868250_2473385_2473385.pdf",
+        "label": "2473385.pdf"
+      }
+    ],
     "document_date": "2026-01-07",
     "document_type": "Notice of Appearance",
     "filed_by": "S. Alex Lasher",

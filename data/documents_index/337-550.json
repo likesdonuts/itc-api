@@ -3684,7 +3684,12 @@
     "title": "Memorandum in Opposition to Respondent Acambis Plc's Motion Requesting Extension of Target Date"
   },
   {
-    "attachments": [],
+    "attachments": [
+      {
+        "href": "../../data/documents/337-550/240306_267824_267824.pdf",
+        "label": "267824.pdf"
+      }
+    ],
     "document_date": "2005-10-12",
     "document_type": "Notice of Appearance",
     "filed_by": "Edward A. Pennington",
@@ -3804,7 +3809,12 @@
     "title": "Protective Order"
   },
   {
-    "attachments": [],
+    "attachments": [
+      {
+        "href": "../../data/documents/337-550/239591_266292_266292.pdf",
+        "label": "266292.pdf"
+      }
+    ],
     "document_date": "2005-09-29",
     "document_type": "Notice of Appearance",
     "filed_by": "Eric S. Namrow",

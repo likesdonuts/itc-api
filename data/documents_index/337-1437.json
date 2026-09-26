@@ -384,7 +384,12 @@
     "title": "Protective Order"
   },
   {
-    "attachments": [],
+    "attachments": [
+      {
+        "href": "../../data/documents/337-1437/842552_2312572_2312572.pdf",
+        "label": "2312572.pdf"
+      }
+    ],
     "document_date": "2025-02-04",
     "document_type": "Notice of Appearance",
     "filed_by": "Bryan G. Harrison",

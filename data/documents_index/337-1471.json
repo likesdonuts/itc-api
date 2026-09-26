@@ -1,6 +1,18 @@
 [
   {
     "attachments": [],
+    "document_date": "2026-09-24",
+    "document_type": "Motion",
+    "filed_by": "Mark L. Whitaker",
+    "firm_organization": "Morrison & Foerster LLP",
+    "id": "895692",
+    "official_received_date": "2026-09-24T14:41:00",
+    "on_behalf_of": "Align Technology, Inc., Angelalign Technology Inc., USA Angelalign Technology Corp., Wuxi EA Medical Instruments Technologies Co. Ltd., Wuxi EA Bio-Tech Co. Ltd., and Shanghai EA Medical Instruments Co. Ltd.",
+    "security_level": "Confidential",
+    "title": "Joint Motion to Correct Final Evidentiary Hearing Transcript"
+  },
+  {
+    "attachments": [],
     "document_date": "2026-09-22",
     "document_type": "Brief Filed With ALJ",
     "filed_by": "Jason A. Engel",
@@ -2520,7 +2532,12 @@
     "title": "Notice of Withdrawal of Appearance of David Nathaniel Tan from  Morrison & Foerster LLP on Behalf of Align Technology, Inc."
   },
   {
-    "attachments": [],
+    "attachments": [
+      {
+        "href": "../../data/documents/337-1471/877431_2525345_2525345.pdf",
+        "label": "2525345.pdf"
+      }
+    ],
     "document_date": "2026-04-01",
     "document_type": "Notice of Appearance",
     "filed_by": "Jason A. Engel",
@@ -2664,7 +2681,12 @@
     "title": "Agreement to Be Bound by the Protective Order of Jason A. Engel"
   },
   {
-    "attachments": [],
+    "attachments": [
+      {
+        "href": "../../data/documents/337-1471/875552_2518948_2518948.pdf",
+        "label": "2518948.pdf"
+      }
+    ],
     "document_date": "2026-03-16",
     "document_type": "Notice of Appearance",
     "filed_by": "Hua Chen",
@@ -3048,7 +3070,12 @@
     "title": "Agreement to Be Bound by the Protective Order of Mark L. Whitaker, Daniel P. Muino, Mary Prendergast, David Nathaniel Tan, Sydney Cooper, Margaret G. Dowling, Immanuel J. Elijah, Richard S. J. Hung, Ian Bennett, Amanda Potter, Nathan S. Vogler, and Brian C. Nash"
   },
   {
-    "attachments": [],
+    "attachments": [
+      {
+        "href": "../../data/documents/337-1471/867717_2470115_2470115.pdf",
+        "label": "2470115.pdf"
+      }
+    ],
     "document_date": "2025-12-31",
     "document_type": "Notice of Appearance",
     "filed_by": "Mark L. Whitaker",
@@ -3084,7 +3111,12 @@
     "title": "Agreement to Be Bound by the Protective Order of Theodore J. Angelis, Jay C. Chiu, Elizabeth J. Weiskopf, Zach T. Timm, Jade Li-Yu Chen, Conner J. Meggs, Yipeng Cao, and Rachel A. Gitomer"
   },
   {
-    "attachments": [],
+    "attachments": [
+      {
+        "href": "../../data/documents/337-1471/867702_2470080_2470080.pdf",
+        "label": "2470080.pdf"
+      }
+    ],
     "document_date": "2025-12-31",
     "document_type": "Notice of Appearance",
     "filed_by": "Theodore J. Angelis",

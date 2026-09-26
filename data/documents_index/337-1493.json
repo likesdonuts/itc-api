@@ -1020,7 +1020,12 @@
     "title": "Request for Confidential Materials on Behalf of Bayerische Motoren Werke AG and BMW of North America, LLC"
   },
   {
-    "attachments": [],
+    "attachments": [
+      {
+        "href": "../../data/documents/337-1493/877929_2527635_2527635.pdf",
+        "label": "2527635.pdf"
+      }
+    ],
     "document_date": "2026-04-06",
     "document_type": "Notice of Appearance",
     "filed_by": "Jeffrey M. Telep",
@@ -1032,7 +1037,12 @@
     "title": "Notice of Appearance of King & Spalding LLP on Behalf of Zync Inc.; Designation of Jeffrey M. Telep as Lead Counsel"
   },
   {
-    "attachments": [],
+    "attachments": [
+      {
+        "href": "../../data/documents/337-1493/877855_2527001_2527001.pdf",
+        "label": "2527001.pdf"
+      }
+    ],
     "document_date": "2026-04-03",
     "document_type": "Notice of Appearance",
     "filed_by": "Lionel M. Lavenue",

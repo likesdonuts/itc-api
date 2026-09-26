@@ -1,6 +1,78 @@
 [
   {
     "attachments": [],
+    "document_date": "2026-09-25",
+    "document_type": "PO Subscription",
+    "filed_by": "William D. Belanger",
+    "firm_organization": "Troutman Pepper Locke LLP",
+    "id": "895814",
+    "official_received_date": "2026-09-25T14:06:00",
+    "on_behalf_of": "Cerence Operating Company",
+    "security_level": "Public",
+    "title": "Agreement to Be Bound by the Protective Order of Sarah Moyer"
+  },
+  {
+    "attachments": [],
+    "document_date": "2026-09-24",
+    "document_type": "Exhibit Objections",
+    "filed_by": "Stephanie L. Roberts",
+    "firm_organization": "Morgan, Lewis & Bockius LLP",
+    "id": "895706",
+    "official_received_date": "2026-09-24T16:03:00",
+    "on_behalf_of": "Sony Group Corporation, Sony Corporation of America, Sony Electronics Inc., TCL Industries Holdings Co., Ltd., TCL Technology Group Corporation, TCL Electronics Holdings Limited, Manufacturas Avanzadas, S.A. de C.V., Shenzhen TCL New Technology Co., Ltd., T.C.L. Industries Holdings (H.K.) Limited, TCL King Electrical Appliances (Huizhou) Company Limited, TCL Optoelectronics Technology (Huizhou) Company Limited, TCL Overseas Marketing Limited, TCL Smart Device (Vietnam) Company Limited, TTE Corporation, and TTE Technology Inc. (d/b/a TCL North America), and Amazon.com Services LLC",
+    "security_level": "Public",
+    "title": "Respondents\u2019 and Intervenor\u2019s Response to Complainant\u2019s High Priority Objections Nos. 1-4"
+  },
+  {
+    "attachments": [],
+    "document_date": "2026-09-24",
+    "document_type": "Order",
+    "filed_by": "Monica Bhattacharyya",
+    "firm_organization": "USITC",
+    "id": "895704",
+    "official_received_date": "2026-09-24T15:29:00",
+    "on_behalf_of": "Administrative Law Judge",
+    "security_level": "Confidential",
+    "title": "Addressing the Parties' High-Priority Objections"
+  },
+  {
+    "attachments": [],
+    "document_date": "2026-09-24",
+    "document_type": "Order",
+    "filed_by": "Monica Bhattacharyya",
+    "firm_organization": "USITC",
+    "id": "895702",
+    "official_received_date": "2026-09-24T15:26:00",
+    "on_behalf_of": "Administrative Law Judge",
+    "security_level": "Confidential",
+    "title": "Denying Complainant's Motion in Limine No. 1; Denying Respondents' Motion in Limine No. 1"
+  },
+  {
+    "attachments": [],
+    "document_date": "2026-09-24",
+    "document_type": "Order",
+    "filed_by": "Monica Bhattacharyya",
+    "firm_organization": "USITC",
+    "id": "895700",
+    "official_received_date": "2026-09-24T15:22:00",
+    "on_behalf_of": "Administrative Law Judge",
+    "security_level": "Confidential",
+    "title": "Denying Respondents' and Intervenor's Motion for Summary Determination as to Noninfringement"
+  },
+  {
+    "attachments": [],
+    "document_date": "2026-09-24",
+    "document_type": "Order",
+    "filed_by": "Monica Bhattacharyya",
+    "firm_organization": "USITC",
+    "id": "895675",
+    "official_received_date": "2026-09-24T12:00:00",
+    "on_behalf_of": "Administrative Law Judge",
+    "security_level": "Confidential",
+    "title": "Denying Respondents' Motion in Limine No. 4"
+  },
+  {
+    "attachments": [],
     "document_date": "2026-09-22",
     "document_type": "Motion Response/Reply",
     "filed_by": "Stephanie L. Roberts",
@@ -1140,7 +1212,12 @@
     "title": "Agreement to Be Bound by Protective Order of Dino Hadzibegovic, Jonathan Baker, and Mark Rogge"
   },
   {
-    "attachments": [],
+    "attachments": [
+      {
+        "href": "../../data/documents/337-1461/891016_2603030_2603030.pdf",
+        "label": "2603030.pdf"
+      }
+    ],
     "document_date": "2026-08-10",
     "document_type": "Notice of Appearance",
     "filed_by": "Dino Hadzibegovic",
@@ -2412,7 +2489,12 @@
     "title": "Recusal"
   },
   {
-    "attachments": [],
+    "attachments": [
+      {
+        "href": "../../data/documents/337-1461/878110_2528966_2528966.pdf",
+        "label": "2528966.pdf"
+      }
+    ],
     "document_date": "2026-04-07",
     "document_type": "Notice of Appearance",
     "filed_by": "Stephanie L. Roberts",
@@ -2508,7 +2590,12 @@
     "title": "Agreement to Be Bound by the Protective Order of Stephanie L. Roberts, Matthew Rizzolo, Tawni Henderson, Zachary Miller, An Le, and John Gaustad"
   },
   {
-    "attachments": [],
+    "attachments": [
+      {
+        "href": "../../data/documents/337-1461/876107_2521124_2521124.pdf",
+        "label": "2521124.pdf"
+      }
+    ],
     "document_date": "2026-03-20",
     "document_type": "Notice of Appearance",
     "filed_by": "Stephanie L. Roberts",
@@ -2520,7 +2607,12 @@
     "title": "Supplemental Notice of Appearance; Additional Attorneys from Morgan, Lewis & Bockius LLP on Behalf of Amazon.com Services LLC"
   },
   {
-    "attachments": [],
+    "attachments": [
+      {
+        "href": "../../data/documents/337-1461/875964_2520490_2520490.pdf",
+        "label": "2520490.pdf"
+      }
+    ],
     "document_date": "2026-03-19",
     "document_type": "Notice of Appearance",
     "filed_by": "Shamita Etienne-Cummings",
@@ -2604,7 +2696,12 @@
     "title": "Agreement to Be Bound by the Protective Order of Shida Xu"
   },
   {
-    "attachments": [],
+    "attachments": [
+      {
+        "href": "../../data/documents/337-1461/873860_2509069_2509069.pdf",
+        "label": "2509069.pdf"
+      }
+    ],
     "document_date": "2026-02-27",
     "document_type": "Notice of Appearance",
     "filed_by": "Shida Xu",
@@ -2676,7 +2773,12 @@
     "title": "Agreement to Be Bound by the Protective Order of Matthew A. Turk and Scott C. Douglas"
   },
   {
-    "attachments": [],
+    "attachments": [
+      {
+        "href": "../../data/documents/337-1461/871576_2493235_2493235.pdf",
+        "label": "2493235.pdf"
+      }
+    ],
     "document_date": "2026-02-04",
     "document_type": "Notice of Appearance",
     "filed_by": "Yulong Wang",
@@ -2724,7 +2826,12 @@
     "title": "Agreement to Be Bound by the Protective Order of Gillian Schutt"
   },
   {
-    "attachments": [],
+    "attachments": [
+      {
+        "href": "../../data/documents/337-1461/868658_2475563_2475563.pdf",
+        "label": "2475563.pdf"
+      }
+    ],
     "document_date": "2026-01-12",
     "document_type": "Notice of Appearance",
     "filed_by": "Matthew D. Aichele",
@@ -2844,7 +2951,12 @@
     "title": "Initial Determination Setting Target Date; Ordering Submission of Procedural Schedule"
   },
   {
-    "attachments": [],
+    "attachments": [
+      {
+        "href": "../../data/documents/337-1461/866348_2462834_2462834.pdf",
+        "label": "2462834.pdf"
+      }
+    ],
     "document_date": "2025-12-11",
     "document_type": "Notice of Appearance",
     "filed_by": "Veronica S. Ascarrunz",
@@ -2964,7 +3076,12 @@
     "title": "Agreement to Be Bound by the Protective Order of Michael Manookin"
   },
   {
-    "attachments": [],
+    "attachments": [
+      {
+        "href": "../../data/documents/337-1461/865925_2460069_2460069.pdf",
+        "label": "2460069.pdf"
+      }
+    ],
     "document_date": "2025-12-08",
     "document_type": "Notice of Appearance",
     "filed_by": "Michael Manookin",
@@ -3084,7 +3201,12 @@
     "title": "Agreement to Be Bound by the Protective Order of William Belanger, Puja Patel Lea, Alison McCarthy, Pantelis Takos, Griffin Mesmer, Ryan Deck, Haden Marrs,\r\nKevin Kuhn, and Kimberly Coghill."
   },
   {
-    "attachments": [],
+    "attachments": [
+      {
+        "href": "../../data/documents/337-1461/864426_2450514_2450514.pdf",
+        "label": "2450514.pdf"
+      }
+    ],
     "document_date": "2025-11-19",
     "document_type": "Notice of Appearance",
     "filed_by": "William Belanger",
@@ -3156,7 +3278,12 @@
     "title": "Assignment of ALJ Returned from T.C.L. Industries Holdings (H.K.)"
   },
   {
-    "attachments": [],
+    "attachments": [
+      {
+        "href": "../../data/documents/337-1461/864365_2450376_2450376.pdf",
+        "label": "2450376.pdf"
+      }
+    ],
     "document_date": "2025-11-18",
     "document_type": "Notice of Appearance",
     "filed_by": "John P. Schnurer",
@@ -3252,7 +3379,12 @@
     "title": "Assignment of ALJ Returned from TCL Optoelectronics Technology Co."
   },
   {
-    "attachments": [],
+    "attachments": [
+      {
+        "href": "../../data/documents/337-1461/864157_2448356_2448356.pdf",
+        "label": "2448356.pdf"
+      }
+    ],
     "document_date": "2025-11-18",
     "document_type": "Notice of Appearance",
     "filed_by": "David F. Nickel",

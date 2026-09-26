@@ -1,6 +1,30 @@
 [
   {
     "attachments": [],
+    "document_date": "2026-09-24",
+    "document_type": "Motion",
+    "filed_by": "Tuhin Ganguly",
+    "firm_organization": "Desmarais LLP",
+    "id": "895752",
+    "official_received_date": "2026-09-25T08:45:00",
+    "on_behalf_of": "SK hynix Inc., SK hynix America Inc., SK hynix Memory Solutions America Inc., KIOXIA Holdings Corporation, KIOXIA Corporation, KIOXIA America, Inc., KIOXIA Engineering Corporation, KIOXIA Iwate Corporation, KIOXIA Systems Co., Ltd., KIOXIA Semiconductor Taiwan Corporation, and MonolithIC 3D Inc.",
+    "security_level": "Public",
+    "title": "[Corrected] Unopposed Joint Motion for Extension of Time for Parties to Serve Responses to Contention Interrogatories"
+  },
+  {
+    "attachments": [],
+    "document_date": "2026-09-24",
+    "document_type": "Motion",
+    "filed_by": "Tuhin Ganguly",
+    "firm_organization": "Desmarais LLP",
+    "id": "895721",
+    "official_received_date": "2026-09-24T16:38:00",
+    "on_behalf_of": "SK hynix Inc., SK hynix America Inc., SK hynix Memory Solutions America Inc., KIOXIA Holdings Corporation, KIOXIA Corporation, KIOXIA America, Inc., KIOXIA Engineering Corporation, KIOXIA Iwate Corporation, KIOXIA Systems Co., Ltd., KIOXIA Semiconductor Taiwan Corporation, and  MonolithIC 3D Inc.",
+    "security_level": "Public",
+    "title": "Unopposed Joint Motion for Extension of Time for Parties to Serve Responses to Contention Interrogatories"
+  },
+  {
+    "attachments": [],
     "document_date": "2026-09-22",
     "document_type": "PO Subscription",
     "filed_by": "Helena D. Kiepura",
@@ -84,7 +108,12 @@
     "title": "Agreement to Be Bound by the Protective Order of Jesse Hindman"
   },
   {
-    "attachments": [],
+    "attachments": [
+      {
+        "href": "../../data/documents/337-1506/890430_2599187_2599187.pdf",
+        "label": "2599187.pdf"
+      }
+    ],
     "document_date": "2026-08-04",
     "document_type": "Notice of Appearance",
     "filed_by": "Jesse Hindman",
@@ -216,7 +245,12 @@
     "title": "Agreement to Be Bound by the Protective Order of Brent Yamashita and Leon Cao"
   },
   {
-    "attachments": [],
+    "attachments": [
+      {
+        "href": "../../data/documents/337-1506/887954_2580530_2580530.pdf",
+        "label": "2580530.pdf"
+      }
+    ],
     "document_date": "2026-07-14",
     "document_type": "Notice of Appearance",
     "filed_by": "Brent Yamashita",
@@ -228,7 +262,12 @@
     "title": "Supplemental Notice of Appearance; Additional Attorneys from Vedder Price (CA), LLP on Behalf of KIOXIA Holdings Corporation, KIOXIA Corporation, KIOXIA America, Inc., KIOXIA Engineering Corporation, KIOXIA Iwate Corporation, KIOXIA Systems Co., Ltd., KIOXIA Semiconductor Taiwan Corporation, SK hynix Inc., SK hynix America Inc., and SK hynix Memory Solutions America Inc."
   },
   {
-    "attachments": [],
+    "attachments": [
+      {
+        "href": "../../data/documents/337-1506/887674_2578435_2578435.pdf",
+        "label": "2578435.pdf"
+      }
+    ],
     "document_date": "2026-07-10",
     "document_type": "Notice of Appearance",
     "filed_by": "Tuhin Ganguly",
@@ -264,7 +303,12 @@
     "title": "Agreement to Be Bound by the Protective Order of Lauren E. Peterson and Sean M. Wesp"
   },
   {
-    "attachments": [],
+    "attachments": [
+      {
+        "href": "../../data/documents/337-1506/887210_2576919_2576919.pdf",
+        "label": "2576919.pdf"
+      }
+    ],
     "document_date": "2026-07-07",
     "document_type": "Notice of Appearance",
     "filed_by": "Helena D. Kiepura",
@@ -276,7 +320,12 @@
     "title": "Notice of Appearance of DLA Piper LLP (US) on Behalf of KIOXIA Holdings Corporation, KIOXIA Corporation, KIOXIA America, Inc., KIOXIA Engineering Corporation, KIOXIA Iwate Corporation, KIOXIA Systems Co., Ltd., and KIOXIA Semiconductor Taiwan Corporation; Designation of Helena D. Kiepura as Lead Counsel"
   },
   {
-    "attachments": [],
+    "attachments": [
+      {
+        "href": "../../data/documents/337-1506/887209_2576916_2576916.pdf",
+        "label": "2576916.pdf"
+      }
+    ],
     "document_date": "2026-07-07",
     "document_type": "Notice of Appearance",
     "filed_by": "Lauren E. Peterson",
@@ -324,7 +373,12 @@
     "title": "Agreement to Be Bound by the Protective Order of Evan H. Langdon, Joshua W. Rodriguez, Juan J. Garcia, Alfred R. Fabricant, Peter Lambrianakos, Vincent J. Rubino, III, Jacob Ostling, Julian Pymento, Samantha R. Fabricant, Joseph Baillargeon, Henry N. Metro, Enrique Iturralde, Shannon Gillespie McComb, and Kimberly Ramsarup"
   },
   {
-    "attachments": [],
+    "attachments": [
+      {
+        "href": "../../data/documents/337-1506/887086_2576360_2576360.pdf",
+        "label": "2576360.pdf"
+      }
+    ],
     "document_date": "2026-07-06",
     "document_type": "Notice of Appearance",
     "filed_by": "Evan H. Langdon",

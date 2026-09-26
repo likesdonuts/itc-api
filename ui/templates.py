@@ -344,6 +344,19 @@ time.stamp.today { color: var(--green-fg); font-weight: 600; }
 }
 .tabs a:hover { color: var(--ink); text-decoration: none; }
 .tabs a.active { color: var(--accent); border-bottom-color: var(--accent); }
+.next-head { display: flex; gap: 1.5rem; flex-wrap: wrap; align-items: baseline; }
+.next-head .next-label { font-size: 0.72rem; font-weight: 600; color: var(--muted); text-transform: uppercase; letter-spacing: 0.05em; }
+.next-head .next-what { font-size: 1.15rem; font-weight: 600; }
+.next-head .next-when { color: var(--muted); }
+.next-waiting { margin-top: 0.5rem; color: var(--muted); }
+.next-waiting strong { color: var(--ink); }
+table.next-events tr.past td { color: var(--muted); }
+table.next-events tr.past .pill { opacity: 0.7; }
+table.next-events tr.is-next td { background: var(--accent-weak, var(--blue-bg)); }
+table.next-events td.when { white-space: nowrap; color: var(--muted); font-size: 0.85rem; }
+table.next-events td.date-cell { white-space: nowrap; min-width: 0; }
+table.next-events .event-note { display: block; font-size: 0.82rem; color: var(--muted); }
+.next-notes li { margin-bottom: 0.3rem; }
 .claims-matrix th .stage-count { font-weight: 400; text-transform: none; letter-spacing: 0; margin-top: 0.15rem; }
 .claims-matrix tr.patent-row th {
   background: var(--surface-2);
@@ -897,12 +910,14 @@ _DETAIL_SCRIPT = """
 })();
 
 (function () {
-  // Overview and Claims tabs, when the case has a claims analysis. The tab is
-  // in the address (#claims), so a reload or a shared link keeps it.
+  // Overview, Next actions and Claims tabs, whichever the case has. The tab
+  // is in the address (#next, #claims), so a reload or a shared link keeps it.
   const tabs = Array.from(document.querySelectorAll('.tabs a[data-tab]'));
   if (!tabs.length) return;
+  const names = tabs.map(function (t) { return t.dataset.tab; });
   function show() {
-    const wanted = location.hash === '#claims' ? 'claims' : 'overview';
+    const asked = location.hash.replace('#', '');
+    const wanted = names.indexOf(asked) >= 0 ? asked : 'overview';
     tabs.forEach(function (t) { t.classList.toggle('active', t.dataset.tab === wanted); });
     document.querySelectorAll('.tab-panel').forEach(function (p) {
       p.hidden = p.id !== 'tab-' + wanted;
@@ -910,6 +925,42 @@ _DETAIL_SCRIPT = """
   }
   window.addEventListener('hashchange', show);
   show();
+})();
+
+(function () {
+  // Next actions: past, next and how far away, against the day the page is
+  // viewed rather than the day it was rendered.
+  const rows = Array.from(document.querySelectorAll('tr.next-event'));
+  if (!rows.length) return;
+  const today = new Date();
+  today.setHours(0, 0, 0, 0);
+  const DAY = 86400000;
+  let next = null;
+  rows.forEach(function (row) {
+    const iso = row.dataset.date;
+    const cell = row.querySelector('td.when');
+    if (!iso) { cell.textContent = ''; return; }
+    const parts = iso.split('-').map(Number);
+    const when = new Date(parts[0], parts[1] - 1, parts[2]);
+    const days = Math.round((when - today) / DAY);
+    if (days < 0) {
+      row.classList.add('past');
+      cell.textContent = -days === 1 ? 'yesterday' : (-days < 60 ? -days + ' days ago' : '');
+    } else {
+      cell.textContent = days === 0 ? 'today' : (days === 1 ? 'tomorrow' : 'in ' + days + ' days');
+      if (!next) next = {row: row, days: days};
+    }
+  });
+  const what = document.getElementById('next-what');
+  const whenEl = document.getElementById('next-when');
+  if (next) {
+    next.row.classList.add('is-next');
+    what.textContent = next.row.dataset.label;
+    whenEl.textContent = next.row.querySelector('td.date-cell').textContent + ' · ' + next.row.querySelector('td.when').textContent;
+  } else {
+    what.textContent = 'Awaiting decision';
+    whenEl.textContent = 'No date on record is still ahead.';
+  }
 })();
 
 (function () {
@@ -1627,17 +1678,90 @@ def _claims_section(claims: dict[str, Any]) -> str:
 </div>"""
 
 
-def _with_claims_tab(overview: str, claims: dict[str, Any] | None) -> str:
-    """The page body, split into Overview and Claims tabs once the case has a
-    claims analysis; unchanged otherwise."""
-    if not claims or not claims.get("built_at"):
+def _with_tabs(overview: str, claims: dict[str, Any] | None, next_actions: dict[str, Any] | None,
+               next_built_at: str | None = None) -> str:
+    """The page body, split into tabs when the case has more than its
+    overview: Next actions for an open investigation, Claims once it has a
+    claims analysis. Unchanged otherwise."""
+    tabs = [("overview", "Overview", overview)]
+    if next_actions:
+        tabs.append(("next", "Next actions", _next_actions_section(next_actions, next_built_at)))
+    if claims and claims.get("built_at"):
+        tabs.append(("claims", "Claims", _claims_section(claims)))
+    if len(tabs) == 1:
         return overview
-    return f"""<nav class="tabs">
-  <a href="#overview" data-tab="overview" class="active">Overview</a>
-  <a href="#claims" data-tab="claims">Claims</a>
-</nav>
-<div class="tab-panel" id="tab-overview">{overview}</div>
-<div class="tab-panel" id="tab-claims" hidden>{_claims_section(claims)}</div>"""
+    active, hidden = ' class="active"', " hidden"
+    nav = "".join(
+        f'<a href="#{key}" data-tab="{key}"{active if i == 0 else ""}>{label}</a>'
+        for i, (key, label, _) in enumerate(tabs)
+    )
+    panels = "".join(
+        f'<div class="tab-panel" id="tab-{key}"{hidden if i else ""}>{body}</div>'
+        for i, (key, _, body) in enumerate(tabs)
+    )
+    return f'<nav class="tabs">{nav}</nav>\n{panels}'
+
+
+_BASIS_PILLS = {"case data": "pill-blue", "docket": "pill-gray", "by rule": "pill-amber"}
+
+
+def _next_actions_section(record: dict[str, Any], built_at: str | None) -> str:
+    """What happens next in an open investigation (datalayer/nextactions).
+
+    Which event is next, and how far away each one is, are worked out in the
+    page against the day it is viewed, so the tab stays right between
+    rebuilds.
+    """
+    rows = []
+    for event in record.get("events") or []:
+        day = event.get("date")
+        date_cell = _date(day) if day else '<span class="muted">not set</span>'
+        if event.get("end") and event.get("end") != day:
+            date_cell += f" &ndash; {_date(event['end'])}"
+        source = event.get("source") or {}
+        detail = []
+        if event.get("note"):
+            detail.append(_e(event["note"]))
+        if source.get("title"):
+            detail.append(f"From: {_e(source['title'])} ({_date(source.get('date'))})")
+        basis = event.get("basis") or ""
+        cite = f' <span class="muted">{_e(event["cite"])}</span>' if event.get("cite") else ""
+        rows.append(
+            f'<tr class="next-event" data-date="{_e(event.get("end") or day or "")}" data-label="{_e(event.get("label"))}">'
+            f'<td class="date-cell">{date_cell}</td>'
+            f'<td>{_e(event.get("label"))}'
+            + (f'<span class="event-note">{" &middot; ".join(detail)}</span>' if detail else "")
+            + f'</td><td><span class="pill {_BASIS_PILLS.get(basis, "pill-gray")}">{_e(basis)}</span>{cite}</td>'
+            f'<td class="when"></td></tr>'
+        )
+    table = (
+        '<div class="card"><div class="table-wrap"><table class="list next-events">'
+        "<thead><tr><th>Date</th><th>What</th><th>Basis</th><th></th></tr></thead>"
+        f"<tbody>{''.join(rows)}</tbody></table></div></div>"
+        if rows else ""
+    )
+    waiting = record.get("waiting_on")
+    notes = "".join(f"<li>{_e(n)}</li>" for n in record.get("notes") or [])
+    return f"""<div class="section-block next-actions">
+  <div class="card">
+    <div class="next-head">
+      <div><div class="next-label">Stage</div><div class="next-what">{_e(record.get("stage_label"))}</div></div>
+      <div><div class="next-label">Next</div><div class="next-what" id="next-what">{"&mdash;" if rows else "Nothing scheduled"}</div>
+        <div class="next-when" id="next-when"></div></div>
+    </div>
+    {f'<div class="next-waiting">Waiting on: <strong>{_e(waiting)}</strong></div>' if waiting else ""}
+  </div>
+  {table}
+  {f'<div class="card"><ul class="next-notes">{notes}</ul></div>' if notes else ""}
+  <p class="muted" style="font-size:0.82rem">
+    <strong>Case data</strong>: dates the USITC's investigation record gives. <strong>Docket</strong>: when a
+    document was issued. <strong>By rule</strong>: calculated under 19 CFR Part 210, counting days as
+    19 CFR 201.14 does (starting the first business day after the event, and moving a deadline that lands
+    on a weekend or federal holiday to the next business day), from the day a document was issued.
+    Orders and notices can change any of these; this tab is for orientation, not a substitute for them.
+    Worked out {_date(built_at) if built_at else "at the last sync"}.
+  </p>
+</div>"""
 
 
 def render_detail(
@@ -1649,10 +1773,13 @@ def render_detail(
     fetched_at: str | None = None,
     claims: dict[str, Any] | None = None,
     claims_state: dict[str, Any] | None = None,
+    next_actions: dict[str, Any] | None = None,
+    next_built_at: str | None = None,
 ) -> str:
     """`fetched_at` is when this case's documents were last fetched;
     `claims` is its stored claims analysis and `claims_state` whether that
-    needs building (datalayer/claims/status.py).
+    needs building (datalayer/claims/status.py); `next_actions` its entry in
+    data/next_actions.json, for an open investigation.
     """
     number = case.get("investigation_number")
     # What a stage block compares against the primary stage: the field
@@ -1703,7 +1830,7 @@ def render_detail(
 </div>
 {withdrawn_notice}
 {_control_panel(str(number or ""), fetched_at, claims_state)}
-{_with_claims_tab(''.join(block for block in blocks if block), claims)}
+{_with_tabs(''.join(block for block in blocks if block), claims, next_actions, next_built_at)}
 <p class="footer-note">
   Investigation {_e(number)} &middot; case information from the IDS investigations
   feed &middot; IDS snapshot {_date(case.get('ids_snapshot'))}

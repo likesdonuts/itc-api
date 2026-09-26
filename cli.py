@@ -27,6 +27,7 @@ Examples:
     python cli.py docs --existing --appearances   # just the Notice of Appearance PDFs
     python cli.py backfill                  # document lists (no PDFs) for every case; resumable
     python cli.py counsel                   # rebuild who-represents-whom, offline
+    python cli.py next-actions --render     # what happens next in each open case, offline
     python cli.py analytics                 # firms, attorneys, companies as entities
     python cli.py decide                    # the name pairs waiting for you; decide 3 same
     python cli.py analytics-serve           # open the analytics app (what ITC Analytics.bat runs)
@@ -46,6 +47,7 @@ from pathlib import Path
 
 import schema as ui_schema
 from datalayer import backfill, counsel, docs, ids, ingest, normalize, runlog
+from datalayer.nextactions import build as nextactions_build
 from datalayer.config import DATA_DIR, IDS_DIR, MissingTokenError, SCHEMA_PATH, SITE_DIR, load_token
 from datalayer.runner import ProcessAborted
 from datalayer.store import Store
@@ -153,6 +155,12 @@ def build_parser() -> argparse.ArgumentParser:
     )
     _add_render_flag(p_backfill)
 
+    p_next = sub.add_parser(
+        "next-actions",
+        help="rebuild each open investigation's next actions: stage, dates and deadlines (offline)",
+    )
+    _add_render_flag(p_next)
+
     p_analytics = sub.add_parser(
         "analytics",
         help="rebuild the representation analytics: firms, attorneys and companies as entities (offline, "
@@ -244,9 +252,18 @@ def _render(args: argparse.Namespace, store: Store) -> None:
 
 def _counsel(store: Store, *, verbose: bool = False) -> None:
     """Counsel is matched against the IDS parties and read from the EDIS
-    filings, so it is rebuilt whenever either of those changes.
+    filings, so it is rebuilt whenever either of those changes -- and so are
+    the next actions, which read the same two.
     """
     counsel.run(store, verbose=verbose, log=print)
+    nextactions_build.run(store, log=print)
+
+
+def cmd_next_actions(args: argparse.Namespace, store: Store) -> int:
+    nextactions_build.run(store, log=print)
+    if args.render:
+        _render(args, store)
+    return 0
 
 
 def _only_types(args: argparse.Namespace) -> frozenset[str] | None:
@@ -620,6 +637,7 @@ COMMANDS = {
     "docs": cmd_docs,
     "backfill": cmd_backfill,
     "counsel": cmd_counsel,
+    "next-actions": cmd_next_actions,
     "analytics": cmd_analytics,
     "decide": cmd_decide,
     "analytics-serve": cmd_analytics_serve,

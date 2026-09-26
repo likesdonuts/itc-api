@@ -1,6 +1,102 @@
 [
   {
     "attachments": [],
+    "document_date": "2026-09-25",
+    "document_type": "PO Subscription",
+    "filed_by": "Clement Naples",
+    "firm_organization": "Cleary Gottlieb Steen & Hamilton LLP",
+    "id": "895809",
+    "official_received_date": "2026-09-25T13:21:00",
+    "on_behalf_of": "Artipoppe B.V., Bugaboo Xiamen Industrial Co. Ltd., Bugaboo International B.V., and Bugaboo North America, Inc.",
+    "security_level": "Public",
+    "title": "Agreement to Be Bound by the Protective Order of Brooke Purinton"
+  },
+  {
+    "attachments": [],
+    "document_date": "2026-09-24",
+    "document_type": "Returned Mail",
+    "filed_by": "Lisa R. Barton",
+    "firm_organization": "USITC",
+    "id": "895699",
+    "official_received_date": "2026-09-24T15:19:00",
+    "on_behalf_of": "Office of the Secretary",
+    "security_level": "Public",
+    "title": "Initial Determination Finding Respondent Xiamen New Baby Products Co., Ltd. in Default Returned from Koi Trading Services"
+  },
+  {
+    "attachments": [],
+    "document_date": "2026-09-24",
+    "document_type": "ID/RD - Other Than Final on Violation",
+    "filed_by": "Doris Johnson Hines",
+    "firm_organization": "USITC",
+    "id": "895682",
+    "official_received_date": "2026-09-24T13:02:00",
+    "on_behalf_of": "Administrative Law Judge",
+    "security_level": "Public",
+    "title": "Initial Determination Granting Complainant\u2019s Motion to Amend the Complaint and Notice of Investigation"
+  },
+  {
+    "attachments": [],
+    "document_date": "2026-09-24",
+    "document_type": "Order",
+    "filed_by": "Doris Johnson Hines",
+    "firm_organization": "USITC",
+    "id": "895669",
+    "official_received_date": "2026-09-24T11:07:00",
+    "on_behalf_of": "Administrative Law Judge",
+    "security_level": "Public",
+    "title": "Granting Motion for Leave to File Response to the Complaint and Notice of Investigation and 210.13(b) Statement out of Time"
+  },
+  {
+    "attachments": [],
+    "document_date": "2026-09-23",
+    "document_type": "Motion",
+    "filed_by": "Beau Jackson",
+    "firm_organization": "Husch Blackwell LLP",
+    "id": "895580",
+    "official_received_date": "2026-09-23T15:54:00",
+    "on_behalf_of": "Complainant The Ergo Baby Carrier, Inc.",
+    "security_level": "Public",
+    "title": "Complainant The Ergo Baby Carrier Inc.'s Motion for Leave to Amend the Complaint and Notice of Investigation"
+  },
+  {
+    "attachments": [],
+    "document_date": "2026-09-23",
+    "document_type": "Motion",
+    "filed_by": "Evan H. Langdon",
+    "firm_organization": "Fabricant Rubino Lambrianakos LLP",
+    "id": "895519",
+    "official_received_date": "2026-09-23T13:14:00",
+    "on_behalf_of": "Portier USA, LLC",
+    "security_level": "Public",
+    "title": "Unopposed Joint Motion for Leave to File Respondent Portier USA, LLC's Response to the Complaint and Notice of Investigation and 210.13(B) Statement out of Time"
+  },
+  {
+    "attachments": [],
+    "document_date": "2026-09-23",
+    "document_type": "Returned Mail",
+    "filed_by": "Lisa R. Barton",
+    "firm_organization": "USITC",
+    "id": "895485",
+    "official_received_date": "2026-09-23T12:19:00",
+    "on_behalf_of": "Office of the Secretary",
+    "security_level": "Public",
+    "title": "Order No. 9: Granting Extension Motion Returned from Koi Trading Services"
+  },
+  {
+    "attachments": [],
+    "document_date": "2026-09-23",
+    "document_type": "Returned Mail",
+    "filed_by": "Lisa R. Barton",
+    "firm_organization": "USITC",
+    "id": "895484",
+    "official_received_date": "2026-09-23T12:17:00",
+    "on_behalf_of": "Office of the Secretary",
+    "security_level": "Public",
+    "title": "Notice of a Commission Determination Not to Review an Initial Determination Setting a Seventeen-Month Target Date Returned from Ava + Oliver, LLC"
+  },
+  {
+    "attachments": [],
     "document_date": "2026-09-22",
     "document_type": "Answer to Complaint",
     "filed_by": "Evan H. Langdon",
@@ -84,7 +180,12 @@
     "title": "Complainant The Ergo Baby Carrier, Inc.'s Motion for Leave to Amend the Complaint and Notice of Investigation"
   },
   {
-    "attachments": [],
+    "attachments": [
+      {
+        "href": "../../data/documents/337-1514/894981_2620843_2620843.pdf",
+        "label": "2620843.pdf"
+      }
+    ],
     "document_date": "2026-09-16",
     "document_type": "Notice of Appearance",
     "filed_by": "Justin J. Hasford",
@@ -504,7 +605,12 @@
     "title": "Agreement to Be Bound by the Protective Order of Evan H. Langdon, Juan J. Garcia, Joseph Mercadante, and Samantha R. Fabricant"
   },
   {
-    "attachments": [],
+    "attachments": [
+      {
+        "href": "../../data/documents/337-1514/892349_2610878_2610878.pdf",
+        "label": "2610878.pdf"
+      }
+    ],
     "document_date": "2026-08-21",
     "document_type": "Notice of Appearance",
     "filed_by": "Evan H. Langdon",
@@ -672,7 +778,12 @@
     "title": "Granting Extension Motion"
   },
   {
-    "attachments": [],
+    "attachments": [
+      {
+        "href": "../../data/documents/337-1514/891071_2603384_2603384.pdf",
+        "label": "2603384.pdf"
+      }
+    ],
     "document_date": "2026-08-10",
     "document_type": "Notice of Appearance",
     "filed_by": "Justin J. Hasford",
@@ -840,7 +951,12 @@
     "title": "Agreement to Be Bound by the Protective Order of Jason Xu, John Handy, and Emma Chen"
   },
   {
-    "attachments": [],
+    "attachments": [
+      {
+        "href": "../../data/documents/337-1514/889768_2596385_2596385.pdf",
+        "label": "2596385.pdf"
+      }
+    ],
     "document_date": "2026-07-29",
     "document_type": "Notice of Appearance",
     "filed_by": "Jason Xu",
@@ -876,7 +992,12 @@
     "title": "Agreement to Be Bound by the Protective Order of Clement Naples, Bert Reiser, Sami Al-Marzoog, Ruth Davila, and Amy Thomas"
   },
   {
-    "attachments": [],
+    "attachments": [
+      {
+        "href": "../../data/documents/337-1514/889660_2595582_2595582.pdf",
+        "label": "2595582.pdf"
+      }
+    ],
     "document_date": "2026-07-28",
     "document_type": "Notice of Appearance",
     "filed_by": "Clement Naples",
@@ -912,7 +1033,12 @@
     "title": "Agreement to Be Bound by the Protective Order of Justin J. Hasford, Mareesa A. Frederick, Chiaki Kobayashi, and Michael E. Kudravetz"
   },
   {
-    "attachments": [],
+    "attachments": [
+      {
+        "href": "../../data/documents/337-1514/889595_2595328_2595328.pdf",
+        "label": "2595328.pdf"
+      }
+    ],
     "document_date": "2026-07-28",
     "document_type": "Notice of Appearance",
     "filed_by": "Justin J. Hasford",
@@ -984,7 +1110,12 @@
     "title": "F.R. Notice of Institution of Investigation"
   },
   {
-    "attachments": [],
+    "attachments": [
+      {
+        "href": "../../data/documents/337-1514/889196_2592227_2592227.pdf",
+        "label": "2592227.pdf"
+      }
+    ],
     "document_date": "2026-07-23",
     "document_type": "Notice of Appearance",
     "filed_by": "Beau Jackson",

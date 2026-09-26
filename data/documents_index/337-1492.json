@@ -1,6 +1,18 @@
 [
   {
     "attachments": [],
+    "document_date": "2026-09-25",
+    "document_type": "Correspondence",
+    "filed_by": "Evan H. Langdon",
+    "firm_organization": "Fabricant Rubino Lambrianakos LLP",
+    "id": "895782",
+    "official_received_date": "2026-09-25T09:47:00",
+    "on_behalf_of": "MonolithIC 3D Inc.",
+    "security_level": "Confidential",
+    "title": "Complainant's Letter to ALJ Elliot regarding Motion to Compel"
+  },
+  {
+    "attachments": [],
     "document_date": "2026-09-23",
     "document_type": "Motion",
     "filed_by": "Evan H. Langdon",
@@ -660,7 +672,12 @@
     "title": "Agreement to Be Bound by the Protective Order of Jesse Hindman"
   },
   {
-    "attachments": [],
+    "attachments": [
+      {
+        "href": "../../data/documents/337-1492/890406_2599144_2599144.pdf",
+        "label": "2599144.pdf"
+      }
+    ],
     "document_date": "2026-08-04",
     "document_type": "Notice of Appearance",
     "filed_by": "Jesse Hindman",
@@ -696,7 +713,12 @@
     "title": "Unopposed Motion of Non-Party Google LLC for an Extension of Time to Respond to Respondents' Subpoenas Duces Tecum and Ad Testificandum"
   },
   {
-    "attachments": [],
+    "attachments": [
+      {
+        "href": "../../data/documents/337-1492/890227_2598550_2598550.pdf",
+        "label": "2598550.pdf"
+      }
+    ],
     "document_date": "2026-08-03",
     "document_type": "Notice of Appearance",
     "filed_by": "Gregory F. Corbett",
@@ -1092,7 +1114,12 @@
     "title": "Unopposed Motion of Non-Party Macronix America Inc. for an Extension of Time to Respond to Respondents SK hynix's Subpoena Duces Tecum and Ad Testificandum"
   },
   {
-    "attachments": [],
+    "attachments": [
+      {
+        "href": "../../data/documents/337-1492/885024_2562229_2562229.pdf",
+        "label": "2562229.pdf"
+      }
+    ],
     "document_date": "2026-06-12",
     "document_type": "Notice of Appearance",
     "filed_by": "Kevin Su",
@@ -1128,7 +1155,12 @@
     "title": "Commission Investigative Staff's Notice of Prior Art"
   },
   {
-    "attachments": [],
+    "attachments": [
+      {
+        "href": "../../data/documents/337-1492/884896_2561545_2561545.pdf",
+        "label": "2561545.pdf"
+      }
+    ],
     "document_date": "2026-06-11",
     "document_type": "Notice of Appearance",
     "filed_by": "Vu Q. Bui",
@@ -1200,7 +1232,12 @@
     "title": "Unopposed Motion of Non-Party Advanced Micro Devices, Inc. for an Extension of Time to Respond to Complainants\u2019 Subpoena Duces Tecum and Ad Testificandum"
   },
   {
-    "attachments": [],
+    "attachments": [
+      {
+        "href": "../../data/documents/337-1492/884283_2558929_2558929.pdf",
+        "label": "2558929.pdf"
+      }
+    ],
     "document_date": "2026-06-05",
     "document_type": "Notice of Appearance",
     "filed_by": "David M. Hoffman",
@@ -1356,7 +1393,12 @@
     "title": "Recommendation to the United States District Court to Issue a Letter of Request for International Judicial Assistance Pursuant to the Hague Convention to Obtain Discovery in the Republic of Korea"
   },
   {
-    "attachments": [],
+    "attachments": [
+      {
+        "href": "../../data/documents/337-1492/883350_2553989_2553989.pdf",
+        "label": "2553989.pdf"
+      }
+    ],
     "document_date": "2026-05-27",
     "document_type": "Notice of Appearance",
     "filed_by": "Ryan B. McCrum",
@@ -1404,7 +1446,12 @@
     "title": "Agreement to Be Bound by the Protective Order of Tracy Block"
   },
   {
-    "attachments": [],
+    "attachments": [
+      {
+        "href": "../../data/documents/337-1492/883036_2552286_2552286.pdf",
+        "label": "2552286.pdf"
+      }
+    ],
     "document_date": "2026-05-22",
     "document_type": "Notice of Appearance",
     "filed_by": "David M. Hoffman",
@@ -1524,7 +1571,12 @@
     "title": "Complainant Monolithic 3D Inc's Motion Seeking Recommendation to the United States District Court for the District of Columbia to Issue a Letter of Request Pursuant to the Hague Convention for International Judicial Assistance"
   },
   {
-    "attachments": [],
+    "attachments": [
+      {
+        "href": "../../data/documents/337-1492/882047_2547645_2547645.pdf",
+        "label": "2547645.pdf"
+      }
+    ],
     "document_date": "2026-05-12",
     "document_type": "Notice of Appearance",
     "filed_by": "Brent Yamashita",
@@ -1584,7 +1636,12 @@
     "title": "Commission Determination Not to Review an Initial Determination Setting a 17-Month Target Date for the Completion of the Investigation"
   },
   {
-    "attachments": [],
+    "attachments": [
+      {
+        "href": "../../data/documents/337-1492/881943_2547452_2547452.pdf",
+        "label": "2547452.pdf"
+      }
+    ],
     "document_date": "2026-05-12",
     "document_type": "Notice of Appearance",
     "filed_by": "Lauren E. Peterson",
@@ -1692,7 +1749,12 @@
     "title": "Agreement to Be Bound by the Protective Order of Lauren E. Peterson and Sean M. Wesp"
   },
   {
-    "attachments": [],
+    "attachments": [
+      {
+        "href": "../../data/documents/337-1492/880175_2537936_2537936.pdf",
+        "label": "2537936.pdf"
+      }
+    ],
     "document_date": "2026-04-24",
     "document_type": "Notice of Appearance",
     "filed_by": "Lauren E. Peterson",
@@ -1812,7 +1874,12 @@
     "title": "Agreement to Be Bound by the Protective Order of Evan H. Langdon, Joshua W. Rodriguez, Juan J. Garcia, Alfred R. Fabricant, Peter Lambrianakos, Vincent J. Rubino, III, Jacob Ostling, and Julian Pymento"
   },
   {
-    "attachments": [],
+    "attachments": [
+      {
+        "href": "../../data/documents/337-1492/878272_2529475_2529475.pdf",
+        "label": "2529475.pdf"
+      }
+    ],
     "document_date": "2026-04-08",
     "document_type": "Notice of Appearance",
     "filed_by": "Evan H. Langdon",
@@ -1824,7 +1891,12 @@
     "title": "Notice of Appearance of Fabricant Rubino Lambrianakos LLP on Behalf of MonolithIC 3D Inc.; Designation of Evan H. Langdon as Lead Counsel for Service of Process"
   },
   {
-    "attachments": [],
+    "attachments": [
+      {
+        "href": "../../data/documents/337-1492/878223_2529369_2529369.pdf",
+        "label": "2529369.pdf"
+      }
+    ],
     "document_date": "2026-04-08",
     "document_type": "Notice of Appearance",
     "filed_by": "Tuhin Ganguly",
@@ -1884,7 +1956,12 @@
     "title": "Agreement to Be Bound by the Protective Order of Helena Kiepura, Matthew Satchwell, Robert Groselak, Paulina Starostka, Daniel Valencia, Salvatore Tamburo, Hayley Ostrin, Quentin Ashley, Mark Fowler, Carrie Williamson, Alan Limbach, Steve Kellner, Gianni Minutoli, and Christopher Hack"
   },
   {
-    "attachments": [],
+    "attachments": [
+      {
+        "href": "../../data/documents/337-1492/878027_2528384_2528384.pdf",
+        "label": "2528384.pdf"
+      }
+    ],
     "document_date": "2026-04-06",
     "document_type": "Notice of Appearance",
     "filed_by": "Helena D. Kiepura",
@@ -2040,7 +2117,12 @@
     "title": "Postponement Letter"
   },
   {
-    "attachments": [],
+    "attachments": [
+      {
+        "href": "../../data/documents/337-1492/875331_2517423_2517423.pdf",
+        "label": "2517423.pdf"
+      }
+    ],
     "document_date": "2026-03-12",
     "document_type": "Notice of Appearance",
     "filed_by": "Evan Langdon",

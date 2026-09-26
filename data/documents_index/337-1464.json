@@ -1872,7 +1872,12 @@
     "title": "Case Management Conference (Pages 1-23)"
   },
   {
-    "attachments": [],
+    "attachments": [
+      {
+        "href": "../../data/documents/337-1464/873451_2505845_2505845.pdf",
+        "label": "2505845.pdf"
+      }
+    ],
     "document_date": "2026-02-24",
     "document_type": "Notice of Appearance",
     "filed_by": "Michael T. Renaud",
@@ -2304,7 +2309,12 @@
     "title": null
   },
   {
-    "attachments": [],
+    "attachments": [
+      {
+        "href": "../../data/documents/337-1464/866805_2466025_2466025.pdf",
+        "label": "2466025.pdf"
+      }
+    ],
     "document_date": "2025-12-17",
     "document_type": "Notice of Appearance",
     "filed_by": "S. Alex Lasher",
@@ -2316,7 +2326,12 @@
     "title": "Notice of Appearance of Quinn Emanuel Urquhart & Sullivan, LLP on Behalf of JUUL Labs, Inc. and VMR Products LLC; Designation of S. Alex Lasher as Lead Counsel"
   },
   {
-    "attachments": [],
+    "attachments": [
+      {
+        "href": "../../data/documents/337-1464/866797_2465942_2465942.pdf",
+        "label": "2465942.pdf"
+      }
+    ],
     "document_date": "2025-12-17",
     "document_type": "Notice of Appearance",
     "filed_by": "Adam D. Swain",

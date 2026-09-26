@@ -180,7 +180,12 @@
     "title": "Protective Order"
   },
   {
-    "attachments": [],
+    "attachments": [
+      {
+        "href": "../../data/documents/337-1425/838745_2282973_2282973.pdf",
+        "label": "2282973.pdf"
+      }
+    ],
     "document_date": "2024-12-06",
     "document_type": "Notice of Appearance",
     "filed_by": "Samuel N. Tiu",
@@ -204,7 +209,12 @@
     "title": "Assignment of ALJ Bhattacharyya"
   },
   {
-    "attachments": [],
+    "attachments": [
+      {
+        "href": "../../data/documents/337-1425/838628_2282387_2282387.pdf",
+        "label": "2282387.pdf"
+      }
+    ],
     "document_date": "2024-12-05",
     "document_type": "Notice of Appearance",
     "filed_by": "Rett Snotherly",

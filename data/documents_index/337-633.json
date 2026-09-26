@@ -300,7 +300,12 @@
     "title": "Agreement to be Bound by the Protective Order"
   },
   {
-    "attachments": [],
+    "attachments": [
+      {
+        "href": "../../data/documents/337-633/296020_356313_356313.pdf",
+        "label": "356313.pdf"
+      }
+    ],
     "document_date": "2008-03-31",
     "document_type": "Notice of Appearance",
     "filed_by": "Kent R. Stevens",
@@ -420,7 +425,12 @@
     "title": "Request for Confidential Information"
   },
   {
-    "attachments": [],
+    "attachments": [
+      {
+        "href": "../../data/documents/337-633/295066_354770_354770.pdf",
+        "label": "354770.pdf"
+      }
+    ],
     "document_date": "2008-03-19",
     "document_type": "Notice of Appearance",
     "filed_by": "Gary Hnath",

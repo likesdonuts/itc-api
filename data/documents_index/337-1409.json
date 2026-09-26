@@ -2856,7 +2856,12 @@
     "title": "Protective Order"
   },
   {
-    "attachments": [],
+    "attachments": [
+      {
+        "href": "../../data/documents/337-1409/827085_2207931_2207931.pdf",
+        "label": "2207931.pdf"
+      }
+    ],
     "document_date": "2024-07-24",
     "document_type": "Notice of Appearance",
     "filed_by": "S. Alex Lasher",
@@ -2868,7 +2873,12 @@
     "title": "Notice of Appearance of Quinn Emanuel Urquhart & Sullivan LLP on Behalf of Klein Tools, Inc.; Designation of S. Alex Lasher as Lead Counsel"
   },
   {
-    "attachments": [],
+    "attachments": [
+      {
+        "href": "../../data/documents/337-1409/826695_2207033_2207033.pdf",
+        "label": "2207033.pdf"
+      }
+    ],
     "document_date": "2024-07-22",
     "document_type": "Notice of Appearance",
     "filed_by": "Scott D. Sherwin",

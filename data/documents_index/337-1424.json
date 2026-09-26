@@ -1,6 +1,30 @@
 [
   {
     "attachments": [],
+    "document_date": "2026-09-24",
+    "document_type": "Correspondence - USITC",
+    "filed_by": "Lisa R. Barton",
+    "firm_organization": "USITC",
+    "id": "895665",
+    "official_received_date": "2026-09-24T10:59:00",
+    "on_behalf_of": "Office of the Secretary",
+    "security_level": "Public",
+    "title": "Granting Request for Extension of Time to File Initial and Reply Submissions"
+  },
+  {
+    "attachments": [],
+    "document_date": "2026-09-22",
+    "document_type": "Correspondence",
+    "filed_by": "W. Peter Guarnieri",
+    "firm_organization": "USITC",
+    "id": "895372",
+    "official_received_date": "2026-09-22T14:06:00",
+    "on_behalf_of": "Office of Unfair Import Investigations",
+    "security_level": "Public",
+    "title": "Office of Unfair Import Investigations\u2019 Request for an Extension of Time to File Initial and Reply Submissions regarding Remedy Issues"
+  },
+  {
+    "attachments": [],
     "document_date": "2026-09-21",
     "document_type": "Notice",
     "filed_by": "Lisa R. Barton",
@@ -804,7 +828,12 @@
     "title": "Second Corrected Final List of Exhibits"
   },
   {
-    "attachments": [],
+    "attachments": [
+      {
+        "href": "../../data/documents/337-1424/884245_2558268_2558268.pdf",
+        "label": "2558268.pdf"
+      }
+    ],
     "document_date": "2026-06-04",
     "document_type": "Notice of Appearance",
     "filed_by": "Kathryn L. Clune",
@@ -2760,7 +2789,12 @@
     "title": "Joint Stipulation Regarding Importation"
   },
   {
-    "attachments": [],
+    "attachments": [
+      {
+        "href": "../../data/documents/337-1424/865252_2457065_2457065.pdf",
+        "label": "2457065.pdf"
+      }
+    ],
     "document_date": "2025-12-02",
     "document_type": "Notice of Appearance",
     "filed_by": "Kathryn L. Clune",
@@ -6840,7 +6874,12 @@
     "title": "Notice Letter regarding Complainants' Motion to Amend the Protective Order"
   },
   {
-    "attachments": [],
+    "attachments": [
+      {
+        "href": "../../data/documents/337-1424/841365_2305919_2305919.pdf",
+        "label": "2305919.pdf"
+      }
+    ],
     "document_date": "2025-01-17",
     "document_type": "Notice of Appearance",
     "filed_by": "Julien W. Edwards",
@@ -7404,7 +7443,12 @@
     "title": "Dangs Respondents\u2019 Unopposed Motion to Extend Time for Response to Complaint and Notice of Investigation"
   },
   {
-    "attachments": [],
+    "attachments": [
+      {
+        "href": "../../data/documents/337-1424/838678_2282714_2282714.pdf",
+        "label": "2282714.pdf"
+      }
+    ],
     "document_date": "2024-12-05",
     "document_type": "Notice of Appearance",
     "filed_by": "Jason Xu",
@@ -7548,7 +7592,12 @@
     "title": "Agreement to Be Bound by the Protective Order of James C. Cunningham III"
   },
   {
-    "attachments": [],
+    "attachments": [
+      {
+        "href": "../../data/documents/337-1424/838014_2279373_2279373.pdf",
+        "label": "2279373.pdf"
+      }
+    ],
     "document_date": "2024-11-25",
     "document_type": "Notice of Appearance",
     "filed_by": "James C. Cunningham III",
@@ -7572,7 +7621,12 @@
     "title": "Agreement to Be Bound by the Protective Order of Kathryn L. Clune, Emily Strickland, Judy He, Lyle B. Vander Schaaf, Josh James, Michelle Wang, and John Davis"
   },
   {
-    "attachments": [],
+    "attachments": [
+      {
+        "href": "../../data/documents/337-1424/837996_2279327_2279327.pdf",
+        "label": "2279327.pdf"
+      }
+    ],
     "document_date": "2024-11-25",
     "document_type": "Notice of Appearance",
     "filed_by": "Sturgis M. Sobin",
@@ -7584,7 +7638,12 @@
     "title": "Notice of Appearance of Covington & Burling LLP on Behalf of Xiamen Dangs New-Materials Co., Ltd. AKA Dawnsens New Materials Co., Ltd., Beijing Dangsheng Technology Co., Ltd., and Xiamen Dangsheng Technology Co., Ltd.; Designation of Sturgis M. Sobin as Lead Counsel"
   },
   {
-    "attachments": [],
+    "attachments": [
+      {
+        "href": "../../data/documents/337-1424/837943_2278545_2278545.pdf",
+        "label": "2278545.pdf"
+      }
+    ],
     "document_date": "2024-11-22",
     "document_type": "Notice of Appearance",
     "filed_by": "Kathryn L. Clune",
@@ -7644,7 +7703,12 @@
     "title": "Agreement to Be Bound by the Protective Order of Linhong Zhang, Ruffin B. Cordell, John J. Thuermer, Christopher D. Fu, Brian Boyd, Jacqueline Tio, Claire Xue, and Julie Metkus"
   },
   {
-    "attachments": [],
+    "attachments": [
+      {
+        "href": "../../data/documents/337-1424/837838_2277673_2277673.pdf",
+        "label": "2277673.pdf"
+      }
+    ],
     "document_date": "2024-11-21",
     "document_type": "Notice of Appearance",
     "filed_by": "Linhong Zhang",
@@ -7692,7 +7756,12 @@
     "title": "Protective Order"
   },
   {
-    "attachments": [],
+    "attachments": [
+      {
+        "href": "../../data/documents/337-1424/837745_2277134_2277134.pdf",
+        "label": "2277134.pdf"
+      }
+    ],
     "document_date": "2024-11-20",
     "document_type": "Notice of Appearance",
     "filed_by": "Celine J. Crowson",

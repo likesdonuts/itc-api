@@ -1284,7 +1284,12 @@
     "title": "Protective Order"
   },
   {
-    "attachments": [],
+    "attachments": [
+      {
+        "href": "../../data/documents/337-1419/833220_2247469_2247469.pdf",
+        "label": "2247469.pdf"
+      }
+    ],
     "document_date": "2024-09-25",
     "document_type": "Notice of Appearance",
     "filed_by": "Cyrus T. Frelinghuysen",

@@ -876,7 +876,24 @@
     "title": "Agreement to be Bound by the Protective Order"
   },
   {
-    "attachments": [],
+    "attachments": [
+      {
+        "href": "../../data/documents/337-586/279226_326794_326794.pdf",
+        "label": "326794.pdf"
+      },
+      {
+        "href": "../../data/documents/337-586/279226_326795_326795.pdf",
+        "label": "326795.pdf"
+      },
+      {
+        "href": "../../data/documents/337-586/279226_326796_326796.pdf",
+        "label": "326796.pdf"
+      },
+      {
+        "href": "../../data/documents/337-586/279226_326797_326797.pdf",
+        "label": "326797.pdf"
+      }
+    ],
     "document_date": "2007-08-02",
     "document_type": "Notice of Appearance",
     "filed_by": "Reza Ghafoorian",
@@ -1740,7 +1757,12 @@
     "title": "Response to Amended Complaint and Notice of Investigation"
   },
   {
-    "attachments": [],
+    "attachments": [
+      {
+        "href": "../../data/documents/337-586/267849_309333_309333.pdf",
+        "label": "309333.pdf"
+      }
+    ],
     "document_date": "2007-01-09",
     "document_type": "Notice of Appearance",
     "filed_by": "John R. Nelson",
@@ -1920,7 +1942,12 @@
     "title": "Memorandum in Support of Motion for Extension of Time"
   },
   {
-    "attachments": [],
+    "attachments": [
+      {
+        "href": "../../data/documents/337-586/266163_304049_304049.pdf",
+        "label": "304049.pdf"
+      }
+    ],
     "document_date": "2006-12-01",
     "document_type": "Notice of Appearance",
     "filed_by": "William Tucker Griffith",
@@ -2052,7 +2079,12 @@
     "title": "Agreement to be Bound by the Protective Order"
   },
   {
-    "attachments": [],
+    "attachments": [
+      {
+        "href": "../../data/documents/337-586/265125_302333_302333.pdf",
+        "label": "302333.pdf"
+      }
+    ],
     "document_date": "2006-11-15",
     "document_type": "Notice of Appearance",
     "filed_by": "Louis Mastriani",

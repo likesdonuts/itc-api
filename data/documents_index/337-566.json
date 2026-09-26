@@ -240,7 +240,12 @@
     "title": "setting Target Date and Issuing Ground"
   },
   {
-    "attachments": [],
+    "attachments": [
+      {
+        "href": "../../data/documents/337-566/253356_286933_286933.pdf",
+        "label": "286933.pdf"
+      }
+    ],
     "document_date": "2006-05-04",
     "document_type": "Notice of Appearance",
     "filed_by": "Hae-Chan Park",

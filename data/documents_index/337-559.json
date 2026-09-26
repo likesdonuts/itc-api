@@ -3660,7 +3660,12 @@
     "title": "Agreement to be bound by PO"
   },
   {
-    "attachments": [],
+    "attachments": [
+      {
+        "href": "../../data/documents/337-559/246552_274613_274613.pdf",
+        "label": "274613.pdf"
+      }
+    ],
     "document_date": "2006-01-30",
     "document_type": "Notice of Appearance",
     "filed_by": "Arthur Wineburg",
@@ -3696,7 +3701,12 @@
     "title": null
   },
   {
-    "attachments": [],
+    "attachments": [
+      {
+        "href": "../../data/documents/337-559/246353_274384_274384.pdf",
+        "label": "274384.pdf"
+      }
+    ],
     "document_date": "2006-01-25",
     "document_type": "Notice of Appearance",
     "filed_by": "Cecilia H. Gonzalez",

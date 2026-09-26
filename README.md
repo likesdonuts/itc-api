@@ -35,6 +35,7 @@ datalayer/            DATA LAYER - talks to IDS and EDIS, owns data/
   docs.py               process 2: EDIS documents for named cases only
   backfill.py           process 2, once: document lists for every case, resumable
   counsel.py            process 3: who represents whom, from the filings
+  nextactions/          each open case's stage, dates and rule-based deadlines
   analytics/            representation analytics: firms, attorneys, companies as entities
   client.py             HTTP client for the EDIS API and the IDS file
   store.py              reads/writes data/*.json, resolves case numbers
@@ -49,6 +50,7 @@ data/                 the handoff between the layers
   documents_index/      one <number>.json per case: its documents  <- written by docs
   documents_state.json  when each case was last fetched, and which were backfilled
   counsel.json          firms and attorneys per case  <- written by counsel
+  next_actions.json     each open case's next actions  <- written by next-actions (with counsel)
   analytics/            firm, attorney and company entities  <- written by analytics
   sync_log.csv          one row per sync, for watching the daily download
   documents/<number>/   downloaded PDFs (gitignored)
@@ -107,6 +109,9 @@ The panel at the top of the list page does the day's work:
   every PDF not on disk yet) or **Update lists** (lists only, no downloads).
 - Each case's own page has the same **Fetch documents** / **Update list**
   buttons for that case.
+- An open case's page has a **Next actions** tab: its stage, what comes next
+  and when, every date on record, and what it is waiting on (see
+  [Next actions](#next-actions)).
 
 Its status line says whether today's sync has run, which day's case data is
 loaded, when documents were last fetched, and when the EDIS token expires.
@@ -188,6 +193,7 @@ own from the command line.
 | `python cli.py backfill` | EDIS | Lists the documents (no PDFs) of every case that has no list yet, newest first; resumable. Refuses while the app is open (use its button). |
 | `python cli.py claims 337-1366` | Federal Register | Builds or updates the claims analysis for the investigations you name (also the **Create / Update claims analysis** button on a case page). |
 | `python cli.py counsel` | none | Process 3. Rebuilds who represents whom from the documents on disk. Runs by itself after `sync`, `parse`, `docs` and `refresh`. |
+| `python cli.py next-actions` | none | Rebuilds each open case's next actions (`data/next_actions.json`). Runs by itself with counsel, after every sync and fetch. |
 | `python cli.py analytics` | Anthropic (a few cents) | Rebuilds the representation analytics entities in `data/analytics/` and the analytics app's data. Only ever run by hand or by the analytics app; `--no-review` makes no model calls. |
 | `python cli.py analytics-serve` | localhost | Opens the analytics app (what `ITC Analytics.bat` runs) on port 8766. |
 | `python cli.py decide` | none | Lists the analytics name pairs that need a person; `decide 3 same` records an answer in `analytics_reference.json` and rebuilds. |
@@ -559,6 +565,63 @@ Coverage follows `counsel.json`: firms and attorneys exist only for cases
 with a document list, which is what the backfill is for; companies come
 from the IDS records of every case.
 
+### Next actions
+
+```
+python cli.py next-actions --render    # rebuild data/next_actions.json and the pages, offline
+```
+
+What happens next in each open investigation, on a **Next actions** tab of its
+page. Phase 1 uses no model and no network (`datalayer/nextactions/`); every
+date carries its basis:
+
+| Basis | Where the date comes from |
+| --- | --- |
+| case data | the IDS record's current stage: target date, scheduled final initial determination, Markman and evidentiary hearings (about 60 of the open cases have them) |
+| docket | when the final ID and the Commission's notices issued (titles as EDIS lists them; Federal Register reprints ignored) |
+| by rule | 19 CFR Part 210 applied to those dates, with the citation |
+
+The rules, as checked against the regulation text (September 2026):
+
+| Rule | Deadline |
+| --- | --- |
+| 210.10(a)(1) | institution decided within 30 days of the complaint (35 with temporary relief; can be postponed) |
+| 210.51(a) | ALJ sets the target date within 45 days of institution; the target date is for completion of the investigation |
+| 210.42(a)(1)(i) | final ID no later than 4 months before the target date (moved back to a business day) |
+| 210.43(a)(1), (c) | petitions for review 12 days after service of the final ID; responses 8 days after a petition |
+| 210.42(h)(2) | the final ID becomes the Commission's determination 60 days after service unless review is ordered |
+| 210.49(d) | Presidential review: 60 days from delivery of the Commission's action |
+
+Days are counted as 19 CFR 201.14(a) says: from the first business day after
+the event, the last day moved to the next business day when it is a weekend
+or federal holiday (5 U.S.C. 6103, with weekend observance), and periods
+under 7 days counted in business days (`nextactions/calendar.py`). Periods
+run from a document's EDIS date, its electronic service; extra days for
+mail service are not modeled.
+
+The stage follows the docket: before the ALJ until a final ID issues; then
+the review deadlines, replaced by an undated entry once the Commission
+extends the review date; then "decided to review" or "not to review" (a
+final ID of no violation left unreviewed concludes it); then a final
+determination, with a remedy starting Presidential review. A stay order
+without a later order lifting it adds a note.
+
+Two kinds of open case have nothing to show, and say why. The USITC lists
+about 90 investigations from the 1970s to the 2000s as "Active" with no
+dates at all (typically their remedial orders are still in force): "No
+schedule on record". Any case whose latest date is over two years old with
+nothing ahead: "No recent activity". Remand, enforcement, modification and
+advisory proceedings are out of scope for now and say so.
+
+The page picks the *next* event, and how many days away each one is,
+against the day it is viewed, so the tab stays right between syncs; with
+nothing dated ahead it shows "Awaiting decision" and what the case is waiting
+on. `next_actions.json` is rebuilt with counsel after every sync and fetch.
+
+Phase 2 will add the dates in the ALJs' procedural schedules (discovery,
+expert reports, briefs), read from the scheduling orders with Claude Haiku
+under its own $20 budget.
+
 ### Claims analysis
 
 ```
@@ -797,7 +860,8 @@ rewrites them in place without any API calls.
 `data/ids/` (the snapshots) and `data/investigations.json` are both rebuilt
 from the public feed by one offline-friendly command, and both are large and
 change every day, so they are not tracked. Nor is `data/counsel.json`, which
-`sync` rebuilds from those and the documents, nor `data/analytics/` (rebuilt
+`sync` rebuilds from those and the documents (nor `data/next_actions.json`,
+likewise), nor `data/analytics/` (rebuilt
 by `analytics`) except its `review_decisions.json`, which was paid for.
 `site/` is generated too.
 

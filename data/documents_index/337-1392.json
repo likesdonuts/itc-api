@@ -1,11 +1,35 @@
 [
   {
     "attachments": [],
+    "document_date": "2026-09-25",
+    "document_type": "Motion Response/Reply",
+    "filed_by": "Steve K. Shahida",
+    "firm_organization": "USITC",
+    "id": "895785",
+    "official_received_date": "2026-09-25T10:14:00",
+    "on_behalf_of": "Office of Unfair Import Investigations",
+    "security_level": "Public",
+    "title": "Commission Investigative Staff\u2019s Response to Complainant PAX Labs, Inc.\u2019s Renewed Motion for Leave to Supplement Contention Interrogatory Responses"
+  },
+  {
+    "attachments": [],
     "document_date": "2026-09-24",
     "document_type": "PO Subscription",
     "filed_by": "Ehsun Forghany",
     "firm_organization": "ArentFox Schiff LLP",
     "id": "895755",
+    "official_received_date": "2026-09-25T08:45:00",
+    "on_behalf_of": "STIIIZY IP LLC f/k/a STIIIZY, LLC and STIIIZY Inc. d/b/a Shryne Group Inc.",
+    "security_level": "Public",
+    "title": "Agreement to Be Bound by the Protective Order of Brian Sparks"
+  },
+  {
+    "attachments": [],
+    "document_date": "2026-09-24",
+    "document_type": "PO Subscription",
+    "filed_by": "Bryan Nese",
+    "firm_organization": "Mayer Brown LLP",
+    "id": "895754",
     "official_received_date": "2026-09-25T08:45:00",
     "on_behalf_of": "STIIIZY IP LLC f/k/a STIIIZY, LLC and STIIIZY Inc. d/b/a Shryne Group Inc.",
     "security_level": "Public",
@@ -1440,7 +1464,12 @@
     "title": "Response of STIIIZY to the Complainant PAX Labs Inc.'s Enforcement Complaint"
   },
   {
-    "attachments": [],
+    "attachments": [
+      {
+        "href": "../../data/documents/337-1392/887212_2576922_2576922.pdf",
+        "label": "2576922.pdf"
+      }
+    ],
     "document_date": "2026-07-07",
     "document_type": "Notice of Appearance",
     "filed_by": "Vu Bui",
@@ -1668,7 +1697,12 @@
     "title": "Agreement to Be Bound by the Protective Order of Lyle B. Vander Schaaf, Mark Supko, Kathryn L. Clune, Judy K. He, Fei Hu, Aaron Marx, Joanna Fuller, Hefeng Su, Joshua James, Savannah Gabriel, Elissa N. Tenenbaum, Yixin Bao, Jung Shin, and Emily Strickland"
   },
   {
-    "attachments": [],
+    "attachments": [
+      {
+        "href": "../../data/documents/337-1392/885063_2562402_2562402.pdf",
+        "label": "2562402.pdf"
+      }
+    ],
     "document_date": "2026-06-12",
     "document_type": "Notice of Appearance",
     "filed_by": "P. Andrew Riley",
@@ -1704,7 +1738,12 @@
     "title": "Agreement to be Bound by the Protective Order of Bryan C. Nese, Jasjit S. Vidwan, Amanda Stephenson, Paul Choi, Ehsun Forghany, Amar Naik, and Simon Kung"
   },
   {
-    "attachments": [],
+    "attachments": [
+      {
+        "href": "../../data/documents/337-1392/884941_2561641_2561641.pdf",
+        "label": "2561641.pdf"
+      }
+    ],
     "document_date": "2026-06-11",
     "document_type": "Notice of Appearance",
     "filed_by": "Lyle B. Vander Schaaf",
@@ -1752,7 +1791,12 @@
     "title": "Protective Order"
   },
   {
-    "attachments": [],
+    "attachments": [
+      {
+        "href": "../../data/documents/337-1392/884904_2561555_2561555.pdf",
+        "label": "2561555.pdf"
+      }
+    ],
     "document_date": "2026-06-11",
     "document_type": "Notice of Appearance",
     "filed_by": "Bryan C. Nese",
@@ -1764,7 +1808,12 @@
     "title": "Notice of Appearance of Mayer Brown LLP on Behalf of STIIIZY IP LLC f/k/a STIIIZY LLC and STIIIZY Inc. d/b/a Shryne Group Inc.; Designation of Bryan C. Nese as Lead Counsel"
   },
   {
-    "attachments": [],
+    "attachments": [
+      {
+        "href": "../../data/documents/337-1392/884692_2561106_2561106.pdf",
+        "label": "2561106.pdf"
+      }
+    ],
     "document_date": "2026-06-10",
     "document_type": "Notice of Appearance",
     "filed_by": "Vu Bui",
@@ -1908,7 +1957,12 @@
     "title": "Institution of Formal Enforcement Proceeding"
   },
   {
-    "attachments": [],
+    "attachments": [
+      {
+        "href": "../../data/documents/337-1392/883957_2557243_2557243.pdf",
+        "label": "2557243.pdf"
+      }
+    ],
     "document_date": "2026-06-02",
     "document_type": "Notice of Appearance",
     "filed_by": "Lyle B. Vander Schaaf",
@@ -2340,7 +2394,12 @@
     "title": "Respondents' Petition for Reconsideration of Commission Opinion"
   },
   {
-    "attachments": [],
+    "attachments": [
+      {
+        "href": "../../data/documents/337-1392/871421_2492646_2492646.pdf",
+        "label": "2492646.pdf"
+      }
+    ],
     "document_date": "2026-02-03",
     "document_type": "Notice of Appearance",
     "filed_by": "Lyle B. Vander Schaaf",
@@ -2388,7 +2447,12 @@
     "title": "Agreement to Be Bound by the Protective Order of Ehsun Forghany, Amar S. Naik, Simon F. Kung, Jasjit S. Vidwan, Bryan C. Nese, Nicole A. Saharsky, Minh Nguyen-Dang, Amanda E. Stephenson, and Paul Choi"
   },
   {
-    "attachments": [],
+    "attachments": [
+      {
+        "href": "../../data/documents/337-1392/871073_2491306_2491306.pdf",
+        "label": "2491306.pdf"
+      }
+    ],
     "document_date": "2026-02-02",
     "document_type": "Notice of Appearance",
     "filed_by": "Ehsun Forghany",
@@ -5028,7 +5092,12 @@
     "title": "Complainant's PAX Labs Inc.'s Amended Motion to Withdraw Certain Claims in the Second Amended Complaint Related to U.S. Patent No. 11,766,527"
   },
   {
-    "attachments": [],
+    "attachments": [
+      {
+        "href": "../../data/documents/337-1392/825603_2200546_2200546.pdf",
+        "label": "2200546.pdf"
+      }
+    ],
     "document_date": "2024-07-10",
     "document_type": "Notice of Appearance",
     "filed_by": "Lyle B. Vander Schaaf",
@@ -5436,7 +5505,12 @@
     "title": "Unopposed Motion of Non-Party JUUL Labs, Inc. for an Extension of Time to Respond to Subpoenas Duces Tecum and Ad Testificandum"
   },
   {
-    "attachments": [],
+    "attachments": [
+      {
+        "href": "../../data/documents/337-1392/820095_2166763_2166763.pdf",
+        "label": "2166763.pdf"
+      }
+    ],
     "document_date": "2024-04-30",
     "document_type": "Notice of Appearance",
     "filed_by": "Michael T. Renaud",
@@ -5532,7 +5606,12 @@
     "title": "Agreement to Be Bound by the Protective Order of Judy He"
   },
   {
-    "attachments": [],
+    "attachments": [
+      {
+        "href": "../../data/documents/337-1392/817633_2152859_2152859.pdf",
+        "label": "2152859.pdf"
+      }
+    ],
     "document_date": "2024-04-04",
     "document_type": "Notice of Appearance",
     "filed_by": "Lyle B. Vander Schaaf",
@@ -5736,7 +5815,12 @@
     "title": "Agreement to Be Bound by the Protective Order of P. Andrew Riley, Lei Mei, Robert A. Hall, Laurence M. Sandell, and Jiwei Zhang"
   },
   {
-    "attachments": [],
+    "attachments": [
+      {
+        "href": "../../data/documents/337-1392/815620_2129360_2129360.pdf",
+        "label": "2129360.pdf"
+      }
+    ],
     "document_date": "2024-03-07",
     "document_type": "Notice of Appearance",
     "filed_by": "P. Andrew Riley",
@@ -5796,7 +5880,12 @@
     "title": "Protective Order"
   },
   {
-    "attachments": [],
+    "attachments": [
+      {
+        "href": "../../data/documents/337-1392/815330_2126430_2126430.pdf",
+        "label": "2126430.pdf"
+      }
+    ],
     "document_date": "2024-03-01",
     "document_type": "Notice of Appearance",
     "filed_by": "Lyle B. Vander Schaaf",
@@ -5808,7 +5897,12 @@
     "title": "Notice of Appearance of Crowell & Moring LLP on Behalf of PAX Labs, Inc.; Designation of Lyle B. Vander Schaaf as Lead Counsel"
   },
   {
-    "attachments": [],
+    "attachments": [
+      {
+        "href": "../../data/documents/337-1392/815283_2126246_2126246.pdf",
+        "label": "2126246.pdf"
+      }
+    ],
     "document_date": "2024-03-01",
     "document_type": "Notice of Appearance",
     "filed_by": "Stephen R. Smith",

@@ -1,6 +1,18 @@
 [
   {
     "attachments": [],
+    "document_date": "2026-09-25",
+    "document_type": "Response/Submission to ALJ Order",
+    "filed_by": "Sudip Kundu",
+    "firm_organization": "DTO Law",
+    "id": "895816",
+    "official_received_date": "2026-09-25T14:20:00",
+    "on_behalf_of": "Adrian Rivera Maynez Enterprises, Inc. and Denys Orlov d/b/a GoodCups",
+    "security_level": "Public",
+    "title": "Joint Statement Identifying Accused Products"
+  },
+  {
+    "attachments": [],
     "document_date": "2026-09-18",
     "document_type": "Notice of Prior Art",
     "filed_by": "Daniel S. Bretzius",
@@ -276,7 +288,12 @@
     "title": "Response of Respondent Denys Orlov to the First Amended Complaint and Notice of Institution of Investigation"
   },
   {
-    "attachments": [],
+    "attachments": [
+      {
+        "href": "../../data/documents/337-1485/875573_2518989_2518989.pdf",
+        "label": "2518989.pdf"
+      }
+    ],
     "document_date": "2026-03-16",
     "document_type": "Notice of Appearance",
     "filed_by": "Daniel S. Bretzius",
@@ -360,7 +377,12 @@
     "title": "Protective Order"
   },
   {
-    "attachments": [],
+    "attachments": [
+      {
+        "href": "../../data/documents/337-1485/873615_2506665_2506665.pdf",
+        "label": "2506665.pdf"
+      }
+    ],
     "document_date": "2026-02-25",
     "document_type": "Notice of Appearance",
     "filed_by": "Sudip K. Kundu",

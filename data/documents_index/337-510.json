@@ -4944,7 +4944,12 @@
     "title": "Notice of Institution"
   },
   {
-    "attachments": [],
+    "attachments": [
+      {
+        "href": "../../data/documents/337-510/207997_221022_221022.pdf",
+        "label": "221022.pdf"
+      }
+    ],
     "document_date": "2004-06-03",
     "document_type": "Notice of Appearance",
     "filed_by": "Sturgis M. Sobin",

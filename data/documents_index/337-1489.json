@@ -1,6 +1,42 @@
 [
   {
     "attachments": [],
+    "document_date": "2026-09-24",
+    "document_type": "Notice",
+    "filed_by": "Lisa R. Barton",
+    "firm_organization": "USITC",
+    "id": "895716",
+    "official_received_date": "2026-09-24T16:25:00",
+    "on_behalf_of": "Office of the Secretary",
+    "security_level": "Public",
+    "title": "Commission Determination to Authorize Judicial Enforcement of Subpoenas"
+  },
+  {
+    "attachments": [],
+    "document_date": "2026-09-23",
+    "document_type": "Brief Filed With ALJ",
+    "filed_by": "Christopher L. May",
+    "firm_organization": "Devlin Law Firm LLC",
+    "id": "895599",
+    "official_received_date": "2026-09-23T16:30:00",
+    "on_behalf_of": "AX Wireless, LLC",
+    "security_level": "Public",
+    "title": "Complainants Responsive Claim Construction Brief"
+  },
+  {
+    "attachments": [],
+    "document_date": "2026-09-23",
+    "document_type": "Brief Filed With ALJ",
+    "filed_by": "Joseph V. Colaianni, Jr.",
+    "firm_organization": "Fish & Richardson P.C.",
+    "id": "895586",
+    "official_received_date": "2026-09-23T16:09:00",
+    "on_behalf_of": "ASUSTeK Computer Inc., ASUS Computer International, and Ubiquiti Inc.",
+    "security_level": "Public",
+    "title": "Respondents' Responsive Claim Construction Brief"
+  },
+  {
+    "attachments": [],
     "document_date": "2026-09-22",
     "document_type": "Motion Response/Reply",
     "filed_by": "John Shin",
@@ -1116,7 +1152,12 @@
     "title": "Agreement to Be Bound by the Protective Order of Chad S. Campbell, Tyler R. Bowen, Bryan S. Bank, Makenzi A. Galvan, Jonathan R. Carter, Veronica S. Ascarrunz, Yuanfeng Gao, Christina J. McCullough, Cory Owan, Moeka Takagi, and Atanas Baitchev"
   },
   {
-    "attachments": [],
+    "attachments": [
+      {
+        "href": "../../data/documents/337-1489/874999_2516014_2516014.pdf",
+        "label": "2516014.pdf"
+      }
+    ],
     "document_date": "2026-03-10",
     "document_type": "Notice of Appearance",
     "filed_by": "Jon R. Carter",
@@ -1188,7 +1229,12 @@
     "title": "Agreement to Be Bound by the Protective Order of Christopher L. May, Timothy Devlin, Lowell Jacobson, Joel Glazer, Andrew Sherman, Srikant Cheruvu, Hayden Corrales, Tracey Starck, and Chad Henson"
   },
   {
-    "attachments": [],
+    "attachments": [
+      {
+        "href": "../../data/documents/337-1489/874899_2515404_2515404.pdf",
+        "label": "2515404.pdf"
+      }
+    ],
     "document_date": "2026-03-09",
     "document_type": "Notice of Appearance",
     "filed_by": "Christopher Kao",
@@ -1224,7 +1270,12 @@
     "title": "Agreement to Be Bound by the Protective Order of Joseph V. Colaianni, Jr., Linhong Zhang, Sunyoung Park, Qiwei Claire Xue, Andrew Pearson, Eli Svetlov, and Riley Green"
   },
   {
-    "attachments": [],
+    "attachments": [
+      {
+        "href": "../../data/documents/337-1489/874813_2514723_2514723.pdf",
+        "label": "2514723.pdf"
+      }
+    ],
     "document_date": "2026-03-09",
     "document_type": "Notice of Appearance",
     "filed_by": "Christopher L. May",
@@ -1272,7 +1323,12 @@
     "title": "Protective Order"
   },
   {
-    "attachments": [],
+    "attachments": [
+      {
+        "href": "../../data/documents/337-1489/874806_2514706_2514706.pdf",
+        "label": "2514706.pdf"
+      }
+    ],
     "document_date": "2026-03-09",
     "document_type": "Notice of Appearance",
     "filed_by": "David Conrad",
@@ -1284,7 +1340,12 @@
     "title": "Notice of Appearance of Fish & Richardson, P.C. on Behalf of Ubiquiti Inc.; Designation of David Conrad as Lead Counsel"
   },
   {
-    "attachments": [],
+    "attachments": [
+      {
+        "href": "../../data/documents/337-1489/874805_2514702_2514702.pdf",
+        "label": "2514702.pdf"
+      }
+    ],
     "document_date": "2026-03-09",
     "document_type": "Notice of Appearance",
     "filed_by": "Joseph V. Colaianni, Jr.",

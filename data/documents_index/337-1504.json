@@ -1,6 +1,18 @@
 [
   {
     "attachments": [],
+    "document_date": "2026-09-24",
+    "document_type": "Other",
+    "filed_by": "Frank D. Liu",
+    "firm_organization": "Troutman Pepper Locke LLP",
+    "id": "895701",
+    "official_received_date": "2026-09-24T15:24:00",
+    "on_behalf_of": "Cerence Operating Company, Amazon.com Inc., and Amazon.com Services LLC",
+    "security_level": "Public",
+    "title": "Joint Claim Construction Chart"
+  },
+  {
+    "attachments": [],
     "document_date": "2026-09-18",
     "document_type": "PO Subscription",
     "filed_by": "Stephanie L. Roberts",
@@ -348,7 +360,12 @@
     "title": "Protective Order"
   },
   {
-    "attachments": [],
+    "attachments": [
+      {
+        "href": "../../data/documents/337-1504/884804_2561384_2561384.pdf",
+        "label": "2561384.pdf"
+      }
+    ],
     "document_date": "2026-06-10",
     "document_type": "Notice of Appearance",
     "filed_by": "Stephanie L. Roberts",
@@ -384,7 +401,12 @@
     "title": "F.R. Notice of Institution of Investigation"
   },
   {
-    "attachments": [],
+    "attachments": [
+      {
+        "href": "../../data/documents/337-1504/884619_2560918_2560918.pdf",
+        "label": "2560918.pdf"
+      }
+    ],
     "document_date": "2026-06-09",
     "document_type": "Notice of Appearance",
     "filed_by": "William D. Belanger",

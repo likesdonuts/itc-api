@@ -312,7 +312,12 @@
     "title": "F.R.  Notice of Institution of Investigation"
   },
   {
-    "attachments": [],
+    "attachments": [
+      {
+        "href": "../../data/documents/337-1385/812080_2099791_2099791.pdf",
+        "label": "2099791.pdf"
+      }
+    ],
     "document_date": "2024-01-16",
     "document_type": "Notice of Appearance",
     "filed_by": "Lynda Zadra Symes",
@@ -396,7 +401,12 @@
     "title": "Protective Order"
   },
   {
-    "attachments": [],
+    "attachments": [
+      {
+        "href": "../../data/documents/337-1385/811945_2099000_2099000.pdf",
+        "label": "2099000.pdf"
+      }
+    ],
     "document_date": "2024-01-12",
     "document_type": "Notice of Appearance",
     "filed_by": "Adam R. Hess",

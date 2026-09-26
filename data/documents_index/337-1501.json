@@ -1,6 +1,30 @@
 [
   {
     "attachments": [],
+    "document_date": "2026-09-24",
+    "document_type": "Brief Filed With ALJ",
+    "filed_by": "Smith R. Brittingham IV",
+    "firm_organization": "Finnegan, Henderson, Farabow, Garrett & Dunner LLP",
+    "id": "895735",
+    "official_received_date": "2026-09-24T17:06:00",
+    "on_behalf_of": "Promotion In Motion, Inc.",
+    "security_level": "Public",
+    "title": "Complainant Promotion In Motion, Inc.\u2019s Opening Claim Construction Brief"
+  },
+  {
+    "attachments": [],
+    "document_date": "2026-09-24",
+    "document_type": "Brief Filed With ALJ",
+    "filed_by": "Michael A. Pearson, Jr.",
+    "firm_organization": "Kirkland & Ellis LLP",
+    "id": "895727",
+    "official_received_date": "2026-09-24T16:56:00",
+    "on_behalf_of": "New Cibo Vita, LLC, Cibo Vita, Inc., Cibo Vita Founders Inc., and AnaBio Technologies Unlimited Company",
+    "security_level": "Public",
+    "title": "Respondents' Initial Markman Brief"
+  },
+  {
+    "attachments": [],
     "document_date": "2026-09-04",
     "document_type": "Notice",
     "filed_by": "Lisa R. Barton",
@@ -468,7 +492,12 @@
     "title": "Agreement to Be Bound by the Protective Order of Benjamin Levi, Rett Snotherly, Tom Schaumberg, Joseph Casino, and Howard Wizenfeld"
   },
   {
-    "attachments": [],
+    "attachments": [
+      {
+        "href": "../../data/documents/337-1501/883997_2557339_2557339.pdf",
+        "label": "2557339.pdf"
+      }
+    ],
     "document_date": "2026-06-02",
     "document_type": "Notice of Appearance",
     "filed_by": "Michael A. Pearson, Jr.",
@@ -504,7 +533,12 @@
     "title": "Protective Order"
   },
   {
-    "attachments": [],
+    "attachments": [
+      {
+        "href": "../../data/documents/337-1501/883974_2557291_2557291.pdf",
+        "label": "2557291.pdf"
+      }
+    ],
     "document_date": "2026-06-02",
     "document_type": "Notice of Appearance",
     "filed_by": "Benjamin Levi",
@@ -516,7 +550,12 @@
     "title": "Notice of Appearance of Levi Snotherly & Schaumberg, PLLC and Wiggin and Dana, LLP on Behalf of AnaBio Technologies Unlimited Company; Designation of Benjamin Levi as Lead Counsel"
   },
   {
-    "attachments": [],
+    "attachments": [
+      {
+        "href": "../../data/documents/337-1501/883953_2557184_2557184.pdf",
+        "label": "2557184.pdf"
+      }
+    ],
     "document_date": "2026-06-02",
     "document_type": "Notice of Appearance",
     "filed_by": "Smith R. Brittingham IV",

@@ -480,7 +480,12 @@
     "title": "Nondisclosure Agreement"
   },
   {
-    "attachments": [],
+    "attachments": [
+      {
+        "href": "../../data/documents/337-570/257299_291613_291613.pdf",
+        "label": "291613.pdf"
+      }
+    ],
     "document_date": "2006-06-26",
     "document_type": "Notice of Appearance",
     "filed_by": "Stephen E. Kabakoff",
@@ -1128,7 +1133,12 @@
     "title": "Notice of Investigation"
   },
   {
-    "attachments": [],
+    "attachments": [
+      {
+        "href": "../../data/documents/337-570/253936_287627_287627.pdf",
+        "label": "287627.pdf"
+      }
+    ],
     "document_date": "2006-05-11",
     "document_type": "Notice of Appearance",
     "filed_by": "Doris Hines",

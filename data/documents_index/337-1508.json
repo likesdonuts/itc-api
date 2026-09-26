@@ -336,7 +336,12 @@
     "title": "Protective Order"
   },
   {
-    "attachments": [],
+    "attachments": [
+      {
+        "href": "../../data/documents/337-1508/886789_2574775_2574775.pdf",
+        "label": "2574775.pdf"
+      }
+    ],
     "document_date": "2026-07-01",
     "document_type": "Notice of Appearance",
     "filed_by": "Gary M. Hnath",
@@ -348,7 +353,12 @@
     "title": "Notice of Appearance of Mayer Brown on Behalf of  Nanomics Biotechnology Co., Ltd.; Designation of Gary M. Hnath as Lead Counsel"
   },
   {
-    "attachments": [],
+    "attachments": [
+      {
+        "href": "../../data/documents/337-1508/886685_2574548_2574548.pdf",
+        "label": "2574548.pdf"
+      }
+    ],
     "document_date": "2026-07-01",
     "document_type": "Notice of Appearance",
     "filed_by": "Lauren E. Peterson",

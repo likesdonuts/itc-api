@@ -1,6 +1,18 @@
 [
   {
     "attachments": [],
+    "document_date": "2026-09-24",
+    "document_type": "PO Subscription",
+    "filed_by": "Benjamin C. Elacqua",
+    "firm_organization": "Fish & Richardson P.C.",
+    "id": "895677",
+    "official_received_date": "2026-09-24T12:20:00",
+    "on_behalf_of": "NJOY, LLC, Altria Client Services LLC, and Altria Group Distribution Company",
+    "security_level": "Public",
+    "title": "Agreement to Be Bound by the Protective Order of John Lane"
+  },
+  {
+    "attachments": [],
     "document_date": "2026-09-18",
     "document_type": "PO Subscription",
     "filed_by": "Timothy J. Rousseau",
@@ -636,7 +648,12 @@
     "title": "Granting-in-Part Complainant' Motion to Strike Respondent's Expert Report regarding Domestic Industry"
   },
   {
-    "attachments": [],
+    "attachments": [
+      {
+        "href": "../../data/documents/337-1469/892057_2609306_2609306.pdf",
+        "label": "2609306.pdf"
+      }
+    ],
     "document_date": "2026-08-19",
     "document_type": "Notice of Appearance",
     "filed_by": "Timothy J. Rousseau",
@@ -2052,7 +2069,12 @@
     "title": "Notice of Withdrawal of Appearance of Derrick J. Carman from Robins Kaplan LLP on Behalf of Non- Party Robins Kaplan LLP"
   },
   {
-    "attachments": [],
+    "attachments": [
+      {
+        "href": "../../data/documents/337-1469/881761_2545605_2545605.pdf",
+        "label": "2545605.pdf"
+      }
+    ],
     "document_date": "2026-05-08",
     "document_type": "Notice of Appearance",
     "filed_by": "Steven C. Carlson",
@@ -2184,7 +2206,12 @@
     "title": "Verified Confidential Complaint under Section 337 of the Tariff Act of 1930, as Amended"
   },
   {
-    "attachments": [],
+    "attachments": [
+      {
+        "href": "../../data/documents/337-1469/878831_2532694_2532694.pdf",
+        "label": "2532694.pdf"
+      }
+    ],
     "document_date": "2026-04-14",
     "document_type": "Notice of Appearance",
     "filed_by": "Tasneem Dharamsi",
@@ -2232,7 +2259,12 @@
     "title": "Respondent's Amended Response to the Complaint and Notice of Investigation"
   },
   {
-    "attachments": [],
+    "attachments": [
+      {
+        "href": "../../data/documents/337-1469/878354_2530229_2530229.pdf",
+        "label": "2530229.pdf"
+      }
+    ],
     "document_date": "2026-04-09",
     "document_type": "Notice of Appearance",
     "filed_by": "Corri A. Hopkins",
@@ -2592,7 +2624,12 @@
     "title": "Motion of Non-Party Robins Kaplan LLP for an Extension of Time to Quash or Limit Respondent's Subpoena Duces Tecum"
   },
   {
-    "attachments": [],
+    "attachments": [
+      {
+        "href": "../../data/documents/337-1469/872466_2498188_2498188.pdf",
+        "label": "2498188.pdf"
+      }
+    ],
     "document_date": "2026-02-12",
     "document_type": "Notice of Appearance",
     "filed_by": "Derrick J. Carman",
@@ -2796,7 +2833,12 @@
     "title": "Granting Motion of Non-Parties R.J. Reynolds Vapor Company, R.J. Reynolds Tobacco Company, Rai Services Company, and Rai Strategic Holdings, Inc. for an Extension of Time to Quash or Limit Complainants\u2019 Subpoenas Duces Tecum and Ad Testificandum"
   },
   {
-    "attachments": [],
+    "attachments": [
+      {
+        "href": "../../data/documents/337-1469/869161_2478403_2478403.pdf",
+        "label": "2478403.pdf"
+      }
+    ],
     "document_date": "2026-01-15",
     "document_type": "Notice of Appearance",
     "filed_by": "David M. Maiorana",
@@ -2988,7 +3030,12 @@
     "title": "Protective Order"
   },
   {
-    "attachments": [],
+    "attachments": [
+      {
+        "href": "../../data/documents/337-1469/867199_2468103_2468103.pdf",
+        "label": "2468103.pdf"
+      }
+    ],
     "document_date": "2025-12-22",
     "document_type": "Notice of Appearance",
     "filed_by": "Timothy J. Rousseau",
@@ -3000,7 +3047,12 @@
     "title": "Notice of Appearance of Mintz, Levin, Cohn, Ferris, Glovsky and Popeo, P.C. on Behalf of JUUL Labs, Inc.; Designation of Timothy J. Rousseau as Lead Counsel for Service of Process"
   },
   {
-    "attachments": [],
+    "attachments": [
+      {
+        "href": "../../data/documents/337-1469/867118_2467967_2467967.pdf",
+        "label": "2467967.pdf"
+      }
+    ],
     "document_date": "2025-12-22",
     "document_type": "Notice of Appearance",
     "filed_by": "Benjamin C. Elacqua",

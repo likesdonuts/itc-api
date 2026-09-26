@@ -2501,11 +2501,11 @@
     "document_type": "Motion Response/Reply",
     "filed_by": "Oleg Elkhunovich",
     "firm_organization": "Susman Godfrey L.L.P.",
-    "id": "819603",
+    "id": "819606",
     "official_received_date": "2024-04-25T08:45:00",
     "on_behalf_of": "Vicor Corporation",
     "security_level": "Public",
-    "title": "Complainant Vicor Corporation's Response to Respondents' Motion in Limine No. 1 to Preclude Dr. Fayed's out of Scope Opinions regarding Infringement of the '481 Patent"
+    "title": "Complainant Vicor Corporation's Opposition to Respondents' Motion in Limine No. 5"
   },
   {
     "attachments": [],
@@ -2513,11 +2513,11 @@
     "document_type": "Motion Response/Reply",
     "filed_by": "Oleg Elkhunovich",
     "firm_organization": "Susman Godfrey L.L.P.",
-    "id": "819606",
+    "id": "819603",
     "official_received_date": "2024-04-25T08:45:00",
     "on_behalf_of": "Vicor Corporation",
     "security_level": "Public",
-    "title": "Complainant Vicor Corporation's Opposition to Respondents' Motion in Limine No. 5"
+    "title": "Complainant Vicor Corporation's Response to Respondents' Motion in Limine No. 1 to Preclude Dr. Fayed's out of Scope Opinions regarding Infringement of the '481 Patent"
   },
   {
     "attachments": [],
@@ -3288,7 +3288,12 @@
     "title": "Granting in Part Respondents' Motion to Strike Dr. Seth's and Dr. Fayed's Supplemental Opinions"
   },
   {
-    "attachments": [],
+    "attachments": [
+      {
+        "href": "../../data/documents/337-1370/817421_2151559_2151559.pdf",
+        "label": "2151559.pdf"
+      }
+    ],
     "document_date": "2024-04-02",
     "document_type": "Notice of Appearance",
     "filed_by": "Oleg Elkhunovich",
@@ -4116,7 +4121,12 @@
     "title": "Amended Complaint"
   },
   {
-    "attachments": [],
+    "attachments": [
+      {
+        "href": "../../data/documents/337-1370/813693_2115065_2115065.pdf",
+        "label": "2115065.pdf"
+      }
+    ],
     "document_date": "2024-02-08",
     "document_type": "Notice of Appearance",
     "filed_by": "Paul F. Brinkman",
@@ -4380,7 +4390,12 @@
     "title": "Agreement to Be Bound by the Protective Order of Alex Stemkovsky"
   },
   {
-    "attachments": [],
+    "attachments": [
+      {
+        "href": "../../data/documents/337-1370/812679_2103979_2103979.pdf",
+        "label": "2103979.pdf"
+      }
+    ],
     "document_date": "2024-01-26",
     "document_type": "Notice of Appearance",
     "filed_by": "Alex Stemkovsky",
@@ -4476,7 +4491,12 @@
     "title": "Agreement to Be Bound by the Protective Order of Ari Ruben"
   },
   {
-    "attachments": [],
+    "attachments": [
+      {
+        "href": "../../data/documents/337-1370/812475_2101873_2101873.pdf",
+        "label": "2101873.pdf"
+      }
+    ],
     "document_date": "2024-01-23",
     "document_type": "Notice of Appearance",
     "filed_by": "Ari Ruben",
@@ -4668,7 +4688,12 @@
     "title": "Complainant Vicor Corporation's Opposition to the Foxconn Respondents' Motion to Terminate"
   },
   {
-    "attachments": [],
+    "attachments": [
+      {
+        "href": "../../data/documents/337-1370/812072_2099769_2099769.pdf",
+        "label": "2099769.pdf"
+      }
+    ],
     "document_date": "2024-01-16",
     "document_type": "Notice of Appearance",
     "filed_by": "Jason E. Stach",
@@ -4680,7 +4705,12 @@
     "title": "Notice of Limited Appearance of Finnegan, Henderson, Farabow, Garrett & Dunner, LLP on Behalf of Non-Party Mobashar Yazdani; Designation of Jason E. Stach as Lead Counsel"
   },
   {
-    "attachments": [],
+    "attachments": [
+      {
+        "href": "../../data/documents/337-1370/812069_2099753_2099753.pdf",
+        "label": "2099753.pdf"
+      }
+    ],
     "document_date": "2024-01-16",
     "document_type": "Notice of Appearance",
     "filed_by": "Jason E. Stach",
@@ -4764,7 +4794,12 @@
     "title": "Agreement to Be Bound by the Protective Order of of Marcus E. Sernel and Philip M. Cooper"
   },
   {
-    "attachments": [],
+    "attachments": [
+      {
+        "href": "../../data/documents/337-1370/811866_2098494_2098494.pdf",
+        "label": "2098494.pdf"
+      }
+    ],
     "document_date": "2024-01-11",
     "document_type": "Notice of Appearance",
     "filed_by": "Paul F. Brinkman",
@@ -4860,7 +4895,12 @@
     "title": "Complainant Vicor Corporation's Opposition to the Foxconn Respondents' Motion to Terminate"
   },
   {
-    "attachments": [],
+    "attachments": [
+      {
+        "href": "../../data/documents/337-1370/811648_2097136_2097136.pdf",
+        "label": "2097136.pdf"
+      }
+    ],
     "document_date": "2024-01-08",
     "document_type": "Notice of Appearance",
     "filed_by": "Hannah L. Cannom",
@@ -5208,7 +5248,12 @@
     "title": "Agreement to Be Bound by the Protective Order of Leah Ehler, Joshua J. Lustig, and David Levin"
   },
   {
-    "attachments": [],
+    "attachments": [
+      {
+        "href": "../../data/documents/337-1370/810355_2081917_2081917.pdf",
+        "label": "2081917.pdf"
+      }
+    ],
     "document_date": "2023-12-13",
     "document_type": "Notice of Appearance",
     "filed_by": "Paul F. Brinkman",
@@ -5220,7 +5265,12 @@
     "title": "Supplemental Notice of Appearance; Additional Attorneys from Kirkland & Ellis LLP on Behalf of Cyntec Co., Ltd., Delta Electronics, Inc., Delta Electronics (Americas) Ltd., Delta Electronics (USA) Inc., Hon Hai Precision Industry Co. Ltd. (d/b/a Foxconn Technology Group), Foxconn Industrial Internet Co. Ltd., FII USA Inc. (a/k/a Foxconn Industrial Internet USA Inc.), Quanta Computer Inc., Quanta Computer USA Inc., Quanta Cloud Technology USA LLC, Quanta Cloud Technology Inc., Ingrasys Technology Inc., and Ingrasys Technology USA Inc."
   },
   {
-    "attachments": [],
+    "attachments": [
+      {
+        "href": "../../data/documents/337-1370/810341_2081749_2081749.pdf",
+        "label": "2081749.pdf"
+      }
+    ],
     "document_date": "2023-12-13",
     "document_type": "Notice of Appearance",
     "filed_by": "Steven M. Seigel",
@@ -5376,7 +5426,12 @@
     "title": "Infineon Technologies Americas Corp.'s Unopposed Motion for Extension of Time to Respond to Subpoena"
   },
   {
-    "attachments": [],
+    "attachments": [
+      {
+        "href": "../../data/documents/337-1370/808401_2069479_2069479.pdf",
+        "label": "2069479.pdf"
+      }
+    ],
     "document_date": "2023-11-13",
     "document_type": "Notice of Appearance",
     "filed_by": "Gregory F. Corbett",
@@ -5460,7 +5515,12 @@
     "title": "Agreement to Be Bound by the Protective Order of Guy Ruttenberg"
   },
   {
-    "attachments": [],
+    "attachments": [
+      {
+        "href": "../../data/documents/337-1370/806616_2059641_2059641.pdf",
+        "label": "2059641.pdf"
+      }
+    ],
     "document_date": "2023-10-20",
     "document_type": "Notice of Appearance",
     "filed_by": "Guy Ruttenberg",
@@ -5496,7 +5556,12 @@
     "title": "Agreement to Be Bound by the Protective Order of Dinis Cheian"
   },
   {
-    "attachments": [],
+    "attachments": [
+      {
+        "href": "../../data/documents/337-1370/805616_2051300_2051300.pdf",
+        "label": "2051300.pdf"
+      }
+    ],
     "document_date": "2023-10-10",
     "document_type": "Notice of Appearance",
     "filed_by": "Dinis Cheian",
@@ -5736,7 +5801,12 @@
     "title": "Agreement to Be Bound by the Protective Order of Jiaxiao Zhang"
   },
   {
-    "attachments": [],
+    "attachments": [
+      {
+        "href": "../../data/documents/337-1370/804068_2043105_2043105.pdf",
+        "label": "2043105.pdf"
+      }
+    ],
     "document_date": "2023-09-08",
     "document_type": "Notice of Appearance",
     "filed_by": "Jason E. Stach",
@@ -5916,7 +5986,12 @@
     "title": "Agreement to Be Bound by the Protective Order of Paul F. Brinkman, Russell E. Levine, John R. Rhine, Nyika O. Strickland, Tareq M. Alosh, Jake Rambeau, Tiffany M. Knapp, and Josh Glucoft"
   },
   {
-    "attachments": [],
+    "attachments": [
+      {
+        "href": "../../data/documents/337-1370/802693_2035066_2035066.pdf",
+        "label": "2035066.pdf"
+      }
+    ],
     "document_date": "2023-08-18",
     "document_type": "Notice of Appearance",
     "filed_by": "Paul F. Brinkman",
@@ -5964,7 +6039,12 @@
     "title": "Protective Order"
   },
   {
-    "attachments": [],
+    "attachments": [
+      {
+        "href": "../../data/documents/337-1370/802669_2034974_2034974.pdf",
+        "label": "2034974.pdf"
+      }
+    ],
     "document_date": "2023-08-18",
     "document_type": "Notice of Appearance",
     "filed_by": "Louis S. Mastriani",

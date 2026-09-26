@@ -1,6 +1,78 @@
 [
   {
     "attachments": [],
+    "document_date": "2026-09-25",
+    "document_type": "Brief Filed With ALJ",
+    "filed_by": "Sarah J. Sladic",
+    "firm_organization": "USITC",
+    "id": "895845",
+    "official_received_date": "2026-09-25T15:21:00",
+    "on_behalf_of": "Office of Unfair Import Investigations",
+    "security_level": "Public",
+    "title": "Commission Investigative Staff's Opening Claim Construction Brief"
+  },
+  {
+    "attachments": [],
+    "document_date": "2026-09-25",
+    "document_type": "Response/Submission to ALJ Order",
+    "filed_by": "Daniel E. Valencia",
+    "firm_organization": "Winston Taylor LLP",
+    "id": "895813",
+    "official_received_date": "2026-09-25T13:53:00",
+    "on_behalf_of": "Xockets Inc., NVIDIA Corporation, Microsoft Corporation, Amazon.com, Inc., Amazon Web Services, Inc., and Annapurna Labs (U.S.), Inc.",
+    "security_level": "Public",
+    "title": "Private Parties' Joint Response Order No. 17"
+  },
+  {
+    "attachments": [],
+    "document_date": "2026-09-24",
+    "document_type": "PO Subscription",
+    "filed_by": "Daniel E. Valencia",
+    "firm_organization": "Winston Taylor LLP",
+    "id": "895753",
+    "official_received_date": "2026-09-25T08:45:00",
+    "on_behalf_of": "NVIDIA Corporation, Microsoft Corporation, Amazon.com, Inc., Amazon Web Services, Inc. and Annapurna Labs (U.S.), Inc.",
+    "security_level": "Public",
+    "title": "Agreement to Be Bound by the Protective Order of William Lehr"
+  },
+  {
+    "attachments": [],
+    "document_date": "2026-09-24",
+    "document_type": "Order",
+    "filed_by": "Doris Johnson Hines",
+    "firm_organization": "USITC",
+    "id": "895681",
+    "official_received_date": "2026-09-24T12:51:00",
+    "on_behalf_of": "Administrative Law Judge",
+    "security_level": "Public",
+    "title": "Granting Motion for Extension of Time"
+  },
+  {
+    "attachments": [],
+    "document_date": "2026-09-24",
+    "document_type": "PO Subscription",
+    "filed_by": "Derek A. Gosma",
+    "firm_organization": "Wilmer Cutler Pickering Hale and Dorr LLP",
+    "id": "895678",
+    "official_received_date": "2026-09-24T12:30:00",
+    "on_behalf_of": "NVIDIA Corporation",
+    "security_level": "Public",
+    "title": "Agreement to Be Bound by the Protective Order of Myles McDonagh"
+  },
+  {
+    "attachments": [],
+    "document_date": "2026-09-24",
+    "document_type": "Order",
+    "filed_by": "Doris Johnson Hines",
+    "firm_organization": "USITC",
+    "id": "895671",
+    "official_received_date": "2026-09-24T11:36:00",
+    "on_behalf_of": "Administrative Law Judge",
+    "security_level": "Public",
+    "title": "Granting Leave to File out of Time"
+  },
+  {
+    "attachments": [],
     "document_date": "2026-09-23",
     "document_type": "Motion",
     "filed_by": "Daniel E. Valencia",
@@ -84,7 +156,12 @@
     "title": "Agreement to Be Bound by the Protective Order of Carrie A. Beyer and Kelly J. Fermoyle"
   },
   {
-    "attachments": [],
+    "attachments": [
+      {
+        "href": "../../data/documents/337-1505/895361_2623520_2623520.pdf",
+        "label": "2623520.pdf"
+      }
+    ],
     "document_date": "2026-09-22",
     "document_type": "Notice of Appearance",
     "filed_by": "Daniel E. Valencia",
@@ -96,7 +173,12 @@
     "title": "Supplemental Notice of Appearance; Additional Attorneys from Winston Taylor LLP, DLA Piper LLP (US), Hueston Hennigan LLP, and Wilmerhale on Behalf of Amazon.com, Inc., Amazon Web Services, Inc., and Annapurna Labs (U.S.), Inc."
   },
   {
-    "attachments": [],
+    "attachments": [
+      {
+        "href": "../../data/documents/337-1505/895360_2623518_2623518.pdf",
+        "label": "2623518.pdf"
+      }
+    ],
     "document_date": "2026-09-22",
     "document_type": "Notice of Appearance",
     "filed_by": "Daniel E. Valencia",
@@ -192,7 +274,12 @@
     "title": "Agreement to Be Bound by the Protective Order of Arthur W. Coviello, Colin P. Dunn, Derek A. Gosma, Jorge Kina, Alyssa K. Milstead, Benjamin T. Morris, Tom Saunders, Yemaj Sheik, and Michael J. Summersgill"
   },
   {
-    "attachments": [],
+    "attachments": [
+      {
+        "href": "../../data/documents/337-1505/895008_2621043_2621043.pdf",
+        "label": "2621043.pdf"
+      }
+    ],
     "document_date": "2026-09-16",
     "document_type": "Notice of Appearance",
     "filed_by": "Daniel E. Valencia",
@@ -528,7 +615,12 @@
     "title": "Complainant Xockets, Inc.'s Reply to the Commission Investigative Staff's Supplemental Brief Pursuant to Order No. 11"
   },
   {
-    "attachments": [],
+    "attachments": [
+      {
+        "href": "../../data/documents/337-1505/891485_2606640_2606640.pdf",
+        "label": "2606640.pdf"
+      }
+    ],
     "document_date": "2026-08-13",
     "document_type": "Notice of Appearance",
     "filed_by": "Daniel E. Valencia",
@@ -540,7 +632,12 @@
     "title": "Notice of Change of Email Address for Lead Counsel Law Firm on Behalf of Microsoft Corporation"
   },
   {
-    "attachments": [],
+    "attachments": [
+      {
+        "href": "../../data/documents/337-1505/891482_2606634_2606634.pdf",
+        "label": "2606634.pdf"
+      }
+    ],
     "document_date": "2026-08-13",
     "document_type": "Notice of Appearance",
     "filed_by": "Daniel E. Valencia",
@@ -552,7 +649,12 @@
     "title": "Notice of Change of Email Address for Lead Counsel Law Firm on Behalf of Amazon.com, Inc., Amazon Web Services, Inc. and Annapurna Labs (U.S.), Inc."
   },
   {
-    "attachments": [],
+    "attachments": [
+      {
+        "href": "../../data/documents/337-1505/891478_2606626_2606626.pdf",
+        "label": "2606626.pdf"
+      }
+    ],
     "document_date": "2026-08-13",
     "document_type": "Notice of Appearance",
     "filed_by": "Daniel E. Valencia",
@@ -677,6 +779,18 @@
     "document_type": "Answer to Complaint",
     "filed_by": "Daniel E. Valencia",
     "firm_organization": "Winston Taylor LLP",
+    "id": "890516",
+    "official_received_date": "2026-08-05T08:45:00",
+    "on_behalf_of": "NVIDIA Corporation",
+    "security_level": "Public",
+    "title": "Exhibit 12, Part 4, to Respondent NVIDIA Corporation\u2019s Response to the Verified Complaint of Xocket's, Inc., under Section 337 of the Tariff Act of 1930, as Amended, and Notice of Investigation"
+  },
+  {
+    "attachments": [],
+    "document_date": "2026-08-04",
+    "document_type": "Answer to Complaint",
+    "filed_by": "Daniel E. Valencia",
+    "firm_organization": "Winston Taylor LLP",
     "id": "890501",
     "official_received_date": "2026-08-05T08:45:00",
     "on_behalf_of": "Microsoft Corporation",
@@ -694,18 +808,6 @@
     "on_behalf_of": "NVIDIA Corporation",
     "security_level": "Public",
     "title": "Exhibits 1 through 6 to Respondent NVIDIA Corporation\u2019s Response to the Verified Complaint of Xocket's, Inc., under Section 337 of the Tariff Act of 1930, as Amended, and Notice of Investigation"
-  },
-  {
-    "attachments": [],
-    "document_date": "2026-08-04",
-    "document_type": "Answer to Complaint",
-    "filed_by": "Daniel E. Valencia",
-    "firm_organization": "Winston Taylor LLP",
-    "id": "890516",
-    "official_received_date": "2026-08-05T08:45:00",
-    "on_behalf_of": "NVIDIA Corporation",
-    "security_level": "Public",
-    "title": "Exhibit 12, Part 4, to Respondent NVIDIA Corporation\u2019s Response to the Verified Complaint of Xocket's, Inc., under Section 337 of the Tariff Act of 1930, as Amended, and Notice of Investigation"
   },
   {
     "attachments": [],
@@ -1188,7 +1290,12 @@
     "title": "Motion of Respondents to Exclude and Disqualify Anusuya Poonja, Gerardo Martin, Jaspal Hare, Liam Peers, Nupur Pandey, Palash Kacholia, Richard Powell, Rohan Kumar, Sangjin Hyun, and Venkat Krishnan from Acting as Experts on Behalf of Complainant"
   },
   {
-    "attachments": [],
+    "attachments": [
+      {
+        "href": "../../data/documents/337-1505/887285_2577186_2577186.pdf",
+        "label": "2577186.pdf"
+      }
+    ],
     "document_date": "2026-07-07",
     "document_type": "Notice of Appearance",
     "filed_by": "Daniel E. Valencia",
@@ -1200,7 +1307,12 @@
     "title": "Supplemental Notice of Appearance; Additional Attorneys from Winston Taylor LLP, DLA Piper LLP (US), and Faegre Drinker Biddle & Reath LLP on Behalf of Microsoft Corporation"
   },
   {
-    "attachments": [],
+    "attachments": [
+      {
+        "href": "../../data/documents/337-1505/887284_2577184_2577184.pdf",
+        "label": "2577184.pdf"
+      }
+    ],
     "document_date": "2026-07-07",
     "document_type": "Notice of Appearance",
     "filed_by": "Daniel E. Valencia",
@@ -1212,7 +1324,12 @@
     "title": "Supplemental Notice of Appearance; Additional Attorneys from Winston Taylor LLP, DLA Piper LLP (US), and Hueston Hennigan LLP on Behalf of Amazon.com, Inc., Amazon Web Services, Inc. and Annapurna Labs (U.S.), Inc."
   },
   {
-    "attachments": [],
+    "attachments": [
+      {
+        "href": "../../data/documents/337-1505/887281_2577171_2577171.pdf",
+        "label": "2577171.pdf"
+      }
+    ],
     "document_date": "2026-07-07",
     "document_type": "Notice of Appearance",
     "filed_by": "Daniel E. Valencia",
@@ -1308,7 +1425,12 @@
     "title": "Non-Parties\u2019 Motion for Extension of Time to Move to Quash or Respond to Respondents\u2019 Subpoenas Duces Tecum and Ad Testificandum"
   },
   {
-    "attachments": [],
+    "attachments": [
+      {
+        "href": "../../data/documents/337-1505/886430_2573298_2573298.pdf",
+        "label": "2573298.pdf"
+      }
+    ],
     "document_date": "2026-06-29",
     "document_type": "Notice of Appearance",
     "filed_by": "Jason D. Cassady",
@@ -1344,7 +1466,12 @@
     "title": "Agreement to Be Bound by the Protective Order of Daniel Valencia, Clayton Thompson, Carrie Williamson, Jake Zolotorev, Peter Nelson, Salvatore Tamburo, Mary Dahl, Peter VandeVort, Tessa Duxbury, Meera Midha, Henry Fildes, Robert Groselak, Catherine Huang, David Knudson, Steven Kellner, Jennifer Librach Nall, Jon Ikegami, Erin McLaughlin, Gianni Minutoli, Matthew McCullough, Devin Stein, Kirstin Stoll-DeBell, Chandler Katz, Christina Von der Ahe Rayburn, Jonathan Kuang, Mindy Vo, Neil G. Anderson, and Thomas King"
   },
   {
-    "attachments": [],
+    "attachments": [
+      {
+        "href": "../../data/documents/337-1505/886074_2571418_2571418.pdf",
+        "label": "2571418.pdf"
+      }
+    ],
     "document_date": "2026-06-24",
     "document_type": "Notice of Appearance",
     "filed_by": "Daniel E. Valencia",
@@ -1356,7 +1483,12 @@
     "title": "Updated Designation of Lead Counsel for Service of Process on Behalf of Amazon.com, Inc., Amazon Web Services, Inc. and Annapurna Labs (U.S.), Inc"
   },
   {
-    "attachments": [],
+    "attachments": [
+      {
+        "href": "../../data/documents/337-1505/886072_2571415_2571415.pdf",
+        "label": "2571415.pdf"
+      }
+    ],
     "document_date": "2026-06-24",
     "document_type": "Notice of Appearance",
     "filed_by": "Daniel E. Valencia",
@@ -1380,7 +1512,12 @@
     "title": "(1) Setting a 16-Month Target Date (2) Setting Preliminary Conference"
   },
   {
-    "attachments": [],
+    "attachments": [
+      {
+        "href": "../../data/documents/337-1505/886009_2571076_2571076.pdf",
+        "label": "2571076.pdf"
+      }
+    ],
     "document_date": "2026-06-23",
     "document_type": "Notice of Appearance",
     "filed_by": "Clayton W. Thompson",
@@ -1488,7 +1625,12 @@
     "title": "Agreement to Be Bound by the Protective Order of Benjamin Levi, Rett Snotherly, Tom Schaumberg, Jason D. Cassady, Austin, Curry, Daniel R. Pearson, Hamad M. Hamad, Aisha Mahmood Haley, Bailey A. Blaies, Adrienne R. Dellinger, Vlada Wendel, Alexander J. Gras, Paul Ashton Duke, James M. Yanney, and Richard A. Cochrane"
   },
   {
-    "attachments": [],
+    "attachments": [
+      {
+        "href": "../../data/documents/337-1505/885183_2563010_2563010.pdf",
+        "label": "2563010.pdf"
+      }
+    ],
     "document_date": "2026-06-15",
     "document_type": "Notice of Appearance",
     "filed_by": "Benjamin Levi",
@@ -1500,7 +1642,12 @@
     "title": "Notice of Appearance of Levi Snotherly & Schaumberg, PLLC on Behalf of Xockets, Inc.; Designation of Benjamin Levi as Lead Counsel"
   },
   {
-    "attachments": [],
+    "attachments": [
+      {
+        "href": "../../data/documents/337-1505/885055_2562387_2562387.pdf",
+        "label": "2562387.pdf"
+      }
+    ],
     "document_date": "2026-06-12",
     "document_type": "Notice of Appearance",
     "filed_by": "Clayton W. Thompson",
@@ -1512,7 +1659,12 @@
     "title": "Notice of Appearance of DLA Piper LLP (US) and Faegre Drinker Biddle & Reath LLP on Behalf of Microsoft Corporation; Designation of Clayton W. Thompson as Lead Counsel"
   },
   {
-    "attachments": [],
+    "attachments": [
+      {
+        "href": "../../data/documents/337-1505/885054_2562384_2562384.pdf",
+        "label": "2562384.pdf"
+      }
+    ],
     "document_date": "2026-06-12",
     "document_type": "Notice of Appearance",
     "filed_by": "Clayton W. Thompson",
@@ -1524,7 +1676,12 @@
     "title": "Notice of Appearance of DLA Piper LLP (US) and Hueston Hennigan LLP on Behalf of Amazon Web Services, Inc, Amazon.com, Inc., and Annapurna Labs (U.S.), Inc.; Designation of Clayton W. Thompson as Lead Counsel"
   },
   {
-    "attachments": [],
+    "attachments": [
+      {
+        "href": "../../data/documents/337-1505/885042_2562335_2562335.pdf",
+        "label": "2562335.pdf"
+      }
+    ],
     "document_date": "2026-06-12",
     "document_type": "Notice of Appearance",
     "filed_by": "Clayton W. Thompson",

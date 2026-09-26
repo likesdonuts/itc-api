@@ -1,6 +1,18 @@
 [
   {
     "attachments": [],
+    "document_date": "2026-09-25",
+    "document_type": "Opinion, Commission",
+    "filed_by": "Lisa R. Barton",
+    "firm_organization": "USITC",
+    "id": "895798",
+    "official_received_date": "2026-09-25T11:31:00",
+    "on_behalf_of": "Office of the Secretary",
+    "security_level": "Public",
+    "title": "Commission Opinion"
+  },
+  {
+    "attachments": [],
     "document_date": "2026-09-21",
     "document_type": "Correspondence - USITC",
     "filed_by": "Lisa R. Barton",
@@ -660,7 +672,12 @@
     "title": "Agreement to Be Bound by the Protective Order of Lance Liu"
   },
   {
-    "attachments": [],
+    "attachments": [
+      {
+        "href": "../../data/documents/337-1453/871488_2493013_2493013.pdf",
+        "label": "2493013.pdf"
+      }
+    ],
     "document_date": "2026-02-03",
     "document_type": "Notice of Appearance",
     "filed_by": "Lance Liu",
@@ -720,7 +737,12 @@
     "title": "Respondents' Motion for Extention of Time to Respond to Motion for Summary Determination"
   },
   {
-    "attachments": [],
+    "attachments": [
+      {
+        "href": "../../data/documents/337-1453/870739_2488241_2488241.pdf",
+        "label": "2488241.pdf"
+      }
+    ],
     "document_date": "2026-01-29",
     "document_type": "Notice of Appearance",
     "filed_by": "Anthony H. Handal",
@@ -1368,7 +1390,12 @@
     "title": "Proof of Service"
   },
   {
-    "attachments": [],
+    "attachments": [
+      {
+        "href": "../../data/documents/337-1453/858117_2411837_2411837.pdf",
+        "label": "2411837.pdf"
+      }
+    ],
     "document_date": "2025-07-30",
     "document_type": "Notice of Appearance",
     "filed_by": "Paul N. Unmack",
@@ -1380,7 +1407,12 @@
     "title": "Corrected Notice of Appearance of Paul N. Unmack on Behalf of ARPC LLC and Paul N. Unmack dba ARPC LLC; Designation of Paul N. Unmack as Lead Representative"
   },
   {
-    "attachments": [],
+    "attachments": [
+      {
+        "href": "../../data/documents/337-1453/857977_2411042_2411042.pdf",
+        "label": "2411042.pdf"
+      }
+    ],
     "document_date": "2025-07-29",
     "document_type": "Notice of Appearance",
     "filed_by": "Paul N. Unmack",
@@ -1433,11 +1465,11 @@
     "document_type": "Returned Mail",
     "filed_by": "Lisa R. Barton",
     "firm_organization": "USITC",
-    "id": "857503",
+    "id": "857502",
     "official_received_date": "2025-07-23T08:45:00",
     "on_behalf_of": "Office of the Secretary",
     "security_level": "Public",
-    "title": "Notice of Institution of Investigation Returned from shen zhen shi hong kang da ke ji you xian gong si"
+    "title": "Notice of Institution of Investigation Returned from guangzhou yingpeng dianzi shangwu youxiangongsi"
   },
   {
     "attachments": [],
@@ -1445,11 +1477,11 @@
     "document_type": "Returned Mail",
     "filed_by": "Lisa R. Barton",
     "firm_organization": "USITC",
-    "id": "857502",
+    "id": "857503",
     "official_received_date": "2025-07-23T08:45:00",
     "on_behalf_of": "Office of the Secretary",
     "security_level": "Public",
-    "title": "Notice of Institution of Investigation Returned from guangzhou yingpeng dianzi shangwu youxiangongsi"
+    "title": "Notice of Institution of Investigation Returned from shen zhen shi hong kang da ke ji you xian gong si"
   },
   {
     "attachments": [],

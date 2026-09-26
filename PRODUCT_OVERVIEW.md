@@ -79,6 +79,7 @@ from a known file, and every sync is logged to help spot bad data days.
 | Tracking a case meant checking two USITC websites by hand. | A daily one-click sync merges both into one searchable list with a page per case. |
 | Neither source says who represents whom. | The app reads filing records and attorneys' Notice of Appearance PDFs. It links each law firm and attorney to its clients, and marks lead counsel and withdrawals. The list is searchable by firm or attorney. |
 | Companies subpoenaed into a case never appear in the official party list. | The app finds them from their own filings. It shows why they are involved, such as "responding to a subpoena served by Respondents", read from their notices, including scanned documents. |
+| For an active case, it was hard to know what happens next and when: hearing dates, decision deadlines and review periods are spread across the case record, orders, notices and the Commission's rules. | A **Next actions** tab on every open case shows its stage and the next event with a countdown. It lists every known date, each labeled by its source: the USITC case record, the docket, or the Commission's rules (with the rule cited, e.g. petitions for review due 12 days after the final decision). When nothing is scheduled it says "Awaiting decision" and names who is deciding. Today 72 cases are actively moving, and 70 of them have an upcoming date. |
 | It was hard to know whether a case's data is current. | Each case shows when its documents were last fetched, plus how many documents it has and how many have PDFs on disk. |
 | Following how patent claims narrow means reading hundreds of pages of rulings. | An AI-assisted claims timeline shows, for each respondent, which claims were withdrawn, dismissed or found invalid, and when. Every finding links back to its source sentence and is checked before it is shown. Cost is tracked against a hard budget. |
 | Firm and attorney information only existed for the ~185 cases someone had chosen to fetch, too few for firm-level trends. | A one-click backfill lists the filings of every case (no PDFs), newest first, and can be stopped and resumed. It has now run: counsel covers 1,143 investigations instead of 179, which is what the firm and attorney analytics are built on. |
@@ -99,6 +100,20 @@ from a known file, and every sync is logged to help spot bad data days.
 - 64 name pairs are waiting for a person to decide. Until then each stays
   as two entries, which can undercount a firm, attorney or company but
   never merges two different ones.
+- Next actions show the dates in the USITC case record, the docket and the
+  rules. The detailed procedural schedules in judges' orders (discovery
+  cutoffs, expert reports, briefing) come in the next phase. Only the main
+  violation phase of a case is covered, not remand, enforcement or
+  modification proceedings.
+- About 90 very old investigations are still listed by the USITC as
+  "active" (usually because their exclusion orders remain in force). They
+  have no dates, so there is nothing to show for them.
+
+## In progress
+
+- **Next actions, phase 2:** read the judges' scheduling orders with AI (on
+  its own $20 budget) so every date in a case's procedural schedule appears,
+  with amendments applied.
 
 ## On hold
 

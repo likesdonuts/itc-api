@@ -1,6 +1,54 @@
 [
   {
     "attachments": [],
+    "document_date": "2026-09-25",
+    "document_type": "Pre-Hearing Statement",
+    "filed_by": "Jesse A. Salen",
+    "firm_organization": "Sheppard Mullin Richter & Hampton LLP",
+    "id": "895844",
+    "official_received_date": "2026-09-25T15:21:00",
+    "on_behalf_of": "Belkin Inc. and Belkin International, Inc.",
+    "security_level": "Public",
+    "title": "Respondents' Pre-Hearing Statement"
+  },
+  {
+    "attachments": [],
+    "document_date": "2026-09-25",
+    "document_type": "Response/Submission to ALJ Order",
+    "filed_by": "John J. Thuermer",
+    "firm_organization": "Fish & Richardson P.C.",
+    "id": "895812",
+    "official_received_date": "2026-09-25T13:42:00",
+    "on_behalf_of": "Superior Communications Inc., Belkin International Inc., and Belkin Inc.",
+    "security_level": "Public",
+    "title": "Joint Statement regarding the Length of the Evidentiary Hearing"
+  },
+  {
+    "attachments": [],
+    "document_date": "2026-09-25",
+    "document_type": "Order",
+    "filed_by": "Monica Bhattacharyya",
+    "firm_organization": "USITC",
+    "id": "895789",
+    "official_received_date": "2026-09-25T10:50:00",
+    "on_behalf_of": "Administrative Law Judge",
+    "security_level": "Public",
+    "title": "Granting Unopposed Motion for Leave for Respondents to File Supplemental Pre-Hearing Brief"
+  },
+  {
+    "attachments": [],
+    "document_date": "2026-09-23",
+    "document_type": "Motion Response/Reply",
+    "filed_by": "Joseph V. Colaianni, Jr.",
+    "firm_organization": "Fish & Richardson P.C.",
+    "id": "895559",
+    "official_received_date": "2026-09-23T14:46:00",
+    "on_behalf_of": "Superior Communications Inc.",
+    "security_level": "Public",
+    "title": "Superior\u2019s Opposition to Respondents\u2019 Motion for Summary Determination of No Assignor Estoppel"
+  },
+  {
+    "attachments": [],
     "document_date": "2026-09-22",
     "document_type": "PO Subscription",
     "filed_by": "Joseph V. Colaianni, Jr.",
@@ -1176,7 +1224,12 @@
     "title": "Agreement to Be Bound by the Protective Order of Michael K. Heins"
   },
   {
-    "attachments": [],
+    "attachments": [
+      {
+        "href": "../../data/documents/337-1474/881091_2541593_2541593.pdf",
+        "label": "2541593.pdf"
+      }
+    ],
     "document_date": "2026-05-04",
     "document_type": "Notice of Appearance",
     "filed_by": "Jesse A. Salen",
@@ -1476,7 +1529,12 @@
     "title": "Agreement to Be Bound by the Protective Order of Stephen S. Korniczky, Martin R. Bader, Jonathan DeFosse, Jesse A. Salen, Ryan P. Cunningham, Ximena Solano Suarez, Michael Hopkins, Joshua Weisenfeld, Donald Geiger, Zachary Alper, Samantha Young, and Electra Yao"
   },
   {
-    "attachments": [],
+    "attachments": [
+      {
+        "href": "../../data/documents/337-1474/868422_2474001_2474001.pdf",
+        "label": "2474001.pdf"
+      }
+    ],
     "document_date": "2026-01-08",
     "document_type": "Notice of Appearance",
     "filed_by": "Jesse A. Salen",
@@ -1500,7 +1558,12 @@
     "title": "Agreement to Be Bound by the Protective Order of Joseph V. Colaianni, Jr., Christopher S. Marchese, Timothy J. Rawson, John J. Thuermer, and Evan T. Sumner"
   },
   {
-    "attachments": [],
+    "attachments": [
+      {
+        "href": "../../data/documents/337-1474/868364_2473795_2473795.pdf",
+        "label": "2473795.pdf"
+      }
+    ],
     "document_date": "2026-01-08",
     "document_type": "Notice of Appearance",
     "filed_by": "Joseph V. Colaianni, Jr.",

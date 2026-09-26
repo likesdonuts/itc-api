@@ -312,7 +312,12 @@
     "title": "Protective Order"
   },
   {
-    "attachments": [],
+    "attachments": [
+      {
+        "href": "../../data/documents/337-1475/868082_2471199_2471199.pdf",
+        "label": "2471199.pdf"
+      }
+    ],
     "document_date": "2026-01-06",
     "document_type": "Notice of Appearance",
     "filed_by": "Christine E. Lehman",
@@ -324,7 +329,12 @@
     "title": "Notice of Appearance of Reichman Jorgensen Lehman & Feldberg LLP on Behalf of JetBlack Cycling Pty Ltd.; Designation of Christine E. Lehman as Lead Counsel"
   },
   {
-    "attachments": [],
+    "attachments": [
+      {
+        "href": "../../data/documents/337-1475/867988_2471038_2471038.pdf",
+        "label": "2471038.pdf"
+      }
+    ],
     "document_date": "2026-01-06",
     "document_type": "Notice of Appearance",
     "filed_by": "Sudip K. Kundu",
