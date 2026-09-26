@@ -1,0 +1,74 @@
+{
+  "cost_usd": 0.008888,
+  "date": "2021-07-06",
+  "doc_id": "746084",
+  "file": "746084_1653330_1653330.pdf",
+  "kind": "notice_of_institution",
+  "model": "claude-haiku-4-5-20251001",
+  "notes_version": 2,
+  "overview": "This is a Notice of Institution of Investigation in ITC Section 337 case 337-TA-1270, issued on July 6, 2021. Crocs, Inc. filed a complaint on June 8, 2021 (with supplements through June 28, 2021) alleging that respondents violated Section 337 by importing, selling for importation, or selling within the United States casual footwear and packaging thereof that infringe three Crocs trademark registrations and/or constitute false designation of source or trademark dilution.",
+  "pages_read": [
+    1,
+    2,
+    3,
+    4
+  ],
+  "points": [
+    {
+      "page": 1,
+      "point": "The investigation covers alleged infringement of U.S. Trademark Registration No. 3,836,415, U.S. Trademark Registration No. 5,149,328, and U.S. Trademark Registration No. 5,273,875.",
+      "quote": "infringement of one or more of U.S. Trademark Registration No. 3,836,415 (\"the '415 mark\"); U.S. Trademark Registration No. 5,149,328 (\"the '328 mark\"); and U.S. Trademark Registration No. 5,273,875 (\"the '875 mark\")",
+      "topic": "scope"
+    },
+    {
+      "page": 1,
+      "point": "The investigation also covers alleged false designation of source or trademark dilution relating to the casual footwear and packaging.",
+      "quote": "false designation of source or trademark dilution, the threat or effect of which is to destroy or substantially injure an industry",
+      "topic": "scope"
+    },
+    {
+      "page": 2,
+      "point": "The plain language description of the accused products is 'casual footwear with holes in the upper and such footwear's packaging.'",
+      "quote": "\"casual footwear with holes in the upper and such footwear's packaging\"",
+      "topic": "products"
+    },
+    {
+      "page": 1,
+      "point": "The complainant is Crocs, Inc. of Broomfield, Colorado.",
+      "quote": "on behalf of Crocs, Inc. of Broomfield, Colorado",
+      "topic": "parties"
+    },
+    {
+      "page": 2,
+      "point": "The Office of Unfair Import Investigations is a party to the investigation, represented by Pathenia M. Proctor.",
+      "quote": "Pathenia M. Proctor, The Office of Unfair Import Investigations, U.S. International Trade Commission",
+      "topic": "staff"
+    },
+    {
+      "page": 1,
+      "point": "Crocs requested that the Commission issue a general exclusion order, or in the alternative a limited exclusion order, and cease and desist orders.",
+      "quote": "issue a general exclusion order, or in the alternative a limited exclusion order, and cease and desist orders",
+      "topic": "other"
+    }
+  ],
+  "rejected": [
+    {
+      "page": 3,
+      "point": "The respondents include Cape Robbin Inc., Bijora, Inc. d/b/a Akira, Dr. Leonard's Healthcare Corp. d/b/a Carol Wright, Crocsky, Fullbeauty Brands Inc. d/b/a Kingsize, Hawkins Footwear, Sports, Military & Dixie Store, Hobibear Shoes and Clothing Ltd., Hobby Lobby Stores, Inc., Ink Tee, La Modish Boutique, and Legend Footwear, Inc. d/b/a Wild Diva.",
+      "quote": "Cape Robbin Inc., Bijora, Inc., d/b/a Akira, Dr. Leonard's Healthcare Corp. d/b/a Carol Wright, Crocsky, Fullbeauty Brands Inc.",
+      "rejected": "quote not found in the filing",
+      "topic": "parties"
+    },
+    {
+      "page": 4,
+      "point": "Additional respondents include Loeffler Randall Inc., Maxhouse Rise Ltd., PW Shoes, Inc. a/k/a P&W, SG Footwear Meser Grp. Inc. a/k/a S. Goldberg & Co., Shoe-Nami, Inc., Skechers USA, Inc., Star Bay Group Inc., Yoki Fashion International LLC, Quanzhou ZhengDe Network Corp. d/b/a Amoji, 718Closeouts, and Royal Deluxe Accessories, LLC.",
+      "quote": "Loeffler Randall Inc., Maxhouse Rise Ltd., PW Shoes, Inc. a/k/a P&W, SG Footwear Meser Grp. Inc.",
+      "rejected": "quote not found in the filing",
+      "topic": "parties"
+    }
+  ],
+  "taken_at": "2026-09-26T20:11:34+00:00",
+  "title": "Institution of Investigation",
+  "truncated": false,
+  "who": ""
+}

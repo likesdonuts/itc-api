@@ -1,0 +1,73 @@
+{
+  "cost_usd": 0.008957,
+  "date": "2023-06-28",
+  "doc_id": "799478",
+  "file": "799478_2014454_2014454.pdf",
+  "kind": "notice_of_institution",
+  "model": "claude-haiku-4-5-20251001",
+  "notes_version": 2,
+  "overview": "The U.S. International Trade Commission instituted Investigation 337-TA-1366 on June 28, 2023, based on a complaint filed by Efficient Power Conversion Corporation alleging that certain imported semiconductor devices and products infringe four patents. The Commission initiated an investigation to determine whether importation and sale of GaN-on-Si semiconductor devices and related products violate Section 337.",
+  "pages_read": [
+    1,
+    2,
+    3,
+    4
+  ],
+  "points": [
+    {
+      "page": 2,
+      "point": "The complainant is Efficient Power Conversion Corporation of El Segundo, California.",
+      "quote": "Efficient Power Conversion Corporation 909 N. Pacific Coast Highway, Suite 230 El Segundo, CA 90245",
+      "topic": "parties"
+    },
+    {
+      "page": 2,
+      "point": "The named respondents are Innoscience (Zhuhai) Technology Company, Ltd., located in Zhuhai, China, and Innoscience America, Inc., located in Santa Clara, California.",
+      "quote": "Innoscience (Zhuhai) Technology Company, Ltd. No. 39, Jinyuan 2nd Road, High-Tech Zone Zhuhai, Guangdong 519099 China Innoscience America, Inc. 5451 Great America Pkwy, Suite 125 Santa Clara, CA 95054",
+      "topic": "parties"
+    },
+    {
+      "page": 3,
+      "point": "The Office of Unfair Import Investigations is a party to the investigation.",
+      "quote": "The Office of Unfair Import Investigations, U.S. International Trade Commission, 500 E Street, S.W., Suite 401, Washington, D.C. 20436",
+      "topic": "staff"
+    },
+    {
+      "page": 2,
+      "point": "The investigation covers infringement of claims 1-3 of U.S. Patent No. 8,350,294, claim 1 of U.S. Patent No. 8,404,508, claims 1-3 of U.S. Patent No. 9,748,347, and claims 1-7 of U.S. Patent No. 10,312,335.",
+      "quote": "infringement of one or more of claims 1-3 of the '294 patent; claim 1 of the '508 patent; claims 1-3 of the '347 patent; and claims 1-7 of the '335 patent",
+      "topic": "scope"
+    },
+    {
+      "page": 2,
+      "point": "The products at issue are \"GaN-on-Si semiconductor devices, GaN FETs, GaN high electron mobility transistors, and products incorporating such transistors, which are bidirectional transistors, multichip modules, and demo boards.\"",
+      "quote": "GaN-on-Si semiconductor devices, GaN FETs, GaN high electron mobility transistors, and products incorporating such transistors, which are bidirectional transistors, multichip modules, and demo boards",
+      "topic": "products"
+    },
+    {
+      "page": 1,
+      "point": "The complainant requests issuance of a limited exclusion order and cease and desist orders.",
+      "quote": "The complainant requests that the Commission institute an investigation and, after the investigation, issue a limited exclusion order and cease and desist orders.",
+      "topic": "other"
+    },
+    {
+      "page": 1,
+      "point": "The complaint was filed on May 26, 2023, with supplements filed on June 14 and 15, 2023.",
+      "quote": "a complaint was filed with the U.S. International Trade Commission on May 26, 2023, under section 337 of the Tariff Act of 1930, as amended, on behalf of Efficient Power Conversion Corporation of El Segundo, California. Supplements to the complaint were filed on June 14 and 15, 2023.",
+      "topic": "other"
+    }
+  ],
+  "rejected": [
+    {
+      "page": 1,
+      "point": "The complaint alleges violations based on infringement of four U.S. patents: Patent No. 8,350,294, Patent No. 8,404,508, Patent No. 9,748,347, and Patent No. 10,312,335.",
+      "quote": "infringement of certain claims of U.S. Patent No. 8,350,294 (\"the '294 patent\"); U.S. Patent No. 8,404,508 (\"the '508 patent\"); U.S. Patent No. 9,748,347 (\"the '347 patent\"); and U.S. Patent No. 10,312,335 (\"the '335 patent\")",
+      "rejected": "topic not for this kind of filing",
+      "topic": "ip_asserted"
+    }
+  ],
+  "taken_at": "2026-09-26T20:05:53+00:00",
+  "title": "Institution of Investigation",
+  "truncated": false,
+  "who": ""
+}

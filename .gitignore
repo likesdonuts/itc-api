@@ -30,6 +30,8 @@ data/analytics/*
 data/claims/text/
 data/counsel_text/
 data/next_actions/text/
+data/summaries/text/
+data/summary_costs.csv.lock
 data/next_actions_costs.csv.lock
 
 # Downloaded PDFs stay on this machine: gigabytes of them, and EDIS can serve

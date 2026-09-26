@@ -47,6 +47,7 @@ class Line:
     main_id: str = ""  # the attachment id of the file read
     body: str = ""  # how the complaint's body was found: "confirmed" (page 1 read) or "assumed"
     text_on_file: bool = False  # its text was already read for the claims analysis
+    usd: float = 0.0  # its notes' estimated cost
 
 
 @dataclass
@@ -79,6 +80,11 @@ class Estimate:
     @property
     def over_budget(self) -> bool:
         return self.spent_usd + self.total_usd > self.budget_usd
+
+    def usd_for(self, kinds: tuple[str, ...]) -> float:
+        """The cost of reading only these kinds of document, and the writing."""
+        lines = [line for line in self.lines if line.item.kind in kinds]
+        return sum(line.usd for line in lines) + (self.writer_usd if lines else 0.0)
 
 
 def _cost(cfg: SummaryConfig, model: str, tokens_in: int, tokens_out: int) -> float:
@@ -151,16 +157,20 @@ def build(
             body = ""
             if item.kind == "complaint":
                 main, body = complaint_body(attachments, cached, cfg.complaint_body_min_pages)
+            elif item.kind == "answer":
+                # The answer comes first; its exhibits can be longer (fetch.py).
+                main = next((a for a in attachments if a["pages"] >= 3), attachments[0] if attachments else None)
             else:
                 main = max(attachments, key=lambda a: a["pages"], default=None)
             main_pages = main["pages"] if main else 0
             on_file = bool(main and main["id"] in cached)
             line = Line(item, total, main_pages, limit.of(main_pages), counted=True,
                         main_id=main["id"] if main else "", body=body, text_on_file=on_file)
-        estimate.lines.append(line)
-        estimate.notes_usd += _cost(
+        line.usd = _cost(
             cfg, cfg.notes_model, cfg.prompt_tokens + line.read_pages * cfg.tokens_per_page, cfg.notes_output_tokens
         )
+        estimate.lines.append(line)
+        estimate.notes_usd += line.usd
     if estimate.lines:
         estimate.writer_usd = _cost(
             cfg, cfg.writer_model,

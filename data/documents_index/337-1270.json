@@ -4632,7 +4632,12 @@
     "title": "Response of Maxhouse Rise, Ltd. to the First Amended Complaint and Notice of Investigation"
   },
   {
-    "attachments": [],
+    "attachments": [
+      {
+        "href": "../../data/documents/337-1270/756984_1729472_1729472.pdf",
+        "label": "1729472.pdf"
+      }
+    ],
     "document_date": "2021-11-19",
     "document_type": "Answer to Complaint",
     "filed_by": "Giancarlo Scaccia",
@@ -4764,7 +4769,12 @@
     "title": "Response of Walmart Inc. to the First Amended Complaint and Notice of Investigation"
   },
   {
-    "attachments": [],
+    "attachments": [
+      {
+        "href": "../../data/documents/337-1270/756616_1727107_1727107.pdf",
+        "label": "1727107.pdf"
+      }
+    ],
     "document_date": "2021-11-15",
     "document_type": "Answer to Complaint",
     "filed_by": "Brian Johnson",
@@ -5112,7 +5122,13 @@
     "title": "Consent Order for Bijora, Inc. d/b/a Akira"
   },
   {
-    "attachments": [],
+    "attachments": [
+      {
+        "href": "../../data/documents/337-1270/754941_1716064_1716064.pdf",
+        "label": "1716064.pdf"
+      }
+    ],
+    "attachments_partial": true,
     "document_date": "2021-10-22",
     "document_type": "Complaint",
     "filed_by": "Michael Berta",
@@ -6084,7 +6100,12 @@
     "title": "PW Shoes Response to the Corrected and Supplemental Complaint and Notice of Investigation"
   },
   {
-    "attachments": [],
+    "attachments": [
+      {
+        "href": "../../data/documents/337-1270/751637_1690084_1690084.pdf",
+        "label": "1690084.pdf"
+      }
+    ],
     "document_date": "2021-09-14",
     "document_type": "Answer to Complaint",
     "filed_by": "David H. Siegel",
@@ -7656,7 +7677,12 @@
     "title": "Assignment of CALJ Bullock"
   },
   {
-    "attachments": [],
+    "attachments": [
+      {
+        "href": "../../data/documents/337-1270/746084_1653330_1653330.pdf",
+        "label": "1653330.pdf"
+      }
+    ],
     "document_date": "2021-07-06",
     "document_type": "Notice",
     "filed_by": "Lisa R. Barton",

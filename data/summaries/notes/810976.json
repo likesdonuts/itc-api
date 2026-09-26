@@ -1,0 +1,59 @@
+{
+  "cost_usd": 0.007909,
+  "date": "2023-12-26",
+  "doc_id": "810976",
+  "file": "810976_2089890_2089890.pdf",
+  "kind": "notice_of_institution",
+  "model": "claude-haiku-4-5-20251001",
+  "notes_version": 2,
+  "overview": "This is a Notice of Institution of Investigation dated December 26, 2023, in ITC Investigation No. 337-TA-1384 concerning certain passive optical network equipment. Complainant Optimum Communications Services, Inc. alleges that respondents Hangzhou Softel Optic Co., Ltd., Hangzhou DAYTAI Network Technologies Co., Ltd., and Hangzhou Sumlo Industrial Co., Ltd. infringe claims of two U.S. patents relating to passive optical network equipment.",
+  "pages_read": [
+    1,
+    2,
+    3,
+    4
+  ],
+  "points": [
+    {
+      "page": 2,
+      "point": "The complainant is Optimum Communications Services, Inc. of Jersey City, New Jersey.",
+      "quote": "Optimum Communications Services, Inc. 344 Grove Street #242, Jersey City, NJ 07302",
+      "topic": "parties"
+    },
+    {
+      "page": 2,
+      "point": "The respondents are Hangzhou Softel Optic Co., Ltd., Hangzhou DAYTAI Network Technologies Co., Ltd., and Hangzhou Sumlo Industrial Co., Ltd., all located in China.",
+      "quote": "Hangzhou Softel Optic Co., Ltd. 708 709 Haiwei Building, 101 Binkang Road, Binjiang District, Hangzhou, Zhejiang, China 310051",
+      "topic": "parties"
+    },
+    {
+      "page": 2,
+      "point": "The investigation covers infringement of claims 1 and 12-14 of U.S. Patent No. 7,333,511 and claims 1 and 3 of U.S. Patent No. 7,558,260.",
+      "quote": "claims 1 and 12-14 of the '511 patent and claims 1 and 3 of the '260 patent",
+      "topic": "scope"
+    },
+    {
+      "page": 2,
+      "point": "The accused products are optical line termination (OLT) and optical network unit/terminal (ONU/ONT) equipment conforming to passive optical network standards including G-PON, 10GPON/XGS-PON, TWDM-PON/NG-PON2, and IEEE 802.3ah (EPON) and 802.3av (10G-EPON).",
+      "quote": "optical line termination (OLT) and optical network unit/terminal (ONU/ONT) equipment that conform to passive optical network standards of ITU-T Recommendation series G.984.x for Gigabit-capable Passive Optical Network (G-PON) and its successor standards, including 10GPON/XGS-PON (ITU-T Rec. G.987.3) and TWDM-PON/NG-PON2 (ITU-T Rec. G.989.3) as well as IEEE 802.3ah (EPON) and 802.3av (10G-EPON)",
+      "topic": "products"
+    },
+    {
+      "page": 3,
+      "point": "The Office of Unfair Import Investigations is named as a party to the investigation.",
+      "quote": "The Office of Unfair Import Investigations, U.S. International Trade Commission, 500 E Street, S.W., Suite 401, Washington, D.C. 20436",
+      "topic": "staff"
+    },
+    {
+      "page": 1,
+      "point": "The complainant requests a general exclusion order or in the alternative a limited exclusion order, and a cease and desist order.",
+      "quote": "issue a general exclusion order, or in the alternative a limited exclusion, and a cease and desist order",
+      "topic": "other"
+    }
+  ],
+  "rejected": [],
+  "taken_at": "2026-09-26T20:08:52+00:00",
+  "title": "Institution of Investigation",
+  "truncated": false,
+  "who": ""
+}

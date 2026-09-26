@@ -19,6 +19,7 @@ from datalayer.claims import costs as claims_costs
 from datalayer.claims import status as claims_status
 from datalayer.config import DATA_DIR, SCHEMA_PATH, SITE_DIR
 from datalayer.nextactions import build as nextactions_build
+from datalayer.summary import build as summary_build
 from datalayer.summary import config as summary_config
 from datalayer.summary import estimate as summary_estimate
 from datalayer.summary import pages as summary_pages
@@ -141,9 +142,11 @@ def render_site(
     for number, case in cases.items():
         page = detail_dir / f"{templates.slug_for(number)}.html"
         analysis = analyses.get(number)
-        summary = None
+        summary = summary_record = summary_state = None
         if summary_cfg is not None and store.documents.get(number):
             summary = summary_estimate.build(store, number, summary_cfg, counts=page_counts, spent_usd=summary_spent)
+            summary_record = summary_build.load(store.data_dir, number)
+            summary_state = summary_build.state(store, number, summary_record, summary_cfg)
         write_text_atomic(
             page,
             templates.render_detail(
@@ -160,6 +163,8 @@ def render_site(
                 next_built_at=next_actions.get("built_at"),
                 summary=summary,
                 primer=primer,
+                summary_record=summary_record,
+                summary_state=summary_state,
             ),
         )
         written.add(page)

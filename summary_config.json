@@ -16,7 +16,11 @@
     "complaint_body_min_pages: before a complaint is downloaded, the first attachment at least this",
     "  long is taken to be its body (cover letters come first); once on disk, page 1 decides.",
     "estimate: the token counts the cost preview assumes. tokens_per_page is for dense legal text;",
-    "  prompt_tokens is the instructions sent with each document."
+    "  prompt_tokens is the instructions sent with each document.",
+    "max_output_tokens: the most each call may write. The budget check assumes a call writes this",
+    "  much, so a run never goes past budget_usd.",
+    "notes_version: bump it to take every document's notes again (paid again) after changing the",
+    "  notes prompt; notes taken under another version are not reused."
   ],
   "notes_model": "claude-haiku-4-5-20251001",
   "writer_model": "claude-sonnet-5",
@@ -25,6 +29,8 @@
   "max_answer_groups": 5,
   "max_rulings": 10,
   "complaint_body_min_pages": 10,
+  "notes_version": 2,
+  "max_output_tokens": {"notes": 6000, "writer": 5000},
   "read_pages": {
     "complaint": {"first": 60, "last": 0},
     "notice_of_institution": {"first": 4, "last": 0},

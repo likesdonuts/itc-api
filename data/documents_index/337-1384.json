@@ -1830,7 +1830,12 @@
     "title": "Order Denying Request for Entry into Early Disposition Program"
   },
   {
-    "attachments": [],
+    "attachments": [
+      {
+        "href": "../../data/documents/337-1384/810976_2089890_2089890.pdf",
+        "label": "2089890.pdf"
+      }
+    ],
     "document_date": "2023-12-26",
     "document_type": "Notice",
     "filed_by": "Lisa R. Barton",

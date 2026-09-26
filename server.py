@@ -256,6 +256,19 @@ class Controller:
             lambda job: self._run_summary_estimate(job, key, token),
         )
 
+    def start_summary(self, number: str) -> Job:
+        """Write or update one case's summary (paid; its own budget). Without
+        an EDIS token it reads only the files already on disk."""
+        store = Store.load(self.data_dir)
+        key = store.find_key(str(number or ""))
+        if key is None:
+            raise JobRefused(HTTPStatus.NOT_FOUND, f"{number} is not on disk. Run the daily sync first.")
+        try:
+            token = self._usable_token()
+        except JobRefused:
+            token = None
+        return self._start("summary", f"Case summary: {key}", lambda job: self._run_summary(job, key, token))
+
     def _start(self, kind: str, label: str, work: Callable[[Job], None], *, stoppable: bool = False) -> Job:
         if not self._lock.acquire(blocking=False):
             raise JobRefused(HTTPStatus.CONFLICT, "Another job is still running; wait for it to finish")
@@ -413,6 +426,28 @@ class Controller:
         else:
             job.finish(f"Built from {events} claim event(s).{cost}", "ok")
 
+    def _run_summary(self, job: Job, key: str, token: str | None) -> None:
+        from datalayer.summary import build as summary_build
+
+        log = self._logger(job)
+        store = Store.load(self.data_dir)
+        try:
+            result = summary_build.run(store, key, token=token, log=log)
+        except summary_build.BudgetReached as exc:
+            job.finish(str(exc)[0].upper() + str(exc)[1:] + ".", "warn")
+            return
+        finally:
+            # A failure is recorded on the summary, so the page shows it too.
+            render_site(store, data_dir=self.data_dir, site_dir=self.site_dir, schema_path=self.schema_path, log=log)
+        cost = f" Model cost ${float(result.get('cost_usd') or 0):.4f}."
+        warnings = result.get("warnings") or []
+        left = result.get("pending") or []
+        if warnings or left:
+            extra = warnings + ([f"{len(left)} document(s) not read"] if left else [])
+            job.finish(f"Written, with warnings: {'; '.join(extra)}.{cost}", "warn")
+        else:
+            job.finish(f"Written from {len(result.get('sources') or [])} document(s).{cost}", "ok")
+
     def _run_summary_estimate(self, job: Job, key: str, token: str) -> None:
         from datalayer.summary import config as summary_config
         from datalayer.summary import estimate as summary_estimate
@@ -567,6 +602,8 @@ class Handler(SimpleHTTPRequestHandler):
                 job = self.controller.start_documents(numbers, download=bool(payload.get("download")))
             elif kind == "claims":
                 job = self.controller.start_claims(str(payload.get("number") or ""))
+            elif kind == "summary":
+                job = self.controller.start_summary(str(payload.get("number") or ""))
             elif kind == "summary_estimate":
                 job = self.controller.start_summary_estimate(str(payload.get("number") or ""))
             elif kind == "backfill":

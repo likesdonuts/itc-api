@@ -1,0 +1,151 @@
+{
+  "cost_usd": 0.022357,
+  "date": "2021-09-14",
+  "doc_id": "751637",
+  "file": "751637_1690084_1690084.pdf",
+  "kind": "answer",
+  "model": "claude-haiku-4-5-20251001",
+  "notes_version": 2,
+  "overview": "PW Shoes, Inc. (\"PW\") responds to Crocs, Inc.'s Corrected and Supplemental Complaint in Investigation 337-TA-1270 concerning alleged infringement of three Crocs trademark registrations (U.S. Trademark Registration Nos. 3,863,415, 5,149,328, and 5,273,875) through the importation and sale of casual footwear products. PW denies all material allegations and asserts eleven affirmative defenses challenging the validity and enforceability of the trademarks and contesting Crocs' entitlement to relief.",
+  "pages_read": [
+    1,
+    2,
+    3,
+    4,
+    130,
+    131,
+    132,
+    133,
+    134,
+    135,
+    136,
+    137,
+    138,
+    139,
+    140,
+    141,
+    142,
+    143,
+    144,
+    145,
+    146,
+    147,
+    148,
+    149
+  ],
+  "points": [
+    {
+      "page": 1,
+      "point": "PW Shoes, Inc. is a respondent in Investigation 337-TA-1270 and denies engaging in unfair competition or importing casual footwear products in violation of Section 337 as alleged by Crocs.",
+      "quote": "Respondent PW Shoes, Inc. (\"PW\") hereby responds to the Corrected and Supplemental Complaint",
+      "topic": "respondents"
+    },
+    {
+      "page": 1,
+      "point": "PW denies each and every allegation in the Complaint and Notice of Investigation except as specifically admitted, and denies that it has engaged in unfair competition in violation of Section 337 of the Tariff Act of 1930.",
+      "quote": "PW denies each and every allegation in the Complaint and Notice of Investigation except as specifically admitted herein.",
+      "topic": "general_response"
+    },
+    {
+      "page": 1,
+      "point": "PW denies that the Asserted Trademarks (U.S. Trademark Registration Nos. 3,863,415, 5,149,328, and 5,273,875) confer valid and enforceable trademark rights to Crocs.",
+      "quote": "The trademark registrations at issue in the Investigation, namely U.S. Trademark Registration Nos. 3,863,415, 5,149,328 and 5,273,875 (the \"Asserted Trademarks\"), do not confer valid and enforceable trademark rights",
+      "topic": "general_response"
+    },
+    {
+      "page": 1,
+      "point": "PW denies that it is causing the importation, sale for importation, or sale within the United States after importation of casual footwear products and packaging in violation of the Asserted Trademarks or Section 337.",
+      "quote": "PW denies that it is causing the importation, the sale for importation, or the sale within the United States after importation of certain footwear products",
+      "topic": "general_response"
+    },
+    {
+      "page": 142,
+      "point": "PW asserts a First Affirmative Defense of non-infringement, stating that it has not directly infringed, indirectly infringed, contributed to, or induced infringement of any valid or enforceable claim of the Asserted Trademarks.",
+      "quote": "PW has not directly infringed, indirectly infringed, contributed to or induced infringement oof any valid or enforceable claim",
+      "topic": "non_infringement"
+    },
+    {
+      "page": 143,
+      "point": "PW asserts a Third Affirmative Defense of genericness, contending that U.S. Registration Nos. 5,149,328 and 5,273,875 and any claimed common law trade dress rights are invalid because the marks are generic.",
+      "quote": "Complainant's ownership of U.S. Registration Nos. 5,149,328 and 5,237,875 and any claimed unregistered common law trade dress rights are invalid because the marks at issue are generic.",
+      "topic": "invalidity"
+    },
+    {
+      "page": 143,
+      "point": "PW asserts a Fourth Affirmative Defense of lack of secondary meaning, arguing that U.S. Registration Nos. 5,149,328 and 5,273,875 and any claimed common law trade dress rights lack secondary meaning.",
+      "quote": "Complainant's ownership of U.S. Registration Nos. 5,149,328 and 5,237,875 and any claimed unregistered common law trade dress rights are invalid because the marks at issue lack secondary meaning.",
+      "topic": "invalidity"
+    },
+    {
+      "page": 142,
+      "point": "PW asserts a Second Affirmative Defense of functionality, contending that the Asserted Trademarks and their use are functional and therefore not protectable.",
+      "quote": "Complainant's claims and the relief sought in the Complaint are barred, in whole or in part, on the basis that the Asserted Trademarks at issue, and the use of said marks, are functional.",
+      "topic": "unenforceability"
+    },
+    {
+      "page": 143,
+      "point": "PW asserts a Seventh Affirmative Defense of waiver, estoppel, and laches, claiming that Crocs' claims and relief are barred by these equitable doctrines.",
+      "quote": "Complainant's claims and the relief sought in the Complaint are barred, in whole or in part, by the equitable doctrines of waiver, estoppel, and laches.",
+      "topic": "unenforceability"
+    },
+    {
+      "page": 143,
+      "point": "PW asserts a Fifth Affirmative Defense of no likelihood of confusion, contending that there is no likelihood of confusion between PW's products and any alleged trademark rights claimed by Crocs.",
+      "quote": "There is no likelihood of confusion between the products offered by PW and any alleged rights Crocs claims in the Asserted Trademarks.",
+      "topic": "other_defenses"
+    },
+    {
+      "page": 143,
+      "point": "PW asserts a Sixth Affirmative Defense of failure to state a claim, arguing that the Complaint fails to state a claim upon which relief may be granted.",
+      "quote": "The Complaint fails to state a claim upon which relief may be granted.",
+      "topic": "other_defenses"
+    },
+    {
+      "page": 143,
+      "point": "PW asserts an Eighth Affirmative Defense of no unfair act, denying that PW has committed any unfair act within the meaning of 19 U.S.C. \u00a7 1337.",
+      "quote": "PW has committed no unfair act within the meaning of 19 U.S.C. \u00a7 1337.",
+      "topic": "other_defenses"
+    },
+    {
+      "page": 144,
+      "point": "PW asserts a Tenth Affirmative Defense of lack of domestic industry, contending that Crocs has not alleged and cannot prove the existence of a domestic industry as required by 19 U.S.C. \u00a7 1337.",
+      "quote": "Crocs has not adequately alleged and cannot prove the existence of a domestic industry as required and defined by 19 U.S.C. \u00a7 1337",
+      "topic": "domestic_industry"
+    },
+    {
+      "page": 143,
+      "point": "PW asserts a Ninth Affirmative Defense regarding public interest, arguing that the relief sought by Crocs is not in the public interest.",
+      "quote": "The relief sought by Crocs is not in the public interest.",
+      "topic": "relief"
+    },
+    {
+      "page": 3,
+      "point": "PW denies that Crocs is entitled to any relief requested, including a General Exclusion Order pursuant to Section 337(d) and cease-and-desist orders pursuant to Section 337(f).",
+      "quote": "PW denies that Crocs is entitled to any relief it seeks against PW.",
+      "topic": "relief"
+    },
+    {
+      "page": 3,
+      "point": "PW admits the Accused Products are casual footwear with holes in the upper and such footwear's packaging, as Crocs described them.",
+      "quote": "PW admits the description Crocs offers for the category of Accused Products is casual footwear with holes in the upper",
+      "topic": "products"
+    },
+    {
+      "page": 142,
+      "point": "PW identifies its Slingback Sandal Clog product with Harmonized Tariff Schedule (HTSUS) number 6402.99.3145 and identifies its supplier in Confidential Exhibit A.",
+      "quote": "The Harmonized Tariff Schedule (HTSUS) number of the Slingback Sandal Clog is 6402.99.3145.",
+      "topic": "products"
+    },
+    {
+      "page": 142,
+      "point": "PW states it is investigating statistical data regarding the volume and value of imports of the subject article and will supplement its response in discovery, while denying that any supplied data relates to or supports any allegation of trademark infringement.",
+      "quote": "PW states that it is investigating statistical data, and other such data required by19 C.F.R. \u00a7 210.13(b), regarding the volume and value of imports",
+      "topic": "scope"
+    }
+  ],
+  "rejected": [],
+  "taken_at": "2026-09-26T20:12:56+00:00",
+  "title": "PW Shoes Response to the Corrected and Supplemental Complaint and Notice of Investigation",
+  "truncated": false,
+  "who": "PW Shoes, Inc."
+}
