@@ -1,0 +1,32 @@
+{
+  "case": "337-1499",
+  "cost_usd": 0.00391,
+  "date": "2026-05-19",
+  "doc_id": "882677",
+  "document_type": "Notice",
+  "events": [
+    {
+      "category": "target_date",
+      "date": "2027-09-14",
+      "end_date": "",
+      "event": "Target date for completion of investigation",
+      "quote": "seventeen-month target date of September 14, 2027 for completion of this investigation",
+      "relative": ""
+    },
+    {
+      "category": "initial_determination",
+      "date": "2027-05-14",
+      "end_date": "",
+      "event": "Final initial determination due",
+      "quote": "The final ID is due on May 14, 2027",
+      "relative": ""
+    }
+  ],
+  "extracted_at": "2026-09-26T18:35:17+00:00",
+  "model": "claude-haiku-4-5-20251001",
+  "prompt_version": 2,
+  "rejected": [],
+  "role": "target_date",
+  "title": "Commission Determination Not to Review an Initial Determination Setting a 17-Month Target Date",
+  "truncated": false
+}

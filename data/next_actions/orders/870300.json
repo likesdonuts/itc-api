@@ -1,0 +1,200 @@
+{
+  "case": "337-1472",
+  "cost_usd": 0.014834,
+  "date": "2026-01-27",
+  "doc_id": "870300",
+  "document_type": "Order",
+  "events": [
+    {
+      "category": "other",
+      "date": "2026-02-03",
+      "end_date": "",
+      "event": "Parties file their Proposed Procedural Schedule and identify USPTO/PTO Proceedings as well as State and Federal Litigation that is relevant to this Investigation",
+      "quote": "Parties file their Proposed Procedural Schedule and identify USPTO/PTO Proceedings as well as State and Federal Litigation that is relevant to this Investigation   February 3, 2026",
+      "relative": ""
+    },
+    {
+      "category": "prehearing",
+      "date": "2026-02-17",
+      "end_date": "",
+      "event": "Management Conference",
+      "quote": "Management Conference  February 17, 2026 2:00 p.m.",
+      "relative": ""
+    },
+    {
+      "category": "claim_construction",
+      "date": "2026-03-27",
+      "end_date": "",
+      "event": "File Joint Claim Construction Chart",
+      "quote": "File Joint Claim Construction Chart March 27, 2026",
+      "relative": ""
+    },
+    {
+      "category": "claim_construction",
+      "date": "2026-03-27",
+      "end_date": "",
+      "event": "Deadline to File Markman Hearing Proposals (Including Final Proposed Markman Exhibit Lists)",
+      "quote": "Deadline to File Markman Hearing Proposals (Including Final Proposed Markman Exhibit Lists) March 27, 2026",
+      "relative": ""
+    },
+    {
+      "category": "prehearing",
+      "date": "2026-03-17",
+      "end_date": "",
+      "event": "Management Conference",
+      "quote": "Management Conference (To discuss potential discovery issues/timing, any relevant corollary proceedings) (Likely on Webex) March 17, 2026 2:00 p.m.",
+      "relative": ""
+    },
+    {
+      "category": "claim_construction",
+      "date": "",
+      "end_date": "",
+      "event": "Markman Hearing",
+      "quote": "Markman Hearing (If Held: Pick Date) Pick a date: April 15, 16, 17, 20, or 21, 2026",
+      "relative": "Pick a date: April 15, 16, 17, 20, or 21, 2026"
+    },
+    {
+      "category": "prehearing",
+      "date": "2026-04-17",
+      "end_date": "",
+      "event": "Management Conference",
+      "quote": "Management Conference (Likely on Webex) If there is a Markman Hearing, then this Management Conference will be held on the same day as the Markman Hearing, otherwise: April 17, 2026 2:00 p.m.",
+      "relative": ""
+    },
+    {
+      "category": "prehearing",
+      "date": "2026-05-22",
+      "end_date": "",
+      "event": "Management Conference",
+      "quote": "Management Conference (Likely on Webex) May 22, 2026 2:00 p.m.",
+      "relative": ""
+    },
+    {
+      "category": "motions",
+      "date": "2026-06-08",
+      "end_date": "",
+      "event": "Last Day to File Motions to Compel",
+      "quote": "Last Day to File Motions to Compel (Unless leave is granted) June 8, 2026",
+      "relative": ""
+    },
+    {
+      "category": "discovery",
+      "date": "2026-07-08",
+      "end_date": "",
+      "event": "Fact Discovery Cutoff and Completion",
+      "quote": "Fact Discovery Cutoff and Completion (This includes completion of fact Tests/Surveys/Data) (No extensions without Leave) (Note: this means that all fact contentions on infringement and invalidity have been exchanged and completed)  July 8, 2026",
+      "relative": ""
+    },
+    {
+      "category": "discovery",
+      "date": "2026-08-17",
+      "end_date": "",
+      "event": "Expert Discovery Cutoff and Completion",
+      "quote": "Expert Discovery Cutoff and Completion (No extensions without Leave) August 17, 2026",
+      "relative": ""
+    },
+    {
+      "category": "motions",
+      "date": "2026-09-24",
+      "end_date": "",
+      "event": "Last Day to file Summary Determination Motions",
+      "quote": "Last Day to file Summary Determination Motions September 24, 2026",
+      "relative": ""
+    },
+    {
+      "category": "motions",
+      "date": "2026-10-23",
+      "end_date": "",
+      "event": "Last day to file Motions in Limine",
+      "quote": "Last day to file Motions in Limine (\"MIL\") (Complainants and Respondents are each limited to no more than two (2) MILs and HPOs in combination, and Respondents are limited to no more than three (3) MILs and HPOs in combination) without Leave October 23, 2026",
+      "relative": ""
+    },
+    {
+      "category": "motions",
+      "date": "2026-10-23",
+      "end_date": "",
+      "event": "Last day to file High Priority Objections",
+      "quote": "Last day to file High Priority Objections (\"HPO\") (See note for MIL) October 23, 2026",
+      "relative": ""
+    },
+    {
+      "category": "motions",
+      "date": "2026-10-30",
+      "end_date": "",
+      "event": "File Responses to Motions in Limine",
+      "quote": "File Responses to Motions in Limine October 30, 2026",
+      "relative": ""
+    },
+    {
+      "category": "motions",
+      "date": "2026-10-30",
+      "end_date": "",
+      "event": "File Responses to High Priority Objections",
+      "quote": "File Responses to High Priority Objections October 30, 2026",
+      "relative": ""
+    },
+    {
+      "category": "prehearing",
+      "date": "2026-11-23",
+      "end_date": "",
+      "event": "Pre-Hearing Conference",
+      "quote": "Pre-Hearing Conference (There May Be One or More Conferences Before to Resolve MILS or Other Issues) November 23, 2026",
+      "relative": ""
+    },
+    {
+      "category": "hearing",
+      "date": "2026-11-23",
+      "end_date": "2026-12-03",
+      "event": "Evidentiary Hearing",
+      "quote": "Evidentiary Hearing (Starting with Tutorials, as Parties Propose) November 23, 24, 30, December 1, 2, and 3, 2026",
+      "relative": ""
+    },
+    {
+      "category": "hearing",
+      "date": "2026-12-11",
+      "end_date": "",
+      "event": "Last Day to submit Final Exhibits to Box",
+      "quote": "Last Day to submit Final Exhibits to Box. All Exhibits should be properly labeled (Follow the Ground Rules and Docket Requirements)  December 11, 2026",
+      "relative": ""
+    },
+    {
+      "category": "briefing",
+      "date": "2026-12-29",
+      "end_date": "",
+      "event": "Complainants and Respondents file Initial Post-Hearing Briefs",
+      "quote": "Complainants and Respondents file Initial Post-Hearing Briefs (Only on Issues for Which the Party Bears the Burden of Proof) and Final Exhibit Lists December 29, 2026",
+      "relative": ""
+    },
+    {
+      "category": "briefing",
+      "date": "2027-01-05",
+      "end_date": "",
+      "event": "Complainants and Respondents file Reply Post-Hearing Briefs",
+      "quote": "Complainants and Respondents file Reply Post-Hearing Briefs (Only on Issues Discussed in the Initial Post-Hearing Brief of an Opposing Party) January 5, 2027",
+      "relative": ""
+    },
+    {
+      "category": "initial_determination",
+      "date": "2027-05-03",
+      "end_date": "",
+      "event": "Final ID due",
+      "quote": "Final ID due May 3, 2027",
+      "relative": ""
+    },
+    {
+      "category": "target_date",
+      "date": "2027-09-03",
+      "end_date": "",
+      "event": "Target Date",
+      "quote": "Target Date September 3, 2027",
+      "relative": ""
+    }
+  ],
+  "extracted_at": "2026-09-26T18:15:50+00:00",
+  "model": "claude-haiku-4-5-20251001",
+  "prompt_version": 2,
+  "rejected": [],
+  "role": "amendment",
+  "title": "Granting-in-Part Joint Motion to Modify the Dates for the Evidentiary Hearing, and for an Extension of Time to Submit a Proposed Procedural Schedule [Motion Dkt. No. 1472-005]",
+  "truncated": false
+}

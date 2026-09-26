@@ -1,0 +1,32 @@
+{
+  "case": "337-1490",
+  "cost_usd": 0.004506,
+  "date": "2026-08-10",
+  "doc_id": "890979",
+  "document_type": "Order",
+  "events": [
+    {
+      "category": "other",
+      "date": "2026-08-18",
+      "end_date": "",
+      "event": "Joint submission on case narrowing framework",
+      "quote": "The parties should file on EDIS, by Tuesday, August 18, 2026, a joint submission that details the proposals exchanged and any areas of agreement.",
+      "relative": ""
+    },
+    {
+      "category": "claim_construction",
+      "date": "2026-08-25",
+      "end_date": "",
+      "event": "Markman hearing",
+      "quote": "the procedural schedule is amended to proceed with the Markman hearing on Tuesday, August 25, 2026.",
+      "relative": ""
+    }
+  ],
+  "extracted_at": "2026-09-26T18:28:49+00:00",
+  "model": "claude-haiku-4-5-20251001",
+  "prompt_version": 2,
+  "rejected": [],
+  "role": "amendment",
+  "title": "Regarding Issues Discussed at the August 7, 2026 Teleconference; Amending Procedural Schedule to Reschedule Markman Hearing",
+  "truncated": false
+}

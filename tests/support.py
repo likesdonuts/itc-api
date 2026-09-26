@@ -175,9 +175,27 @@ class FakeEdisClient:
         self.document_calls: list[str] = []
         self.downloads: list[tuple[str, str]] = []
 
-    def list_documents(self, number: str):
+    page_size = 20
+
+    def list_documents(self, number: str, known_ids=None):
+        """Like EDIS: newest first, in pages; with `known_ids`, stops after
+        the first page made up entirely of them (and counts the pages read)."""
         self.document_calls.append(number)
-        return self.documents.get(number, [])
+        rows = self.documents.get(number, [])
+        self.last_listing_complete = True
+        self.pages_read = getattr(self, "pages_read", 0)
+        if not known_ids:
+            self.pages_read += max(1, -(-len(rows) // self.page_size))
+            return rows
+        out = []
+        for start in range(0, len(rows), self.page_size):
+            page = rows[start : start + self.page_size]
+            out.extend(page)
+            self.pages_read += 1
+            if all(str(r.get("id")) in known_ids for r in page):
+                self.last_listing_complete = False
+                break
+        return out
 
     def list_attachments(self, document_id: str):
         return self.attachments.get(str(document_id), [])

@@ -1,0 +1,48 @@
+{
+  "case": "337-1458",
+  "cost_usd": 0.004314,
+  "date": "2025-12-03",
+  "doc_id": "865540",
+  "document_type": "Order",
+  "events": [
+    {
+      "category": "hearing",
+      "date": "2026-06-10",
+      "end_date": "2026-06-17",
+      "event": "Evidentiary hearing begins",
+      "quote": "The Hearing will now be held on June 10-12, 15-17, 2026.",
+      "relative": ""
+    },
+    {
+      "category": "initial_determination",
+      "date": "2026-11-19",
+      "end_date": "",
+      "event": "Initial determination due",
+      "quote": "The ID is due no later than Thursday, November 19, 2026.",
+      "relative": ""
+    },
+    {
+      "category": "target_date",
+      "date": "2027-03-19",
+      "end_date": "",
+      "event": "Target date",
+      "quote": "the Target Date was extended from January 25, 2027, to Friday, March 19, 2027.",
+      "relative": ""
+    },
+    {
+      "category": "other",
+      "date": "2025-12-08",
+      "end_date": "",
+      "event": "Joint Motion to Amend the Procedural Schedule and proposed Amended Procedural Schedule due",
+      "quote": "By close of business, Monday, December 8, 2025, the parties are instructed to file: (i) a Joint Motion to Amend the Procedural Schedule; and (ii) a proposed Amended Procedural Schedule",
+      "relative": ""
+    }
+  ],
+  "extracted_at": "2026-09-26T18:08:50+00:00",
+  "model": "claude-haiku-4-5-20251001",
+  "prompt_version": 2,
+  "rejected": [],
+  "role": "amendment",
+  "title": "Regarding the Evidentiary Hearing Dates and an Amended Procedural Schedule",
+  "truncated": false
+}

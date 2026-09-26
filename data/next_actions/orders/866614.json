@@ -1,0 +1,408 @@
+{
+  "case": "337-1447",
+  "cost_usd": 0.021844,
+  "date": "2025-12-16",
+  "doc_id": "866614",
+  "document_type": "Order",
+  "events": [
+    {
+      "category": "discovery",
+      "date": "2025-11-19",
+      "end_date": "",
+      "event": "Final deadline for supplements to responses to contention interrogatories",
+      "quote": "Final deadline for supplements to responses to contention interrogatories on issues for which the responding party does not bear the burden of proof... Wednesday, November 19, 2025",
+      "relative": ""
+    },
+    {
+      "category": "discovery",
+      "date": "2025-11-21",
+      "end_date": "",
+      "event": "Fact discovery cutoff and completion",
+      "quote": "Fact discovery cutoff and completion Friday, November 21, 2025",
+      "relative": ""
+    },
+    {
+      "category": "other",
+      "date": "2025-11-24",
+      "end_date": "",
+      "event": "Private parties provide joint submission detailing status of related litigation",
+      "quote": "Private parties provide joint submission detailing status of related litigation Monday, November 24, 2025",
+      "relative": ""
+    },
+    {
+      "category": "claim_construction",
+      "date": "2025-12-01",
+      "end_date": "",
+      "event": "OUII to file Claim Construction Brief",
+      "quote": "OUII to file Claim Construction Brief, addressing affirmative and responsive positions Monday, December 1, 2025",
+      "relative": ""
+    },
+    {
+      "category": "claim_construction",
+      "date": "2025-12-04",
+      "end_date": "",
+      "event": "Private parties to file responsive brief",
+      "quote": "Private parties to file responsive brief Thursday, December 4, 2025",
+      "relative": ""
+    },
+    {
+      "category": "prehearing",
+      "date": "2025-12-05",
+      "end_date": "",
+      "event": "Monthly case management conference",
+      "quote": "Monthly case management conference Friday, December 5, 2025",
+      "relative": ""
+    },
+    {
+      "category": "discovery",
+      "date": "2025-12-10",
+      "end_date": "",
+      "event": "Due date for Joint Motion for the Appointment of Commissioners for Bachem's Depositions",
+      "quote": "Due date for Joint Motion for the Appointment of Commissioners for Bachem's Depositions Wednesday, December 10, 2025",
+      "relative": ""
+    },
+    {
+      "category": "discovery",
+      "date": "2025-12-10",
+      "end_date": "",
+      "event": "Due date for Bachem to produce non-confidential documents responsive to BioMarin's Requests for Production",
+      "quote": "Due date for Bachem to produce non-confidential documents responsive to BioMarin's Requests for Production or state that it was unable to locate any after a reasonable search Wednesday, December 10, 2025",
+      "relative": ""
+    },
+    {
+      "category": "discovery",
+      "date": "2025-12-12",
+      "end_date": "",
+      "event": "Due date for Joint Motion for the Appointment of Commissioners for Production of Bachem's Confidential Documents",
+      "quote": "Due date for Joint Motion for the Appointment of Commissioners for Production of Bachem's Confidential Documents Friday, December 12, 2025",
+      "relative": ""
+    },
+    {
+      "category": "expert",
+      "date": "2025-12-12",
+      "end_date": "",
+      "event": "Staff to file Identification of Expert Witnesses, Tentative List of Fact Witnesses, Notice of Prior Art",
+      "quote": "Staff to file the following whose deadlines occurred during the lapse in appropriations: Identification of Expert Witnesses Tentative List of Fact Witnesses Notice of Prior Art Friday, December 12, 2025",
+      "relative": ""
+    },
+    {
+      "category": "discovery",
+      "date": "2025-12-19",
+      "end_date": "",
+      "event": "Completion of email discovery",
+      "quote": "Completion of email discovery Friday, December 19, 2025",
+      "relative": ""
+    },
+    {
+      "category": "expert",
+      "date": "2025-12-19",
+      "end_date": "",
+      "event": "Exchange of initial expert reports",
+      "quote": "Exchange of initial expert reports for issues for which a party bears the burden of proof and to identify and produce all tests, surveys, and data upon which the expert relies. Friday, December 19, 2025",
+      "relative": ""
+    },
+    {
+      "category": "discovery",
+      "date": "2025-12-19",
+      "end_date": "",
+      "event": "Bachem to identify by Bates its documents produced by Ascendis",
+      "quote": "Bachem to identify by Bates its documents produced by Ascendis, and to verify if no other responsive documents exist beyond those identified by Ascendis's Bates Friday, December 19, 2025",
+      "relative": ""
+    },
+    {
+      "category": "other",
+      "date": "2026-01-05",
+      "end_date": "",
+      "event": "Private parties provide joint submission detailing status of related litigation",
+      "quote": "Private parties provide joint submission detailing status of related litigation Monday, January 5, 2026",
+      "relative": ""
+    },
+    {
+      "category": "prehearing",
+      "date": "2026-01-06",
+      "end_date": "",
+      "event": "Monthly case management conference",
+      "quote": "Monthly case management conference Tuesday, January 6, 2026, 2:00 p.m. ET",
+      "relative": ""
+    },
+    {
+      "category": "motions",
+      "date": "2026-01-09",
+      "end_date": "",
+      "event": "Deadline for motions to compel fact discovery",
+      "quote": "Deadline for motions to compel fact discovery Friday, January 9, 2026",
+      "relative": ""
+    },
+    {
+      "category": "expert",
+      "date": "2026-01-21",
+      "end_date": "",
+      "event": "Exchange of rebuttal expert reports",
+      "quote": "Exchange of rebuttal expert reports for issues for which a party does not bear the burden of proof, and to identify and produce all tests, surveys, and data upon which the expert relies. Wednesday, January 21, 2026",
+      "relative": ""
+    },
+    {
+      "category": "other",
+      "date": "2026-02-06",
+      "end_date": "",
+      "event": "Private parties provide joint submission detailing status of related litigation",
+      "quote": "Private parties provide joint submission detailing status of related litigation Friday, February 6, 2026",
+      "relative": ""
+    },
+    {
+      "category": "claim_construction",
+      "date": "2026-02-06",
+      "end_date": "",
+      "event": "Markman Hearing",
+      "quote": "Markman Hearing Friday, February 6, 2026 10:00 a.m. ET",
+      "relative": ""
+    },
+    {
+      "category": "prehearing",
+      "date": "2026-02-13",
+      "end_date": "",
+      "event": "Deadline for one-day mediation session",
+      "quote": "Deadline for one-day mediation session Friday, February 13, 2026",
+      "relative": ""
+    },
+    {
+      "category": "other",
+      "date": "2026-02-18",
+      "end_date": "",
+      "event": "Submit joint report on mediation",
+      "quote": "Submit joint report on mediation Wednesday, February 18, 2026",
+      "relative": ""
+    },
+    {
+      "category": "motions",
+      "date": "2026-02-19",
+      "end_date": "",
+      "event": "Deadline for filing summary determination motions",
+      "quote": "Deadline for filing summary determination motions Thursday, February 19, 2026",
+      "relative": ""
+    },
+    {
+      "category": "expert",
+      "date": "2026-02-20",
+      "end_date": "",
+      "event": "Expert discovery cutoff and completion",
+      "quote": "Expert discovery cutoff and completion Friday, February 20, 2026",
+      "relative": ""
+    },
+    {
+      "category": "prehearing",
+      "date": "2026-02-26",
+      "end_date": "",
+      "event": "Private parties to exchange direct exhibit lists and identify physical exhibits",
+      "quote": "Private parties to exchange direct exhibit lists and identify physical exhibits Thursday, February 26, 2026",
+      "relative": ""
+    },
+    {
+      "category": "other",
+      "date": "2026-03-06",
+      "end_date": "",
+      "event": "Private parties provide joint submission detailing status of related litigation",
+      "quote": "Private parties provide joint submission detailing status of related litigation Friday, March 6, 2026",
+      "relative": ""
+    },
+    {
+      "category": "prehearing",
+      "date": "2026-03-06",
+      "end_date": "",
+      "event": "Private parties to exchange rebuttal exhibit lists and identify rebuttal physical exhibits",
+      "quote": "Private parties to exchange rebuttal exhibit lists and identify rebuttal physical exhibits Friday, March 6, 2026",
+      "relative": ""
+    },
+    {
+      "category": "prehearing",
+      "date": "2026-03-09",
+      "end_date": "",
+      "event": "Private parties serve proposed direct exhibits",
+      "quote": "Private parties serve proposed direct exhibits (except for demonstratives) Monday, March 9, 2026",
+      "relative": ""
+    },
+    {
+      "category": "prehearing",
+      "date": "2026-03-09",
+      "end_date": "",
+      "event": "Commission investigative attorney to serve direct and rebuttal exhibit list and identify physical exhibits",
+      "quote": "Commission investigative attorney to serve direct and rebuttal exhibit list and identify physical exhibits Monday, March 9, 2026",
+      "relative": ""
+    },
+    {
+      "category": "prehearing",
+      "date": "2026-03-13",
+      "end_date": "",
+      "event": "Private parties serve proposed rebuttal exhibits",
+      "quote": "Private parties serve proposed rebuttal exhibits (except for demonstratives) Friday, March 13, 2026",
+      "relative": ""
+    },
+    {
+      "category": "prehearing",
+      "date": "2026-03-18",
+      "end_date": "",
+      "event": "Commission investigative attorney serve proposed direct and rebuttal exhibits",
+      "quote": "Commission investigative attorney serve proposed direct and rebuttal exhibits (except for demonstratives) Wednesday, March 18, 2026",
+      "relative": ""
+    },
+    {
+      "category": "prehearing",
+      "date": "2026-03-19",
+      "end_date": "",
+      "event": "File joint list of unopposed exhibits",
+      "quote": "File joint list of unopposed exhibits Thursday, March 19, 2026",
+      "relative": ""
+    },
+    {
+      "category": "prehearing",
+      "date": "2026-03-20",
+      "end_date": "",
+      "event": "Private parties file pre-hearing statements and briefs",
+      "quote": "Private parties file pre-hearing statements and briefs Friday, March 20, 2026",
+      "relative": ""
+    },
+    {
+      "category": "prehearing",
+      "date": "2026-04-01",
+      "end_date": "",
+      "event": "Commission investigative attorney files pre-hearing statement and brief",
+      "quote": "Commission investigative attorney files pre-hearing statement and brief Wednesday, April 1, 2026",
+      "relative": ""
+    },
+    {
+      "category": "motions",
+      "date": "2026-04-02",
+      "end_date": "",
+      "event": "Deadline to file motions in limine",
+      "quote": "Deadline to file motions in limine Thursday, April 2, 2026",
+      "relative": ""
+    },
+    {
+      "category": "other",
+      "date": "2026-04-03",
+      "end_date": "",
+      "event": "Private parties provide joint submission detailing status of related litigation",
+      "quote": "Private parties provide joint submission detailing status of related litigation Friday, April 3, 2026",
+      "relative": ""
+    },
+    {
+      "category": "motions",
+      "date": "2026-04-09",
+      "end_date": "",
+      "event": "Deadline to file responses to motions in limine",
+      "quote": "Deadline to file responses to motions in limine Thursday, April 9, 2026",
+      "relative": ""
+    },
+    {
+      "category": "prehearing",
+      "date": "2026-04-20",
+      "end_date": "",
+      "event": "Final pre-hearing conference",
+      "quote": "Final pre-hearing conference Monday, April 20, 2026, 9:00 a.m. ET",
+      "relative": ""
+    },
+    {
+      "category": "hearing",
+      "date": "2026-04-20",
+      "end_date": "2026-04-24",
+      "event": "Evidentiary Hearing",
+      "quote": "Evidentiary Hearing April 20-24, 2026",
+      "relative": ""
+    },
+    {
+      "category": "prehearing",
+      "date": "2026-05-05",
+      "end_date": "",
+      "event": "File joint final exhibit list",
+      "quote": "File joint final exhibit list Tuesday, May 5, 2026",
+      "relative": ""
+    },
+    {
+      "category": "briefing",
+      "date": "2026-05-06",
+      "end_date": "",
+      "event": "Private parties file post-hearing initial briefs",
+      "quote": "Private parties file post-hearing initial briefs with the Secretary and submit final exhibits to the Chief Administrative Law Judge Wednesday, May 6, 2026",
+      "relative": ""
+    },
+    {
+      "category": "briefing",
+      "date": "2026-05-13",
+      "end_date": "",
+      "event": "Commission investigative attorney files post-hearing initial brief",
+      "quote": "Commission investigative attorney files post-hearing initial brief Wednesday, May 13, 2026",
+      "relative": ""
+    },
+    {
+      "category": "briefing",
+      "date": "2026-05-20",
+      "end_date": "",
+      "event": "Private parties file post-hearing responsive briefs",
+      "quote": "Private parties file post-hearing responsive briefs Wednesday, May 20, 2026",
+      "relative": ""
+    },
+    {
+      "category": "briefing",
+      "date": "2026-05-27",
+      "end_date": "",
+      "event": "Commission investigative attorney files post-hearing responsive brief",
+      "quote": "Commission investigative attorney files post-hearing responsive brief Wednesday, May 27, 2026",
+      "relative": ""
+    },
+    {
+      "category": "briefing",
+      "date": "2026-06-01",
+      "end_date": "",
+      "event": "Private parties file post-hearing reply briefs",
+      "quote": "Private parties file post-hearing reply briefs Monday, June 1, 2026",
+      "relative": ""
+    },
+    {
+      "category": "briefing",
+      "date": "2026-06-05",
+      "end_date": "",
+      "event": "Commission investigative attorney files post-hearing reply brief",
+      "quote": "Commission investigative attorney files post-hearing reply brief Friday, June 5, 2026",
+      "relative": ""
+    },
+    {
+      "category": "other",
+      "date": "2026-06-01",
+      "end_date": "",
+      "event": "Deadline for any motions to correct to the Evidentiary Hearing transcript",
+      "quote": "Deadline for any motions to correct to the Evidentiary Hearing transcript Monday, June 1, 2026",
+      "relative": ""
+    },
+    {
+      "category": "other",
+      "date": "2026-06-23",
+      "end_date": "",
+      "event": "Private parties provide joint submission detailing status of related litigation",
+      "quote": "Private parties provide joint submission detailing status of related litigation Tuesday, June 23, 2026",
+      "relative": ""
+    },
+    {
+      "category": "initial_determination",
+      "date": "2026-08-21",
+      "end_date": "",
+      "event": "Final initial determination on violation",
+      "quote": "Final initial determination on violation Friday, August 21, 2026",
+      "relative": ""
+    },
+    {
+      "category": "target_date",
+      "date": "2026-12-21",
+      "end_date": "",
+      "event": "Target date for completion of investigation",
+      "quote": "Target date for completion of investigation Thursday, December 21, 2026",
+      "relative": ""
+    }
+  ],
+  "extracted_at": "2026-09-26T18:07:56+00:00",
+  "model": "claude-haiku-4-5-20251001",
+  "prompt_version": 2,
+  "rejected": [],
+  "role": "amendment",
+  "title": "Amending Procedural Schedule",
+  "truncated": false
+}

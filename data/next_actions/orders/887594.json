@@ -1,0 +1,64 @@
+{
+  "case": "337-1458",
+  "cost_usd": 0.006054,
+  "date": "2026-07-09",
+  "doc_id": "887594",
+  "document_type": "Order",
+  "events": [
+    {
+      "category": "briefing",
+      "date": "2026-07-22",
+      "end_date": "",
+      "event": "Complainants and Respondents file Initial Post-Hearing Briefs (Only on Issues for Which the Party Bears the Burden of Proof) and Final Exhibit Lists",
+      "quote": "Complainants and Respondents file Initial Post-Hearing Briefs (Only on Issues for Which the Party Bears the Burden of Proof) and Final Exhibit Lists\nJuly 7, 2026\nJuly 22, 2026",
+      "relative": ""
+    },
+    {
+      "category": "briefing",
+      "date": "2026-07-29",
+      "end_date": "",
+      "event": "Staff Files Initial Post-Hearing Brief",
+      "quote": "Staff Files Initial Post-Hearing Brief\nJuly 14, 2026\nJuly 29, 2026",
+      "relative": ""
+    },
+    {
+      "category": "briefing",
+      "date": "2026-08-07",
+      "end_date": "",
+      "event": "Complainants and Respondents file Reply Post-Hearing Briefs (Only on Issues Discussed in the Initial Post-Hearing Brief of an Opposing Party)",
+      "quote": "Complainants and Respondents file Reply Post-Hearing Briefs (Only on Issues Discussed in the Initial Post-Hearing Brief of an Opposing Party)\nJuly 24, 2026\nAugust 7, 2026",
+      "relative": ""
+    },
+    {
+      "category": "briefing",
+      "date": "2026-08-07",
+      "end_date": "",
+      "event": "Staff Files Reply Post-Hearing Brief",
+      "quote": "Staff Files Reply Post-Hearing Brief\nJuly 24, 2026\nAugust 7, 2026",
+      "relative": ""
+    },
+    {
+      "category": "briefing",
+      "date": "2026-08-07",
+      "end_date": "",
+      "event": "Parties File Outline of Issues, Tracing Arguments from Pre-Hearing Through Post-Hearing Reply Briefs (Include Arguments That Have Been Dropped, Per Ground Rule 7.3)",
+      "quote": "Parties File Outline of Issues, Tracing Arguments from Pre-Hearing Through Post-Hearing Reply Briefs (Include Arguments That Have Been Dropped, Per Ground Rule 7.3)\nJuly 24, 2026\nAugust 7, 2026",
+      "relative": ""
+    },
+    {
+      "category": "other",
+      "date": "2026-08-11",
+      "end_date": "",
+      "event": "Private Parties File Statement of Undisputed Issues",
+      "quote": "Private Parties File Statement of Undisputed Issues\nJuly 26, 2026\nAugust 11, 2026",
+      "relative": ""
+    }
+  ],
+  "extracted_at": "2026-09-26T18:09:27+00:00",
+  "model": "claude-haiku-4-5-20251001",
+  "prompt_version": 2,
+  "rejected": [],
+  "role": "amendment",
+  "title": "Granting Joint Motion to Amend the Procedural Schedule",
+  "truncated": false
+}

@@ -1,0 +1,24 @@
+{
+  "case": "337-1491",
+  "cost_usd": 0.015643,
+  "date": "2026-09-09",
+  "doc_id": "894191",
+  "document_type": "Order",
+  "events": [
+    {
+      "category": "other",
+      "date": "2026-09-14",
+      "end_date": "",
+      "event": "Joint statement identifying motions requiring resolution",
+      "quote": "The parties shall also file a joint statement, by September 14, 2026, identifying motions that still require resolution",
+      "relative": ""
+    }
+  ],
+  "extracted_at": "2026-09-26T18:30:06+00:00",
+  "model": "claude-haiku-4-5-20251001",
+  "prompt_version": 2,
+  "rejected": [],
+  "role": "amendment",
+  "title": "Notice to the Parties regarding Reassignment; Replacement Ground Rules",
+  "truncated": true
+}

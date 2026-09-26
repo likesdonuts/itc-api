@@ -1,0 +1,24 @@
+{
+  "case": "337-1442",
+  "cost_usd": 0.003764,
+  "date": "2026-06-22",
+  "doc_id": "885755",
+  "document_type": "Notice",
+  "events": [
+    {
+      "category": "target_date",
+      "date": "2026-10-05",
+      "end_date": "",
+      "event": "Target date",
+      "quote": "extending the target date to October 5, 2026",
+      "relative": ""
+    }
+  ],
+  "extracted_at": "2026-09-26T18:04:28+00:00",
+  "model": "claude-haiku-4-5-20251001",
+  "prompt_version": 2,
+  "rejected": [],
+  "role": "target_date",
+  "title": "Commission Determination Not to Review an Initial Determination Extending the Target Date",
+  "truncated": false
+}

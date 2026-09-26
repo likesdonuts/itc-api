@@ -1,0 +1,264 @@
+{
+  "case": "337-1503",
+  "cost_usd": 0.01512,
+  "date": "2026-07-14",
+  "doc_id": "887932",
+  "document_type": "Order",
+  "events": [
+    {
+      "category": "discovery",
+      "date": "2026-08-13",
+      "end_date": "",
+      "event": "Initial deadline for responses to contention interrogatories on issues for which the responding party bears the burden of proof",
+      "quote": "Initial deadline for responses to contention interrogatories\non issues for which the responding party bears the burden\nof proof\nAugust 13, 2026",
+      "relative": ""
+    },
+    {
+      "category": "discovery",
+      "date": "2026-08-13",
+      "end_date": "",
+      "event": "File notice of prior art",
+      "quote": "G.R. 5.1 File notice of prior art August 13, 2026",
+      "relative": ""
+    },
+    {
+      "category": "discovery",
+      "date": "2026-08-13",
+      "end_date": "",
+      "event": "Disclosure of Domestic Industry Contentions",
+      "quote": "G.R. 5.2 Disclosure of Domestic Industry Contentions August 13, 2026",
+      "relative": ""
+    },
+    {
+      "category": "expert",
+      "date": "2026-08-28",
+      "end_date": "",
+      "event": "File identification of expert witnesses, including their expertise and curriculum vitae",
+      "quote": "File identification of expert witnesses, including their\nexpertise and curriculum vitae\nAugust 28, 2026",
+      "relative": ""
+    },
+    {
+      "category": "discovery",
+      "date": "2026-09-03",
+      "end_date": "",
+      "event": "Initial deadline for responses to contention interrogatories on issues for which the responding party does not bear the burden of proof",
+      "quote": "Initial deadline for responses to contention interrogatories\non issues for which the responding party does not bear the\nburden of proof (also including Complainant's contentions\nconcerning secondary considerations of non-obviousness)\nSeptember 3, 2026",
+      "relative": ""
+    },
+    {
+      "category": "discovery",
+      "date": "2026-09-10",
+      "end_date": "",
+      "event": "Initial deadline for responses to Complainant's contentions concerning secondary considerations of non-obviousness",
+      "quote": "Initial deadline for responses to Complainant's contentions\nconcerning secondary considerations of non-obviousness\nSeptember 10, 2026",
+      "relative": ""
+    },
+    {
+      "category": "discovery",
+      "date": "2026-09-10",
+      "end_date": "",
+      "event": "Maximum Scope of the Investigation Disclosure",
+      "quote": "G.R. 5.3 Maximum Scope of the Investigation Disclosure September 10, 2026",
+      "relative": ""
+    },
+    {
+      "category": "discovery",
+      "date": "2026-10-06",
+      "end_date": "",
+      "event": "Cut-off date for supplements to contention interrogatories on issues for which the responding party bears the burden of proof",
+      "quote": "Cut-off date for supplements to contention interrogatories\non issues for which the responding party bears the burden\nof proof\nOctober 6, 2026",
+      "relative": ""
+    },
+    {
+      "category": "discovery",
+      "date": "2026-10-17",
+      "end_date": "",
+      "event": "Cut-off date for supplements to contention interrogatories on issues for which the responding party does not bear the burden of proof",
+      "quote": "Cut-off date for supplements to contention interrogatories\non issues for which the responding party does not bear the\nburden of proof\nOctober 17, 2026",
+      "relative": ""
+    },
+    {
+      "category": "discovery",
+      "date": "2026-10-23",
+      "end_date": "",
+      "event": "Fact discovery cut-off and completion",
+      "quote": "Fact discovery cut-off and completion October 23, 2026",
+      "relative": ""
+    },
+    {
+      "category": "motions",
+      "date": "2026-10-23",
+      "end_date": "",
+      "event": "Deadlines for motions to compel fact discovery",
+      "quote": "Deadlines for motions to compel fact discovery October 23, 2026",
+      "relative": ""
+    },
+    {
+      "category": "discovery",
+      "date": "2026-10-27",
+      "end_date": "",
+      "event": "Initial Case-Narrowing Disclosure",
+      "quote": "G.R. 5.3 Initial Case-Narrowing Disclosure October 27, 2026",
+      "relative": ""
+    },
+    {
+      "category": "expert",
+      "date": "2026-11-13",
+      "end_date": "",
+      "event": "Exchange of initial expert reports",
+      "quote": "Exchange of initial expert reports (identify\ntests/surveys/data)\nNovember 13, 2026",
+      "relative": ""
+    },
+    {
+      "category": "prehearing",
+      "date": "2026-11-19",
+      "end_date": "",
+      "event": "File tentative lists of witnesses a party will call to testify at the hearing",
+      "quote": "File tentative lists of witnesses a party will call to testify at\nthe hearing, with an identification of each witness' relationship to the party\nNovember 19, 2026",
+      "relative": ""
+    },
+    {
+      "category": "expert",
+      "date": "2026-12-08",
+      "end_date": "",
+      "event": "Exchange of rebuttal expert reports",
+      "quote": "Exchange of rebuttal expert reports December 8, 2026",
+      "relative": ""
+    },
+    {
+      "category": "discovery",
+      "date": "2026-12-22",
+      "end_date": "",
+      "event": "Expert discovery cut-off and completion",
+      "quote": "Expert discovery cut-off and completion December 22, 2026",
+      "relative": ""
+    },
+    {
+      "category": "motions",
+      "date": "2026-12-22",
+      "end_date": "",
+      "event": "Deadline for motions to compel expert discovery",
+      "quote": "Deadline for motions to compel expert discovery December 22, 2026",
+      "relative": ""
+    },
+    {
+      "category": "motions",
+      "date": "2027-01-07",
+      "end_date": "",
+      "event": "Deadline for filing motions for summary determination",
+      "quote": "Deadline for filing motions for summary determination January 7, 2027",
+      "relative": ""
+    },
+    {
+      "category": "prehearing",
+      "date": "2027-01-13",
+      "end_date": "",
+      "event": "Exchange of exhibit lists among the parties",
+      "quote": "Exchange of exhibit lists among the parties January 13, 2027",
+      "relative": ""
+    },
+    {
+      "category": "prehearing",
+      "date": "2027-01-19",
+      "end_date": "",
+      "event": "Submit and serve direct exhibits",
+      "quote": "Submit and serve direct exhibits, with physical exhibits\navailable\nJanuary 19, 2027",
+      "relative": ""
+    },
+    {
+      "category": "prehearing",
+      "date": "2027-01-29",
+      "end_date": "",
+      "event": "Submit and serve rebuttal exhibits",
+      "quote": "Submit and serve rebuttal exhibits, with rebuttal physical\nexhibits available\nJanuary 29, 2027",
+      "relative": ""
+    },
+    {
+      "category": "prehearing",
+      "date": "2027-02-04",
+      "end_date": "",
+      "event": "Final Case-Narrowing Disclosure",
+      "quote": "G.R. 5.3 Final Case-Narrowing Disclosure February 4, 2027",
+      "relative": ""
+    },
+    {
+      "category": "prehearing",
+      "date": "2027-02-11",
+      "end_date": "",
+      "event": "File pre-trial statements and briefs",
+      "quote": "File pre-trial statements and briefs February 11, 2027",
+      "relative": ""
+    },
+    {
+      "category": "motions",
+      "date": "2027-02-18",
+      "end_date": "",
+      "event": "Deadline to file motions in limine",
+      "quote": "Deadline to file motions in limine February 18, 2027",
+      "relative": ""
+    },
+    {
+      "category": "motions",
+      "date": "2027-03-01",
+      "end_date": "",
+      "event": "File responses to motions in limine",
+      "quote": "File responses to motions in limine March 1, 2027",
+      "relative": ""
+    },
+    {
+      "category": "prehearing",
+      "date": "2027-03-08",
+      "end_date": "",
+      "event": "Pre-trial conference",
+      "quote": "Pre-trial conference March 8, 2027",
+      "relative": ""
+    },
+    {
+      "category": "hearing",
+      "date": "2027-03-08",
+      "end_date": "2027-03-12",
+      "event": "Hearing",
+      "quote": "Hearing March 8-12, 2027",
+      "relative": ""
+    },
+    {
+      "category": "briefing",
+      "date": "2027-04-09",
+      "end_date": "",
+      "event": "File initial post-trial briefs and final exhibit lists",
+      "quote": "File initial post-trial briefs and final exhibit lists April 9, 2027",
+      "relative": ""
+    },
+    {
+      "category": "briefing",
+      "date": "2027-04-30",
+      "end_date": "",
+      "event": "File reply post-trial briefs",
+      "quote": "File reply post-trial briefs April 30, 2027",
+      "relative": ""
+    },
+    {
+      "category": "initial_determination",
+      "date": "2027-06-08",
+      "end_date": "",
+      "event": "Initial Determination",
+      "quote": "Initial Determination June 8, 2027",
+      "relative": ""
+    },
+    {
+      "category": "target_date",
+      "date": "2027-10-08",
+      "end_date": "",
+      "event": "Target date for completion of investigation",
+      "quote": "Target date for completion of investigation October 8, 2027",
+      "relative": ""
+    }
+  ],
+  "extracted_at": "2026-09-26T18:36:42+00:00",
+  "model": "claude-haiku-4-5-20251001",
+  "prompt_version": 2,
+  "rejected": [],
+  "role": "full_schedule",
+  "title": "Setting Procedural Schedule",
+  "truncated": false
+}

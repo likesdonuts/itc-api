@@ -1,0 +1,32 @@
+{
+  "case": "337-1477",
+  "cost_usd": 0.003797,
+  "date": "2026-02-04",
+  "doc_id": "871547",
+  "document_type": "Order",
+  "events": [
+    {
+      "category": "target_date",
+      "date": "2027-05-12",
+      "end_date": "",
+      "event": "Target date for completion of investigation",
+      "quote": "The target date for this investigation shall be Wednesday, May 12, 2027, which is sixteen (16) months from the date that the Notice of Investigation was published in the Federal Register .",
+      "relative": ""
+    },
+    {
+      "category": "initial_determination",
+      "date": "2027-01-12",
+      "end_date": "",
+      "event": "Final initial determination due",
+      "quote": "any final initial determination would be due by Tuesday, January 12, 2027",
+      "relative": ""
+    }
+  ],
+  "extracted_at": "2026-09-26T18:17:54+00:00",
+  "model": "claude-haiku-4-5-20251001",
+  "prompt_version": 2,
+  "rejected": [],
+  "role": "target_date",
+  "title": "Setting the Target Date at Sixteen Months",
+  "truncated": false
+}

@@ -1,0 +1,34 @@
+{
+  "case": "337-1488",
+  "cost_usd": 0.004884,
+  "date": "2026-08-14",
+  "doc_id": "891701",
+  "document_type": "Order",
+  "events": [
+    {
+      "category": "prehearing",
+      "date": "2026-07-28",
+      "end_date": "",
+      "event": "Case Management Conference",
+      "quote": "Other than the scheduled Management Conference of July 28, 2026",
+      "relative": ""
+    }
+  ],
+  "extracted_at": "2026-09-26T18:27:47+00:00",
+  "model": "claude-haiku-4-5-20251001",
+  "prompt_version": 2,
+  "rejected": [
+    {
+      "category": "other",
+      "date": "",
+      "end_date": "",
+      "event": "All other deadlines in the Adopted Procedural Schedule (as amended) stayed",
+      "quote": "all other deadlines in the Adopted Procedural, as amended, are hereby stayed",
+      "rejected": "neither a date nor a relative rule",
+      "relative": ""
+    }
+  ],
+  "role": "amendment",
+  "title": "Granting in-Part Complainants\u2019 Motion to Stay Procedural Schedule [Motion Docket No. 1488-007]",
+  "truncated": false
+}

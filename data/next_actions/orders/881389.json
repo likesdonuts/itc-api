@@ -1,0 +1,32 @@
+{
+  "case": "337-1496",
+  "cost_usd": 0.004047,
+  "date": "2026-05-06",
+  "doc_id": "881389",
+  "document_type": "Notice",
+  "events": [
+    {
+      "category": "target_date",
+      "date": "2027-10-06",
+      "end_date": "",
+      "event": "Target date for completion of investigation",
+      "quote": "setting the target date for completion of this investigation as October 6, 2027",
+      "relative": ""
+    },
+    {
+      "category": "initial_determination",
+      "date": "2027-06-04",
+      "end_date": "",
+      "event": "Final initial determination on violation due",
+      "quote": "Under this schedule, the final ID on violation is due June 4, 2027",
+      "relative": ""
+    }
+  ],
+  "extracted_at": "2026-09-26T18:33:02+00:00",
+  "model": "claude-haiku-4-5-20251001",
+  "prompt_version": 2,
+  "rejected": [],
+  "role": "target_date",
+  "title": "Commission Determination Not to Review Initial Determination Setting Target Date",
+  "truncated": false
+}

@@ -21,6 +21,8 @@ Logger = Callable[[str], None]
 MIN_TEXT_CHARS = 100
 
 _engine = None
+# Pages OCR'd by this process, for the daily sync's timing log.
+PAGES_READ = 0
 
 
 def available() -> bool:
@@ -44,6 +46,8 @@ def _ocr_engine():
 
 def read_page_image(path: Path, index: int, *, scale: float = 2.0) -> str:
     """OCR one page: render it, read the lines, join them in reading order."""
+    global PAGES_READ
+    PAGES_READ += 1
     import numpy as np
     import pypdfium2 as pdfium
 

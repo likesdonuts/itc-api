@@ -180,7 +180,16 @@
     "title": "Granting Complainant's Motion for Leave"
   },
   {
-    "attachments": [],
+    "attachments": [
+      {
+        "href": "../../data/documents/337-1489/894414_2618623_2618623.pdf",
+        "label": "2618623.pdf"
+      },
+      {
+        "href": "../../data/documents/337-1489/894414_2618677_2618677.pdf",
+        "label": "2618677.pdf"
+      }
+    ],
     "document_date": "2026-09-10",
     "document_type": "Order",
     "filed_by": "Bryan F. Moore",
@@ -828,7 +837,16 @@
     "title": "Respondent Ubiquiti Inc.'s Verified Response to AX Wireless, LLC's Amended Complaint under Section 337 of the Tariff Act of 1930, as Amended, and to the Notice of Investigation"
   },
   {
-    "attachments": [],
+    "attachments": [
+      {
+        "href": "../../data/documents/337-1489/879077_2533194_2533194.pdf",
+        "label": "2533194.pdf"
+      },
+      {
+        "href": "../../data/documents/337-1489/879077_2533648_2533648.pdf",
+        "label": "2533648.pdf"
+      }
+    ],
     "document_date": "2026-04-15",
     "document_type": "Notice",
     "filed_by": "Lisa R. Barton",

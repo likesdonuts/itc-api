@@ -1,0 +1,392 @@
+{
+  "case": "337-1507",
+  "cost_usd": 0.020132,
+  "date": "2026-07-31",
+  "doc_id": "890345",
+  "document_type": "Order",
+  "events": [
+    {
+      "category": "claim_construction",
+      "date": "2026-09-09",
+      "end_date": "",
+      "event": "Exchange list of claims terms to be construed",
+      "quote": "Exchange list of claims terms to be construedl\t September 9, 2026",
+      "relative": ""
+    },
+    {
+      "category": "discovery",
+      "date": "2026-09-11",
+      "end_date": "",
+      "event": "Complainant files list of products to satisfy domestic industry requirement",
+      "quote": "Complainant files list of products they plan to rely upon\n to satisfy the domestic industry requirement\t September 11, 2026",
+      "relative": ""
+    },
+    {
+      "category": "discovery",
+      "date": "2026-09-11",
+      "end_date": "",
+      "event": "Deadline for initial responses to contention interrogatories (burden on responding party)",
+      "quote": "Deadline for initial responses to contention\ninterrogatories on issues for which the responding\nparty bears the burden of proof\t September 11, 2026",
+      "relative": ""
+    },
+    {
+      "category": "claim_construction",
+      "date": "2026-09-21",
+      "end_date": "",
+      "event": "Exchange proposed constructions for all terms",
+      "quote": "Exchange proposed constructions for all terms on all\nlists\t September 21, 2026",
+      "relative": ""
+    },
+    {
+      "category": "discovery",
+      "date": "2026-09-22",
+      "end_date": "",
+      "event": "Deadline for initial responses to contention interrogatories (no burden on responding party)",
+      "quote": "Deadline for initial responses to contention\ninterrogatories on issues for which the responding\nparty does not bear the burden of proof\t September 22, 2026",
+      "relative": ""
+    },
+    {
+      "category": "claim_construction",
+      "date": "2026-10-01",
+      "end_date": "",
+      "event": "Meet and confer to discuss and limit disputed claim terms",
+      "quote": "Meet and confer to discuss and limit number of\ndisputed claim terms\t October 1, 2026",
+      "relative": ""
+    },
+    {
+      "category": "expert",
+      "date": "2026-10-01",
+      "end_date": "",
+      "event": "File identification of expert witnesses",
+      "quote": "File identification of expert witnesses, including their\nexpertise and curriculum vitae\t October 1, 2026",
+      "relative": ""
+    },
+    {
+      "category": "claim_construction",
+      "date": "2026-10-09",
+      "end_date": "",
+      "event": "File opening claim construction briefs",
+      "quote": "File opening claim construction briefs\t October 9, 2026",
+      "relative": ""
+    },
+    {
+      "category": "expert",
+      "date": "2026-10-09",
+      "end_date": "",
+      "event": "Exchange initial expert reports on claim construction issues",
+      "quote": "Exchange initial expert reports on claim construction\nissues\t October 9, 2026",
+      "relative": ""
+    },
+    {
+      "category": "claim_construction",
+      "date": "2026-11-03",
+      "end_date": "",
+      "event": "File responsive claim construction briefs",
+      "quote": "File responsive claim construction briefs\t November 3, 2026",
+      "relative": ""
+    },
+    {
+      "category": "expert",
+      "date": "2026-11-03",
+      "end_date": "",
+      "event": "Exchange rebuttal expert reports on claim construction issues",
+      "quote": "Exchange rebuttal expert reports on claim construction\nissues\t November 3, 2026",
+      "relative": ""
+    },
+    {
+      "category": "claim_construction",
+      "date": "2026-11-16",
+      "end_date": "",
+      "event": "File joint stipulation regarding representative accused and domestic industry products",
+      "quote": "File joint stipulation regarding representative accused\nproducts and representative domestic industry products\t November 16, 2026",
+      "relative": ""
+    },
+    {
+      "category": "claim_construction",
+      "date": "2026-11-19",
+      "end_date": "",
+      "event": "Markman hearing",
+      "quote": "Markman hearing\t November 19, 2026",
+      "relative": ""
+    },
+    {
+      "category": "discovery",
+      "date": "2026-11-20",
+      "end_date": "",
+      "event": "File notice of prior art",
+      "quote": "File notice of prior art\t November 20, 2026",
+      "relative": ""
+    },
+    {
+      "category": "claim_construction",
+      "date": "2026-12-02",
+      "end_date": "",
+      "event": "File proposed claim construction chart incorporating revisions",
+      "quote": "File proposed claim construction chart incorporating\nany revisions to date\t December 2, 2026",
+      "relative": ""
+    },
+    {
+      "category": "discovery",
+      "date": "2026-12-17",
+      "end_date": "",
+      "event": "Deadline for final responses to contention interrogatories (burden on responding party)",
+      "quote": "Deadline for final responses to contention\ninterrogatories on issues for which the responding\nparty bears the burden of proof\t December 17, 2026",
+      "relative": ""
+    },
+    {
+      "category": "discovery",
+      "date": "2027-01-11",
+      "end_date": "",
+      "event": "Deadline for final responses to contention interrogatories (no burden on responding party)",
+      "quote": "Deadline for final responses to contention\ninterrogatories on issues for which the responding\nparty does not bear the burden of proof\t January 11, 2027",
+      "relative": ""
+    },
+    {
+      "category": "discovery",
+      "date": "2027-01-29",
+      "end_date": "",
+      "event": "Fact discovery cutoff and completion",
+      "quote": "Fact discovery cutoff and completion\t January 29, 2027",
+      "relative": ""
+    },
+    {
+      "category": "discovery",
+      "date": "2027-01-29",
+      "end_date": "",
+      "event": "File joint statement identifying accused products",
+      "quote": "File joint statement identifying accused products\t January 29, 2027",
+      "relative": ""
+    },
+    {
+      "category": "discovery",
+      "date": "2027-02-02",
+      "end_date": "",
+      "event": "Deadline to submit letters regarding fact discovery disputes",
+      "quote": "Deadline to submit letters regarding fact discovery\ndisputes\t February 2, 2027",
+      "relative": ""
+    },
+    {
+      "category": "expert",
+      "date": "2027-02-05",
+      "end_date": "",
+      "event": "Exchange initial expert reports",
+      "quote": "Exchange initial expert reports\t February 5, 2027",
+      "relative": ""
+    },
+    {
+      "category": "hearing",
+      "date": "2027-02-08",
+      "end_date": "",
+      "event": "File tentative list of witnesses to testify at hearing",
+      "quote": "File tentative list of witnesses a party will call to testify\nat the hearing, with an identification of each witness\nrelationship to the party\t February 8, 2027",
+      "relative": ""
+    },
+    {
+      "category": "expert",
+      "date": "2027-02-26",
+      "end_date": "",
+      "event": "Exchange rebuttal expert reports",
+      "quote": "Exchange rebuttal expert reports\t February 26, 2027",
+      "relative": ""
+    },
+    {
+      "category": "prehearing",
+      "date": "",
+      "end_date": "",
+      "event": "One-day mediation session",
+      "quote": "One-day mediation session\t By March 5, 2027",
+      "relative": "By March 5, 2027"
+    },
+    {
+      "category": "prehearing",
+      "date": "",
+      "end_date": "",
+      "event": "Submit joint report on mediation",
+      "quote": "Submit joint report on mediation\t Within 5 business days of\nmediation",
+      "relative": "Within 5 business days of mediation"
+    },
+    {
+      "category": "expert",
+      "date": "2027-03-10",
+      "end_date": "",
+      "event": "Expert discovery cutoff and completion",
+      "quote": "Expert discovery cutoff and completion\t March 10, 2027",
+      "relative": ""
+    },
+    {
+      "category": "motions",
+      "date": "2027-03-11",
+      "end_date": "",
+      "event": "Deadline for filing summary determination motion",
+      "quote": "Deadline for filing summary determination motion\t March 11, 2027",
+      "relative": ""
+    },
+    {
+      "category": "expert",
+      "date": "2027-03-15",
+      "end_date": "",
+      "event": "Deadline to submit letters regarding expert discovery disputes",
+      "quote": "Deadline to submit letters regarding expert discovery\ndisputes\t March 15, 2027",
+      "relative": ""
+    },
+    {
+      "category": "motions",
+      "date": "2027-03-15",
+      "end_date": "",
+      "event": "Deadline to file Motions to Strike",
+      "quote": "Deadline to file Motions to Strike (see Ground Rule\n9.1)\t March 15, 2027",
+      "relative": ""
+    },
+    {
+      "category": "hearing",
+      "date": "2027-03-15",
+      "end_date": "",
+      "event": "Exchange of direct exhibit lists among the parties",
+      "quote": "Exchange of direct exhibit lists among the parties\t March 15, 2027",
+      "relative": ""
+    },
+    {
+      "category": "hearing",
+      "date": "2027-03-24",
+      "end_date": "",
+      "event": "Serve proposed direct exhibits and identify physical exhibits",
+      "quote": "Complainant and respondents serve proposed direct\nexhibits (including witness statements) and identif\nphysical exhibits\t March 24, 2027",
+      "relative": ""
+    },
+    {
+      "category": "hearing",
+      "date": "2027-04-06",
+      "end_date": "",
+      "event": "Serve proposed rebuttal exhibits and identify rebuttal physical exhibits",
+      "quote": "Serve proposed rebuttal exhibits (including witness\nstatements) and identify rebuttal physical exhibits\t April 6, 2027",
+      "relative": ""
+    },
+    {
+      "category": "prehearing",
+      "date": "2027-04-16",
+      "end_date": "",
+      "event": "File pre-hearing statements and briefs",
+      "quote": "Complainant and respondents file pre-hearing\nstatements and briefs\t April 16, 2027",
+      "relative": ""
+    },
+    {
+      "category": "hearing",
+      "date": "2027-04-21",
+      "end_date": "",
+      "event": "File joint list of unopposed exhibits",
+      "quote": "File joint list of unopposed exhibits\t April 21, 2027",
+      "relative": ""
+    },
+    {
+      "category": "motions",
+      "date": "2027-04-21",
+      "end_date": "",
+      "event": "Deadline for motions in limine and high priority objections statement",
+      "quote": "Deadline for motions in limine and high priority\nobjections statement\t April 21, 2027",
+      "relative": ""
+    },
+    {
+      "category": "hearing",
+      "date": "2027-04-21",
+      "end_date": "",
+      "event": "File requests for receipt of evidence without a sponsoring witness",
+      "quote": "File requests for receipt of evidence without a\nsponsoring witness\t April 21, 2027",
+      "relative": ""
+    },
+    {
+      "category": "hearing",
+      "date": "2027-04-27",
+      "end_date": "",
+      "event": "Submit witness statements to Box",
+      "quote": "Submit witness statements (and exhibits cited therein)\nto Box\t April 27, 2027",
+      "relative": ""
+    },
+    {
+      "category": "motions",
+      "date": "2027-04-30",
+      "end_date": "",
+      "event": "Deadline for responses to motions in limine and high priority objections statement",
+      "quote": "Deadline for responses to motions in limine and high\npriority objections statement\t April 30, 2027, by 12:00 p.m. ET",
+      "relative": ""
+    },
+    {
+      "category": "hearing",
+      "date": "2027-04-30",
+      "end_date": "",
+      "event": "File responses to requests for receipt of evidence without a sponsoring witness",
+      "quote": "File responses to requests for receipt of evidence\nwithout a sponsoring witness\t April 30, 2027",
+      "relative": ""
+    },
+    {
+      "category": "prehearing",
+      "date": "2027-05-10",
+      "end_date": "",
+      "event": "Pre-hearing conference",
+      "quote": "Pre-hearing conference\t May 10, 2027, at 9:00 AM",
+      "relative": ""
+    },
+    {
+      "category": "hearing",
+      "date": "2027-05-10",
+      "end_date": "2027-05-14",
+      "event": "Evidentiary hearing",
+      "quote": "Evidentiary hearing\t May 10-14, 2027",
+      "relative": ""
+    },
+    {
+      "category": "hearing",
+      "date": "2027-05-21",
+      "end_date": "",
+      "event": "File final exhibit list",
+      "quote": "File final exhibit list\t May 21, 2027",
+      "relative": ""
+    },
+    {
+      "category": "claim_construction",
+      "date": "2027-05-21",
+      "end_date": "",
+      "event": "File identification of undisputed claim limitations",
+      "quote": "File identification of undisputed claim limitations\t May 21, 2027",
+      "relative": ""
+    },
+    {
+      "category": "briefing",
+      "date": "2027-05-28",
+      "end_date": "",
+      "event": "File initial post-hearing briefs and submit final exhibits",
+      "quote": "Complainant and respondents file initial post-hearing\nbriefs with the Secretary and submit final exhibits with\nthe Administrative Law Judge\t May 28, 2027",
+      "relative": ""
+    },
+    {
+      "category": "briefing",
+      "date": "2027-06-09",
+      "end_date": "",
+      "event": "File responsive post-hearing briefs",
+      "quote": "Complainant and respondents file responsive post-\nhearing briefs\t June 9, 2027",
+      "relative": ""
+    },
+    {
+      "category": "initial_determination",
+      "date": "2027-09-30",
+      "end_date": "",
+      "event": "Final initial determination on violation",
+      "quote": "Final initial determination on violation\t September 30, 2027",
+      "relative": ""
+    },
+    {
+      "category": "target_date",
+      "date": "2028-01-31",
+      "end_date": "",
+      "event": "Target date for completion of investigation",
+      "quote": "Target date for completion of investigation\t January 31, 2028\n(19-month target date)",
+      "relative": ""
+    }
+  ],
+  "extracted_at": "2026-09-26T18:38:55+00:00",
+  "model": "claude-haiku-4-5-20251001",
+  "prompt_version": 2,
+  "rejected": [],
+  "role": "full_schedule",
+  "title": "[Corrected] Setting the Procedural Schedule",
+  "truncated": false
+}

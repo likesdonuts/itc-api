@@ -1,0 +1,32 @@
+{
+  "case": "337-1461",
+  "cost_usd": 0.004491,
+  "date": "2026-01-05",
+  "doc_id": "867922",
+  "document_type": "Notice",
+  "events": [
+    {
+      "category": "initial_determination",
+      "date": "2027-01-27",
+      "end_date": "",
+      "event": "Final initial determination due",
+      "quote": "the final initial determination will be due no later than January 27, 2027",
+      "relative": ""
+    },
+    {
+      "category": "target_date",
+      "date": "2027-05-27",
+      "end_date": "",
+      "event": "Target date of investigation",
+      "quote": "The target date of the investigation is extended to May 27, 2027",
+      "relative": ""
+    }
+  ],
+  "extracted_at": "2026-09-26T18:09:58+00:00",
+  "model": "claude-haiku-4-5-20251001",
+  "prompt_version": 2,
+  "rejected": [],
+  "role": "target_date",
+  "title": "Commission Determination Not to Review Initial Determinations Extending the Target Date of the Investigation",
+  "truncated": false
+}

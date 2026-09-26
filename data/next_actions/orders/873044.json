@@ -1,0 +1,296 @@
+{
+  "case": "337-1477",
+  "cost_usd": 0.017062,
+  "date": "2026-02-19",
+  "doc_id": "873044",
+  "document_type": "Order",
+  "events": [
+    {
+      "category": "claim_construction",
+      "date": "2026-03-06",
+      "end_date": "",
+      "event": "Exchange list of claim terms to be construed",
+      "quote": "Exchange list of claim terms to be construed Friday, March 6, 2026",
+      "relative": ""
+    },
+    {
+      "category": "claim_construction",
+      "date": "2026-03-13",
+      "end_date": "",
+      "event": "Exchange of proposed claim constructions",
+      "quote": "Exchange of proposed claim constructions (excludes identification of alleged indefinite terms) Friday, March 13, 2026",
+      "relative": ""
+    },
+    {
+      "category": "claim_construction",
+      "date": "2026-03-18",
+      "end_date": "",
+      "event": "Meet and confer on proposed constructions to narrow disputes",
+      "quote": "Meet and confer on proposed constructions to narrow disputes Wednesday, March 18, 2026",
+      "relative": ""
+    },
+    {
+      "category": "discovery",
+      "date": "2026-03-20",
+      "end_date": "",
+      "event": "G.R. 5.1 File Notice of Prior Art",
+      "quote": "G.R. 5.1 File Notice of Prior Art will be Friday, March 20, 2026",
+      "relative": ""
+    },
+    {
+      "category": "expert",
+      "date": "2026-03-25",
+      "end_date": "",
+      "event": "File identification of expert witnesses, including their expertise and curriculum vitae",
+      "quote": "File identification of expert witnesses, including their expertise and curriculum vitae Wednesday, March 25, 2026",
+      "relative": ""
+    },
+    {
+      "category": "discovery",
+      "date": "2026-03-27",
+      "end_date": "",
+      "event": "Initial deadline for responses to contention interrogatories on issues for which the responding party bears the burden of proof",
+      "quote": "initial burden contention interrogatory responses on Friday, March 27, 2026",
+      "relative": ""
+    },
+    {
+      "category": "discovery",
+      "date": "2026-03-27",
+      "end_date": "",
+      "event": "G.R. 5.2 Disclosure of Domestic Industry Contentions",
+      "quote": "G.R. 5.2 Disclosure of Domestic Industry Contentions Friday, March 27, 2026",
+      "relative": ""
+    },
+    {
+      "category": "discovery",
+      "date": "2026-04-10",
+      "end_date": "",
+      "event": "Initial deadline for responses to contention interrogatories on issues for which the responding party does not bear the burden of proof",
+      "quote": "Initial deadline for responses to contention interrogatories on issues for which the responding party does not bear the burden of proof Friday, April 10, 2026",
+      "relative": ""
+    },
+    {
+      "category": "prehearing",
+      "date": "2026-05-04",
+      "end_date": "",
+      "event": "File tentative lists of witnesses a party will call to testify at the hearing, with an identification of each witness' relationship to the party",
+      "quote": "File tentative lists of witnesses a party will call to testify at the hearing, with an identification of each witness' relationship to the party Monday, May 4, 2026",
+      "relative": ""
+    },
+    {
+      "category": "discovery",
+      "date": "2026-05-07",
+      "end_date": "",
+      "event": "G.R. 5.3 Maximum Scope of the Investigation Disclosure",
+      "quote": "G.R. 5.3 Maximum Scope of the Investigation Disclosure Thursday, May 7, 2026",
+      "relative": ""
+    },
+    {
+      "category": "discovery",
+      "date": "2026-05-14",
+      "end_date": "",
+      "event": "Cut-off date for supplements to contention interrogatories on issues for which the responding party bears the burden of proof",
+      "quote": "Cut-off date for supplements to contention interrogatories on issues for which the responding party bears the burden of proof Thursday, May 14, 2026",
+      "relative": ""
+    },
+    {
+      "category": "discovery",
+      "date": "2026-05-28",
+      "end_date": "",
+      "event": "Cut-off date for supplements to contention interrogatories on issues for which the responding party does not bear the burden of proof",
+      "quote": "Cut-off date for supplements to contention interrogatories on issues for which the responding party does not bear the burden of proof Thursday, May 28, 2026",
+      "relative": ""
+    },
+    {
+      "category": "discovery",
+      "date": "2026-06-05",
+      "end_date": "",
+      "event": "Fact discovery cut-off and completion",
+      "quote": "Fact discovery cut-off and completion Friday, June 5, 2026",
+      "relative": ""
+    },
+    {
+      "category": "discovery",
+      "date": "2026-06-08",
+      "end_date": "",
+      "event": "G.R. 5.3 Initial Case-Narrowing Disclosure",
+      "quote": "G.R. 5.3 Initial Case-Narrowing Disclosure Monday, June 8, 2026",
+      "relative": ""
+    },
+    {
+      "category": "motions",
+      "date": "2026-06-08",
+      "end_date": "",
+      "event": "Deadlines for motions to compel fact discovery",
+      "quote": "Deadlines for motions to compel fact discovery Monday, June 8, 2026",
+      "relative": ""
+    },
+    {
+      "category": "expert",
+      "date": "2026-06-16",
+      "end_date": "",
+      "event": "Exchange of initial expert reports",
+      "quote": "Exchange of initial expert reports (identify tests/surveys/data) Tuesday, June 16, 2026",
+      "relative": ""
+    },
+    {
+      "category": "expert",
+      "date": "2026-07-02",
+      "end_date": "",
+      "event": "Exchange of rebuttal expert reports",
+      "quote": "Exchange of rebuttal expert reports Thursday, July 2, 2026",
+      "relative": ""
+    },
+    {
+      "category": "discovery",
+      "date": "2026-07-22",
+      "end_date": "",
+      "event": "Expert discovery cut-off and completion",
+      "quote": "Expert discovery cut-off and completion Wednesday, July 22, 2026",
+      "relative": ""
+    },
+    {
+      "category": "motions",
+      "date": "2026-07-27",
+      "end_date": "",
+      "event": "Deadline for motions to compel expert discovery",
+      "quote": "Deadline for motions to compel expert discovery Monday, July 27, 2026",
+      "relative": ""
+    },
+    {
+      "category": "motions",
+      "date": "2026-07-30",
+      "end_date": "",
+      "event": "Deadline for filing motions for summary determination",
+      "quote": "Deadline for filing motions for summary determination Thursday, July 30, 2026",
+      "relative": ""
+    },
+    {
+      "category": "prehearing",
+      "date": "2026-08-05",
+      "end_date": "",
+      "event": "Exchange of exhibit lists among the parties",
+      "quote": "Exchange of exhibit lists among the parties Wednesday, August 5, 2026",
+      "relative": ""
+    },
+    {
+      "category": "prehearing",
+      "date": "2026-08-12",
+      "end_date": "",
+      "event": "Submit and serve direct exhibits, with physical exhibits available - Complainant(s) and Respondent(s)",
+      "quote": "Submit and serve direct exhibits, with physical exhibits available - Complainant(s) and Respondent(s) Wednesday, August 12, 2026",
+      "relative": ""
+    },
+    {
+      "category": "prehearing",
+      "date": "2026-08-14",
+      "end_date": "",
+      "event": "Submit and serve direct exhibits, with physical exhibits available - Staff",
+      "quote": "Submit and serve direct exhibits, with physical exhibits available - Staff Friday, August 14, 2026",
+      "relative": ""
+    },
+    {
+      "category": "prehearing",
+      "date": "2026-08-19",
+      "end_date": "",
+      "event": "Submit and serve rebuttal exhibits, with rebuttal physical exhibits available \u2013 all parties",
+      "quote": "Submit and serve rebuttal exhibits, with rebuttal physical exhibits available \u2013 all parties Wednesday, August 19, 2026",
+      "relative": ""
+    },
+    {
+      "category": "discovery",
+      "date": "2026-08-19",
+      "end_date": "",
+      "event": "G.R. 5.3 Final Case Narrowing Disclosure",
+      "quote": "G.R. 5.3 Final Case Narrowing Disclosure Wednesday, August 19, 2026",
+      "relative": ""
+    },
+    {
+      "category": "prehearing",
+      "date": "2026-08-28",
+      "end_date": "",
+      "event": "File pre-trial statements and briefs \u2013 Complainant(s) and Respondent(s)",
+      "quote": "File pre-trial statements and briefs \u2013 Complainant(s) and Respondent(s) Friday, August 28, 2026",
+      "relative": ""
+    },
+    {
+      "category": "prehearing",
+      "date": "2026-09-11",
+      "end_date": "",
+      "event": "File pre-trial statements and briefs \u2013 Staff",
+      "quote": "File pre-trial statements and briefs \u2013 Staff Friday, September 11, 2026",
+      "relative": ""
+    },
+    {
+      "category": "motions",
+      "date": "2026-09-11",
+      "end_date": "",
+      "event": "Deadline to file motions in limine",
+      "quote": "Deadline to file motions in limine Friday, September 11, 2026",
+      "relative": ""
+    },
+    {
+      "category": "motions",
+      "date": "2026-09-18",
+      "end_date": "",
+      "event": "File responses to motions in limine",
+      "quote": "File responses to motions in limine Friday, September 18, 2026",
+      "relative": ""
+    },
+    {
+      "category": "prehearing",
+      "date": "2026-09-28",
+      "end_date": "",
+      "event": "Pre-trial conference",
+      "quote": "Pre-trial conference Monday, September 28, 2026",
+      "relative": ""
+    },
+    {
+      "category": "hearing",
+      "date": "2026-09-28",
+      "end_date": "2026-10-02",
+      "event": "Evidentiary hearing",
+      "quote": "Hearing  Monday, September 28, 2026 to Friday, October 2, 2026",
+      "relative": ""
+    },
+    {
+      "category": "briefing",
+      "date": "2026-10-20",
+      "end_date": "",
+      "event": "File initial post-trial briefs and final exhibit lists",
+      "quote": "File initial post-trial briefs and final exhibit lists Tuesday, October 20, 2026",
+      "relative": ""
+    },
+    {
+      "category": "briefing",
+      "date": "2026-11-03",
+      "end_date": "",
+      "event": "File reply post-trial briefs",
+      "quote": "File reply post-trial briefs Tuesday, November 3, 2026",
+      "relative": ""
+    },
+    {
+      "category": "initial_determination",
+      "date": "2027-01-12",
+      "end_date": "",
+      "event": "Initial Determination",
+      "quote": "Initial Determination Tuesday, January 12, 2027",
+      "relative": ""
+    },
+    {
+      "category": "target_date",
+      "date": "2027-05-12",
+      "end_date": "",
+      "event": "Target date for completion of investigation",
+      "quote": "Target date for completion of investigation  Wednesday, May 12, 2027",
+      "relative": ""
+    }
+  ],
+  "extracted_at": "2026-09-26T18:18:11+00:00",
+  "model": "claude-haiku-4-5-20251001",
+  "prompt_version": 2,
+  "rejected": [],
+  "role": "full_schedule",
+  "title": "Setting Procedural Schedule",
+  "truncated": false
+}

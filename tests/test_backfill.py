@@ -117,28 +117,47 @@ class TestTheDailySyncAfterABackfill(BackfillTestCase):
         store.documents_state["337-1500"]["backfill"] = True
         store.documents_state["337-1450"]["backfill"] = True
 
+        # Collected by hand but closed: weekly, so due once its last refresh is a week old.
+        store.documents_state["337-1400"]["fetched_at"] = "2026-09-10T00:00:00+00:00"
         self.assertEqual(backfill.daily_targets(store, today=date(2026, 9, 25)), ["337-1400", "337-1500"])
+        store.documents_state["337-1400"]["fetched_at"] = "2026-09-22T00:00:00+00:00"
+        self.assertEqual(backfill.daily_targets(store, today=date(2026, 9, 25)), ["337-1500"])
+
+    def test_how_often_each_kind_of_case_is_refreshed(self):
+        store = self.seeded({
+            "337-1500": ("Active", "2026-01-01"),  # live, by hand
+            "337-1400": ("Terminated", "2024-01-01"),  # closed, by hand
+            "337-1401": ("Active", "2019-01-01"),  # quiet, by hand
+            "337-1501": ("Active", "2026-01-01"),  # live, backfilled
+            "337-055": ("Active", None),  # quiet, backfilled
+            "337-1450": ("Terminated", "2025-01-01"),  # closed, backfilled
+        })
+        dates = {"337-1500": "2026-09-01", "337-1400": "2026-09-01", "337-1401": "2020-01-01",
+                 "337-1501": "2026-09-01", "337-055": "1979-03-01", "337-1450": "2026-09-01"}
+        for key, day in dates.items():
+            store.put_documents(key, [{"id": key, "document_date": day}])
+        for key in ("337-1501", "337-055", "337-1450"):
+            store.documents_state[key]["backfill"] = True
+        every = {k: backfill.refresh_every(store, k, today=date(2026, 9, 25)) for k in dates}
+        self.assertEqual(every, {"337-1500": 1, "337-1400": 7, "337-1401": 7, "337-1501": 1, "337-055": 30,
+                                 "337-1450": None})
 
     def test_an_old_active_listing_is_checked_monthly_not_daily(self):
         # The USITC lists some decades-old investigations as "Active".
-        store = self.seeded({
-            "337-055": ("Active", None),  # backfilled, nothing filed in years
-            "337-1400": ("Terminated", "2024-01-01"),  # collected by hand, also quiet
-        })
+        store = self.seeded({"337-055": ("Active", None)})  # backfilled, nothing filed in years
         store.put_documents("337-055", [{"id": "1", "document_date": "1979-03-01"}])
-        store.put_documents("337-1400", [{"id": "2", "document_date": "2020-01-01"}])
         store.documents_state["337-055"]["backfill"] = True
         today = date(2026, 9, 25)
 
         store.documents_state["337-055"]["fetched_at"] = "2026-09-20T00:00:00+00:00"
-        self.assertEqual(backfill.daily_targets(store, today=today), ["337-1400"])
+        self.assertEqual(backfill.daily_targets(store, today=today), [])
         store.documents_state["337-055"]["fetched_at"] = "2026-08-01T00:00:00+00:00"
-        self.assertEqual(backfill.daily_targets(store, today=today), ["337-055", "337-1400"])
+        self.assertEqual(backfill.daily_targets(store, today=today), ["337-055"])
 
         # One recent filing makes it a daily case again.
         store.documents["337-055"].append({"id": "3", "document_date": "2026-09-10"})
         store.documents_state["337-055"]["fetched_at"] = "2026-09-20T00:00:00+00:00"
-        self.assertEqual(backfill.daily_targets(store, today=today), ["337-055", "337-1400"])
+        self.assertEqual(backfill.daily_targets(store, today=today), ["337-055"])
 
     def test_a_routine_refresh_keeps_the_mark_and_a_fetch_by_hand_clears_it(self):
         store = self.seeded({"337-1500": ("Active", "2026-01-01")})

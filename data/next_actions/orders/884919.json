@@ -1,0 +1,24 @@
+{
+  "case": "337-1470",
+  "cost_usd": 0.004982,
+  "date": "2026-06-11",
+  "doc_id": "884919",
+  "document_type": "Order",
+  "events": [
+    {
+      "category": "other",
+      "date": "2026-07-13",
+      "end_date": "",
+      "event": "Stay of procedural schedule continues until",
+      "quote": "continue the stay of the procedural schedule for an additional thirty days, until July 13, 2026",
+      "relative": ""
+    }
+  ],
+  "extracted_at": "2026-09-26T18:14:41+00:00",
+  "model": "claude-haiku-4-5-20251001",
+  "prompt_version": 2,
+  "rejected": [],
+  "role": "amendment",
+  "title": "Granting Complainant Bose Corporation's Unopposed Motion to Continue Stay of Procedural Schedule",
+  "truncated": false
+}

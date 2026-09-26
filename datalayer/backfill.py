@@ -91,23 +91,40 @@ def is_dormant(store: Store, key: str, *, today: date | None = None) -> bool:
     return not latest or latest < (today - timedelta(days=DORMANT_AFTER_DAYS)).isoformat()
 
 
-def _checked_recently(store: Store, key: str, today: date) -> bool:
+# A case you fetched yourself that has closed, or has had no filing in two
+# years, is refreshed weekly rather than daily: it rarely gets anything new.
+QUIET_RECHECK_DAYS = 7
+
+
+def _checked_recently(store: Store, key: str, today: date, days: int = DORMANT_RECHECK_DAYS) -> bool:
     fetched = str((store.documents_state.get(key) or {}).get("fetched_at") or "")[:10]
-    return bool(fetched) and fetched >= (today - timedelta(days=DORMANT_RECHECK_DAYS)).isoformat()
+    return bool(fetched) and fetched >= (today - timedelta(days=days)).isoformat()
+
+
+def refresh_every(store: Store, key: str, *, today: date | None = None) -> int | None:
+    """How often, in days, the daily sync refreshes a case with a document
+    list: 1 for a live one, 7 for one you fetched yourself that has closed or
+    gone quiet, 30 for a quiet backfilled one, None for a closed backfilled
+    one (never)."""
+    today = today or datetime.now(timezone.utc).date()
+    quiet = is_dormant(store, key, today=today)
+    if is_backfilled(store, key):
+        if not is_open(store, key):
+            return None
+        return DORMANT_RECHECK_DAYS if quiet else 1
+    return QUIET_RECHECK_DAYS if (quiet or not is_open(store, key)) else 1
 
 
 def daily_targets(store: Store, *, today: date | None = None) -> list[str]:
-    """The cases the daily sync refreshes: every case you fetched yourself,
-    and a backfilled one only while it can still get new filings -- daily
-    when it has had one in the last two years, monthly when it has not.
-    """
+    """The cases due for a refresh today (see refresh_every): live cases
+    every day, the rest once their weekly or monthly turn comes round."""
     today = today or datetime.now(timezone.utc).date()
-    return [
-        key
-        for key in store.numbers_with_documents()
-        if not is_backfilled(store, key)
-        or (is_open(store, key) and (not is_dormant(store, key, today=today) or not _checked_recently(store, key, today)))
-    ]
+    due = []
+    for key in store.numbers_with_documents():
+        every = refresh_every(store, key, today=today)
+        if every == 1 or (every and not _checked_recently(store, key, today, every)):
+            due.append(key)
+    return due
 
 
 def targets(store: Store, *, retry_empty: bool = False) -> list[str]:

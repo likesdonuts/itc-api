@@ -1,0 +1,32 @@
+{
+  "case": "337-1502",
+  "cost_usd": 0.004129,
+  "date": "2026-07-10",
+  "doc_id": "887732",
+  "document_type": "Order",
+  "events": [
+    {
+      "category": "prehearing",
+      "date": "2026-07-16",
+      "end_date": "",
+      "event": "Preliminary conference",
+      "quote": "a preliminary conference will convene via video conference on July 16, 2026, at 3:00 p.m. Eastern Time",
+      "relative": ""
+    },
+    {
+      "category": "target_date",
+      "date": "2027-07-19",
+      "end_date": "",
+      "event": "Target date / Final Initial Determination due",
+      "quote": "a 13.5- month target date of July 19, 2027, which makes any final initial determination due no later than March 19 , 2027",
+      "relative": ""
+    }
+  ],
+  "extracted_at": "2026-09-26T18:36:12+00:00",
+  "model": "claude-haiku-4-5-20251001",
+  "prompt_version": 2,
+  "rejected": [],
+  "role": "target_date",
+  "title": "Setting 13.5-Month Target Date and Preliminary Conference",
+  "truncated": false
+}

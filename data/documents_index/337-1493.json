@@ -1,6 +1,15 @@
 [
   {
-    "attachments": [],
+    "attachments": [
+      {
+        "href": "../../data/documents/337-1493/895473_2624325_2624325.pdf",
+        "label": "2624325.pdf"
+      },
+      {
+        "href": "../../data/documents/337-1493/895473_2624367_2624367.pdf",
+        "label": "2624367.pdf"
+      }
+    ],
     "document_date": "2026-09-23",
     "document_type": "Notice",
     "filed_by": "Lisa R. Barton",
@@ -696,7 +705,16 @@
     "title": "Commission Investigative Staff's Statement regarding Identification of Expert Witnesses"
   },
   {
-    "attachments": [],
+    "attachments": [
+      {
+        "href": "../../data/documents/337-1493/882364_2548629_2548629.pdf",
+        "label": "2548629.pdf"
+      },
+      {
+        "href": "../../data/documents/337-1493/882364_2549039_2549039.pdf",
+        "label": "2549039.pdf"
+      }
+    ],
     "document_date": "2026-05-15",
     "document_type": "Notice",
     "filed_by": "Lisa R. Barton",
@@ -792,7 +810,16 @@
     "title": "Respondents' Notice of Events in California Proceeding"
   },
   {
-    "attachments": [],
+    "attachments": [
+      {
+        "href": "../../data/documents/337-1493/881592_2544550_2544550.pdf",
+        "label": "2544550.pdf"
+      },
+      {
+        "href": "../../data/documents/337-1493/881592_2544664_2544664.pdf",
+        "label": "2544664.pdf"
+      }
+    ],
     "document_date": "2026-05-07",
     "document_type": "Order",
     "filed_by": "Bryan F. Moore",

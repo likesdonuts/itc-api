@@ -12,6 +12,7 @@ import base64
 import html
 import json
 import xml.etree.ElementTree as ET
+from collections import Counter
 from datetime import datetime, timezone
 from pathlib import Path
 from typing import Any
@@ -32,6 +33,20 @@ except ImportError:
 
 EDIS_BASE_URL = "https://edis.usitc.gov/data"
 IDS_URL = "https://ids.usitc.gov/investigations.json"
+
+# Every EDIS request this process has made, by kind, for the daily sync's
+# timing log (dailylog.py reads the difference across a run).
+REQUESTS: Counter = Counter()
+
+
+def _request_kind(path: str) -> str:
+    if path.startswith("/document"):
+        return "list"
+    if path.startswith("/attachment"):
+        return "attachments"
+    if path.startswith("/download"):
+        return "download"
+    return "other"
 
 
 class EdisError(RuntimeError):
@@ -129,6 +144,7 @@ class EdisClient:
 
     def _request(self, method: str, path: str, **kwargs: Any) -> httpx.Response:
         self._check_token_fresh()
+        REQUESTS[_request_kind(path)] += 1
         resp = self._client.request(method, path, **kwargs)
         if resp.status_code in (401, 403):
             raise EdisAuthError(
@@ -146,8 +162,16 @@ class EdisClient:
 
     # 50 pages (1,000 documents) cut 337-TA-395's docket short; the largest
     # dockets run to several thousand.
-    def list_documents(self, investigation_number: str, max_pages: int = 1000) -> list[dict[str, Any]]:
+    def list_documents(
+        self, investigation_number: str, max_pages: int = 1000, *, known_ids: set[str] | None = None
+    ) -> list[dict[str, Any]]:
+        """Every document EDIS lists for a case, newest first -- or, given the
+        ids already on file (`known_ids`), only as far as the first page made
+        up entirely of them: the new filings sit on the pages before it.
+        `last_listing_complete` says which it was.
+        """
         documents: list[dict[str, Any]] = []
+        self.last_listing_complete = True
         page = 1
         while page <= max_pages:
             resp = self._request(
@@ -160,6 +184,9 @@ class EdisClient:
             if not batch:
                 break
             documents.extend(batch)
+            if known_ids and all(str(doc.get("id")) in known_ids for doc in batch):
+                self.last_listing_complete = False
+                break
             # Don't assume a page size (observed page size is 20, not the 100
             # the old EDIS3 guide documented) -- just keep paging until a page
             # comes back empty, bounded by max_pages as a safety cap.

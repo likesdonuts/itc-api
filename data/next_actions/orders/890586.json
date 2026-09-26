@@ -1,0 +1,24 @@
+{
+  "case": "337-1511",
+  "cost_usd": 0.003139,
+  "date": "2026-08-05",
+  "doc_id": "890586",
+  "document_type": "Order",
+  "events": [
+    {
+      "category": "other",
+      "date": "",
+      "end_date": "",
+      "event": "Suspension of procedural schedule",
+      "quote": "The procedural schedule and all associated deadlines as to the parties are stayed for fifteen (15) days.",
+      "relative": "fifteen (15) days"
+    }
+  ],
+  "extracted_at": "2026-09-26T18:40:36+00:00",
+  "model": "claude-haiku-4-5-20251001",
+  "prompt_version": 2,
+  "rejected": [],
+  "role": "amendment",
+  "title": "Granting Joint Emergency Motion to Suspend the Procedural Schedule",
+  "truncated": false
+}

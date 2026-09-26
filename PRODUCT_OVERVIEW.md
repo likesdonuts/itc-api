@@ -90,6 +90,7 @@ from a known file, and every sync is logged to help spot bad data days.
 | The same firm, lawyer or company appears under many spellings: typos, "LLP" vs "L.L.P.", short forms, former company names, and several firms run together in one field. Any count or ranking would be wrong. | Automatic name matching turns spellings into single firms, attorneys and companies. It uses clear rules first, then AI review for borderline cases, and leaves the rest for a person. The person settles each one with a single command (same, different, or renamed firm), and the answer is kept for every future rebuild. It keeps predecessor firms linked rather than merged, keeps companies representing themselves out of the law-firm lists, and follows attorneys who move between firms. A match-quality report shows every merge and why it was made. |
 | Questions like "which firms do the most ITC work for respondents?", "who has Apple faced, and with which lawyers?" or "whom has this attorney opposed?" meant reading dockets case by case. | The ITC Analytics app offers leaderboards for firms and attorneys and a page for every firm, attorney and company. Each page shows clients, opponents, attorneys and cases. Search works across all names, and filters cover side and years. |
 | Business-development and competitive questions ("which firms is this firm growing with?", "who gets sued most?", "which rivals keep suing each other?") had no answer short of manual research. | Caseload timelines and co-counsel lists on each firm's page. Frequent-flier rankings of the most-sued and most-suing companies. A list of companies that have sued each other in both directions. All of it can be grouped by corporate family and filtered by years. |
+| The daily update took about an hour. Every day it re-read every page of about 190 cases' dockets and re-checked about 1,400 files it already had, roughly 4,000 requests to the USITC. | It now reads only each docket's new filings and skips files already downloaded. Closed and inactive cases are refreshed weekly or monthly instead of daily. Each case still gets a full weekly re-check to catch corrections. That's expected to cut a typical day to about 80 cases and a few hundred requests. Every run's duration, step by step, is now logged and shown on the dashboard. |
 | The USITC's daily data file sometimes fails to download. | The download retries automatically. If it still fails, the rest of the daily update runs anyway and the failure is logged. |
 | Gigabytes of PDFs slowed down version control. | Documents stay on the local machine only, and can be downloaded again from the USITC at any time. |
 
@@ -110,8 +111,11 @@ from a known file, and every sync is logged to help spot bad data days.
   rule-based dates until its schedule order is filed.
 - About 90 very old investigations are still listed by the USITC as
   "active" (usually because their exclusion orders remain in force). They
-  have no dates, so there is nothing to show for them. The daily update now
+  have no dates, so there is nothing to show for them. The daily update
   checks them monthly instead of daily.
+- A document edited after it was filed (for example, made public later) is
+  picked up by the weekly full re-check, so it can take up to a week to
+  appear. New filings appear the next day.
 
 ## On hold
 

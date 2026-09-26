@@ -1,0 +1,96 @@
+{
+  "case": "337-1468",
+  "cost_usd": 0.006663,
+  "date": "2026-01-06",
+  "doc_id": "868077",
+  "document_type": "Order",
+  "events": [
+    {
+      "category": "prehearing",
+      "date": "2026-01-13",
+      "end_date": "",
+      "event": "Preliminary conference",
+      "quote": "I will hold a preliminary conference on January 13, 2026, at 2:00 pm Eastern Time.",
+      "relative": ""
+    },
+    {
+      "category": "prehearing",
+      "date": "2026-02-10",
+      "end_date": "",
+      "event": "Monthly case management conference",
+      "quote": "Monthly case management conference\nFebruary 10, 2026, at 11:00 am ET",
+      "relative": ""
+    },
+    {
+      "category": "claim_construction",
+      "date": "2026-03-10",
+      "end_date": "",
+      "event": "Claim construction hearing (if necessary) and monthly case management conference",
+      "quote": "Claim construction hearing (if necessary) and\nMarch 10, 2026, at 9:00 am ET\nmonthly case management conference",
+      "relative": ""
+    },
+    {
+      "category": "prehearing",
+      "date": "2026-04-08",
+      "end_date": "",
+      "event": "Monthly case management conference",
+      "quote": "Monthly case management conference\nApril 8, 2026, at 11:00 am ET",
+      "relative": ""
+    },
+    {
+      "category": "prehearing",
+      "date": "2026-05-05",
+      "end_date": "",
+      "event": "Monthly case management conference",
+      "quote": "Monthly case management conference\nMay 5, 2026, at 11:00 am ET",
+      "relative": ""
+    },
+    {
+      "category": "prehearing",
+      "date": "2026-06-09",
+      "end_date": "",
+      "event": "Monthly case management conference",
+      "quote": "Monthly case management conference\nJune 9, 2026, at 11:00 am ET",
+      "relative": ""
+    },
+    {
+      "category": "prehearing",
+      "date": "2026-07-15",
+      "end_date": "",
+      "event": "Final prehearing conference",
+      "quote": "Final prehearing conference\nJuly 15, 2026, at 9:00 am ET",
+      "relative": ""
+    },
+    {
+      "category": "hearing",
+      "date": "2026-07-15",
+      "end_date": "2026-07-21",
+      "event": "Evidentiary hearing",
+      "quote": "Evidentiary hearing\nJuly 15-17, 20, and 21, 2026",
+      "relative": ""
+    },
+    {
+      "category": "initial_determination",
+      "date": "2026-11-20",
+      "end_date": "",
+      "event": "Final initial determination on violation",
+      "quote": "Any final initial determination shall be due no later than  November 20, 2026.",
+      "relative": ""
+    },
+    {
+      "category": "target_date",
+      "date": "2027-03-22",
+      "end_date": "",
+      "event": "Target date for completion of investigation (16 months)",
+      "quote": "I have determined to set a sixteen-month target date of March 22, 2027, for this investigation.",
+      "relative": ""
+    }
+  ],
+  "extracted_at": "2026-09-26T18:12:09+00:00",
+  "model": "claude-haiku-4-5-20251001",
+  "prompt_version": 2,
+  "rejected": [],
+  "role": "full_schedule",
+  "title": "(1) Setting a 16-Month Target Date and (2) Preliminary Conference",
+  "truncated": false
+}

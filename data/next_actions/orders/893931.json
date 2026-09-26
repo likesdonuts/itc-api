@@ -1,0 +1,32 @@
+{
+  "case": "337-1442",
+  "cost_usd": 0.00813,
+  "date": "2026-09-03",
+  "doc_id": "893931",
+  "document_type": "Notice",
+  "events": [
+    {
+      "category": "briefing",
+      "date": "2026-09-18",
+      "end_date": "",
+      "event": "Initial written submissions on issues under review, remedy, bond, and public interest",
+      "quote": "All initial written submissions, from the parties and/or third parties/interested government agencies, and proposed remedial orders from the parties must be filed no later than the close of business on September 18, 2026.",
+      "relative": ""
+    },
+    {
+      "category": "briefing",
+      "date": "2026-09-25",
+      "end_date": "",
+      "event": "Reply written submissions",
+      "quote": "All reply submissions must be filed no later than the close of business on September 25, 2026.",
+      "relative": ""
+    }
+  ],
+  "extracted_at": "2026-09-26T18:04:32+00:00",
+  "model": "claude-haiku-4-5-20251001",
+  "prompt_version": 2,
+  "rejected": [],
+  "role": "other",
+  "title": "Commission Determination to Review in Part a Final Initial Determination Finding a Violation of Section 337; Request for Written Submissions on the Issues under Review, Remedy, Bond, and the Public Interest",
+  "truncated": false
+}

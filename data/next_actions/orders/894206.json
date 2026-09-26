@@ -1,0 +1,48 @@
+{
+  "case": "337-1501",
+  "cost_usd": 0.004415,
+  "date": "2026-09-09",
+  "doc_id": "894206",
+  "document_type": "Order",
+  "events": [
+    {
+      "category": "discovery",
+      "date": "2026-09-08",
+      "end_date": "",
+      "event": "Initial deadline for responses to contention interrogatories on noninfringement",
+      "quote": "Initial deadline for responses to contention interrogatories on noninfringement\nThursday, September 3, 2026 Tuesday, September 8, 2026",
+      "relative": ""
+    },
+    {
+      "category": "claim_construction",
+      "date": "2026-09-10",
+      "end_date": "",
+      "event": "Exchange list of claim terms to be construed",
+      "quote": "Exchange list of claim terms to be construed\nTuesday, September 8, 2026 Thursday, September 10, 2026",
+      "relative": ""
+    },
+    {
+      "category": "claim_construction",
+      "date": "2026-09-14",
+      "end_date": "",
+      "event": "Exchange proposed claim constructions",
+      "quote": "Exchange proposed claim constructions\nFriday, September 11, 2026 Monday, September 14, 2026",
+      "relative": ""
+    },
+    {
+      "category": "claim_construction",
+      "date": "2026-09-16",
+      "end_date": "",
+      "event": "Meet and confer to discuss and limit number of disputed claim terms",
+      "quote": "Meet and confer to discuss and limit number of disputed claim terms\nTuesday, September 15, 2026 Wednesday, September 16, 2026",
+      "relative": ""
+    }
+  ],
+  "extracted_at": "2026-09-26T18:36:10+00:00",
+  "model": "claude-haiku-4-5-20251001",
+  "prompt_version": 2,
+  "rejected": [],
+  "role": "amendment",
+  "title": "Amending the Procedural Schedule",
+  "truncated": false
+}
