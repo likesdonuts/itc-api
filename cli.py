@@ -32,6 +32,7 @@ Examples:
     python cli.py decide                    # the name pairs waiting for you; decide 3 same
     python cli.py analytics-serve           # open the analytics app (what ITC Analytics.bat runs)
     python cli.py claims 337-1366 --render  # build a claims analysis
+    python cli.py summary-plan 337-1366     # what a case summary would read and cost (no model)
     python cli.py render                    # rebuild the site, offline
     python cli.py serve                     # open the app (what ITC Tracker.bat runs)
     python cli.py fields                    # what ui_schema.json can name
@@ -206,6 +207,16 @@ def build_parser() -> argparse.ArgumentParser:
         help="read every source document again (paid again), e.g. after the reading rules change",
     )
     _add_render_flag(p_claims)
+
+    p_summary_plan = sub.add_parser(
+        "summary-plan",
+        help="what a case summary would read and cost; counts pages from EDIS, calls no model",
+    )
+    p_summary_plan.add_argument("numbers", nargs="+", help="investigation numbers, e.g. 337-1366")
+    p_summary_plan.add_argument(
+        "--offline", action="store_true", help="count pages only from PDFs on disk; no EDIS requests"
+    )
+    _add_render_flag(p_summary_plan)
 
     p_counsel = sub.add_parser(
         "counsel",
@@ -488,6 +499,30 @@ def cmd_claims(args: argparse.Namespace, store: Store) -> int:
     return 1 if failed else 0
 
 
+def cmd_summary_plan(args: argparse.Namespace, store: Store) -> int:
+    from datalayer.summary import config as summary_config
+    from datalayer.summary import estimate as summary_estimate
+    from datalayer.summary import preview
+
+    cfg = summary_config.load()
+    token = None if args.offline else load_token()
+    failed = 0
+    for number in args.numbers:
+        key = store.find_key(number)
+        if key is None or not store.documents.get(key):
+            print(f"{number}: no document list on disk; run 'python cli.py docs {number}' first.")
+            failed += 1
+            continue
+        print(f"Case summary plan for {key}:")
+        preview.count_pages(store, key, token=token, log=print)
+        for line in preview.describe(summary_estimate.build(store, key, cfg)):
+            print(line)
+        print()
+    if args.render:
+        _render(args, store)
+    return 1 if failed else 0
+
+
 def cmd_counsel(args: argparse.Namespace, store: Store) -> int:
     _counsel(store, verbose=args.verbose)
     if args.render:
@@ -686,6 +721,7 @@ COMMANDS = {
     "decide": cmd_decide,
     "analytics-serve": cmd_analytics_serve,
     "claims": cmd_claims,
+    "summary-plan": cmd_summary_plan,
     "render": cmd_render,
     "fields": cmd_fields,
     "serve": cmd_serve,

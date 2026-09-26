@@ -1,0 +1,44 @@
+{
+  "_about": [
+    "The case summary (datalayer/summary/). Edit and re-render; no code changes.",
+    "",
+    "notes_model reads each selected document and takes structured notes; writer_model turns",
+    "  the notes into the plain-English summary. Prices come from claims_config.json's prices table.",
+    "budget_usd is this feature's own cap, separate from the claims analysis and Next actions. A run",
+    "  stops before a model call that could take the total in costs_csv past it, and asks for",
+    "  re-authorization (raise budget_usd here) rather than carrying on.",
+    "max_answer_groups: answers filed by the same counsel count as one group; this many groups are",
+    "  read, the rest listed by name. max_rulings: dispositive rulings read (grants before denials,",
+    "  then newest); the rest listed.",
+    "read_pages: how much of each kind of document is read -- its first and last pages. The",
+    "  complaint's body only (never its exhibits or appendices); an answer's opening and its",
+    "  affirmative defenses, which come at the end; a final ID's summary and its conclusions.",
+    "complaint_body_min_pages: before a complaint is downloaded, the first attachment at least this",
+    "  long is taken to be its body (cover letters come first); once on disk, page 1 decides.",
+    "estimate: the token counts the cost preview assumes. tokens_per_page is for dense legal text;",
+    "  prompt_tokens is the instructions sent with each document."
+  ],
+  "notes_model": "claude-haiku-4-5-20251001",
+  "writer_model": "claude-sonnet-5",
+  "budget_usd": 20.0,
+  "costs_csv": "data/summary_costs.csv",
+  "max_answer_groups": 5,
+  "max_rulings": 10,
+  "complaint_body_min_pages": 10,
+  "read_pages": {
+    "complaint": {"first": 60, "last": 0},
+    "notice_of_institution": {"first": 4, "last": 0},
+    "answer": {"first": 4, "last": 20},
+    "ruling": {"first": 40, "last": 0},
+    "final_id": {"first": 20, "last": 15},
+    "commission_notice": {"first": 8, "last": 0},
+    "commission_opinion": {"first": 35, "last": 5}
+  },
+  "estimate": {
+    "tokens_per_page": 600,
+    "prompt_tokens": 2500,
+    "notes_output_tokens": 1500,
+    "writer_prompt_tokens": 5000,
+    "writer_output_tokens": 3000
+  }
+}

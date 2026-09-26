@@ -20,7 +20,9 @@ from datetime import datetime, timedelta, timezone
 from pathlib import Path
 from unittest import mock
 
-from support import ids_row, write_snapshot
+from contextlib import contextmanager
+
+from support import FakeEdisClient, ids_row, write_snapshot
 
 import server  # noqa: E402
 from datalayer import ingest  # noqa: E402
@@ -418,6 +420,35 @@ class TestClaimsJob(ServerTestCase):
     def test_an_unknown_record_is_refused(self):
         status, body = self.post({"kind": "claims", "number": "337-9999"})
         self.assertEqual(status, 404)
+
+
+class TestSummaryEstimateJob(ServerTestCase):
+    def test_it_counts_the_pages_and_rebuilds_the_page_with_a_cost(self):
+        store = Store.load(self.data_dir)
+        complaint = {"id": "900", "title": "Public Complaint and Exhibits", "document_type": "Complaint",
+                     "document_date": "2026-05-01", "security_level": "Public"}
+        store.put_documents("337-1478", [complaint])
+        store.save_documents()
+        client = FakeEdisClient(attachments={"900": [{"id": "1", "pageCount": "2"}, {"id": "2", "pageCount": "50"}]})
+
+        @contextmanager
+        def session(token):
+            yield client
+
+        with mock.patch("datalayer.runner.edis_session", session):
+            job = self.run_job({"kind": "summary_estimate", "number": "337-TA-1478"})
+
+        self.assertEqual(job["level"], "ok", job["message"])
+        self.assertIn("1 document(s) counted. About $", job["message"])
+        page = (self.site_dir / "investigations" / "337-1478.html").read_text(encoding="utf-8")
+        self.assertIn("50 of the complaint", page)
+        self.assertNotIn('data-job="summary_estimate"', page)  # counted: nothing left to estimate
+
+    def test_it_needs_the_edis_token(self):
+        self.token = None
+        status, body = self.post({"kind": "summary_estimate", "number": "337-1478"})
+        self.assertEqual(status, 400)
+        self.assertIn("EDIS", body["message"])
 
 
 class TestStatus(ServerTestCase):

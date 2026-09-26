@@ -15,9 +15,14 @@ import schema as ui_schema
 from datalayer.cases import is_case_record
 from datalayer.claims import build as claims_build
 from datalayer.claims import config as claims_config
+from datalayer.claims import costs as claims_costs
 from datalayer.claims import status as claims_status
 from datalayer.config import DATA_DIR, SCHEMA_PATH, SITE_DIR
 from datalayer.nextactions import build as nextactions_build
+from datalayer.summary import config as summary_config
+from datalayer.summary import estimate as summary_estimate
+from datalayer.summary import pages as summary_pages
+from datalayer.summary import primer as summary_primer
 from datalayer.store import Store, write_text_atomic
 
 from . import templates
@@ -122,9 +127,23 @@ def render_site(
     except claims_config.ClaimsConfigError:
         pipeline_version = None
 
+    # The Summary tab: what a case summary would read and cost, from the
+    # documents index and the page counts already on disk.
+    try:
+        summary_cfg = summary_config.load()
+        page_counts = summary_pages.load(store.data_dir)
+        summary_spent = claims_costs.total(summary_cfg.costs_csv)
+    except summary_config.SummaryConfigError as exc:
+        log(f"  ! No Summary tab: {exc}")
+        summary_cfg = None
+    primer = summary_primer.load()
+
     for number, case in cases.items():
         page = detail_dir / f"{templates.slug_for(number)}.html"
         analysis = analyses.get(number)
+        summary = None
+        if summary_cfg is not None and store.documents.get(number):
+            summary = summary_estimate.build(store, number, summary_cfg, counts=page_counts, spent_usd=summary_spent)
         write_text_atomic(
             page,
             templates.render_detail(
@@ -139,6 +158,8 @@ def render_site(
                 fetched_at=fetched_at.get(number),
                 next_actions=next_cases.get(number),
                 next_built_at=next_actions.get("built_at"),
+                summary=summary,
+                primer=primer,
             ),
         )
         written.add(page)

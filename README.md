@@ -22,6 +22,7 @@ which firms and attorneys represent which parties (see
 ## Layout
 
 ```
+TODO.md               what is left to do and known bugs
 cli.py                one entry point for every command
 ui_schema.json        which IDS fields the site shows, and what to call them
 schema.py             loads and applies that mapping (used by both layers)
@@ -36,6 +37,7 @@ datalayer/            DATA LAYER - talks to IDS and EDIS, owns data/
   backfill.py           process 2, once: document lists for every case, resumable
   counsel.py            process 3: who represents whom, from the filings
   nextactions/          each open case's stage, dates and rule-based deadlines
+  summary/              the case summary: what it reads, what it costs (phase 1)
   analytics/            representation analytics: firms, attorneys, companies as entities
   client.py             HTTP client for the EDIS API and the IDS file
   store.py              reads/writes data/*.json, resolves case numbers
@@ -54,7 +56,10 @@ data/                 the handoff between the layers
   analytics/            firm, attorney and company entities  <- written by analytics
   sync_log.csv          one row per sync, for watching the daily download
   daily_sync_log.csv    one row per daily job: how long each step took, EDIS requests
+  summaries/pages.json  page counts of the documents a case summary reads  <- summary-plan
   documents/<number>/   downloaded PDFs (gitignored)
+content/              hand-written text shown on the site: section337_primer.md
+summary_config.json   the case summary's models, budget and reading limits
 site/                 generated output
 analytics_ui/         THE ANALYTICS APP'S UI - data/analytics/ -> site_analytics/ (bundle, page, render)
 analytics_server.py   the analytics app's server (port 8766): Rebuild button, daily rebuild on opening
@@ -117,6 +122,11 @@ The panel at the top of the list page does the day's work:
 - An open case's page has a **Next actions** tab: its stage, what comes next
   and when, every date on record, and what it is waiting on (see
   [Next actions](#next-actions)).
+- A case with documents has a **Summary** tab: which documents a
+  plain-English case summary would read, how much of each, and what it would
+  cost, with **Estimate cost** to count the pages; plus the "How Section 337
+  investigations work" primer (see [Case summary](#case-summary)). Summaries
+  themselves are not written yet.
 
 Its status line says whether today's sync has run, which day's case data is
 loaded, when documents were last fetched, and when the EDIS token expires.
@@ -197,6 +207,7 @@ own from the command line.
 | `python cli.py docs 337-1478 --appearances` | EDIS | Lists every document but downloads only the Notice of Appearance PDFs. |
 | `python cli.py backfill` | EDIS | Lists the documents (no PDFs) of every case that has no list yet, newest first; resumable. Refuses while the app is open (use its button). |
 | `python cli.py claims 337-1366` | Federal Register | Builds or updates the claims analysis for the investigations you name (also the **Create / Update claims analysis** button on a case page). |
+| `python cli.py summary-plan 337-1366` | EDIS (attachment lists only) | What a case summary would read and cost; counts pages into `data/summaries/pages.json` (also the **Estimate cost** button on the Summary tab). `--offline` counts only PDFs on disk. Calls no model. |
 | `python cli.py counsel` | none | Process 3. Rebuilds who represents whom from the documents on disk. Runs by itself after `sync`, `parse`, `docs` and `refresh`. |
 | `python cli.py next-actions` | none | Rebuilds each open case's next actions (`data/next_actions.json`). Runs by itself with counsel, after every sync and fetch. `--orders` first reads new scheduling orders (EDIS + Anthropic, own budget), as the daily job does. |
 | `python cli.py analytics` | Anthropic (a few cents) | Rebuilds the representation analytics entities in `data/analytics/` and the analytics app's data. Only ever run by hand or by the analytics app; `--no-review` makes no model calls. |
@@ -868,6 +879,66 @@ the build stops, keeping what it has, rather than go over.
 Model calls need `ANTHROPIC_API_KEY` in `.env`, and
 `ANTHROPIC_WORKSPACE_ID` too if the key is not scoped to a workspace.
 
+### Case summary
+
+```
+python cli.py summary-plan 337-1366 337-1270
+```
+
+A plain-English account of an investigation for practitioners new to Section
+337: what the complaint alleges, what the respondents answer, the rulings
+before the hearing, and the ALJ's and the Commission's decisions, beside a
+hand-written primer on how Section 337 works. Written on demand, per case,
+in phases:
+
+1. **Phase 1 (this): what would be read, and what it would cost.** No model.
+2. Phase 2: the complaint and answers summarized. Claude Haiku 4.5 takes
+   notes on each document, with page references; Claude Sonnet 5 writes the
+   summary from the notes. Cached per document, so each is read once.
+3. Phase 3: the rulings and decisions, updates that read only new documents,
+   and the claims analysis's findings folded in.
+
+**What is read** (`summary/select.py`, by rule from the documents index, free).
+A complaint filing runs to thousands of pages, nearly all exhibits, so:
+
+| Section | Read | Not read |
+| --- | --- | --- |
+| The complaint | The latest amended complaint, else the original public filing; within it only the complaint itself (`read_pages`: first 60 pages). The notice of institution (first 4). | Supplements, appendices, exhibits, confidential versions. An untitled filing stands in only when nothing is titled a complaint. |
+| Answers | One per group: answers sharing counsel or respondents are one group (an answer to the amended complaint replaces the first, even after a change of firm). Up to `max_answer_groups` (5), respondents still in the case first (`nextactions/stays.out_of_case`). First 4 and last 20 pages, where the affirmative defenses are. | Exhibits, verifications, letters; groups over the limit (listed by name). |
+| Rulings | The ALJ's rulings on summary determination: IDs, and orders granting, denying or dismissing a motion for summary determination -- not the motions, since a ruling sets out both sides. Grants first, then newest, up to `max_rulings` (10); first 40 pages. | Procedural orders that mention summary determination (extensions of time, briefing). |
+| Decisions | The latest final ID (first 20 and last 15 pages: its summary and conclusions); the Commission's notices of a decision to review or of a final determination (first 8); its latest two opinions (first 35, last 5). | Federal Register reprints ("F.R. ..."), target-date and deadline notices. |
+| From titles alone | Terminations (settlement, withdrawal, consent order), defaults, the Commission declining to review a merits ruling, and remedial orders (exclusion, cease and desist, consent orders) are listed from their titles and never opened. | |
+
+A corrected or public version replaces the document it corrects (same title
+bar "[Corrected]", within 45 days). Only public documents are ever read.
+
+**What it would cost** (`summary/estimate.py`). Page counts come from
+EDIS's attachment list (`pageCount`, one request per document, nothing
+downloaded) or from the PDFs when all are on disk, kept in
+`data/summaries/pages.json` (tracked). Attachments are in filing order, so a
+complaint's cover letters come first: before the complaint is read, its body
+is taken to be the first attachment of `complaint_body_min_pages` (10) pages
+or more ("assumed"); once its text is on file, page 1 decides ("confirmed",
+`claims/candidates.is_complaint_body`). The cost is `prompt_tokens` plus
+`tokens_per_page` per page read, in, and `notes_output_tokens` out, per
+document at the notes model's price; plus one writing call at the writer
+model's price. A document not counted yet is costed at its page limit, so the
+estimate reads "Up to". Prices come from `claims_config.json`. For the pilot
+cases: 337-1366 about $0.24, 337-1384 $0.16, 337-1270 $0.37.
+
+**Overlap with the claims analysis.** The summary reads the same PDFs through
+the same text cache (`data/claims/text/`, OCR included), so a document the
+claims analysis already read ("Text on file") needs no download or OCR.
+
+**Budget.** Its own: `budget_usd` in `summary_config.json` ($20), logged in
+`data/summary_costs.csv`. At the cap a run stops and asks for
+re-authorization (raise `budget_usd`), rather than carrying on.
+
+**The primer** is `content/section337_primer.md`, written by hand and the
+same for every case, in a small Markdown subset (`summary/primer.py`). Its
+first lines record its review; until `status: reviewed`, the page labels it
+"Draft: awaiting review".
+
 ### The field mapping (`ui_schema.json`)
 
 The IDS file carries far more about an investigation than a page should show,
@@ -1037,8 +1108,8 @@ with rows shaped like the real thing and EDIS with a fake client. They cover
 the snapshot store, flattening, stage grouping, the field mapping, the sync
 log, rendering, the local server, reading counsel from filings, the
 analytics name matching (on spellings taken from the real filings, with the
-model replaced by a fake client), and that fetching documents leaves case
-information alone.
+model replaced by a fake client), which documents a case summary reads and
+what it would cost, and that fetching documents leaves case information alone.
 
 ## Poking at the raw API
 

@@ -398,6 +398,29 @@ table.na-list tr.on-hold .na-title { color: var(--muted); }
 table.na-list td.na-who { width: auto; }
 table.na-list td.na-how { width: 11rem; white-space: nowrap; color: var(--muted); font-size: 0.85rem; }
 @media (max-width: 640px) { table.na-list td.na-date { width: 6.5rem; } table.na-list td.when { display: none; } }
+.sum-hero { display: flex; gap: 2rem; flex-wrap: wrap; align-items: flex-start; }
+.sum-hero > div { flex: 1 1 18rem; min-width: 0; }
+.sum-cost { font-size: 1.35rem; font-weight: 650; }
+.sum-cost small { font-size: 0.85rem; font-weight: 400; color: var(--muted); }
+.sum-hero p { margin: 0.35rem 0 0; color: var(--muted); font-size: 0.88rem; line-height: 1.5; }
+.sum-hero .btn { margin-top: 0.7rem; }
+table.na-list tr.sum-group td { padding-top: 0.9rem; font-size: 0.7rem; font-weight: 700; color: var(--muted);
+  text-transform: uppercase; letter-spacing: 0.06em; border-top: none; }
+.sum-pages { font-weight: 600; color: var(--ink); }
+.sum-tag { font-weight: 700; text-transform: uppercase; letter-spacing: 0.04em; font-size: 0.68rem; color: var(--green-fg); }
+.sum-tag.assumed { color: var(--amber-fg); }
+.primer { line-height: 1.6; }
+.primer h3 { font-size: 0.98rem; margin: 1.2rem 0 0.35rem; }
+.primer ul, .primer ol { padding-left: 1.3rem; margin: 0.3rem 0; }
+.primer li { margin-bottom: 0.3rem; }
+.primer-draft { display: inline-block; margin-left: 0.5rem; padding: 0.05rem 0.55rem; border-radius: 999px; font-size: 0.72rem;
+  font-weight: 700; background: var(--amber-bg); color: var(--amber-fg); vertical-align: 0.1em; }
+.primer-note { font-size: 0.8rem; color: var(--muted); }
+.case-summary > .card { padding: 1rem 1.2rem; margin-bottom: 0.9rem; }
+.case-summary > details.card { padding: 0.8rem 1.2rem; }
+.case-summary h4 { font-size: 0.85rem; margin: 0.9rem 0 0.3rem; }
+.case-summary h4 small { color: var(--muted); font-weight: 400; }
+.primer p, .primer li { color: var(--ink); }
 .claims-matrix th .stage-count { font-weight: 400; text-transform: none; letter-spacing: 0; margin-top: 0.15rem; }
 .claims-matrix tr.patent-row th {
   background: var(--surface-2);
@@ -710,7 +733,8 @@ _CONTROL_SCRIPT = """
 (function () {
   const panel = document.getElementById('control-panel');
   if (!panel) return;
-  const buttons = Array.from(panel.querySelectorAll('button[data-job]'));
+  // The panel's buttons, and any a tab adds (the Summary tab's "Estimate cost").
+  const buttons = Array.from(document.querySelectorAll('button[data-job]'));
   const picks = Array.from(document.querySelectorAll('input.pick-case'));
   const pickAll = document.getElementById('pick-all');
   const count = document.getElementById('picked-count');
@@ -912,6 +936,10 @@ _CONTROL_SCRIPT = """
       if (b.dataset.job === 'daily') start({ kind: 'daily' });
       else if (b.dataset.job === 'backfill') start({ kind: 'backfill' });
       else if (b.dataset.job === 'claims') start({ kind: 'claims', number: panel.dataset.number });
+      else if (b.dataset.job === 'summary_estimate') {
+        start({ kind: 'summary_estimate', number: panel.dataset.number });
+        panel.scrollIntoView({ behavior: 'smooth' });  // the job's progress shows up there
+      }
       else start({ kind: 'documents', numbers: selected(), download: b.dataset.download === '1' });
     });
   });
@@ -1861,12 +1889,167 @@ def _claims_section(claims: dict[str, Any]) -> str:
 </div>"""
 
 
+_SUM_GROUPS = {
+    "complaint": "What the case is about",
+    "answers": "The respondents' answers",
+    "rulings": "Rulings before the hearing",
+    "decisions": "The ALJ's and the Commission's decisions",
+}
+_SUM_NOTED = {
+    "termination": "Terminations",
+    "default": "Defaults",
+    "not_reviewed": "The Commission let a ruling stand",
+    "remedy": "Remedial orders",
+}
+
+
+def _file_links(documents: list[dict[str, Any]] | None) -> dict[str, list[str]]:
+    """Each document's PDFs on disk, by document id."""
+    return {
+        str(d.get("id")): [a["href"] for a in d.get("attachments") or [] if a.get("href")]
+        for d in documents or []
+    }
+
+
+def _summary_line(line: Any, files: dict[str, list[str]]) -> str:
+    from datalayer.summary.preview import KIND_LABEL, pages
+
+    item = line.item
+    hrefs = files.get(item.id) or []
+    href = next((h for h in hrefs if line.main_id and f"_{line.main_id}_" in h), hrefs[0] if hrefs else "")
+    title = _e(item.title if len(item.title) <= 110 else item.title[:107] + "…")
+    title = f'<a href="{_e(href)}">{title}</a>' if href else title
+    if not line.counted:
+        size = f"up to {line.read_pages} pages"
+    elif item.kind == "complaint":
+        size = f"{line.read_pages} of the complaint's {pages(line.main_pages)}"
+        if line.total_pages and line.total_pages > (line.main_pages or 0):
+            size += f" ({line.total_pages:,} in the whole filing)"
+    elif line.read_pages == line.main_pages:
+        size = "all " + pages(line.main_pages) if line.main_pages != 1 else "1 page"
+    else:
+        size = f"{line.read_pages} of {pages(line.main_pages)}"
+    meta = [f'<span class="na-basis">{_e(KIND_LABEL.get(item.kind, item.kind))}</span>',
+            f'<span class="sum-pages">{_e(size)}</span>']
+    if item.kind == "complaint" and line.body:
+        meta.append('<span class="sum-tag">Complaint body confirmed</span>' if line.body == "confirmed"
+                    else '<span class="sum-tag assumed" title="Found by its length; confirmed when the text is read">'
+                         "Complaint body assumed</span>")
+    if line.text_on_file:
+        meta.append('<span class="sum-tag" title="Already read for the claims analysis: no download or OCR needed">'
+                    "Text on file</span>")
+    who = f"<div>{_e(item.who)}</div>" if item.who else ""
+    return (
+        f'<tr><td class="na-date">{_date(item.day)}</td><td><div class="na-title">{title}</div>{who}'
+        f'<div class="na-meta">{"".join(meta)}<span>{_e(item.why)}</span></div></td></tr>'
+    )
+
+
+def _summary_section(estimate: Any, primer: Any, documents: list[dict[str, Any]] | None = None,
+                     stage_label: str | None = None) -> str:
+    """The Summary tab (datalayer/summary): what a case summary would read
+    and cost, and the hand-written Section 337 primer. Phase 1: nothing is
+    written yet, so the tab previews the reading and its cost."""
+    from datalayer.summary.preview import money
+
+    files = _file_links(documents)
+    blocks = []
+    if estimate is not None and estimate.lines:
+        bound = "About" if estimate.complete else "Up to"
+        left = max(estimate.budget_usd - estimate.spent_usd, 0)
+        button = (
+            '<button class="btn btn-quiet" data-job="summary_estimate" title="Ask EDIS how long each document is '
+            '(one request per document; nothing is downloaded and no model is called)">Estimate cost</button>'
+            if not estimate.complete else ""
+        )
+        counted = (
+            "" if estimate.complete else
+            f" {len(estimate.uncounted)} document(s) are not counted yet, so each is costed at its page limit."
+        )
+        stage = f'<div class="na-label" style="margin-top:0.8rem">Stage</div><div>{_e(stage_label)}</div>' if stage_label else ""
+        blocks.append(f"""<div class="card sum-hero">
+    <div>
+      <div class="na-label">Case summary</div>
+      <div class="sum-cost">{bound} {money(estimate.total_usd)} <small>to write</small></div>
+      <p>Summaries are not written yet. This is what one would read, and what it would cost:
+      notes on each document by {_e(estimate.notes_model)} ({money(estimate.notes_usd)}, {estimate.pages_read:,} pages),
+      then the summary written by {_e(estimate.writer_model)} ({money(estimate.writer_usd)}).{counted}</p>
+      {button}
+    </div>
+    <div>
+      <div class="na-label">Budget</div>
+      <div>{money(estimate.spent_usd)} spent of {money(estimate.budget_usd)}; {money(left)} left</div>
+      {stage}
+    </div>
+  </div>""")
+
+        rows = []
+        for section, heading in _SUM_GROUPS.items():
+            lines = [line for line in estimate.lines if line.item.section == section]
+            if lines:
+                rows.append(f'<tr class="sum-group"><td colspan="2">{heading}</td></tr>')
+                rows.extend(_summary_line(line, files) for line in lines)
+        blocks.append(f'<div class="card na-card"><h3>What would be read <small>({len(estimate.lines)} documents)</small></h3>'
+                      f'<table class="na-list"><tbody>{"".join(rows)}</tbody></table></div>')
+
+        noted = estimate.selection.noted
+        if noted:
+            parts = []
+            for kind, heading in _SUM_NOTED.items():
+                items = [i for i in noted if i.kind == kind]
+                if items:
+                    lis = "".join(f"<li>{_date(i.day)}: {_e(i.title)}</li>" for i in items)
+                    parts.append(f"<h4>{heading} <small>({len(items)})</small></h4><ul class=\"na-notes\">{lis}</ul>")
+            blocks.append(
+                f'<details class="card na-past"><summary>Noted from their titles, not opened <small>({len(noted)})</small>'
+                f'</summary><p class="primer-note">The title already says what happened, so these cost nothing.</p>'
+                f'{"".join(parts)}</details>'
+            )
+        left_out = estimate.selection.not_read
+        if left_out or estimate.selection.skipped_filings:
+            lis = "".join(
+                f"<li>{_date(i.day)}: {_e(i.title)}{' (' + _e(i.who) + ')' if i.who else ''}. "
+                f'<span class="primer-note">{_e(i.why)}.</span></li>'
+                for i in left_out
+            )
+            n = estimate.selection.skipped_filings
+            if n:
+                lis += f"<li>{n} appendix or exhibit filing{'' if n == 1 else 's'} to the complaint.</li>"
+            count = len(left_out) + (1 if n else 0)
+            blocks.append(
+                f'<details class="card na-past"><summary>Not read <small>({count})</small></summary>'
+                f'<ul class="na-notes">{lis}</ul></details>'
+            )
+    else:
+        blocks.append('<div class="card"><p>No public complaint, answer or decision is on file for this case yet. '
+                      "Fetch its documents to see what a summary would read.</p></div>")
+
+    if primer is not None:
+        badge = "" if primer.reviewed else '<span class="primer-draft">Draft: awaiting review</span>'
+        review = (
+            f"Reviewed by {_e(primer.reviewed_by)}{', ' + _e(primer.reviewed_on) if primer.reviewed_on else ''}."
+            if primer.reviewed else
+            "Written for orientation and not yet reviewed by a Section 337 practitioner."
+        )
+        blocks.append(
+            f'<details class="card na-past primer"><summary>How Section 337 investigations work'
+            f"{badge}</summary>{primer.html}"
+            f'<p class="primer-note">{review} The same for every case, and not legal advice; '
+            "the rules and the Commission's orders govern.</p></details>"
+        )
+    return f'<div class="section-block case-summary">{"".join(blocks)}</div>'
+
+
 def _with_tabs(overview: str, claims: dict[str, Any] | None, next_actions: dict[str, Any] | None,
-               next_built_at: str | None = None, documents: list[dict[str, Any]] | None = None) -> str:
+               next_built_at: str | None = None, documents: list[dict[str, Any]] | None = None,
+               summary: str | None = None) -> str:
     """The page body, split into tabs when the case has more than its
-    overview: Next actions for an open investigation, Claims once it has a
-    claims analysis. Unchanged otherwise."""
+    overview: Summary once it has documents, Next actions for an open
+    investigation, Claims once it has a claims analysis. Unchanged
+    otherwise."""
     tabs = [("overview", "Overview", overview)]
+    if summary:
+        tabs.append(("summary", "Summary", summary))
     if next_actions:
         tabs.append(("next", "Next actions", _next_actions_section(next_actions, next_built_at, documents)))
     if claims and claims.get("built_at"):
@@ -2046,11 +2229,15 @@ def render_detail(
     claims_state: dict[str, Any] | None = None,
     next_actions: dict[str, Any] | None = None,
     next_built_at: str | None = None,
+    summary: Any = None,
+    primer: Any = None,
 ) -> str:
     """`fetched_at` is when this case's documents were last fetched;
     `claims` is its stored claims analysis and `claims_state` whether that
     needs building (datalayer/claims/status.py); `next_actions` its entry in
-    data/next_actions.json, for an open investigation.
+    data/next_actions.json, for an open investigation; `summary` its case
+    summary estimate (datalayer/summary/estimate.py) and `primer` the
+    Section 337 explainer shown with it.
     """
     number = case.get("investigation_number")
     # What a stage block compares against the primary stage: the field
@@ -2101,7 +2288,9 @@ def render_detail(
 </div>
 {withdrawn_notice}
 {_control_panel(str(number or ""), fetched_at, claims_state)}
-{_with_tabs(''.join(block for block in blocks if block), claims, next_actions, next_built_at, documents)}
+{_with_tabs(''.join(block for block in blocks if block), claims, next_actions, next_built_at, documents,
+            _summary_section(summary, primer, documents, (next_actions or {}).get("stage_label"))
+            if documents and (summary is not None or primer is not None) else None)}
 <p class="footer-note">
   Investigation {_e(number)} &middot; case information from the IDS investigations
   feed &middot; IDS snapshot {_date(case.get('ids_snapshot'))}
