@@ -1,0 +1,72 @@
+{
+  "cost_usd": 0.009393,
+  "date": "2022-07-15",
+  "doc_id": "776777",
+  "file": "776777_1876210_1876210.pdf",
+  "kind": "ruling",
+  "model": "claude-haiku-4-5-20251001",
+  "notes_version": 2,
+  "overview": "This is an Administrative Law Judge's order denying respondents' motion for summary determination of invalidity of Crocs' asserted trade dress based on functionality. Respondents Walmart, Orly Shoe Corporation, Hobby Lobby Stores, and Quanzhou Zheng De Network Corp. (Amoji) sought an initial determination that Crocs' 3D trade dress marks are functional and therefore invalid, and that respondents' accused products cannot infringe as a matter of law. The ALJ found genuine factual disputes exist regarding the Morton-Norwich functionality factors, making summary determination inappropriate.",
+  "pages_read": [
+    1,
+    2,
+    3
+  ],
+  "points": [
+    {
+      "page": 1,
+      "point": "Respondents Walmart Inc., Orly Shoe Corporation, Hobby Lobby Stores, Inc., and Quanzhou Zheng De Network Corp. (Amoji) filed a motion on June 10, 2022 seeking an initial determination that Complainant Crocs, Inc.'s asserted trade dress is functional and therefore invalid, and that respondents' accused products cannot infringe the asserted trade dress as a matter of law.",
+      "quote": "Respondents Walmart Inc., Orly Shoe Corporation, Hobby Lobby Stores, Inc., and Quanzhou Zheng De Network Corp., d/b/a Amoji (collectively, \"Respondents\") filed a motion (Mot. 1 270-054) for summary determination of invalidity due to functionality.",
+      "topic": "motion"
+    },
+    {
+      "page": 1,
+      "point": "Respondents contended that Crocs owns two utility patents showing the claimed shoe design and that the existence of a utility patent is strong and incontrovertible evidence that the claimed trade dress is functional.",
+      "quote": "Respondents contend that Crocs owns two utility patents showing the claimed shoe design. Mem. at 1. According to Respondents, \"[t]he existence of a utility patent is strong and \u2014in this case\u2014incontrovertible evidence that [the] claimed trade dress is functional.\"",
+      "topic": "motion"
+    },
+    {
+      "page": 2,
+      "point": "The issue is whether Crocs' 3D trade dress marks are functional under the Morton-Norwich test and therefore invalid as a matter of law, such that respondents' accused products cannot infringe.",
+      "quote": "To assess whether a mark is functional, the Commission applies the Morton-Norwich factors: (1) the existence of a utility patent that discloses th e utilitarian advantages of the design; (2) advertising materials touting the utilitarian advantages of the design; (3) the availability to competitors of functionally equivalent designs; and (4) facts indicating that the design results in a comparatively simple or cheap method of manufacture.",
+      "topic": "issue"
+    },
+    {
+      "page": 2,
+      "point": "The ALJ stated that functionality determinations are based on the whole collection of elements taken together, not individual elements versus overall visual impression.",
+      "quote": "Functionality determinations are based on \"the whole collection of elements taken together.\" Certain Motorized Vehicles, Comm'n Op. at 16.",
+      "topic": "reasoning"
+    },
+    {
+      "page": 2,
+      "point": "The ALJ found that genuine issues of material fact exist regarding whether the 3D marks are disclosed in U.S. Patent Nos. 6,993,858 and 7,146,751; whether Crocs has touted the functionality of the 3D marks in advertising; whether commercial alternatives to the 3D marks are available; and whether the 3D marks result from a simpler or cheaper method of manufacture.",
+      "quote": "Here, there are genuine issues of material fact with respect to the Morton-Norwich factors. Specifically, there are factual disputes as to whether (1) the 3D marks are disclosed in U.S. Patent Nos. 6,993,858 and 7,146,751; (2) Crocs has touted the functionality of the 3D marks in its",
+      "topic": "reasoning"
+    },
+    {
+      "page": 2,
+      "point": "The ALJ applied the legal standard for summary determination, requiring that there be no genuine issue as to any material fact and that the moving party be entitled to determination as a matter of law, with evidence viewed in the light most favorable to the opposing party.",
+      "quote": "Summary determination is appropriate when there is no genuine issue as to any material fact and the moving party is entitled to a determination as a matter of law. See 19 C.F.R. \u00a7 210.18.",
+      "topic": "reasoning"
+    },
+    {
+      "page": 3,
+      "point": "The ALJ denied respondents' motion for summary determination of invalidity due to functionality, as Motion Docket No. 1270-054 was DENIED.",
+      "quote": "Motion Docket No. 12 70-054 for summary determination is therefore DENIED.",
+      "topic": "outcome"
+    }
+  ],
+  "rejected": [
+    {
+      "page": 3,
+      "point": "Because the motion was denied, the functionality issue remains to be decided at the hearing on the merits, with all four Morton-Norwich factors subject to factual determination.",
+      "quote": "Here, there are genuine issues of material fact with respect to the Morton-Norwich factors. Specifically, there are factual disputes as to whether (1) the 3D marks are disclosed in U.S. Patent Nos. 6,993,858 and 7,146,751; (2) Crocs has touted the functionality of the 3D marks in its advertising; (3) commercial alternatives to the 3D marks are available; and (4) the 3D marks are the result of a simpler or cheaper method of manufacture.",
+      "rejected": "quote not found in the filing",
+      "topic": "effect"
+    }
+  ],
+  "taken_at": "2026-09-26T21:09:16+00:00",
+  "title": "Denying Certain Respondents' Motion for Summary Determination of Invalidity Due to Functionality",
+  "truncated": false,
+  "who": ""
+}

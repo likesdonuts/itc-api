@@ -1960,6 +1960,12 @@ _SUM_WRITTEN = (
     ("about", "What the case is about"),
     ("allegations", "The complainant's allegations"),
 )
+# After the answers.
+_SUM_LATER = (
+    ("rulings", "Rulings before the hearing"),
+    ("decisions", "The ALJ's and the Commission's decisions"),
+    ("standing", "Where it stands"),
+)
 
 
 def _written_summary(record: dict[str, Any], documents: list[dict[str, Any]] | None) -> str:
@@ -1969,18 +1975,37 @@ def _written_summary(record: dict[str, Any], documents: list[dict[str, Any]] | N
     notes = record.get("notes") or {}
     files = {str(d.get("doc_id")): d.get("file") for d in record.get("documents") or []}
     keys = {str(d.get("id")): d for d in documents or []}
-    short = {"complaint": "Complaint", "notice_of_institution": "Notice", "answer": "Answer"}
+    short = {"complaint": "Complaint", "notice_of_institution": "Notice", "answer": "Answer", "ruling": "Ruling",
+             "final_id": "Final ID", "commission_notice": "Commission", "commission_opinion": "Opinion"}
+    known = record.get("facts") or {}
+
+    def doc_href(doc_id: str, file: str | None = None) -> str:
+        doc = keys.get(doc_id, {})
+        hrefs = [a["href"] for a in doc.get("attachments") or [] if a.get("href")]
+        return next((h for h in hrefs if file and h.endswith(file)), hrefs[0] if hrefs else "")
+
+    def fact_chip(fact: dict[str, Any]) -> str:
+        """A title fact links its order or notice; a claims fact its source
+        decision, labelled as the claims analysis's."""
+        doc_id = str(fact.get("doc_id") or "")
+        if fact.get("type") == "claims":
+            label, title = "Claims analysis", f"{fact.get('text')}\n“{fact.get('quote')}”"
+        else:
+            label, title = f"{fact.get('label')}, {_date(fact.get('date'))}", str(fact.get("title") or "")
+        href = doc_href(doc_id)
+        return (f'<a href="{_e(href)}" title="{_e(title)}">{_e(label)}</a>' if href
+                else f'<span title="{_e(title)}">{_e(label)}</span>')
 
     def cites_html(cites: list[str]) -> str:
         """One chip per page cited, in order: "p. 12", or "Answer p. 12" when
         the paragraph draws on more than one filing. Hover for the quotes;
-        click to open the page."""
+        click to open the page. Then the title and claims facts cited."""
         by_page: dict[tuple[str, int], list[dict[str, Any]]] = {}
         for nid in cites:
             note = notes.get(nid)
             if note:
                 by_page.setdefault((str(note.get("doc_id")), note.get("page")), []).append(note)
-        several = len({doc_id for doc_id, _ in by_page}) > 1
+        several = len({doc_id for doc_id, _ in by_page}) > 1 or any(c in known for c in cites)
         chips = []
         for (doc_id, page), group in by_page.items():
             doc = keys.get(doc_id, {})
@@ -1991,6 +2016,20 @@ def _written_summary(record: dict[str, Any], documents: list[dict[str, Any]] | N
             title = f"{doc.get('title') or 'Document'}, page {page}:\n{quotes}"
             chips.append(f'<a href="{_e(href)}#page={_e(page)}" title="{_e(title)}">{_e(label)}</a>' if href
                          else f'<span title="{_e(title)}">{_e(label)}</span>')
+        seen_claims = False
+        for cid in cites:
+            fact = known.get(cid)
+            if not fact:
+                continue
+            if fact.get("type") == "claims":
+                # One chip for the claims analysis, however many of its findings.
+                if seen_claims:
+                    continue
+                seen_claims = True
+                texts = [known[c]["text"] for c in cites if (known.get(c) or {}).get("type") == "claims"]
+                chips.append(f'<a href="#claims" title="{_e(chr(10).join(texts))}">Claims analysis</a>')
+            else:
+                chips.append(fact_chip(fact))
         return f'<span class="sum-cites">{"".join(chips)}</span>' if chips else ""
 
     def paragraph(p: dict[str, Any]) -> str:
@@ -2006,10 +2045,14 @@ def _written_summary(record: dict[str, Any], documents: list[dict[str, Any]] | N
             # Summaries written before groups could have several paragraphs hold one, inline.
             paragraphs = answer.get("paragraphs") or [answer]
             parts.append(f'<h4>{_e(answer.get("who"))}</h4>' + "".join(paragraph(p) for p in paragraphs))
+    for key, heading in _SUM_LATER:
+        if summary.get(key):
+            parts.append(f"<h3>{heading}</h3>" + "".join(paragraph(p) for p in summary[key]))
     parts.append(
         '<p class="primer-note">Written by AI from the public filings listed below; each paragraph cites the '
-        "pages it rests on (hover for the quote, click to open the page). Allegations and defenses are the "
-        "parties' own, not findings. Rulings and decisions are not covered yet. Not legal advice.</p>"
+        "pages it rests on (hover for the quote, click to open the page), the orders and notices whose titles "
+        "it relies on, and the claims analysis. Allegations and defenses are the parties' own, not findings. "
+        "Not legal advice.</p>"
     )
     return f'<div class="card sum-written">{"".join(parts)}</div>'
 
@@ -2027,17 +2070,19 @@ def _summary_action(state: dict[str, Any] | None, estimate: Any) -> tuple[str, s
         return ('<button class="btn btn-quiet" data-job="summary" data-current="1">Summary up to date</button>',
                 "No new documents to read since it was written.")
     if kind == "new_documents":
+        new = state.get("new") or 0
+        why = (f"{new} new document(s) to read since {_e(dates.format_ui_time(state.get('built_at')))}"
+               if new else "New orders, a rebuilt claims analysis, or a fuller summary than when it was written")
         return ('<button class="btn" data-job="summary">Update summary</button>',
-                f"{state.get('new') or 'Some'} new document(s) to read since {_e(dates.format_ui_time(state.get('built_at')))}; "
-                "only those are paid for.")
+                f"{why}; only documents not read before are paid for.")
     if kind == "budget":
         return ('<button class="btn" data-job="summary">Try again</button>',
                 f'<span class="warn">{_e(state.get("error"))}.</span>')
     if kind == "failed":
         return ('<button class="btn" data-job="summary">Retry summary</button>',
                 f'<span class="warn">The last attempt failed: {_e(state.get("error"))}</span>')
-    return (f'<button class="btn" data-job="summary">Write summary</button>',
-            f"Reads the complaint, the notice of institution and the answers: {bound} {money(cost)}.")
+    return ('<button class="btn" data-job="summary">Write summary</button>',
+            f"Reads the documents listed below: {bound} {money(cost)}.")
 
 
 def _summary_section(estimate: Any, primer: Any, documents: list[dict[str, Any]] | None = None,

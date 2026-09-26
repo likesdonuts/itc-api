@@ -94,7 +94,14 @@ from a known file, and every sync is logged to help spot bad data days.
 | Business-development and competitive questions ("which firms is this firm growing with?", "who gets sued most?", "which rivals keep suing each other?") had no answer short of manual research. | Caseload timelines and co-counsel lists on each firm's page. Frequent-flier rankings of the most-sued and most-suing companies. A list of companies that have sued each other in both directions. All of it can be grouped by corporate family and filtered by years. |
 | The daily update took about an hour. Every day it re-read every page of about 190 cases' dockets and re-checked about 1,400 files it already had, roughly 4,000 requests to the USITC. | It now reads only each docket's new filings and skips files already downloaded. Closed and inactive cases are refreshed weekly or monthly instead of daily. Each case still gets a full weekly re-check to catch corrections. That's expected to cut a typical day to about 80 cases and a few hundred requests. Every run's duration, step by step, is now logged and shown on the dashboard. |
 | The USITC's daily data file sometimes fails to download. | The download retries automatically. If it still fails, the rest of the daily update runs anyway and the failure is logged. |
-| Lawyers new to IP and Section 337 can't easily tell what a case is about or where it stands. A complaint filing runs to over 1,000 pages (one reached 35,000), mostly exhibits, and the rest of the docket runs to hundreds of filings. | A **Summary** tab on every case page. One click writes a plain-English summary: a one-line headline, what the case is about (the parties, the technology, the patents and the products), how the complainant says the law is broken, and each defense team's main defenses. Terms of art are explained in passing. Every paragraph links to the exact pages it came from; hovering shows the quoted words and clicking opens the page. The AI's notes are checked word for word against the filings before they are used. The app picks the few documents worth reading and only the relevant pages of each: the complaint itself, not its exhibits, and one answer per defense team, up to five. A summary costs about $0.10 to $0.40, shown before anything is spent, and updating one pays only for new filings. Next to it is a plain-English guide to how Section 337 cases work, drafted and awaiting review by a practitioner. **Still to come:** the rulings before the hearing and the judge's and Commission's decisions. |
+| Lawyers new to IP and Section 337 can't easily tell what a case is about or where it stands. A complaint filing runs to over 1,000 pages (one reached 35,000), mostly exhibits, and the rest of the docket runs to hundreds of filings. | A **Summary** tab on every case page. One click writes a plain-English summary covering the whole case:
+- a one-line headline, with the outcome once decided
+- what the case is about: the parties, the technology, the patents and the products
+- how the complainant says the law is broken
+- each defense team's main defenses
+- the judge's rulings before the hearing
+- the judge's and the Commission's decisions
+- where the case stands: who settled or defaulted, which claims were decided, and the remedy in force. Terms of art are explained in passing. Every paragraph links to the exact pages it came from; hovering shows the quoted words and clicking opens the page. The AI's notes are checked word for word against the filings before they are used. Settlements, defaults and exclusion orders come from the official titles without opening the documents. The claims analysis's checked findings are reused where a case has one. The app picks the few documents worth reading and only the relevant pages of each: the complaint itself, not its exhibits, and one answer per defense team, up to five. A summary costs about $0.10 to $0.40, shown before anything is spent. When a new ruling or decision is filed, the page offers an update that pays only for the new documents. Next to it is a plain-English guide to how Section 337 cases work, drafted and awaiting review by a practitioner. |
 | Gigabytes of PDFs slowed down version control. | Documents stay on the local machine only, and can be downloaded again from the USITC at any time. |
 
 ## Current limits
@@ -119,11 +126,10 @@ from a known file, and every sync is logged to help spot bad data days.
 - A document edited after it was filed (for example, made public later) is
   picked up by the weekly full re-check, so it can take up to a week to
   appear. New filings appear the next day.
-- Case summaries so far cover the complaint and the answers only; the
-  rulings and the judge's and Commission's decisions come next. They read
-  only public versions of filings, so anything redacted is invisible to them,
-  and only the opening and closing pages of a long answer. They have been
-  written for 3 pilot cases. The Section 337 guide needs review by a
+- Case summaries read only public versions of filings, so anything redacted
+  is invisible to them. They read only the opening and closing pages of a
+  long answer or decision. Appeals to the Federal Circuit are not covered.
+  They have been written for 5 pilot cases. The Section 337 guide needs review by a
   Section 337 practitioner before users rely on it.
 - About 60 of the oldest investigations (three-digit numbers such as
   337-TA-112) have document lists mixed with other cases' filings. The USITC's

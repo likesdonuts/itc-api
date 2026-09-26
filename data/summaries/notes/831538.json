@@ -1,0 +1,158 @@
+{
+  "cost_usd": 0.020483,
+  "date": "2024-09-05",
+  "doc_id": "831538",
+  "file": "831538_2235388_2235388.pdf",
+  "kind": "commission_notice",
+  "model": "claude-haiku-4-5-20251001",
+  "notes_version": 2,
+  "overview": "This is a Commission determination notice dated September 5, 2024, in Investigation 337-TA-1366 concerning certain semiconductor devices. The Commission determined to review in its entirety a final initial determination that found a violation of Section 337 as to claims 2 and 3 of U.S. Patent No. 8,350,294 ('294 patent) but no violation as to claim 1 of the '294 patent or claim 1 of U.S. Patent No. 8,404,508 ('508 patent). The Commission requests written submissions on specific issues under review and on remedy, public interest, and bonding.",
+  "pages_read": [
+    1,
+    2,
+    3,
+    4,
+    5
+  ],
+  "points": [
+    {
+      "page": 2,
+      "point": "The Commission determined to review the final initial determination in its entirety, which found a violation of section 337 as to claims 2 and 3 of the '294 patent and no violation as to claim 1 of the '294 patent or claim 1 of the '508 patent.",
+      "quote": "the Commission has determined to review the ID in its entirety.",
+      "topic": "decision"
+    },
+    {
+      "page": 2,
+      "point": "The ALJ found that EPC successfully proved that the accused products infringe the asserted claims of the '294 patent (claims 1\u20133) but that claim 1 has been shown to be invalid for obviousness, while claims 2 and 3 are not invalid.",
+      "quote": "EPC successfully proved that the accused products infringe the asserted claims of the '294 patent (claims 1-3) but that unlike claims 2 and 3, claim 1 has been shown to be invalid for obviousness.",
+      "topic": "findings"
+    },
+    {
+      "page": 2,
+      "point": "The ALJ found that EPC failed to prove that the accused products infringe claim 1 of the '508 patent and that Respondents failed to prove the claim invalid for obviousness.",
+      "quote": "EPC failed to prove that the accused products infringe claim 1 of the '508 patent and that Respondents failed to prove the claim invalid for obviousness.",
+      "topic": "findings"
+    },
+    {
+      "page": 2,
+      "point": "The ALJ found that EPC established the economic prong of the domestic industry requirement for both the '294 and '508 patents but failed to establish the technical prong of the domestic industry requirement for the '508 patent.",
+      "quote": "EPC established the economic prong of the domestic industry requirement for both the '294 and '508 patents but failed to establish the technical prong of the domestic industry requirement for the '508 patent.",
+      "topic": "findings"
+    },
+    {
+      "page": 2,
+      "point": "The ALJ recommended issuance of a limited exclusion order and cease and desist orders against the Respondents, should the Commission find a violation.",
+      "quote": "recommended, should the Commission find a violation, issuance of a limited exclusion order and cease and desist orders against the Respondents.",
+      "topic": "remedy"
+    },
+    {
+      "page": 2,
+      "point": "The ALJ recommended imposing a bond in the amount of five percent of entered value for infringing products imported during the period of Presidential review.",
+      "quote": "recommended imposing a bond in the amount of five percent of entered value for infringing products imported during the period of Presidential review.",
+      "topic": "remedy"
+    },
+    {
+      "page": 4,
+      "point": "Initial written submissions and proposed remedial orders must be filed no later than close of business on September 19, 2024, and reply submissions must be filed no later than close of business on September 26, 2024.",
+      "quote": "The initial written submissions and proposed remedial orders must be filed no later than close of business on September 19, 2024. Reply submissions must be filed no later than the close of business on September 26, 2024.",
+      "topic": "next_steps"
+    },
+    {
+      "page": 4,
+      "point": "If the Commission orders some form of remedy, the U.S. Trade Representative, as delegated by the President, has 60 days to approve, disapprove, or take no action on the Commission's determination.",
+      "quote": "If the Commission orders some form of remedy, the U.S. Trade Representative, as delegated by the President, has 60 days to approve, disapprove, or take no action on the Commission's determination.",
+      "topic": "next_steps"
+    },
+    {
+      "page": 3,
+      "point": "The Commission requests submissions addressing the public interest factors, including the effect that an exclusion order and cease and desist orders would have on: (1) the public health and welfare, (2) competitive conditions in the U.S. economy, (3) U.S. production of articles that are like or directly competitive with those that are subject to investigation, and (4) U.S. consumers.",
+      "quote": "the public interest factors the Commission will consider include the effect that an exclusion order and cease and desist orders would have on: (1) the public health and welfare, (2) competitive conditions in the U.S. economy, (3) U.S. production of articles that are like or directly competitive with those that are subject to investigation, and (4) U.S. consumers.",
+      "topic": "public_interest"
+    },
+    {
+      "page": 3,
+      "point": "The Commission requests briefing on whether the ALJ correctly found that Uemoto fails to disclose element [1b] \"a set of III-N transition layers above the substrate\" recited in claim 1 of the '294 patent, even though neither EPC nor OUII disputed Respondents' assertion that Uemoto disclosed this limitation.",
+      "quote": "Did the CALJ correctly find that Uemoto fails to disclose element [1b] \"a set of III-N transition layers above the substrate\" recited in claim 1 of the '294 patent, even though neither EPC nor OUII disputed Respondents' assertion that Uemoto disclosed this limitation?",
+      "topic": "issue"
+    },
+    {
+      "page": 3,
+      "point": "The Commission requests briefing on how the construction of the limitation \"compensated GaN layer\" in claim 1 of the '294 patent to mean \"a GaN layer in which one type of impurity cancels the electric effects of another type of impurity\" affects the ALJ's infringement, invalidity, and technical prong of the domestic industry analyses.",
+      "quote": "If the Commission were to adopt the construction, proposed by OUII, of the limitation \"compensated GaN layer\" recited in claim 1 of the '294 patent to mean \"a GaN layer in which one type of impurity cancels the electric effects of another type of impurity,\" how does that construction affect the ID's infringement, invalidity, and technical prong of the domestic industry analyses?",
+      "topic": "issue"
+    },
+    {
+      "page": 3,
+      "point": "The Commission requests briefing on whether claim 1 of the '508 patent is limited to using a single mask to etch both the gate contact and doped GaN layer, and whether performing the claimed steps in the specified order requires the use of a single mask or allows the use of two separate masks.",
+      "quote": "Please explain whether claim 1 of the '508 patent is limited to using a single mask to etch both the gate contact and doped GaN layer based on the '508 patent's description of the \"present invention.\"",
+      "topic": "issue"
+    },
+    {
+      "page": 3,
+      "point": "The Commission requests clarification on whether EPC's \"total operating expenditures\" identified on page 129 of the ID includes foreign manufacturing expenses for the domestic industry products.",
+      "quote": "Please clarify whether EPC's \"total operating expenditures\" identified on page 129 of the ID includes foreign manufacturing expenses for the domestic industry products.",
+      "topic": "issue"
+    },
+    {
+      "page": 1,
+      "point": "The investigation was initiated based on a complaint filed by Efficient Power Conversion Corporation of El Segundo, California (EPC), and the Commission named as respondents Innoscience (Zhuhai) Technology Company, Ltd. of Zhuhai, Guangdong, China and Innoscience America, Inc. of Santa Clara, California.",
+      "quote": "the Commission instituted this investigation on July 3, 2023, based on a complaint filed by Efficient Power Conversion Corporation of El Segundo, California (\"EPC\").",
+      "topic": "parties"
+    },
+    {
+      "page": 1,
+      "point": "EPC asserted violations of section 337 based on the infringement of one or more claims of U.S. Patent Nos. 10,312,335 ('335 patent), 8,350,294 ('294 patent), 8,404,508 ('508 patent), and 9,748,347 ('347 patent).",
+      "quote": "based on the importation into the United States, the sale for importation, or sale within the United States after importation of certain semiconductor devices, and methods of manufacturing same, and products containing the same by reason of the infringement of one or more claims of U.S. Patent Nos. 10,312,335 (\"the '335 patent\"); 8,350,294 (\"the '294 patent\"); 8,404,508 (\"the '508 patent\"); and 9,748,347 (\"the '347 patent\").",
+      "topic": "ip_asserted"
+    },
+    {
+      "page": 1,
+      "point": "The investigation concerns certain semiconductor devices, and methods of manufacturing same, and products containing the same.",
+      "quote": "CERTAIN SEMICONDUCTOR DEVICES, AND METHODS OF MANUFACTURING SAME AND PRODUCTS CONTAINING THE SAME",
+      "topic": "products"
+    },
+    {
+      "page": 2,
+      "point": "On December 13, 2023, the CALJ issued an initial determination granting a motion to terminate the investigation as to all asserted claims of the '347 patent.",
+      "quote": "On December 13, 2023, the CALJ issued an initial determination (\"ID\") granting a motion to terminate the investigation as to all asserted claims of the '347 patent.",
+      "topic": "related_proceedings"
+    },
+    {
+      "page": 2,
+      "point": "On February 12, 2024, the CALJ issued an initial determination granting a motion to terminate the investigation as to all asserted claims of the '335 patent.",
+      "quote": "On February 12, 2024, the CALJ issued an ID granting a motion to terminate the investigation as to all asserted claims of the '335 patent.",
+      "topic": "related_proceedings"
+    },
+    {
+      "page": 2,
+      "point": "The CALJ held an evidentiary hearing from February 26, 2024 to March 1, 2024, and received post-hearing briefs thereafter.",
+      "quote": "The CALJ held an evidentiary hearing from February 26, 2024 to March 1, 2024, and received post-hearing briefs thereafter.",
+      "topic": "related_proceedings"
+    },
+    {
+      "page": 2,
+      "point": "On July 5, 2024, the CALJ issued the final ID finding a violation of section 337 as to claims 2 and 3 of the '294 patent and no violation of section 337 as to claim 1 of the '294 patent and the only asserted claim of the '508 patent.",
+      "quote": "On July 5, 2024, the CALJ issued the final ID finding a violation of section 337 as to claims 2 and 3 of the '294 patent and no violation of section 337 as to claim 1 of the '294 patent.",
+      "topic": "related_proceedings"
+    },
+    {
+      "page": 2,
+      "point": "On July 19, 2024, EPC and Innoscience filed respective petitions for review of the ID, and on July 29, 2024, the parties, including OUII, filed responses to the petitions.",
+      "quote": "On July 19, 2024, EPC and Innoscience filed respective petitions for review of the ID. On July 29, 2024, the parties, including OUII, filed responses to the petitions.",
+      "topic": "related_proceedings"
+    }
+  ],
+  "rejected": [
+    {
+      "page": 2,
+      "point": "The ALJ found that EPC owns the patents and thus has standing to assert the patents, that the importation requirement under 19 U.S.C. 1337(a)(1)(B) was established with Innoscience not disputing importing the accused products, and that the Commission has in rem jurisdiction over the accused products.",
+      "quote": "EPC owns the patents and thus has standing to assert the patents in this investigation. The ID found that EPC established the importation requirement under 19 U.S.C. 1337(a)(1)(B), noting that Innoscience does not dispute importing the accused products.",
+      "rejected": "quote not found in the filing",
+      "topic": "findings"
+    }
+  ],
+  "taken_at": "2026-09-26T21:01:52+00:00",
+  "title": "Commission Determination to Review a Final Initial Determination Finding a Violation of Section 337; Request for Written Submissions on the Issues under Review and on Remedy, the Public Interest, and Bonding",
+  "truncated": false,
+  "who": ""
+}

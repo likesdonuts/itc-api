@@ -1,0 +1,211 @@
+{
+  "cost_usd": 0.025528,
+  "date": "2021-11-26",
+  "doc_id": "757304",
+  "file": "757304_1731223_1731223.pdf",
+  "kind": "answer",
+  "model": "claude-haiku-4-5-20251001",
+  "notes_version": 2,
+  "overview": "This is Walmart Inc.'s response to Crocs Inc.'s First Amended Complaint in ITC Section 337 Investigation 337-TA-1270 concerning certain casual footwear and packaging thereof. Walmart denies all allegations of trademark infringement and unfair competition, and asserts eleven affirmative defenses including non-infringement, invalidity and lack of distinctiveness of the asserted marks, lack of domestic industry, and public interest concerns.",
+  "pages_read": [
+    1,
+    2,
+    3,
+    4,
+    118,
+    119,
+    120,
+    121,
+    122,
+    123,
+    124,
+    125,
+    126,
+    127,
+    128,
+    129,
+    130,
+    131,
+    132,
+    133,
+    134,
+    135,
+    136,
+    137
+  ],
+  "points": [
+    {
+      "page": 2,
+      "point": "Walmart Inc. is responding to allegations that it violated Section 337 by importing, selling for importation, or selling casual footwear and packaging after importation that Crocs alleges infringe Crocs' trademark rights.",
+      "quote": "Respondent Walmart Inc. (\"Walmart\") hereby responds to the First Amended Complaint filed under Section 337",
+      "topic": "respondents"
+    },
+    {
+      "page": 3,
+      "point": "Crocs Inc. is the complainant who filed the First Amended Complaint on October 22, 2021, and Walmart Inc. is the respondent named in the complaint.",
+      "quote": "Walmart admits that the First Amended Complaint alleges violations of Section 337 based upon",
+      "topic": "parties"
+    },
+    {
+      "page": 3,
+      "point": "The asserted marks are U.S. Trademark Registration No. 3,836,415 (the '415 mark), U.S. Trademark Registration No. 5,149,328 (the '328 mark), and U.S. Trademark Registration No. 5,273,875 (the '875 mark), which are referred to as 3D Marks related to casual footwear design.",
+      "quote": "certain trademarks rights held by Complainant, including but not limited to U.S. Trademark Registration No. 3,836,415",
+      "topic": "ip_asserted"
+    },
+    {
+      "page": 2,
+      "point": "Walmart denies that it has violated Section 337 by engaging in unfair competition or by importing, selling for importation, or selling any product that infringes Complainant's asserted trademarks, and denies all allegations in the First Amended Complaint except as specifically admitted.",
+      "quote": "Walmart denies that it has violated Section 337 by engaging in unfair competition or by importing into the United States",
+      "topic": "general_response"
+    },
+    {
+      "page": 3,
+      "point": "Walmart admits that Crocs filed the original complaint on June 8, 2021, filed supplements on June 10, 17, 22, 25, and 28, 2021, and filed the First Amended Complaint on October 22, 2021.",
+      "quote": "Walmart admits that Complainant filed a Complaint with the Commission on June 8, 2021",
+      "topic": "general_response"
+    },
+    {
+      "page": 3,
+      "point": "Walmart admits the Commission instituted an investigation pursuant to Notice of Investigation dated July 6, 2021, and published in the Federal Register on July 9, 2021, but denies that it has violated Section 337 subsections (a)(1)(A) or (a)(1)(C).",
+      "quote": "Walmart further admits that the Commission has instituted an investigation, as set forth in the Commission's Notice of Investigation",
+      "topic": "general_response"
+    },
+    {
+      "page": 122,
+      "point": "Walmart asserts a First Defense of non-infringement, alleging that it has not infringed any valid and enforceable trademark or trade dress rights and does not induce or contribute to infringement by others.",
+      "quote": "FIRST DEFENSE: NON-INFRINGEMENT Walmart has not infringed and does not infringe, either directly or indirectly, any valid",
+      "topic": "non_infringement"
+    },
+    {
+      "page": 122,
+      "point": "Walmart argues the Accused Products do not infringe the 3D Marks because: (1) they are not substantially similar; (2) they were designed as generic or basic foam clogs, not to cause confusion or copy the marks; and (3) there is no likelihood of confusion based on multiple factors including dissimilarity, different prices and channels of trade, lack of fame, and multiple coexisting similar uses.",
+      "quote": "The Accused Products do not infringe the 3D Marks because, among other reasons: (1) the Accused Products are not substantially similar",
+      "topic": "non_infringement"
+    },
+    {
+      "page": 123,
+      "point": "Walmart asserts a Second Defense that the 3D Marks are invalid and unprotectable because they are functional, comprised of non-source-identifying ornamental elements, generic as a shoe style rather than a single source, and lack secondary meaning.",
+      "quote": "Complainant's 3D Marks are invalid and unprotectable because, among other reasons: (1) the 3D Marks and their use are functional",
+      "topic": "invalidity"
+    },
+    {
+      "page": 123,
+      "point": "Walmart argues the 3D Marks lack secondary meaning because consumers do not understand the marks as indicating Crocs as the source, and because numerous third parties use substantially similar designs without reference to Crocs as a source.",
+      "quote": "the 3D Marks lack secondary meaning because consumers do not understand the primary significance of the claimed mark",
+      "topic": "invalidity"
+    },
+    {
+      "page": 123,
+      "point": "Walmart contends the 3D Marks are comprised of ornamental elements that are not source-identifying and represent a genre or style of shoe rather than a single manufacturer.",
+      "quote": "the 3D Marks are comprised of various ornamental elements that are not source identifying; (3) the 3D Marks are generic",
+      "topic": "invalidity"
+    },
+    {
+      "page": 124,
+      "point": "Walmart asserts a Third Defense that the Asserted Trademarks are not famous as defined by federal trademark laws and there is no evidence they are universally recognized by the general consuming public as designating Crocs as the source.",
+      "quote": "Complainant's Asserted Trademarks are not famous as defined by the federal trademark laws",
+      "topic": "other_defenses"
+    },
+    {
+      "page": 124,
+      "point": "Walmart asserts a Fourth Defense of no dilution, arguing it does not dilute or has not diluted the distinctive quality of any alleged famous trademarks, as the marks lack distinctiveness and are not famous, and the Accused Products are not similar.",
+      "quote": "Walmart does not dilute and has not diluted the distinctive quality of any alleged famous trademarks of Complainant",
+      "topic": "other_defenses"
+    },
+    {
+      "page": 124,
+      "point": "Walmart asserts a Fifth Defense of failure to state a claim upon which relief can be granted.",
+      "quote": "FIFTH DEFENSE: FAILURE TO STATE A CLAIM Complainant fails to state a claim upon which relief can be granted",
+      "topic": "other_defenses"
+    },
+    {
+      "page": 124,
+      "point": "Walmart asserts a Sixth Defense that Crocs has not adequately alleged and cannot establish the existence of a domestic industry for the Asserted Trademarks as required by Section 337(a)(2) and Section 337(a)(3).",
+      "quote": "Complainant has not adequately alleged and cannot establish the existence of a domestic industry for the Asserted Trademarks",
+      "topic": "domestic_industry"
+    },
+    {
+      "page": 125,
+      "point": "Walmart argues Crocs has not satisfied the economic prong of the domestic industry requirement because Crocs failed to establish significant investment in plant and equipment, significant employment of labor or capital, or substantial investment in licensing, research and development, or other qualifying activities relating to the Asserted Trademarks.",
+      "quote": "Complainant has not and cannot satisfy the economic prong of the domestic industry requirement",
+      "topic": "domestic_industry"
+    },
+    {
+      "page": 125,
+      "point": "Walmart asserts that Crocs also has failed to satisfy the technical prong of the domestic industry requirement.",
+      "quote": "Complainant also has failed to satisfy the technical prong of the domestic industry requirement in this case",
+      "topic": "domestic_industry"
+    },
+    {
+      "page": 125,
+      "point": "Walmart asserts a Seventh Defense that Crocs cannot prove the existence of a substantial injury pursuant to Section 337(a)(1)(A).",
+      "quote": "Complainant cannot prove the existence of a substantial injury, pursuant to Section 337(a)(1)(A)",
+      "topic": "other_defenses"
+    },
+    {
+      "page": 125,
+      "point": "Walmart asserts an Eighth Defense regarding public interest, arguing that the requested relief should not issue because of potential adverse effects on public health and welfare, competitive conditions, domestic production of like or directly competitive articles, and United States consumers.",
+      "quote": "the requested relief should not issue because of its potential adverse effects upon the public health and welfare",
+      "topic": "relief"
+    },
+    {
+      "page": 126,
+      "point": "Walmart asserts a Ninth Defense of fair use, arguing that even if it used any aspect of the Asserted Trademarks, such use would be descriptive or generic and used fairly and in good faith only to describe the Accused Products.",
+      "quote": "the use of any aspect of the Asserted Trademarks would be descriptive or generic of, and used fairly and in good faith only to describe",
+      "topic": "other_defenses"
+    },
+    {
+      "page": 126,
+      "point": "Walmart asserts a Tenth Defense that Crocs' requests for relief are barred by waiver, estoppel, and laches because Crocs intentionally relinquished its right to enforce the Asserted Trademarks, led Walmart to believe enforcement was not intended, and waited an unreasonable time to assert its claims.",
+      "quote": "Complainant's requests for relief are barred, in whole or in part, by the doctrines of waiver, estoppel, and laches",
+      "topic": "other_defenses"
+    },
+    {
+      "page": 126,
+      "point": "Walmart asserts an Eleventh Defense of unclean hands, arguing Crocs is improperly attempting to extend its expired design rights through the Asserted Trademarks to maintain an unconstitutional monopoly in the relevant market.",
+      "quote": "Complainant is attempting to improperly extend its expired design rights through the Asserted Trademarks to maintain an unconstitutional monopoly",
+      "topic": "other_defenses"
+    },
+    {
+      "page": 119,
+      "point": "Walmart admits Crocs filed an action in United States District Court for the District of Colorado, Case No. 1:21-cv-1890, on July 12, 2021.",
+      "quote": "Walmart admits that Complainant filed an action in the United States District Court for the District of Colorado, Case No. 1:21-cv-1890",
+      "topic": "related_proceedings"
+    },
+    {
+      "page": 120,
+      "point": "Walmart denies that Crocs is entitled to the relief requested, including a general exclusion order, limited exclusion order, or cease and desist orders.",
+      "quote": "Walmart admits that Complainant seeks a general exclusion order (\"GEO\"), but Walmart denies that Complainant is entitled to the relief requested",
+      "topic": "relief"
+    },
+    {
+      "page": 127,
+      "point": "Walmart requests that the Commission determine it has not imported, sold for importation, or sold within the United States casual footwear and packaging covered by a valid and enforceable trademark claim, find that Crocs has failed to establish a domestic industry or substantial injury, deny all requested relief, and terminate the investigation with a finding of no violation.",
+      "quote": "Determine that Walmart has not imported, sold for importation, or sold within the United States after importation Certain Casual Footwear",
+      "topic": "relief"
+    },
+    {
+      "page": 127,
+      "point": "Walmart requests that the Commission award it attorneys' fees and costs and grant such further relief as deemed proper.",
+      "quote": "award Walmart its attorneys' fees and costs, and grant such further relief as the Commission deems proper",
+      "topic": "outcome"
+    },
+    {
+      "page": 127,
+      "point": "Walmart reserves the right to assert additional defenses and to supplement or amend the defenses asserted, and incorporates by reference any additional defenses which may be asserted by other respondents to the investigation.",
+      "quote": "Walmart reserves the right to assert additional defenses, and to supplement or amend the defenses asserted above, based on further discovery and investigation",
+      "topic": "other_defenses"
+    },
+    {
+      "page": 4,
+      "point": "Walmart denies that it has unlawfully imported or sold casual footwear and packaging by reason of unfair methods of competition, false designation of source, or trademark dilution with the threat or effect of destroying or substantially injuring an industry in the United States.",
+      "quote": "unlawfully imported or sold casual footwear and packaging thereof by reason of unfair methods of competition, false designation of source, or trademark dilution",
+      "topic": "importation"
+    }
+  ],
+  "rejected": [],
+  "taken_at": "2026-09-26T21:08:17+00:00",
+  "title": "Response of Walmart Inc. to the First Amended Complaint and Notice of Investigation",
+  "truncated": false,
+  "who": "Walmart Inc.; Loeffler Randall Inc."
+}

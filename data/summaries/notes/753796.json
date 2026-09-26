@@ -1,0 +1,56 @@
+{
+  "cost_usd": 0.004899,
+  "date": "2021-10-08",
+  "doc_id": "753796",
+  "file": "753796_1709482_1709482.pdf",
+  "kind": "ruling",
+  "model": "claude-haiku-4-5-20251001",
+  "notes_version": 2,
+  "overview": "This is an Order by the Administrative Law Judge (ALJ) in ITC Investigation 337-TA-1270 concerning certain casual footwear and packaging. The ALJ denies respondent Loeffler Randall Inc.'s motion for summary determination of non-infringement based on lack of substantial similarity to the asserted patent claims, finding that genuine issues of material fact remain for trial.",
+  "pages_read": [
+    1
+  ],
+  "points": [
+    {
+      "page": 1,
+      "point": "Respondent Loeffler Randall Inc. moved on September 23, 2021 for summary determination of non-infringement due to lack of substantial similarity.",
+      "quote": "On September 23, 2021, Respondent Loeffler Randall, Inc. (\"Loeffler Randall\") moved (1270-023) for summary determination of noninfringement due to lack of substantial similarity.",
+      "topic": "motion"
+    },
+    {
+      "page": 1,
+      "point": "Complainant Crocs, Inc. and the Commission Investigative Staff opposed Loeffler Randall's motion.",
+      "quote": "Complainant Crocs, Inc. and the Commission Investigative Staff both opposed the motion.",
+      "topic": "parties"
+    },
+    {
+      "page": 1,
+      "point": "The question is whether Loeffler Randall's footwear products lack substantial similarity to the asserted patent claims, warranting summary judgment of non-infringement without a trial.",
+      "quote": "summary determination of noninfringement due to lack of substantial similarity. Complainant Crocs, Inc. and the Commission Investigative Staff both opposed the motion.",
+      "topic": "issue"
+    },
+    {
+      "page": 1,
+      "point": "The ALJ found that genuine issues of material fact may remain regarding substantial similarity between the products and the asserted patent claims.",
+      "quote": "Because genuine issues of material facts may remain, good cause does not exist to grant the motion in lieu of a trial of all issues on the merits.",
+      "topic": "reasoning"
+    },
+    {
+      "page": 1,
+      "point": "The ALJ denied Loeffler Randall's motion for summary determination of non-infringement.",
+      "quote": "Accordingly, Loeffler Randall's motion (1270-023) is hereby denied.",
+      "topic": "outcome"
+    },
+    {
+      "page": 1,
+      "point": "All issues in the investigation, including the non-infringement question, remain for trial on the merits.",
+      "quote": "good cause does not exist to grant the motion in lieu of a trial of all issues on the merits.",
+      "topic": "effect"
+    }
+  ],
+  "rejected": [],
+  "taken_at": "2026-09-26T21:09:00+00:00",
+  "title": "Denying Loeffler Randall Inc.\u2019s Motion for Summary Determination of Non-Infringement Due to Lack of Substantial Similarity",
+  "truncated": false,
+  "who": ""
+}

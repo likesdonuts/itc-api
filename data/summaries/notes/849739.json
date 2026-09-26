@@ -1,0 +1,71 @@
+{
+  "cost_usd": 0.008637,
+  "date": "2025-04-25",
+  "doc_id": "849739",
+  "file": "849739_2368878_2368878.pdf",
+  "kind": "commission_notice",
+  "model": "claude-haiku-4-5-20251001",
+  "notes_version": 2,
+  "overview": "This is the Commission's final determination in Investigation 337-TA-1384 concerning passive optical network equipment. The Commission found no violation of Section 337, affirmed the ALJ's findings on importation, infringement, and domestic industry, and terminated the investigation.",
+  "pages_read": [
+    1,
+    2,
+    3,
+    4
+  ],
+  "points": [
+    {
+      "page": 1,
+      "point": "Optimum Communications Services, Inc. of Jersey City, New Jersey filed the complaint against three respondents: Hangzhou Softel Optic Co., Ltd., Hangzhou DAYTAI Network Technologies Co., Ltd., and Hangzhou Sumlo Industrial Co., Ltd., all of Hangzhou, China.",
+      "quote": "complaint filed by Optimum Communications Services, Inc. of Jersey City, New Jersey",
+      "topic": "parties"
+    },
+    {
+      "page": 1,
+      "point": "The complaint alleges infringement of claims 1 and 12-14 of U.S. Patent No. 7,333,511 and claims 1 and 3 of U.S. Patent No. 7,558,260.",
+      "quote": "based upon the importation into the United States, the sale for importation, and the sale in the United States after importation of certain passive optical network equipment by reason of the infringement of certain claims of U.S. Patent Nos. 7,333,511 (\"the '511 patent\") and 7,558,260 (\"the '260 patent\")",
+      "topic": "ip_asserted"
+    },
+    {
+      "page": 1,
+      "point": "The investigation concerned importation, sale for importation, and sale in the United States after importation of certain passive optical network equipment alleged to infringe the asserted patents and whether a domestic industry exists.",
+      "quote": "the importation into the United States, the sale for importation, and the sale in the United States after importation of certain passive optical network equipment",
+      "topic": "issue"
+    },
+    {
+      "page": 3,
+      "point": "On March 11, 2025, the Commission determined to review the ALJ's final initial determination in its entirety.",
+      "quote": "On March 11, 2025, the Commission determined to review the FID in its entirety.",
+      "topic": "decision"
+    },
+    {
+      "page": 3,
+      "point": "The Commission affirmed the ALJ's findings that Optimum has not satisfied the importation requirement, failed to show infringement of the asserted patent claims, and failed to satisfy the domestic industry requirement.",
+      "quote": "the Commission affirms the FID's findings that Optimum has not satisfied the importation requirement, has failed to show infringement, and has not satisfied the domestic industry requirement",
+      "topic": "findings"
+    },
+    {
+      "page": 3,
+      "point": "The Commission determined to strike the ALJ's statement that the Commission lacked statutory authority because Optimum is not the owner or exclusive licensee of the asserted patents, and took no position on the ALJ's findings regarding ownership.",
+      "quote": "The Commission has also determined to strike the FID's statement in its \"Conclusions of Law\" section that the Commission \"lacks statutory authority with respect to this investigation because Optimum is not the owner or exclusive licensee of the asserted patents.\"",
+      "topic": "decision"
+    },
+    {
+      "page": 3,
+      "point": "The Commission found no violation of Section 337 and terminated the investigation.",
+      "quote": "the Commission has found no violation of section 337. Specifically, the Commission affirms the FID's findings",
+      "topic": "outcome"
+    },
+    {
+      "page": 3,
+      "point": "The Commission vote for the final determination took place on April 25, 2025.",
+      "quote": "The Commission vote for this determination took place on April 25, 2025.",
+      "topic": "decision"
+    }
+  ],
+  "rejected": [],
+  "taken_at": "2026-09-26T21:06:17+00:00",
+  "title": "Commission\u2019s Final Determination Finding No Violation of Section 337; Termination of the Investigation",
+  "truncated": false,
+  "who": ""
+}

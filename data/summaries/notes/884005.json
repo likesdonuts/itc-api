@@ -1,0 +1,195 @@
+{
+  "cost_usd": 0.027674,
+  "date": "2026-06-02",
+  "doc_id": "884005",
+  "file": "884005_2557384_2557384.pdf",
+  "kind": "answer",
+  "model": "claude-haiku-4-5-20251001",
+  "notes_version": 2,
+  "overview": "Tower Semiconductor and related entities respond to a complaint by GlobalFoundries alleging infringement of six semiconductor patents in Investigation 337-TA-1500. Respondents deny all allegations of infringement, denying that they directly, indirectly, or by inducement infringe any valid and enforceable claims of the asserted patents. Respondents assert multiple affirmative defenses including non-infringement, invalidity, lack of domestic industry, and prosecution history estoppel.",
+  "pages_read": [
+    1,
+    2,
+    3,
+    4,
+    17,
+    18,
+    19,
+    20,
+    21,
+    22,
+    23,
+    24,
+    25,
+    26,
+    27,
+    28,
+    29,
+    30,
+    31,
+    32,
+    33,
+    34,
+    35,
+    36
+  ],
+  "points": [
+    {
+      "page": 1,
+      "point": "Respondents are eight Tower Semiconductor entities: Tower Semiconductor Ltd. (Israel), Tower Partners Semiconductor Co., Ltd. (Japan), Tower Semiconductor Italy S.r.l., Tower US Holdings, Inc. (California), Tower Semiconductor San Antonio, Inc. (Texas), Tower Semiconductor NPB Holdings, Inc. (California), Tower Semiconductor Newport Beach, Inc. (California), and Newport Fab LLC (California).",
+      "quote": "Tower Semiconductor Ltd., Tower Partners Semiconductor Co., Ltd., Tower Semiconductor Italy S.r.l., Tower US Holdings, Inc., Tower Semiconductor San Antonio, Inc., Tower Semiconductor NPB Holdings, Inc., Tower Semiconductor Newport Beach, Inc., and Newport Fab LLC",
+      "topic": "respondents"
+    },
+    {
+      "page": 32,
+      "point": "Tower manufactures semiconductor wafers at foundries in the United States, Italy, Japan, and Israel and does not manufacture, import, or sell the three specific accused end products: the Qorvo PAC22140 Evaluation Kit, Qorvo QM81026 RF Power Tracker, or DENSO DNSRR004.",
+      "quote": "Tower does not manufacture, import, or sell the Qorvo PAC22140 Evaluation Kit, the Qorvo QM81026 RF Power Tracker, or the DENSO DNSRR004. In general, Tower manufactures semiconductor wafers at foundries",
+      "topic": "respondents"
+    },
+    {
+      "page": 3,
+      "point": "The six asserted patents are U.S. Patent Nos. 8,330,235 (the '235 Patent), 8,507,983 (the '983 Patent), 9,093,425 (the '425 Patent), 9,865,546 (the '546 Patent), 10,062,748 (the '748 Patent), and 10,707,167 (the '167 Patent).",
+      "quote": "U.S. Patent Nos. 8,330,235 (\"the '235 Patent\"); 8,507,983 (\"the '983 Patent\"); 9,093,425 (\"the '425 Patent\"); 9,865,546 (\"the '546 Patent\"); 10,062,748 (\"the '748 Patent\"); and 10,707,167 (\"the '167 Patent\")",
+      "topic": "ip_asserted"
+    },
+    {
+      "page": 17,
+      "point": "Tower denies importing, selling for importation, or selling any accused product that infringes the '235 Patent directly or indirectly, literally or under the doctrine of equivalents.",
+      "quote": "Tower denies that it imports, sells for importation, or sells within the United States after importation any Accused Product that infringes, either directly or indirectly, literally or under the doctrine of equivalents",
+      "topic": "non_infringement"
+    },
+    {
+      "page": 17,
+      "point": "Tower denies that products manufactured using its TS18SOI BCD process or the PA22BZ die in the Qorvo PAC22140 Evaluation Kit infringe the '983 Patent or the '748 Patent directly or indirectly.",
+      "quote": "Tower denies that products manufactured using Tower's BCD processes, including its TS18SOI process, or the PA22BZdie in the Qorvo PAC22140 Evaluation Kit, infringe",
+      "topic": "non_infringement"
+    },
+    {
+      "page": 17,
+      "point": "Tower denies that products made with its SiGe and BiCMOS processes (including SBC18), RF processes (including 65nm RF), or the M7DN25PS die in the DENSO Blind Spot Monitor or Qorvo QM81026 Power Tracker infringe the '425 Patent, '546 Patent, or '167 Patent.",
+      "quote": "Tower denies that products manufactured using Tower's SiGe and BiCMOS processes, including the SBC18 process, or its RF processes, including its 65nm RF process",
+      "topic": "non_infringement"
+    },
+    {
+      "page": 26,
+      "point": "Tower asserts that all asserted claims are invalid for failure to comply with 35 U.S.C. \u00a7\u00a7 101, 102, 103, 112, and/or 256, with prior art referenced in Appendix A.",
+      "quote": "The Asserted Claims of the Asserted Patents (and all other claims of the Asserted Patents) are invalid for failing to comply with one or more of the requirements of 35 U.S.C. \u00a7\u00a7 101, 102, 103, 112",
+      "topic": "invalidity"
+    },
+    {
+      "page": 27,
+      "point": "Tower contends at least one asserted claim is invalid under 35 U.S.C. \u00a7 112 for failure to provide sufficient written description, failure to enable one skilled in the art to make and use the full scope of the invention, and failure to inform one skilled in the art of the scope with reasonable certainty.",
+      "quote": "failure to provide sufficient written description for the alleged invention, failure to enable a person of ordinary skill in the art to make and use the full scope of the invention without undue experimentation",
+      "topic": "invalidity"
+    },
+    {
+      "page": 27,
+      "point": "Tower contends the asserted patents are invalid under 35 U.S.C. \u00a7\u00a7 101 and 256 for failure to name the correct inventors and/or for omitting an inventor.",
+      "quote": "the Asserted Patents are invalid for failure to name the correct inventors and/or for omitting an inventor",
+      "topic": "invalidity"
+    },
+    {
+      "page": 22,
+      "point": "Tower denies that GlobalFoundries has established a domestic industry as required by 19 U.S.C. \u00a7 1337(a)(2) and (a)(3) in connection with the asserted patents.",
+      "quote": "Tower denies that a domestic industry as defined in 19 U.S.C. \u00a7\u00a7 1337(a)(2) and (a)(3) exists in the United States in connection with the Asserted Patents by virtue of GlobalFoundries' activities",
+      "topic": "domestic_industry"
+    },
+    {
+      "page": 23,
+      "point": "Tower denies that the asserted patents are practiced by GlobalFoundries' domestic industry products or processes and denies the substance and conclusions of GlobalFoundries' claim charts (Exhibits 50-55) purporting to show this.",
+      "quote": "Tower admits that GlobalFoundries has submitted claim charts and related information as Confidential Exhibits 50-55. Tower denies the substance and conclusions of those exhibits",
+      "topic": "domestic_industry"
+    },
+    {
+      "page": 27,
+      "point": "Tower asserts a defense of express license, implied license, and/or patent exhaustion that bars GlobalFoundries' allegations in whole or in part.",
+      "quote": "GlobalFoundries' allegations are barred, either in whole or in part, under the doctrine of express license, implied license, and/or patent exhaustion",
+      "topic": "other_defenses"
+    },
+    {
+      "page": 27,
+      "point": "Tower asserts prosecution history estoppel as a defense, arguing amendments, representations, omissions, and concessions made during prosecution limit the scope of the asserted claims.",
+      "quote": "amendments, representations, omissions, and/or concessions made by the applicant, any predecessor-in-interest, and/or GlobalFoundries during prosecution of the Asserted Patents",
+      "topic": "other_defenses"
+    },
+    {
+      "page": 28,
+      "point": "Tower asserts an ensnarement defense, arguing GlobalFoundries cannot construe claims under the doctrine of equivalents to cover Tower products if doing so would ensnare the prior art.",
+      "quote": "GlobalFoundries' allegations of infringement under the doctrine of equivalents are barred by the doctrine of ensnarement to the extent GlobalFoundries' interpretation of the scope of equivalents would ensnare the prior art",
+      "topic": "other_defenses"
+    },
+    {
+      "page": 28,
+      "point": "Tower asserts that GlobalFoundries lacks proper standing or ownership of the asserted patents because third parties not joined as parties may have ownership interest and/or rights in the patents.",
+      "quote": "GlobalFoundries has failed to show that it has proper standing or ownership of the Asserted Patents. For example, on information and belief, third parties that are not joined as parties to this Investigation have ownership interest",
+      "topic": "other_defenses"
+    },
+    {
+      "page": 28,
+      "point": "Tower argues the relief requested by GlobalFoundries is not in the public interest under 19 U.S.C. \u00a7 1337(d)(1) and seeks denial of all relief requested.",
+      "quote": "The relief requested by GlobalFoundries is not in the public interest. 19 U.S.C. \u00a7 1337(d)(1)",
+      "topic": "relief"
+    },
+    {
+      "page": 21,
+      "point": "The investigation concerns semiconductor devices, products containing same, and components thereof, classified under Harmonized Tariff Schedule item number 8541.59.0040 (unmounted chips, dice, and wafers).",
+      "quote": "Tower admits that the Harmonized Tariff Schedule item number 8541.59.0040 (unmounted chips, dice, and wafers) may be one classification applicable to certain semiconductor devices",
+      "topic": "scope"
+    },
+    {
+      "page": 25,
+      "point": "GlobalFoundries has filed a civil action in the U.S. District Court for the Western District of Texas asserting the asserted patents, which Tower denies has merit.",
+      "quote": "Tower admits that GlobalFoundries has filed a civil action in the U.S. District Court for the Western District of Texas asserting the Asserted Patents. Tower denies that GlobalFoundries' claims in that action have any merit",
+      "topic": "related_proceedings"
+    },
+    {
+      "page": 32,
+      "point": "The three specific accused products are the Qorvo PAC22140 Evaluation Kit (containing PA22BZ die), the Qorvo QM81026 RF Power Tracker, and the DENSO DNSRR004 Blind Spot Monitor Sensor (containing M7DN25PS die).",
+      "quote": "the Qorvo PAC22140 Evaluation Kit, the Qorvo QM81026 RF Power Tracker, or the DENSO DNSRR004. In general, Tower manufactures semiconductor wafers at foundries in the United States, Italy, Japan, and Israel",
+      "topic": "products"
+    },
+    {
+      "page": 32,
+      "point": "Tower states it does not import the Qorvo PAC22140 Evaluation Kit, Qorvo QM81026 RF Power Tracker, or DENSO DNSRR004 into the United States and therefore cannot provide information regarding appropriate HTSUS numbers.",
+      "quote": "Tower does not import the Qorvo PAC22140 Evaluation Kit, the Qorvo QM81026 RF Power Tracker, or the DENSO DNSRR004 into the United States",
+      "topic": "importation"
+    },
+    {
+      "page": 26,
+      "point": "Tower reserves the right to amend or supplement its response, take further positions, and raise additional defenses as further information is discovered, stating discovery has only recently begun.",
+      "quote": "Discovery has only recently begun, and Tower has not yet had sufficient time or opportunity to collect and review all information that may be relevant to the matters raised herein",
+      "topic": "general_response"
+    },
+    {
+      "page": 3,
+      "point": "The complainant is GlobalFoundries U.S. Inc., which filed the complaint on March 26, 2026, with the Commission issuing the Notice of Investigation on April 28, 2026.",
+      "quote": "GlobalFoundries U.S. Inc. (\"GlobalFoundries\") on March 26, 2026 in the above-captioned Investigation and to the Notice of Institution (\"Notice\") issued by the United States International Trade Commission (\"the Commission\") on April 28, 2026",
+      "topic": "parties"
+    },
+    {
+      "page": 4,
+      "point": "Tower does not admit any factual allegation below as to purported conclusions, characterizations, implications, or speculations that might follow from the admitted facts.",
+      "quote": "Any factual allegation admitted below is admitted only as to the specific facts stated, and not as to any purported conclusions, characterizations, implications, or speculations that might follow from the admitted facts",
+      "topic": "general_response"
+    },
+    {
+      "page": 28,
+      "point": "Tower has not engaged in any unfair act or unfair competition cognizable under 19 U.S.C. \u00a7 1337.",
+      "quote": "Tower has not engaged in any unfair act or unfair competition cognizable under 19 U.S.C. \u00a7 1337",
+      "topic": "other_defenses"
+    }
+  ],
+  "rejected": [
+    {
+      "page": 3,
+      "point": "Tower denies each allegation in the Complaint and Notice, except as expressly admitted, and denies that it violated Section 337 or that any accused product infringes any asserted patent claim directly, indirectly, contributorily, or by inducement.",
+      "quote": "Tower denies that any asserted claim of the Asserted Patents is valid and enforceable. Tower denies that GlobalFoundries is entitled to any relief in this proceeding",
+      "rejected": "quote not found in the filing",
+      "topic": "general_response"
+    }
+  ],
+  "taken_at": "2026-09-26T20:38:26+00:00",
+  "title": "Response of Respondents Tower Semiconductor Ltd., Tower Partners Semiconductor Co., Ltd., Tower Semiconductor Italy S.r.l., Tower US Holdings, Inc., Tower Semiconductor San Antonio, Inc., Tower Semiconductor NPB Holdings, Inc., Tower Semiconductor Newport Beach, Inc., and Newport Fab LLC to the Complaint and Notice of Investigation",
+  "truncated": false,
+  "who": "Tower Semiconductor Ltd., Tower Partners Semiconductor Co., Ltd., Tower Semiconductor Italy S.r.l., Tower US Holdings, Inc., Tower Semiconductor San Antonio, Inc., Tower Semiconductor NPB Holdings, Inc., Tower Semiconductor Newport Beach, Inc., and Newport Fab LLC"
+}

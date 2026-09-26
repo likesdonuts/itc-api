@@ -1,0 +1,136 @@
+{
+  "cost_usd": 0.017027,
+  "date": "2023-04-05",
+  "doc_id": "793866",
+  "file": "793866_1973438_1973438.pdf",
+  "kind": "commission_notice",
+  "model": "claude-haiku-4-5-20251001",
+  "notes_version": 2,
+  "overview": "This filing is the Commission's notice that it has decided to review in part the ALJ's final initial determination that found no violation of Section 337 in the Crocs trademark investigation. The Commission requests written submissions on eight specific issues under review, as well as on remedy, public interest, and bonding, with briefs due by April 19, 2023.",
+  "pages_read": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6
+  ],
+  "points": [
+    {
+      "page": 1,
+      "point": "The Commission instituted the investigation on July 9, 2021, based on a complaint filed by Crocs, Inc. of Broomfield, Colorado.",
+      "quote": "The Commission instituted this investigation on July 9, 2021, based on a complaint filed by Crocs, Inc. of Broomfield, Colorado",
+      "topic": "parties"
+    },
+    {
+      "page": 1,
+      "point": "Crocs alleges violations of Section 337 based on infringement, false designation of origin, and dilution of U.S. Trademark Registration Nos. 5,149,328 and 5,273,875 (the 3D Marks) and 3,836,415 (the Word Mark).",
+      "quote": "infringement, false designation of origin, and dilution of one of more of U.S. Trademark Registration Nos. 5,149,328; 5,273,875 (collectively, the \"3D Marks\"); and 3,836,415 (\"the Word Mark\")",
+      "topic": "ip_asserted"
+    },
+    {
+      "page": 1,
+      "point": "The alleged violations concern the importation into the United States, sale for importation, or sale after importation of certain casual footwear and packaging thereof.",
+      "quote": "the importation into the United States, sale for importation, or sale in the United States after importation of certain casual footwear and packaging thereof",
+      "topic": "products"
+    },
+    {
+      "page": 1,
+      "point": "The Commission's notice of investigation named numerous respondents, including Hobby Lobby Stores, Inc., Quanzhou ZhengDe Network Corp. d/b/a Amoji, and others, and subsequently amended the complaint to add additional respondents including Orly Shoe Corp. and Walmart Inc.",
+      "quote": "named numerous respondents, including: Hobby Lobby Stores, Inc. of Oklahoma City, Oklahoma",
+      "topic": "respondents"
+    },
+    {
+      "page": 3,
+      "point": "The ALJ found that Crocs satisfied both the technical and economic prongs of the domestic industry requirement.",
+      "quote": "The ID also finds that Crocs has satisfied both the technical and economic prongs of the domestic industry (\"DI\") requirement",
+      "topic": "domestic_industry"
+    },
+    {
+      "page": 3,
+      "point": "The ALJ issued a final initial determination on January 9, 2023, finding no violation of Section 337 because Crocs failed to prove infringement of the 3D Marks, failed to prove infringement of the Word Mark by Orly or Hobby Lobby, and failed to prove false designation of origin or dilution by any respondents.",
+      "quote": "On January 9, 2023, the ALJ issued the subject ID finding no violation of section 337 because: (1) Crocs failed to prove that any of Respondents infringes the 3D Marks",
+      "topic": "findings"
+    },
+    {
+      "page": 3,
+      "point": "The ALJ found that the 3D Marks are invalid for lack of secondary meaning, and found that respondents failed to prove the 3D Marks are invalid as functional or the Word Mark is invalid as generic.",
+      "quote": "the 3D Marks are invalid for lack of secondary meaning; and (6) Crocs waived its infringement contentions against Defaulting Respondents",
+      "topic": "invalidity"
+    },
+    {
+      "page": 4,
+      "point": "The Commission determined not to review the remaining findings in the ID.",
+      "quote": "The Commission has determined not to review the remaining findings in the ID.",
+      "topic": "decision"
+    },
+    {
+      "page": 4,
+      "point": "The Commission is interested in receiving written submissions addressing the form of remedy that should be ordered, which may include an order resulting in exclusion of subject articles from entry into the United States and/or cease-and-desist orders.",
+      "quote": "the Commission is interested in receiving written submissions that address the form of remedy, if any, that should be ordered",
+      "topic": "remedy"
+    },
+    {
+      "page": 4,
+      "point": "The Commission is interested in receiving written submissions addressing public interest factors, including the effect of any remedy on public health and welfare, competitive conditions in the U.S. economy, U.S. production of like or directly competitive articles, and U.S. consumers.",
+      "quote": "the public interest factors the Commission will consider include the effect that an exclusion order and/or cease-and-desist order would have on: (1) the public health and welfare; (2) competitive conditions in the U.S. economy",
+      "topic": "public_interest"
+    },
+    {
+      "page": 5,
+      "point": "Parties' initial written submissions on the issues under review, remedy, public interest, and bonding are due by April 19, 2023, and reply submissions are due by April 26, 2023.",
+      "quote": "The parties' written submissions and proposed remedial orders must be filed no later than the close of business on April 19, 2023. Reply submissions must be filed no later than the close of business on April 26, 2023.",
+      "topic": "next_steps"
+    },
+    {
+      "page": 5,
+      "point": "Opening submissions are limited to 50 pages and reply submissions are limited to 30 pages.",
+      "quote": "Opening submissions are limited to 50 pages. Reply submissions are limited to 30 pages.",
+      "topic": "next_steps"
+    },
+    {
+      "page": 5,
+      "point": "The Commission requests that in its initial submission, Complainant identify the remedy sought and provide the HTSUS subheadings under which the accused products are imported, the names of known importers, and identification of articles that are 'packaging of' the subject products.",
+      "quote": "Complainant is requested to identify the remedy sought, and both Complainant and OUII are requested to submit proposed remedial orders for the Commission's consideration",
+      "topic": "other"
+    },
+    {
+      "page": 5,
+      "point": "Failure to provide information regarding 'packaging of' the subject products may result in waiver of any remedy directed to such packaging.",
+      "quote": "Failure to provide this information may result in waiver of any remedy directed to \"packaging of\" the subject products",
+      "topic": "other"
+    },
+    {
+      "page": 4,
+      "point": "The Commission requests briefing on whether evidence demonstrates that shoes allegedly subject to Orly's first sale practiced the 3D Marks in question and whether they were the same as the Orly Gator shoes presently at issue, and the implications for the presumption of validity and burden of proof.",
+      "quote": "Explain whether the evidence of record demonstrates that the shoes that were allegedly the subject of Orly's first sale practiced the 3D Marks in question",
+      "topic": "issue"
+    },
+    {
+      "page": 4,
+      "point": "The Commission requests briefing on whether Crocs' infringement contentions in its pre-hearing and post-hearing briefs provided sufficient notice that Crocs was accusing the lined version of Orly Gator products of infringement and any significant differences between lined and unlined versions.",
+      "quote": "Explain whether the infringement contention presented in Crocs' pre-hearing and post-hearing briefs provided sufficient notice and information that Crocs was accusing the lined version of the accused Orly Gator products of infringement",
+      "topic": "issue"
+    }
+  ],
+  "rejected": [
+    {
+      "page": 3,
+      "point": "The Commission determined to review the ID in part with respect to eight issues: untimely infringement contentions against lined versions of Orly's Gators, lack of secondary meaning of the 3D Marks, waiver of infringement contentions against Defaulting Respondents, subject matter jurisdiction, likelihood of confusion, false designation of origin, dilution, and the domestic industry prongs.",
+      "quote": "the Commission has determined to review the ID in part with respect to the ID's findings regarding: (1) Crocs's infringement contentions against the lined versions of Orly's Gators were untimely and waived",
+      "rejected": "quote not found in the filing",
+      "topic": "decision"
+    },
+    {
+      "page": 5,
+      "point": "The Commission is interested in receiving submissions concerning the amount of the bond that should be imposed if a remedy is ordered, noting that the U.S. Trade Representative has 60 days to approve, disapprove, or take no action on the Commission's action.",
+      "quote": "the Commission is interested in receiving submissions concerning the amount of the bond that should be imposed if a remedy is ordered",
+      "rejected": "quote not found in the filing",
+      "topic": "remedy"
+    }
+  ],
+  "taken_at": "2026-09-26T21:10:29+00:00",
+  "title": "Commission Determination to Review in Part a Final Initial Determination Finding No Violation; Request for Written Submissions on the Issues under Review, Remedy, Bonding, and the Public Interest",
+  "truncated": false,
+  "who": ""
+}

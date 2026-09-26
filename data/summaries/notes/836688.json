@@ -1,0 +1,145 @@
+{
+  "cost_usd": 0.016159,
+  "date": "2024-11-07",
+  "doc_id": "836688",
+  "file": "836688_2269992_2269992.pdf",
+  "kind": "commission_notice",
+  "model": "claude-haiku-4-5-20251001",
+  "notes_version": 2,
+  "overview": "This is the Commission's final determination in Investigation 337-TA-1366, issued on November 7, 2024, finding a violation of Section 337 based on infringement of claims 2 and 3 of U.S. Patent No. 8,350,294. The Commission issued a limited exclusion order and cease and desist orders against respondents Innoscience, and set a bond of 5% of entered value for covered products imported during Presidential review.",
+  "pages_read": [
+    1,
+    2,
+    3,
+    4
+  ],
+  "points": [
+    {
+      "page": 1,
+      "point": "The Commission instituted this investigation on July 3, 2023, based on a complaint filed by Efficient Power Conversion Corporation (EPC) of El Segundo, California against respondents Innoscience (Zhuhai) Technology Company, Ltd. of Zhuhai, China and Innoscience America, Inc. of Santa Clara, California.",
+      "quote": "The Commission instituted this investigation on July 3, 2023, based on a complaint filed by Efficient Power Conversion Corporation of El Segundo, California (\"EPC\").",
+      "topic": "parties"
+    },
+    {
+      "page": 1,
+      "point": "EPC alleged violations of Section 337 based on infringement of one or more claims of U.S. Patent Nos. 10,312,335, 8,350,294, 8,404,508, and 9,748,347 related to semiconductor devices and methods of manufacturing same.",
+      "quote": "infringement of one or more claims of U.S. Patent Nos. 10,312,335 (\"the '335 patent\"; 8,350,294 (\"the '294 patent\"; 8,404,508 (\"the '508 patent\"; and 9,748,347 (\"the '347 patent\").",
+      "topic": "ip_asserted"
+    },
+    {
+      "page": 1,
+      "point": "The investigation involved claims of infringement of the '335, '294, '508, and '347 patents related to the importation into the United States of certain semiconductor devices.",
+      "quote": "infringement of one or more claims of U.S. Patent Nos. 10,312,335 (\"the '335 patent\"; 8,350,294 (\"the '294 patent\"; 8,404,508 (\"the '508 patent\"; and 9,748,347 (\"the '347 patent\").",
+      "topic": "issue"
+    },
+    {
+      "page": 2,
+      "point": "On December 13, 2023, the CALJ terminated the investigation as to all asserted claims of the '347 patent, which was not reviewed by the Commission.",
+      "quote": "On December 13, 2023, the CALJ issued an initial determination (\"ID\") granting a motion to terminate the investigation as to all asserted claims of the '347 patent.",
+      "topic": "decision"
+    },
+    {
+      "page": 2,
+      "point": "On February 12, 2024, the CALJ terminated the investigation as to all asserted claims of the '335 patent, which was not reviewed by the Commission.",
+      "quote": "On February 12, 2024, the CALJ issued an ID granting a motion to terminate the investigation as to all asserted claims of the '335 patent.",
+      "topic": "decision"
+    },
+    {
+      "page": 2,
+      "point": "The ALJ found that EPC proved the accused products infringe claims 1, 2, and 3 of the '294 patent but found claim 1 invalid for obviousness.",
+      "quote": "The ID found that EPC successfully proved that the accused products infringe the asserted claims of the '294 patent (claims 1-3) but that unlike claims 2 and 3, claim 1 has been shown to be invalid for obviousness.",
+      "topic": "findings"
+    },
+    {
+      "page": 2,
+      "point": "The ALJ found that EPC failed to prove that the accused products infringe claim 1 of the '508 patent and that Respondents failed to prove the claim invalid for obviousness.",
+      "quote": "The ID found that EPC failed to prove that the accused products infringe claim 1 of the '508 patent and that Respondents failed to prove the claim invalid for obviousness.",
+      "topic": "findings"
+    },
+    {
+      "page": 2,
+      "point": "The ALJ found that EPC established the economic prong of the domestic industry requirement for both the '294 and '508 patents but failed to establish the technical prong for the '508 patent, resulting in a domestic industry practicing the '294 patent but not the '508 patent.",
+      "quote": "Finally, the ID found that EPC established the economic prong of the domestic industry requirement for both the '294 and '508 patents but failed to establish the technical prong of the domestic industry requirement for the '508 patent.",
+      "topic": "domestic_industry"
+    },
+    {
+      "page": 2,
+      "point": "The ALJ recommended, should the Commission find a violation, issuance of a limited exclusion order and cease and desist orders against the Respondents.",
+      "quote": "The RD recommended, should the Commission find a violation, issuance of a limited exclusion order and cease and desist orders against the Respondents.",
+      "topic": "remedy"
+    },
+    {
+      "page": 2,
+      "point": "The ALJ recommended imposing a bond in the amount of five percent (5%) of entered value for infringing products imported during the period of Presidential review.",
+      "quote": "The RD also recommended imposing a bond in the amount of five percent (5%) of entered value for infringing products imported during the period of Presidential review.",
+      "topic": "remedy"
+    },
+    {
+      "page": 3,
+      "point": "On September 5, 2024, the Commission determined to review the final ID in its entirety, asking the parties for briefing on claim construction for 'compensated GaN layer,' invalidity findings for the '294 patent, scope limitations for the '508 patent, and domestic industry calculations.",
+      "quote": "On September 5, 2024, the Commission determined to review the final ID in its entirety. 89 Fed. Reg. 73719-21 (Sept. 11, 2024).",
+      "topic": "decision"
+    },
+    {
+      "page": 4,
+      "point": "The Commission adopted OUII's construction of the claim term 'compensated GaN layer' recited in claim 1 of the '294 patent as its plain and ordinary meaning and found that this adoption does not alter the ALJ's findings on infringement, invalidity, and technical prong of domestic industry.",
+      "quote": "The Commission has determined to adopt OUII's construction of the claim term \"compensated GaN layer\" recited in claim 1 of the '294 patent as its plain and ordinary meaning and, as explained in the Commission opinion, finds that adoption of OUII's construction does not alter the ID's findings on infringement, invalidity, and technical prong of domestic industry, which the Commission affirms.",
+      "topic": "findings"
+    },
+    {
+      "page": 3,
+      "point": "The Commission determined that Respondents violated Section 337 by reason of importation and sale of articles that infringe asserted claims 2 and 3 of the '294 patent and determined to issue remedial orders.",
+      "quote": "the Commission has determined that Respondents violated section 337 by reason of importation and sale of articles that infringe asserted claims 2 and 3 of the '294 patent and to issue remedial orders.",
+      "topic": "decision"
+    },
+    {
+      "page": 4,
+      "point": "For the '508 patent, the Commission affirmed the ALJ's finding of no violation.",
+      "quote": "For the '508 patent, the Commission affirms the ID's finding of no violation for the reasons provided in the ID.",
+      "topic": "findings"
+    },
+    {
+      "page": 4,
+      "point": "The Commission determined to issue a limited exclusion order prohibiting further importation of infringing products and cease and desist orders against Respondents.",
+      "quote": "For remedy, the Commission has determined to issue a limited exclusion order prohibiting further importation of infringing products and cease and desist orders against Respondents.",
+      "topic": "remedy"
+    },
+    {
+      "page": 4,
+      "point": "The Commission determined that a bond in the amount of five percent (5%) of entered value for covered articles is required for covered products imported or sold during the period of Presidential review.",
+      "quote": "The Commission has determined that a bond in the amount of five percent (5%) of entered value for covered articles is required for covered products imported or sold during the period of Presidential review.",
+      "topic": "remedy"
+    },
+    {
+      "page": 4,
+      "point": "The Commission determined that the public interest factors do not counsel against issuing remedial orders.",
+      "quote": "The Commission has determined that the public interest factors do not counsel against issuing remedial orders.",
+      "topic": "public_interest"
+    },
+    {
+      "page": 3,
+      "point": "Respondents' motion for sanctions against EPC seeking non-enforcement of the '294 patent based on alleged breach of an administrative protective order was denied by the Commission.",
+      "quote": "The Commission has also determined to deny Respondents' motion for a sanction of non-enforcement of the '294 patent.",
+      "topic": "relief"
+    },
+    {
+      "page": 4,
+      "point": "The Commission's vote for this determination took place on November 7, 2024, and the determination is now final subject to Presidential review.",
+      "quote": "The Commission vote for this determination took place on November 7, 2024.",
+      "topic": "next_steps"
+    }
+  ],
+  "rejected": [
+    {
+      "page": 3,
+      "point": "The Commission denied Respondents' motion for leave to file a reply brief in support of its motion for sanctions and denied Respondents' request to stay the proceedings pending disposition of the sanctions motion.",
+      "quote": "The Commission has determined to deny Respondents' motion for leave to file a reply brief. . . . The Commission has also determined to deny Respondent's request to stay the proceedings pending disposition of the sanctions motion.",
+      "rejected": "quote not found in the filing",
+      "topic": "other"
+    }
+  ],
+  "taken_at": "2026-09-26T21:02:13+00:00",
+  "title": "Commission\u2019s Final Determination Finding a Violation of Section 337; Issuance of a Limited Exclusion Order and Cease and Desist Orders; Denial of Motion for Sanctions; Termination of the Investigation",
+  "truncated": false,
+  "who": ""
+}

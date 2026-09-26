@@ -897,14 +897,17 @@ hand-written primer on how Section 337 works. Written on demand, per case,
 in phases:
 
 1. **Phase 1: what would be read, and what it would cost.** No model.
-2. **Phase 2 (this): the complaint, the notice of institution and the
-   answers summarized.** See [Writing a summary](#writing-a-summary).
-3. Phase 3: the rulings and decisions, updates that read only new documents,
-   and the claims analysis's findings folded in.
+2. **Phase 2: the complaint, the notice of institution and the answers
+   summarized.** See [Writing a summary](#writing-a-summary).
+3. **Phase 3: the rulings and decisions too**, the events known from titles
+   alone, and the claims analysis's findings; updates when any of those
+   change, paying only for documents not read before.
 
 #### Writing a summary
 
-`summary/build.py`, per case, for the documents phase 2 covers:
+`summary/build.py`, per case, for every document `select.py` picks to read
+(complaint, notice, answers, summary determination rulings, final ID,
+Commission notices and opinions):
 
 1. **The file that is read, alone** (`fetch.py`). A complaint or answer
    filing is many files; in filing order, the first whose first pages read
@@ -926,17 +929,30 @@ in phases:
    kept in the file with the reason, never used. Cached per document in
    `data/summaries/notes/<id>.json` (tracked: paid for), reused until
    `notes_version` changes.
-4. **The summary, by Claude Sonnet 5** (`write.py`): a strict
-   `write_summary` tool call that sees only the numbered notes, never the
-   filings: a headline, "What the case is about", "The complainant's
-   allegations", and a paragraph (or more) per answer group. Each paragraph
-   cites note numbers. **Code checks every citation**: an unknown number is
-   dropped, and a paragraph citing nothing is dropped, with a warning. It is
-   rewritten only when the set of documents read changes.
+4. **Facts that need no reading** (`facts.py`, free): *title facts* ("t3")
+   from the documents noted by title -- terminations, defaults, the
+   Commission declining review, remedial orders -- and *claims facts* ("c2")
+   from the claims analysis, where the case has one: its checked (`ok`)
+   findings -- withdrawn, found invalid or not, infringed or not, violation
+   or not -- grouped by patent, respondents and source ("claims 1-3, 5 of the
+   '648 patent: found infringed, per the final ID").
+5. **The summary, by Claude Sonnet 5** (`write.py`): a strict
+   `write_summary` tool call that sees only the numbered notes and facts,
+   never the filings: a headline, "What the case is about", "The
+   complainant's allegations", a paragraph (or more) per answer group,
+   "Rulings before the hearing", "The ALJ's and the Commission's decisions"
+   and "Where it stands" (given the case's status and Next actions stage).
+   Each paragraph cites ids. **Code checks every citation**: an unknown id
+   is dropped, and a paragraph citing nothing is dropped, with a warning.
+   It is rewritten only when what it draws on changes: the documents read,
+   the documents noted by title, the claims analysis's build, or the
+   summary's phase (`PHASE`; a phase 2 summary shows **Update summary**).
 
 On the page, each paragraph ends with one chip per page it cites ("p. 12",
 or "Answer p. 3" when it draws on more than one filing); hovering shows the
-quotes, clicking opens the PDF at that page. `data/summaries/<number>.json`
+quotes, clicking opens the PDF at that page. A title fact's chip ("Default,
+10 Apr 2024") opens its order or notice; "Claims analysis" opens the Claims
+tab, with its findings on hover. `data/summaries/<number>.json`
 (tracked) holds the summary, the notes it cites, the documents read, the
 warnings, and what this case's summaries have cost.
 
@@ -946,9 +962,14 @@ one is paid for); **Summary up to date**; **Retry** after a failure, which
 keeps the last good summary; or, at the budget, the message saying how to go
 on. An Anthropic account out of credit is reported as such.
 
-Pilot (2026-09-26): 337-1366 $0.12, 337-1384 $0.08, 337-1417 $0.12 --
-about 30-40 points kept per complaint, 1-5 rejected. 337-1270 stopped when
-the Anthropic account ran out of credit; its four finished notes are kept.
+Pilot (2026-09-26), whole summaries including rulings and decisions, with
+every run that went into them: 337-1366 $0.41 (its complaint and answer read
+twice while the notes prompt was fixed), 337-1384 $0.18, 337-1417 $0.17, 337-1270 $0.51 (13
+documents, 227 notes; its writing ran into the old 5,000-token output limit
+once and was rewritten), 337-1500 $0.16 -- $1.43 in all, failed attempts
+included. About 20-40 points kept per document, 0-4 rejected. The writer's
+output limit is now 8,000 tokens, and a summary cut off at the limit
+(`writer_cut_off`) is written again on the next run rather than kept.
 
 **What is read** (`summary/select.py`, by rule from the documents index, free).
 A complaint filing runs to thousands of pages, nearly all exhibits, so:

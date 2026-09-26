@@ -15,7 +15,8 @@ from unittest import mock
 from support import DataDirTestCase, FakeEdisClient
 
 from datalayer import docs
-from datalayer.summary import build, config as summary_config, fetch, notes, text, write
+from datalayer.summary import build, config as summary_config, facts, fetch, notes, text, write
+from datalayer.summary.select import select
 
 COMPLAINT_PAGE = ("Complainant Acme Inc. alleges that Globex Corp. imports into the United States "
                   "wireless earbuds that infringe claims 1-5 of U.S. Patent No. 10,945,648.")
@@ -213,6 +214,85 @@ class TestTheBuild(BuildTestCase):
                                                 "firm_organization": "Other LLP"})
         state = build.state(self.store_, "337-1", result, self.cfg)
         self.assertEqual((state["state"], state["new"]), ("new_documents", 1))
+
+
+class TestFacts(unittest.TestCase):
+    def test_the_claims_analysis_findings_grouped_by_patent_with_checked_events_only(self):
+        source = {"id": "900", "document_type": "ID/RD - Final on Violation", "files": ["900_1_1.pdf"]}
+        analysis = {"events": [
+            {"action": "found_infringed", "status": "ok", "patent": "10,945,648", "claims": [1, 2],
+             "respondents": ["ALL"], "date": "2026-05-01", "source": source, "quote": "claims 1 and 2 are infringed"},
+            {"action": "found_infringed", "status": "ok", "patent": "10,945,648", "claims": [3, 5],
+             "respondents": ["ALL"], "date": "2026-05-01", "source": source, "quote": "q"},
+            {"action": "found_invalid", "status": "needs_review", "patent": "10,945,648", "claims": [4],
+             "respondents": ["ALL"], "date": "2026-05-01", "source": source, "quote": "q"},
+            {"action": "asserted", "status": "ok", "patent": "10,945,648", "claims": [1], "source": source},
+        ]}
+        [fact] = facts.claims_facts(analysis)
+        self.assertEqual(fact["text"], "claims 1-3, 5 of the '648 patent: found infringed, per the final ID")
+        self.assertEqual(fact["doc_id"], "900")
+
+    def test_title_facts_come_from_the_documents_noted_by_title(self):
+        docs = [{"id": "7", "title": "Initial Determination Terminating Respondent Globex Based on a Settlement Agreement",
+                 "document_type": "ID/RD - Other Than Final on Violation", "document_date": "2026-03-01",
+                 "security_level": "Public"}]
+        [fact] = facts.title_facts(select(docs))
+        self.assertEqual((fact["label"], fact["doc_id"], fact["date"]), ("Termination", "7", "2026-03-01"))
+
+    def test_the_writer_may_cite_facts_but_not_invent_them(self):
+        known = write.number_facts([{"doc_id": "7", "label": "Termination", "date": "d", "title": "T"}],
+                                   [{"doc_id": "9", "text": "claims 1-3: found infringed", "date": "d"}])
+        answer = {"headline": "H", "about": [], "allegations": [], "answers": [], "rulings": [],
+                  "decisions": [{"text": "Found infringed.", "cites": ["c1", "c9"]}],
+                  "standing": [{"text": "Globex settled.", "cites": ["t1"]}]}
+        summary, warnings = write.check(answer, {}, {}, known)
+        self.assertEqual(summary["decisions"], [{"text": "Found infringed.", "cites": ["c1"]}])
+        self.assertEqual(summary["standing"], [{"text": "Globex settled.", "cites": ["t1"]}])
+        self.assertEqual(len(warnings), 1)
+
+
+class TestDecisionsInTheBuild(BuildTestCase):
+    def setUp(self):
+        super().setUp()
+        self.final_id = {"id": "300", "title": "Initial Determination on Violation of Section 337",
+                         "document_type": "ID/RD - Final on Violation", "document_date": "2026-08-01",
+                         "security_level": "Public", "attachments": []}
+        self.settled = {"id": "400", "title": "Initial Determination Terminating Respondent Initech Based on a Settlement Agreement",
+                        "document_type": "ID/RD - Other Than Final on Violation", "document_date": "2026-04-01",
+                        "security_level": "Public", "attachments": []}
+        self.store_.documents["337-1"] += [self.final_id, self.settled]
+        self.store_.save_documents()
+        self.edis.attachments["300"] = [{"id": "31", "pageCount": "120"}]
+        self.pages["31"] = {1: "The ALJ finds a violation of Section 337 by Globex as to the '648 patent claims 1-5."}
+
+    def test_the_final_id_is_read_and_the_writer_sees_the_title_and_claims_facts(self):
+        from datalayer.claims import build as claims_build
+        from datalayer.store import save_json
+
+        save_json(claims_build.analysis_path(self.data_dir, "337-1"), {"built_at": "2026-09-01", "events": [
+            {"action": "violation", "status": "ok", "patent": "unknown", "claims": [], "respondents": ["ALL"],
+             "date": "2026-08-01", "source": {"id": "300", "document_type": "ID/RD - Final on Violation"},
+             "quote": "a violation"}]})
+        model = FakeModel()
+        result = self.run_build(model)
+        self.assertIn("300", result["sources"])
+        final_call = model.calls[-2]["messages"][0]["content"]
+        self.assertIn("final initial determination", final_call)
+        writer = model.calls[-1]["messages"][0]["content"]
+        self.assertIn("[t1] (2026-04-01, Termination)", writer)
+        self.assertIn("[c1] (2026-08-01) violation of Section 337 found, per the final ID", writer)
+        self.assertEqual(result["facts"]["t1"]["doc_id"], "400")
+        self.assertEqual(build.state(self.store_, "337-1", result, self.cfg)["state"], "up_to_date")
+
+        # A rebuilt claims analysis makes the summary due for rewriting, with nothing new to read.
+        save_json(claims_build.analysis_path(self.data_dir, "337-1"), {"built_at": "2026-09-20", "events": []})
+        self.assertEqual(build.state(self.store_, "337-1", result, self.cfg),
+                         {"state": "new_documents", "new": 0, "built_at": result["built_at"]})
+
+    def test_a_summary_written_by_phase_2_is_due_for_rewriting(self):
+        result = self.run_build()
+        result["phase"] = 2
+        self.assertEqual(build.state(self.store_, "337-1", result, self.cfg)["state"], "new_documents")
 
 
 class TestPartialDownloads(DataDirTestCase):
