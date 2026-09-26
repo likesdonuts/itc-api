@@ -1,0 +1,213 @@
+{
+  "cost_usd": 0.031279,
+  "date": "2024-10-22",
+  "doc_id": "835319",
+  "file": "835319_2259650_2259650.pdf",
+  "kind": "answer",
+  "model": "claude-haiku-4-5-20251001",
+  "notes_version": 2,
+  "overview": "This is Luvo Medical Technologies, Inc.'s verified response to HydraFacial LLC's Section 337 complaint alleging unfair importation and sale of infringing hydrodermabrasion systems. Luvo denies infringement of U.S. Patent No. 11,446,477 (the '477 Patent), denies importing or selling products in the United States (while admitting it sells the Bela MD for importation), and asserts multiple affirmative defenses including prosecution laches, noninfringement, invalidity, and challenges to the domestic industry requirement.",
+  "pages_read": [
+    1,
+    2,
+    3,
+    4,
+    12,
+    13,
+    14,
+    15,
+    16,
+    17,
+    18,
+    19,
+    20,
+    21,
+    22,
+    23,
+    24,
+    25,
+    26,
+    27,
+    28,
+    29,
+    30,
+    31
+  ],
+  "points": [
+    {
+      "page": 2,
+      "point": "Luvo Medical Technologies, Inc., along with Clarion Medical Technologies, Inc., Healthcare Markets, Inc. d/b/a Powered by MRP, and other entities, are respondents in an investigation initiated on September 9, 2024.",
+      "quote": "Luvo acknowledges that the Commission has instituted an investigation as set forth in the Commission's Notice, issued on September 9, 2024, and published in the Federal Register on September 13, 2024",
+      "topic": "respondents"
+    },
+    {
+      "page": 27,
+      "point": "Luvo states it manufactures and distributes the Bela MD hydrodermabrasion system, with Eunsung Global Corp. in Korea as the supplier and Medical Purchasing Resource LLC as a distributor.",
+      "quote": "The supplier of the Bela MD is Eunsung Global Corp., which is located at 120, Gieopdosi-ro, Jijeong-myeon, Wonju-si, Gagwon-do, Republic of Korea 26354",
+      "topic": "respondents"
+    },
+    {
+      "page": 1,
+      "point": "Luvo denies that it has engaged in unfair competition in violation of Section 337 by importing, selling for importation, or selling infringing products, and denies that the asserted claims of U.S. Patent No. 11,446,477 are valid and enforceable.",
+      "quote": "Luvo denies that it has engaged in acts of unfair competition in violation of Section 337 by importing, selling for importation, and/or selling after importation into the United States any product that infringes",
+      "topic": "general_response"
+    },
+    {
+      "page": 13,
+      "point": "The accused products are the Bela MD, Cleopatra, and MIRApeel systems; Luvo admits selling the Bela MD for importation but denies selling or importing the other accused products.",
+      "quote": "Luvo admits that it sells the Bela MD system for importation into the United States. Luvo denies importing the Bela MD into the United States and denies using, distributing, offering",
+      "topic": "products"
+    },
+    {
+      "page": 16,
+      "point": "Luvo admits selling the Bela MD for importation into the United States but denies importing it into the United States or selling it after importation, stating it does not import the product or maintain commercially significant volumes in U.S. inventory.",
+      "quote": "Luvo denies that it imports or sells in the United States the Bela MD system. Luvo denies that it maintains in inventory in the United States commercially significant volumes of the Bela MD",
+      "topic": "importation"
+    },
+    {
+      "page": 3,
+      "point": "The asserted patent is U.S. Patent No. 11,446,477, titled 'Devices and Methods for Treating Skin,' which issued on August 31, 2022; U.S. Patent No. 12,053,607 was referenced but has been withdrawn from the investigation.",
+      "quote": "U.S. Patent No. 11,446,477, titled \"Devices and Methods for Treating Skin,\" (the \"'477 Patent\" or the \"Asserted Patent\") or U.S. Patent No. 12,053,607",
+      "topic": "ip_asserted"
+    },
+    {
+      "page": 23,
+      "point": "Luvo does not infringe the '477 Patent because it does not make, use, sell, offer for sale, or import any product within the scope of any asserted claim and because the Bela MD does not meet the claim limitations.",
+      "quote": "Luvo does not infringe any claim of the '477 Patent at least because it does not make, use, sell, offer for sale, or import any product that falls within the scope",
+      "topic": "non_infringement"
+    },
+    {
+      "page": 23,
+      "point": "Luvo argues the Bela MD does not literally or under the doctrine of equivalents meet the claim terms 'manifold system being positioned in or on a console,' 'supply conduit placing the manifold system in fluid communication with a handpiece assembly,' and other limitations.",
+      "quote": "the Bela MD does not meet literally or under the doctrine of equivalents the term \"manifold system being positioned in or on a console,\" \"supply conduit placing the manifold system in fluid communication with a handpiece assembly\"",
+      "topic": "non_infringement"
+    },
+    {
+      "page": 24,
+      "point": "Luvo contends it does not meet the definition of 'manifold' as required by the claims due to disavowal of claim scope.",
+      "quote": "Luvo does not infringe at least because the Bela MD does not meet literally or under the doctrine of equivalents a \"manifold\" as required",
+      "topic": "non_infringement"
+    },
+    {
+      "page": 24,
+      "point": "Luvo argues that HydraFacial has not met its burden to prove indirect infringement because direct infringement is not shown, and Luvo has not knowingly induced any infringing acts with specific intent to encourage infringement.",
+      "quote": "HydraFacial has not met its burden to please sufficient facts to show indirect infringement of the '447 or '607 Patents. Moreover, Luvo has not knowingly induced",
+      "topic": "non_infringement"
+    },
+    {
+      "page": 25,
+      "point": "Luvo contends all asserted claims of the '477 Patent are invalid for lack of novelty under 35 U.S.C. \u00a7 102, obviousness under 35 U.S.C. \u00a7 103, and indefiniteness, lack of written description and lack of enablement under 35 U.S.C. \u00a7 112.",
+      "quote": "No asserted claim of the '477 Patent is valid, at least because of lack of novelty pursuant to 35 U.S.C. \u00a7102, obviousness pursuant to 35 U.S.C. \u00a7103, and indefiniteness",
+      "topic": "invalidity"
+    },
+    {
+      "page": 25,
+      "point": "Luvo identifies multiple prior art references including U.S. Patents 6,695,853 (Karasiuk), 6,162,232 (Shadduck), 6,752,768 (Burdorff), 6,264,666 (Coleman), PCT publications WO 97/00707 (Pohl) and WO 04/037334 (Blott), and others.",
+      "quote": "The claims are invalid as not novel or obvious at least because of a combination of one or more of prior art U.S. Pat. 6,695,853 (\"Karasiuk\"), International Application published under the PCT, WO 97/00707 (\"Pohl\"); International Application published",
+      "topic": "invalidity"
+    },
+    {
+      "page": 25,
+      "point": "Luvo contends the claims are indefinite under 35 U.S.C. \u00a7 112(a), (b), and (f) because terms including 'fluid communication,' 'manifold system,' 'control to permit control,' and 'being positioned in or on a console' fail to inform an ordinarily skilled artisan with reasonable certainty.",
+      "quote": "The claims are indefinite under 35 U.S.C. \u00a7112(a), (b), and (f) at least because the terms \"fluid communication,\" \"manifold system,\" \"control to permit control\" and \"being positioned in or on a console\" fail to inform",
+      "topic": "invalidity"
+    },
+    {
+      "page": 19,
+      "point": "Luvo asserts a prosecution laches defense, arguing the '477 Patent is unenforceable due to unreasonable and inexcusable delay in prosecution that prejudices respondents.",
+      "quote": "The '477 Patent in suit is unenforceable due to prosecution laches.",
+      "topic": "other_defenses"
+    },
+    {
+      "page": 19,
+      "point": "The '477 Patent is based on an application filed fourteen years after its purported priority date, with the patent family having 51 patents utilizing a serial filing strategy dating back to provisional applications from December 30, 2005 and February 2, 2006.",
+      "quote": "The '477 Patent is based on an application, Pat. App. 16/517,268 (\"the '268 Application\"), that was filed fourteen years after its purported priority date. It is part of a large family of patents dating back to two provisional patent applications filed December 30, 2005",
+      "topic": "other_defenses"
+    },
+    {
+      "page": 20,
+      "point": "HydraFacial's serial prosecution strategy involved filing placeholder claims with no intention of advancing them to issuance; in the '477 Patent prosecution, a single placeholder claim was cancelled nineteen months later on March 18, 2021, with bona fide claims introduced thereafter.",
+      "quote": "a single placeholder claim was drafted in time for continuity, then cancelled nineteen months later, on March 18, 2021, with no attempt to advance the placeholder claim toward issuance",
+      "topic": "other_defenses"
+    },
+    {
+      "page": 19,
+      "point": "The '477 Patent application was filed July 19, 2019, just one week prior to issuance of its parent patent U.S. Patent No. 10,357,641 on July 23, 2019, demonstrating HydraFacial's practice of serial filing around deadlines.",
+      "quote": "the '477 Patent application was filed July 19, 2019, just one week prior to issuance of its parent patent (U.S. Patent No. 10,357,641), which issued on July 23, 2019",
+      "topic": "other_defenses"
+    },
+    {
+      "page": 21,
+      "point": "To prove prosecution laches, the accused infringer must show: (1) unreasonable and inexcusable delay under the totality of circumstances, and (2) prejudice to the accused infringer from the delay, citing Cancer Research Technology Ltd. v. Barr Laboratories, 625 F.3d 724.",
+      "quote": "To prove prosecution laches as a defense to patent infringement, an accused infringer must show: (1) the patent holder's delay in prosecution was unreasonable and inexcusable under the totality of circumstances; and (2) the accused infringer suffered prejudice attributable to the delay",
+      "topic": "other_defenses"
+    },
+    {
+      "page": 22,
+      "point": "Luvo identifies prejudice from HydraFacial's delay: the market for hydrodermabrasion systems matured and developed during the seventeen-year gap between initial filing and patent issuance, and Luvo and others invested substantially in the technology during this period.",
+      "quote": "During the intervening seventeen years between the initial filing and the issuance of the patents-in-suit, the market has expanded greatly for the products at issue and related products. Luvo expended substantial investment in expansion of the market",
+      "topic": "other_defenses"
+    },
+    {
+      "page": 22,
+      "point": "Luvo argues that many other entities are prejudiced by the delay, including other Section 337 respondents and defendants in multiple district court litigations brought by HydraFacial.",
+      "quote": "Upon information and belief, there are a number of third-party entities prejudiced: these entities include Luvo, the other respondents named in HydraFacial's Complaint, and respondents in other section 337 investigations",
+      "topic": "other_defenses"
+    },
+    {
+      "page": 26,
+      "point": "Luvo argues that HydraFacial has failed to adequately allege a domestic industry as required under Section 337.",
+      "quote": "HydraFacial has failed to adequately allege a domestic industry.",
+      "topic": "domestic_industry"
+    },
+    {
+      "page": 26,
+      "point": "Luvo requests that the Commission deny all relief requested in the complaint, find that Luvo has not violated Section 337, find that the accused products do not infringe the asserted patents, and find the patents invalid and the domestic industry requirement not established.",
+      "quote": "Luvo requests that the Commission: A. Deny all relief requested in the Complaint; B. Find that Luvo has not violated Section 337",
+      "topic": "relief"
+    },
+    {
+      "page": 26,
+      "point": "Luvo contends it has not committed any unfair act or engaged in any unfair competition.",
+      "quote": "Luvo has not committed any unfair act or engaged in any unfair competition.",
+      "topic": "other_defenses"
+    },
+    {
+      "page": 26,
+      "point": "Luvo argues that HydraFacial has failed to state a claim upon which relief can be granted under 19 U.S.C. \u00a7 1337.",
+      "quote": "HydraFacial has failed to state a claim upon which relief can be granted under 19 U.S.C. \u00a71337.",
+      "topic": "other_defenses"
+    },
+    {
+      "page": 26,
+      "point": "Luvo reserves the right to amend its response to include other affirmative defenses that may be learned during the course of the investigation.",
+      "quote": "Luvo reserves the right to amend its Response to include other affirmative defenses that Luvo may learn of during the course of this Investigation.",
+      "topic": "other_defenses"
+    },
+    {
+      "page": 2,
+      "point": "Luvo denies each allegation in the complaint not expressly admitted and states that discovery has only recently started and HydraFacial has not fully responded to discovery requests, limiting Luvo's ability to fully understand the allegations.",
+      "quote": "Luvo denies each allegation contained in the Complaint that is not expressly admitted. Further, any factual allegation admitted is admitted only as to the specific admitted facts, not as to any purported conclusion, characterization, implication, or speculation",
+      "topic": "general_response"
+    },
+    {
+      "page": 13,
+      "point": "Luvo admits it markets the Bela MD but denies that marketing is specifically directed to the United States, except for occasional participation in certain U.S.-based trade shows.",
+      "quote": "Luvo admits that it markets the Bela MD but denies that marketing is specifically directed to the United States, with the exception of Luvo's occasional participation in certain US-based trade shows",
+      "topic": "products"
+    }
+  ],
+  "rejected": [
+    {
+      "page": 25,
+      "point": "Luvo argues the claims lack written description because the term 'manifold system being positioned in or on a console' is not described in the specification as filed.",
+      "quote": "The claims lack written description at least because of the term the manifold system \"being positioned in or on a console,\" is not described in the specification as filed",
+      "rejected": "quote not found in the filing",
+      "topic": "invalidity"
+    }
+  ],
+  "taken_at": "2026-09-26T20:11:00+00:00",
+  "title": "Verified Response of Luvo Medical Technologies, Inc. to the Complaint under Section 337 of the Tariff Act of 1930, as Amended, and Notice of Investigation",
+  "truncated": false,
+  "who": "Luvo Medical Technologies, Inc.; Clarion Medical Technologies, Inc.; Healthcare Markets, Inc. d/b/a Powered by MRP"
+}

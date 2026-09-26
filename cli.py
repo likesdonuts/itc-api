@@ -33,6 +33,7 @@ Examples:
     python cli.py analytics-serve           # open the analytics app (what ITC Analytics.bat runs)
     python cli.py claims 337-1366 --render  # build a claims analysis
     python cli.py summary-plan 337-1366     # what a case summary would read and cost (no model)
+    python cli.py summary 337-1366 --render # write the case summary (paid, own budget)
     python cli.py render                    # rebuild the site, offline
     python cli.py serve                     # open the app (what ITC Tracker.bat runs)
     python cli.py fields                    # what ui_schema.json can name
@@ -217,6 +218,13 @@ def build_parser() -> argparse.ArgumentParser:
         "--offline", action="store_true", help="count pages only from PDFs on disk; no EDIS requests"
     )
     _add_render_flag(p_summary_plan)
+
+    p_summary = sub.add_parser(
+        "summary",
+        help="write or update the case summary (paid: Haiku notes, Sonnet 5 writing; its own budget)",
+    )
+    p_summary.add_argument("numbers", nargs="+", help="investigation numbers, e.g. 337-1366")
+    _add_render_flag(p_summary)
 
     p_counsel = sub.add_parser(
         "counsel",
@@ -523,6 +531,34 @@ def cmd_summary_plan(args: argparse.Namespace, store: Store) -> int:
     return 1 if failed else 0
 
 
+def cmd_summary(args: argparse.Namespace, store: Store) -> int:
+    from datalayer.summary import build as summary_build
+
+    try:
+        token = load_token()
+    except MissingTokenError:
+        print("No EDIS token in .env: reading only the files already on disk.")
+        token = None
+    failed = 0
+    for number in args.numbers:
+        key = store.find_key(number)
+        if key is None:
+            print(f"{number} is not on disk; run 'python cli.py sync' first.")
+            failed += 1
+            continue
+        try:
+            summary_build.run(store, key, token=token, log=print)
+        except summary_build.BudgetReached:
+            failed += 1
+            break  # the rest would stop at the same place
+        except Exception as exc:  # recorded on the summary; keep going with the rest
+            print(f"  ! {number}: {type(exc).__name__}: {exc}")
+            failed += 1
+    if args.render:
+        _render(args, store)
+    return 1 if failed else 0
+
+
 def cmd_counsel(args: argparse.Namespace, store: Store) -> int:
     _counsel(store, verbose=args.verbose)
     if args.render:
@@ -722,6 +758,7 @@ COMMANDS = {
     "analytics-serve": cmd_analytics_serve,
     "claims": cmd_claims,
     "summary-plan": cmd_summary_plan,
+    "summary": cmd_summary,
     "render": cmd_render,
     "fields": cmd_fields,
     "serve": cmd_serve,

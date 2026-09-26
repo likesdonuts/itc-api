@@ -419,6 +419,15 @@ table.na-list tr.sum-group td { padding-top: 0.9rem; font-size: 0.7rem; font-wei
 .case-summary > .card { padding: 1rem 1.2rem; margin-bottom: 0.9rem; }
 .case-summary > details.card { padding: 0.8rem 1.2rem; }
 .case-summary h4 { font-size: 0.85rem; margin: 0.9rem 0 0.3rem; }
+.sum-actions { display: flex; gap: 0.5rem; flex-wrap: wrap; }
+.sum-hero .warn { color: var(--amber-fg); }
+.sum-written { line-height: 1.65; }
+.sum-written h3 { font-size: 0.98rem; margin: 1.3rem 0 0.4rem; }
+.sum-written p { margin: 0 0 0.75rem; }
+.sum-headline { font-size: 1.12rem; font-weight: 600; line-height: 1.45; }
+.sum-cites { white-space: normal; }
+.sum-cites > * { display: inline-block; margin: 0 0.25rem 0.15rem 0; padding: 0 0.4rem; border-radius: 999px;
+  font-size: 0.72rem; line-height: 1.5; background: var(--accent-weak); white-space: nowrap; vertical-align: 0.1em; }
 .case-summary h4 small { color: var(--muted); font-weight: 400; }
 .primer p, .primer li { color: var(--ink); }
 .claims-matrix th .stage-count { font-weight: 400; text-transform: none; letter-spacing: 0; margin-top: 0.15rem; }
@@ -936,8 +945,8 @@ _CONTROL_SCRIPT = """
       if (b.dataset.job === 'daily') start({ kind: 'daily' });
       else if (b.dataset.job === 'backfill') start({ kind: 'backfill' });
       else if (b.dataset.job === 'claims') start({ kind: 'claims', number: panel.dataset.number });
-      else if (b.dataset.job === 'summary_estimate') {
-        start({ kind: 'summary_estimate', number: panel.dataset.number });
+      else if (b.dataset.job === 'summary_estimate' || b.dataset.job === 'summary') {
+        start({ kind: b.dataset.job, number: panel.dataset.number });
         panel.scrollIntoView({ behavior: 'smooth' });  // the job's progress shows up there
       }
       else start({ kind: 'documents', numbers: selected(), download: b.dataset.download === '1' });
@@ -1911,7 +1920,7 @@ def _file_links(documents: list[dict[str, Any]] | None) -> dict[str, list[str]]:
     }
 
 
-def _summary_line(line: Any, files: dict[str, list[str]]) -> str:
+def _summary_line(line: Any, files: dict[str, list[str]], summarized: set[str] | None = None) -> str:
     from datalayer.summary.preview import KIND_LABEL, pages
 
     item = line.item
@@ -1935,7 +1944,9 @@ def _summary_line(line: Any, files: dict[str, list[str]]) -> str:
         meta.append('<span class="sum-tag">Complaint body confirmed</span>' if line.body == "confirmed"
                     else '<span class="sum-tag assumed" title="Found by its length; confirmed when the text is read">'
                          "Complaint body assumed</span>")
-    if line.text_on_file:
+    if summarized and item.id in summarized:
+        meta.insert(1, '<span class="sum-tag">Summarized</span>')
+    elif line.text_on_file:
         meta.append('<span class="sum-tag" title="Already read for the claims analysis: no download or OCR needed">'
                     "Text on file</span>")
     who = f"<div>{_e(item.who)}</div>" if item.who else ""
@@ -1945,36 +1956,130 @@ def _summary_line(line: Any, files: dict[str, list[str]]) -> str:
     )
 
 
+_SUM_WRITTEN = (
+    ("about", "What the case is about"),
+    ("allegations", "The complainant's allegations"),
+)
+
+
+def _written_summary(record: dict[str, Any], documents: list[dict[str, Any]] | None) -> str:
+    """The written summary: its sections, each paragraph followed by numbered
+    citations that open the PDF at the page, with the quote on hover."""
+    summary = record.get("summary") or {}
+    notes = record.get("notes") or {}
+    files = {str(d.get("doc_id")): d.get("file") for d in record.get("documents") or []}
+    keys = {str(d.get("id")): d for d in documents or []}
+    short = {"complaint": "Complaint", "notice_of_institution": "Notice", "answer": "Answer"}
+
+    def cites_html(cites: list[str]) -> str:
+        """One chip per page cited, in order: "p. 12", or "Answer p. 12" when
+        the paragraph draws on more than one filing. Hover for the quotes;
+        click to open the page."""
+        by_page: dict[tuple[str, int], list[dict[str, Any]]] = {}
+        for nid in cites:
+            note = notes.get(nid)
+            if note:
+                by_page.setdefault((str(note.get("doc_id")), note.get("page")), []).append(note)
+        several = len({doc_id for doc_id, _ in by_page}) > 1
+        chips = []
+        for (doc_id, page), group in by_page.items():
+            doc = keys.get(doc_id, {})
+            file = files.get(doc_id)
+            href = next((a["href"] for a in doc.get("attachments") or [] if file and a.get("href", "").endswith(file)), "")
+            label = f"{short.get(group[0].get('kind'), '')} p. {page}".strip() if several else f"p. {page}"
+            quotes = "\n".join(f"“{n.get('quote')}”" for n in group)
+            title = f"{doc.get('title') or 'Document'}, page {page}:\n{quotes}"
+            chips.append(f'<a href="{_e(href)}#page={_e(page)}" title="{_e(title)}">{_e(label)}</a>' if href
+                         else f'<span title="{_e(title)}">{_e(label)}</span>')
+        return f'<span class="sum-cites">{"".join(chips)}</span>' if chips else ""
+
+    def paragraph(p: dict[str, Any]) -> str:
+        return f"<p>{_e(p.get('text'))} {cites_html(p.get('cites') or [])}</p>"
+
+    parts = [f'<p class="sum-headline">{_e(summary.get("headline"))}</p>'] if summary.get("headline") else []
+    for key, heading in _SUM_WRITTEN:
+        if summary.get(key):
+            parts.append(f"<h3>{heading}</h3>" + "".join(paragraph(p) for p in summary[key]))
+    if summary.get("answers"):
+        parts.append("<h3>The respondents' answers</h3>")
+        for answer in summary["answers"]:
+            # Summaries written before groups could have several paragraphs hold one, inline.
+            paragraphs = answer.get("paragraphs") or [answer]
+            parts.append(f'<h4>{_e(answer.get("who"))}</h4>' + "".join(paragraph(p) for p in paragraphs))
+    parts.append(
+        '<p class="primer-note">Written by AI from the public filings listed below; each paragraph cites the '
+        "pages it rests on (hover for the quote, click to open the page). Allegations and defenses are the "
+        "parties' own, not findings. Rulings and decisions are not covered yet. Not legal advice.</p>"
+    )
+    return f'<div class="card sum-written">{"".join(parts)}</div>'
+
+
+def _summary_action(state: dict[str, Any] | None, estimate: Any) -> tuple[str, str]:
+    """(the button, a line under it) for the summary's state."""
+    from datalayer.summary.build import PHASE_KINDS
+    from datalayer.summary.preview import money
+
+    state = state or {"state": "create"}
+    cost = estimate.usd_for(PHASE_KINDS) if estimate is not None else 0.0
+    bound = "about" if estimate is None or estimate.complete else "up to"
+    kind = state.get("state")
+    if kind == "up_to_date":
+        return ('<button class="btn btn-quiet" data-job="summary" data-current="1">Summary up to date</button>',
+                "No new documents to read since it was written.")
+    if kind == "new_documents":
+        return ('<button class="btn" data-job="summary">Update summary</button>',
+                f"{state.get('new') or 'Some'} new document(s) to read since {_e(dates.format_ui_time(state.get('built_at')))}; "
+                "only those are paid for.")
+    if kind == "budget":
+        return ('<button class="btn" data-job="summary">Try again</button>',
+                f'<span class="warn">{_e(state.get("error"))}.</span>')
+    if kind == "failed":
+        return ('<button class="btn" data-job="summary">Retry summary</button>',
+                f'<span class="warn">The last attempt failed: {_e(state.get("error"))}</span>')
+    return (f'<button class="btn" data-job="summary">Write summary</button>',
+            f"Reads the complaint, the notice of institution and the answers: {bound} {money(cost)}.")
+
+
 def _summary_section(estimate: Any, primer: Any, documents: list[dict[str, Any]] | None = None,
-                     stage_label: str | None = None) -> str:
-    """The Summary tab (datalayer/summary): what a case summary would read
-    and cost, and the hand-written Section 337 primer. Phase 1: nothing is
-    written yet, so the tab previews the reading and its cost."""
+                     stage_label: str | None = None, record: dict[str, Any] | None = None,
+                     state: dict[str, Any] | None = None) -> str:
+    """The Summary tab (datalayer/summary): the written summary, if any, and
+    the button to write or update it; what a summary reads and what it
+    costs; and the hand-written Section 337 primer."""
     from datalayer.summary.preview import money
 
     files = _file_links(documents)
+    written = bool(record and (record.get("summary") or {}).get("headline"))
     blocks = []
     if estimate is not None and estimate.lines:
         bound = "About" if estimate.complete else "Up to"
         left = max(estimate.budget_usd - estimate.spent_usd, 0)
-        button = (
+        estimate_button = (
             '<button class="btn btn-quiet" data-job="summary_estimate" title="Ask EDIS how long each document is '
             '(one request per document; nothing is downloaded and no model is called)">Estimate cost</button>'
             if not estimate.complete else ""
         )
-        counted = (
-            "" if estimate.complete else
-            f" {len(estimate.uncounted)} document(s) are not counted yet, so each is costed at its page limit."
-        )
+        button, helper = _summary_action(state, estimate)
         stage = f'<div class="na-label" style="margin-top:0.8rem">Stage</div><div>{_e(stage_label)}</div>' if stage_label else ""
+        if written:
+            what = (f"Written {_e(dates.format_ui_time(record.get('built_at')))} from "
+                    f"{len(record.get('sources') or [])} documents; this case's summaries have cost "
+                    f"{money(float(record.get('total_cost_usd') or 0))}.")
+            lead = '<div class="sum-cost">Summary written</div>'
+        else:
+            what = (f"Notes on each document by {_e(estimate.notes_model)}, then the summary written by "
+                    f"{_e(estimate.writer_model)}. Reading everything below, rulings and decisions included, "
+                    f"would be {bound.lower()} {money(estimate.total_usd)}.")
+            from datalayer.summary.build import PHASE_KINDS
+
+            lead = f'<div class="sum-cost">{bound} {money(estimate.usd_for(PHASE_KINDS))} <small>to write</small></div>'
         blocks.append(f"""<div class="card sum-hero">
     <div>
       <div class="na-label">Case summary</div>
-      <div class="sum-cost">{bound} {money(estimate.total_usd)} <small>to write</small></div>
-      <p>Summaries are not written yet. This is what one would read, and what it would cost:
-      notes on each document by {_e(estimate.notes_model)} ({money(estimate.notes_usd)}, {estimate.pages_read:,} pages),
-      then the summary written by {_e(estimate.writer_model)} ({money(estimate.writer_usd)}).{counted}</p>
-      {button}
+      {lead}
+      <p>{what}</p>
+      <div class="sum-actions">{button}{estimate_button}</div>
+      <p>{helper}</p>
     </div>
     <div>
       <div class="na-label">Budget</div>
@@ -1982,15 +2087,22 @@ def _summary_section(estimate: Any, primer: Any, documents: list[dict[str, Any]]
       {stage}
     </div>
   </div>""")
+        if written:
+            blocks.append(_written_summary(record, documents))
 
         rows = []
         for section, heading in _SUM_GROUPS.items():
             lines = [line for line in estimate.lines if line.item.section == section]
             if lines:
                 rows.append(f'<tr class="sum-group"><td colspan="2">{heading}</td></tr>')
-                rows.extend(_summary_line(line, files) for line in lines)
-        blocks.append(f'<div class="card na-card"><h3>What would be read <small>({len(estimate.lines)} documents)</small></h3>'
-                      f'<table class="na-list"><tbody>{"".join(rows)}</tbody></table></div>')
+                rows.extend(_summary_line(line, files, set((record or {}).get("sources") or [])) for line in lines)
+        table = f'<table class="na-list"><tbody>{"".join(rows)}</tbody></table>'
+        if written:
+            blocks.append(f'<details class="card na-past"><summary>Documents a summary reads '
+                          f'<small>({len(estimate.lines)})</small></summary>{table}</details>')
+        else:
+            blocks.append(f'<div class="card na-card"><h3>What would be read <small>({len(estimate.lines)} documents)'
+                          f'</small></h3>{table}</div>')
 
         noted = estimate.selection.noted
         if noted:
@@ -2231,6 +2343,8 @@ def render_detail(
     next_built_at: str | None = None,
     summary: Any = None,
     primer: Any = None,
+    summary_record: dict[str, Any] | None = None,
+    summary_state: dict[str, Any] | None = None,
 ) -> str:
     """`fetched_at` is when this case's documents were last fetched;
     `claims` is its stored claims analysis and `claims_state` whether that
@@ -2289,7 +2403,8 @@ def render_detail(
 {withdrawn_notice}
 {_control_panel(str(number or ""), fetched_at, claims_state)}
 {_with_tabs(''.join(block for block in blocks if block), claims, next_actions, next_built_at, documents,
-            _summary_section(summary, primer, documents, (next_actions or {}).get("stage_label"))
+            _summary_section(summary, primer, documents, (next_actions or {}).get("stage_label"),
+                             summary_record, summary_state)
             if documents and (summary is not None or primer is not None) else None)}
 <p class="footer-note">
   Investigation {_e(number)} &middot; case information from the IDS investigations

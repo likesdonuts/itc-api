@@ -1,0 +1,716 @@
+{
+  "built_at": "2026-09-26T20:06:58+00:00",
+  "cost_usd": 0.120116,
+  "documents": [
+    {
+      "date": "2023-05-26",
+      "doc_id": "797350",
+      "file": "797350_2003050_2003050.pdf",
+      "kind": "complaint",
+      "pages_read": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20,
+        21,
+        22,
+        23,
+        24,
+        25,
+        26,
+        27,
+        28,
+        29,
+        30,
+        31,
+        32,
+        33,
+        34,
+        35,
+        36,
+        37,
+        38,
+        39,
+        40,
+        41,
+        42,
+        43,
+        44,
+        45
+      ],
+      "points": 32,
+      "rejected": 2,
+      "title": "Public Complaint and Exhibits",
+      "truncated": false,
+      "who": ""
+    },
+    {
+      "date": "2023-06-28",
+      "doc_id": "799478",
+      "file": "799478_2014454_2014454.pdf",
+      "kind": "notice_of_institution",
+      "pages_read": [
+        1,
+        2,
+        3,
+        4
+      ],
+      "points": 7,
+      "rejected": 1,
+      "title": "Institution of Investigation",
+      "truncated": false,
+      "who": ""
+    },
+    {
+      "date": "2023-08-04",
+      "doc_id": "801747",
+      "file": "801747_2032034_2032034.pdf",
+      "kind": "answer",
+      "pages_read": [
+        1,
+        2,
+        3,
+        4,
+        52,
+        53,
+        54,
+        55,
+        56,
+        57,
+        58,
+        59,
+        60,
+        61,
+        62,
+        63,
+        64,
+        65,
+        66,
+        67,
+        68,
+        69,
+        70,
+        71
+      ],
+      "points": 21,
+      "rejected": 11,
+      "title": "Response to the Complaint and Notice of Investigation",
+      "truncated": false,
+      "who": "Innoscience (Zhuhai) Technology Company, Ltd. and Innoscience America, Inc."
+    }
+  ],
+  "key": "337-1366",
+  "last_attempt": {
+    "at": "2026-09-26T20:06:58+00:00",
+    "error": null
+  },
+  "notes": {
+    "n1": {
+      "doc_id": "797350",
+      "kind": "complaint",
+      "page": 19,
+      "point": "Complainant Efficient Power Conversion Corporation (EPC) is a Delaware corporation headquartered in El Segundo, California, with additional offices in Aliso Viejo and San Jose, California, engaged in research and development, design, manufacturing, marketing, and sales of GaN semiconductor devices.",
+      "quote": "Complainant EPC is a Delaware corporation with its headquarters and principal place of business located at 909 N. Pacific Coast Highway, Suite 230, El Segundo, CA 90245.",
+      "topic": "parties"
+    },
+    "n10": {
+      "doc_id": "797350",
+      "kind": "complaint",
+      "page": 28,
+      "point": "U.S. Patent No. 10,312,335 (the '335 Patent), issued June 4, 2019, expiring April 8, 2030, entitled 'Gate with Self-Aligned Ledge for Enhancement Mode GaN Transistors,' with two independent claims and five dependent claims, of which EPC asserts claims 1-7 are infringed.",
+      "quote": "On June 4, 2019, the USPTO issued the '335 Patent, entitled Gate with Self-Aligned Ledge for Enhancement Mode GaN Transistors.",
+      "topic": "ip_asserted"
+    },
+    "n11": {
+      "doc_id": "797350",
+      "kind": "complaint",
+      "page": 22,
+      "point": "The '294 Patent reduces undesirable gate leakage in GaN FET transistors by making the GaN gate less conductive (more insulating), termed a 'compensated' GaN gate layer.",
+      "quote": "this undesirable gate leakage is reduced by making the GaN gate less conductive of electricity (i.e., more insulating), which is termed a \"compensated\" GaN gate layer.",
+      "topic": "ip_asserted"
+    },
+    "n12": {
+      "doc_id": "797350",
+      "kind": "complaint",
+      "page": 24,
+      "point": "The '508 Patent describes a self-aligned single-mask gate manufacturing process for enhancement-mode GaN transistors, improving upon traditional multi-mask processes that resulted in gate misalignment, wider gate length, higher gate charge, higher on-resistance, and higher manufacturing costs.",
+      "quote": "the self-aligned (single mask) process of the '508 Patent results in enhancement mode GaN transistors with significantly improved performance and lower cost.",
+      "topic": "ip_asserted"
+    },
+    "n13": {
+      "doc_id": "797350",
+      "kind": "complaint",
+      "page": 27,
+      "point": "The '347 Patent relates to methods of manufacturing GaN FETs with reduced gate leakage using a self-aligned manufacturing process resulting in a gate structure with a pair of ledges on the upper surface to reduce gate leakage along the gate structure periphery.",
+      "quote": "the inventors of the '347 Patent developed a novel and non-obvious self-aligned manufacturing process that results in a gate structure with a pair of ledges on the upper surface of the gate structure.",
+      "topic": "ip_asserted"
+    },
+    "n14": {
+      "doc_id": "797350",
+      "kind": "complaint",
+      "page": 29,
+      "point": "The '335 Patent relates to GaN FETs with reduced gate leakage current featuring a gate structure with a pair of self-aligned ledges of substantially equal widths on the upper surface of the gate material.",
+      "quote": "the inventors of the '335 Patent developed a novel and non-obvious GaN FET having a gate structure with a pair of self-aligned ledges of substantially equal widths on the upper surface of the gate material.",
+      "topic": "ip_asserted"
+    },
+    "n15": {
+      "doc_id": "797350",
+      "kind": "complaint",
+      "page": 18,
+      "point": "Accused Products are GaN-on-Si semiconductor devices, GaN FETs, GaN high electron mobility transistors, and products incorporating such transistors including bidirectional transistors, multichip modules, and demo boards.",
+      "quote": "GaN-on-Si semiconductor devices, GaN FETs, GaN high electron mobility transistors, GaN FETs, GaN high electron mobility transistors, and products incorporating such transistors, which are bidirectional transistors, multichip modules, and demo boards.",
+      "topic": "products"
+    },
+    "n16": {
+      "doc_id": "797350",
+      "kind": "complaint",
+      "page": 18,
+      "point": "EPC's Domestic Industry Products include representative products EPC2016C and EPC2215, 100V enhancement-mode GaN transistors, and a broad range of other EPC semiconductor devices practicing the Asserted Patents.",
+      "quote": "The domestic EPC products to which these investments are directed (\"Domestic Industry Products\" or \"DI Products\") include representative EPC products, EPC2016C and EPC2215.",
+      "topic": "products"
+    },
+    "n17": {
+      "doc_id": "797350",
+      "kind": "complaint",
+      "page": 31,
+      "point": "On February 21, 2023, Dr. Schubert placed an order with Innoscience America, Inc.'s local representative, and on March 6, 2023, the package from Innoscience (Zhuhai) Technology Co., Ltd. shipped from Shenzhen City, China and arrived at Dr. Schubert's address in Troy, New York.",
+      "quote": "On or about March 6, 2023, the package from Innoscience (Zhuhai) Technology Co., Ltd. shipped from Shenzhen City, China, People's Republic (the \"Package\") and arrived at Dr. Schubert's receiving address in Troy NY, USA.",
+      "topic": "importation"
+    },
+    "n18": {
+      "doc_id": "797350",
+      "kind": "complaint",
+      "page": 35,
+      "point": "The Complainant alleges Innoscience Representative Articles INN650DA140A and INN100W032A infringe claims 1-3 of the '294 Patent either literally or under the doctrine of equivalents, as demonstrated in infringement claim charts in Exhibits 28 and 32.",
+      "quote": "As demonstrated above, Respondents import, sell for importation, and/or sell after importation into the United States, Accused Products that directly infringe the '294 Patent, literally or under the doctrine of equivalents.",
+      "topic": "infringement"
+    },
+    "n19": {
+      "doc_id": "797350",
+      "kind": "complaint",
+      "page": 35,
+      "point": "The Complainant alleges Innoscience Representative Articles are made by processes that directly infringe claim 1 of the '508 Patent either literally or under the doctrine of equivalents, as demonstrated in claim charts in Exhibits 29 and 33.",
+      "quote": "Respondents import, sell for importation, and/or sell after importation into the United States, Accused Products made by a process that directly infringes the '508 Patent, literally or under the doctrine of equivalents.",
+      "topic": "infringement"
+    },
+    "n2": {
+      "doc_id": "797350",
+      "kind": "complaint",
+      "page": 20,
+      "point": "Respondents are Innoscience (Zhuhai) Technology Company, Ltd., headquartered in Zhuhai, Guangdong, China; Innoscience, Inc., a Delaware corporation affiliate; and Innoscience America, Inc., a California subsidiary at 5451 Great America Pkwy, Santa Clara, California.",
+      "quote": "Innoscience (Zhuhai) Technology Company, Ltd. has its principal place of business and headquarters at No. 39, Jinyuan 2nd Road, High-Tech Zone, Zhuhai, Guangdong, 519099 China.",
+      "topic": "parties"
+    },
+    "n20": {
+      "doc_id": "797350",
+      "kind": "complaint",
+      "page": 35,
+      "point": "The Complainant alleges upon information and belief Innoscience Representative Articles are made by processes that directly infringe claims 1, 2, and 3 of the '347 Patent either literally or under the doctrine of equivalents, as demonstrated in claim charts in Exhibits 30 and 34.",
+      "quote": "Upon information and belief, Respondents import, sell for importation, and/or sell after importation into the United States, Accused Products made by a process that directly infringes the '347 Patent, literally or under the doctrine of equivalents.",
+      "topic": "infringement"
+    },
+    "n21": {
+      "doc_id": "797350",
+      "kind": "complaint",
+      "page": 36,
+      "point": "The Complainant alleges upon information and belief Innoscience Representative Articles directly infringe claims 1-7 of the '335 Patent either literally or under the doctrine of equivalents, as demonstrated in claim charts in Exhibits 31 and 35.",
+      "quote": "Upon information and belief, Respondents import, sell for importation, and/or sell after importation into the United States, Accused Products that directly infringe the '335 Patent, literally or under the doctrine of equivalents.",
+      "topic": "infringement"
+    },
+    "n22": {
+      "doc_id": "797350",
+      "kind": "complaint",
+      "page": 16,
+      "point": "Chunhua Zhou, an EPC research and development engineer hired in 2012 with access to EPC's proprietary research and testing data including raw material sourcing, designs, specifications, functionality, failure analysis, and manufacturing methods, resigned in 2017 and immediately joined Innoscience as Chief Technological Officer.",
+      "quote": "Following his resignation from EPC and return to China, Mr. Zhou immediately joined Innoscience as its Chief Technological Officer in 2017.",
+      "topic": "other_unfair_acts"
+    },
+    "n23": {
+      "doc_id": "797350",
+      "kind": "complaint",
+      "page": 17,
+      "point": "Larry Chen, who started at EPC in Shenzhen, China as a Field Applications Engineer in 2011 with unrestricted access to EPC's supplier lists, customer lists, and customer demands, subsequently joined Innoscience as its Head of Sales in direct competition for EPC's customers.",
+      "quote": "Following his departure from EPC, Innoscience swiftly hired Mr. Chen as its Head of Sales, in direct competition for EPC's customers.",
+      "topic": "other_unfair_acts"
+    },
+    "n24": {
+      "doc_id": "797350",
+      "kind": "complaint",
+      "page": 18,
+      "point": "At the March 2023 Applied Power Electronics Conference, Innoscience presented GaN FET technology incorporating EPC's patented technology, announcing products with 'pin-to-pin compatibility with existing products' (EPC's patented products) and expressing intent to expand in U.S. markets including smartphones and data centers.",
+      "quote": "Innoscience even announces that its products have \"pin-to-pin compatibility with existing products,\" i.e., EPC's existing patented GaN FET products",
+      "topic": "other_unfair_acts"
+    },
+    "n25": {
+      "doc_id": "797350",
+      "kind": "complaint",
+      "page": 13,
+      "point": "EPC's domestic industry comprises significant investments in plant and equipment and significant employment of labor and capital in California, with the majority of EPC's U.S. employees involved in research and development, administration, or marketing.",
+      "quote": "The majority of EPC's U.S. employees are involved in research and development, administration, or marketing.",
+      "topic": "domestic_industry"
+    },
+    "n26": {
+      "doc_id": "797350",
+      "kind": "complaint",
+      "page": 13,
+      "point": "EPC holds over 50 U.S. patents and over 150 worldwide relating to GaN devices and circuits, and was the first to market mass-producible, high-volume GaN-based power devices, transforming GaN from a scientific curiosity to widely accepted technology.",
+      "quote": "EPC holds over 50 U.S. patents and over 150 worldwide relating to GaN devices and circuits.",
+      "topic": "domestic_industry"
+    },
+    "n27": {
+      "doc_id": "797350",
+      "kind": "complaint",
+      "page": 13,
+      "point": "EPC developed and delivered the first commercial enhancement-mode GaN transistors in 2009 and sells GaN devices covered by the Asserted Patents worldwide to industry leaders in computing, automotive, solar, robotics, drones, medical electronics, and LIDAR, and in consumer products.",
+      "quote": "Since inception, EPC has been an innovator in GaN technology, developing and then delivering the first commercial enhancement-mode GaN transistors in 2009.",
+      "topic": "domestic_industry"
+    },
+    "n28": {
+      "doc_id": "797350",
+      "kind": "complaint",
+      "page": 39,
+      "point": "Approximately 72% of EPC's United States employees are employed in roles associated with research and development, design, engineering, supply chain management, sales, marketing, warranty, customer service, executive, intellectual property protection, and business operations related to Domestic Industry Products.",
+      "quote": "approximately 72% of its United States employees are employed in roles associated with the research and development, design, engineering, supply chain and operation management, sales, marketing, warranty, customer service, executive, intellectual property protection",
+      "topic": "domestic_industry"
+    },
+    "n29": {
+      "doc_id": "797350",
+      "kind": "complaint",
+      "page": 40,
+      "point": "EPC requests a limited exclusion order barring Innoscience and its subsidiaries, affiliates, agents, successors, and assigns from importing into the United States any GaN semiconductor devices and products containing the same that infringe or are made by processes infringing the Asserted Patents.",
+      "quote": "a limited exclusion order be entered against each named Respondent and its subsidiaries, affiliates, agents, successors, and assigns, in order to remedy the Respondents' violation of Section 337",
+      "topic": "relief"
+    },
+    "n3": {
+      "doc_id": "797350",
+      "kind": "complaint",
+      "page": 12,
+      "point": "Alexander Lidow is EPC's Chief Executive Officer with over forty years of semiconductor industry experience, including a career at International Rectifier where he was instrumental in inventing HEXFET power MOSFETs, and is a prolific GaN patent inventor and 2019 IEEE Hall of Fame inductee.",
+      "quote": "Alexander Lidow, the Chief Executive Officer of EPC, has over forty years of experience in the semiconductor industry.",
+      "topic": "parties"
+    },
+    "n30": {
+      "doc_id": "797350",
+      "kind": "complaint",
+      "page": 41,
+      "point": "EPC requests permanent cease and desist orders prohibiting Respondents from importation, sale for importation, sale after importation, marketing, distributing, offering for sale, selling, transferring, advertising, soliciting agents or distributors, and aiding or abetting others in the importation, sale, or distribution of infringing articles.",
+      "quote": "a cease and desist order is appropriate for all named Respondents under Section 337(f), which states that the Commission may issue a cease and desist order against any person violating Section 337",
+      "topic": "relief"
+    },
+    "n31": {
+      "doc_id": "797350",
+      "kind": "complaint",
+      "page": 19,
+      "point": "EPC requests that a bond be imposed on Innoscience's importation of infringing articles during the 60-day Presidential review period pursuant to 19 U.S.C. \u00a7 1337(j) to prevent further injury to EPC's domestic industry.",
+      "quote": "EPC requests that the Commission impose a bond upon Innoscience's importation of infringing articles during the 60-day Presidential review period",
+      "topic": "relief"
+    },
+    "n32": {
+      "doc_id": "797350",
+      "kind": "complaint",
+      "page": 40,
+      "point": "EPC will assert all Asserted Patents against Respondents in a district court proceeding in the United States District Court for the Central District of California on or by May 24, 2023, with no other past or present litigations between Complainant and Respondents.",
+      "quote": "Complainant will assert all Asserted Patents against Respondents in a district court proceeding in the United States District Court for the Central District of California on or by May 24, 2023.",
+      "topic": "related_proceedings"
+    },
+    "n33": {
+      "doc_id": "799478",
+      "kind": "notice_of_institution",
+      "page": 2,
+      "point": "The complainant is Efficient Power Conversion Corporation of El Segundo, California.",
+      "quote": "Efficient Power Conversion Corporation 909 N. Pacific Coast Highway, Suite 230 El Segundo, CA 90245",
+      "topic": "parties"
+    },
+    "n34": {
+      "doc_id": "799478",
+      "kind": "notice_of_institution",
+      "page": 2,
+      "point": "The named respondents are Innoscience (Zhuhai) Technology Company, Ltd., located in Zhuhai, China, and Innoscience America, Inc., located in Santa Clara, California.",
+      "quote": "Innoscience (Zhuhai) Technology Company, Ltd. No. 39, Jinyuan 2nd Road, High-Tech Zone Zhuhai, Guangdong 519099 China Innoscience America, Inc. 5451 Great America Pkwy, Suite 125 Santa Clara, CA 95054",
+      "topic": "parties"
+    },
+    "n35": {
+      "doc_id": "799478",
+      "kind": "notice_of_institution",
+      "page": 3,
+      "point": "The Office of Unfair Import Investigations is a party to the investigation.",
+      "quote": "The Office of Unfair Import Investigations, U.S. International Trade Commission, 500 E Street, S.W., Suite 401, Washington, D.C. 20436",
+      "topic": "staff"
+    },
+    "n36": {
+      "doc_id": "799478",
+      "kind": "notice_of_institution",
+      "page": 2,
+      "point": "The investigation covers infringement of claims 1-3 of U.S. Patent No. 8,350,294, claim 1 of U.S. Patent No. 8,404,508, claims 1-3 of U.S. Patent No. 9,748,347, and claims 1-7 of U.S. Patent No. 10,312,335.",
+      "quote": "infringement of one or more of claims 1-3 of the '294 patent; claim 1 of the '508 patent; claims 1-3 of the '347 patent; and claims 1-7 of the '335 patent",
+      "topic": "scope"
+    },
+    "n37": {
+      "doc_id": "799478",
+      "kind": "notice_of_institution",
+      "page": 2,
+      "point": "The products at issue are \"GaN-on-Si semiconductor devices, GaN FETs, GaN high electron mobility transistors, and products incorporating such transistors, which are bidirectional transistors, multichip modules, and demo boards.\"",
+      "quote": "GaN-on-Si semiconductor devices, GaN FETs, GaN high electron mobility transistors, and products incorporating such transistors, which are bidirectional transistors, multichip modules, and demo boards",
+      "topic": "products"
+    },
+    "n38": {
+      "doc_id": "799478",
+      "kind": "notice_of_institution",
+      "page": 1,
+      "point": "The complainant requests issuance of a limited exclusion order and cease and desist orders.",
+      "quote": "The complainant requests that the Commission institute an investigation and, after the investigation, issue a limited exclusion order and cease and desist orders.",
+      "topic": "other"
+    },
+    "n39": {
+      "doc_id": "799478",
+      "kind": "notice_of_institution",
+      "page": 1,
+      "point": "The complaint was filed on May 26, 2023, with supplements filed on June 14 and 15, 2023.",
+      "quote": "a complaint was filed with the U.S. International Trade Commission on May 26, 2023, under section 337 of the Tariff Act of 1930, as amended, on behalf of Efficient Power Conversion Corporation of El Segundo, California. Supplements to the complaint were filed on June 14 and 15, 2023.",
+      "topic": "other"
+    },
+    "n4": {
+      "doc_id": "797350",
+      "kind": "complaint",
+      "page": 14,
+      "point": "GaN semiconductor technology provides higher efficiency, smaller size, and lower cost compared to silicon-based MOSFET devices, with superior crystalline qualities enabling superior conductivity and faster transistor switching speeds than silicon.",
+      "quote": "GaN exhibits superior crystalline qualities and allows for superior conductivity and faster transistor switching speeds than silicon.",
+      "topic": "technology"
+    },
+    "n40": {
+      "doc_id": "801747",
+      "kind": "answer",
+      "page": 1,
+      "point": "The respondents are Innoscience (Zhuhai) Technology Company, Ltd., located in Zhuhai, Guangdong, China, and Innoscience America, Inc., located in Santa Clara, California.",
+      "quote": "Innoscience (Zhuhai) Technology Company, Ltd. No. 39, Jinyuan 2nd Road, High-Tech Zone Zhuhai, Guangdong 519099 China Innoscience America, Inc. 5451 Great America Pkwy, Suite 125 Santa Clara, CA 95054",
+      "topic": "respondents"
+    },
+    "n41": {
+      "doc_id": "801747",
+      "kind": "answer",
+      "page": 55,
+      "point": "Respondents allege that Dr. Beach, an inventor of the '294 and '508 Patents, deliberately withheld material patents and patent applications he filed during his employment at International Rectifier (IR) from the Patent Office during prosecution, constituting inequitable conduct.",
+      "quote": "On information and belief, Dr. Beach deliberately withheld material patents and patent applications that Dr. Beach filed during his employment at IR from the Patent Office.",
+      "topic": "unenforceability"
+    },
+    "n42": {
+      "doc_id": "801747",
+      "kind": "answer",
+      "page": 56,
+      "point": "Respondents allege that Dr. Beach withheld prior publications from the Patent Office during prosecution of the '294 Patent, including disclosure of passivation of p-type impurities using hydrogen, which the '294 patent claims as a critical differentiating step.",
+      "quote": "the '294 patent identifies passivation of a p-type impurity using hydrogen as the purported critical step . . . that differentiates the device of the present invention from the prior art device",
+      "topic": "unenforceability"
+    },
+    "n43": {
+      "doc_id": "801747",
+      "kind": "answer",
+      "page": 55,
+      "point": "Respondents allege that during prosecution of the '294 Patent, the Examiner stated he was unaware of prior art showing III-nitride transistors with specified layers, but Dr. Beach had previously disclosed such transistors in his earlier patents ('649, '001, and '807 publications).",
+      "quote": "he was unaware of any prior art which suggests or renders obvious a column III nitride transistor with the layers recited in claim 1",
+      "topic": "unenforceability"
+    },
+    "n44": {
+      "doc_id": "801747",
+      "kind": "answer",
+      "page": 58,
+      "point": "Respondents allege that Dr. Beach deliberately withheld the '215 patent and related applications from the Patent Office during prosecution of the '508 Patent, which discloses the same self-aligned gate metal and doped GaN materials using a single photomask.",
+      "quote": "On information and belief, Dr. Beach deliberately withheld material patents and patent applications that Dr. Beach filed during his employment at IR from the Patent Office during the prosecution of the '508 patent.",
+      "topic": "unenforceability"
+    },
+    "n45": {
+      "doc_id": "801747",
+      "kind": "answer",
+      "page": 58,
+      "point": "The '215 patent discloses a device with a self-aligned gate metal material and doped GaN material, and a method of using a single mask to etch both materials, as claimed in the '508 Patent.",
+      "quote": "the '215 patent discloses such a self-aligned device and a method of using a single photo mask to etch the materials to produce the device",
+      "topic": "unenforceability"
+    },
+    "n46": {
+      "doc_id": "801747",
+      "kind": "answer",
+      "page": 62,
+      "point": "Respondents allege that Mr. Soffen misrepresented to the USPTO during prosecution of the '347 Patent that the entire delay in claiming priority to prior-filed applications was 'unintentional,' when in fact the applicants intentionally excluded the '508 patent and related applications from the original priority claim.",
+      "quote": "on information and belief Mr. Soffen misrepresented to the USPTO that the entire delay was unintentional",
+      "topic": "unenforceability"
+    },
+    "n47": {
+      "doc_id": "801747",
+      "kind": "answer",
+      "page": 64,
+      "point": "Respondents allege that EPC intentionally excluded the delayed priority applications from the original Application Data Sheet filed with the '347 Patent, as evidenced by the use of different attorney docket numbers ('E0101.0032' versus 'E0101.0006') for the originally claimed and delayed claimed priority applications.",
+      "quote": "the prosecution counsel used a different docket no. E0101.0006 for the delayed claimed priority applications",
+      "topic": "unenforceability"
+    },
+    "n48": {
+      "doc_id": "801747",
+      "kind": "answer",
+      "page": 63,
+      "point": "Respondents allege that the Petition for Unintentionally Delayed Domestic Benefit Claim was filed almost fourteen months after the January 23, 2015 Information Disclosure Statement citing the '508 patent publication, and only on March 18, 2016, the last day to respond to the Non-Final Office Action.",
+      "quote": "the applicants did not file the Petition for Unintentionally Delayed Domestic Benefit Claim until March 18, 2016, almost 14 months after the IDS's submission",
+      "topic": "unenforceability"
+    },
+    "n49": {
+      "doc_id": "801747",
+      "kind": "answer",
+      "page": 65,
+      "point": "Respondents allege that Mr. Soffen's misrepresentation regarding the unintentional nature of the delay was material to patentability of the '347 Patent, because it caused the USPTO to grant the petition and withdraw the rejection based on Lidow-843 (the '508 patent publication).",
+      "quote": "Mr. Soffen's misrepresentation that the entire delay in claiming priority to the delayed domestic priority applications was unintentional was material to the patentability of the '347 patent",
+      "topic": "unenforceability"
+    },
+    "n5": {
+      "doc_id": "797350",
+      "kind": "complaint",
+      "page": 15,
+      "point": "Enhancement-mode GaN FETs are normally in the 'off' state and require application of voltage to switch to the 'on' state, preventing short circuits and providing better controllability than depletion-mode GaN FETs introduced in 2004 which required active voltage application to turn off.",
+      "quote": "EPC's eGaN\u00ae FETs are a vast improvement over depletion-mode GaN FETs because they are normally \"off\" and require the application of voltage (i.e., power) to switch to the \"on\"-state.",
+      "topic": "technology"
+    },
+    "n50": {
+      "doc_id": "801747",
+      "kind": "answer",
+      "page": 66,
+      "point": "Respondents allege that Mr. Soffen's misrepresentation during prosecution of the '347 Patent was also material to the allowance of the '335 Patent, because the '335 Patent's priority chain relies on the '347 Patent's ability to claim priority to the prior-filed applications.",
+      "quote": "The above priority chain relies on the '347 patent's ability to claim priority to the other prior-filed applications. But for Mr. Soffen's misrepresentation during the prosecution of the '347 patent, the applicants would not have been entitled to make this priority claim.",
+      "topic": "unenforceability"
+    },
+    "n51": {
+      "doc_id": "801747",
+      "kind": "answer",
+      "page": 67,
+      "point": "Respondents deny that they have committed any unfair acts and assert that Innoscience has not infringed any claim of the asserted patents.",
+      "quote": "Innoscience has committed no unfair acts.",
+      "topic": "general_response"
+    },
+    "n52": {
+      "doc_id": "801747",
+      "kind": "answer",
+      "page": 67,
+      "point": "Respondents allege, on information and belief, that a domestic industry in the United States relating to technology allegedly protected by the asserted patents does not exist under 19 U.S.C. \u00a7\u00a7 1337(a)(3)(A), (B), or (C).",
+      "quote": "a domestic industry in the United States, relating to technology allegedly protected by the Asserted Patents, does not exist under 19 U.S.C. \u00a7\u00a7 1337(a)(3)(A), (B), or (C)",
+      "topic": "domestic_industry"
+    },
+    "n53": {
+      "doc_id": "801747",
+      "kind": "answer",
+      "page": 67,
+      "point": "Respondents assert prosecution history estoppel as a defense, barring EPC from asserting infringement under the doctrine of equivalents for any claims of the asserted patents and from adopting claim construction positions contrary to statements and amendments made during prosecution.",
+      "quote": "Prosecution history estoppel bars EPC from asserting infringement under the doctrine of equivalents for any claims of the Asserted Patents",
+      "topic": "other_defenses"
+    },
+    "n54": {
+      "doc_id": "801747",
+      "kind": "answer",
+      "page": 67,
+      "point": "Respondents argue that the relief sought by the Complainant is not in the public interest and would have a detrimental effect upon public health and welfare, competitive conditions in the U.S. economy, and the production of like or directly competitive articles in the U.S.",
+      "quote": "the detrimental effect such relief would have upon the public health and welfare, competitive conditions in the United States economy, the production of like or directly competitive articles in the United States",
+      "topic": "relief"
+    },
+    "n55": {
+      "doc_id": "801747",
+      "kind": "answer",
+      "page": 1,
+      "point": "Respondents provide information regarding the respondents' principal place of business and address for service in the United States, identifying Innoscience America, Inc. in Santa Clara, California.",
+      "quote": "Innoscience America, Inc. 5451 Great America Pkwy, Suite 125 Santa Clara, CA 95054",
+      "topic": "importation"
+    },
+    "n56": {
+      "doc_id": "801747",
+      "kind": "answer",
+      "page": 68,
+      "point": "Respondents reserve the right to amend, modify, or supplement the Response to include other affirmative defenses that may be discovered during the course of the investigation.",
+      "quote": "Innoscience reserves the right to amend, modify, or supplement its Response to include other affirmative defenses, or to otherwise address the same during discovery",
+      "topic": "general_response"
+    },
+    "n57": {
+      "doc_id": "801747",
+      "kind": "answer",
+      "page": 57,
+      "point": "Respondents allege that the German Patent Office found Dr. Beach's prior '807 Publication material to the patentability of German Patent Application No. 11 2010 001 589.9, the German counterpart to the '294 Patent, rejecting claims as unpatentable in view of the '807 Publication.",
+      "quote": "The German Patent Office found Mr. Beach's prior '807 Publication material to the patentability of the German counterpart to the '294 Patent, concluding the presented claims were unpatentable",
+      "topic": "unenforceability"
+    },
+    "n58": {
+      "doc_id": "801747",
+      "kind": "answer",
+      "page": 58,
+      "point": "Respondents allege that Dr. Beach deliberately withheld the '215 patent during prosecution of the '508 Patent, and Dr. Beach was fully aware of the existence, content, and published versions of the '215 patent prior to the issuance of the '508 patent.",
+      "quote": "the '215 patent was also published as US 2006/0006413 A1, and filed and published in counterpart foreign patent publications WO 2005/057624 A2, TW1258798 B, and JP 2007519231 A, all prior to the issuance of the '508 patent",
+      "topic": "unenforceability"
+    },
+    "n59": {
+      "doc_id": "801747",
+      "kind": "answer",
+      "page": 68,
+      "point": "Respondents request that the Commission find no violation of Section 337, find that Innoscience has not infringed any claim of the asserted patents, find that the claims are invalid and unenforceable, deny all relief requested by complainant, and terminate the investigation with prejudice.",
+      "quote": "Find no violation of Section 337 of the Tariff Act of 1930, as amended; Find that Innoscience has not infringed any claim of the Asserted Patents; Find that the claims of the Asserted Patents are invalid and unenforceable",
+      "topic": "general_response"
+    },
+    "n6": {
+      "doc_id": "797350",
+      "kind": "complaint",
+      "page": 14,
+      "point": "GaN-on-Si technology allows GaN FETs to be formed on inexpensive silicon-based substrates and manufactured using existing retrofitted MOSFET manufacturing facilities, avoiding significant new investment costs.",
+      "quote": "GaN FETs are formed on inexpensive silicon-based substrates and can be made using existing (retrofitted) MOSFET manufacturing facilities, thereby avoiding significant new investment costs.",
+      "topic": "technology"
+    },
+    "n60": {
+      "doc_id": "801747",
+      "kind": "answer",
+      "page": 56,
+      "point": "Respondents allege that during prosecution of the '294 Patent, the applicant argued that prior art failed to teach forming a 'compensated GaN layer above a barrier layer,' but Dr. Beach had previously disclosed this in the '649 patent and other prior patents.",
+      "quote": "during prosecution of '294 Patent, the Applicant argued that the prior art failed to teach[] or suggest[] forming a 'compensated GaN layer above [a] barrier layer'",
+      "topic": "unenforceability"
+    },
+    "n7": {
+      "doc_id": "797350",
+      "kind": "complaint",
+      "page": 21,
+      "point": "U.S. Patent No. 8,350,294 (the '294 Patent), issued January 8, 2013, expiring August 9, 2030, entitled 'Compensated Gate MISFET and Method for Fabricating the Same,' with independent claims 1-4 and dependent claims, of which EPC asserts claims 1, 2, and 3 are infringed.",
+      "quote": "On January 8, 2013, the United States Patent and Trademark Office (\"USPTO\") issued the '294 Patent, entitled Compensated Gate MISFET and Method for Fabricating the Same.",
+      "topic": "ip_asserted"
+    },
+    "n8": {
+      "doc_id": "797350",
+      "kind": "complaint",
+      "page": 23,
+      "point": "U.S. Patent No. 8,404,508 (the '508 Patent), issued March 3, 2015, expiring August 16, 2031, entitled 'Enhancement Mode GaN HEMT Device and Method for Fabricating the Same,' with three independent claims and two dependent claims, of which EPC asserts claim 1 is infringed.",
+      "quote": "On March 3, 2015, the USPTO issued the '508 Patent, entitled Enhancement Mode GaN HEMT Device and Method for Fabricating the Same.",
+      "topic": "ip_asserted"
+    },
+    "n9": {
+      "doc_id": "797350",
+      "kind": "complaint",
+      "page": 25,
+      "point": "U.S. Patent No. 9,748,347 (the '347 Patent), issued August 29, 2017, expiring June 11, 2031, entitled 'Gate with Self-Aligned Ledge for Enhancement Mode GaN Transistors,' with one independent claim and two dependent claims, of which EPC asserts claims 1, 2, and 3 are infringed.",
+      "quote": "On August 29, 2017, the USPTO issued the '347 Patent, entitled Gate with Self-Aligned Ledged for Enhancement Mode GaN Transistors.",
+      "topic": "ip_asserted"
+    }
+  },
+  "notes_model": "claude-haiku-4-5-20251001",
+  "notes_version": 2,
+  "pending": [],
+  "phase": 2,
+  "sources": [
+    "797350",
+    "799478",
+    "801747"
+  ],
+  "summary": {
+    "about": [
+      {
+        "cites": [
+          "n1",
+          "n2",
+          "n4",
+          "n5",
+          "n6"
+        ],
+        "text": "Complainant Efficient Power Conversion Corporation (EPC) is a California-based company that researches, designs, manufactures, and sells gallium nitride (GaN) semiconductor devices, a technology said to offer higher efficiency, smaller size, and lower cost than older silicon-based transistors. The named respondents are Innoscience (Zhuhai) Technology Company, Ltd., a Chinese manufacturer, and its U.S. affiliate Innoscience America, Inc. of Santa Clara, California. EPC's products are enhancement-mode GaN transistors, a type that stays off unless voltage is applied, which EPC says are safer and more controllable than earlier depletion-mode designs, and are built on inexpensive silicon substrates (GaN-on-Si) so they can be made in existing factories."
+      },
+      {
+        "cites": [
+          "n7",
+          "n8",
+          "n9",
+          "n10",
+          "n11",
+          "n12",
+          "n13",
+          "n14",
+          "n15",
+          "n33",
+          "n34",
+          "n36",
+          "n37",
+          "n39"
+        ],
+        "text": "EPC asserts four U.S. patents: the '294 patent, covering a 'compensated' gate layer that reduces current leakage; the '508 patent, covering a self-aligned, single-mask manufacturing process for the transistor gate; the '347 patent, and the '335 patent, both covering a gate structure with self-aligned 'ledges' that further reduce leakage. The accused products are GaN-on-Si transistors, high electron mobility transistors, and related components such as bidirectional transistors, multichip modules, and demo boards sold by Innoscience. The Commission instituted the investigation to determine whether importing and selling these products violates Section 337, a trade statute barring unfair imports, based on alleged infringement of specific claims (numbered elements defining the scope of a patent) of the four patents."
+      }
+    ],
+    "allegations": [
+      {
+        "cites": [
+          "n17",
+          "n18",
+          "n19",
+          "n20",
+          "n21"
+        ],
+        "text": "EPC alleges that Innoscience's products entered the United States, pointing to a March 2023 shipment from Innoscience's Chinese manufacturing arm that arrived at a purchaser's address in New York after being ordered through Innoscience America's local representative. EPC further alleges that specific Innoscience products, identified as INN650DA140A and INN100W032A, directly infringe the asserted patents' claims either literally or under the doctrine of equivalents (a way of finding infringement even without an exact literal match), and that some of these products are made using processes that themselves infringe the patented manufacturing methods."
+      },
+      {
+        "cites": [
+          "n16",
+          "n25",
+          "n26",
+          "n27",
+          "n28"
+        ],
+        "text": "To bring a Section 337 case, a complainant must show a 'domestic industry'\u2014its own qualifying U.S. activity tied to the patented technology. EPC alleges this requirement is met through its significant U.S. investment in plant, equipment, research and development, engineering, and other functions, with about 72% of its U.S. workforce tied to products practicing the asserted patents, including representative transistors EPC2016C and EPC2215."
+      },
+      {
+        "cites": [
+          "n22",
+          "n23",
+          "n24"
+        ],
+        "text": "EPC also alleges related misconduct, claiming that two former EPC employees who had access to proprietary technical and customer information later joined Innoscience in senior technical and sales roles, and that Innoscience publicly touted GaN products with 'pin-to-pin compatibility' with EPC's patented products while announcing plans to expand into U.S. markets."
+      },
+      {
+        "cites": [
+          "n29",
+          "n30",
+          "n31"
+        ],
+        "text": "EPC asks the Commission for a limited exclusion order (a bar on importing the infringing products, as opposed to a broader order covering an entire industry) against Innoscience and its affiliates, permanent cease and desist orders barring further sale, marketing, and distribution of the accused products in the United States, and a bond during the 60-day period in which the President may review any Commission remedy."
+      }
+    ],
+    "answers": [
+      {
+        "cites": [
+          "n40",
+          "n41",
+          "n42",
+          "n43",
+          "n44",
+          "n45",
+          "n46",
+          "n47",
+          "n48",
+          "n49",
+          "n50",
+          "n51",
+          "n52",
+          "n53",
+          "n54",
+          "n59"
+        ],
+        "doc_id": "801747",
+        "group": "A1",
+        "text": "Innoscience denies infringing any claim of the asserted patents and denies committing any unfair acts, and disputes that EPC has a qualifying domestic industry under Section 337. Innoscience raises prosecution history estoppel, arguing that statements and amendments EPC's patent owners made to the Patent Office during prosecution bar EPC from now asserting infringement under the doctrine of equivalents or adopting contrary claim interpretations. Innoscience also alleges inequitable conduct and unenforceability, contending that inventor Dr. Beach withheld his own prior patents and publications material to patentability during prosecution of the '294 and '508 patents, and that EPC's patent counsel misrepresented to the Patent Office that a delay in claiming priority to earlier applications was 'unintentional' in order to overcome a prior-art rejection affecting the '347 and, derivatively, the '335 patents. Innoscience further argues that the exclusion and cease and desist relief EPC seeks would harm the public interest, competitive conditions, and U.S. production of competing articles, and asks the Commission to find no violation, declare the patents invalid and unenforceable, and terminate the investigation.",
+        "who": "Innoscience (Zhuhai) Technology Company, Ltd. and Innoscience America, Inc."
+      }
+    ],
+    "headline": "Efficient Power Conversion Corporation (EPC) accuses Innoscience (Zhuhai) Technology Company, Ltd. and its U.S. affiliate Innoscience America, Inc. of importing and selling gallium nitride (GaN) semiconductor transistors and related products that infringe four EPC patents on GaN transistor structures and manufacturing methods."
+  },
+  "title": "Certain Semiconductor Devices and Products Containing the Same",
+  "total_cost_usd": 0.2087,
+  "warnings": [],
+  "writer_model": "claude-sonnet-5"
+}

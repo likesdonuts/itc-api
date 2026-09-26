@@ -37,7 +37,7 @@ datalayer/            DATA LAYER - talks to IDS and EDIS, owns data/
   backfill.py           process 2, once: document lists for every case, resumable
   counsel.py            process 3: who represents whom, from the filings
   nextactions/          each open case's stage, dates and rule-based deadlines
-  summary/              the case summary: what it reads, what it costs (phase 1)
+  summary/              the case summary: what it reads and costs, notes, the writing
   analytics/            representation analytics: firms, attorneys, companies as entities
   client.py             HTTP client for the EDIS API and the IDS file
   store.py              reads/writes data/*.json, resolves case numbers
@@ -57,6 +57,8 @@ data/                 the handoff between the layers
   sync_log.csv          one row per sync, for watching the daily download
   daily_sync_log.csv    one row per daily job: how long each step took, EDIS requests
   summaries/pages.json  page counts of the documents a case summary reads  <- summary-plan
+  summaries/<number>.json, notes/   case summaries and each document's notes (paid)  <- summary
+  summary_costs.csv     every case-summary run's model cost
   documents/<number>/   downloaded PDFs (gitignored)
 content/              hand-written text shown on the site: section337_primer.md
 summary_config.json   the case summary's models, budget and reading limits
@@ -122,11 +124,12 @@ The panel at the top of the list page does the day's work:
 - An open case's page has a **Next actions** tab: its stage, what comes next
   and when, every date on record, and what it is waiting on (see
   [Next actions](#next-actions)).
-- A case with documents has a **Summary** tab: which documents a
-  plain-English case summary would read, how much of each, and what it would
-  cost, with **Estimate cost** to count the pages; plus the "How Section 337
-  investigations work" primer (see [Case summary](#case-summary)). Summaries
-  themselves are not written yet.
+- A case with documents has a **Summary** tab: **Write summary** writes a
+  plain-English account of the complaint and the answers (paid, about $0.10
+  to $0.40 a case), each paragraph citing the pages it rests on; before that,
+  the tab shows which documents it would read and what it would cost
+  (**Estimate cost** counts the pages). Plus the "How Section 337
+  investigations work" primer (see [Case summary](#case-summary)).
 
 Its status line says whether today's sync has run, which day's case data is
 loaded, when documents were last fetched, and when the EDIS token expires.
@@ -207,6 +210,7 @@ own from the command line.
 | `python cli.py docs 337-1478 --appearances` | EDIS | Lists every document but downloads only the Notice of Appearance PDFs. |
 | `python cli.py backfill` | EDIS | Lists the documents (no PDFs) of every case that has no list yet, newest first; resumable. Refuses while the app is open (use its button). |
 | `python cli.py claims 337-1366` | Federal Register | Builds or updates the claims analysis for the investigations you name (also the **Create / Update claims analysis** button on a case page). |
+| `python cli.py summary 337-1366` | EDIS + Anthropic (own budget) | Writes or updates the case summary (also the **Write summary** button): notes on the complaint, notice and answers, then the summary. Pays only for documents not read before. |
 | `python cli.py summary-plan 337-1366` | EDIS (attachment lists only) | What a case summary would read and cost; counts pages into `data/summaries/pages.json` (also the **Estimate cost** button on the Summary tab). `--offline` counts only PDFs on disk. Calls no model. |
 | `python cli.py counsel` | none | Process 3. Rebuilds who represents whom from the documents on disk. Runs by itself after `sync`, `parse`, `docs` and `refresh`. |
 | `python cli.py next-actions` | none | Rebuilds each open case's next actions (`data/next_actions.json`). Runs by itself with counsel, after every sync and fetch. `--orders` first reads new scheduling orders (EDIS + Anthropic, own budget), as the daily job does. |
@@ -882,7 +886,8 @@ Model calls need `ANTHROPIC_API_KEY` in `.env`, and
 ### Case summary
 
 ```
-python cli.py summary-plan 337-1366 337-1270
+python cli.py summary-plan 337-1366 337-1270   # what it would read and cost (free)
+python cli.py summary 337-1366 --render        # write it (paid)
 ```
 
 A plain-English account of an investigation for practitioners new to Section
@@ -891,12 +896,59 @@ before the hearing, and the ALJ's and the Commission's decisions, beside a
 hand-written primer on how Section 337 works. Written on demand, per case,
 in phases:
 
-1. **Phase 1 (this): what would be read, and what it would cost.** No model.
-2. Phase 2: the complaint and answers summarized. Claude Haiku 4.5 takes
-   notes on each document, with page references; Claude Sonnet 5 writes the
-   summary from the notes. Cached per document, so each is read once.
+1. **Phase 1: what would be read, and what it would cost.** No model.
+2. **Phase 2 (this): the complaint, the notice of institution and the
+   answers summarized.** See [Writing a summary](#writing-a-summary).
 3. Phase 3: the rulings and decisions, updates that read only new documents,
    and the claims analysis's findings folded in.
+
+#### Writing a summary
+
+`summary/build.py`, per case, for the documents phase 2 covers:
+
+1. **The file that is read, alone** (`fetch.py`). A complaint or answer
+   filing is many files; in filing order, the first whose first pages read
+   as a complaint (`claims/candidates.is_complaint_body`) or as a response to
+   one is taken -- an answer's exhibits can be longer than it (337-1366's
+   includes a 151-page thesis). At most three are tried. Only that file is
+   downloaded, and the document is marked `attachments_partial` in the
+   documents index, so **Fetch documents** still completes it. Other
+   documents: their longest file.
+2. **Its pages, page by page** (`text.py`): the `read_pages` first and last
+   pages, each its own text layer or local OCR, cached in
+   `data/summaries/text/` (gitignored).
+3. **Notes, by Claude Haiku 4.5** (`notes.py`): a strict `record_notes` tool
+   call per document. Each point has a topic (the list per kind of filing is
+   in `notes.TOPICS`), one or two sentences attributing it ("EPC alleges"),
+   a page and a quote of 8-25 words. **Code checks every quote** against its
+   page or the pages either side (letters and digits only, and at least 92%
+   alike, for OCR slips); a point whose quote is not there is rejected --
+   kept in the file with the reason, never used. Cached per document in
+   `data/summaries/notes/<id>.json` (tracked: paid for), reused until
+   `notes_version` changes.
+4. **The summary, by Claude Sonnet 5** (`write.py`): a strict
+   `write_summary` tool call that sees only the numbered notes, never the
+   filings: a headline, "What the case is about", "The complainant's
+   allegations", and a paragraph (or more) per answer group. Each paragraph
+   cites note numbers. **Code checks every citation**: an unknown number is
+   dropped, and a paragraph citing nothing is dropped, with a warning. It is
+   rewritten only when the set of documents read changes.
+
+On the page, each paragraph ends with one chip per page it cites ("p. 12",
+or "Answer p. 3" when it draws on more than one filing); hovering shows the
+quotes, clicking opens the PDF at that page. `data/summaries/<number>.json`
+(tracked) holds the summary, the notes it cites, the documents read, the
+warnings, and what this case's summaries have cost.
+
+The button follows the summary's state (`build.state`): **Write summary**;
+**Update summary** when phase 2 would read a document it has not (only that
+one is paid for); **Summary up to date**; **Retry** after a failure, which
+keeps the last good summary; or, at the budget, the message saying how to go
+on. An Anthropic account out of credit is reported as such.
+
+Pilot (2026-09-26): 337-1366 $0.12, 337-1384 $0.08, 337-1417 $0.12 --
+about 30-40 points kept per complaint, 1-5 rejected. 337-1270 stopped when
+the Anthropic account ran out of credit; its four finished notes are kept.
 
 **What is read** (`summary/select.py`, by rule from the documents index, free).
 A complaint filing runs to thousands of pages, nearly all exhibits, so:
@@ -926,13 +978,17 @@ model's price. A document not counted yet is costed at its page limit, so the
 estimate reads "Up to". Prices come from `claims_config.json`. For the pilot
 cases: 337-1366 about $0.24, 337-1384 $0.16, 337-1270 $0.37.
 
-**Overlap with the claims analysis.** The summary reads the same PDFs through
-the same text cache (`data/claims/text/`, OCR included), so a document the
-claims analysis already read ("Text on file") needs no download or OCR.
+**Overlap with the claims analysis.** The summary reads the PDFs the claims
+analysis downloaded ("Text on file" marks documents it has read), so they
+need no download. Its text cache does not keep page boundaries, so the
+summary reads the pages it needs itself (text layers are quick; scanned
+pages are OCR'd again).
 
 **Budget.** Its own: `budget_usd` in `summary_config.json` ($20), logged in
-`data/summary_costs.csv`. At the cap a run stops and asks for
-re-authorization (raise `budget_usd`), rather than carrying on.
+`data/summary_costs.csv`. Before every call, the most it could cost (its
+prompt plus `max_output_tokens`) is checked against what is left; a run that
+would pass the cap stops, keeping the notes already paid for, and says to
+raise `budget_usd` to go on -- re-authorization is a person's decision.
 
 **The primer** is `content/section337_primer.md`, written by hand and the
 same for every case, in a small Markdown subset (`summary/primer.py`). Its

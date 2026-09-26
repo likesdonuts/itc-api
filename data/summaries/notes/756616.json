@@ -1,0 +1,181 @@
+{
+  "cost_usd": 0.023282,
+  "date": "2021-11-15",
+  "doc_id": "756616",
+  "file": "756616_1727107_1727107.pdf",
+  "kind": "answer",
+  "model": "claude-haiku-4-5-20251001",
+  "notes_version": 2,
+  "overview": "This is Orly Shoe Corporation's response to Crocs, Inc.'s First Amended Complaint in a Section 337 investigation concerning alleged trademark infringement in casual footwear and packaging. Orly generally denies all allegations of unfair competition and trademark infringement, and asserts twenty-one affirmative defenses challenging the validity and enforceability of Crocs' trademarks and the existence of a domestic industry.",
+  "pages_read": [
+    1,
+    2,
+    3,
+    4,
+    86,
+    87,
+    88,
+    89,
+    90,
+    91,
+    92,
+    93,
+    94,
+    95,
+    96,
+    97,
+    98,
+    99,
+    100,
+    101,
+    102,
+    103,
+    104,
+    105
+  ],
+  "points": [
+    {
+      "page": 1,
+      "point": "Orly Shoe Corporation is the respondent answering the complaint, and the response indicates that Hobby Lobby Stores, Inc. is also listed as a respondent.",
+      "quote": "Respondent Orly Shoe Corp. (\"Orly\"), by its undersigned attorneys, hereby responds to the First Amended Complaint",
+      "topic": "respondents"
+    },
+    {
+      "page": 1,
+      "point": "Orly denies engaging in unfair competition or violating Section 337 through importation or sale of footwear products that infringe Crocs' intellectual property rights, and denies that any asserted trademark is valid and enforceable.",
+      "quote": "Orly denies that it has engaged in unfair competition or violated Section 337 by importing, selling for importation, or selling within the United States after importation any footwear products",
+      "topic": "general_response"
+    },
+    {
+      "page": 1,
+      "point": "Orly denies that its White Foam Clog Ladies Shoes product or any other Orly product infringes or violates any valid and enforceable intellectual property rights.",
+      "quote": "In the Complaint, Crocs specifically accused the Orly White Foam Clog Ladies Shoes product. Orly denies that the White Foam Clog Ladies Shoes product",
+      "topic": "general_response"
+    },
+    {
+      "page": 4,
+      "point": "Crocs asserts trademark registrations numbered 5,149,328 and 5,273,875 against Orly, as referenced in the certified copies included in the complaint appendices.",
+      "quote": "Orly admits that Appendix 3 is what Crocs purports to be a certified copy of U.S. Trademark Registration No. 5,149,328. Orly admits that Appendix 5 is what Crocs purports to be a certified copy of U.S. Trademark Registration No. 5,273,875",
+      "topic": "ip_asserted"
+    },
+    {
+      "page": 90,
+      "point": "Orly asserts that the asserted trademarks are functional and therefore invalid and unprotectable, with the underlying federal registrations subject to cancellation.",
+      "quote": "The Asserted Trademarks are functional, and are therefore invalid and unprotectable and the underlying federal registration should be cancelled",
+      "topic": "invalidity"
+    },
+    {
+      "page": 90,
+      "point": "Orly contends that the asserted trademarks are merely ornamental, not source-identifying, and therefore invalid and unprotectable with registrations subject to cancellation.",
+      "quote": "The Asserted Trademarks are merely ornamental, and are therefore invalid and unprotectable and the underlying federal registration should be cancelled",
+      "topic": "invalidity"
+    },
+    {
+      "page": 90,
+      "point": "Orly argues that the asserted trademarks lack inherent distinctiveness and have not acquired secondary meaning, making them invalid and unprotectable.",
+      "quote": "The Asserted Trademarks are not inherently distinctive, and have not acquired distinctiveness or secondary meaning, and are therefore invalid and unprotectable",
+      "topic": "invalidity"
+    },
+    {
+      "page": 91,
+      "point": "Orly alleges that the asserted trademarks are generic, comprising common and functional elements used widely throughout the shoe industry, and therefore cannot identify a particular source.",
+      "quote": "since it is vastly used and extremely common in the shoe industry, it cannot identify a particular source",
+      "topic": "invalidity"
+    },
+    {
+      "page": 90,
+      "point": "Orly asserts that the design elements claimed by Crocs are part of a genre of shoe not limited to a single source or manufacturer and therefore cannot convey trademark rights.",
+      "quote": "the design elements claimed by Crocs are part of a genre of shoe that is not limited to a single source or manufacturer and therefore, cannot convey trademark rights",
+      "topic": "invalidity"
+    },
+    {
+      "page": 92,
+      "point": "Orly denies that it has infringed any valid and enforceable trademark claim and asserts that its footwear sales do not create a likelihood of consumer confusion regarding source, sponsorship or affiliation.",
+      "quote": "Orly does not and has not infringed any valid and enforceable claim of Complainant's Asserted Trademarks and the sale of its footwear products do not create a likelihood of consumer confusion",
+      "topic": "non_infringement"
+    },
+    {
+      "page": 92,
+      "point": "Orly argues there exists no likelihood of confusion, deception or misleading of the public and that Crocs has failed to establish that the asserted trademarks are exclusively associated with it.",
+      "quote": "There exists no likelihood of confusion, deception or misleading of the public. Complainant has also failed to establish that the asserted trademarks are distinctive or exclusively associated with Complainant",
+      "topic": "non_infringement"
+    },
+    {
+      "page": 91,
+      "point": "Orly asserts that Crocs has not adequately alleged and cannot prove the existence of a domestic industry or that such industry is in the process of being established as required by Section 1337(a)(2) and (a)(3).",
+      "quote": "Complainant has not adequately alleged and cannot prove: (i) that a domestic industry exists; and/or (ii) that such domestic industry is in the process of being established, as is required under \u00a7 1337(a)(2)",
+      "topic": "domestic_industry"
+    },
+    {
+      "page": 91,
+      "point": "Orly contends that Crocs cannot establish a significant investment in plant, equipment, labor or capital relating to articles protected by the asserted trademarks.",
+      "quote": "Complainant cannot establish that it has made \"significant investment\" in plant equipment, labor, or capital relating to articles protected by each of the Asserted Trademarks",
+      "topic": "domestic_industry"
+    },
+    {
+      "page": 91,
+      "point": "Orly argues that Crocs cannot establish substantial investment in licensing, research and development, or other qualifying activities relating to the asserted midsole trademark sufficient to satisfy the economic prong of the domestic industry requirement.",
+      "quote": "Complainant cannot establish a \"substantial investment\" in licensing, research and development, or other qualifying activities relating to the Asserted Midsole Trademark",
+      "topic": "domestic_industry"
+    },
+    {
+      "page": 91,
+      "point": "Orly reserves the right to assert lack of domestic industry as a defense, noting no protectable industry exists or is being established relating to the asserted trademarks.",
+      "quote": "on information and belief, as no protectable industry exists or is being established in the United States as defined under Section 337 with respect to the Asserted Trademarks",
+      "topic": "domestic_industry"
+    },
+    {
+      "page": 93,
+      "point": "Orly asserts that Crocs' requests for relief are barred by the doctrine of laches.",
+      "quote": "Complainant's requests for relief are barred, in whole or in part, by the doctrine of laches",
+      "topic": "other_defenses"
+    },
+    {
+      "page": 93,
+      "point": "Orly contends that Crocs has abandoned the asserted trademarks through acts or omissions, rendering them invalid or unenforceable and the registrations subject to cancellation.",
+      "quote": "Complainant or its affiliates or predecessors-in-interest, has, through acts or omissions, abandoned at least the Asserted Trademarks",
+      "topic": "other_defenses"
+    },
+    {
+      "page": 93,
+      "point": "Orly asserts that Crocs is using the asserted trademark in violation of antitrust laws by seeking an improper and unconstitutional monopoly on the shoe design.",
+      "quote": "by seeking an improper and unconstitutional monopoly on the design at issue. This monopolization leads to an actual adverse effect on competition",
+      "topic": "other_defenses"
+    },
+    {
+      "page": 94,
+      "point": "Orly argues that the use by Orly of the asserted trademarks is protected by the fair use doctrine.",
+      "quote": "the use by Orly of any of the Asserted Trademarks is protected by the fair use doctrine",
+      "topic": "other_defenses"
+    },
+    {
+      "page": 94,
+      "point": "Orly asserts that the asserted trademarks are invalid or unenforceable under the doctrine of unclean hands.",
+      "quote": "The Asserted Trademarks are invalid and/ or unenforceable under the doctrine of unclean hands",
+      "topic": "other_defenses"
+    },
+    {
+      "page": 94,
+      "point": "Orly contends that Crocs' claims are barred at least in part by the applicable statute of limitations.",
+      "quote": "Complainant's claims are barred at least in part by the applicable statute of limitations",
+      "topic": "other_defenses"
+    },
+    {
+      "page": 95,
+      "point": "Orly requests that the Commission deny all relief requested in the complaint and find that Orly has not violated Section 337 or the Lanham Act.",
+      "quote": "Denying all relief requested in the Complaint; b) Finding that Orly has not violated Section 337 of the Tariff Act",
+      "topic": "relief"
+    },
+    {
+      "page": 95,
+      "point": "Orly requests that the Commission find the asserted trademarks invalid and unenforceable, and that no protectable domestic industry or substantial injury exists relating to the trademarks.",
+      "quote": "Finding that the Asserted Trademarks are invalid, unenforceable or both; e) Finding that there is no protectable domestic industry",
+      "topic": "relief"
+    }
+  ],
+  "rejected": [],
+  "taken_at": "2026-09-26T20:13:21+00:00",
+  "title": "Orly Shoe Corporation's Response to the First Amended Complaint and Notice of Investigation",
+  "truncated": false,
+  "who": "Orly Shoe Corporation; Hobby Lobby Stores, Inc."
+}

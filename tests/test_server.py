@@ -451,6 +451,32 @@ class TestSummaryEstimateJob(ServerTestCase):
         self.assertIn("EDIS", body["message"])
 
 
+class TestSummaryJob(ServerTestCase):
+    def test_it_writes_the_summary_and_rebuilds_the_page(self):
+        calls = []
+
+        def fake_run(store, key, **kwargs):
+            calls.append((key, kwargs.get("token")))
+            return {"sources": ["1", "2"], "cost_usd": 0.21, "warnings": [], "pending": []}
+
+        with mock.patch("datalayer.summary.build.run", fake_run):
+            job = self.run_job({"kind": "summary", "number": "337-TA-1478"})
+        self.assertEqual(calls, [("337-1478", "fake-token")])
+        self.assertEqual((job["level"], job["message"]), ("ok", "Written from 2 document(s). Model cost $0.2100."))
+
+    def test_at_the_budget_it_says_how_to_go_on(self):
+        from datalayer.summary import build as summary_build
+
+        def at_budget(store, key, **kwargs):
+            raise summary_build.BudgetReached("stopped at the $20.00 case-summary budget: ... raise budget_usd in "
+                                              "summary_config.json and run the summary again")
+
+        with mock.patch("datalayer.summary.build.run", at_budget):
+            job = self.run_job({"kind": "summary", "number": "337-1478"})
+        self.assertEqual(job["level"], "warn")
+        self.assertTrue(job["message"].startswith("Stopped at the $20.00 case-summary budget"))
+
+
 class TestStatus(ServerTestCase):
     def test_it_reports_the_last_sync_and_the_token_expiry(self):
         store = Store.load(self.data_dir)

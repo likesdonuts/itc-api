@@ -192,6 +192,9 @@ def _edis_documents(
     previous_attachments = {
         str(doc.get("id")): doc.get("attachments") for doc in previous or []
     }
+    # Documents only some of whose files were downloaded (the case summary
+    # fetches just the file it reads): a download still completes them.
+    partial = {str(doc.get("id")) for doc in previous or [] if doc.get("attachments_partial")}
 
     for row in rows:
         doc_id = row.get("id")
@@ -206,27 +209,33 @@ def _edis_documents(
         # A document whose PDFs are already on disk is not asked about again:
         # asking EDIS for its attachment list every day was a third of the
         # daily sync's requests, for files that were never going to change.
-        if doc_id and wanted and not kept:
+        is_partial = str(doc_id) in partial
+        if doc_id and wanted and (not kept or is_partial):
             attachments, downloaded = download_document_attachments(
                 client, docs_dir, key, str(doc_id), row.get("securityLevel"), log
             )
+            if is_partial and not attachments:  # the listing failed: keep what is on disk
+                attachments = kept
+            else:
+                is_partial = False
         else:
             attachments = kept
         downloaded_total += downloaded
-        documents.append(
-            {
-                "id": doc_id,
-                "document_type": row.get("documentType"),
-                "title": row.get("documentTitle"),
-                "security_level": row.get("securityLevel"),
-                "filed_by": row.get("filedBy"),
-                "on_behalf_of": row.get("onBehalfOf"),
-                "firm_organization": row.get("firmOrganization"),
-                "document_date": dates.to_iso(row.get("documentDate")),
-                "official_received_date": dates.to_iso(row.get("officialReceivedDate")),
-                "attachments": attachments,
-            }
-        )
+        record = {
+            "id": doc_id,
+            "document_type": row.get("documentType"),
+            "title": row.get("documentTitle"),
+            "security_level": row.get("securityLevel"),
+            "filed_by": row.get("filedBy"),
+            "on_behalf_of": row.get("onBehalfOf"),
+            "firm_organization": row.get("firmOrganization"),
+            "document_date": dates.to_iso(row.get("documentDate")),
+            "official_received_date": dates.to_iso(row.get("officialReceivedDate")),
+            "attachments": attachments,
+        }
+        if is_partial:
+            record["attachments_partial"] = True
+        documents.append(record)
 
     return documents, downloaded_total
 

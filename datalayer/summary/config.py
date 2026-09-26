@@ -43,7 +43,15 @@ class SummaryConfig:
     notes_output_tokens: int = 1500
     writer_prompt_tokens: int = 5000
     writer_output_tokens: int = 3000
+    notes_version: int = 1
+    notes_max_output_tokens: int = 6000
+    writer_max_output_tokens: int = 5000
     prices: dict[str, claims_config.Rates] = field(default_factory=dict)
+
+    def cost(self, model: str, usage: Any) -> float:
+        """What one response cost, from its `usage` (cache reads and writes
+        at their own rates), as the claims analysis prices it."""
+        return claims_config.ClaimsConfig(pipeline_version="", source_kinds=(), prices=self.prices).cost(model, usage)
 
     def pages_for(self, kind: str) -> ReadPages:
         return self.read_pages.get(kind) or ReadPages(first=20)
@@ -78,6 +86,7 @@ def load(path: Path = CONFIG_PATH, *, prices: dict[str, claims_config.Rates] | N
     except (AttributeError, TypeError, ValueError) as exc:
         raise SummaryConfigError(f"read_pages in {Path(path).name} is malformed: {exc}") from exc
     estimate = raw.get("estimate") or {}
+    limits = raw.get("max_output_tokens") or {}
     costs = Path(raw.get("costs_csv") or "data/summary_costs.csv")
     return SummaryConfig(
         notes_model=str(raw.get("notes_model") or "claude-haiku-4-5-20251001"),
@@ -93,5 +102,8 @@ def load(path: Path = CONFIG_PATH, *, prices: dict[str, claims_config.Rates] | N
         notes_output_tokens=int(estimate.get("notes_output_tokens") or 1500),
         writer_prompt_tokens=int(estimate.get("writer_prompt_tokens") or 5000),
         writer_output_tokens=int(estimate.get("writer_output_tokens") or 3000),
+        notes_version=int(raw.get("notes_version") or 1),
+        notes_max_output_tokens=int(limits.get("notes") or 6000),
+        writer_max_output_tokens=int(limits.get("writer") or 5000),
         prices=dict(prices),
     )

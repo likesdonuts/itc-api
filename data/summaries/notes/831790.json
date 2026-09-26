@@ -1,0 +1,59 @@
+{
+  "cost_usd": 0.007156,
+  "date": "2024-09-09",
+  "doc_id": "831790",
+  "file": "831790_2236861_2236861.pdf",
+  "kind": "notice_of_institution",
+  "model": "claude-haiku-4-5-20251001",
+  "notes_version": 2,
+  "overview": "This notice institutes a Section 337 investigation following a complaint filed by HydraFacial LLC on August 8, 2024, alleging infringement of U.S. Patent No. 11,446,477 through importation and sale of hydrodermabrasion systems and components. The investigation covers claims 1-5 and 7-20 of the '477 patent and names eight respondents.",
+  "pages_read": [
+    1,
+    2,
+    3,
+    4
+  ],
+  "points": [
+    {
+      "page": 2,
+      "point": "The complainant is HydraFacial LLC f/k/a Edge Systems LLC of Long Beach, California.",
+      "quote": "HydraFacial LLC f/k/a Edge Systems LLC 2165 E. Spring St. Long Beach, California 90806",
+      "topic": "parties"
+    },
+    {
+      "page": 2,
+      "point": "The respondents are Luvo Medical Technologies Inc., Clarion Medical Technologies, Inc., Healthcare Markets, Inc. d/b/a Powered by MRP, Medical Purchasing Resource, LLC, Bio-Infusions USA Inc., MIRAmedtech UG, eMIRAmed USA, LLC, and MIRAmedtech SP. Z.O.O.",
+      "quote": "The respondents are the following entities alleged to be in violation of section 337",
+      "topic": "parties"
+    },
+    {
+      "page": 2,
+      "point": "The investigation covers claims 1-5 and 7-20 of U.S. Patent No. 11,446,477.",
+      "quote": "infringement of one or more of claims 1-5 and 7-20 of the '477 patent",
+      "topic": "scope"
+    },
+    {
+      "page": 2,
+      "point": "The accused products are described as systems and subassemblies for skin treatment through mechanical and/or fluid-based abrasion or exfoliation.",
+      "quote": "the plain language description of the accused products or category of accused products, which defines the scope of the investigation, is \"systems and subassemblies for skin treatment through mechanical and/or fluid-based abrasion or exfoliation\"",
+      "topic": "products"
+    },
+    {
+      "page": 2,
+      "point": "The investigation addresses whether there is a violation of section 337 based on importation into the United States, sale for importation, or sale within the United States after importation of the accused products.",
+      "quote": "to determine whether there is a violation of subsection (a)(1)(B) of section 337 in the importation into the United States, the sale for importation, or the sale within the United States after importation",
+      "topic": "scope"
+    },
+    {
+      "page": 3,
+      "point": "The Office of Unfair Import Investigations will not participate as a party in this investigation.",
+      "quote": "The Office of Unfair Import Investigations will not participate as a party in this investigation.",
+      "topic": "other"
+    }
+  ],
+  "rejected": [],
+  "taken_at": "2026-09-26T20:10:20+00:00",
+  "title": "Institution of Investigation",
+  "truncated": false,
+  "who": ""
+}

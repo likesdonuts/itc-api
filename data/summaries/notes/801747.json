@@ -1,0 +1,247 @@
+{
+  "cost_usd": 0.033029,
+  "date": "2023-08-04",
+  "doc_id": "801747",
+  "file": "801747_2032034_2032034.pdf",
+  "kind": "answer",
+  "model": "claude-haiku-4-5-20251001",
+  "notes_version": 2,
+  "overview": "This is Innoscience's response to the complaint alleging infringement of four semiconductor patents (the '294, '508, '347, and '335 patents) held by Efficient Power Conversion Corporation (EPC). Innoscience denies infringement and challenges the enforceability of the asserted patents, arguing they were obtained through inequitable conduct and misrepresentations during prosecution.",
+  "pages_read": [
+    1,
+    2,
+    3,
+    4,
+    52,
+    53,
+    54,
+    55,
+    56,
+    57,
+    58,
+    59,
+    60,
+    61,
+    62,
+    63,
+    64,
+    65,
+    66,
+    67,
+    68,
+    69,
+    70,
+    71
+  ],
+  "points": [
+    {
+      "page": 1,
+      "point": "The respondents are Innoscience (Zhuhai) Technology Company, Ltd., located in Zhuhai, Guangdong, China, and Innoscience America, Inc., located in Santa Clara, California.",
+      "quote": "Innoscience (Zhuhai) Technology Company, Ltd. No. 39, Jinyuan 2nd Road, High-Tech Zone Zhuhai, Guangdong 519099 China Innoscience America, Inc. 5451 Great America Pkwy, Suite 125 Santa Clara, CA 95054",
+      "topic": "respondents"
+    },
+    {
+      "page": 55,
+      "point": "Respondents allege that Dr. Beach, an inventor of the '294 and '508 Patents, deliberately withheld material patents and patent applications he filed during his employment at International Rectifier (IR) from the Patent Office during prosecution, constituting inequitable conduct.",
+      "quote": "On information and belief, Dr. Beach deliberately withheld material patents and patent applications that Dr. Beach filed during his employment at IR from the Patent Office.",
+      "topic": "unenforceability"
+    },
+    {
+      "page": 56,
+      "point": "Respondents allege that Dr. Beach withheld prior publications from the Patent Office during prosecution of the '294 Patent, including disclosure of passivation of p-type impurities using hydrogen, which the '294 patent claims as a critical differentiating step.",
+      "quote": "the '294 patent identifies passivation of a p-type impurity using hydrogen as the purported critical step . . . that differentiates the device of the present invention from the prior art device",
+      "topic": "unenforceability"
+    },
+    {
+      "page": 55,
+      "point": "Respondents allege that during prosecution of the '294 Patent, the Examiner stated he was unaware of prior art showing III-nitride transistors with specified layers, but Dr. Beach had previously disclosed such transistors in his earlier patents ('649, '001, and '807 publications).",
+      "quote": "he was unaware of any prior art which suggests or renders obvious a column III nitride transistor with the layers recited in claim 1",
+      "topic": "unenforceability"
+    },
+    {
+      "page": 58,
+      "point": "Respondents allege that Dr. Beach deliberately withheld the '215 patent and related applications from the Patent Office during prosecution of the '508 Patent, which discloses the same self-aligned gate metal and doped GaN materials using a single photomask.",
+      "quote": "On information and belief, Dr. Beach deliberately withheld material patents and patent applications that Dr. Beach filed during his employment at IR from the Patent Office during the prosecution of the '508 patent.",
+      "topic": "unenforceability"
+    },
+    {
+      "page": 58,
+      "point": "The '215 patent discloses a device with a self-aligned gate metal material and doped GaN material, and a method of using a single mask to etch both materials, as claimed in the '508 Patent.",
+      "quote": "the '215 patent discloses such a self-aligned device and a method of using a single photo mask to etch the materials to produce the device",
+      "topic": "unenforceability"
+    },
+    {
+      "page": 62,
+      "point": "Respondents allege that Mr. Soffen misrepresented to the USPTO during prosecution of the '347 Patent that the entire delay in claiming priority to prior-filed applications was 'unintentional,' when in fact the applicants intentionally excluded the '508 patent and related applications from the original priority claim.",
+      "quote": "on information and belief Mr. Soffen misrepresented to the USPTO that the entire delay was unintentional",
+      "topic": "unenforceability"
+    },
+    {
+      "page": 64,
+      "point": "Respondents allege that EPC intentionally excluded the delayed priority applications from the original Application Data Sheet filed with the '347 Patent, as evidenced by the use of different attorney docket numbers ('E0101.0032' versus 'E0101.0006') for the originally claimed and delayed claimed priority applications.",
+      "quote": "the prosecution counsel used a different docket no. E0101.0006 for the delayed claimed priority applications",
+      "topic": "unenforceability"
+    },
+    {
+      "page": 63,
+      "point": "Respondents allege that the Petition for Unintentionally Delayed Domestic Benefit Claim was filed almost fourteen months after the January 23, 2015 Information Disclosure Statement citing the '508 patent publication, and only on March 18, 2016, the last day to respond to the Non-Final Office Action.",
+      "quote": "the applicants did not file the Petition for Unintentionally Delayed Domestic Benefit Claim until March 18, 2016, almost 14 months after the IDS's submission",
+      "topic": "unenforceability"
+    },
+    {
+      "page": 65,
+      "point": "Respondents allege that Mr. Soffen's misrepresentation regarding the unintentional nature of the delay was material to patentability of the '347 Patent, because it caused the USPTO to grant the petition and withdraw the rejection based on Lidow-843 (the '508 patent publication).",
+      "quote": "Mr. Soffen's misrepresentation that the entire delay in claiming priority to the delayed domestic priority applications was unintentional was material to the patentability of the '347 patent",
+      "topic": "unenforceability"
+    },
+    {
+      "page": 66,
+      "point": "Respondents allege that Mr. Soffen's misrepresentation during prosecution of the '347 Patent was also material to the allowance of the '335 Patent, because the '335 Patent's priority chain relies on the '347 Patent's ability to claim priority to the prior-filed applications.",
+      "quote": "The above priority chain relies on the '347 patent's ability to claim priority to the other prior-filed applications. But for Mr. Soffen's misrepresentation during the prosecution of the '347 patent, the applicants would not have been entitled to make this priority claim.",
+      "topic": "unenforceability"
+    },
+    {
+      "page": 67,
+      "point": "Respondents deny that they have committed any unfair acts and assert that Innoscience has not infringed any claim of the asserted patents.",
+      "quote": "Innoscience has committed no unfair acts.",
+      "topic": "general_response"
+    },
+    {
+      "page": 67,
+      "point": "Respondents allege, on information and belief, that a domestic industry in the United States relating to technology allegedly protected by the asserted patents does not exist under 19 U.S.C. \u00a7\u00a7 1337(a)(3)(A), (B), or (C).",
+      "quote": "a domestic industry in the United States, relating to technology allegedly protected by the Asserted Patents, does not exist under 19 U.S.C. \u00a7\u00a7 1337(a)(3)(A), (B), or (C)",
+      "topic": "domestic_industry"
+    },
+    {
+      "page": 67,
+      "point": "Respondents assert prosecution history estoppel as a defense, barring EPC from asserting infringement under the doctrine of equivalents for any claims of the asserted patents and from adopting claim construction positions contrary to statements and amendments made during prosecution.",
+      "quote": "Prosecution history estoppel bars EPC from asserting infringement under the doctrine of equivalents for any claims of the Asserted Patents",
+      "topic": "other_defenses"
+    },
+    {
+      "page": 67,
+      "point": "Respondents argue that the relief sought by the Complainant is not in the public interest and would have a detrimental effect upon public health and welfare, competitive conditions in the U.S. economy, and the production of like or directly competitive articles in the U.S.",
+      "quote": "the detrimental effect such relief would have upon the public health and welfare, competitive conditions in the United States economy, the production of like or directly competitive articles in the United States",
+      "topic": "relief"
+    },
+    {
+      "page": 1,
+      "point": "Respondents provide information regarding the respondents' principal place of business and address for service in the United States, identifying Innoscience America, Inc. in Santa Clara, California.",
+      "quote": "Innoscience America, Inc. 5451 Great America Pkwy, Suite 125 Santa Clara, CA 95054",
+      "topic": "importation"
+    },
+    {
+      "page": 68,
+      "point": "Respondents reserve the right to amend, modify, or supplement the Response to include other affirmative defenses that may be discovered during the course of the investigation.",
+      "quote": "Innoscience reserves the right to amend, modify, or supplement its Response to include other affirmative defenses, or to otherwise address the same during discovery",
+      "topic": "general_response"
+    },
+    {
+      "page": 57,
+      "point": "Respondents allege that the German Patent Office found Dr. Beach's prior '807 Publication material to the patentability of German Patent Application No. 11 2010 001 589.9, the German counterpart to the '294 Patent, rejecting claims as unpatentable in view of the '807 Publication.",
+      "quote": "The German Patent Office found Mr. Beach's prior '807 Publication material to the patentability of the German counterpart to the '294 Patent, concluding the presented claims were unpatentable",
+      "topic": "unenforceability"
+    },
+    {
+      "page": 58,
+      "point": "Respondents allege that Dr. Beach deliberately withheld the '215 patent during prosecution of the '508 Patent, and Dr. Beach was fully aware of the existence, content, and published versions of the '215 patent prior to the issuance of the '508 patent.",
+      "quote": "the '215 patent was also published as US 2006/0006413 A1, and filed and published in counterpart foreign patent publications WO 2005/057624 A2, TW1258798 B, and JP 2007519231 A, all prior to the issuance of the '508 patent",
+      "topic": "unenforceability"
+    },
+    {
+      "page": 68,
+      "point": "Respondents request that the Commission find no violation of Section 337, find that Innoscience has not infringed any claim of the asserted patents, find that the claims are invalid and unenforceable, deny all relief requested by complainant, and terminate the investigation with prejudice.",
+      "quote": "Find no violation of Section 337 of the Tariff Act of 1930, as amended; Find that Innoscience has not infringed any claim of the Asserted Patents; Find that the claims of the Asserted Patents are invalid and unenforceable",
+      "topic": "general_response"
+    },
+    {
+      "page": 56,
+      "point": "Respondents allege that during prosecution of the '294 Patent, the applicant argued that prior art failed to teach forming a 'compensated GaN layer above a barrier layer,' but Dr. Beach had previously disclosed this in the '649 patent and other prior patents.",
+      "quote": "during prosecution of '294 Patent, the Applicant argued that the prior art failed to teach[] or suggest[] forming a 'compensated GaN layer above [a] barrier layer'",
+      "topic": "unenforceability"
+    }
+  ],
+  "rejected": [
+    {
+      "page": 2,
+      "point": "The complainant asserts four patents: U.S. Patent No. 7,382,294 ('294 Patent), U.S. Patent No. 7,417,508 ('508 Patent), U.S. Patent No. 8,890,347 ('347 Patent), and U.S. Patent No. 8,908,335 ('335 Patent), all owned by Efficient Power Conversion Corporation.",
+      "quote": "The '294 Patent The '508 Patent The '347 Patent The '335 Patent",
+      "rejected": "topic not for this kind of filing",
+      "topic": "ip_asserted"
+    },
+    {
+      "page": 53,
+      "point": "Respondents allege that Dr. Lidow, Dr. Beach, and Dr. Cao were reminded during their exit interviews from IR to abide by confidentiality and nondisclosure agreements regarding IR's confidential information, trade secrets, IP and technology.",
+      "quote": "Dr. Beach and Dr. Cao were specifically reminded during their exit interviews to abide by the confidentiality and nondisclosure agreements and other related obligations",
+      "rejected": "topic not for this kind of filing",
+      "topic": "other_unfair_acts"
+    },
+    {
+      "page": 53,
+      "point": "Respondents allege that in 2007, Alexander Lidow, after leaving IR, approached personnel in IR's GaN research and development group to start a new company (EPC) focused on GaN technology, and recruited Dr. Beach and Dr. Cao specifically because they were senior members of IR's GaN research group.",
+      "quote": "in the early fall of 2007, Dr. Lidow separately approached personnel in IR's GaN research and development group regarding starting a new company focused on GaN",
+      "rejected": "topic not for this kind of filing",
+      "topic": "other_unfair_acts"
+    },
+    {
+      "page": 54,
+      "point": "Respondents allege that following the departure of Dr. Lidow, Dr. Beach, and Dr. Cao from IR, IR filed a trade secret misappropriation lawsuit in federal court in 2008, and later in state court in 2009, claiming misappropriation of trade secrets associated with IR's GaN program, which was settled in 2013 with royalties paid by EPC to IR.",
+      "quote": "IR quickly filed another lawsuit against the Alleged '294 and '508 Patent Inventors in Los Angeles Superior Court on March 16, 2009, claiming misappropriation of trade secrets associated with IR's GaN program which was not resolved until settlement in 2013",
+      "rejected": "topic not for this kind of filing",
+      "topic": "other_unfair_acts"
+    },
+    {
+      "page": 54,
+      "point": "Respondents allege that International Rectifier filed a trade secret misappropriation action in the United States District Court for the Central District of California (Case No. 2:08-cv-05869) against the inventors on September 8, 2008, which was partly dismissed on February 2, 2009.",
+      "quote": "On September 8, 2008, IR filed an action in the United States District Court for the Central District of California against the Alleged '294 and '508 Patent Inventors",
+      "rejected": "topic not for this kind of filing",
+      "topic": "related_proceedings"
+    },
+    {
+      "page": 54,
+      "point": "Respondents allege that the District Court dismissed the state law claims without prejudice because the Court declined supplemental jurisdiction, finding no other federal law claims remained.",
+      "quote": "of the remaining claims, there are no other federal law claims. This Court declines supplemental jurisdiction over the remaining state law claims",
+      "rejected": "topic not for this kind of filing",
+      "topic": "related_proceedings"
+    },
+    {
+      "page": 54,
+      "point": "Respondents allege that IR later filed a trade secret misappropriation lawsuit in Los Angeles Superior Court on March 16, 2009, which was not resolved until a settlement in 2013, under which EPC agreed to pay royalties to IR on GaN on silicon-based power devices.",
+      "quote": "the result of the settlement included the payment of royalties by EPC to IR on the sale of GaN on silicon-based power devices",
+      "rejected": "topic not for this kind of filing",
+      "topic": "related_proceedings"
+    },
+    {
+      "page": 2,
+      "point": "The asserted patents relate to semiconductor devices, specifically III-nitride (GaN) field-effect transistors (FETs) and related methods of manufacturing and enhancement-mode devices.",
+      "quote": "CERTAIN SEMICONDUCTOR DEVICES, AND METHODS OF MANUFACTURING SAME AND PRODUCTS CONTAINING THE SAME",
+      "rejected": "topic not for this kind of filing",
+      "topic": "technology"
+    },
+    {
+      "page": 56,
+      "point": "Respondents allege that Dr. Beach knew the purported critical step of 'passivation of a p-type impurity using hydrogen' was known prior to the filing of the '294 patent because this information was disclosed in his previous publications and patents, including his doctoral thesis.",
+      "quote": "Dr. Beach knew that the purported critical step of passivation of a p-type impurity using hydrogen was known prior to the filing of the '294 patent because this information was disclosed in his previous publications",
+      "rejected": "quote not found in the filing",
+      "topic": "unenforceability"
+    },
+    {
+      "page": 52,
+      "point": "Dr. Beach was employed at International Rectifier and filed multiple patent applications during his employment from 2004-2007, including serial numbers 11/232,646, 11/322,923, and 11/481,771, all of which were assigned to IR and later to Infineon.",
+      "quote": "On September 22, 2005, during Dr. Beach's employment at IR, U.S. Patent Application Serial No. 11/232,646 was filed listing Dr. Beach as the sole inventor.",
+      "rejected": "topic not for this kind of filing",
+      "topic": "related_proceedings"
+    },
+    {
+      "page": 54,
+      "point": "Respondents allege that on October 30, 2007, Dr. Lidow incorporated 'Undercover Company' in Delaware under the name EPC, with Dr. Lidow, Dr. Beach, and Dr. Cao as directors.",
+      "quote": "on October 30, 2007, Dr. Lidow incorporated Undercover Company in Delaware under the name EPC",
+      "rejected": "topic not for this kind of filing",
+      "topic": "related_proceedings"
+    }
+  ],
+  "taken_at": "2026-09-26T20:06:37+00:00",
+  "title": "Response to the Complaint and Notice of Investigation",
+  "truncated": false,
+  "who": "Innoscience (Zhuhai) Technology Company, Ltd. and Innoscience America, Inc."
+}

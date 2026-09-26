@@ -3465,7 +3465,17 @@
     "title": "Exhibit A to Innoscience's Response to the Complaint and Notice of Investigation"
   },
   {
-    "attachments": [],
+    "attachments": [
+      {
+        "href": "../../data/documents/337-1366/801747_2032040_2032040.pdf",
+        "label": "2032040.pdf"
+      },
+      {
+        "href": "../../data/documents/337-1366/801747_2032034_2032034.pdf",
+        "label": "2032034.pdf"
+      }
+    ],
+    "attachments_partial": true,
     "document_date": "2023-08-04",
     "document_type": "Answer to Complaint",
     "filed_by": "Lionel M. Lavenue",
@@ -3819,7 +3829,12 @@
     "title": "Assignment of ALJ Johnson Hines"
   },
   {
-    "attachments": [],
+    "attachments": [
+      {
+        "href": "../../data/documents/337-1366/799478_2014454_2014454.pdf",
+        "label": "2014454.pdf"
+      }
+    ],
     "document_date": "2023-06-28",
     "document_type": "Notice",
     "filed_by": "Lisa R. Barton",

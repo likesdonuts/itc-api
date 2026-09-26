@@ -1,0 +1,313 @@
+{
+  "cost_usd": 0.042132,
+  "date": "2023-11-21",
+  "doc_id": "809148",
+  "file": "809148_2074667_2074667.pdf",
+  "kind": "complaint",
+  "model": "claude-haiku-4-5-20251001",
+  "notes_version": 2,
+  "overview": "This is an Amended Complaint filed by Optimum Communications Services, Inc. in ITC Investigation 337-TA-1384, alleging that three Chinese companies infringe U.S. Patents 7,558,260 and 7,333,511 by importing and selling passive optical network (xPON) equipment that implements Dynamic Bandwidth Assignment (DBA) technology. The complainant seeks a general exclusion order against the infringing products due to the large number of hard-to-track importer brands in this market.",
+  "pages_read": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10,
+    11,
+    12,
+    13,
+    14,
+    15,
+    16,
+    17,
+    18,
+    19,
+    20,
+    21,
+    22,
+    23,
+    24,
+    25,
+    26,
+    27,
+    28,
+    29,
+    30,
+    31,
+    32,
+    33,
+    34,
+    35,
+    36,
+    37,
+    38,
+    39,
+    40
+  ],
+  "points": [
+    {
+      "page": 4,
+      "point": "Complainant is Optimum Communications Services, Inc. (OCS), a Delaware corporation based in Jersey City, New Jersey, which has been developing and marketing technologies protected by the asserted patents since 2001 through its predecessor Optimum Communications Technologies, Inc.",
+      "quote": "Complainant Optimum Communications Services, Inc. (\"OCS\") is a Delaware corporation having a principal place of business at 344 Grove Street #242, Jersey City, NJ 07302. Since 2001",
+      "topic": "parties"
+    },
+    {
+      "page": 4,
+      "point": "Mark Sandstrom is the President of Complainant and the named inventor on each of the asserted patents.",
+      "quote": "Complainant's President, Mark Sandstrom, is the named inventor on each of the asserted patents.",
+      "topic": "parties"
+    },
+    {
+      "page": 20,
+      "point": "Proposed respondent Hangzhou Softel Optic Co., Ltd. (Softel) is a Chinese trading company with annual output value of US$2.5 Million - US$5 Million and main markets in North America that sells GPON OLT and ONU equipment.",
+      "quote": "Hangzhou Softel Optic Co., Ltd., (Softel), with per Section VII \"Annual Output Value: US$2.5 Million - US$5 Million\" (noting that the importer themselves reports this in U.S. dollars)",
+      "topic": "respondents"
+    },
+    {
+      "page": 22,
+      "point": "Proposed respondent Hangzhou DAYTAI Network Technologies Co., Ltd. (DAYTAI) is a Chinese supplier with annual output value of US$10 Million - US$50 Million and main markets in North America that supplies GPON standard OLT and ONU equipment.",
+      "quote": "Hangzhou DAYTAI Network Technologies Co., Ltd. (DAYTAI), with per Section III. B., \" Annual Output Value: US$10 Million - US$50 Million \" (noting that the importer themselves reports this in U.S. dollars)",
+      "topic": "respondents"
+    },
+    {
+      "page": 25,
+      "point": "Proposed respondent Hangzhou Sumlo Industrial Co., Ltd. (Sumlo) is a Chinese manufacturer/trading company with annual export revenue exceeding US$100 million that offers GPON OLT and ONU equipment.",
+      "quote": "Hangzhou Sumlo Industrial Co., Ltd. (Sumlo), with per section VII \"Annual Export Revenue: >100 million USD\" (noting that the importer themselves reports this in U.S. dollars)",
+      "topic": "respondents"
+    },
+    {
+      "page": 13,
+      "point": "The patented technology relates to Dynamic Bandwidth Assignment (DBA) capability, which improves cost-efficiency of fiber-optic network connectivity by intelligently sharing broadband bandwidth among multiple subscribers so each gets at least their subscribed amount and usually more.",
+      "quote": "The asserted patents claim inventions that improve cost-efficiency of fiberoptic network connectivity. More specifically, the asserted claims enable intelligent dynamic sharing of broadband Internet access bandwidth among multiple subscribers",
+      "topic": "technology"
+    },
+    {
+      "page": 9,
+      "point": "The DBA technology is utilized in passive optical network (xPON) standards including GPON (ITU-T G.984.x), 10GPON/XGS-PON (G.987.3), TWDM-PON/NG-PON2 (G.989.3), and EPON/10G-EPON (IEEE 802.3ah/802.3av).",
+      "quote": "passive optical network equipment compliant with the ITU-T standard for Gigabit-capable Passive Optical Network (GPON), i.e. the Recommendation series G.984.x, specifically, the upstream direction Dynamic Bandwidth Assignment (DBA) mechanism",
+      "topic": "technology"
+    },
+    {
+      "page": 4,
+      "point": "The accused products are GPON and successor standard xPON equipment, specifically optical line termination (OLT) and optical network unit (ONU)/optical network terminal (ONT) devices that implement DBA capability.",
+      "quote": "Complainant complains of unfair methods of competition and unfair acts in the unlawful importation into the United States, sale for importation, and/or sale within the United States after importation of certain Passive Optical Network (\"xPON\") standard products that infringe certain claims",
+      "topic": "products"
+    },
+    {
+      "page": 20,
+      "point": "The accused respondents' GPON OLT equipment advertised includes Softel's OLT-G16 with 16 GPON ports, 4 GE uplink ports, 2 10-gigabit uplink ports, meeting ITU G.984.x standards with 1.25Gbps upstream bandwidth.",
+      "quote": "Product GPON OLT OLT-G16 completely meet relative standard of ITU G.984.x and FSAN, which is 1U rack-mounted device with1 USB interface, 4 uplink GE ports, 4 uplink optical ports, 2 10-gigabit uplink ports, and 16 GPON ports",
+      "topic": "products"
+    },
+    {
+      "page": 32,
+      "point": "The complainant's own products are xPON standards based FTTx (fiber-to-the-home/premises) products and services, including design, engineering, installation, testing, and provisioning for customers, with authorized use by municipal FTTH networks.",
+      "quote": "domestic industry participants' xPON standards based products and services are exploiting the asserted patents. The primary technology standard used for US FTTx is xPON",
+      "topic": "products"
+    },
+    {
+      "page": 11,
+      "point": "U.S. Patent No. 7,558,260 (the '260 patent) is directed to a self-optimizing digital communications network using dynamic frame-slot assignment among source nodes, filed March 7, 2003, issued July 7, 2009, expiring January 10, 2026.",
+      "quote": "The '260 patent is directed to a self-optimizing digital communications network for transporting data among a set of nodes, such as routers, switches or terminal equipment, based on multi-source-node data transport channels, which have a framed carrier signal, and on which frame-slots are dynamically assigned",
+      "topic": "ip_asserted"
+    },
+    {
+      "page": 13,
+      "point": "U.S. Patent No. 7,333,511 (the '511 patent) is directed to a communications network for transporting data packets among L2/L3 nodes based on dynamically L1-channelizable multi-source buses, filed August 29, 2002, issued February 19, 2008, expiring July 30, 2025.",
+      "quote": "The '511 patent is directed to a communications network for transporting data packets among L2/L3 nodes based on dynamically L1-channelizable multi-source buses (Abstract), was filed on August 29, 2002 by inventor Mark Sandstrom, was issued on February 19, 2008",
+      "topic": "ip_asserted"
+    },
+    {
+      "page": 4,
+      "point": "The complainant alleges that the '260 patent claims 1 and 3, and the '511 patent claims 1 and 12-14 are infringed by the accused products.",
+      "quote": "Complainant asserts that the Proposed Respondents' accused products practice at least claims 1 and 3 of the '260 patent as well as at least claims 1 and 12-14 of the '511 patent.",
+      "topic": "ip_asserted"
+    },
+    {
+      "page": 12,
+      "point": "Both asserted patents are assigned to Complainant through chains of assignments, with the '260 patent assigned from inventor to Optimum Communications Technologies, Inc., then to Optimum Communications Services, Inc., Alberta, then to Optimum Communications Services, Inc., Delaware.",
+      "quote": "via the assignment 013999/0528 recorded on September 24, 2003, the underlying application 10/382729 was assigned by the inventor to Optimum Communications Technologies, Inc.",
+      "topic": "ip_asserted"
+    },
+    {
+      "page": 12,
+      "point": "Neither the '260 patent nor the '511 patent has been licensed.",
+      "quote": "The '260 patent has not been licensed.",
+      "topic": "ip_asserted"
+    },
+    {
+      "page": 17,
+      "point": "The accused products are imported through online marketplaces such as made-in-china.com, alibaba.com, and aliexpress.com, with prices quoted in U.S. dollars and U.S. shipping available as an option.",
+      "quote": "At the made-in-china.com online market place, GPON standard OLT and ONU products are offered from large number of China-based suppliers with prices quoted in U.S. dollars and the U.S. being available as the shipping destination",
+      "topic": "importation"
+    },
+    {
+      "page": 15,
+      "point": "On made-in-china.com alone, there are 192 manufacturers and suppliers with 576 GPON OLT products and 201 manufacturers and suppliers with 603 GPON ONU products listed for importation.",
+      "quote": "Per above, at this online market place alone, for GPON OLT imports, there were \" Total 192 manufacturers & suppliers found with 576 products \".",
+      "topic": "importation"
+    },
+    {
+      "page": 22,
+      "point": "The respondents confirm capability to ship products to the United States; Softel confirmed via online chat on November 5, 2023 that they ship xPON products to US addresses, and DAYTAI confirmed they ship OLT and ONUs to the USA.",
+      "quote": "Via online chat at the made-in-china.com on November 5, 2023, Softel's representative confirmed that they do ship their xPON products a shipping address in the US",
+      "topic": "importation"
+    },
+    {
+      "page": 21,
+      "point": "The respondents price their products in U.S. dollars, facilitating payment from U.S. customers.",
+      "quote": "Softel prices and takes payments for their xPON products in U.S. Dollars",
+      "topic": "importation"
+    },
+    {
+      "page": 20,
+      "point": "The complainant alleges that the accused xPON products implement the GPON standard, which per claim charts in Exhibit VII requires OLT and ONU equipment to have features recited in at least the first claim of each asserted patent.",
+      "quote": "Each of the proposed respondents' xPON OLT and ONU/ONT product imports, per below, are characterized as supporting at least the base GPON standard for xPONs, which per Exhibit VII, requires a compliant OLT and ONU equipment to have the features recited in at least the first claim",
+      "topic": "infringement"
+    },
+    {
+      "page": 17,
+      "point": "The complainant alleges that because xPON standards require both OLT and ONU equipment working together, any importation of either type of equipment results in implementation of an xPON standard that infringes the asserted patents.",
+      "quote": "There is no conceivable usage of either OLT or ONU equipment apart from each others, as the xPON standards, and practical operation of any passive optical networks, e.g. for FTTx deployments, require presence of each type of equipment",
+      "topic": "infringement"
+    },
+    {
+      "page": 14,
+      "point": "The claim charts in Exhibit VII apply asserted patent claims to GPON (ITU-T G.984.3), 10GPON (G.987.3), TWDM-PON (G.989.3), and EPON/10G-EPON (IEEE 802.3ah/802.3av) standards.",
+      "quote": "Exhibits per below include claim charts that apply several claims of the asserted patents to certain network protocol standards",
+      "topic": "infringement"
+    },
+    {
+      "page": 32,
+      "point": "A domestic industry exists relating to xPON standard products and services, with domestic industry participants selling, distributing and supporting products protected by the asserted patents.",
+      "quote": "Domestic industry participants sell, distribute and support products and services that are protected by one or more claims (e.g., first claim) of each of the asserted patents.",
+      "topic": "domestic_industry"
+    },
+    {
+      "page": 32,
+      "point": "The primary technology standard for U.S. FTTx is xPON, and GPON is the most popular version of FTTH PONs used in the domestic industry.",
+      "quote": "The primary technology standard used for US FTTx is xPON, e.g. per: * https://www.eff.org/wp/case-fiber-home-today-why-fiber-superior-medium-21st-century-broadband: The most common FTTH architecture is the Passive Optical Network (PON)",
+      "topic": "domestic_industry"
+    },
+    {
+      "page": 33,
+      "point": "The complainant has authorized usage of the asserted patents for xPON based municipal FTTH networks, specifically EPB Fiber Optics in Chattanooga, Tennessee, which provides GPON-based services to 126,086 customers.",
+      "quote": "Complainant has authorized the usage of the asserted patents for certain xPON based municipal FTTH networks, as elaborated in the Confidential Economic Prong Declaration (Exhibit I (C)). Information regarding such a municipal FTTx network based on xPON standards",
+      "topic": "domestic_industry"
+    },
+    {
+      "page": 36,
+      "point": "The EPB Chattanooga GPON network represents significant investment of approximately US$220 million to build, with 82 OLTs, 91 miles of transport fiber, 802 miles of feeder fiber, 3,365 miles of distribution fiber, and 4,300+ miles of drop fiber.",
+      "quote": "Per https://communitynets.org/content/study-finds-chattanooga-fiber-network-10-year-roi-269-billion, \"It cost approximately $220 million to build the network\"",
+      "topic": "domestic_industry"
+    },
+    {
+      "page": 34,
+      "point": "The complainant calculates domestic industry investment in xPON equipment for the EPB network alone at over US$10 million in equipment costs (excluding engineering, installation and OAM costs), using typical ONU to OLT ratios and equipment prices from respondents.",
+      "quote": "the cost for the xPON OLT and ONU products protected by the asserted patents for the EPB FTTx network of 126,086 fiber optics has been at least 126086*($35+$1450/32) i.e. more than $10M",
+      "topic": "domestic_industry"
+    },
+    {
+      "page": 37,
+      "point": "The complainant requests a permanent general exclusion order prohibiting entry into the United States of accused xPON products that infringe one or more claims of the asserted patents.",
+      "quote": "Issue a permanent general exclusion order, pursuant to Section 337(d), forbidding entry into the United States of the accused xPON products that infringe one or more claims of the asserted patents",
+      "topic": "relief"
+    },
+    {
+      "page": 37,
+      "point": "The complainant requests a permanent cease and desist order directing any parties to cease importing, selling, offering for sale, distributing, warehousing, testing, using, programming, repairing, maintaining, demonstrating, promoting, marketing or advertising accused xPON products that infringe the asserted patents.",
+      "quote": "Issue a permanent order, pursuant to Section 337(f), directing any parties to cease and desist from the importing, sale for importing, sale after importing, offering for sale, distributing, warehousing, transferring, testing, using, programming",
+      "topic": "relief"
+    },
+    {
+      "page": 37,
+      "point": "The complainant requests a target date of no more than sixteen months for the investigation.",
+      "quote": "Set a target date of no more than sixteen months",
+      "topic": "relief"
+    },
+    {
+      "page": 37,
+      "point": "The investigation concerns certain OLT and ONU/ONT equipment for GPON and successor standard based Passive Optical Networks (xPONs), including subassemblies thereof, supporting Dynamic Bandwidth Assignment (DBA) that infringe one or more claims of the asserted patents.",
+      "quote": "certain OLT and ONU/ONT equipment for GPON and successor standard based Passive Optical Networks (xPONs), including subassemblies thereof, supporting Dynamic Bandwidth Assignment (DBA)",
+      "topic": "scope"
+    },
+    {
+      "page": 14,
+      "point": "The complainant affirms that there is no other past or present domestic or foreign litigation concerning the asserted patents.",
+      "quote": "In accordance with Commission Rule 210.12(a)(5), Complainant affirms that there is no other past or present domestic or foreign litigation concerning the asserted patents.",
+      "topic": "related_proceedings"
+    },
+    {
+      "page": 32,
+      "point": "The complainant seeks a general exclusion order on the grounds that there is a pattern of violation and it is difficult to track and identify the brands and sources of infringing products due to hundreds of corporate entities offering xPON equipment under variable importer/brand names via online marketplaces.",
+      "quote": "Complainant thus submits that there is a pattern of violation of the Section 337, and it is difficult to track and identify the brands and sources of infringing products",
+      "topic": "other_unfair_acts"
+    },
+    {
+      "page": 29,
+      "point": "Customization services such as custom product labeling are available for the accused products, facilitating importing of infringing articles under variable importer and brand names.",
+      "quote": "customization, e.g. product labeling per buyer's requests, is available for at least each of the proposed respondents' xPON standard equipment identified above",
+      "topic": "other_unfair_acts"
+    },
+    {
+      "page": 31,
+      "point": "Hundreds of subassembly products for xPON equipment such as populated circuit boards are available for importation via online marketplaces, facilitating circumvention through variable importer names.",
+      "quote": "several hundreds of subassembly products for xPON equipment, such as circuit boards populated with the componentry implementing digital and opto-electronic functionality for the xPON standards, are available",
+      "topic": "other_unfair_acts"
+    },
+    {
+      "page": 31,
+      "point": "It is not practically feasible to identify any significant portion of the several hundred corporate entities under whose brand names unlicensed xPON equipment has been, is, or could be imported.",
+      "quote": "In these circumstances, it is not practically feasible to identify any significant portion of the possibly several hundreds of corporate entities under whose brand names unlicensed xPON equipment have been, are, or could be, imported.",
+      "topic": "other_unfair_acts"
+    },
+    {
+      "page": 29,
+      "point": "New supplier brands with capability to take and fill orders internationally can be set up quickly due to standardization of xPON product functionality and the availability of online marketplaces for low-cost imports.",
+      "quote": "The standardization of the xPON product functionality and the online market places (e.g. per above) for the low-cost xPON product imports have created circumstances where new supplier brands, with capability to take and fill orders internationally, can be set up quickly.",
+      "topic": "other_unfair_acts"
+    },
+    {
+      "page": 37,
+      "point": "The complaint is verified by Mark Sandstrom, President of Complainant, filed November 10, 2023 and supplemented November 21, 2023.",
+      "quote": "Dated: November 10, 2023     Respectfully submitted: _____________________________ Mark Sandstrom, President Optimum Communications Services, Inc.",
+      "topic": "general_response"
+    },
+    {
+      "page": 4,
+      "point": "Complainant's predecessor, Optimum Communications Technologies, Inc., had a place of business at 701 Taylor Street #206, San Francisco, California, where the inventions were originally developed.",
+      "quote": "beginning with OCS' corporate predecessor, Optimum Communications Technologies, Inc., a Delaware corporation, which had a place of business at 701 Taylor Street #206, San Francisco, CA 94108",
+      "topic": "parties"
+    },
+    {
+      "page": 14,
+      "point": "The complainant affirms that there are no foreign patents or patent applications corresponding to the asserted patents.",
+      "quote": "In accordance with Commission Rule 210.12(a)(9)(v), Complainant affirms that there are no foreign patents or patent applications corresponding to the asserted patents",
+      "topic": "ip_asserted"
+    },
+    {
+      "page": 8,
+      "point": "The identified respondents leverage international trading capabilities of online marketplaces such as made-in-china.com, alibaba.com, and aliexpress.com to offer and sell xPON products.",
+      "quote": "Suppliers, such as the proposed respondents per above, leverage international trading capabilities of online marketplaces such as https://www.made-in-china.com/",
+      "topic": "other_unfair_acts"
+    }
+  ],
+  "rejected": [
+    {
+      "page": 21,
+      "point": "The accused respondents' GPON ONU equipment advertised includes units such as Softel's ONT-4GF-2V-RFW based on GPON technology meeting ITU G.984 requirements with gigabit Ethernet switching and HFC technology.",
+      "quote": "ONT-4GF-2V-RFW is fiber to the home multi service access GPON ONT. It's based on the mature, stable, high cost performance GPON technology and meets ITU G.984 requirements",
+      "rejected": "quote not found in the filing",
+      "topic": "products"
+    }
+  ],
+  "taken_at": "2026-09-26T20:08:42+00:00",
+  "title": "Amended Complaint",
+  "truncated": false,
+  "who": ""
+}

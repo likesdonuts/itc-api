@@ -23,17 +23,22 @@ users see).
 
 ## In progress
 
-### Case summary (branch `summarization-phase-1`)
+### Case summary (branch `summarization-phase-2`)
 
 - [x] Phase 1: which documents a summary reads, page counts, cost preview,
       Summary tab, Section 337 primer draft.
+- [x] Phase 2: complaint, notice and answer notes (Haiku, quotes checked),
+      summary written by Sonnet 5 with page citations. Pilot: 337-1366,
+      337-1384, 337-1417 ($0.52 spent of $20, failed attempt included).
+- [ ] **Finish the pilot once the Anthropic account has credit** (about
+      $0.40): retry 337-1270 (three answers and the writing left), and write
+      one open case still before the ALJ.
+- [ ] Answers are read at their first 4 and last 20 pages; a long answer
+      whose defenses sit mid-document loses them. Consider finding the
+      "Affirmative defenses" heading instead.
 - [ ] **Primer review.** A Section 337 practitioner reviews
       `content/section337_primer.md`, then sets `status: reviewed`,
       `reviewed_by` and `reviewed_on` at the top.
-- [ ] Phase 2: complaint and answer summaries. Haiku takes notes per document
-      (with page references), Sonnet 5 writes the prose; notes cached per
-      document; "Write summary" button; pilot on 337-1366, 337-1384, 337-1417
-      and two more (about $1-2). Stop at the $20 cap and ask before going on.
 - [ ] Phase 3: dispositive rulings, the final ID and the Commission's
       decisions; updates that read only new documents; the claims analysis's
       findings folded in.
