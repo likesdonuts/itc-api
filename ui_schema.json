@@ -25,6 +25,7 @@
     { "label": "Instituted", "source": "date_initiated", "type": "date" },
     { "label": "Stages", "source": "stage_count", "type": "number" },
     { "label": "Status", "source": "status", "type": "status" },
+    { "label": "Next deadline", "source": "next_deadline", "type": "next_deadline" },
     { "label": "Docs", "source": "document_count", "type": "number" },
     { "label": "With PDFs", "source": "pdf_document_count", "type": "number" },
     { "label": "Docs fetched", "source": "documents_fetched_at", "type": "datetime" }

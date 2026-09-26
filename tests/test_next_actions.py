@@ -153,12 +153,18 @@ class TestStages(unittest.TestCase):
         self.assertEqual(remand.stage, "other")
         self.assertIn("violation phase only", remand.notes[0])
 
-    def test_a_stay_in_effect_is_noted(self):
+    def test_a_stay_in_effect_puts_the_dates_on_hold(self):
         documents = [doc("2026-04-01", "Order Staying the Investigation Pending Reexamination", type_="Order")]
         result = self.build(case(target_date="2027-05-17"), documents)
-        self.assertTrue(any("stay" in n.lower() for n in result.notes))
+        self.assertEqual(result.stay["since"], "2026-04-01")
+        self.assertTrue(result.stage_label.endswith("(stayed)"))
+        self.assertEqual(result.waiting_on, "The end of the stay")
+        target = next(e for e in result.events if e.label.startswith("Target date"))
+        self.assertTrue(target.on_hold)
         lifted = documents + [doc("2026-06-01", "Order Lifting the Stay", type_="Order")]
-        self.assertFalse(any("stay" in n.lower() for n in self.build(case(target_date="2027-05-17"), lifted).notes))
+        after = self.build(case(target_date="2027-05-17"), lifted)
+        self.assertIsNone(after.stay)
+        self.assertTrue(any("has ended (lifted)" in n for n in after.notes))
 
 
 class TestTheProcessAndThePage(DataDirTestCase):

@@ -42,7 +42,7 @@ from ..backfill import OPEN_STATUSES
 from ..claims.timeline import final_id_issued
 from ..claims.validate import is_final_id
 from ..store import Store, load_json, save_json
-from . import calendar
+from . import calendar, stays
 
 Logger = Callable[[str], None]
 
@@ -63,8 +63,6 @@ _ABOUT_FINAL_ID_RE = re.compile(
 _FINAL_DETERMINATION_RE = re.compile(r"final\s+determination", re.I)
 _NO_VIOLATION_RE = re.compile(r"\bno\s+violation\b|\bterminat", re.I)
 _REMEDY_RE = re.compile(r"exclusion\s+order|cease\s+and\s+desist", re.I)
-_STAY_RE = re.compile(r"\bstay(?:ing)?\s+(?:the|this)\s+investigation\b", re.I)
-_LIFT_STAY_RE = re.compile(r"\blift(?:ing)?\s+(?:the\s+)?stay\b", re.I)
 
 
 @dataclass
@@ -77,6 +75,7 @@ class Event:
     note: str | None = None
     end: str | None = None  # the last day of a hearing that runs several days
     source: dict[str, Any] | None = None  # the docket document it rests on
+    on_hold: bool | None = None  # a date a stay in effect has suspended
 
     def to_dict(self) -> dict[str, Any]:
         return {k: v for k, v in self.__dict__.items() if v is not None}
@@ -90,16 +89,26 @@ class NextActions:
     events: list[Event] = field(default_factory=list)
     waiting_on: str | None = None
     notes: list[str] = field(default_factory=list)
+    stay: dict[str, Any] | None = None  # a whole-case stay in effect
+    partial_stays: list[dict[str, Any]] = field(default_factory=list)
+    out_of_case: list[dict[str, Any]] = field(default_factory=list)
 
     def to_dict(self) -> dict[str, Any]:
         events = sorted(self.events, key=lambda e: (e.date is None, e.date or ""))
-        return {
+        out = {
             "stage": self.stage,
             "stage_label": self.stage_label,
             "events": [e.to_dict() for e in events],
             "waiting_on": self.waiting_on,
             "notes": self.notes,
         }
+        if self.stay:
+            out["stay"] = self.stay
+        if self.partial_stays:
+            out["partial_stays"] = self.partial_stays
+        if self.out_of_case:
+            out["out_of_case"] = self.out_of_case
+        return out
 
 
 def _current_fields(case: dict[str, Any]) -> dict[str, Any]:
@@ -148,11 +157,13 @@ def build_case(case: dict[str, Any], documents: list[dict[str, Any]], *, today: 
     `schedule` is its procedural schedule as read from the orders
     (orders.schedule_events), when there is one."""
     result = _build_case(case, documents)
+    today = today or date.today()
     if result is not None and schedule and result.stage in ("alj", "commission", "pre_institution"):
         _add_schedule(result, schedule)
+    if result is not None and result.stage in ("alj", "commission", "pre_institution"):
+        _apply_stays(result, documents or [], today)
     if result is None or result.stage in ("undated", "other", "concluded", "pre_institution"):
         return result
-    today = today or date.today()
     dated = [calendar.parse(e.end or e.date) for e in result.events if e.date]
     latest = max((d for d in dated if d), default=None)
     if latest and (today - latest).days > DORMANT_AFTER_DAYS:
@@ -162,6 +173,42 @@ def build_case(case: dict[str, Any], documents: list[dict[str, Any]], *, today: 
             "which for older cases usually means its remedial orders remain in force; nothing further is scheduled."
         )
     return result
+
+
+def _loose(text: str) -> str:
+    return re.sub(r"[^a-z0-9]", "", str(text or "").lower())
+
+
+def _apply_stays(result: NextActions, documents: list[dict[str, Any]], today: date) -> None:
+    """Stays and respondents out of the case (stays.py), applied to the dates:
+    a whole-case stay in effect puts every date from its start on hold; an
+    order's date that names a respondent no longer in the case is dropped."""
+    # Once the final ID is out, a stay of the ALJ's schedule is moot: only
+    # what was stayed since counts.
+    final_id = next((e.date for e in result.events if e.label == "Final initial determination issued"), None)
+    status = stays.assess([d for d in documents if not final_id or _day(d) and _day(d) >= final_id], today)
+    gone = stays.out_of_case(documents)
+    result.out_of_case = gone
+    names = [g["who"] for g in gone]
+    if names:
+        result.events = [e for e in result.events if not (e.basis == "order" and stays.names_party(e.label, names))]
+    result.partial_stays = [
+        p for p in status["partial"]
+        if not any(_loose(p["who"]) in _loose(n) or _loose(n) in _loose(p["who"]) for n in names)
+    ]
+    stay = status["stay"]
+    if stay:
+        result.stay = stay
+        for event in result.events:
+            if event.date and event.date >= stay["since"] and event.basis != "docket":
+                event.on_hold = True
+        result.stage_label += " (stayed)"
+        result.waiting_on = "The end of the stay"
+    elif status["ended"]:
+        ended = status["ended"]
+        result.notes.append(
+            f"A stay ordered on {ended['since']} has ended ({ended['ended_by']}): “{ended['source']['title']}”."
+        )
 
 
 _KINDS = {
@@ -255,13 +302,6 @@ def _build_case(case: dict[str, Any], documents: list[dict[str, Any]]) -> NextAc
             date=_iso(calendar.period_end(instituted, 45)), label="ALJ to set the target date",
             basis="by rule", cite="19 CFR 210.51(a)", note="Within 45 days after institution.",
         ))
-
-    stay = _latest(documents, _STAY_RE, types=("Order", "Order, Commission", "Notice", "ID/RD - Other Than Final on Violation"))
-    lifted = _latest(documents, _LIFT_STAY_RE, types=("Order", "Order, Commission", "Notice", "ID/RD - Other Than Final on Violation"))
-    if stay and not (lifted and (_day(lifted) or "") >= (_day(stay) or "")):
-        result.notes.append(
-            f"A stay was ordered on {_day(stay)} (“{stay.get('title')}”). Dates below may not apply while it is in effect."
-        )
 
     # -- before the final initial determination -----------------------------
     if not final_id:
