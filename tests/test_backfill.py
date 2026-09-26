@@ -5,6 +5,7 @@ daily sync does with the cases it filled in.
 from __future__ import annotations
 
 import unittest
+from datetime import date
 from contextlib import contextmanager
 from unittest import mock
 
@@ -112,11 +113,32 @@ class TestTheDailySyncAfterABackfill(BackfillTestCase):
             "337-1450": ("Terminated", "2025-01-01"),  # backfilled, closed
         })
         for key in store.investigations:
-            store.put_documents(key, [{"id": "1"}])
+            store.put_documents(key, [{"id": "1", "document_date": "2026-09-01"}])
         store.documents_state["337-1500"]["backfill"] = True
         store.documents_state["337-1450"]["backfill"] = True
 
-        self.assertEqual(backfill.daily_targets(store), ["337-1400", "337-1500"])
+        self.assertEqual(backfill.daily_targets(store, today=date(2026, 9, 25)), ["337-1400", "337-1500"])
+
+    def test_an_old_active_listing_is_checked_monthly_not_daily(self):
+        # The USITC lists some decades-old investigations as "Active".
+        store = self.seeded({
+            "337-055": ("Active", None),  # backfilled, nothing filed in years
+            "337-1400": ("Terminated", "2024-01-01"),  # collected by hand, also quiet
+        })
+        store.put_documents("337-055", [{"id": "1", "document_date": "1979-03-01"}])
+        store.put_documents("337-1400", [{"id": "2", "document_date": "2020-01-01"}])
+        store.documents_state["337-055"]["backfill"] = True
+        today = date(2026, 9, 25)
+
+        store.documents_state["337-055"]["fetched_at"] = "2026-09-20T00:00:00+00:00"
+        self.assertEqual(backfill.daily_targets(store, today=today), ["337-1400"])
+        store.documents_state["337-055"]["fetched_at"] = "2026-08-01T00:00:00+00:00"
+        self.assertEqual(backfill.daily_targets(store, today=today), ["337-055", "337-1400"])
+
+        # One recent filing makes it a daily case again.
+        store.documents["337-055"].append({"id": "3", "document_date": "2026-09-10"})
+        store.documents_state["337-055"]["fetched_at"] = "2026-09-20T00:00:00+00:00"
+        self.assertEqual(backfill.daily_targets(store, today=today), ["337-055", "337-1400"])
 
     def test_a_routine_refresh_keeps_the_mark_and_a_fetch_by_hand_clears_it(self):
         store = self.seeded({"337-1500": ("Active", "2026-01-01")})

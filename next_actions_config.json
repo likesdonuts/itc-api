@@ -1,0 +1,12 @@
+{
+  "_about": [
+    "Reading procedural schedules for the Next actions tab (datalayer/nextactions/orders.py).",
+    "budget_usd is this feature's own cap, separate from claims_config.json; every run's cost is appended to costs_csv.",
+    "Model prices come from claims_config.json's prices table."
+  ],
+  "model": "claude-haiku-4-5-20251001",
+  "budget_usd": 20.0,
+  "costs_csv": "data/next_actions_costs.csv",
+  "max_output_tokens": 6000,
+  "ocr_max_pages": 30
+}

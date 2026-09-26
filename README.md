@@ -99,7 +99,9 @@ The panel at the top of the list page does the day's work:
   their Notice of Appearance PDFs, then rebuilds attorneys and pages. If the
   IDS download fails (it is tried three times), the rest still runs on the
   case data already on disk, and the job ends with a warning saying so.
-  Backfilled cases (below) are included only while they are open.
+  Backfilled cases (below) are included only while they are open, and ones
+  with nothing filed in two years only monthly. It then reads any new
+  scheduling orders for the Next actions tab.
 - **Backfill all cases** lists the documents of every case that has no list
   yet, without PDFs, so counsel covers the whole history. It is long (see
   [the backfill](#the-backfill-every-cases-document-list)); **Stop** ends it
@@ -193,7 +195,7 @@ own from the command line.
 | `python cli.py backfill` | EDIS | Lists the documents (no PDFs) of every case that has no list yet, newest first; resumable. Refuses while the app is open (use its button). |
 | `python cli.py claims 337-1366` | Federal Register | Builds or updates the claims analysis for the investigations you name (also the **Create / Update claims analysis** button on a case page). |
 | `python cli.py counsel` | none | Process 3. Rebuilds who represents whom from the documents on disk. Runs by itself after `sync`, `parse`, `docs` and `refresh`. |
-| `python cli.py next-actions` | none | Rebuilds each open case's next actions (`data/next_actions.json`). Runs by itself with counsel, after every sync and fetch. |
+| `python cli.py next-actions` | none | Rebuilds each open case's next actions (`data/next_actions.json`). Runs by itself with counsel, after every sync and fetch. `--orders` first reads new scheduling orders (EDIS + Anthropic, own budget), as the daily job does. |
 | `python cli.py analytics` | Anthropic (a few cents) | Rebuilds the representation analytics entities in `data/analytics/` and the analytics app's data. Only ever run by hand or by the analytics app; `--no-review` makes no model calls. |
 | `python cli.py analytics-serve` | localhost | Opens the analytics app (what `ITC Analytics.bat` runs) on port 8766. |
 | `python cli.py decide` | none | Lists the analytics name pairs that need a person; `decide 3 same` records an answer in `analytics_reference.json` and rebuilds. |
@@ -364,6 +366,11 @@ Backfilled cases are marked `"backfill": true` in `documents_state.json`. The
 daily sync refreshes a backfilled case only while its status is open (Active,
 Pending before the ALJ or the Commission, Pre-institution), so it stays at the
 cases that can still get filings instead of growing to every case on file.
+And the USITC lists about 90 investigations decades old as "Active" (their
+remedial orders are still in force) with nothing filed in years: a
+backfilled case with no filing in two years is re-listed monthly rather than
+daily, and one new filing makes it daily again (`backfill.daily_targets`).
+That took the daily sync from about 300 cases to about 190.
 Fetching or updating a case by hand clears the mark: it becomes one of yours
 and is refreshed daily like any other. `docs --existing` and `--all` are
 refreshes and keep the mark.
@@ -568,16 +575,18 @@ from the IDS records of every case.
 ### Next actions
 
 ```
-python cli.py next-actions --render    # rebuild data/next_actions.json and the pages, offline
+python cli.py next-actions --render                  # rebuild data/next_actions.json and the pages, offline
+python cli.py next-actions --orders --render         # first read new scheduling orders (EDIS + Claude Haiku)
+python cli.py next-actions --orders 337-1478 --render   # ...for these cases only
 ```
 
 What happens next in each open investigation, on a **Next actions** tab of its
-page. Phase 1 uses no model and no network (`datalayer/nextactions/`); every
-date carries its basis:
+page (`datalayer/nextactions/`). Every date carries its basis:
 
 | Basis | Where the date comes from |
 | --- | --- |
-| case data | the IDS record's current stage: target date, scheduled final initial determination, Markman and evidentiary hearings (about 60 of the open cases have them) |
+| order | the ALJ's (or, once the final ID is out, the Commission's) procedural schedule, with later amendments applied -- see below |
+| case data | the IDS record's current stage: target date, scheduled final initial determination, Markman and evidentiary hearings (about 60 of the open cases have them); for these four milestones the case record wins over an order |
 | docket | when the final ID and the Commission's notices issued (titles as EDIS lists them; Federal Register reprints ignored) |
 | by rule | 19 CFR Part 210 applied to those dates, with the citation |
 
@@ -616,11 +625,64 @@ advisory proceedings are out of scope for now and say so.
 The page picks the *next* event, and how many days away each one is,
 against the day it is viewed, so the tab stays right between syncs; with
 nothing dated ahead it shows "Awaiting decision" and what the case is waiting
-on. `next_actions.json` is rebuilt with counsel after every sync and fetch.
+on. Its layout: a stage bar (complaint to Presidential review), the next event
+with a countdown and what the case is waiting on, the upcoming dates, the
+ones not yet dated (relative deadlines), and the past ones folded away. Each
+row names its basis, citation and source document, linked to the PDF when it
+is on disk. `next_actions.json` is rebuilt with counsel after every sync and
+fetch.
 
-Phase 2 will add the dates in the ALJs' procedural schedules (discovery,
-expert reports, briefs), read from the scheduling orders with Claude Haiku
-under its own $20 budget.
+#### Procedural schedules from the orders (`nextactions/orders.py`)
+
+The daily sync, after refreshing the document lists, reads the new
+scheduling orders of the live cases (before the ALJ, before the Commission,
+awaiting institution):
+
+1. **Which documents.** Orders, IDs and notices the ALJ or the Commission
+   issued whose titles mention a procedural schedule, the target date, ground
+   rules or a schedule for written submissions -- not the parties' motions,
+   proposals or joint statements, nor "seeking" / "denying" orders or
+   Federal Register reprints. Of those, the latest full schedule and
+   everything after it, with the orders that only move the target date cut
+   to the latest one. Once the final ID is out, only what the Commission has
+   issued since (its briefing schedule on review).
+2. **PDFs** that are not on disk are downloaded from EDIS.
+3. **Text:** each page's own text, and local OCR for image-only pages (a
+   schedule's table is often a pasted image), cached in
+   `data/next_actions/text/`.
+4. **Claude Haiku** records every dated event in a strict tool call: the
+   event, its date (and last day, for a hearing over several days), a
+   relative rule when there is no date ("within 5 business days after
+   mediation"), a category, and a quote. The document's role -- full
+   schedule, amendment, target date, other -- comes back too.
+5. **Checked:** an event is kept only if the document supports it: its quote
+   is in the text (15 characters at least), or, for a table row -- whose
+   cells come out of a PDF interleaved -- the date is written in the text
+   ("September 29, 2026", "Sept. 29, 2026", "9/29/2026"; OCR's "0ctober"
+   forgiven) with most of the event's words within a few lines of it. A
+   date far from the document's own, or one that does not parse, is
+   rejected too; rejected events are kept in the record with the reason.
+6. **Cached** per document in `data/next_actions/orders/<id>.json` (tracked:
+   each was paid for); a document is read once. Changing the prompt
+   (`PROMPT_VERSION`) reads them again; `orders.revalidate` re-applies the
+   checks without a model call.
+
+The schedule shown is then layered: the latest order that sets out the whole
+schedule (a full one, or a modifying order that restates all of it, as many
+do: "the remainder of the investigation will be conducted on the following
+schedule") is the base, and each later order's dates replace the same
+event's. Events match when they are in the same category and one name
+contains the other or they are near-identical -- never when they differ by
+a telling word (initial/rebuttal, opening/responsive, direct/rebuttal,
+fact/expert), and an order is only laid over the ones before it. A moved
+date says what it replaced.
+
+Costs go to `data/next_actions_costs.csv` (one row per case per run, named
+`next-actions:<case>`) against `next_actions_config.json`'s own
+`budget_usd` ($20), separate from the claims analysis. Without an Anthropic
+key the step is skipped with a warning; at the budget it stops and says so.
+The pilot on five cases (13 orders, including two scanned schedules and one
+restated by amendment) cost about $0.32.
 
 ### Claims analysis
 

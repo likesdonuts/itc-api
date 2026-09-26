@@ -1,0 +1,360 @@
+{
+  "case": "337-1478",
+  "cost_usd": 0.0191,
+  "date": "2026-01-30",
+  "doc_id": "870855",
+  "document_type": "Order",
+  "events": [
+    {
+      "category": "other",
+      "date": "2026-03-03",
+      "end_date": "",
+      "event": "Monthly case management conference",
+      "quote": "Monthly case management conference\nMarch 3, 2026, at 11:00 am ET",
+      "relative": ""
+    },
+    {
+      "category": "discovery",
+      "date": "2026-03-16",
+      "end_date": "",
+      "event": "Initial deadline for responses to contention interrogatories on issues for which the responding party bears the burden of proof",
+      "quote": "Initial deadline for responses to contention\ninterrogatories on issues for which the responding\nparty bears the burden of proof\nMarch 16, 2026",
+      "relative": ""
+    },
+    {
+      "category": "claim_construction",
+      "date": "2026-03-27",
+      "end_date": "",
+      "event": "Exchange list of claim terms to be construed",
+      "quote": "Exchange list of claim terms to be construed\nMarch 27, 2026",
+      "relative": ""
+    },
+    {
+      "category": "discovery",
+      "date": "2026-03-30",
+      "end_date": "",
+      "event": "Initial deadline for responses to contention interrogatories on issues for which the responding party does not bear the burden of proof",
+      "quote": "Initial deadline for responses to contention\ninterrogatories on issues for which the responding\nparty does not bear the burden of proof\nMarch 30, 2026",
+      "relative": ""
+    },
+    {
+      "category": "discovery",
+      "date": "2026-03-30",
+      "end_date": "",
+      "event": "Deadline for party production of source code",
+      "quote": "Deadline for party production of source code\nMarch 30, 2026",
+      "relative": ""
+    },
+    {
+      "category": "other",
+      "date": "2026-04-02",
+      "end_date": "",
+      "event": "Monthly case management conference",
+      "quote": "Monthly case management conference\nApril 2, 2026, at 11:00 am ET",
+      "relative": ""
+    },
+    {
+      "category": "expert",
+      "date": "2026-04-08",
+      "end_date": "",
+      "event": "File identification of expert witnesses, including their expertise and curriculum vitae",
+      "quote": "File identification of expert witnesses, including their\nexpertise and curriculum vitae\nApril 8, 2026",
+      "relative": ""
+    },
+    {
+      "category": "claim_construction",
+      "date": "2026-04-13",
+      "end_date": "",
+      "event": "Exchange proposed constructions for all terms on all lists (including identification of extrinsic evidence)",
+      "quote": "Exchange proposed constructions for all terms on all\nlists (including identification of extrinsic evidence)\nApril 13, 2026",
+      "relative": ""
+    },
+    {
+      "category": "claim_construction",
+      "date": "2026-04-27",
+      "end_date": "",
+      "event": "File chart of agreed and disputed constructions",
+      "quote": "File chart of agreed and disputed constructions\nApril 27, 2026",
+      "relative": ""
+    },
+    {
+      "category": "claim_construction",
+      "date": "2026-05-01",
+      "end_date": "",
+      "event": "File opening claim construction briefs",
+      "quote": "File opening claim construction briefs\nMay 1, 2026",
+      "relative": ""
+    },
+    {
+      "category": "prehearing",
+      "date": "2026-05-01",
+      "end_date": "",
+      "event": "File tentative list of witnesses a party will call to testify at the hearing, with an identification of each witness's relationship to the party",
+      "quote": "File tentative list of witnesses a party will call to\ntestify at the hearing, with an identification of each\nwitness's relationship to the party\nMay 1, 2026",
+      "relative": ""
+    },
+    {
+      "category": "other",
+      "date": "2026-05-04",
+      "end_date": "",
+      "event": "Monthly case management conference",
+      "quote": "Monthly case management conference\nMay 4, 2026, at 11:00 am ET",
+      "relative": ""
+    },
+    {
+      "category": "discovery",
+      "date": "2026-05-07",
+      "end_date": "",
+      "event": "File notice of prior art",
+      "quote": "File notice of prior art\nMay 7, 2026",
+      "relative": ""
+    },
+    {
+      "category": "discovery",
+      "date": "2026-05-07",
+      "end_date": "",
+      "event": "Cut-off date for supplements to contention interrogatories on issues for which the responding party bears the burden of proof",
+      "quote": "Cut-off date for supplements to contention\ninterrogatories on issues for which the responding\nparty bears the burden of proof\nMay 7, 2026",
+      "relative": ""
+    },
+    {
+      "category": "claim_construction",
+      "date": "2026-05-18",
+      "end_date": "",
+      "event": "File responsive claim construction briefs",
+      "quote": "File responsive claim construction briefs\nMay 18, 2026",
+      "relative": ""
+    },
+    {
+      "category": "discovery",
+      "date": "2026-05-21",
+      "end_date": "",
+      "event": "Cut-off date for supplements to contention interrogatories on issues for which the responding party does not bear the burden of proof",
+      "quote": "Cut-off date for supplements to contention\ninterrogatories on issues for which the responding\nparty does not bear the burden of proof\nMay 21, 2026",
+      "relative": ""
+    },
+    {
+      "category": "discovery",
+      "date": "2026-05-21",
+      "end_date": "",
+      "event": "Fact discovery cut-off and completion",
+      "quote": "Fact discovery cut-off and completion\nMay 21, 2026",
+      "relative": ""
+    },
+    {
+      "category": "motions",
+      "date": "2026-05-29",
+      "end_date": "",
+      "event": "Deadline for motions to compel discovery",
+      "quote": "Deadline for motions to compel discovery\nMay 29, 2026",
+      "relative": ""
+    },
+    {
+      "category": "claim_construction",
+      "date": "2026-06-03",
+      "end_date": "",
+      "event": "Claim construction hearing and monthly case management conference",
+      "quote": "Claim construction hearing and monthly case\nmanagement conference\nJune 3, 2026, at 9:00 am ET",
+      "relative": ""
+    },
+    {
+      "category": "expert",
+      "date": "2026-06-10",
+      "end_date": "",
+      "event": "Exchange initial expert reports (identify tests/surveys/data)",
+      "quote": "Exchange initial expert reports (identify\ntests/surveys/data)\nJune 10, 2026",
+      "relative": ""
+    },
+    {
+      "category": "other",
+      "date": "",
+      "end_date": "",
+      "event": "One-day mediation session",
+      "quote": "One-day mediation session\nBy June 24, 2026",
+      "relative": "By June 24, 2026"
+    },
+    {
+      "category": "other",
+      "date": "",
+      "end_date": "",
+      "event": "Submit joint report on mediation",
+      "quote": "Submit joint report on mediation\nWithin 5 business days after\nmediation",
+      "relative": "Within 5 business days after mediation"
+    },
+    {
+      "category": "expert",
+      "date": "2026-06-26",
+      "end_date": "",
+      "event": "Exchange rebuttal expert reports",
+      "quote": "Exchange rebuttal expert reports\nJune 26, 2026",
+      "relative": ""
+    },
+    {
+      "category": "other",
+      "date": "2026-07-02",
+      "end_date": "",
+      "event": "Monthly case management conference",
+      "quote": "Monthly case management conference\nJuly 2, 2026, at 11 :00 am ET",
+      "relative": ""
+    },
+    {
+      "category": "expert",
+      "date": "2026-07-07",
+      "end_date": "",
+      "event": "Expert discovery cutoff and completion",
+      "quote": "Expert discovery cutoff and completion\nJuly 7, 2026",
+      "relative": ""
+    },
+    {
+      "category": "prehearing",
+      "date": "2026-07-07",
+      "end_date": "",
+      "event": "File statement of uncontested claim elements pursuant to G.R. 11.3",
+      "quote": "File statement of uncontested claim elements pursuant\nto G.R. 11.3\nJuly 7, 2026",
+      "relative": ""
+    },
+    {
+      "category": "prehearing",
+      "date": "2026-07-07",
+      "end_date": "",
+      "event": "Parties submit joint statement regarding proposed word limits for pre-hearing briefs",
+      "quote": "Parties submit joint statement regarding proposed\nword limits for pre-hearing briefs\nJuly 7, 2026",
+      "relative": ""
+    },
+    {
+      "category": "motions",
+      "date": "2026-07-13",
+      "end_date": "",
+      "event": "Deadline for filing summary determination motions",
+      "quote": "Deadline for filing summary determination motions\nJuly 13, 2026",
+      "relative": ""
+    },
+    {
+      "category": "prehearing",
+      "date": "2026-07-22",
+      "end_date": "",
+      "event": "Exchange of exhibit lists among the parties",
+      "quote": "Exchange of exhibit lists among the parties\nJuly 22, 2026",
+      "relative": ""
+    },
+    {
+      "category": "other",
+      "date": "2026-08-04",
+      "end_date": "",
+      "event": "Monthly case management conference",
+      "quote": "Monthly case management conference\nAugust 4, 2026, at 11:00 am ET",
+      "relative": ""
+    },
+    {
+      "category": "prehearing",
+      "date": "2026-08-04",
+      "end_date": "",
+      "event": "Complainant and respondent serve proposed direct exhibits, and identify physical exhibits",
+      "quote": "Complainant and respondent serve proposed direct\nexhibits, and identify physical exhibits\nAugust 4, 2026",
+      "relative": ""
+    },
+    {
+      "category": "prehearing",
+      "date": "2026-08-07",
+      "end_date": "",
+      "event": "Serve proposed rebuttal exhibits, and identify rebuttal physical exhibits",
+      "quote": "Serve proposed rebuttal exhibits, and identify rebuttal\nphysical exhibits\nAugust 7, 2026",
+      "relative": ""
+    },
+    {
+      "category": "briefing",
+      "date": "2026-08-10",
+      "end_date": "",
+      "event": "Complainant and respondent file pre-hearing statements and briefs",
+      "quote": "Complainant and respondent file pre-hearing\nstatements and briefs\nAugust 10, 2026",
+      "relative": ""
+    },
+    {
+      "category": "motions",
+      "date": "2026-08-24",
+      "end_date": "",
+      "event": "Deadline for motions in limine",
+      "quote": "Deadline for motions in limine\nAugust 24, 2026",
+      "relative": ""
+    },
+    {
+      "category": "motions",
+      "date": "2026-09-02",
+      "end_date": "",
+      "event": "File responses to motions in limine",
+      "quote": "File responses to motions in limine\nSeptember 2, 2026",
+      "relative": ""
+    },
+    {
+      "category": "prehearing",
+      "date": "2026-09-11",
+      "end_date": "",
+      "event": "File joint list of unopposed exhibits",
+      "quote": "File joint list of unopposed exhibits\nSeptember 11, 2026",
+      "relative": ""
+    },
+    {
+      "category": "prehearing",
+      "date": "2026-09-16",
+      "end_date": "",
+      "event": "Final pre-hearing conference",
+      "quote": "Final pre-hearing conference\nSeptember 16, 2026, at 9:00 am ET",
+      "relative": ""
+    },
+    {
+      "category": "hearing",
+      "date": "2026-09-16",
+      "end_date": "2026-09-22",
+      "event": "Evidentiary hearing",
+      "quote": "Hearing\nSeptember 16-18, 21, and 22, 2026",
+      "relative": ""
+    },
+    {
+      "category": "hearing",
+      "date": "2026-09-29",
+      "end_date": "",
+      "event": "File final exhibit list",
+      "quote": "File final exhibit list\nSeptember 29, 2026",
+      "relative": ""
+    },
+    {
+      "category": "briefing",
+      "date": "2026-10-06",
+      "end_date": "",
+      "event": "Complainant and respondent file initial post-hearing briefs and submit final exhibits",
+      "quote": "Complainant and respondent file initial post-hearing\nbriefs and submit final exhibits\nOctober 6, 2026",
+      "relative": ""
+    },
+    {
+      "category": "briefing",
+      "date": "2026-10-20",
+      "end_date": "",
+      "event": "Complainant and respondent file responsive post-hearing briefs and file updated statement of uncontested claim elements",
+      "quote": "Complainant and respondent file responsive post-\nhearing briefs and file updated statement of\nuncontested claim elements\nOctober 20, 2026",
+      "relative": ""
+    },
+    {
+      "category": "initial_determination",
+      "date": "2027-01-15",
+      "end_date": "",
+      "event": "Final initial determination on violation",
+      "quote": "Final initial determination on violation\nJanuary 15, 2027",
+      "relative": ""
+    },
+    {
+      "category": "target_date",
+      "date": "2027-05-17",
+      "end_date": "",
+      "event": "Target date for completion of investigation",
+      "quote": "Target date for completion of investigation\nMay 17, 2027\n(16 months)",
+      "relative": ""
+    }
+  ],
+  "extracted_at": "2026-09-26T01:48:58+00:00",
+  "model": "claude-haiku-4-5-20251001",
+  "prompt_version": 2,
+  "rejected": [],
+  "role": "full_schedule",
+  "title": "Procedural Schedule",
+  "truncated": false
+}

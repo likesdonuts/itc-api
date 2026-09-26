@@ -26,7 +26,7 @@ from __future__ import annotations
 
 import time
 from dataclasses import dataclass, field
-from datetime import datetime, timezone
+from datetime import date, datetime, timedelta, timezone
 from typing import Any, Callable
 
 import httpx
@@ -72,14 +72,41 @@ def is_open(store: Store, key: str) -> bool:
     return record.get("status") in OPEN_STATUSES and not record.get("withdrawn")
 
 
-def daily_targets(store: Store) -> list[str]:
+# The USITC lists some investigations decades old as "Active" -- their
+# remedial orders are still in force -- though nothing has been filed in
+# years. A backfilled case with no filing this long is checked monthly
+# rather than daily; one filing brings it back to daily.
+DORMANT_AFTER_DAYS = 730
+DORMANT_RECHECK_DAYS = 30
+
+
+def latest_filing(store: Store, key: str) -> str | None:
+    days = [str(d.get("document_date") or "")[:10] for d in store.documents.get(key) or [] if d.get("document_date")]
+    return max(days) if days else None
+
+
+def is_dormant(store: Store, key: str, *, today: date | None = None) -> bool:
+    latest = latest_filing(store, key)
+    today = today or datetime.now(timezone.utc).date()
+    return not latest or latest < (today - timedelta(days=DORMANT_AFTER_DAYS)).isoformat()
+
+
+def _checked_recently(store: Store, key: str, today: date) -> bool:
+    fetched = str((store.documents_state.get(key) or {}).get("fetched_at") or "")[:10]
+    return bool(fetched) and fetched >= (today - timedelta(days=DORMANT_RECHECK_DAYS)).isoformat()
+
+
+def daily_targets(store: Store, *, today: date | None = None) -> list[str]:
     """The cases the daily sync refreshes: every case you fetched yourself,
-    and a backfilled one only while it can still get new filings.
+    and a backfilled one only while it can still get new filings -- daily
+    when it has had one in the last two years, monthly when it has not.
     """
+    today = today or datetime.now(timezone.utc).date()
     return [
         key
         for key in store.numbers_with_documents()
-        if not is_backfilled(store, key) or is_open(store, key)
+        if not is_backfilled(store, key)
+        or (is_open(store, key) and (not is_dormant(store, key, today=today) or not _checked_recently(store, key, today)))
     ]
 
 
